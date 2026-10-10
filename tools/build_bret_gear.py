@@ -94,72 +94,19 @@ def build(rom):
             packet = encode_sprite_tile(decoded) if asset["compressed"] else decoded
             simplified_details.append(asset["offset"])
         if len(packet) > length:
-            # Keep garment conversion; report detail tiles needing relocation.
-            pixels = tile(original, 0, 4)
-            for index in asset["pixels"]:
-                pixels[index] = 1
-            decoded = planar(pixels)
-            packet = encode_sprite_tile(decoded) if asset["compressed"] else decoded
-            omitted_details.append(asset["offset"])
-        if len(packet) > length:
             raise ValueError(
-                "Walking asset exceeds original allocation: " + asset["offset"]
+                "Authored details exceed allocation; relocate or re-author explicitly: "
+                + asset["offset"]
             )
         result[offset : offset + len(packet)] = packet
         edits.append((offset, bytes(packet)))
     for slot, offset, compressed in ASSETS:
+        # The same authored source map drives standing and walking details.
+        # Never overwrite it with separate standing-position artwork.
         if compressed:
-            old, length = decode_sprite_tile(rom, offset)
+            tiles[slot] = decode_sprite_tile(result, offset)[0]
         else:
-            old, length = rom[offset : offset + 32], 32
-        original_pixels = tile(old, 0, 4)
-        # Black shade + charcoal highlight; preserve skin, silhouette and tights.
-        pixels = [1 if p == 4 else 3 if p == 5 else p for p in original_pixels]
-        if slot in (3, 19):
-            # Shift the emblem toward the middle of the visible front panel.
-            mark = (
-                {(6, 7): 4}
-                if slot == 3
-                else {
-                    (5, 0): 8,
-                    (6, 0): 5,
-                    (7, 0): 8,
-                    (5, 1): 8,
-                    (6, 1): 8,
-                    (7, 1): 8,
-                    (6, 2): 4,
-                }
-            )
-            for (x, y), color in mark.items():
-                if original_pixels[y * 8 + x] not in (4, 5):
-                    raise ValueError("Chest mark would overwrite skin")
-                pixels[y * 8 + x] = color
-        # Wrap the pad around the elbow tip, including the lowest bent pixels.
-        pad = []
-        if slot == 18:
-            pad = [(x, 7) for x in range(2, 7)]
-        elif slot == 15:
-            pad = [(x, y) for y in range(5) for x in range(6)]
-        for x, y in pad:
-            if original_pixels[y * 8 + x] in (7, 9, 10, 11, 12, 15):
-                pixels[y * 8 + x] = 2 if x in (2, 3) else 1
-        # Narrow bands immediately before each hand, rather than broad arm blocks.
-        tape = []
-        if slot == 30:
-            tape = [(x, y) for y in range(3) for x in (3, 4)]
-        elif slot == 20:
-            tape = [(x, y) for y in (1, 2) for x in (5, 6)]
-        for x, y in tape:
-            if original_pixels[y * 8 + x] in (7, 9, 10, 11, 12, 15):
-                pixels[y * 8 + x] = 2 if x in (3, 5) else 1
-        decoded = planar(pixels)
-        packet = encode_sprite_tile(decoded) if compressed else decoded
-        if len(packet) > length:
-            raise ValueError("New tile exceeds existing asset space")
-        result[offset : offset + len(packet)] = packet
-        # Remaining bytes are unused padding; keep them intact.
-        edits.append((offset, bytes(packet)))
-        tiles[slot] = decoded
+            tiles[slot] = bytes(result[offset : offset + 32])
     # Original gray boot trim becomes light pink. Other palette entries stay put.
     pink = (31 | (12 << 5) | (24 << 10)).to_bytes(2, "little")
     result[PALETTE + 12 : PALETTE + 14] = pink
@@ -183,7 +130,9 @@ def build(rom):
         "walk_tiles_using_flat_black": simplified,
         "walk_details_using_flat_black": simplified_details,
         "walk_detail_assets_omitted_for_space": omitted_details,
-        "scope": "Standing details and mapped upright left walk; other animations unverified",
+        "detail_mapping": walk_map["detail_mapping"],
+        "visual_consistency_verified": False,
+        "scope": "Authored seven-pose left walk under visual review; other animations unverified",
     }
     return bytes(result), bytes(patch), tiles, report
 

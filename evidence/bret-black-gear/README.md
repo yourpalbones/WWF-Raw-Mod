@@ -1,4 +1,8 @@
-# Bret's black gear: revised placement and walking proof
+# Earlier walking prototype: failed visual placement review
+
+**Superseded:** the user identified drifting pads, tape and logo. These checks
+proved containment within Bret, not anatomical consistency. See the
+[pose-authored walking revision](../bret-gear-anatomy/README.md).
 
 ![Actual original and edited gameplay, including enlarged views of Bret](walking-comparison.gif)
 
@@ -101,7 +105,7 @@ draft upright-walk details from the original trace:
 
 ```sh
 python3 tools/map_bret_walk.py '/path/to/WWF Raw (USA).sfc' outputs/walk-before --initial-trace outputs/gear-before --output data/bret-left-walk.json
-python3 tools/map_bret_walk_details.py '/path/to/WWF Raw (USA).sfc' outputs/walk-before --initial-trace outputs/gear-before --plan data/bret-left-walk.json
+python3 tools/map_bret_walk_details.py '/path/to/WWF Raw (USA).sfc' outputs/walk-before --initial-trace outputs/gear-before --plan data/bret-left-walk.json --conflicts outputs/detail-conflicts.json
 ```
 
 This mapping uses an upright-pose garment cutoff, original material masks and

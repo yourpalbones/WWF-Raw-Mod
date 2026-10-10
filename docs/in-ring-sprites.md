@@ -147,3 +147,13 @@ material masks. One shared source is deliberately excluded, and one detail
 asset is omitted because it would exceed its original packet allocation.
 These exceptions are recorded in the map and patch report. Attacks, grapples,
 knockdowns and other wrestlers remain outside the verified coverage.
+
+## Corrected walking detail placement
+
+The previous bounding-box detail placement failed visual review: containment
+checks did not establish anatomical consistency. The
+[pose-authored revision](../evidence/bret-gear-anatomy/README.md) replaces it with
+seven explicit pose annotations, rejects conflicting source pixels, and shares
+one detail map between standing and walking. All 90 frames match those authored
+placements (4,321 checks); no details are omitted for space. The earlier drifting
+artwork fails the new verifier. Artwork judgment and other moves remain open.

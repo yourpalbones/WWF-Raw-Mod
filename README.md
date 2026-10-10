@@ -10,8 +10,9 @@ mode-2 streams, and the zero-eliding mask packets used for in-ring sprite tiles.
 The sprite packet encoder reproduces the original packets in the tested trace.
 A same-size compressed tile edit has been reinserted and verified in the running
 game; see [the evidence package](evidence/bret-tile-edit/README.md).
-A [black-gear prototype with a walking GIF](evidence/bret-black-gear/README.md)
-is verified across the standing pose and a 90-frame left-walking test.
+A [pose-authored walking revision](evidence/bret-gear-anatomy/README.md) corrects
+the earlier drifting details. All 90 frames match seven manually annotated
+poses; anatomical placement remains subject to visual review.
 A [primary animation inventory](evidence/bret-animation-inventory/README.md) now
 maps 527 directory entries; full outfit animation coverage remains unverified.
 
