@@ -1,0 +1,223 @@
+{
+  "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "scope": "13 primary selectors; examined 527 entries per distinct directory using Bret's established range",
+  "character_identities_complete": false,
+  "gameplay_coverage_complete": false,
+  "lower_body_inventory_complete": false,
+  "selectors": [
+    {
+      "selector": 0,
+      "directory_cpu_address": "ACB946",
+      "directory_file_offset": "2CB946",
+      "confirmed_character": null,
+      "role": "unconfirmed"
+    },
+    {
+      "selector": 1,
+      "directory_cpu_address": "ED6FE4",
+      "directory_file_offset": "2D6FE4",
+      "confirmed_character": "Bret Hart",
+      "role": "unconfirmed"
+    },
+    {
+      "selector": 2,
+      "directory_cpu_address": "808745",
+      "directory_file_offset": "008745",
+      "confirmed_character": null,
+      "role": "unconfirmed"
+    },
+    {
+      "selector": 3,
+      "directory_cpu_address": "9D953E",
+      "directory_file_offset": "1D953E",
+      "confirmed_character": null,
+      "role": "unconfirmed"
+    },
+    {
+      "selector": 4,
+      "directory_cpu_address": "C06BBB",
+      "directory_file_offset": "006BBB",
+      "confirmed_character": null,
+      "role": "unconfirmed"
+    },
+    {
+      "selector": 5,
+      "directory_cpu_address": "99BDA9",
+      "directory_file_offset": "19BDA9",
+      "confirmed_character": null,
+      "role": "unconfirmed"
+    },
+    {
+      "selector": 6,
+      "directory_cpu_address": "EF6FCD",
+      "directory_file_offset": "2F6FCD",
+      "confirmed_character": null,
+      "role": "unconfirmed"
+    },
+    {
+      "selector": 7,
+      "directory_cpu_address": "D96BAE",
+      "directory_file_offset": "196BAE",
+      "confirmed_character": null,
+      "role": "unconfirmed"
+    },
+    {
+      "selector": 8,
+      "directory_cpu_address": "AFABBF",
+      "directory_file_offset": "2FABBF",
+      "confirmed_character": null,
+      "role": "common fallback"
+    },
+    {
+      "selector": 9,
+      "directory_cpu_address": "83EC1E",
+      "directory_file_offset": "03EC1E",
+      "confirmed_character": null,
+      "role": "unconfirmed"
+    },
+    {
+      "selector": 10,
+      "directory_cpu_address": "EB6FD9",
+      "directory_file_offset": "2B6FD9",
+      "confirmed_character": null,
+      "role": "unconfirmed"
+    },
+    {
+      "selector": 11,
+      "directory_cpu_address": "EC6FB9",
+      "directory_file_offset": "2C6FB9",
+      "confirmed_character": null,
+      "role": "unconfirmed"
+    },
+    {
+      "selector": 12,
+      "directory_cpu_address": "AFABBF",
+      "directory_file_offset": "2FABBF",
+      "confirmed_character": null,
+      "role": "unconfirmed"
+    }
+  ],
+  "directories": [
+    {
+      "directory_file_offset": "2CB946",
+      "selectors": [
+        0
+      ],
+      "entries_in_examined_range": 527,
+      "distinct_frame_pointers": 523,
+      "frame_pointers_shared_with_other_directories": 88,
+      "distinct_tile_ids": 5414
+    },
+    {
+      "directory_file_offset": "2D6FE4",
+      "selectors": [
+        1
+      ],
+      "entries_in_examined_range": 527,
+      "distinct_frame_pointers": 526,
+      "frame_pointers_shared_with_other_directories": 124,
+      "distinct_tile_ids": 5470
+    },
+    {
+      "directory_file_offset": "008745",
+      "selectors": [
+        2
+      ],
+      "entries_in_examined_range": 527,
+      "distinct_frame_pointers": 524,
+      "frame_pointers_shared_with_other_directories": 66,
+      "distinct_tile_ids": 5374
+    },
+    {
+      "directory_file_offset": "1D953E",
+      "selectors": [
+        3
+      ],
+      "entries_in_examined_range": 527,
+      "distinct_frame_pointers": 521,
+      "frame_pointers_shared_with_other_directories": 77,
+      "distinct_tile_ids": 5823
+    },
+    {
+      "directory_file_offset": "006BBB",
+      "selectors": [
+        4
+      ],
+      "entries_in_examined_range": 527,
+      "distinct_frame_pointers": 521,
+      "frame_pointers_shared_with_other_directories": 58,
+      "distinct_tile_ids": 5453
+    },
+    {
+      "directory_file_offset": "19BDA9",
+      "selectors": [
+        5
+      ],
+      "entries_in_examined_range": 527,
+      "distinct_frame_pointers": 521,
+      "frame_pointers_shared_with_other_directories": 82,
+      "distinct_tile_ids": 5346
+    },
+    {
+      "directory_file_offset": "2F6FCD",
+      "selectors": [
+        6
+      ],
+      "entries_in_examined_range": 527,
+      "distinct_frame_pointers": 524,
+      "frame_pointers_shared_with_other_directories": 73,
+      "distinct_tile_ids": 5379
+    },
+    {
+      "directory_file_offset": "196BAE",
+      "selectors": [
+        7
+      ],
+      "entries_in_examined_range": 527,
+      "distinct_frame_pointers": 520,
+      "frame_pointers_shared_with_other_directories": 64,
+      "distinct_tile_ids": 5633
+    },
+    {
+      "directory_file_offset": "2FABBF",
+      "selectors": [
+        8,
+        12
+      ],
+      "entries_in_examined_range": 527,
+      "distinct_frame_pointers": 524,
+      "frame_pointers_shared_with_other_directories": 102,
+      "distinct_tile_ids": 5151
+    },
+    {
+      "directory_file_offset": "03EC1E",
+      "selectors": [
+        9
+      ],
+      "entries_in_examined_range": 527,
+      "distinct_frame_pointers": 526,
+      "frame_pointers_shared_with_other_directories": 112,
+      "distinct_tile_ids": 5519
+    },
+    {
+      "directory_file_offset": "2B6FD9",
+      "selectors": [
+        10
+      ],
+      "entries_in_examined_range": 527,
+      "distinct_frame_pointers": 526,
+      "frame_pointers_shared_with_other_directories": 115,
+      "distinct_tile_ids": 5583
+    },
+    {
+      "directory_file_offset": "2C6FB9",
+      "selectors": [
+        11
+      ],
+      "entries_in_examined_range": 527,
+      "distinct_frame_pointers": 526,
+      "frame_pointers_shared_with_other_directories": 106,
+      "distinct_tile_ids": 5602
+    }
+  ]
+}
