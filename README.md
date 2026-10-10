@@ -68,6 +68,7 @@ outputs as well. Partial/yielded blocks are counted separately and skipped.
 
 ## Research status
 
+[Editor goal and staged roadmap](docs/editor-roadmap.md) ·
 [Interface compression](docs/compression.md) ·
 [Initial code evidence](docs/research.md) ·
 [In-ring sprites and reproducible workflow](docs/in-ring-sprites.md)

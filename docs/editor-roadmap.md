@@ -1,0 +1,80 @@
+# WWF Raw editor roadmap
+
+The goal is an editor that lets people change wrestlers and eventually the
+game's graphics, menus, music, roster and moves. Research should produce reusable
+asset maps and editing tools, with Bret's outfit serving as the first prototype.
+
+## 1. Map the complete stock roster
+
+Identify each character's directory, palettes, primary and lower-body parts,
+shared graphics, and animation references. Assign character names only after
+confirming them in the running game; a directory selector alone is not a name.
+
+For each character, record:
+
+- ROM revision and original hash; directory and source addresses.
+- Compression, palette, object layout and frame composition.
+- Which actions use each frame, including giving and receiving moves.
+- Assets shared with other wrestlers, referees or scenery.
+- Evidence and verification status, with unknown actions left explicit.
+
+Capture controlled matches to cover walking, running, turns, ropes, strikes,
+grapples, special moves, damage, falls, recovery, pins and ringside actions.
+Directory entry counts describe an inventory, not completed move coverage.
+
+Current evidence: Bret's primary directory has 527 entries and 526 distinct
+frame descriptions. Common/lower parts and action mapping remain incomplete.
+Bret's current outfit is verified for 173 paired movement frames. Bret and
+Undertaker have recovered in-ring frames; the rest of the roster is not yet
+mapped and verified.
+
+## 2. Build the first character editor
+
+Start with replacing graphics and palettes for an existing roster slot. Preview
+assembled animations rather than asking users to edit jumbled tile sheets.
+Show shared-asset dependencies before an edit affects another character.
+
+Use the same asset model for preview, export and validation. Support reversible
+project files and patch export against a known original ROM. Keep the original
+ROM unchanged. Verify re-encoding, frame composition, palette changes and actual
+gameplay before declaring a character replacement complete.
+
+The first milestone is one editable wrestler whose outfit survives every mapped
+action, followed by applying that workflow across the stock roster.
+
+## 3. Expand graphics and menu editing
+
+Inventory portraits, fonts, logos, backgrounds, arenas, menus and their tilemaps
+and palettes. Existing interface decoders are a starting point; successful
+decompression alone does not identify an asset or prove safe reinsertion.
+
+## 4. Research music and sound editing
+
+Identify the audio driver, song sequences, instruments, samples and upload
+tables. Graphics codecs do not establish an audio format. Begin with verified
+replacement of an existing sound or track before offering composition tools.
+
+## 5. Investigate roster expansion and cross-game imports
+
+Compare specific SNES WWF Acclaim titles for graphics formats, frame layouts,
+palettes and animation conventions. Treat imported wrestlers as conversions
+until compatibility is demonstrated.
+
+Replacing a slot and adding a slot are separate milestones. Expansion requires
+locating roster limits and every dependent system: selection screens, names,
+portraits, palettes, animation tables, move assignments, AI and match logic.
+Additional ROM space alone does not establish support for more characters.
+
+## 6. Research move creation
+
+Map action states, animation sequences, collision and grapple rules, damage,
+opponent reactions, transitions and AI. Start with reassigning a verified
+existing move, then modifying it, before creating a new move with coordinated
+attacker and defender behavior.
+
+## Immediate next milestone
+
+Build a roster-wide directory inventory, identify shared/common and lower-body
+assets, and connect those entries to controlled gameplay captures. Publish an
+evidence-linked coverage table so progress can be inspected character by
+character and action by action. Keep unverified features out of editor claims.
