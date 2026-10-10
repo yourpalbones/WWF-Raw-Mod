@@ -1,0 +1,319 @@
+{
+  "schema_version": 1,
+  "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "scope": "Stock SNES WWF Raw finishers and Mega Moves; names are not proof of action coverage",
+  "characters": [
+    {
+      "character": "Bret Hart",
+      "selector": 1,
+      "finisher": {
+        "in_game_special_move_name": "Sharpshooter",
+        "name_source": "Original character-selection screen",
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "hold_escape_release_verified": false,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      },
+      "mega_move": {
+        "name": null,
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      }
+    },
+    {
+      "character": "Undertaker",
+      "selector": 2,
+      "finisher": {
+        "in_game_special_move_name": "Tombstone",
+        "name_source": "Original character-selection screen",
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "hold_escape_release_verified": null,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      },
+      "mega_move": {
+        "name": null,
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      }
+    },
+    {
+      "character": "Yokozuna",
+      "selector": 3,
+      "finisher": {
+        "in_game_special_move_name": "Banzai Drop",
+        "name_source": "Original character-selection screen",
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "hold_escape_release_verified": null,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      },
+      "mega_move": {
+        "name": null,
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      }
+    },
+    {
+      "character": "Bam Bam Bigelow",
+      "selector": 4,
+      "finisher": {
+        "in_game_special_move_name": "Headbutt off the top rope",
+        "name_source": "Original character-selection screen",
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "hold_escape_release_verified": null,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      },
+      "mega_move": {
+        "name": null,
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      }
+    },
+    {
+      "character": "Razor Ramon",
+      "selector": 5,
+      "finisher": {
+        "in_game_special_move_name": "Razor\u2019s Edge",
+        "name_source": "Original character-selection screen",
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "hold_escape_release_verified": null,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      },
+      "mega_move": {
+        "name": null,
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      }
+    },
+    {
+      "character": "Lex Luger",
+      "selector": 6,
+      "finisher": {
+        "in_game_special_move_name": "Running Forearm",
+        "name_source": "Original character-selection screen",
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "hold_escape_release_verified": null,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      },
+      "mega_move": {
+        "name": null,
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      }
+    },
+    {
+      "character": "Doink",
+      "selector": 7,
+      "finisher": {
+        "in_game_special_move_name": "Whoopee Cushion",
+        "name_source": "Original character-selection screen",
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "hold_escape_release_verified": null,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      },
+      "mega_move": {
+        "name": null,
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      }
+    },
+    {
+      "character": "Shawn Michaels",
+      "selector": 8,
+      "finisher": {
+        "in_game_special_move_name": "Slingshot Suplex",
+        "name_source": "Original character-selection screen",
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "hold_escape_release_verified": null,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      },
+      "mega_move": {
+        "name": null,
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      }
+    },
+    {
+      "character": "1-2-3 Kid",
+      "selector": 9,
+      "finisher": {
+        "in_game_special_move_name": "Moonsault",
+        "name_source": "Original character-selection screen",
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "hold_escape_release_verified": null,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      },
+      "mega_move": {
+        "name": null,
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      }
+    },
+    {
+      "character": "Diesel",
+      "selector": 10,
+      "finisher": {
+        "in_game_special_move_name": "Jackknife",
+        "name_source": "Original character-selection screen",
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "hold_escape_release_verified": null,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      },
+      "mega_move": {
+        "name": null,
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      }
+    },
+    {
+      "character": "Owen Hart",
+      "selector": 11,
+      "finisher": {
+        "in_game_special_move_name": "Sharpshooter",
+        "name_source": "Original character-selection screen",
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "hold_escape_release_verified": false,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      },
+      "mega_move": {
+        "name": null,
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      }
+    },
+    {
+      "character": "Luna Vachon",
+      "selector": 0,
+      "finisher": {
+        "in_game_special_move_name": "Luna Eclipse",
+        "name_source": "Original character-selection screen",
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "hold_escape_release_verified": null,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      },
+      "mega_move": {
+        "name": null,
+        "controls_verified": false,
+        "setup_conditions_verified": false,
+        "attacker_sequence_verified": false,
+        "defender_sequence_verified": false,
+        "recovery_verified": false,
+        "edited_gear_verified": false,
+        "evidence": []
+      }
+    }
+  ]
+}

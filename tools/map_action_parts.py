@@ -19,11 +19,11 @@ CASES = [
 ]
 
 
-def summarize(rom, root):
+def summarize(rom, root, cases=CASES, window=(30, 90)):
     if hashlib.sha256(rom).hexdigest() != ORIGINAL_HASH:
         raise ValueError("Requires the verified original ROM")
     results = []
-    for folder, label, actor in CASES:
+    for folder, label, actor in cases:
         trace = root / ("actions-" + folder)
         requests = [
             json.loads(line)
@@ -51,7 +51,10 @@ def summarize(rom, root):
                 fields[(event["actor_slot"], 0xC00000 | field["offset"])] = field[
                     "tile_id"
                 ]
-            if event["actor_slot"] == actor and 30 <= event["frame"] <= 90:
+            if (
+                event["actor_slot"] == actor
+                and window[0] <= event["frame"] <= window[1]
+            ):
                 selected.append(event)
         checked = 0
         for line in (trace / "tile_calls.jsonl").read_text().splitlines():
@@ -63,22 +66,22 @@ def summarize(rom, root):
         codec = validate(rom, trace)
         if codec["errors"]:
             raise ValueError("Native codec comparison failed")
+        run = json.loads((trace / "run.json").read_text())
         results.append(
             {
                 "case": folder,
                 "observed_action": label,
                 "actor_slot": actor,
-                "input_schedule": json.loads((trace / "run.json").read_text())[
-                    "presses"
-                ],
+                "input_schedule": run["presses"],
                 "input_schedule_fields": [
                     "controller_port",
                     "start_frame",
                     "button_id",
                     "duration",
                 ],
-                "sampled_gameplay_frames": 60,
-                "snapshot_interval": 3,
+                "sampled_gameplay_frames": len(list(trace.glob("frame-*.png"))),
+                "snapshot_interval": run["interval"],
+                "selection_window": list(window),
                 "native_part_requests_checked": len(requests),
                 "native_tile_fields_checked": checked,
                 "primary_part_ids_in_input_window": sorted(
@@ -94,7 +97,7 @@ def summarize(rom, root):
         )
     return {
         "original_sha256": ORIGINAL_HASH,
-        "scope": "Five controlled original-game cases; no edited outfit validation",
+        "scope": "Controlled original-game input cases; no edited outfit validation",
         "complete_animation_coverage": False,
         "cases": results,
     }
@@ -105,8 +108,20 @@ def main():
     parser.add_argument("rom", type=Path)
     parser.add_argument("trace_root", type=Path)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--case", action="append", help="folder_suffix:observed_action:actor_slot"
+    )
+    parser.add_argument("--window", nargs=2, type=int, default=[30, 90])
     args = parser.parse_args()
-    result = summarize(args.rom.read_bytes(), args.trace_root)
+    cases = CASES
+    if args.case:
+        cases = []
+        for case in args.case:
+            folder, label, actor = case.split(":")
+            cases.append((folder, label, int(actor)))
+    if args.window[0] < 1 or args.window[1] < args.window[0]:
+        raise ValueError("Invalid selection window")
+    result = summarize(args.rom.read_bytes(), args.trace_root, cases, args.window)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2) + "\n")
     print(f"Mapped {len(result['cases'])} controlled cases")
