@@ -1,0 +1,61 @@
+{
+  "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "rom_unchanged": true,
+  "tests_passed": 21,
+  "gameplay_trace": {
+    "complete_blocks": 0,
+    "partial_blocks_skipped": 0,
+    "tile_events": 717,
+    "distinct_tile_sources": 563,
+    "byte_identical_tile_encodings": 717,
+    "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+    "errors": []
+  },
+  "cold_boot_trace": {
+    "complete_blocks": 44,
+    "partial_blocks_skipped": 24,
+    "tile_events": 154,
+    "distinct_tile_sources": 128,
+    "byte_identical_tile_encodings": 154,
+    "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+    "errors": []
+  },
+  "partial_return_check": {
+    "complete_blocks": 4,
+    "partial_blocks_skipped": 24,
+    "tile_events": 0,
+    "distinct_tile_sources": 0,
+    "byte_identical_tile_encodings": 0,
+    "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+    "errors": []
+  },
+  "sprites": {
+    "Bret Hart": {
+      "size": [
+        30,
+        81
+      ],
+      "oam": [
+        38,
+        54
+      ],
+      "palette": 0
+    },
+    "Undertaker": {
+      "size": [
+        36,
+        80
+      ],
+      "oam": [
+        20,
+        34
+      ],
+      "palette": 1
+    }
+  },
+  "limitations": [
+    "Full animation inventories and source/frame tables are incomplete.",
+    "Modified sprites have not yet been reinserted or played.",
+    "Cloud chat image delivery is unresolved."
+  ]
+}

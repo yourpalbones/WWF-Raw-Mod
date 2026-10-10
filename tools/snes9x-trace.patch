@@ -1,0 +1,218 @@
+diff --git a/cpuexec.cpp b/cpuexec.cpp
+index 0494810..bee24aa 100644
+--- a/cpuexec.cpp
++++ b/cpuexec.cpp
+@@ -19,6 +19,103 @@
+ #include "missing.h"
+ #endif
+ 
++
++// WWF Raw research instrumentation: snapshots only; never writes game memory.
++#include <cstdio>
++#include <cstdlib>
++unsigned WWFFrame = 0;
++static unsigned WWFSource = 0, WWFDestination = 0, WWFReturn = 0, WWFLength = 0;
++static unsigned WWFDecodeNumber = 0;
++static unsigned WWFPointer(unsigned p) {
++    p = (Registers.D.W + p) & 0x1fff;
++    return Memory.RAM[p] | (Memory.RAM[p + 1] << 8) | (Memory.RAM[p + 2] << 16);
++}
++
++void WWFTraceWrite(uint32 Address) {
++    const char *dir = std::getenv("WWF_TRACE_DIR");
++    if (!dir) return;
++    static unsigned frame = ~0U, sites[128], count = 0;
++    if (WWFFrame != frame) {frame = WWFFrame; count = 0;}
++    unsigned site = (Registers.PBPC & 0xffffff) | ((Address & 0x800) << 14);
++    for (unsigned i = 0; i < count; ++i) if (sites[i] == site) return;
++    if (count >= 128) return;
++    sites[count++] = site;
++    char path[1024];
++    std::snprintf(path, sizeof(path), "%s/writes.jsonl", dir);
++    FILE *f = std::fopen(path, "a");
++    if (f) {
++        std::fprintf(f, "{\"frame\":%u,\"pc\":%u,\"address\":%u,\"a\":%u,\"x\":%u,\"y\":%u,\"db\":%u,\"d\":%u}\n", WWFFrame, Registers.PBPC & 0xffffff, Address, Registers.A.W, Registers.X.W, Registers.Y.W, Registers.DB, Registers.D.W);
++        std::fclose(f);
++    }
++    std::snprintf(path, sizeof(path), "%s/assets/dp-%06u-%06x-%06x.bin", dir, WWFFrame, Registers.PBPC & 0xffffff, Address & ~0x7ff);
++    f = std::fopen(path, "wb");
++    if (f) {std::fwrite(Memory.RAM + (Registers.D.W & 0x1fff), 1, 256, f);std::fclose(f);}
++}
++
++
++static unsigned WWFTileSource = 0, WWFTileDestination = 0, WWFTileReturn = 0, WWFTileNumber = 0, WWFTileID = 0;
++static unsigned WWFStackReturn() {
++    unsigned sp = Registers.S.W;
++    return (((Memory.RAM[(sp + 1) & 0x1fff] | (Memory.RAM[(sp + 2) & 0x1fff] << 8)) + 1) & 0xffff) | (Memory.RAM[(sp + 3) & 0x1fff] << 16);
++}
++static void WWFTraceTile(unsigned pc, const char *dir) {
++    if (pc == 0xacf959) WWFTileID = Registers.A.W;
++    if (WWFTileReturn && pc == WWFTileReturn) {
++        char path[1024];
++        std::snprintf(path, sizeof(path), "%s/assets/tile-%06u-%06x.bin", dir, WWFTileNumber, WWFTileSource);
++        FILE *f = std::fopen(path, "wb");
++        if (f) {std::fwrite(Memory.RAM + WWFTileDestination, 1, 32, f);std::fclose(f);}
++        std::snprintf(path, sizeof(path), "%s/tiles.jsonl", dir);
++        f = std::fopen(path, "a");
++        if (f) {
++            std::fprintf(f, "{\"event\":%u,\"frame\":%u,\"source\":%u,\"destination\":%u,\"tile_id\":%u}\n", WWFTileNumber, WWFFrame, WWFTileSource, 0x7e0000 + WWFTileDestination, WWFTileID);
++            std::fclose(f);
++        }
++        WWFTileReturn = 0;
++    }
++    if (pc == 0xacf775) {
++        WWFTileSource = WWFPointer(0xdb);
++        WWFTileDestination = Registers.Y.W;
++        WWFTileReturn = WWFStackReturn();
++        ++WWFTileNumber;
++    }
++}
++
++static void WWFTraceCPU() {
++    const char *dir = std::getenv("WWF_TRACE_DIR");
++    if (!dir) return;
++    unsigned pc = Registers.PBPC & 0xffffff;
++    WWFTraceTile(pc, dir);
++    if (WWFReturn && pc == WWFReturn) {
++        if ((WWFDestination >> 16) == 0x7e || (WWFDestination >> 16) == 0x7f) {
++            char path[1024];
++            std::snprintf(path, sizeof(path), "%s/assets/decoded-%06u-%06x.bin", dir, WWFDecodeNumber, WWFSource);
++            FILE *f = std::fopen(path, "wb");
++            unsigned dest = WWFDestination - 0x7e0000;
++            if (f) {
++                if (dest + WWFLength <= 0x20000) std::fwrite(Memory.RAM + dest, 1, WWFLength, f);
++                std::fclose(f);
++            }
++            std::snprintf(path, sizeof(path), "%s/decodes.jsonl", dir);
++            f = std::fopen(path, "a");
++            if (f) {
++                std::fprintf(f, "{\"event\":%u,\"frame\":%u,\"source\":%u,\"destination\":%u,\"length\":%u,\"partial\":%u}\n", WWFDecodeNumber, WWFFrame, WWFSource, WWFDestination, WWFLength, unsigned(CheckCarry()));
++                std::fclose(f);
++            }
++        }
++        WWFReturn = 0;
++    }
++    if (pc == 0xabf5ae) {
++        WWFSource = WWFPointer(0x7c);
++        WWFDestination = WWFPointer(0x80);
++        unsigned off = WWFSource & 0x3fffff;
++        WWFLength = Memory.ROM[off] | (Memory.ROM[off + 1] << 8);
++        unsigned sp = Registers.S.W;
++        WWFReturn = (((Memory.RAM[(sp + 1) & 0x1fff] | (Memory.RAM[(sp + 2) & 0x1fff] << 8)) + 1) & 0xffff) | (Memory.RAM[(sp + 3) & 0x1fff] << 16);
++        ++WWFDecodeNumber;
++    }
++}
++
+ static inline void S9xReschedule (void);
+ 
+ void S9xMainLoop (void)
+@@ -136,6 +233,7 @@ void S9xMainLoop (void)
+ 			break;
+ 		}
+ 
++		WWFTraceCPU();
+ 		uint8				Op;
+ 		struct	SOpcodes	*Opcodes;
+ 
+diff --git a/dma.cpp b/dma.cpp
+index 95cb1a9..1feaa70 100644
+--- a/dma.cpp
++++ b/dma.cpp
+@@ -7,6 +7,9 @@
+ #include "snes9x.h"
+ #include "memmap.h"
+ #include "dma.h"
++#include <cstdio>
++#include <cstdlib>
++extern unsigned WWFFrame;
+ #include "apu/apu.h"
+ #include "sdd1.h"
+ #include "spc7110.h"
+@@ -55,6 +58,17 @@ bool8 S9xDoDMA (uint8 Channel)
+ 	CPU.CurrentDMAorHDMAChannel = Channel;
+ 
+     SDMA	*d = &DMA[Channel];
++    const char *wwf_dir = std::getenv("WWF_TRACE_DIR");
++    if (wwf_dir && !d->ReverseTransfer && (d->BAddress == 0x18 || d->BAddress == 0x19)) {
++        char path[1024];
++        std::snprintf(path, sizeof(path), "%s/dma.jsonl", wwf_dir);
++        FILE *log = std::fopen(path, "a");
++        if (log) {
++            std::fprintf(log, "{\"frame\":%u,\"pc\":%u,\"source\":%u,\"length\":%u,\"vram_word\":%u,\"mode\":%u,\"fixed\":%u,\"decrement\":%u}\n", WWFFrame, Registers.PBPC & 0xffffff, (d->ABank << 16) | d->AAddress, d->TransferBytes ? d->TransferBytes : 65536, PPU.VMA.Address, d->TransferMode, d->AAddressFixed, d->AAddressDecrement);
++            std::fclose(log);
++        }
++    }
++
+ 
+ 	// Check invalid DMA first
+ 	if ((d->ABank == 0x7E || d->ABank == 0x7F) && d->BAddress == 0x80 && !d->ReverseTransfer)
+diff --git a/getset.h b/getset.h
+index bd3b365..816b847 100644
+--- a/getset.h
++++ b/getset.h
+@@ -337,8 +337,10 @@ inline uint16 S9xGetWord (uint32 Address, enum s9xwrap_t w = WRAP_NONE)
+ 	}
+ }
+ 
++extern void WWFTraceWrite(uint32 Address);
+ inline void S9xSetByte (uint8 Byte, uint32 Address)
+ {
++    if (Address >= 0x7e2000 && Address < 0x7e3000) WWFTraceWrite(Address);
+ 	int		block = (Address & 0xffffff) >> MEMMAP_SHIFT;
+ 	uint8	*SetAddress = Memory.WriteMap[block];
+ 	int32	speed = memory_speed(Address);
+@@ -450,6 +452,7 @@ inline void S9xSetByte (uint8 Byte, uint32 Address)
+ 
+ inline void S9xSetWord (uint16 Word, uint32 Address, enum s9xwrap_t w = WRAP_NONE, enum s9xwriteorder_t o = WRITE_01)
+ {
++    if (Address >= 0x7e2000 && Address < 0x7e3000) WWFTraceWrite(Address);
+ 	uint32	mask = MEMMAP_MASK & (w == WRAP_PAGE ? 0xff : (w == WRAP_BANK ? 0xffff : 0xffffff));
+ 	if ((Address & mask) == mask)
+ 	{
+diff --git a/libretro/libretro.cpp b/libretro/libretro.cpp
+index b7aaace..3a72b87 100644
+--- a/libretro/libretro.cpp
++++ b/libretro/libretro.cpp
+@@ -2246,8 +2246,10 @@ static void report_buttons()
+     }
+ }
+ 
++extern unsigned WWFFrame;
+ void retro_run()
+ {
++    ++WWFFrame;
+     static uint16 height = PPU.ScreenHeight;
+     bool updated = false;
+     if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE_UPDATE, &updated) && updated)
+@@ -2341,6 +2343,15 @@ void* retro_get_memory_data(unsigned type)
+         case RETRO_MEMORY_VIDEO_RAM:
+             data = Memory.VRAM;
+             break;
++        case 0x10010:
++            data = PPU.CGDATA;
++            break;
++        case 0x10011:
++            data = PPU.OAMData;
++            break;
++        case 0x10012:
++            data = Memory.FillRAM;
++            break;
+         case RETRO_MEMORY_ROM:
+             data = Memory.ROM;
+             break;
+@@ -2375,6 +2386,15 @@ size_t retro_get_memory_size(unsigned type)
+         case RETRO_MEMORY_VIDEO_RAM:
+             size = 64 * 1024;
+             break;
++        case 0x10010:
++            size = 512;
++            break;
++        case 0x10011:
++            size = 544;
++            break;
++        case 0x10012:
++            size = 32768;
++            break;
+         case RETRO_MEMORY_ROM:
+             size = Memory.CalculatedSize;
+             break;

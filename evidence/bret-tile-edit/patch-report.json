@@ -1,0 +1,8 @@
+{
+  "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "offset": "0x220152",
+  "packet_size": 13,
+  "changed_rom_bytes": 13,
+  "changed_tile_pixels": 16,
+  "checksum": "0x3860"
+}

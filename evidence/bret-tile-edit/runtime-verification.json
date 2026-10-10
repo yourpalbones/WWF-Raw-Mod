@@ -1,0 +1,14 @@
+{
+  "frame": 2940,
+  "expected_tile_loaded": true,
+  "changed_vram_bytes": 9,
+  "changed_screen_pixels": 5,
+  "screen_change_bounds": [
+    73,
+    109,
+    80,
+    111
+  ],
+  "oam_and_palette_unchanged": true,
+  "original_rom_unchanged": true
+}
