@@ -33,13 +33,17 @@
       },
       "mega_move": {
         "name": null,
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
-        "recovery_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/finisher-research/bret-mega.md",
+          "evidence/finisher-research/bret-mega.gif",
+          "evidence/finisher-research/bret-mega-mapping.json"
+        ],
         "reported_sequence_button_ids": [
           [
             7
@@ -56,8 +60,100 @@
           "upper turnbuckle",
           "opponent down"
         ],
-        "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
-        "sequence_timing_verified": false
+        "reported_modifier": "L/R held in guide; native replays verified either shoulder button or both in the captured setup",
+        "sequence_timing_verified": true,
+        "complete_variant_coverage": false,
+        "observed_description": "Upper-turnbuckle somersault across the ring with impact on a downed opponent",
+        "verified_modifier_button_options": [
+          [
+            10
+          ],
+          [
+            11
+          ],
+          [
+            10,
+            11
+          ]
+        ],
+        "verified_input_schedule": [
+          [
+            1,
+            10,
+            100
+          ],
+          [
+            1,
+            11,
+            100
+          ],
+          [
+            5,
+            7,
+            4
+          ],
+          [
+            15,
+            7,
+            4
+          ],
+          [
+            25,
+            7,
+            4
+          ],
+          [
+            35,
+            4,
+            4
+          ],
+          [
+            41,
+            0,
+            8
+          ]
+        ],
+        "input_schedule_fields": [
+          "start_frame",
+          "button_id",
+          "duration"
+        ],
+        "warmup_direction_tap_included": true,
+        "shared_primary_part_ids": [
+          1872,
+          1875,
+          1878,
+          1881,
+          1884,
+          1887,
+          1890,
+          1893,
+          1896,
+          1899,
+          1902,
+          1905,
+          1908,
+          1911,
+          1914
+        ],
+        "shared_secondary_part_ids": [
+          33,
+          42,
+          1533,
+          1536,
+          1539,
+          1542,
+          1545,
+          1548,
+          1551,
+          1554,
+          1557,
+          1560,
+          1563,
+          1566,
+          1569,
+          1572
+        ]
       }
     },
     {

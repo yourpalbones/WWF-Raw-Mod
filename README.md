@@ -31,7 +31,10 @@ requests. The capture frontend now supports both controllers.
 all twelve wrestlers separately; reproducible attack/knockdown setup captures
 are available. Bret's [Sharpshooter](evidence/finisher-research/sharpshooter.md)
 now has verified entry, hold, automatic release and recovery captures; other
-finishers, Mega Moves and edited-gear coverage remain unfinished.
+finishers and edited-gear coverage remain unfinished. Bret's
+[Mega Move](evidence/finisher-research/bret-mega.md) is also verified, including
+new shared frame references beyond the initial directory inventories. Other
+wrestlers' Mega Moves remain unfinished.
 
 No ROM, raw extracted game data, emulator binary, or patched ROM is included.
 The evidence package includes screenshots and a small IPS patch.

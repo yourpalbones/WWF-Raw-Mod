@@ -1,0 +1,2900 @@
+{
+  "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "scope": "Controlled original-game input cases; no edited outfit validation",
+  "complete_animation_coverage": false,
+  "cases": [
+    {
+      "case": "bret-mega-released-lr",
+      "observed_action": "Bret turnbuckle Mega Move entry impact and recovery",
+      "actor_slot": 0,
+      "input_schedule": [
+        [
+          0,
+          5,
+          7,
+          4
+        ],
+        [
+          0,
+          15,
+          7,
+          4
+        ],
+        [
+          0,
+          25,
+          7,
+          4
+        ],
+        [
+          0,
+          35,
+          4,
+          4
+        ],
+        [
+          0,
+          41,
+          0,
+          8
+        ],
+        [
+          0,
+          1,
+          10,
+          100
+        ],
+        [
+          0,
+          1,
+          11,
+          100
+        ]
+      ],
+      "input_schedule_fields": [
+        "controller_port",
+        "start_frame",
+        "button_id",
+        "duration"
+      ],
+      "sampled_gameplay_frames": 120,
+      "snapshot_interval": 3,
+      "selection_window": [
+        1,
+        360
+      ],
+      "native_part_requests_checked": 123,
+      "native_tile_fields_checked": 1687,
+      "primary_part_ids_in_input_window": [
+        6,
+        471,
+        1116,
+        1119,
+        1122,
+        1125,
+        1872,
+        1875,
+        1878,
+        1881,
+        1884,
+        1887,
+        1890,
+        1893,
+        1896,
+        1899,
+        1902,
+        1905,
+        1908,
+        1911,
+        1914
+      ],
+      "secondary_part_ids_in_input_window": [
+        9,
+        24,
+        33,
+        42,
+        114,
+        981,
+        984,
+        987,
+        1533,
+        1536,
+        1539,
+        1542,
+        1545,
+        1548,
+        1551,
+        1554,
+        1557,
+        1560,
+        1563,
+        1566,
+        1569,
+        1572
+      ],
+      "observed_part_request_sequence": [
+        {
+          "frame": 41,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1872,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869184,
+          "profile_pointer": 13134140,
+          "d": 0
+        },
+        {
+          "frame": 41,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1533,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308265,
+          "profile_pointer": 13134140,
+          "d": 0
+        },
+        {
+          "frame": 41,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 42,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14304799,
+          "profile_pointer": 13134140,
+          "d": 0
+        },
+        {
+          "frame": 47,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1875,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869227,
+          "profile_pointer": 13134154,
+          "d": 0
+        },
+        {
+          "frame": 47,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1536,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308317,
+          "profile_pointer": 13134154,
+          "d": 0
+        },
+        {
+          "frame": 53,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1878,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869282,
+          "profile_pointer": 13134164,
+          "d": 0
+        },
+        {
+          "frame": 53,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1539,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308358,
+          "profile_pointer": 13134164,
+          "d": 0
+        },
+        {
+          "frame": 59,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1881,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869321,
+          "profile_pointer": 13134174,
+          "d": 0
+        },
+        {
+          "frame": 59,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1542,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308397,
+          "profile_pointer": 13134174,
+          "d": 0
+        },
+        {
+          "frame": 65,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1884,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869359,
+          "profile_pointer": 13134184,
+          "d": 0
+        },
+        {
+          "frame": 65,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1545,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308427,
+          "profile_pointer": 13134184,
+          "d": 0
+        },
+        {
+          "frame": 71,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1887,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869402,
+          "profile_pointer": 13134194,
+          "d": 0
+        },
+        {
+          "frame": 71,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1548,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308456,
+          "profile_pointer": 13134194,
+          "d": 0
+        },
+        {
+          "frame": 77,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1890,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869437,
+          "profile_pointer": 13134204,
+          "d": 0
+        },
+        {
+          "frame": 77,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1551,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308493,
+          "profile_pointer": 13134204,
+          "d": 0
+        },
+        {
+          "frame": 83,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1893,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869481,
+          "profile_pointer": 13134214,
+          "d": 0
+        },
+        {
+          "frame": 83,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1554,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308520,
+          "profile_pointer": 13134214,
+          "d": 0
+        },
+        {
+          "frame": 89,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1884,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869359,
+          "profile_pointer": 13134184,
+          "d": 0
+        },
+        {
+          "frame": 89,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1545,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308427,
+          "profile_pointer": 13134184,
+          "d": 0
+        },
+        {
+          "frame": 95,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1896,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869514,
+          "profile_pointer": 13134224,
+          "d": 0
+        },
+        {
+          "frame": 95,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1557,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308556,
+          "profile_pointer": 13134224,
+          "d": 0
+        },
+        {
+          "frame": 101,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1899,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869558,
+          "profile_pointer": 13134234,
+          "d": 0
+        },
+        {
+          "frame": 101,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1560,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308597,
+          "profile_pointer": 13134234,
+          "d": 0
+        },
+        {
+          "frame": 107,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1902,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869597,
+          "profile_pointer": 13134244,
+          "d": 0
+        },
+        {
+          "frame": 107,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1563,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308633,
+          "profile_pointer": 13134244,
+          "d": 0
+        },
+        {
+          "frame": 107,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 33,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14304755,
+          "profile_pointer": 13134244,
+          "d": 0
+        },
+        {
+          "frame": 114,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1905,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869645,
+          "profile_pointer": 13134258,
+          "d": 0
+        },
+        {
+          "frame": 114,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1908,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869667,
+          "profile_pointer": 13134258,
+          "d": 0
+        },
+        {
+          "frame": 114,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1566,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308665,
+          "profile_pointer": 13134258,
+          "d": 0
+        },
+        {
+          "frame": 114,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 33,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14304755,
+          "profile_pointer": 13134258,
+          "d": 0
+        },
+        {
+          "frame": 120,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1911,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869704,
+          "profile_pointer": 13134278,
+          "d": 0
+        },
+        {
+          "frame": 120,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1569,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308710,
+          "profile_pointer": 13134278,
+          "d": 0
+        },
+        {
+          "frame": 120,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 33,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14304755,
+          "profile_pointer": 13134278,
+          "d": 0
+        },
+        {
+          "frame": 126,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1914,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869753,
+          "profile_pointer": 13134292,
+          "d": 0
+        },
+        {
+          "frame": 126,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1572,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308740,
+          "profile_pointer": 13134292,
+          "d": 0
+        },
+        {
+          "frame": 126,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 33,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14304755,
+          "profile_pointer": 13134292,
+          "d": 0
+        },
+        {
+          "frame": 132,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1122,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12940891,
+          "profile_pointer": 13130024,
+          "d": 0
+        },
+        {
+          "frame": 132,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1125,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12940930,
+          "profile_pointer": 13130024,
+          "d": 0
+        },
+        {
+          "frame": 132,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 987,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14330967,
+          "profile_pointer": 13130024,
+          "d": 0
+        },
+        {
+          "frame": 132,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14304667,
+          "profile_pointer": 13130024,
+          "d": 0
+        },
+        {
+          "frame": 139,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1116,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12940813,
+          "profile_pointer": 13130004,
+          "d": 0
+        },
+        {
+          "frame": 139,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1119,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12940835,
+          "profile_pointer": 13130004,
+          "d": 0
+        },
+        {
+          "frame": 139,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 984,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14355423,
+          "profile_pointer": 13130004,
+          "d": 0
+        },
+        {
+          "frame": 139,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14304667,
+          "profile_pointer": 13130004,
+          "d": 0
+        },
+        {
+          "frame": 145,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 471,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12934294,
+          "profile_pointer": 13129988,
+          "d": 0
+        },
+        {
+          "frame": 145,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 981,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14355369,
+          "profile_pointer": 13129988,
+          "d": 0
+        },
+        {
+          "frame": 145,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14304667,
+          "profile_pointer": 13129988,
+          "d": 0
+        },
+        {
+          "frame": 151,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 6,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12927738,
+          "profile_pointer": 13125014,
+          "d": 0
+        },
+        {
+          "frame": 151,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 114,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14353139,
+          "profile_pointer": 13125014,
+          "d": 0
+        },
+        {
+          "frame": 151,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 24,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14304719,
+          "profile_pointer": 13125014,
+          "d": 0
+        }
+      ],
+      "codec_verification": {
+        "complete_blocks": 0,
+        "partial_blocks_skipped": 0,
+        "tile_events": 1275,
+        "distinct_tile_sources": 651,
+        "byte_identical_tile_encodings": 1275,
+        "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+        "errors": []
+      },
+      "complete_action_variant_coverage": false
+    },
+    {
+      "case": "bret-mega-released-lr",
+      "observed_action": "Undertaker receiving Bret Mega Move",
+      "actor_slot": 2,
+      "input_schedule": [
+        [
+          0,
+          5,
+          7,
+          4
+        ],
+        [
+          0,
+          15,
+          7,
+          4
+        ],
+        [
+          0,
+          25,
+          7,
+          4
+        ],
+        [
+          0,
+          35,
+          4,
+          4
+        ],
+        [
+          0,
+          41,
+          0,
+          8
+        ],
+        [
+          0,
+          1,
+          10,
+          100
+        ],
+        [
+          0,
+          1,
+          11,
+          100
+        ]
+      ],
+      "input_schedule_fields": [
+        "controller_port",
+        "start_frame",
+        "button_id",
+        "duration"
+      ],
+      "sampled_gameplay_frames": 120,
+      "snapshot_interval": 3,
+      "selection_window": [
+        1,
+        360
+      ],
+      "native_part_requests_checked": 123,
+      "native_tile_fields_checked": 1687,
+      "primary_part_ids_in_input_window": [
+        45,
+        60,
+        66
+      ],
+      "secondary_part_ids_in_input_window": [
+        81,
+        216,
+        231,
+        237
+      ],
+      "observed_part_request_sequence": [
+        {
+          "frame": 115,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 45,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 13024583,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 115,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 216,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 14426892,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 120,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 60,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 13024789,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 120,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 231,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 14427144,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 126,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 66,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 13024868,
+          "profile_pointer": 13125590,
+          "d": 0
+        },
+        {
+          "frame": 126,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 237,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 14427239,
+          "profile_pointer": 13125590,
+          "d": 0
+        },
+        {
+          "frame": 126,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 81,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 14304997,
+          "profile_pointer": 13125590,
+          "d": 0
+        },
+        {
+          "frame": 132,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 60,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 13024789,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 132,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 231,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 14427144,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 140,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 45,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 13024583,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 140,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 216,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 14426892,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 152,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 45,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 13024583,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 152,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 216,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 14426892,
+          "profile_pointer": 13125500,
+          "d": 0
+        }
+      ],
+      "codec_verification": {
+        "complete_blocks": 0,
+        "partial_blocks_skipped": 0,
+        "tile_events": 1275,
+        "distinct_tile_sources": 651,
+        "byte_identical_tile_encodings": 1275,
+        "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+        "errors": []
+      },
+      "complete_action_variant_coverage": false
+    },
+    {
+      "case": "bret-mega-released-l",
+      "observed_action": "Bret Mega Move with L modifier",
+      "actor_slot": 0,
+      "input_schedule": [
+        [
+          0,
+          5,
+          7,
+          4
+        ],
+        [
+          0,
+          15,
+          7,
+          4
+        ],
+        [
+          0,
+          25,
+          7,
+          4
+        ],
+        [
+          0,
+          35,
+          4,
+          4
+        ],
+        [
+          0,
+          41,
+          0,
+          8
+        ],
+        [
+          0,
+          1,
+          10,
+          100
+        ]
+      ],
+      "input_schedule_fields": [
+        "controller_port",
+        "start_frame",
+        "button_id",
+        "duration"
+      ],
+      "sampled_gameplay_frames": 120,
+      "snapshot_interval": 3,
+      "selection_window": [
+        1,
+        360
+      ],
+      "native_part_requests_checked": 123,
+      "native_tile_fields_checked": 1687,
+      "primary_part_ids_in_input_window": [
+        6,
+        471,
+        1116,
+        1119,
+        1122,
+        1125,
+        1872,
+        1875,
+        1878,
+        1881,
+        1884,
+        1887,
+        1890,
+        1893,
+        1896,
+        1899,
+        1902,
+        1905,
+        1908,
+        1911,
+        1914
+      ],
+      "secondary_part_ids_in_input_window": [
+        9,
+        24,
+        33,
+        42,
+        114,
+        981,
+        984,
+        987,
+        1533,
+        1536,
+        1539,
+        1542,
+        1545,
+        1548,
+        1551,
+        1554,
+        1557,
+        1560,
+        1563,
+        1566,
+        1569,
+        1572
+      ],
+      "observed_part_request_sequence": [
+        {
+          "frame": 41,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1872,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869184,
+          "profile_pointer": 13134140,
+          "d": 0
+        },
+        {
+          "frame": 41,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1533,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308265,
+          "profile_pointer": 13134140,
+          "d": 0
+        },
+        {
+          "frame": 41,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 42,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14304799,
+          "profile_pointer": 13134140,
+          "d": 0
+        },
+        {
+          "frame": 47,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1875,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869227,
+          "profile_pointer": 13134154,
+          "d": 0
+        },
+        {
+          "frame": 47,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1536,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308317,
+          "profile_pointer": 13134154,
+          "d": 0
+        },
+        {
+          "frame": 53,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1878,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869282,
+          "profile_pointer": 13134164,
+          "d": 0
+        },
+        {
+          "frame": 53,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1539,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308358,
+          "profile_pointer": 13134164,
+          "d": 0
+        },
+        {
+          "frame": 59,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1881,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869321,
+          "profile_pointer": 13134174,
+          "d": 0
+        },
+        {
+          "frame": 59,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1542,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308397,
+          "profile_pointer": 13134174,
+          "d": 0
+        },
+        {
+          "frame": 65,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1884,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869359,
+          "profile_pointer": 13134184,
+          "d": 0
+        },
+        {
+          "frame": 65,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1545,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308427,
+          "profile_pointer": 13134184,
+          "d": 0
+        },
+        {
+          "frame": 71,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1887,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869402,
+          "profile_pointer": 13134194,
+          "d": 0
+        },
+        {
+          "frame": 71,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1548,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308456,
+          "profile_pointer": 13134194,
+          "d": 0
+        },
+        {
+          "frame": 77,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1890,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869437,
+          "profile_pointer": 13134204,
+          "d": 0
+        },
+        {
+          "frame": 77,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1551,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308493,
+          "profile_pointer": 13134204,
+          "d": 0
+        },
+        {
+          "frame": 83,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1893,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869481,
+          "profile_pointer": 13134214,
+          "d": 0
+        },
+        {
+          "frame": 83,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1554,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308520,
+          "profile_pointer": 13134214,
+          "d": 0
+        },
+        {
+          "frame": 89,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1884,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869359,
+          "profile_pointer": 13134184,
+          "d": 0
+        },
+        {
+          "frame": 89,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1545,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308427,
+          "profile_pointer": 13134184,
+          "d": 0
+        },
+        {
+          "frame": 95,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1896,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869514,
+          "profile_pointer": 13134224,
+          "d": 0
+        },
+        {
+          "frame": 95,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1557,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308556,
+          "profile_pointer": 13134224,
+          "d": 0
+        },
+        {
+          "frame": 101,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1899,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869558,
+          "profile_pointer": 13134234,
+          "d": 0
+        },
+        {
+          "frame": 101,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1560,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308597,
+          "profile_pointer": 13134234,
+          "d": 0
+        },
+        {
+          "frame": 107,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1902,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869597,
+          "profile_pointer": 13134244,
+          "d": 0
+        },
+        {
+          "frame": 107,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1563,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308633,
+          "profile_pointer": 13134244,
+          "d": 0
+        },
+        {
+          "frame": 107,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 33,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14304755,
+          "profile_pointer": 13134244,
+          "d": 0
+        },
+        {
+          "frame": 114,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1905,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869645,
+          "profile_pointer": 13134258,
+          "d": 0
+        },
+        {
+          "frame": 114,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1908,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869667,
+          "profile_pointer": 13134258,
+          "d": 0
+        },
+        {
+          "frame": 114,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1566,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308665,
+          "profile_pointer": 13134258,
+          "d": 0
+        },
+        {
+          "frame": 114,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 33,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14304755,
+          "profile_pointer": 13134258,
+          "d": 0
+        },
+        {
+          "frame": 120,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1911,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869704,
+          "profile_pointer": 13134278,
+          "d": 0
+        },
+        {
+          "frame": 120,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1569,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308710,
+          "profile_pointer": 13134278,
+          "d": 0
+        },
+        {
+          "frame": 120,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 33,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14304755,
+          "profile_pointer": 13134278,
+          "d": 0
+        },
+        {
+          "frame": 126,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1914,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869753,
+          "profile_pointer": 13134292,
+          "d": 0
+        },
+        {
+          "frame": 126,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1572,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308740,
+          "profile_pointer": 13134292,
+          "d": 0
+        },
+        {
+          "frame": 126,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 33,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14304755,
+          "profile_pointer": 13134292,
+          "d": 0
+        },
+        {
+          "frame": 132,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1122,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12940891,
+          "profile_pointer": 13130024,
+          "d": 0
+        },
+        {
+          "frame": 132,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1125,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12940930,
+          "profile_pointer": 13130024,
+          "d": 0
+        },
+        {
+          "frame": 132,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 987,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14330967,
+          "profile_pointer": 13130024,
+          "d": 0
+        },
+        {
+          "frame": 132,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14304667,
+          "profile_pointer": 13130024,
+          "d": 0
+        },
+        {
+          "frame": 139,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1116,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12940813,
+          "profile_pointer": 13130004,
+          "d": 0
+        },
+        {
+          "frame": 139,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1119,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12940835,
+          "profile_pointer": 13130004,
+          "d": 0
+        },
+        {
+          "frame": 139,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 984,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14355423,
+          "profile_pointer": 13130004,
+          "d": 0
+        },
+        {
+          "frame": 139,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14304667,
+          "profile_pointer": 13130004,
+          "d": 0
+        },
+        {
+          "frame": 145,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 471,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12934294,
+          "profile_pointer": 13129988,
+          "d": 0
+        },
+        {
+          "frame": 145,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 981,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14355369,
+          "profile_pointer": 13129988,
+          "d": 0
+        },
+        {
+          "frame": 145,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14304667,
+          "profile_pointer": 13129988,
+          "d": 0
+        },
+        {
+          "frame": 151,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 6,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12927738,
+          "profile_pointer": 13125014,
+          "d": 0
+        },
+        {
+          "frame": 151,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 114,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14353139,
+          "profile_pointer": 13125014,
+          "d": 0
+        },
+        {
+          "frame": 151,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 24,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14304719,
+          "profile_pointer": 13125014,
+          "d": 0
+        }
+      ],
+      "codec_verification": {
+        "complete_blocks": 0,
+        "partial_blocks_skipped": 0,
+        "tile_events": 1275,
+        "distinct_tile_sources": 651,
+        "byte_identical_tile_encodings": 1275,
+        "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+        "errors": []
+      },
+      "complete_action_variant_coverage": false
+    },
+    {
+      "case": "bret-mega-released-r",
+      "observed_action": "Bret Mega Move with R modifier",
+      "actor_slot": 0,
+      "input_schedule": [
+        [
+          0,
+          5,
+          7,
+          4
+        ],
+        [
+          0,
+          15,
+          7,
+          4
+        ],
+        [
+          0,
+          25,
+          7,
+          4
+        ],
+        [
+          0,
+          35,
+          4,
+          4
+        ],
+        [
+          0,
+          41,
+          0,
+          8
+        ],
+        [
+          0,
+          1,
+          11,
+          100
+        ]
+      ],
+      "input_schedule_fields": [
+        "controller_port",
+        "start_frame",
+        "button_id",
+        "duration"
+      ],
+      "sampled_gameplay_frames": 120,
+      "snapshot_interval": 3,
+      "selection_window": [
+        1,
+        360
+      ],
+      "native_part_requests_checked": 123,
+      "native_tile_fields_checked": 1687,
+      "primary_part_ids_in_input_window": [
+        6,
+        471,
+        1116,
+        1119,
+        1122,
+        1125,
+        1872,
+        1875,
+        1878,
+        1881,
+        1884,
+        1887,
+        1890,
+        1893,
+        1896,
+        1899,
+        1902,
+        1905,
+        1908,
+        1911,
+        1914
+      ],
+      "secondary_part_ids_in_input_window": [
+        9,
+        24,
+        33,
+        42,
+        114,
+        981,
+        984,
+        987,
+        1533,
+        1536,
+        1539,
+        1542,
+        1545,
+        1548,
+        1551,
+        1554,
+        1557,
+        1560,
+        1563,
+        1566,
+        1569,
+        1572
+      ],
+      "observed_part_request_sequence": [
+        {
+          "frame": 41,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1872,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869184,
+          "profile_pointer": 13134140,
+          "d": 0
+        },
+        {
+          "frame": 41,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1533,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308265,
+          "profile_pointer": 13134140,
+          "d": 0
+        },
+        {
+          "frame": 41,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 42,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14304799,
+          "profile_pointer": 13134140,
+          "d": 0
+        },
+        {
+          "frame": 47,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1875,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869227,
+          "profile_pointer": 13134154,
+          "d": 0
+        },
+        {
+          "frame": 47,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1536,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308317,
+          "profile_pointer": 13134154,
+          "d": 0
+        },
+        {
+          "frame": 53,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1878,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869282,
+          "profile_pointer": 13134164,
+          "d": 0
+        },
+        {
+          "frame": 53,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1539,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308358,
+          "profile_pointer": 13134164,
+          "d": 0
+        },
+        {
+          "frame": 59,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1881,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869321,
+          "profile_pointer": 13134174,
+          "d": 0
+        },
+        {
+          "frame": 59,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1542,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308397,
+          "profile_pointer": 13134174,
+          "d": 0
+        },
+        {
+          "frame": 65,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1884,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869359,
+          "profile_pointer": 13134184,
+          "d": 0
+        },
+        {
+          "frame": 65,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1545,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308427,
+          "profile_pointer": 13134184,
+          "d": 0
+        },
+        {
+          "frame": 71,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1887,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869402,
+          "profile_pointer": 13134194,
+          "d": 0
+        },
+        {
+          "frame": 71,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1548,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308456,
+          "profile_pointer": 13134194,
+          "d": 0
+        },
+        {
+          "frame": 77,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1890,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869437,
+          "profile_pointer": 13134204,
+          "d": 0
+        },
+        {
+          "frame": 77,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1551,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308493,
+          "profile_pointer": 13134204,
+          "d": 0
+        },
+        {
+          "frame": 83,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1893,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869481,
+          "profile_pointer": 13134214,
+          "d": 0
+        },
+        {
+          "frame": 83,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1554,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308520,
+          "profile_pointer": 13134214,
+          "d": 0
+        },
+        {
+          "frame": 89,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1884,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869359,
+          "profile_pointer": 13134184,
+          "d": 0
+        },
+        {
+          "frame": 89,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1545,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308427,
+          "profile_pointer": 13134184,
+          "d": 0
+        },
+        {
+          "frame": 95,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1896,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869514,
+          "profile_pointer": 13134224,
+          "d": 0
+        },
+        {
+          "frame": 95,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1557,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308556,
+          "profile_pointer": 13134224,
+          "d": 0
+        },
+        {
+          "frame": 101,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1899,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869558,
+          "profile_pointer": 13134234,
+          "d": 0
+        },
+        {
+          "frame": 101,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1560,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308597,
+          "profile_pointer": 13134234,
+          "d": 0
+        },
+        {
+          "frame": 107,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1902,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869597,
+          "profile_pointer": 13134244,
+          "d": 0
+        },
+        {
+          "frame": 107,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1563,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308633,
+          "profile_pointer": 13134244,
+          "d": 0
+        },
+        {
+          "frame": 107,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 33,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14304755,
+          "profile_pointer": 13134244,
+          "d": 0
+        },
+        {
+          "frame": 114,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1905,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869645,
+          "profile_pointer": 13134258,
+          "d": 0
+        },
+        {
+          "frame": 114,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1908,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869667,
+          "profile_pointer": 13134258,
+          "d": 0
+        },
+        {
+          "frame": 114,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1566,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308665,
+          "profile_pointer": 13134258,
+          "d": 0
+        },
+        {
+          "frame": 114,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 33,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14304755,
+          "profile_pointer": 13134258,
+          "d": 0
+        },
+        {
+          "frame": 120,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1911,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869704,
+          "profile_pointer": 13134278,
+          "d": 0
+        },
+        {
+          "frame": 120,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1569,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308710,
+          "profile_pointer": 13134278,
+          "d": 0
+        },
+        {
+          "frame": 120,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 33,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14304755,
+          "profile_pointer": 13134278,
+          "d": 0
+        },
+        {
+          "frame": 126,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1914,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 12869753,
+          "profile_pointer": 13134292,
+          "d": 0
+        },
+        {
+          "frame": 126,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1572,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14308740,
+          "profile_pointer": 13134292,
+          "d": 0
+        },
+        {
+          "frame": 126,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 33,
+          "selected_table_offset": 16,
+          "actor_table_offset": 2,
+          "descriptor": 14304755,
+          "profile_pointer": 13134292,
+          "d": 0
+        },
+        {
+          "frame": 132,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1122,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12940891,
+          "profile_pointer": 13130024,
+          "d": 0
+        },
+        {
+          "frame": 132,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1125,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12940930,
+          "profile_pointer": 13130024,
+          "d": 0
+        },
+        {
+          "frame": 132,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 987,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14330967,
+          "profile_pointer": 13130024,
+          "d": 0
+        },
+        {
+          "frame": 132,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14304667,
+          "profile_pointer": 13130024,
+          "d": 0
+        },
+        {
+          "frame": 139,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1116,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12940813,
+          "profile_pointer": 13130004,
+          "d": 0
+        },
+        {
+          "frame": 139,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1119,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12940835,
+          "profile_pointer": 13130004,
+          "d": 0
+        },
+        {
+          "frame": 139,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 984,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14355423,
+          "profile_pointer": 13130004,
+          "d": 0
+        },
+        {
+          "frame": 139,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14304667,
+          "profile_pointer": 13130004,
+          "d": 0
+        },
+        {
+          "frame": 145,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 471,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12934294,
+          "profile_pointer": 13129988,
+          "d": 0
+        },
+        {
+          "frame": 145,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 981,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14355369,
+          "profile_pointer": 13129988,
+          "d": 0
+        },
+        {
+          "frame": 145,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14304667,
+          "profile_pointer": 13129988,
+          "d": 0
+        },
+        {
+          "frame": 151,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 6,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12927738,
+          "profile_pointer": 13125014,
+          "d": 0
+        },
+        {
+          "frame": 151,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 114,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14353139,
+          "profile_pointer": 13125014,
+          "d": 0
+        },
+        {
+          "frame": 151,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 24,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14304719,
+          "profile_pointer": 13125014,
+          "d": 0
+        }
+      ],
+      "codec_verification": {
+        "complete_blocks": 0,
+        "partial_blocks_skipped": 0,
+        "tile_events": 1275,
+        "distinct_tile_sources": 651,
+        "byte_identical_tile_encodings": 1275,
+        "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+        "errors": []
+      },
+      "complete_action_variant_coverage": false
+    },
+    {
+      "case": "bret-mega-no-modifier",
+      "observed_action": "Same sequence without shoulder modifier",
+      "actor_slot": 0,
+      "input_schedule": [
+        [
+          0,
+          5,
+          7,
+          4
+        ],
+        [
+          0,
+          15,
+          7,
+          4
+        ],
+        [
+          0,
+          25,
+          7,
+          4
+        ],
+        [
+          0,
+          35,
+          4,
+          4
+        ],
+        [
+          0,
+          41,
+          0,
+          8
+        ]
+      ],
+      "input_schedule_fields": [
+        "controller_port",
+        "start_frame",
+        "button_id",
+        "duration"
+      ],
+      "sampled_gameplay_frames": 120,
+      "snapshot_interval": 3,
+      "selection_window": [
+        1,
+        360
+      ],
+      "native_part_requests_checked": 103,
+      "native_tile_fields_checked": 1556,
+      "primary_part_ids_in_input_window": [
+        45,
+        60,
+        99,
+        102,
+        105,
+        108,
+        111,
+        114,
+        117
+      ],
+      "secondary_part_ids_in_input_window": [
+        90,
+        216,
+        231,
+        276,
+        279,
+        282,
+        285,
+        288,
+        291,
+        294
+      ],
+      "observed_part_request_sequence": [
+        {
+          "frame": 41,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 99,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12869184,
+          "profile_pointer": 13125726,
+          "d": 0
+        },
+        {
+          "frame": 41,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 276,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14308265,
+          "profile_pointer": 13125726,
+          "d": 0
+        },
+        {
+          "frame": 47,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 102,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12929095,
+          "profile_pointer": 13125736,
+          "d": 0
+        },
+        {
+          "frame": 47,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 279,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14320344,
+          "profile_pointer": 13125736,
+          "d": 0
+        },
+        {
+          "frame": 53,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 105,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12929143,
+          "profile_pointer": 13125746,
+          "d": 0
+        },
+        {
+          "frame": 53,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 282,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14320400,
+          "profile_pointer": 13125746,
+          "d": 0
+        },
+        {
+          "frame": 59,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 108,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12929186,
+          "profile_pointer": 13125756,
+          "d": 0
+        },
+        {
+          "frame": 59,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 285,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14320468,
+          "profile_pointer": 13125756,
+          "d": 0
+        },
+        {
+          "frame": 65,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 111,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12929231,
+          "profile_pointer": 13125766,
+          "d": 0
+        },
+        {
+          "frame": 65,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 288,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14320520,
+          "profile_pointer": 13125766,
+          "d": 0
+        },
+        {
+          "frame": 71,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 114,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12929274,
+          "profile_pointer": 13125776,
+          "d": 0
+        },
+        {
+          "frame": 71,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 291,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14353703,
+          "profile_pointer": 13125776,
+          "d": 0
+        },
+        {
+          "frame": 71,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 90,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14305057,
+          "profile_pointer": 13125776,
+          "d": 0
+        },
+        {
+          "frame": 77,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 117,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12929328,
+          "profile_pointer": 13125790,
+          "d": 0
+        },
+        {
+          "frame": 77,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 294,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14353752,
+          "profile_pointer": 13125790,
+          "d": 0
+        },
+        {
+          "frame": 83,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 60,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12928555,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 83,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 231,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14353326,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 90,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 45,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12928341,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 90,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 216,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14353277,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 98,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 60,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12928555,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 98,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 231,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14353326,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 105,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 45,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12928341,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 105,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 216,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14353277,
+          "profile_pointer": 13125500,
+          "d": 0
+        }
+      ],
+      "codec_verification": {
+        "complete_blocks": 0,
+        "partial_blocks_skipped": 0,
+        "tile_events": 1194,
+        "distinct_tile_sources": 431,
+        "byte_identical_tile_encodings": 1194,
+        "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+        "errors": []
+      },
+      "complete_action_variant_coverage": false
+    },
+    {
+      "case": "bret-mega-b-only",
+      "observed_action": "Regular diving attack comparison",
+      "actor_slot": 0,
+      "input_schedule": [
+        [
+          0,
+          60,
+          4,
+          8
+        ],
+        [
+          0,
+          60,
+          0,
+          8
+        ]
+      ],
+      "input_schedule_fields": [
+        "controller_port",
+        "start_frame",
+        "button_id",
+        "duration"
+      ],
+      "sampled_gameplay_frames": 80,
+      "snapshot_interval": 3,
+      "selection_window": [
+        1,
+        360
+      ],
+      "native_part_requests_checked": 77,
+      "native_tile_fields_checked": 1183,
+      "primary_part_ids_in_input_window": [
+        45,
+        60,
+        99,
+        102,
+        105,
+        108,
+        111,
+        114,
+        117
+      ],
+      "secondary_part_ids_in_input_window": [
+        90,
+        216,
+        231,
+        276,
+        279,
+        282,
+        285,
+        288,
+        291,
+        294
+      ],
+      "observed_part_request_sequence": [
+        {
+          "frame": 60,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 99,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12869184,
+          "profile_pointer": 13125726,
+          "d": 0
+        },
+        {
+          "frame": 60,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 276,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14308265,
+          "profile_pointer": 13125726,
+          "d": 0
+        },
+        {
+          "frame": 66,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 102,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12929095,
+          "profile_pointer": 13125736,
+          "d": 0
+        },
+        {
+          "frame": 66,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 279,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14320344,
+          "profile_pointer": 13125736,
+          "d": 0
+        },
+        {
+          "frame": 72,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 105,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12929143,
+          "profile_pointer": 13125746,
+          "d": 0
+        },
+        {
+          "frame": 72,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 282,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14320400,
+          "profile_pointer": 13125746,
+          "d": 0
+        },
+        {
+          "frame": 78,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 108,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12929186,
+          "profile_pointer": 13125756,
+          "d": 0
+        },
+        {
+          "frame": 78,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 285,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14320468,
+          "profile_pointer": 13125756,
+          "d": 0
+        },
+        {
+          "frame": 84,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 111,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12929231,
+          "profile_pointer": 13125766,
+          "d": 0
+        },
+        {
+          "frame": 84,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 288,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14320520,
+          "profile_pointer": 13125766,
+          "d": 0
+        },
+        {
+          "frame": 90,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 114,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12929274,
+          "profile_pointer": 13125776,
+          "d": 0
+        },
+        {
+          "frame": 90,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 291,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14353703,
+          "profile_pointer": 13125776,
+          "d": 0
+        },
+        {
+          "frame": 90,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 90,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14305057,
+          "profile_pointer": 13125776,
+          "d": 0
+        },
+        {
+          "frame": 96,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 117,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12929328,
+          "profile_pointer": 13125790,
+          "d": 0
+        },
+        {
+          "frame": 96,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 294,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14353752,
+          "profile_pointer": 13125790,
+          "d": 0
+        },
+        {
+          "frame": 102,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 60,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12928555,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 102,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 231,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14353326,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 109,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 45,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12928341,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 109,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 216,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14353277,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 117,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 60,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12928555,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 117,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 231,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14353326,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 124,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 45,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 12928341,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 124,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 216,
+          "selected_table_offset": 2,
+          "actor_table_offset": 2,
+          "descriptor": 14353277,
+          "profile_pointer": 13125500,
+          "d": 0
+        }
+      ],
+      "codec_verification": {
+        "complete_blocks": 0,
+        "partial_blocks_skipped": 0,
+        "tile_events": 910,
+        "distinct_tile_sources": 415,
+        "byte_identical_tile_encodings": 910,
+        "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+        "errors": []
+      },
+      "complete_action_variant_coverage": false
+    }
+  ]
+}

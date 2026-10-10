@@ -68,4 +68,5 @@ Capture 360 frames for this comparison. These states remain local.
 The structured coverage tracker now marks Bret's captured finisher inputs,
 setup, attacker/defender sequences, hold, automatic release and observed recovery
 as verified. Early escape, full variants and edited-gear checks remain pending.
-All Mega Move entries remain unverified.
+Bret's [Mega Move](bret-mega.md) was verified in subsequent research; the other
+Mega Move entries remain unverified.
