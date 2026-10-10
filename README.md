@@ -24,6 +24,9 @@ complete action coverage remain unfinished. The
 now maps 426 entries per directory and verifies 1,991 observed secondary
 references; anatomical labels and the remaining common fallback ranges still
 need research.
+The [first controlled action maps](evidence/action-mapping/README.md) connect
+Bret walking/punching/kicking and Undertaker walking to native frame-part
+requests. The capture frontend now supports both controllers.
 
 No ROM, raw extracted game data, emulator binary, or patched ROM is included.
 The evidence package includes screenshots and a small IPS patch.

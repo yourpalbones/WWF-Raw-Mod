@@ -1,8 +1,8 @@
 diff --git a/cpuexec.cpp b/cpuexec.cpp
-index 0494810..940335a 100644
+index 0494810..4f7a7ed 100644
 --- a/cpuexec.cpp
 +++ b/cpuexec.cpp
-@@ -19,6 +19,125 @@
+@@ -19,6 +19,141 @@
  #include "missing.h"
  #endif
  
@@ -95,6 +95,22 @@ index 0494810..940335a 100644
 +    if (!dir) return;
 +    unsigned pc = Registers.PBPC & 0xffffff;
 +    WWFTraceTile(pc, dir);
++    if (pc == 0x80ecc1 || pc == 0x80ed19) {
++        unsigned table = pc == 0x80ecc1 ? 0x2dd513 : 0x2dd547;
++        unsigned x = Registers.X.W, part = Registers.A.W;
++        unsigned base = Memory.ROM[table + x] | (Memory.ROM[table + x + 1] << 8);
++        unsigned bank = Memory.ROM[table + 26 + x];
++        unsigned entry = (((bank << 16) | ((base + part) & 0xffff)) & 0x3fffff);
++        unsigned descriptor = (Memory.ROM[entry] << 16) | Memory.ROM[entry + 1] | (Memory.ROM[entry + 2] << 8);
++        unsigned actor = Memory.RAM[0x36] | (Memory.RAM[0x37] << 8);
++        char path[1024];
++        std::snprintf(path, sizeof(path), "%s/parts.jsonl", dir);
++        FILE *f = std::fopen(path, "a");
++        if (f) {
++            std::fprintf(f, "{\"frame\":%u,\"actor_slot\":%u,\"secondary\":%u,\"part_id\":%u,\"selected_table_offset\":%u,\"actor_table_offset\":%u,\"descriptor\":%u,\"profile_pointer\":%u,\"d\":%u}\n", WWFFrame, actor, unsigned(pc == 0x80ed19), part, x, unsigned(Memory.RAM[0xb74 + actor] | (Memory.RAM[0xb75 + actor] << 8)), descriptor, WWFPointer(0x7c), Registers.D.W);
++            std::fclose(f);
++        }
++    }
 +    if (WWFReturn && pc == WWFReturn) {
 +        if ((WWFDestination >> 16) == 0x7e || (WWFDestination >> 16) == 0x7f) {
 +            char path[1024];
@@ -128,7 +144,7 @@ index 0494810..940335a 100644
  static inline void S9xReschedule (void);
  
  void S9xMainLoop (void)
-@@ -136,6 +255,7 @@ void S9xMainLoop (void)
+@@ -136,6 +271,7 @@ void S9xMainLoop (void)
  			break;
  		}
  

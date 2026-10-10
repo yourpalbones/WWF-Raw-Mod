@@ -47,6 +47,12 @@ def main():
         help="frame:button_id[:duration]; START=3, A=8, B=0, directions=4..7",
     )
     ap.add_argument("--load-state", type=Path)
+    ap.add_argument(
+        "--press-p2",
+        action="append",
+        default=[],
+        help="Player 2 frame:button_id[:duration], using the same IDs as --press",
+    )
     args = ap.parse_args()
     if args.frames < 1 or args.interval < 1:
         raise ValueError("Frame count and snapshot interval must be positive")
@@ -64,9 +70,16 @@ def main():
     pixel_format = 0
     last_frame = None
     presses = []
-    for p in args.press:
-        parts = list(map(int, p.split(":")))
-        presses.append((parts[0], parts[1], parts[2] if len(parts) == 3 else 8))
+    for port, schedule in enumerate((args.press, args.press_p2)):
+        for p in schedule:
+            parts = list(map(int, p.split(":")))
+            if len(parts) not in (2, 3):
+                raise ValueError("Press must be frame:button_id[:duration]")
+            start, button = parts[:2]
+            duration = parts[2] if len(parts) == 3 else 8
+            if start < 1 or button not in range(16) or duration < 1:
+                raise ValueError("Invalid press frame, button or duration")
+            presses.append((port, start, button, duration))
 
     @ENV
     def environment(command, data):
@@ -120,12 +133,12 @@ def main():
 
     @INPUT
     def input_state(port, device, index, button):
-        if port != 0 or device != 1:
+        if port not in (0, 1) or device != 1:
             return 0
         return int(
             any(
-                start <= frame < start + duration and b == button
-                for start, b, duration in presses
+                start <= frame < start + duration and b == button and p == port
+                for p, start, b, duration in presses
             )
         )
 
@@ -154,6 +167,7 @@ def main():
         raise RuntimeError("Core rejected ROM")
     core.retro_set_controller_port_device.argtypes = [ct.c_uint, ct.c_uint]
     core.retro_set_controller_port_device(0, 1)
+    core.retro_set_controller_port_device(1, 1)
     core.retro_get_memory_data.argtypes = [ct.c_uint]
     core.retro_get_memory_data.restype = ct.c_void_p
     core.retro_get_memory_size.argtypes = [ct.c_uint]
