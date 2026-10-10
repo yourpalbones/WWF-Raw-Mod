@@ -1,0 +1,19 @@
+{
+  "directory_offset": "0x2D6FE4",
+  "directory_entries": 527,
+  "distinct_frame_pointers": 526,
+  "distinct_tile_ids": 5470,
+  "tile_references": 7758,
+  "native_lookup_calls_checked": 16598,
+  "gameplay_coverage_complete": false,
+  "scope": "Primary Bret frame directory only; common/lower parts and semantic move mapping still require inventory",
+  "observed_sequence_frames": 1800,
+  "observed_sequence": "Left/right, face buttons, up/down, shoulder buttons, then uncontrolled opponent interaction. This is not an exhaustive named move test.",
+  "relocation_experiment": {
+    "standing_png_vram_oam_cgram_identical": true,
+    "native_private_source_calls_matching_original_tiles": 3210,
+    "long_run_trajectory_identical": false,
+    "release_ready": false,
+    "reason": "Expanded raw-copy relocation changes execution cost. Paired runs diverge during the 1800-frame input sequence; the cause and gameplay impact require further investigation."
+  }
+}

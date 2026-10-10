@@ -1,8 +1,8 @@
 diff --git a/cpuexec.cpp b/cpuexec.cpp
-index 0494810..bee24aa 100644
+index 0494810..940335a 100644
 --- a/cpuexec.cpp
 +++ b/cpuexec.cpp
-@@ -19,6 +19,103 @@
+@@ -19,6 +19,125 @@
  #include "missing.h"
  #endif
  
@@ -46,7 +46,29 @@ index 0494810..bee24aa 100644
 +    return (((Memory.RAM[(sp + 1) & 0x1fff] | (Memory.RAM[(sp + 2) & 0x1fff] << 8)) + 1) & 0xffff) | (Memory.RAM[(sp + 3) & 0x1fff] << 16);
 +}
 +static void WWFTraceTile(unsigned pc, const char *dir) {
-+    if (pc == 0xacf959) WWFTileID = Registers.A.W;
++    static unsigned call = 0, caller = 0, inputX = 0, inputDB = 0;
++    if (pc == 0xacf959) {
++        WWFTileID = Registers.A.W;
++        caller = WWFStackReturn();
++        inputX = Registers.X.W;
++        inputDB = Registers.DB;
++    }
++    if (pc == 0xacf95d) {
++        char path[1024];
++        std::snprintf(path, sizeof(path), "%s/tile_calls.jsonl", dir);
++        FILE *f = std::fopen(path, "a");
++        if (f) {
++            std::fprintf(f, "{\"event\":%u,\"frame\":%u,\"tile_id\":%u,\"source\":%u,\"destination\":%u,\"compressed\":%u,\"caller\":%u,\"x\":%u,\"db\":%u,\"d\":%u,\"raw_threshold\":%u,\"raw_bank\":%u,\"raw_base\":%u,\"directory_base\":%u,\"descriptor\":%u,\"actor_slot\":%u}\n",
++                ++call, WWFFrame, WWFTileID, WWFPointer(0xdb), 0x7e0000 + Registers.Y.W,
++                Registers.A.W, caller, inputX, inputDB, Registers.D.W,
++                unsigned(Memory.RAM[0xf48] | (Memory.RAM[0xf49] << 8)),
++                unsigned(Memory.RAM[0xf4a] | (Memory.RAM[0xf4b] << 8)),
++                unsigned(Memory.RAM[0xf4c] | (Memory.RAM[0xf4d] << 8)),
++                unsigned(Memory.RAM[0xf56] | (Memory.RAM[0xf57] << 8)),
++                WWFPointer(0x80), unsigned(Memory.RAM[0x36] | (Memory.RAM[0x37] << 8)));
++            std::fclose(f);
++        }
++    }
 +    if (WWFTileReturn && pc == WWFTileReturn) {
 +        char path[1024];
 +        std::snprintf(path, sizeof(path), "%s/assets/tile-%06u-%06x.bin", dir, WWFTileNumber, WWFTileSource);
@@ -106,7 +128,7 @@ index 0494810..bee24aa 100644
  static inline void S9xReschedule (void);
  
  void S9xMainLoop (void)
-@@ -136,6 +233,7 @@ void S9xMainLoop (void)
+@@ -136,6 +255,7 @@ void S9xMainLoop (void)
  			break;
  		}
  

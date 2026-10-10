@@ -12,7 +12,8 @@ A same-size compressed tile edit has been reinserted and verified in the running
 game; see [the evidence package](evidence/bret-tile-edit/README.md).
 A [black-gear prototype with a walking GIF](evidence/bret-black-gear/README.md)
 is verified across the standing pose and a 90-frame left-walking test.
-Full animation coverage remains unverified.
+A [primary animation inventory](evidence/bret-animation-inventory/README.md) now
+maps 527 directory entries; full outfit animation coverage remains unverified.
 
 No ROM, raw extracted game data, emulator binary, or patched ROM is included.
 The evidence package includes screenshots and a small IPS patch.
@@ -69,5 +70,5 @@ outputs as well. Partial/yielded blocks are counted separately and skipped.
 [Initial code evidence](docs/research.md) ·
 [In-ring sprites and reproducible workflow](docs/in-ring-sprites.md)
 
-Not yet completed: full animation inventories, frame/pointer-table mapping,
+Not yet completed: common/lower animation inventories, semantic move mapping,
 full wrestler replacement, gameplay changes, or complete game editing.
