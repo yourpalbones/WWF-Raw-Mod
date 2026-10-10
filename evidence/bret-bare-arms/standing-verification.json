@@ -1,0 +1,29 @@
+{
+  "frame": 2940,
+  "edited_rom_sha256": "6b3de0cdc9a9069afe1fa057503d3903cbe903cc533e9bd819ce74dda62799c2",
+  "edited_tiles_loaded": [
+    3,
+    4,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    30
+  ],
+  "changed_vram_bytes": 73,
+  "other_vram_unchanged": true,
+  "oam_unchanged": true,
+  "only_bret_palette_color_6_changed": true,
+  "changed_screen_pixels": 152,
+  "screen_change_bounds": [
+    70,
+    86,
+    91,
+    150
+  ],
+  "outside_bret_body_changes": 0,
+  "scope": "Authored seven-pose left walk under visual review; other animations unverified"
+}

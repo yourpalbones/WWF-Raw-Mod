@@ -1,32 +1,10 @@
 {
-  "scope": "Seven manually inspected upright left-walking poses only",
+  "scope": "Chest logo only on seven inspected left-walking poses; elbow pads and wrist tape removed at user request",
   "poses": [
     {
       "sample_frame": 1,
-      "elbows": [
-        [
-          6,
-          33
-        ],
-        [
-          20,
-          25
-        ]
-      ],
-      "wrists": [
-        [
-          15,
-          31,
-          2,
-          4
-        ],
-        [
-          23,
-          26,
-          2,
-          4
-        ]
-      ],
+      "elbows": [],
+      "wrists": [],
       "chest": [
         16,
         24
@@ -35,30 +13,8 @@
     },
     {
       "sample_frame": 4,
-      "elbows": [
-        [
-          6,
-          32
-        ],
-        [
-          23,
-          36
-        ]
-      ],
-      "wrists": [
-        [
-          10,
-          37,
-          4,
-          2
-        ],
-        [
-          25,
-          40,
-          2,
-          4
-        ]
-      ],
+      "elbows": [],
+      "wrists": [],
       "chest": [
         18,
         26
@@ -67,20 +23,8 @@
     },
     {
       "sample_frame": 10,
-      "elbows": [
-        [
-          6,
-          32
-        ]
-      ],
-      "wrists": [
-        [
-          12,
-          37,
-          4,
-          2
-        ]
-      ],
+      "elbows": [],
+      "wrists": [],
       "chest": [
         19,
         26
@@ -89,30 +33,8 @@
     },
     {
       "sample_frame": 14,
-      "elbows": [
-        [
-          5,
-          33
-        ],
-        [
-          21,
-          35
-        ]
-      ],
-      "wrists": [
-        [
-          9,
-          37,
-          4,
-          2
-        ],
-        [
-          23,
-          39,
-          2,
-          4
-        ]
-      ],
+      "elbows": [],
+      "wrists": [],
       "chest": [
         15,
         25
@@ -121,30 +43,8 @@
     },
     {
       "sample_frame": 19,
-      "elbows": [
-        [
-          6,
-          33
-        ],
-        [
-          25,
-          32
-        ]
-      ],
-      "wrists": [
-        [
-          7,
-          40,
-          4,
-          2
-        ],
-        [
-          29,
-          35,
-          2,
-          4
-        ]
-      ],
+      "elbows": [],
+      "wrists": [],
       "chest": [
         20,
         27
@@ -153,30 +53,8 @@
     },
     {
       "sample_frame": 25,
-      "elbows": [
-        [
-          5,
-          29
-        ],
-        [
-          29,
-          28
-        ]
-      ],
-      "wrists": [
-        [
-          7,
-          36,
-          4,
-          2
-        ],
-        [
-          34,
-          29,
-          2,
-          4
-        ]
-      ],
+      "elbows": [],
+      "wrists": [],
       "chest": [
         22,
         25
@@ -185,33 +63,11 @@
     },
     {
       "sample_frame": 29,
-      "elbows": [
-        [
-          6,
-          30
-        ],
-        [
-          26,
-          30
-        ]
-      ],
-      "wrists": [
-        [
-          10,
-          36,
-          4,
-          2
-        ],
-        [
-          31,
-          33,
-          2,
-          4
-        ]
-      ],
+      "elbows": [],
+      "wrists": [],
       "chest": [
         18,
-        25
+        26
       ],
       "sprite_sha256": "ffad4c789aa48b4b97368fec5416dc88b0296b8bbe52eb7fbf1712bf812878ce"
     }

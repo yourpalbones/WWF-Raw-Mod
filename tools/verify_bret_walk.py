@@ -51,6 +51,8 @@ def verify_detail_anchors(before, after):
     by_hash = {a["sprite_sha256"]: a for a in annotations}
     counts = {str(a["sample_frame"]): 0 for a in annotations}
     pixels_checked = 0
+    bare_arms = all(not a["elbows"] and not a["wrists"] for a in annotations)
+    skin_pixels_checked = 0
     for png in sorted(before.glob("frame-*.png")):
         digest, original = indexed_pose(before, png.stem)
         if digest not in by_hash:
@@ -58,6 +60,14 @@ def verify_detail_anchors(before, after):
         anno = by_hash[digest]
         _, edited = indexed_pose(after, png.stem)
         desired = {}
+        if bare_arms:
+            for position, color in original.items():
+                if color in (7, 9, 10, 11, 12, 15):
+                    if edited.get(position) != color:
+                        raise ValueError(
+                            f"Original skin changed: {png.stem} {position}"
+                        )
+                    skin_pixels_checked += 1
         for (x, y), color in original.items():
             if color not in (7, 9, 10, 11, 12, 15):
                 continue
@@ -88,6 +98,8 @@ def verify_detail_anchors(before, after):
         "annotated_poses": len(counts),
         "frames_per_pose": counts,
         "detail_pixel_checks": pixels_checked,
+        "original_skin_preserved": bare_arms,
+        "skin_pixel_checks": skin_pixels_checked,
         "scope": "Matches hand-authored coordinates for these seven poses; anatomy still subject to visual review",
     }
 

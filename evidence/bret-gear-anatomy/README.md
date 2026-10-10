@@ -1,5 +1,9 @@
 # Pose-authored walking gear revision
 
+**Historical padded version:** current gear removes pads and tape at the user’s
+request. See [the bare-arm revision](../bret-bare-arms/README.md). To reproduce
+this older artwork, use commit `a8e86ee`.
+
 [**Watch previous versus revised gameplay**](previous-vs-revised.gif) ·
 [Original versus revised gameplay](original-vs-revised.gif) ·
 [All seven distinct poses](seven-pose-comparison.png)

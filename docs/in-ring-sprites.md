@@ -157,3 +157,10 @@ seven explicit pose annotations, rejects conflicting source pixels, and shares
 one detail map between standing and walking. All 90 frames match those authored
 placements (4,321 checks); no details are omitted for space. The earlier drifting
 artwork fails the new verifier. Artwork judgment and other moves remain open.
+
+## Current gear: pads and tape removed
+
+The user requested removal of elbow pads and wrist tape for now. The
+[bare-arm revision](../evidence/bret-bare-arms/README.md) restores original skin
+while preserving the chest logo and other gear edits. All 90 observed frames
+pass 39,255 original-skin checks; other animation coverage remains unverified.
