@@ -134,8 +134,8 @@ only the tile packet and checksum pair; no full ROM is included in the patch.
 ## Black-gear prototype
 
 [Reference-inspired standing-pose edit](../evidence/bret-black-gear/README.md)
-changes eight mapped tiles and Bret palette color 6. It adds a black singlet,
-small pink/white chest mark, black elbow pad and pink boot trim while keeping
-the existing black tights and pink stripe. All eight edited tiles load exactly
+changes ten mapped tiles and Bret palette color 6. It adds a black singlet,
+centered pink/white chest mark, black elbow pad, black wrist tape and pink boot trim while keeping
+the existing black tights and pink stripe. All ten edited tiles load exactly
 as expected at cold-boot frame 2940. Only Bret's body pixels differ; OAM and all
 other VRAM bytes remain unchanged. This is not a complete animation conversion.

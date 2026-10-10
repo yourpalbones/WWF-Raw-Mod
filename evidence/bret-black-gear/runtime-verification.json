@@ -1,25 +1,27 @@
 {
   "frame": 2940,
-  "edited_rom_sha256": "69fcc7ad2706b15b518dc53ffd73bfd7c781fc70b720616e9d4b5074d92632f5",
+  "edited_rom_sha256": "9fa630653b995c9ef4b1e25e3620ba948fe943aa179d1b92635c6434ebb0dbc3",
   "edited_tiles_loaded": [
     3,
     4,
     14,
+    15,
     16,
     17,
     18,
     19,
-    20
+    20,
+    30
   ],
-  "changed_vram_bytes": 88,
+  "changed_vram_bytes": 114,
   "other_vram_unchanged": true,
   "oam_unchanged": true,
   "only_bret_palette_color_6_changed": true,
-  "changed_screen_pixels": 166,
+  "changed_screen_pixels": 198,
   "screen_change_bounds": [
     70,
     86,
-    91,
+    93,
     150
   ],
   "outside_bret_body_changes": 0,

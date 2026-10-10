@@ -3,24 +3,27 @@
 ![Original game and black gear prototype, with enlarged Bret crops](comparison.png)
 
 This is an actual ROM edit, captured from the running game. The original is on
-the left; the prototype is on the right. The enlarged crops are at the bottom.
+the left, the first prototype is in the middle, and the revised version is on
+the right. The enlarged crops are at the bottom.
 The design follows the supplied reference's black singlet and tights, pink
-accents, black elbow pad and light boots with pink trim. The chest mark is a
+accents, black elbow pad, black wrist tape and light boots with pink trim.
+The revision lowers the pad onto the elbow bend and raises the chest mark
+two pixels toward the middle of the chest. The chest mark is a
 small pink-and-white approximation; detailed lettering, hearts and the skull
 logo are not reproduced at this resolution.
 
-**Scope:** eight mapped tiles in the tested standing pose and one palette color.
+**Scope:** ten mapped tiles in the tested standing pose and one palette color.
 This is not a finished all-animation outfit replacement. Unmapped poses may
 still show original gear. Reused tile effects on other poses or wrestlers are
 not yet surveyed. The boot palette change can affect other Bret animations.
 
 ## Verification
 
-Two cold boots use the same input sequence and capture frame 2940. The eight
+Two cold boots use the same input sequence and capture frame 2940. The ten
 edited tiles match the expected decoded bytes exactly. All other VRAM bytes
 are unchanged. Object positions and attributes (OAM) are identical. Only color
-6 in Bret's palette differs. The final rendered frame changes 166 pixels, all
-within Bret's body: x=70–91, y=86–150. Undertaker, the referee, ring, crowd and
+6 in Bret's palette differs. The final rendered frame changes 198 pixels, all
+within Bret's body: x=70–93, y=86–150. Undertaker, the referee, ring, crowd and
 interface are pixel-identical at this frame.
 
 `before.png` and `after.png` are native framebuffer captures. `comparison.png`

@@ -1,8 +1,10 @@
 {
-  "after.png": "084376ac97bd9581e64d7e88316d935045ec1148f0bec9abc5ca280879008085",
+  "README.md": "fa2365f1fe1a187782f6afb24efee5b9df55b0d15c188120dc87de3ae000c588",
+  "after.png": "aa217bef7519f691d107541aebfac738de36792e7deb551006875285101e8947",
   "before.png": "126f415f7c0799744848873df1c693385e9428165b240d0a8da2c777fa291d2b",
-  "bret-black-gear.ips": "b3d864a0deff8a5880f69ab8cf5720d9ec40cdc5b1cfd2fc71d1d8b5706ed9f1",
-  "comparison.png": "20fb453ccde3079bbb6aa715c99a466586eb9186cd91cd20aa41340a648fa9dd",
-  "patch-report.json": "f910b46dbff6f4db88b42e834ed3b242244d5b9ced70745cc1f262666e302b84",
-  "runtime-verification.json": "c05f2f7a2236eee60a5875dd8e525ba64d9255870b991863cbf0726258edebce"
+  "bret-black-gear.ips": "15a20a03a6666b80812d38b3ba0282bb0260402f5502e552f316dfdba0de193a",
+  "comparison.png": "470fdbb317fb14caef5ad483d2da16895364ccbd9c5710b0f48a6bac38a8f52f",
+  "patch-report.json": "1e7c0f3baec3a4bbc8163cf7d7f32a5cd262ed1b36ae550ec144c93f99c75d02",
+  "previous-prototype.png": "084376ac97bd9581e64d7e88316d935045ec1148f0bec9abc5ca280879008085",
+  "runtime-verification.json": "fbd8d32982cfe0067a4d85384099f0e9d23f6932b25f82d2c464ad330aee9e9f"
 }

@@ -1,17 +1,19 @@
 {
   "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
-  "patched_sha256": "69fcc7ad2706b15b518dc53ffd73bfd7c781fc70b720616e9d4b5074d92632f5",
-  "changed_rom_bytes": 101,
-  "checksum": "0x3420",
+  "patched_sha256": "9fa630653b995c9ef4b1e25e3620ba948fe943aa179d1b92635c6434ebb0dbc3",
+  "changed_rom_bytes": 127,
+  "checksum": "0x2ECB",
   "tile_slots": [
     3,
     4,
     14,
+    15,
     16,
     17,
     18,
     19,
-    20
+    20,
+    30
   ],
   "edits": [
     {
@@ -25,6 +27,10 @@
     {
       "offset": "0x12AE50",
       "size": 15
+    },
+    {
+      "offset": "0x17B998",
+      "size": 30
     },
     {
       "offset": "0x0B3D20",
@@ -45,6 +51,10 @@
     {
       "offset": "0x0B3DA0",
       "size": 32
+    },
+    {
+      "offset": "0x14766C",
+      "size": 21
     },
     {
       "offset": "0x2CC506",

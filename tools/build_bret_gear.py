@@ -18,11 +18,13 @@ ASSETS = [
     (3, 0x0B3D60, False),
     (4, 0x1692D0, True),
     (14, 0x12AE50, True),
+    (15, 0x17B998, True),
     (16, 0x0B3D20, False),
     (17, 0x1692B4, True),
     (18, 0x0AB100, False),
     (19, 0x0B3D80, False),
     (20, 0x0B3DA0, False),
+    (30, 0x14766C, True),
 ]
 PALETTE = 0x2CC4FA
 
@@ -52,28 +54,43 @@ def build(rom):
         original_pixels = tile(old, 0, 4)
         # Black shade + charcoal highlight; preserve skin, silhouette and tights.
         pixels = [1 if p == 4 else 3 if p == 5 else p for p in original_pixels]
-        if slot == 19:
-            # Tiny pink center with white wing hints, constrained to the singlet.
-            mark = {
-                (4, 1): 4,
-                (3, 2): 8,
-                (4, 2): 5,
-                (5, 2): 8,
-                (3, 3): 8,
-                (4, 3): 8,
-                (5, 3): 8,
-                (4, 4): 4,
-            }
+        if slot in (3, 19):
+            # Raise the emblem two pixels toward the center of the chest.
+            mark = (
+                {(4, 7): 4}
+                if slot == 3
+                else {
+                    (3, 0): 8,
+                    (4, 0): 5,
+                    (5, 0): 8,
+                    (3, 1): 8,
+                    (4, 1): 8,
+                    (5, 1): 8,
+                    (4, 2): 4,
+                }
+            )
             for (x, y), color in mark.items():
                 if original_pixels[y * 8 + x] not in (4, 5):
                     raise ValueError("Chest mark would overwrite skin")
                 pixels[y * 8 + x] = color
+        # Cover the bend of the elbow, spanning the upper arm and forearm tiles.
+        pad = []
         if slot == 18:
-            # Black pad across the outside of the bent elbow. Preserve outline.
-            for y in range(3, 7):
-                for x in range(2, 6 if y in (4, 5) else 5):
-                    if original_pixels[y * 8 + x] in (7, 9, 10, 11, 12, 15):
-                        pixels[y * 8 + x] = 3 if x == 3 else 2 if x == 4 else 1
+            pad = [(x, y) for y in (6, 7) for x in range(2, 7)]
+        elif slot == 15:
+            pad = [(x, y) for y in range(3) for x in range(5)]
+        for x, y in pad:
+            if original_pixels[y * 8 + x] in (7, 9, 10, 11, 12, 15):
+                pixels[y * 8 + x] = 2 if x in (2, 3) else 1
+        # Wrist bands on the foreground and raised far arm, before the hands.
+        tape = []
+        if slot == 30:
+            tape = [(x, y) for y in range(4) for x in (2, 3, 4)]
+        elif slot == 20:
+            tape = [(x, y) for y in (3, 4, 5) for x in (4, 5, 6)]
+        for x, y in tape:
+            if original_pixels[y * 8 + x] in (7, 9, 10, 11, 12, 15):
+                pixels[y * 8 + x] = 2 if x in (3, 5) else 1
         decoded = planar(pixels)
         packet = encode_sprite_tile(decoded) if compressed else decoded
         if len(packet) > length:
