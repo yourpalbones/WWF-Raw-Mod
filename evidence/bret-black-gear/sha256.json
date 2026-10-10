@@ -1,10 +1,14 @@
 {
-  "README.md": "fa2365f1fe1a187782f6afb24efee5b9df55b0d15c188120dc87de3ae000c588",
-  "after.png": "aa217bef7519f691d107541aebfac738de36792e7deb551006875285101e8947",
+  "README.md": "42f3b5c3c55a5b69ec6c1706d465c514c4ba5d60a218615c3f6c267c3c52a7b7",
+  "after.png": "6ceb7364afd816dc5d7707f2c1c6f8f6ae07ed86e41c32cf0f0e84c540affc94",
   "before.png": "126f415f7c0799744848873df1c693385e9428165b240d0a8da2c777fa291d2b",
-  "bret-black-gear.ips": "15a20a03a6666b80812d38b3ba0282bb0260402f5502e552f316dfdba0de193a",
-  "comparison.png": "470fdbb317fb14caef5ad483d2da16895364ccbd9c5710b0f48a6bac38a8f52f",
-  "patch-report.json": "1e7c0f3baec3a4bbc8163cf7d7f32a5cd262ed1b36ae550ec144c93f99c75d02",
-  "previous-prototype.png": "084376ac97bd9581e64d7e88316d935045ec1148f0bec9abc5ca280879008085",
-  "runtime-verification.json": "fbd8d32982cfe0067a4d85384099f0e9d23f6932b25f82d2c464ad330aee9e9f"
+  "bret-black-gear.ips": "e14a11f6cc4f69e4db35ef5b5cbf93c957d332ff64fe8ee5710f0adf82676fac",
+  "comparison.png": "5975f508d5761318a1792209fbb2d6099f4924a8fd3819bd9cca28dbf87770f6",
+  "patch-report.json": "1af69ffa35eaa3e5e2ee619b9fca7793e453589d7a671cf2b098d93d3fb27298",
+  "previous-prototype.png": "aa217bef7519f691d107541aebfac738de36792e7deb551006875285101e8947",
+  "runtime-verification.json": "dad0d5aa5804557fd9b5f91ab48fdbaa124771b536c41a9256378887a082f14e",
+  "walk-codec-validation.json": "87cb53e7075c272429f7850b449b36686682bdc5e8a5f79cc82badde2e2146e2",
+  "walk-verification.json": "eb4e432c2074424f65e07213ffe1eb78a3f9be877b390637185cc91bd2eac4ab",
+  "walking-comparison.gif": "cab66353d483e2869c5079eaf73dec9e01bb9291f5c77351e32bd5bd193f4724",
+  "walking-poses.png": "b5d1e6b2c4c46d49ae0e99f21c51a4496586c09b1c2f36a9defd85167a4207ba"
 }

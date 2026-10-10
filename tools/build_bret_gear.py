@@ -1,7 +1,7 @@
 """Build a reference-inspired black-gear prototype for Bret's tested pose.
 
-This edits known ROM assets, not a screenshot. Only the mapped standing pose
-is covered. Other animations and other users of shared tiles remain unverified.
+This edits known ROM assets, not a screenshot. The mapped standing pose and an observed upright left walk are covered.
+Other animations and other users of shared tiles remain unverified.
 """
 
 import argparse
@@ -46,6 +46,67 @@ def build(rom):
     result = bytearray(rom)
     edits = []
     tiles = {}
+    walk_map = json.loads(
+        (
+            Path(__file__).resolve().parents[1] / "data" / "bret-left-walk.json"
+        ).read_text()
+    )
+    simplified = []
+    simplified_details = []
+    omitted_details = []
+    for asset in walk_map["assets"]:
+        offset = int(asset["offset"], 0)
+        if asset["compressed"]:
+            original, length = decode_sprite_tile(rom, offset)
+        else:
+            original, length = rom[offset : offset + 32], 32
+        native_pixels = tile(original, 0, 4)
+        pixels = native_pixels.copy()
+        for index in asset["pixels"]:
+            if not 0 <= index < 64 or pixels[index] not in (4, 5):
+                raise ValueError("Invalid walking garment pixel map")
+            pixels[index] = 1 if pixels[index] == 4 else 3
+        for detail in asset.get("details", []):
+            index, color = detail["index"], detail["color"]
+            if not 0 <= index < 64 or color not in (1, 2, 4, 5, 8):
+                raise ValueError("Invalid walking detail map")
+            material = native_pixels[index]
+            expected = (7, 9, 10, 11, 12, 15) if color in (1, 2) else (4, 5)
+            if material not in expected:
+                raise ValueError("Walking detail would overwrite the wrong material")
+            pixels[index] = color
+        decoded = planar(pixels)
+        packet = encode_sprite_tile(decoded) if asset["compressed"] else decoded
+        if len(packet) > length:
+            # Keep the allocation: use black instead of charcoal on this tile.
+            detail_indices = {d["index"] for d in asset.get("details", [])}
+            for index in asset["pixels"]:
+                if index not in detail_indices:
+                    pixels[index] = 1
+            decoded = planar(pixels)
+            packet = encode_sprite_tile(decoded) if asset["compressed"] else decoded
+            simplified.append(asset["offset"])
+        if len(packet) > length:
+            for detail in asset.get("details", []):
+                if detail["color"] in (1, 2):
+                    pixels[detail["index"]] = 1
+            decoded = planar(pixels)
+            packet = encode_sprite_tile(decoded) if asset["compressed"] else decoded
+            simplified_details.append(asset["offset"])
+        if len(packet) > length:
+            # Keep garment conversion; report detail tiles needing relocation.
+            pixels = tile(original, 0, 4)
+            for index in asset["pixels"]:
+                pixels[index] = 1
+            decoded = planar(pixels)
+            packet = encode_sprite_tile(decoded) if asset["compressed"] else decoded
+            omitted_details.append(asset["offset"])
+        if len(packet) > length:
+            raise ValueError(
+                "Walking asset exceeds original allocation: " + asset["offset"]
+            )
+        result[offset : offset + len(packet)] = packet
+        edits.append((offset, bytes(packet)))
     for slot, offset, compressed in ASSETS:
         if compressed:
             old, length = decode_sprite_tile(rom, offset)
@@ -55,39 +116,39 @@ def build(rom):
         # Black shade + charcoal highlight; preserve skin, silhouette and tights.
         pixels = [1 if p == 4 else 3 if p == 5 else p for p in original_pixels]
         if slot in (3, 19):
-            # Raise the emblem two pixels toward the center of the chest.
+            # Shift the emblem toward the middle of the visible front panel.
             mark = (
-                {(4, 7): 4}
+                {(6, 7): 4}
                 if slot == 3
                 else {
-                    (3, 0): 8,
-                    (4, 0): 5,
                     (5, 0): 8,
-                    (3, 1): 8,
-                    (4, 1): 8,
+                    (6, 0): 5,
+                    (7, 0): 8,
                     (5, 1): 8,
-                    (4, 2): 4,
+                    (6, 1): 8,
+                    (7, 1): 8,
+                    (6, 2): 4,
                 }
             )
             for (x, y), color in mark.items():
                 if original_pixels[y * 8 + x] not in (4, 5):
                     raise ValueError("Chest mark would overwrite skin")
                 pixels[y * 8 + x] = color
-        # Cover the bend of the elbow, spanning the upper arm and forearm tiles.
+        # Wrap the pad around the elbow tip, including the lowest bent pixels.
         pad = []
         if slot == 18:
-            pad = [(x, y) for y in (6, 7) for x in range(2, 7)]
+            pad = [(x, 7) for x in range(2, 7)]
         elif slot == 15:
-            pad = [(x, y) for y in range(3) for x in range(5)]
+            pad = [(x, y) for y in range(5) for x in range(6)]
         for x, y in pad:
             if original_pixels[y * 8 + x] in (7, 9, 10, 11, 12, 15):
                 pixels[y * 8 + x] = 2 if x in (2, 3) else 1
-        # Wrist bands on the foreground and raised far arm, before the hands.
+        # Narrow bands immediately before each hand, rather than broad arm blocks.
         tape = []
         if slot == 30:
-            tape = [(x, y) for y in range(4) for x in (2, 3, 4)]
+            tape = [(x, y) for y in range(3) for x in (3, 4)]
         elif slot == 20:
-            tape = [(x, y) for y in (3, 4, 5) for x in (4, 5, 6)]
+            tape = [(x, y) for y in (1, 2) for x in (5, 6)]
         for x, y in tape:
             if original_pixels[y * 8 + x] in (7, 9, 10, 11, 12, 15):
                 pixels[y * 8 + x] = 2 if x in (3, 5) else 1
@@ -118,7 +179,11 @@ def build(rom):
         "checksum": f"0x{checksum:04X}",
         "tile_slots": list(tiles),
         "edits": [{"offset": f"0x{a:06X}", "size": len(d)} for a, d in edits],
-        "scope": "Mapped standing pose only; complete animation coverage unverified",
+        "walk_assets": len(walk_map["assets"]),
+        "walk_tiles_using_flat_black": simplified,
+        "walk_details_using_flat_black": simplified_details,
+        "walk_detail_assets_omitted_for_space": omitted_details,
+        "scope": "Standing details and mapped upright left walk; other animations unverified",
     }
     return bytes(result), bytes(patch), tiles, report
 

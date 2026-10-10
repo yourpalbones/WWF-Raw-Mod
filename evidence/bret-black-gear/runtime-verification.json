@@ -1,6 +1,6 @@
 {
   "frame": 2940,
-  "edited_rom_sha256": "9fa630653b995c9ef4b1e25e3620ba948fe943aa179d1b92635c6434ebb0dbc3",
+  "edited_rom_sha256": "a3688acc35f1500a742b563225626516b0cdd96267538abb51a3d074d3bd6a7a",
   "edited_tiles_loaded": [
     3,
     4,
@@ -13,11 +13,11 @@
     20,
     30
   ],
-  "changed_vram_bytes": 114,
+  "changed_vram_bytes": 110,
   "other_vram_unchanged": true,
   "oam_unchanged": true,
   "only_bret_palette_color_6_changed": true,
-  "changed_screen_pixels": 198,
+  "changed_screen_pixels": 195,
   "screen_change_bounds": [
     70,
     86,
@@ -25,5 +25,5 @@
     150
   ],
   "outside_bret_body_changes": 0,
-  "scope": "Mapped standing pose only; complete animation coverage unverified"
+  "scope": "Standing details and mapped upright left walk; other animations unverified"
 }

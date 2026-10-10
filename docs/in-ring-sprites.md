@@ -131,11 +131,19 @@ Local outputs (ignored): `outputs/edit-test/bret-torso-test.ips`, the separate
 edited ROM, `patch-report.json`, and `runtime-verification.json`. The IPS includes
 only the tile packet and checksum pair; no full ROM is included in the patch.
 
-## Black-gear prototype
+## Black-gear prototype and movement test
 
-[Reference-inspired standing-pose edit](../evidence/bret-black-gear/README.md)
-changes ten mapped tiles and Bret palette color 6. It adds a black singlet,
-centered pink/white chest mark, black elbow pad, black wrist tape and pink boot trim while keeping
-the existing black tights and pink stripe. All ten edited tiles load exactly
-as expected at cold-boot frame 2940. Only Bret's body pixels differ; OAM and all
-other VRAM bytes remain unchanged. This is not a complete animation conversion.
+[Reference-inspired gear edit and animated evidence](../evidence/bret-black-gear/README.md)
+now includes a revised chest mark, elbow pad and wrist tape, plus mapped upright
+walking assets. The standing pose's ten explicitly edited tiles load exactly
+as expected. A further 90 paired walking frames keep identical object positions,
+with zero screen/VRAM changes outside Bret and no unexpected palette changes.
+965 compressed tile events in the edited walk match the game's decoded bytes,
+and re-encode identically. The GIF samples actual rendered gameplay; it is not
+an animation made from isolated sprite poses.
+
+Walking detail placement is a draft derived from upright-pose landmarks and
+material masks. One shared source is deliberately excluded, and one detail
+asset is omitted because it would exceed its original packet allocation.
+These exceptions are recorded in the map and patch report. Attacks, grapples,
+knockdowns and other wrestlers remain outside the verified coverage.

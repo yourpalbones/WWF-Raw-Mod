@@ -1,0 +1,9 @@
+{
+  "complete_blocks": 0,
+  "partial_blocks_skipped": 0,
+  "tile_events": 965,
+  "distinct_tile_sources": 347,
+  "byte_identical_tile_encodings": 965,
+  "rom_sha256": "a3688acc35f1500a742b563225626516b0cdd96267538abb51a3d074d3bd6a7a",
+  "errors": []
+}
