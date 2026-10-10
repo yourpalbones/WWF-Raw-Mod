@@ -1,0 +1,59 @@
+{
+  "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "patched_sha256": "69fcc7ad2706b15b518dc53ffd73bfd7c781fc70b720616e9d4b5074d92632f5",
+  "changed_rom_bytes": 101,
+  "checksum": "0x3420",
+  "tile_slots": [
+    3,
+    4,
+    14,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "edits": [
+    {
+      "offset": "0x0B3D60",
+      "size": 32
+    },
+    {
+      "offset": "0x1692D0",
+      "size": 28
+    },
+    {
+      "offset": "0x12AE50",
+      "size": 15
+    },
+    {
+      "offset": "0x0B3D20",
+      "size": 32
+    },
+    {
+      "offset": "0x1692B4",
+      "size": 27
+    },
+    {
+      "offset": "0x0AB100",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3D80",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3DA0",
+      "size": 32
+    },
+    {
+      "offset": "0x2CC506",
+      "size": 2
+    },
+    {
+      "offset": "0x00FFDC",
+      "size": 4
+    }
+  ],
+  "scope": "Mapped standing pose only; complete animation coverage unverified"
+}

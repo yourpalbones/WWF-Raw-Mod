@@ -89,9 +89,9 @@ python3 tools/validate_traces.py "$WWF_RAW_ROM" outputs/match
 
 Each emulator run requires an empty output directory. The output includes
 screenshots, native transparent sprite PNGs, enlarged previews, memory captures,
-local save states, trace metadata and validation records. Keep these game-data
-outputs local. Only the original tools, documentation and instrumentation
-patch belong in this public repository.
+local save states, trace metadata and validation records. Keep ROMs, raw memory
+dumps and save states local. Selected screenshots and small IPS patches are
+published in the evidence packages alongside the original research tools.
 
 The upstream core is `https://github.com/libretro/snes9x`, pinned to
 `fae2fea08f74180759ef540ee94259213f503480`; its own license applies. The patch
@@ -100,15 +100,14 @@ the game ROM or game memory.
 
 ## Remaining work
 
-Trace all tiles used by a selected animation frame, preserve its layout and
-palette mappings, and test a small graphic edit in the emulator. The encoder
-round trip is validated; modified graphics have not yet been reinserted or
-played. Changed packet sizes may require pointer updates or relocation, so
-round-trip success alone does not establish safe reinsertion.
+Small edits and a standing-pose gear prototype have now been reinserted and
+verified in-game. Remaining work includes full animation/frame mapping and
+checking shared assets across other wrestlers. Larger packets may require
+pointer updates or relocation; the prototypes avoid growing any tile packet.
 
-The cloud chat's image preview/download mechanism did not deliver generated
-images during this session. Local PNG verification and emulator validation
-succeeded; user-visible image delivery remains a separate unresolved issue.
+The cloud chat's image previews did not reach the user. Publishing screenshots
+and comparisons in the GitHub evidence folders resolved delivery; the user
+confirmed that those images were visible.
 
 ## Reinsertion verified in game
 
@@ -131,3 +130,12 @@ mapped.
 Local outputs (ignored): `outputs/edit-test/bret-torso-test.ips`, the separate
 edited ROM, `patch-report.json`, and `runtime-verification.json`. The IPS includes
 only the tile packet and checksum pair; no full ROM is included in the patch.
+
+## Black-gear prototype
+
+[Reference-inspired standing-pose edit](../evidence/bret-black-gear/README.md)
+changes eight mapped tiles and Bret palette color 6. It adds a black singlet,
+small pink/white chest mark, black elbow pad and pink boot trim while keeping
+the existing black tights and pink stripe. All eight edited tiles load exactly
+as expected at cold-boot frame 2940. Only Bret's body pixels differ; OAM and all
+other VRAM bytes remain unchanged. This is not a complete animation conversion.

@@ -10,6 +10,8 @@ mode-2 streams, and the zero-eliding mask packets used for in-ring sprite tiles.
 The sprite packet encoder reproduces the original packets in the tested trace.
 A same-size compressed tile edit has been reinserted and verified in the running
 game; see [the evidence package](evidence/bret-tile-edit/README.md).
+A [black-gear standing-pose prototype](evidence/bret-black-gear/README.md) is also
+verified in-game. Full animation coverage remains unverified.
 
 No ROM, raw extracted game data, emulator binary, or patched ROM is included.
 The evidence package includes screenshots and a small IPS patch.
