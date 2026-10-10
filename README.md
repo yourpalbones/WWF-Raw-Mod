@@ -19,7 +19,11 @@ maps 527 directory entries; full outfit animation coverage remains unverified.
 The [roster directory inventory](evidence/roster-inventory/README.md) identifies
 all twelve selectable wrestlers through original-game selection and match
 captures, with 1,561 native primary frame references checked. Lower-body and
-complete action coverage remain unfinished.
+complete action coverage remain unfinished. The
+[secondary directory inventory](evidence/roster-inventory/secondary-graphics.md)
+now maps 426 entries per directory and verifies 1,991 observed secondary
+references; anatomical labels and the remaining common fallback ranges still
+need research.
 
 No ROM, raw extracted game data, emulator binary, or patched ROM is included.
 The evidence package includes screenshots and a small IPS patch.

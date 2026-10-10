@@ -1,0 +1,269 @@
+{
+  "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "scope": "Secondary directory range below part ID 04FE; semantic body-part/action labels unfinished",
+  "complete_animation_coverage": false,
+  "fallback_selector": 8,
+  "selectors": [
+    {
+      "selector": 0,
+      "directory_file_offset": "008D72"
+    },
+    {
+      "selector": 1,
+      "directory_file_offset": "2EC39D"
+    },
+    {
+      "selector": 2,
+      "directory_file_offset": "2F75FA"
+    },
+    {
+      "selector": 3,
+      "directory_file_offset": "2C75E6"
+    },
+    {
+      "selector": 4,
+      "directory_file_offset": "2DC367"
+    },
+    {
+      "selector": 5,
+      "directory_file_offset": "2D7611"
+    },
+    {
+      "selector": 6,
+      "directory_file_offset": "2E7606"
+    },
+    {
+      "selector": 7,
+      "directory_file_offset": "1D7427"
+    },
+    {
+      "selector": 8,
+      "directory_file_offset": "2DAF72"
+    },
+    {
+      "selector": 9,
+      "directory_file_offset": "2B7606"
+    },
+    {
+      "selector": 10,
+      "directory_file_offset": "2FC390"
+    },
+    {
+      "selector": 11,
+      "directory_file_offset": "03F24B"
+    },
+    {
+      "selector": 12,
+      "directory_file_offset": "2DAF72"
+    }
+  ],
+  "directories": [
+    {
+      "directory_file_offset": "008D72",
+      "selectors": [
+        0
+      ],
+      "entries": 426,
+      "distinct_frames": 425,
+      "distinct_tile_ids": 4538,
+      "distinct_sources": 4538,
+      "frame_pointers_shared_with_other_directories": 66,
+      "sources_shared_with_other_directories": 785
+    },
+    {
+      "directory_file_offset": "2EC39D",
+      "selectors": [
+        1
+      ],
+      "entries": 426,
+      "distinct_frames": 425,
+      "distinct_tile_ids": 4798,
+      "distinct_sources": 4798,
+      "frame_pointers_shared_with_other_directories": 359,
+      "sources_shared_with_other_directories": 4674
+    },
+    {
+      "directory_file_offset": "2F75FA",
+      "selectors": [
+        2
+      ],
+      "entries": 426,
+      "distinct_frames": 425,
+      "distinct_tile_ids": 4713,
+      "distinct_sources": 4713,
+      "frame_pointers_shared_with_other_directories": 77,
+      "sources_shared_with_other_directories": 2882
+    },
+    {
+      "directory_file_offset": "2C75E6",
+      "selectors": [
+        3
+      ],
+      "entries": 426,
+      "distinct_frames": 425,
+      "distinct_tile_ids": 5035,
+      "distinct_sources": 5035,
+      "frame_pointers_shared_with_other_directories": 60,
+      "sources_shared_with_other_directories": 792
+    },
+    {
+      "directory_file_offset": "2DC367",
+      "selectors": [
+        4
+      ],
+      "entries": 426,
+      "distinct_frames": 424,
+      "distinct_tile_ids": 4774,
+      "distinct_sources": 4774,
+      "frame_pointers_shared_with_other_directories": 57,
+      "sources_shared_with_other_directories": 1889
+    },
+    {
+      "directory_file_offset": "2D7611",
+      "selectors": [
+        5
+      ],
+      "entries": 426,
+      "distinct_frames": 425,
+      "distinct_tile_ids": 4879,
+      "distinct_sources": 4879,
+      "frame_pointers_shared_with_other_directories": 74,
+      "sources_shared_with_other_directories": 4075
+    },
+    {
+      "directory_file_offset": "2E7606",
+      "selectors": [
+        6
+      ],
+      "entries": 426,
+      "distinct_frames": 425,
+      "distinct_tile_ids": 4893,
+      "distinct_sources": 4893,
+      "frame_pointers_shared_with_other_directories": 66,
+      "sources_shared_with_other_directories": 4020
+    },
+    {
+      "directory_file_offset": "1D7427",
+      "selectors": [
+        7
+      ],
+      "entries": 426,
+      "distinct_frames": 426,
+      "distinct_tile_ids": 4909,
+      "distinct_sources": 4909,
+      "frame_pointers_shared_with_other_directories": 59,
+      "sources_shared_with_other_directories": 720
+    },
+    {
+      "directory_file_offset": "2DAF72",
+      "selectors": [
+        8,
+        12
+      ],
+      "entries": 426,
+      "distinct_frames": 424,
+      "distinct_tile_ids": 4745,
+      "distinct_sources": 4745,
+      "frame_pointers_shared_with_other_directories": 353,
+      "sources_shared_with_other_directories": 4561
+    },
+    {
+      "directory_file_offset": "2B7606",
+      "selectors": [
+        9
+      ],
+      "entries": 426,
+      "distinct_frames": 424,
+      "distinct_tile_ids": 4882,
+      "distinct_sources": 4882,
+      "frame_pointers_shared_with_other_directories": 59,
+      "sources_shared_with_other_directories": 1928
+    },
+    {
+      "directory_file_offset": "2FC390",
+      "selectors": [
+        10
+      ],
+      "entries": 426,
+      "distinct_frames": 426,
+      "distinct_tile_ids": 4881,
+      "distinct_sources": 4881,
+      "frame_pointers_shared_with_other_directories": 83,
+      "sources_shared_with_other_directories": 3549
+    },
+    {
+      "directory_file_offset": "03F24B",
+      "selectors": [
+        11
+      ],
+      "entries": 426,
+      "distinct_frames": 425,
+      "distinct_tile_ids": 4882,
+      "distinct_sources": 4882,
+      "frame_pointers_shared_with_other_directories": 58,
+      "sources_shared_with_other_directories": 3574
+    }
+  ],
+  "native_checks": [
+    {
+      "character": "Bret Hart",
+      "selector": 1,
+      "native_references_checked": 153
+    },
+    {
+      "character": "Undertaker",
+      "selector": 2,
+      "native_references_checked": 149
+    },
+    {
+      "character": "Yokozuna",
+      "selector": 3,
+      "native_references_checked": 249
+    },
+    {
+      "character": "Bam Bam Bigelow",
+      "selector": 4,
+      "native_references_checked": 163
+    },
+    {
+      "character": "Razor Ramon",
+      "selector": 5,
+      "native_references_checked": 172
+    },
+    {
+      "character": "Lex Luger",
+      "selector": 6,
+      "native_references_checked": 143
+    },
+    {
+      "character": "Doink",
+      "selector": 7,
+      "native_references_checked": 211
+    },
+    {
+      "character": "Shawn Michaels",
+      "selector": 8,
+      "native_references_checked": 106
+    },
+    {
+      "character": "1-2-3 Kid",
+      "selector": 9,
+      "native_references_checked": 149
+    },
+    {
+      "character": "Diesel",
+      "selector": 10,
+      "native_references_checked": 234
+    },
+    {
+      "character": "Owen Hart",
+      "selector": 11,
+      "native_references_checked": 152
+    },
+    {
+      "character": "Luna Vachon",
+      "selector": 0,
+      "native_references_checked": 110
+    }
+  ]
+}

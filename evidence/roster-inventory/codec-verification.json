@@ -1,0 +1,124 @@
+{
+  "matches": [
+    {
+      "character": "Bret Hart",
+      "complete_blocks": 16,
+      "partial_blocks_skipped": 0,
+      "tile_events": 880,
+      "distinct_tile_sources": 457,
+      "byte_identical_tile_encodings": 880,
+      "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+      "errors": []
+    },
+    {
+      "character": "Undertaker",
+      "complete_blocks": 16,
+      "partial_blocks_skipped": 0,
+      "tile_events": 843,
+      "distinct_tile_sources": 467,
+      "byte_identical_tile_encodings": 843,
+      "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+      "errors": []
+    },
+    {
+      "character": "Yokozuna",
+      "complete_blocks": 16,
+      "partial_blocks_skipped": 0,
+      "tile_events": 1043,
+      "distinct_tile_sources": 633,
+      "byte_identical_tile_encodings": 1043,
+      "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+      "errors": []
+    },
+    {
+      "character": "Bam Bam Bigelow",
+      "complete_blocks": 16,
+      "partial_blocks_skipped": 0,
+      "tile_events": 801,
+      "distinct_tile_sources": 509,
+      "byte_identical_tile_encodings": 801,
+      "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+      "errors": []
+    },
+    {
+      "character": "Razor Ramon",
+      "complete_blocks": 16,
+      "partial_blocks_skipped": 0,
+      "tile_events": 771,
+      "distinct_tile_sources": 518,
+      "byte_identical_tile_encodings": 771,
+      "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+      "errors": []
+    },
+    {
+      "character": "Lex Luger",
+      "complete_blocks": 16,
+      "partial_blocks_skipped": 0,
+      "tile_events": 962,
+      "distinct_tile_sources": 572,
+      "byte_identical_tile_encodings": 962,
+      "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+      "errors": []
+    },
+    {
+      "character": "Doink",
+      "complete_blocks": 16,
+      "partial_blocks_skipped": 0,
+      "tile_events": 1183,
+      "distinct_tile_sources": 675,
+      "byte_identical_tile_encodings": 1183,
+      "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+      "errors": []
+    },
+    {
+      "character": "Shawn Michaels",
+      "complete_blocks": 16,
+      "partial_blocks_skipped": 0,
+      "tile_events": 651,
+      "distinct_tile_sources": 403,
+      "byte_identical_tile_encodings": 651,
+      "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+      "errors": []
+    },
+    {
+      "character": "1-2-3 Kid",
+      "complete_blocks": 16,
+      "partial_blocks_skipped": 0,
+      "tile_events": 962,
+      "distinct_tile_sources": 610,
+      "byte_identical_tile_encodings": 962,
+      "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+      "errors": []
+    },
+    {
+      "character": "Diesel",
+      "complete_blocks": 16,
+      "partial_blocks_skipped": 0,
+      "tile_events": 897,
+      "distinct_tile_sources": 562,
+      "byte_identical_tile_encodings": 897,
+      "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+      "errors": []
+    },
+    {
+      "character": "Owen Hart",
+      "complete_blocks": 16,
+      "partial_blocks_skipped": 0,
+      "tile_events": 859,
+      "distinct_tile_sources": 492,
+      "byte_identical_tile_encodings": 859,
+      "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+      "errors": []
+    },
+    {
+      "character": "Luna Vachon",
+      "complete_blocks": 16,
+      "partial_blocks_skipped": 0,
+      "tile_events": 627,
+      "distinct_tile_sources": 440,
+      "byte_identical_tile_encodings": 627,
+      "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+      "errors": []
+    }
+  ]
+}

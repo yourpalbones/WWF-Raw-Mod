@@ -2,7 +2,7 @@
 
 This is a structural inventory of the verified original WWF Raw USA ROM, not a completed animation map. Thirteen selectors resolve to twelve distinct directories; selectors 8 and 12 alias the same directory. All twelve selectable wrestler identities are now confirmed by selection-screen names, match names, actor directory values and native primary frame references. Selector 12 aliases selector 8; no separate selectable character is assigned to it. Selector 8 (Shawn Michaels) also supplies the observed common fallback.
 
-Every directory parsed across the 527-entry range established for Bret. The range is provisional for other selectors; successful parsing does not prove their runtime limits, full animation coverage. Lower-body directories remain unexamined. Shared counts below compare exact frame pointers, not all shared graphics.
+Every directory parsed across the 527-entry range established for Bret. The range is provisional for other selectors; successful parsing does not prove their runtime limits, full animation coverage. The [secondary directory inventory](secondary-graphics.md) now maps the second per-character directory table; complete body-part and action labels remain unfinished. Shared counts below compare exact frame pointers, not all shared graphics.
 
 | Selectors | File offset | Examined entries | Distinct frames | Frames shared with other directories |
 | --- | --- | ---: | ---: | ---: |
@@ -27,7 +27,7 @@ Reproduce with your original ROM:
 python3 tools/inventory_roster.py "$WWF_RAW_ROM" --output outputs/roster-primary-inventory.json --summary outputs/roster-summary.json
 ```
 
-Next: inventory lower/common parts and connect frame references to actual actions.
+Next: map the fallback ranges and connect primary/secondary frame references to actual actions.
 
 ## Verified character identities
 
