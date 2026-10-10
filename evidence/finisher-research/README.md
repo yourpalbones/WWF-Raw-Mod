@@ -2,10 +2,12 @@
 
 [Coverage tracker](../../data/wrestler-move-coverage.json) records a finisher and
 Mega Move research entry for each of the twelve selectable wrestlers. Finisher
-names come from the original character-selection screens. Mega Move names and
-controls remain unconfirmed; those fields are deliberately empty.
+names come from the original character-selection screens. Mega Move names remain
+unconfirmed. Their controls are recorded as guide-reported research candidates; gameplay
+verification remains pending.
 
-No finisher or Mega Move is marked verified yet. Each needs setup/control checks,
+Bret's [Sharpshooter](sharpshooter.md) now has verified original-game captures.
+The other finishers and all Mega Moves still need setup/control checks,
 attacker and defender frame sequences, recovery, and eventual edited-gear checks.
 Submissions additionally need hold, escape and release coverage. Two wrestlers
 having a Sharpshooter listed does not prove they share the same implementation.
@@ -57,6 +59,6 @@ python3 tools/map_action_parts.py "$WWF_RAW_ROM" TRACE_ROOT \
   --window 1 360 --output outputs/finisher-setup-mapping.json
 ```
 
-Next: establish the actual special-move input routines or obtain a usable SNES
-control reference, verify the required setup conditions, and capture Bret's
-Sharpshooter. Mega Moves require their own input/condition research and proof.
+The user supplied William Sigler, Jr.'s SNES move FAQ, giving us research inputs
+for all twelve wrestlers. Next: verify the Mega Move setup and sequence, then
+capture the remaining finishers with both attacker and defender traces.

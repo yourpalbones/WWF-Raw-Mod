@@ -9,14 +9,27 @@
       "finisher": {
         "in_game_special_move_name": "Sharpshooter",
         "name_source": "Original character-selection screen",
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
         "hold_escape_release_verified": false,
-        "recovery_verified": false,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [
+          "evidence/finisher-research/sharpshooter.md",
+          "evidence/finisher-research/sharpshooter.gif",
+          "evidence/finisher-research/sharpshooter-mapping.json"
+        ],
+        "reported_button_ids": [
+          11
+        ],
+        "reported_opponent_state": "downed",
+        "reported_attacker_position": "near legs",
+        "reported_energy_requirement": "red health bar",
+        "hold_phase_verified": true,
+        "escape_during_hold_verified": false,
+        "automatic_release_verified": true
       },
       "mega_move": {
         "name": null,
@@ -26,7 +39,25 @@
         "defender_sequence_verified": false,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_sequence_button_ids": [
+          [
+            7
+          ],
+          [
+            7
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "reported_conditions": [
+          "upper turnbuckle",
+          "opponent down"
+        ],
+        "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
+        "sequence_timing_verified": false
       }
     },
     {
@@ -42,7 +73,13 @@
         "hold_escape_release_verified": null,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_button_ids": [
+          11
+        ],
+        "reported_opponent_state": "tie-up",
+        "reported_attacker_position": "grapple",
+        "reported_energy_requirement": "red health bar"
       },
       "mega_move": {
         "name": null,
@@ -52,7 +89,22 @@
         "defender_sequence_verified": false,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_sequence_button_ids": [
+          [
+            6
+          ],
+          [
+            7
+          ],
+          [
+            7,
+            1
+          ]
+        ],
+        "reported_conditions": [],
+        "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
+        "sequence_timing_verified": false
       }
     },
     {
@@ -68,7 +120,13 @@
         "hold_escape_release_verified": null,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_button_ids": [
+          11
+        ],
+        "reported_opponent_state": "downed",
+        "reported_attacker_position": "near upper turnbuckle",
+        "reported_energy_requirement": "red health bar"
       },
       "mega_move": {
         "name": null,
@@ -78,7 +136,25 @@
         "defender_sequence_verified": false,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_sequence_button_ids": [
+          [
+            5
+          ],
+          [
+            5
+          ],
+          [
+            5,
+            0
+          ]
+        ],
+        "reported_conditions": [
+          "upper turnbuckle"
+        ],
+        "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
+        "sequence_timing_verified": false,
+        "reported_cost": "Drains attacker health; unverified"
       }
     },
     {
@@ -94,7 +170,13 @@
         "hold_escape_release_verified": null,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_button_ids": [
+          11
+        ],
+        "reported_opponent_state": "downed",
+        "reported_attacker_position": "on upper turnbuckle",
+        "reported_energy_requirement": "red health bar"
       },
       "mega_move": {
         "name": null,
@@ -104,7 +186,38 @@
         "defender_sequence_verified": false,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_sequence_button_ids": [
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6,
+            1
+          ]
+        ],
+        "reported_conditions": [
+          "final direction may be left or right"
+        ],
+        "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
+        "sequence_timing_verified": false,
+        "reported_alternate_sequence_button_ids": [
+          [
+            4
+          ],
+          [
+            4
+          ],
+          [
+            4,
+            8
+          ]
+        ],
+        "alternate_opponent_condition": "downed",
+        "alternate_sequence_verified": false
       }
     },
     {
@@ -120,7 +233,13 @@
         "hold_escape_release_verified": null,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_button_ids": [
+          11
+        ],
+        "reported_opponent_state": "tie-up",
+        "reported_attacker_position": "grapple",
+        "reported_energy_requirement": "red health bar"
       },
       "mega_move": {
         "name": null,
@@ -130,7 +249,24 @@
         "defender_sequence_verified": false,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_sequence_button_ids": [
+          [
+            6
+          ],
+          [
+            6
+          ],
+          [
+            7,
+            0
+          ]
+        ],
+        "reported_conditions": [
+          "below downed opponent"
+        ],
+        "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
+        "sequence_timing_verified": false
       }
     },
     {
@@ -146,7 +282,13 @@
         "hold_escape_release_verified": null,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_button_ids": [
+          11
+        ],
+        "reported_opponent_state": "running from opposite ropes",
+        "reported_attacker_position": "bounce from near ropes",
+        "reported_energy_requirement": "red health bar"
       },
       "mega_move": {
         "name": null,
@@ -156,7 +298,23 @@
         "defender_sequence_verified": false,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_sequence_button_ids": [
+          [
+            4
+          ],
+          [
+            4
+          ],
+          [
+            5,
+            0
+          ]
+        ],
+        "reported_conditions": [],
+        "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
+        "sequence_timing_verified": false,
+        "reported_followup": "Rapid A/B input may increase damage; unverified"
       }
     },
     {
@@ -172,7 +330,13 @@
         "hold_escape_release_verified": null,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_button_ids": [
+          11
+        ],
+        "reported_opponent_state": "downed",
+        "reported_attacker_position": "on upper turnbuckle",
+        "reported_energy_requirement": "red health bar"
       },
       "mega_move": {
         "name": null,
@@ -182,7 +346,38 @@
         "defender_sequence_verified": false,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_sequence_button_ids": [
+          [
+            6
+          ],
+          [
+            6
+          ],
+          [
+            6,
+            8
+          ]
+        ],
+        "reported_conditions": [
+          "behind dizzy opponent"
+        ],
+        "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
+        "sequence_timing_verified": false,
+        "reported_alternate_sequence_button_ids": [
+          [
+            4
+          ],
+          [
+            4
+          ],
+          [
+            4,
+            8
+          ]
+        ],
+        "alternate_opponent_condition": "downed",
+        "alternate_sequence_verified": false
       }
     },
     {
@@ -198,7 +393,13 @@
         "hold_escape_release_verified": null,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_button_ids": [
+          11
+        ],
+        "reported_opponent_state": "dizzy",
+        "reported_attacker_position": "behind opponent",
+        "reported_energy_requirement": "red health bar"
       },
       "mega_move": {
         "name": null,
@@ -208,7 +409,23 @@
         "defender_sequence_verified": false,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_sequence_button_ids": [
+          [
+            5
+          ],
+          [
+            7
+          ],
+          [
+            7,
+            8
+          ]
+        ],
+        "reported_conditions": [],
+        "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
+        "sequence_timing_verified": false,
+        "reported_followup": "Rapid A/B input may increase damage; unverified"
       }
     },
     {
@@ -224,7 +441,13 @@
         "hold_escape_release_verified": null,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_button_ids": [
+          11
+        ],
+        "reported_opponent_state": "dizzy",
+        "reported_attacker_position": "on upper turnbuckle",
+        "reported_energy_requirement": "red health bar"
       },
       "mega_move": {
         "name": null,
@@ -234,7 +457,24 @@
         "defender_sequence_verified": false,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_sequence_button_ids": [
+          [
+            4
+          ],
+          [
+            4
+          ],
+          [
+            4,
+            8
+          ]
+        ],
+        "reported_conditions": [
+          "opponent down"
+        ],
+        "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
+        "sequence_timing_verified": false
       }
     },
     {
@@ -250,7 +490,13 @@
         "hold_escape_release_verified": null,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_button_ids": [
+          11
+        ],
+        "reported_opponent_state": "tie-up",
+        "reported_attacker_position": "grapple",
+        "reported_energy_requirement": "red health bar"
       },
       "mega_move": {
         "name": null,
@@ -260,7 +506,24 @@
         "defender_sequence_verified": false,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_sequence_button_ids": [
+          [
+            5
+          ],
+          [
+            5
+          ],
+          [
+            7,
+            0
+          ]
+        ],
+        "reported_conditions": [
+          "behind dizzy opponent"
+        ],
+        "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
+        "sequence_timing_verified": false
       }
     },
     {
@@ -276,7 +539,13 @@
         "hold_escape_release_verified": false,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_button_ids": [
+          11
+        ],
+        "reported_opponent_state": "downed",
+        "reported_attacker_position": "near legs",
+        "reported_energy_requirement": "red health bar"
       },
       "mega_move": {
         "name": null,
@@ -286,7 +555,25 @@
         "defender_sequence_verified": false,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_sequence_button_ids": [
+          [
+            4
+          ],
+          [
+            7
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "reported_conditions": [
+          "hold final run button"
+        ],
+        "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
+        "sequence_timing_verified": false,
+        "reported_cost": "Drains attacker health; unverified"
       }
     },
     {
@@ -302,7 +589,13 @@
         "hold_escape_release_verified": null,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_button_ids": [
+          11
+        ],
+        "reported_opponent_state": "downed",
+        "reported_attacker_position": "near upper turnbuckle",
+        "reported_energy_requirement": "red health bar"
       },
       "mega_move": {
         "name": null,
@@ -312,8 +605,46 @@
         "defender_sequence_verified": false,
         "recovery_verified": false,
         "edited_gear_verified": false,
-        "evidence": []
+        "evidence": [],
+        "reported_sequence_button_ids": [
+          [
+            6
+          ],
+          [
+            5
+          ],
+          [
+            5,
+            0
+          ]
+        ],
+        "reported_conditions": [
+          "above downed opponent"
+        ],
+        "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
+        "sequence_timing_verified": false,
+        "reported_alternate_sequence_button_ids": [
+          [
+            4
+          ],
+          [
+            4
+          ],
+          [
+            4,
+            8
+          ]
+        ],
+        "alternate_opponent_condition": "downed",
+        "alternate_sequence_verified": false
       }
     }
-  ]
+  ],
+  "input_reference": {
+    "title": "WWF RAW FAQ/MOVE LIST for SNES",
+    "author": "William Sigler, Jr.",
+    "revision": "1.00",
+    "date": "1998-10-10",
+    "provenance": "Text supplied by the user; factual inputs recorded, full FAQ not reproduced"
+  }
 }
