@@ -1,6 +1,6 @@
 """Build a reference-inspired black-gear prototype for Bret's tested pose.
 
-This edits known ROM assets, not a screenshot. The mapped standing pose and an observed upright left walk are covered.
+This edits ROM assets, with authored standing/walking and observed running poses.
 Other animations and other users of shared tiles remain unverified.
 """
 
@@ -47,13 +47,12 @@ def build(rom):
     edits = []
     tiles = {}
     walk_map = json.loads(
-        (
-            Path(__file__).resolve().parents[1] / "data" / "bret-left-walk.json"
-        ).read_text()
+        (Path(__file__).resolve().parents[1] / "data" / "bret-gear.json").read_text()
     )
     simplified = []
     simplified_details = []
     omitted_details = []
+    relocations = []
     for asset in walk_map["assets"]:
         offset = int(asset["offset"], 0)
         if asset["compressed"]:
@@ -94,12 +93,65 @@ def build(rom):
             packet = encode_sprite_tile(decoded) if asset["compressed"] else decoded
             simplified_details.append(asset["offset"])
         if len(packet) > length:
-            raise ValueError(
-                "Authored details exceed allocation; relocate or re-author explicitly: "
-                + asset["offset"]
+            if not asset["compressed"]:
+                raise ValueError("Raw tile length changed")
+            relocations.append((offset, bytes(packet)))
+        else:
+            result[offset : offset + len(packet)] = packet
+            edits.append((offset, bytes(packet)))
+    relocated = []
+    if relocations:
+        # Preserve the sparse decoder and the original lookup. Redirect only the
+        # resolved pointers whose authored packet cannot fit its original slot.
+        entry = 0x2CF771
+        if rom[entry : entry + 4] != bytes.fromhex("a9 01 00 6b"):
+            raise ValueError("Compressed lookup return differs from original")
+        result.extend(b"\xff" * (0x400000 - len(result)))
+        program = bytearray()
+        for number, (source, packet) in enumerate(relocations):
+            target = 0x301000 + number * 40
+            source_cpu = source | 0xC00000
+            target_cpu = target | 0xC00000
+            # All native callers use 16-bit A and D=0, as recorded by the trace.
+            matched = (
+                b"\xa9"
+                + (target_cpu >> 16).to_bytes(2, "little")
+                + b"\x85\xdd"
+                + b"\xa9"
+                + (target_cpu & 65535).to_bytes(2, "little")
+                + b"\x85\xdb"
+                + bytes.fromhex("a9 01 00 6b")
             )
-        result[offset : offset + len(packet)] = packet
-        edits.append((offset, bytes(packet)))
+            low = (
+                bytes.fromhex("a5 db c9")
+                + (source_cpu & 65535).to_bytes(2, "little")
+                + b"\xd0"
+                + bytes([len(matched)])
+                + matched
+            )
+            program += (
+                bytes.fromhex("a5 dd 29 ff 00 c9")
+                + (source_cpu >> 16).to_bytes(2, "little")
+                + b"\xd0"
+                + bytes([len(low)])
+                + low
+            )
+            result[target : target + len(packet)] = packet
+            edits.append((target, packet))
+            relocated.append(
+                {
+                    "original_offset": f"0x{source:06X}",
+                    "new_offset": f"0x{target:06X}",
+                    "packet_size": len(packet),
+                }
+            )
+        program += bytes.fromhex("a9 01 00 6b")
+        if len(program) > 4096:
+            raise ValueError("Lookup redirect program exceeds reserved page")
+        result[0x300000 : 0x300000 + len(program)] = program
+        redirect = bytes.fromhex("5c 00 00 f0")
+        result[entry : entry + 4] = redirect
+        edits.extend([(0x300000, bytes(program)), (entry, redirect)])
     for slot, offset, compressed in ASSETS:
         # The same authored source map drives standing and walking details.
         # Never overwrite it with separate standing-position artwork.
@@ -111,11 +163,25 @@ def build(rom):
     pink = (31 | (12 << 5) | (24 << 10)).to_bytes(2, "little")
     result[PALETTE + 12 : PALETTE + 14] = pink
     edits.append((PALETTE + 12, pink))
-    checksum = (sum(result[:0x200000]) + 2 * sum(result[0x200000:])) & 0xFFFF
+    checksum = (
+        sum(result)
+        if relocations
+        else sum(result[:0x200000]) + 2 * sum(result[0x200000:])
+    ) & 0xFFFF
     header = (checksum ^ 0xFFFF).to_bytes(2, "little") + checksum.to_bytes(2, "little")
     result[0xFFDC:0xFFE0] = header
     edits.append((0xFFDC, header))
     patch = bytearray(b"PATCH")
+    if relocations:
+        # IPS RLE creates erased expanded space without embedding a ROM image.
+        for address in range(0x300000, 0x400000, 65535):
+            length = min(65535, 0x400000 - address)
+            patch += (
+                address.to_bytes(3, "big")
+                + b"\x00\x00"
+                + length.to_bytes(2, "big")
+                + b"\xff"
+            )
     for address, data in edits:
         patch += address.to_bytes(3, "big") + len(data).to_bytes(2, "big") + data
     patch += b"EOF"
@@ -123,16 +189,24 @@ def build(rom):
         "original_sha256": ORIGINAL_HASH,
         "patched_sha256": hashlib.sha256(result).hexdigest(),
         "changed_rom_bytes": sum(a != b for a, b in zip(rom, result)),
+        "expanded_size": len(result),
+        "relocated_packets": relocated,
+        "lookup_redirect": "Compressed pointer return only; native sparse decoder retained"
+        if relocations
+        else None,
         "checksum": f"0x{checksum:04X}",
         "tile_slots": list(tiles),
         "edits": [{"offset": f"0x{a:06X}", "size": len(d)} for a, d in edits],
         "walk_assets": len(walk_map["assets"]),
+        "movement_mapping": walk_map.get("movement_mapping"),
         "walk_tiles_using_flat_black": simplified,
         "walk_details_using_flat_black": simplified_details,
         "walk_detail_assets_omitted_for_space": omitted_details,
         "detail_mapping": walk_map["detail_mapping"],
         "visual_consistency_verified": False,
-        "scope": "Authored seven-pose left walk under visual review; other animations unverified",
+        "scope": walk_map.get(
+            "scope", "Authored movement poses; other animations unverified"
+        ),
     }
     return bytes(result), bytes(patch), tiles, report
 

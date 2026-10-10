@@ -1,0 +1,29 @@
+{
+  "frame": 2940,
+  "edited_rom_sha256": "d5a0c359ea74b185f0a8afc2c955fcf9cb1994adc37f56700c941ae0a1d13457",
+  "edited_tiles_loaded": [
+    3,
+    4,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    30
+  ],
+  "changed_vram_bytes": 73,
+  "other_vram_unchanged": true,
+  "oam_unchanged": true,
+  "only_bret_palette_color_6_changed": true,
+  "changed_screen_pixels": 152,
+  "screen_change_bounds": [
+    70,
+    86,
+    91,
+    150
+  ],
+  "outside_bret_body_changes": 0,
+  "scope": "Authored standing/walking poses plus six observed running back/side poses; other moves unverified"
+}

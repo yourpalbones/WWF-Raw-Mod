@@ -1,5 +1,8 @@
 # Black-gear prototype with bare arms
 
+The [movement revision](../bret-movement/README.md) adds observed running poses.
+To reproduce this older walking-only patch exactly, use commit `2c4d75f`.
+
 [**Watch the updated walk**](walking-comparison.gif) ·
 [Previous pads/tape versus current bare arms](standing-comparison.png)
 

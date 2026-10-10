@@ -1,0 +1,301 @@
+{
+  "paired_frames": 25,
+  "authored_detail_anchors": {
+    "annotated_poses": 4,
+    "frames_per_pose": {
+      "walking:1": 3,
+      "run-left-original:4": 8,
+      "run-left-original:12": 7,
+      "run-left-original:19": 7
+    },
+    "detail_pixel_checks": 15,
+    "black_running_garment_checks": 3060,
+    "preserved_running_accent_checks": 572,
+    "original_skin_preserved": true,
+    "skin_pixel_checks": 11257,
+    "scope": "Matches authored observed movement poses; anatomy remains subject to visual review"
+  },
+  "input": "Left and Y held; first 25 frames before later rope transition",
+  "outside_bret_screen_changes": 0,
+  "outside_bret_vram_changes": 0,
+  "other_palette_changes": 0,
+  "object_positions_identical": true,
+  "scope": "This observed input prefix only; later interactions and other moves unverified",
+  "frames": [
+    {
+      "frame": 1,
+      "changed_pixels": 152,
+      "outside_bret": 0,
+      "bret_bounds": [
+        70,
+        74,
+        100,
+        155
+      ]
+    },
+    {
+      "frame": 2,
+      "changed_pixels": 152,
+      "outside_bret": 0,
+      "bret_bounds": [
+        70,
+        74,
+        100,
+        155
+      ]
+    },
+    {
+      "frame": 3,
+      "changed_pixels": 152,
+      "outside_bret": 0,
+      "bret_bounds": [
+        70,
+        74,
+        100,
+        155
+      ]
+    },
+    {
+      "frame": 4,
+      "changed_pixels": 242,
+      "outside_bret": 0,
+      "bret_bounds": [
+        48,
+        73,
+        87,
+        148
+      ]
+    },
+    {
+      "frame": 5,
+      "changed_pixels": 242,
+      "outside_bret": 0,
+      "bret_bounds": [
+        48,
+        73,
+        87,
+        148
+      ]
+    },
+    {
+      "frame": 6,
+      "changed_pixels": 242,
+      "outside_bret": 0,
+      "bret_bounds": [
+        48,
+        73,
+        87,
+        148
+      ]
+    },
+    {
+      "frame": 7,
+      "changed_pixels": 242,
+      "outside_bret": 0,
+      "bret_bounds": [
+        48,
+        73,
+        87,
+        148
+      ]
+    },
+    {
+      "frame": 8,
+      "changed_pixels": 242,
+      "outside_bret": 0,
+      "bret_bounds": [
+        48,
+        73,
+        87,
+        148
+      ]
+    },
+    {
+      "frame": 9,
+      "changed_pixels": 242,
+      "outside_bret": 0,
+      "bret_bounds": [
+        48,
+        73,
+        87,
+        148
+      ]
+    },
+    {
+      "frame": 10,
+      "changed_pixels": 242,
+      "outside_bret": 0,
+      "bret_bounds": [
+        49,
+        73,
+        88,
+        148
+      ]
+    },
+    {
+      "frame": 11,
+      "changed_pixels": 242,
+      "outside_bret": 0,
+      "bret_bounds": [
+        49,
+        73,
+        88,
+        148
+      ]
+    },
+    {
+      "frame": 12,
+      "changed_pixels": 222,
+      "outside_bret": 0,
+      "bret_bounds": [
+        16,
+        68,
+        76,
+        148
+      ]
+    },
+    {
+      "frame": 13,
+      "changed_pixels": 222,
+      "outside_bret": 0,
+      "bret_bounds": [
+        17,
+        68,
+        77,
+        148
+      ]
+    },
+    {
+      "frame": 14,
+      "changed_pixels": 222,
+      "outside_bret": 0,
+      "bret_bounds": [
+        18,
+        68,
+        78,
+        148
+      ]
+    },
+    {
+      "frame": 15,
+      "changed_pixels": 222,
+      "outside_bret": 0,
+      "bret_bounds": [
+        18,
+        68,
+        78,
+        148
+      ]
+    },
+    {
+      "frame": 16,
+      "changed_pixels": 222,
+      "outside_bret": 0,
+      "bret_bounds": [
+        19,
+        68,
+        79,
+        148
+      ]
+    },
+    {
+      "frame": 17,
+      "changed_pixels": 222,
+      "outside_bret": 0,
+      "bret_bounds": [
+        20,
+        68,
+        80,
+        148
+      ]
+    },
+    {
+      "frame": 18,
+      "changed_pixels": 222,
+      "outside_bret": 0,
+      "bret_bounds": [
+        20,
+        68,
+        80,
+        148
+      ]
+    },
+    {
+      "frame": 19,
+      "changed_pixels": 242,
+      "outside_bret": 0,
+      "bret_bounds": [
+        9,
+        72,
+        52,
+        145
+      ]
+    },
+    {
+      "frame": 20,
+      "changed_pixels": 242,
+      "outside_bret": 0,
+      "bret_bounds": [
+        10,
+        72,
+        53,
+        145
+      ]
+    },
+    {
+      "frame": 21,
+      "changed_pixels": 242,
+      "outside_bret": 0,
+      "bret_bounds": [
+        11,
+        72,
+        54,
+        145
+      ]
+    },
+    {
+      "frame": 22,
+      "changed_pixels": 242,
+      "outside_bret": 0,
+      "bret_bounds": [
+        11,
+        72,
+        54,
+        145
+      ]
+    },
+    {
+      "frame": 23,
+      "changed_pixels": 242,
+      "outside_bret": 0,
+      "bret_bounds": [
+        12,
+        72,
+        55,
+        145
+      ]
+    },
+    {
+      "frame": 24,
+      "changed_pixels": 242,
+      "outside_bret": 0,
+      "bret_bounds": [
+        13,
+        72,
+        56,
+        145
+      ]
+    },
+    {
+      "frame": 25,
+      "changed_pixels": 242,
+      "outside_bret": 0,
+      "bret_bounds": [
+        13,
+        72,
+        56,
+        145
+      ]
+    }
+  ]
+}

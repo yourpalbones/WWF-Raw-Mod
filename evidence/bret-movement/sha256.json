@@ -1,0 +1,20 @@
+{
+  "README.md": "f4e460e02033a6559c050a478300afaa17cff3470d17860197abc5d35e649a40",
+  "bret-black-gear.ips": "50fa800eaf24399166e4273c07585854c50cb45cfdc15e8fd1819bcbe791a1fb",
+  "movement-comparison.gif": "bd073f030d9b96e8003b6b1f7fe21641cd35a9b181e046f62af8df53c21487a6",
+  "patch-report.json": "62d6be8cb4951736b49dc39cd5ebd6eb7a23564643dd79390d431700ca21e53b",
+  "run-left-codec.json": "cd752d1f5fb822aa06155465be692dabd2217da83b38687e84f96ebfaa47ffef",
+  "run-left-verification.json": "ef1059c166b6672714d549a68db47afdc7cfbd363a170bd636104389a275b028",
+  "run-left.gif": "d1fe7551a2ee9d0ac983b61b9a42ef86299ff13ee11028cc5ef3078e71f8a7ea",
+  "run-right-codec.json": "d32b1f161c8d8adc32f01a413bee530d2cc0f3c216f7900549fbbfa762d0b46d",
+  "run-right-verification.json": "d951bf6457c6fd9c7a524f2533adc7f5b48cdd245488c2abe5ca7816a891e428",
+  "run-right.gif": "5a96bf73862ab07d8770c38484bfc297cab108dfe2b14ef5777121b27b604b47",
+  "standing-verification.json": "022c01b26b6343dfdded7c5c88b43e3d629627d72406ef76cde73cff8f082db3",
+  "summary.json": "6c3da1e82f0ae05f03615f74b7ed0f14c7c1b44cd87b9b9c2883edd8abbc32f7",
+  "walk-left-codec.json": "08384c806ba1850f337966733fdb9d5c7aa352dcad9150cf233454b4fb88a3c4",
+  "walk-left-verification.json": "fbdcd5f42fc714108f7c2fab78e86506710fe07e9028c62bb9f51b290ce8e6de",
+  "walk-left.gif": "177dcc70f3f1678927eacb474a2df61f4d19ce54dd6188bf52dea8c2a487a3ee",
+  "walk-right-codec.json": "919c73e4670b34847fc5be07c01ddd3c064e95c1f9b3bd5a71ddd9be60b2ba4e",
+  "walk-right-verification.json": "8b2a2a6f4d4fc7a2477828b8503dac6b76d7d0a0b9cbb2515b9c6b7e1738311a",
+  "walk-right.gif": "6d5836711964de2eb2d3a8a64cec52a134b9046ebc5853c32b37d61a7aec6457"
+}

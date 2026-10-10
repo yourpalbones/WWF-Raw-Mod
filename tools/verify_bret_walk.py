@@ -1,4 +1,4 @@
-"""Check paired walking captures and export an actual-game comparison GIF."""
+"""Check paired movement captures and export an actual-game comparison GIF."""
 
 import argparse
 import hashlib
@@ -43,17 +43,27 @@ def indexed_pose(root, name):
     return hashlib.sha256(body.tobytes()).hexdigest(), atlas
 
 
-def verify_detail_anchors(before, after):
+def verify_detail_anchors(before, after, frame_names=None):
     path = (
         Path(__file__).resolve().parents[1] / "data" / "bret-left-walk-landmarks.json"
     )
     annotations = json.loads(path.read_text())["poses"]
+    annotations += json.loads((path.parent / "bret-running-poses.json").read_text())[
+        "poses"
+    ]
     by_hash = {a["sprite_sha256"]: a for a in annotations}
-    counts = {str(a["sample_frame"]): 0 for a in annotations}
+    counts = {}
+    garment_checks = 0
+    preserved_accent_checks = 0
     pixels_checked = 0
-    bare_arms = all(not a["elbows"] and not a["wrists"] for a in annotations)
+    bare_arms = all(not a.get("elbows") and not a.get("wrists") for a in annotations)
     skin_pixels_checked = 0
-    for png in sorted(before.glob("frame-*.png")):
+    frames = (
+        sorted(before.glob("frame-*.png"))
+        if frame_names is None
+        else [before / n for n in frame_names]
+    )
+    for png in frames:
         digest, original = indexed_pose(before, png.stem)
         if digest not in by_hash:
             raise ValueError("Unannotated walking pose: " + png.stem)
@@ -73,43 +83,80 @@ def verify_detail_anchors(before, after):
                 continue
             if any(
                 ((x - ex) / 3.0) ** 2 + ((y - ey) / 2.5) ** 2 <= 1
-                for ex, ey in anno["elbows"]
+                for ex, ey in anno.get("elbows", [])
             ):
                 desired[x, y] = 1
             if any(
                 wx - w / 2 <= x < wx + w / 2 and wy - h / 2 <= y < wy + h / 2
-                for wx, wy, w, h in anno["wrists"]
+                for wx, wy, w, h in anno.get("wrists", [])
             ):
                 desired[x, y] = 1
-        cx, cy = anno["chest"]
-        for dx, dy, color in [(0, -1, 4), (-1, 0, 8), (0, 0, 4), (1, 0, 8), (0, 1, 8)]:
-            position = cx + dx, cy + dy
-            if original.get(position) not in (4, 5):
-                raise ValueError("Chest landmark outside the original singlet")
-            desired[position] = color
+        if anno.get("chest") is not None:
+            cx, cy = anno["chest"]
+            for dx, dy, color in [
+                (0, -1, 4),
+                (-1, 0, 8),
+                (0, 0, 4),
+                (1, 0, 8),
+                (0, 1, 8),
+            ]:
+                position = cx + dx, cy + dy
+                if original.get(position) not in (4, 5):
+                    raise ValueError("Chest landmark outside the original singlet")
+                desired[position] = color
+        if "garment_regions" in anno:
+            for (x, y), color in original.items():
+                if color not in (4, 5):
+                    continue
+                inside = any(
+                    left <= x < right and top <= y < bottom
+                    for left, top, right, bottom in anno["garment_regions"]
+                )
+                if inside:
+                    if edited.get((x, y)) not in (1, 3):
+                        raise ValueError(
+                            f"Running singlet not black: {png.stem} {(x, y)}"
+                        )
+                    garment_checks += 1
+                else:
+                    if edited.get((x, y)) != color:
+                        raise ValueError(
+                            f"Tights/accent pixel changed: {png.stem} {(x, y)}"
+                        )
+                    preserved_accent_checks += 1
         for position, color in desired.items():
             if edited.get(position) != color:
                 raise ValueError(
                     f"Detail does not follow authored pose: {png.stem} {position}"
                 )
-        counts[str(anno["sample_frame"])] += 1
+        label = anno.get("case", "walking") + ":" + str(anno["sample_frame"])
+        counts[label] = counts.get(label, 0) + 1
         pixels_checked += len(desired)
     return {
         "annotated_poses": len(counts),
         "frames_per_pose": counts,
         "detail_pixel_checks": pixels_checked,
+        "black_running_garment_checks": garment_checks,
+        "preserved_running_accent_checks": preserved_accent_checks,
         "original_skin_preserved": bare_arms,
         "skin_pixel_checks": skin_pixels_checked,
-        "scope": "Matches hand-authored coordinates for these seven poses; anatomy still subject to visual review",
+        "scope": "Matches authored observed movement poses; anatomy remains subject to visual review",
     }
 
 
-def verify(before, after):
-    original = sorted(before.glob("frame-*.png"))
-    if len(original) != 90 or [p.name for p in original] != [
-        p.name for p in sorted(after.glob("frame-*.png"))
+def verify(
+    before,
+    after,
+    expected_frames=90,
+    input_description="Left held for 90 frames after cold-boot frame 2940",
+):
+    original = sorted(before.glob("frame-*.png"))[:expected_frames]
+    if expected_frames < 1 or [p.name for p in original] != [
+        f"frame-{n:06d}.png" for n in range(1, expected_frames + 1)
     ]:
-        raise ValueError("Expected 90 paired walking frames")
+        raise ValueError("Expected a complete contiguous movement prefix")
+    if any(not (after / p.name).exists() for p in original):
+        raise ValueError("Missing edited movement frame")
     report = []
     for png in original:
         name = png.stem
@@ -166,20 +213,20 @@ def verify(before, after):
         )
     return {
         "paired_frames": len(report),
-        "authored_detail_anchors": verify_detail_anchors(before, after),
-        "input": "Left held for 90 frames after cold-boot frame 2940",
+        "authored_detail_anchors": verify_detail_anchors(
+            before, after, [p.name for p in original]
+        ),
+        "input": input_description,
         "outside_bret_screen_changes": 0,
         "outside_bret_vram_changes": 0,
         "other_palette_changes": 0,
         "object_positions_identical": True,
-        "scope": "Observed upright left walk only; other animations unverified",
+        "scope": "This observed input prefix only; later interactions and other moves unverified",
         "frames": report,
     }
 
 
-def render(
-    before, after, report, output, titles=("ORIGINAL GAME", "EDITED WALKING TEST")
-):
+def render(before, after, report, output, titles=("ORIGINAL GAME", "EDITED GAME")):
     frames = []
     for record in report["frames"][::3]:
         n = record["frame"]
@@ -245,8 +292,13 @@ def main():
     parser.add_argument("--before", type=Path, required=True)
     parser.add_argument("--after", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--frames", type=int, default=90)
+    parser.add_argument(
+        "--input-description",
+        default="Left held for 90 frames after cold-boot frame 2940",
+    )
     args = parser.parse_args()
-    report = verify(args.before, args.after)
+    report = verify(args.before, args.after, args.frames, args.input_description)
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / "walk-verification.json").write_text(
         json.dumps(report, indent=2) + "\n"

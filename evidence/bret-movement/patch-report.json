@@ -1,0 +1,585 @@
+{
+  "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "patched_sha256": "d5a0c359ea74b185f0a8afc2c955fcf9cb1994adc37f56700c941ae0a1d13457",
+  "changed_rom_bytes": 1236,
+  "expanded_size": 4194304,
+  "relocated_packets": [
+    {
+      "original_offset": "0x1693B0",
+      "new_offset": "0x301000",
+      "packet_size": 29
+    }
+  ],
+  "lookup_redirect": "Compressed pointer return only; native sparse decoder retained",
+  "checksum": "0x277A",
+  "tile_slots": [
+    3,
+    4,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    30
+  ],
+  "edits": [
+    {
+      "offset": "0x08E360",
+      "size": 32
+    },
+    {
+      "offset": "0x08E380",
+      "size": 32
+    },
+    {
+      "offset": "0x08E3A0",
+      "size": 32
+    },
+    {
+      "offset": "0x08E3E0",
+      "size": 32
+    },
+    {
+      "offset": "0x08E400",
+      "size": 32
+    },
+    {
+      "offset": "0x09B4C0",
+      "size": 32
+    },
+    {
+      "offset": "0x09B500",
+      "size": 32
+    },
+    {
+      "offset": "0x09B600",
+      "size": 32
+    },
+    {
+      "offset": "0x09B660",
+      "size": 32
+    },
+    {
+      "offset": "0x09B960",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3D20",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3D60",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3D80",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3DA0",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3DC0",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3DE0",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3E40",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3E60",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3E80",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3EA0",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3F00",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3F20",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3F40",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3F60",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3F80",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3FA0",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3FC0",
+      "size": 32
+    },
+    {
+      "offset": "0x0B3FE0",
+      "size": 32
+    },
+    {
+      "offset": "0x0B4000",
+      "size": 32
+    },
+    {
+      "offset": "0x0B4020",
+      "size": 32
+    },
+    {
+      "offset": "0x0B4040",
+      "size": 32
+    },
+    {
+      "offset": "0x0B4060",
+      "size": 32
+    },
+    {
+      "offset": "0x0B4080",
+      "size": 32
+    },
+    {
+      "offset": "0x0B40A0",
+      "size": 32
+    },
+    {
+      "offset": "0x0B40C0",
+      "size": 32
+    },
+    {
+      "offset": "0x0B40E0",
+      "size": 32
+    },
+    {
+      "offset": "0x0B4EA0",
+      "size": 32
+    },
+    {
+      "offset": "0x0B4EC0",
+      "size": 32
+    },
+    {
+      "offset": "0x0B4EE0",
+      "size": 32
+    },
+    {
+      "offset": "0x0B4F00",
+      "size": 32
+    },
+    {
+      "offset": "0x0B4F20",
+      "size": 32
+    },
+    {
+      "offset": "0x0B4F40",
+      "size": 32
+    },
+    {
+      "offset": "0x0B4F80",
+      "size": 32
+    },
+    {
+      "offset": "0x0B4FC0",
+      "size": 32
+    },
+    {
+      "offset": "0x0B52C0",
+      "size": 32
+    },
+    {
+      "offset": "0x0B52E0",
+      "size": 32
+    },
+    {
+      "offset": "0x0B5300",
+      "size": 32
+    },
+    {
+      "offset": "0x0B5320",
+      "size": 32
+    },
+    {
+      "offset": "0x0B5340",
+      "size": 32
+    },
+    {
+      "offset": "0x0B5360",
+      "size": 32
+    },
+    {
+      "offset": "0x0B53A0",
+      "size": 32
+    },
+    {
+      "offset": "0x0B53C0",
+      "size": 32
+    },
+    {
+      "offset": "0x0B53E0",
+      "size": 32
+    },
+    {
+      "offset": "0x0BBDA0",
+      "size": 32
+    },
+    {
+      "offset": "0x0BCA80",
+      "size": 32
+    },
+    {
+      "offset": "0x0C7040",
+      "size": 32
+    },
+    {
+      "offset": "0x1225F3",
+      "size": 6
+    },
+    {
+      "offset": "0x1226DD",
+      "size": 5
+    },
+    {
+      "offset": "0x122932",
+      "size": 7
+    },
+    {
+      "offset": "0x122EAA",
+      "size": 8
+    },
+    {
+      "offset": "0x124672",
+      "size": 10
+    },
+    {
+      "offset": "0x125F99",
+      "size": 12
+    },
+    {
+      "offset": "0x126581",
+      "size": 11
+    },
+    {
+      "offset": "0x127C45",
+      "size": 12
+    },
+    {
+      "offset": "0x12916C",
+      "size": 13
+    },
+    {
+      "offset": "0x12917A",
+      "size": 14
+    },
+    {
+      "offset": "0x12AE50",
+      "size": 15
+    },
+    {
+      "offset": "0x12B111",
+      "size": 15
+    },
+    {
+      "offset": "0x12F9D2",
+      "size": 16
+    },
+    {
+      "offset": "0x131CBC",
+      "size": 18
+    },
+    {
+      "offset": "0x131CCE",
+      "size": 18
+    },
+    {
+      "offset": "0x13531A",
+      "size": 19
+    },
+    {
+      "offset": "0x135A60",
+      "size": 19
+    },
+    {
+      "offset": "0x135A73",
+      "size": 18
+    },
+    {
+      "offset": "0x135A86",
+      "size": 16
+    },
+    {
+      "offset": "0x135B44",
+      "size": 18
+    },
+    {
+      "offset": "0x13A239",
+      "size": 20
+    },
+    {
+      "offset": "0x13AAF9",
+      "size": 18
+    },
+    {
+      "offset": "0x13E8E9",
+      "size": 20
+    },
+    {
+      "offset": "0x13E913",
+      "size": 19
+    },
+    {
+      "offset": "0x141E4B",
+      "size": 22
+    },
+    {
+      "offset": "0x146A4B",
+      "size": 23
+    },
+    {
+      "offset": "0x14766C",
+      "size": 23
+    },
+    {
+      "offset": "0x14C6A0",
+      "size": 24
+    },
+    {
+      "offset": "0x14D348",
+      "size": 18
+    },
+    {
+      "offset": "0x157BFD",
+      "size": 26
+    },
+    {
+      "offset": "0x158784",
+      "size": 25
+    },
+    {
+      "offset": "0x1587EC",
+      "size": 23
+    },
+    {
+      "offset": "0x15F645",
+      "size": 27
+    },
+    {
+      "offset": "0x160870",
+      "size": 24
+    },
+    {
+      "offset": "0x160999",
+      "size": 27
+    },
+    {
+      "offset": "0x160EDF",
+      "size": 26
+    },
+    {
+      "offset": "0x1692B4",
+      "size": 27
+    },
+    {
+      "offset": "0x1692D0",
+      "size": 28
+    },
+    {
+      "offset": "0x1692EC",
+      "size": 27
+    },
+    {
+      "offset": "0x171885",
+      "size": 29
+    },
+    {
+      "offset": "0x172657",
+      "size": 29
+    },
+    {
+      "offset": "0x172674",
+      "size": 27
+    },
+    {
+      "offset": "0x1727D0",
+      "size": 27
+    },
+    {
+      "offset": "0x1727ED",
+      "size": 29
+    },
+    {
+      "offset": "0x17ACD2",
+      "size": 30
+    },
+    {
+      "offset": "0x17ACF0",
+      "size": 30
+    },
+    {
+      "offset": "0x17B998",
+      "size": 30
+    },
+    {
+      "offset": "0x17C2F8",
+      "size": 28
+    },
+    {
+      "offset": "0x17C316",
+      "size": 30
+    },
+    {
+      "offset": "0x17C334",
+      "size": 30
+    },
+    {
+      "offset": "0x1862E1",
+      "size": 31
+    },
+    {
+      "offset": "0x187EBB",
+      "size": 31
+    },
+    {
+      "offset": "0x187EF9",
+      "size": 30
+    },
+    {
+      "offset": "0x187F18",
+      "size": 31
+    },
+    {
+      "offset": "0x187F37",
+      "size": 29
+    },
+    {
+      "offset": "0x187F56",
+      "size": 30
+    },
+    {
+      "offset": "0x187F75",
+      "size": 31
+    },
+    {
+      "offset": "0x1880D9",
+      "size": 30
+    },
+    {
+      "offset": "0x1880F8",
+      "size": 30
+    },
+    {
+      "offset": "0x21BB5A",
+      "size": 8
+    },
+    {
+      "offset": "0x23472F",
+      "size": 19
+    },
+    {
+      "offset": "0x25CD95",
+      "size": 24
+    },
+    {
+      "offset": "0x25CF45",
+      "size": 23
+    },
+    {
+      "offset": "0x26E0C5",
+      "size": 26
+    },
+    {
+      "offset": "0x2811AC",
+      "size": 27
+    },
+    {
+      "offset": "0x301000",
+      "size": 29
+    },
+    {
+      "offset": "0x300000",
+      "size": 35
+    },
+    {
+      "offset": "0x2CF771",
+      "size": 4
+    },
+    {
+      "offset": "0x2CC506",
+      "size": 2
+    },
+    {
+      "offset": "0x00FFDC",
+      "size": 4
+    }
+  ],
+  "walk_assets": 122,
+  "movement_mapping": {
+    "new_running_poses": 6,
+    "view": "Back/side; front emblem occluded",
+    "annotations": "data/bret-running-poses.json",
+    "coverage": "Left walk 90, right walk 40, left run prefix 25, right run prefix 18 frames",
+    "full_match_verified": false
+  },
+  "walk_tiles_using_flat_black": [
+    "0x124672",
+    "0x135A86",
+    "0x13E8E9",
+    "0x14D348",
+    "0x158784",
+    "0x160870",
+    "0x160EDF",
+    "0x1692EC",
+    "0x1693B0",
+    "0x172674",
+    "0x17C2F8",
+    "0x187F37"
+  ],
+  "walk_details_using_flat_black": [
+    "0x1693B0"
+  ],
+  "walk_detail_assets_omitted_for_space": [],
+  "detail_mapping": {
+    "draft": true,
+    "method": "Explicit per-pose anatomy annotations; conflicting source pixels rejected, no majority voting",
+    "pose_samples": [
+      1,
+      4,
+      10,
+      14,
+      19,
+      25,
+      29
+    ],
+    "rejected_conflicting_pixels": 0,
+    "approved_detail_pixels": 35,
+    "pose_sprite_hashes": {
+      "1": "59751a79413d5af5ca6b2343cdfd7689156e123843a9de3c7bbc8ca07eb95103",
+      "4": "800022dd4ca40465d1ede6884d0f0381320a9aaaa8d26ae6c88c2a32cb78d94b",
+      "10": "a2adc0a4ba34e769d57b20946410be39bdb1eaddc2a0977eb009de363cd9f791",
+      "14": "e1e79254a13c1f7147266716cfb50454add3bda8f1e688b375ca1070f34823cf",
+      "19": "d7276445008aed04e26a11825d5bdf4471841512f832448cab131fe5edb4cc41",
+      "25": "ec91fc1cdcdb63d1450ba48937a3ee28478697ba1705166e9a7920647f464dfb",
+      "29": "ffad4c789aa48b4b97368fec5416dc88b0296b8bbe52eb7fbf1712bf812878ce"
+    }
+  },
+  "visual_consistency_verified": false,
+  "scope": "Authored standing/walking poses plus six observed running back/side poses; other moves unverified"
+}

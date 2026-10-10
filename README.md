@@ -10,9 +10,10 @@ mode-2 streams, and the zero-eliding mask packets used for in-ring sprite tiles.
 The sprite packet encoder reproduces the original packets in the tested trace.
 A same-size compressed tile edit has been reinserted and verified in the running
 game; see [the evidence package](evidence/bret-tile-edit/README.md).
-The [current bare-arm gear prototype](evidence/bret-bare-arms/README.md) removes
-elbow pads and wrist tape at the user's request, keeping the chest logo and
-other gear changes. All 90 walking frames preserve the original skin pixels.
+The [current movement prototype](evidence/bret-movement/README.md) covers
+walking left/right and six observed running poses, with bare arms and a chest
+logo on the visible front. Four gameplay tests verify 173 paired frames;
+complete match coverage remains unfinished.
 A [primary animation inventory](evidence/bret-animation-inventory/README.md) now
 maps 527 directory entries; full outfit animation coverage remains unverified.
 

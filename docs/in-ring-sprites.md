@@ -164,3 +164,12 @@ The user requested removal of elbow pads and wrist tape for now. The
 [bare-arm revision](../evidence/bret-bare-arms/README.md) restores original skin
 while preserving the chest logo and other gear edits. All 90 observed frames
 pass 39,255 original-skin checks; other animation coverage remains unverified.
+
+## Walking both directions and short running prefixes
+
+The [movement prototype](../evidence/bret-movement/README.md) adds six back/side
+running poses. Four observed prefixes verify 173 paired frames, preserving
+74,180 skin pixels and all unrelated PPU data. One sparse packet grows from
+28 to 29 bytes and is redirected into expanded ROM space while retaining
+the native sparse decoder. This is separate from the earlier raw-copy
+experiment; long-match timing and later combat/rope transitions remain open.

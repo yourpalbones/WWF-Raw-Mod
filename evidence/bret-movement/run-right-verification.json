@@ -1,0 +1,224 @@
+{
+  "paired_frames": 18,
+  "authored_detail_anchors": {
+    "annotated_poses": 4,
+    "frames_per_pose": {
+      "walking:1": 3,
+      "run-right-original:4": 7,
+      "run-right-original:11": 3,
+      "run-right-original:14": 5
+    },
+    "detail_pixel_checks": 15,
+    "black_running_garment_checks": 1256,
+    "preserved_running_accent_checks": 491,
+    "original_skin_preserved": true,
+    "skin_pixel_checks": 6168,
+    "scope": "Matches authored observed movement poses; anatomy remains subject to visual review"
+  },
+  "input": "Right and Y held; first 18 frames before opponent damage",
+  "outside_bret_screen_changes": 0,
+  "outside_bret_vram_changes": 0,
+  "other_palette_changes": 0,
+  "object_positions_identical": true,
+  "scope": "This observed input prefix only; later interactions and other moves unverified",
+  "frames": [
+    {
+      "frame": 1,
+      "changed_pixels": 152,
+      "outside_bret": 0,
+      "bret_bounds": [
+        70,
+        74,
+        100,
+        155
+      ]
+    },
+    {
+      "frame": 2,
+      "changed_pixels": 152,
+      "outside_bret": 0,
+      "bret_bounds": [
+        70,
+        74,
+        100,
+        155
+      ]
+    },
+    {
+      "frame": 3,
+      "changed_pixels": 152,
+      "outside_bret": 0,
+      "bret_bounds": [
+        70,
+        74,
+        100,
+        155
+      ]
+    },
+    {
+      "frame": 4,
+      "changed_pixels": 163,
+      "outside_bret": 0,
+      "bret_bounds": [
+        75,
+        79,
+        106,
+        155
+      ]
+    },
+    {
+      "frame": 5,
+      "changed_pixels": 163,
+      "outside_bret": 0,
+      "bret_bounds": [
+        75,
+        79,
+        106,
+        155
+      ]
+    },
+    {
+      "frame": 6,
+      "changed_pixels": 163,
+      "outside_bret": 0,
+      "bret_bounds": [
+        75,
+        79,
+        106,
+        155
+      ]
+    },
+    {
+      "frame": 7,
+      "changed_pixels": 163,
+      "outside_bret": 0,
+      "bret_bounds": [
+        75,
+        79,
+        106,
+        155
+      ]
+    },
+    {
+      "frame": 8,
+      "changed_pixels": 163,
+      "outside_bret": 0,
+      "bret_bounds": [
+        75,
+        79,
+        106,
+        155
+      ]
+    },
+    {
+      "frame": 9,
+      "changed_pixels": 163,
+      "outside_bret": 0,
+      "bret_bounds": [
+        75,
+        79,
+        106,
+        155
+      ]
+    },
+    {
+      "frame": 10,
+      "changed_pixels": 163,
+      "outside_bret": 0,
+      "bret_bounds": [
+        75,
+        79,
+        106,
+        155
+      ]
+    },
+    {
+      "frame": 11,
+      "changed_pixels": 184,
+      "outside_bret": 0,
+      "bret_bounds": [
+        75,
+        78,
+        131,
+        151
+      ]
+    },
+    {
+      "frame": 12,
+      "changed_pixels": 184,
+      "outside_bret": 0,
+      "bret_bounds": [
+        75,
+        78,
+        131,
+        151
+      ]
+    },
+    {
+      "frame": 13,
+      "changed_pixels": 184,
+      "outside_bret": 0,
+      "bret_bounds": [
+        75,
+        78,
+        131,
+        151
+      ]
+    },
+    {
+      "frame": 14,
+      "changed_pixels": 173,
+      "outside_bret": 0,
+      "bret_bounds": [
+        87,
+        80,
+        133,
+        154
+      ]
+    },
+    {
+      "frame": 15,
+      "changed_pixels": 173,
+      "outside_bret": 0,
+      "bret_bounds": [
+        87,
+        80,
+        133,
+        154
+      ]
+    },
+    {
+      "frame": 16,
+      "changed_pixels": 173,
+      "outside_bret": 0,
+      "bret_bounds": [
+        87,
+        80,
+        133,
+        154
+      ]
+    },
+    {
+      "frame": 17,
+      "changed_pixels": 173,
+      "outside_bret": 0,
+      "bret_bounds": [
+        87,
+        80,
+        133,
+        154
+      ]
+    },
+    {
+      "frame": 18,
+      "changed_pixels": 173,
+      "outside_bret": 0,
+      "bret_bounds": [
+        87,
+        80,
+        133,
+        154
+      ]
+    }
+  ]
+}

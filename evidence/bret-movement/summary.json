@@ -1,0 +1,32 @@
+{
+  "paired_frames": 173,
+  "skin_pixel_checks": 74180,
+  "compressed_tile_events": 1852,
+  "full_match_verified": false,
+  "cases": {
+    "walk-left": {
+      "frames": 90,
+      "input": "Left held for 90 frames",
+      "scope": "This observed input prefix only; later interactions and other moves unverified"
+    },
+    "walk-right": {
+      "frames": 40,
+      "input": "Right held for 40 frames",
+      "scope": "This observed input prefix only; later interactions and other moves unverified"
+    },
+    "run-left": {
+      "frames": 25,
+      "input": "Left and Y held; first 25 frames before later rope transition",
+      "scope": "This observed input prefix only; later interactions and other moves unverified"
+    },
+    "run-right": {
+      "frames": 18,
+      "input": "Right and Y held; first 18 frames before opponent damage",
+      "scope": "This observed input prefix only; later interactions and other moves unverified"
+    }
+  },
+  "source_skin_checks": 2999,
+  "ips_reproduces_native_test_rom": true,
+  "checksum_correct": true,
+  "native_relocated_packet_calls": 1
+}
