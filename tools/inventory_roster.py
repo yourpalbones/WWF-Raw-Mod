@@ -8,12 +8,24 @@ from pathlib import Path
 from build_bret_gear import ORIGINAL_HASH
 from inventory_bret_frames import FRAME_COUNT, parse_frame
 
+IDENTITIES = (
+    Path(__file__).resolve().parents[1] / "evidence/roster-inventory/identities.json"
+)
+
 
 def inventory(rom):
     if hashlib.sha256(rom).hexdigest() != ORIGINAL_HASH:
         raise ValueError("Requires the verified original WWF Raw USA ROM")
     directories = {}
     selectors = []
+    identities = (
+        {
+            item["selector"]: item["character"]
+            for item in json.loads(IDENTITIES.read_text())["characters"]
+        }
+        if IDENTITIES.exists()
+        else {1: "Bret Hart"}
+    )
     for selector in range(13):
         base = 0x2DD513 + selector * 2
         bank = 0x2DD52D + selector * 2
@@ -24,7 +36,7 @@ def inventory(rom):
                 "selector": selector,
                 "directory_cpu_address": f"{pointer:06X}",
                 "directory_file_offset": f"{offset:06X}",
-                "confirmed_character": "Bret Hart" if selector == 1 else None,
+                "confirmed_character": identities.get(selector),
                 "role": "common fallback" if selector == 8 else "unconfirmed",
             }
         )
@@ -67,7 +79,7 @@ def inventory(rom):
     return {
         "original_sha256": ORIGINAL_HASH,
         "scope": "13 primary selectors; examined 527 entries per distinct directory using Bret's established range",
-        "character_identities_complete": False,
+        "character_identities_complete": len(identities) == 12,
         "gameplay_coverage_complete": False,
         "lower_body_inventory_complete": False,
         "selectors": selectors,

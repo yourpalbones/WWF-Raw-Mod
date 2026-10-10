@@ -1,7 +1,7 @@
 {
   "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
   "scope": "13 primary selectors; examined 527 entries per distinct directory using Bret's established range",
-  "character_identities_complete": false,
+  "character_identities_complete": true,
   "gameplay_coverage_complete": false,
   "lower_body_inventory_complete": false,
   "selectors": [
@@ -9,7 +9,7 @@
       "selector": 0,
       "directory_cpu_address": "ACB946",
       "directory_file_offset": "2CB946",
-      "confirmed_character": null,
+      "confirmed_character": "Luna Vachon",
       "role": "unconfirmed"
     },
     {
@@ -23,70 +23,70 @@
       "selector": 2,
       "directory_cpu_address": "808745",
       "directory_file_offset": "008745",
-      "confirmed_character": null,
+      "confirmed_character": "Undertaker",
       "role": "unconfirmed"
     },
     {
       "selector": 3,
       "directory_cpu_address": "9D953E",
       "directory_file_offset": "1D953E",
-      "confirmed_character": null,
+      "confirmed_character": "Yokozuna",
       "role": "unconfirmed"
     },
     {
       "selector": 4,
       "directory_cpu_address": "C06BBB",
       "directory_file_offset": "006BBB",
-      "confirmed_character": null,
+      "confirmed_character": "Bam Bam Bigelow",
       "role": "unconfirmed"
     },
     {
       "selector": 5,
       "directory_cpu_address": "99BDA9",
       "directory_file_offset": "19BDA9",
-      "confirmed_character": null,
+      "confirmed_character": "Razor Ramon",
       "role": "unconfirmed"
     },
     {
       "selector": 6,
       "directory_cpu_address": "EF6FCD",
       "directory_file_offset": "2F6FCD",
-      "confirmed_character": null,
+      "confirmed_character": "Lex Luger",
       "role": "unconfirmed"
     },
     {
       "selector": 7,
       "directory_cpu_address": "D96BAE",
       "directory_file_offset": "196BAE",
-      "confirmed_character": null,
+      "confirmed_character": "Doink",
       "role": "unconfirmed"
     },
     {
       "selector": 8,
       "directory_cpu_address": "AFABBF",
       "directory_file_offset": "2FABBF",
-      "confirmed_character": null,
+      "confirmed_character": "Shawn Michaels",
       "role": "common fallback"
     },
     {
       "selector": 9,
       "directory_cpu_address": "83EC1E",
       "directory_file_offset": "03EC1E",
-      "confirmed_character": null,
+      "confirmed_character": "1-2-3 Kid",
       "role": "unconfirmed"
     },
     {
       "selector": 10,
       "directory_cpu_address": "EB6FD9",
       "directory_file_offset": "2B6FD9",
-      "confirmed_character": null,
+      "confirmed_character": "Diesel",
       "role": "unconfirmed"
     },
     {
       "selector": 11,
       "directory_cpu_address": "EC6FB9",
       "directory_file_offset": "2C6FB9",
-      "confirmed_character": null,
+      "confirmed_character": "Owen Hart",
       "role": "unconfirmed"
     },
     {

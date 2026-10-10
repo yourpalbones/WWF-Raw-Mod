@@ -1,0 +1,113 @@
+{
+  "characters": [
+    {
+      "character": "Bret Hart",
+      "selector": 1,
+      "actor_directory_value": 2,
+      "native_primary_tile_references_checked": 122,
+      "trace_folder": "roster-bret-match",
+      "selection_cycle_frame": 0,
+      "complete_animation_coverage": false
+    },
+    {
+      "character": "Undertaker",
+      "selector": 2,
+      "actor_directory_value": 4,
+      "native_primary_tile_references_checked": 116,
+      "trace_folder": "roster-match-undertaker",
+      "selection_cycle_frame": 300,
+      "complete_animation_coverage": false
+    },
+    {
+      "character": "Yokozuna",
+      "selector": 3,
+      "actor_directory_value": 6,
+      "native_primary_tile_references_checked": 205,
+      "trace_folder": "roster-match-yokozuna",
+      "selection_cycle_frame": 600,
+      "complete_animation_coverage": false
+    },
+    {
+      "character": "Bam Bam Bigelow",
+      "selector": 4,
+      "actor_directory_value": 8,
+      "native_primary_tile_references_checked": 123,
+      "trace_folder": "roster-match-bam-bam-bigelow",
+      "selection_cycle_frame": 900,
+      "complete_animation_coverage": false
+    },
+    {
+      "character": "Razor Ramon",
+      "selector": 5,
+      "actor_directory_value": 10,
+      "native_primary_tile_references_checked": 136,
+      "trace_folder": "roster-match-razor-ramon",
+      "selection_cycle_frame": 1200,
+      "complete_animation_coverage": false
+    },
+    {
+      "character": "Lex Luger",
+      "selector": 6,
+      "actor_directory_value": 12,
+      "native_primary_tile_references_checked": 108,
+      "trace_folder": "roster-match-lex-luger",
+      "selection_cycle_frame": 1500,
+      "complete_animation_coverage": false
+    },
+    {
+      "character": "Doink",
+      "selector": 7,
+      "actor_directory_value": 14,
+      "native_primary_tile_references_checked": 186,
+      "trace_folder": "roster-match-doink",
+      "selection_cycle_frame": 1800,
+      "complete_animation_coverage": false
+    },
+    {
+      "character": "Shawn Michaels",
+      "selector": 8,
+      "actor_directory_value": 16,
+      "native_primary_tile_references_checked": 89,
+      "trace_folder": "roster-match-shawn-michaels",
+      "selection_cycle_frame": 2100,
+      "complete_animation_coverage": false
+    },
+    {
+      "character": "1-2-3 Kid",
+      "selector": 9,
+      "actor_directory_value": 18,
+      "native_primary_tile_references_checked": 107,
+      "trace_folder": "roster-match-123-kid",
+      "selection_cycle_frame": 2400,
+      "complete_animation_coverage": false
+    },
+    {
+      "character": "Diesel",
+      "selector": 10,
+      "actor_directory_value": 20,
+      "native_primary_tile_references_checked": 191,
+      "trace_folder": "roster-match-diesel",
+      "selection_cycle_frame": 2700,
+      "complete_animation_coverage": false
+    },
+    {
+      "character": "Owen Hart",
+      "selector": 11,
+      "actor_directory_value": 22,
+      "native_primary_tile_references_checked": 104,
+      "trace_folder": "roster-match-owen-hart",
+      "selection_cycle_frame": 3000,
+      "complete_animation_coverage": false
+    },
+    {
+      "character": "Luna Vachon",
+      "selector": 0,
+      "actor_directory_value": 0,
+      "native_primary_tile_references_checked": 74,
+      "trace_folder": "roster-match-luna-vachon",
+      "selection_cycle_frame": 3300,
+      "complete_animation_coverage": false
+    }
+  ],
+  "all_stock_roster_identities_verified": true
+}
