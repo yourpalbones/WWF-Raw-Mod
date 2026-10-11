@@ -22,7 +22,7 @@ function portraitPacket(pixels){
  const out=[0,60,1];for(let end=data.length;end>0;){const start=Math.max(0,end-64);out.push(64+(end-start)-1,...data.slice(start,end));end=start;}out.push(0);return new Uint8Array(out);
 }
 function originalSelection(id){
- if(selectionOriginals[id])return selectionOriginals[id];const meta=S.characters[id],bytes=decodePortrait(rom,meta.portrait_offset),pixels=[];
+ if(selectionOriginals[id])return selectionOriginals[id];const meta=S.characters[id],bytes=decodePortrait(rom,romPointer(rom,meta.record)),pixels=[];
  for(let y=0;y<120;y++)for(let x=0;x<128;x++){let color=0,base=((y>>3)*16+(x>>3))*64;for(let p=0;p<8;p++)color|=((bytes[base+(p>>1)*16+(y%8)*2+(p&1)]>>(7-x%8))&1)<<p;if(color<64||color>127)throw Error('Unexpected portrait color range');pixels.push(color-64);}
  const colors=Array.from({length:64},(_,i)=>rom[meta.palette_offset+i*2]|rom[meta.palette_offset+i*2+1]<<8);
  const bio={};for(const [field,address]of Object.entries(meta.fields)){let pos=field==='weight'?address:0x2e0000+(rom[address]|rom[address+1]<<8),text='';while(rom[pos]!==0&&text.length<64)text+=String.fromCharCode(rom[pos++]);bio[field]=text.replaceAll('\r','\n');}
@@ -32,7 +32,7 @@ function selectionState(id){const original=originalSelection(id),edit=selectionE
 function renderSelection(){if(!rom)return;const state=selectionState(M.id),canvas=$('portrait'),context=canvas.getContext('2d'),image=context.createImageData(128,120);
  state.portrait.pixels.forEach((value,i)=>{const w=state.portrait.colors[value];image.data.set([0,5,10].map(s=>Math.floor((w>>s&31)*255/31)).concat(255),i*4);});context.putImageData(image,0,0);
  for(const [field,value]of Object.entries(state.bio))$('bio-'+field).value=value;
- const newText=new Set();for(const [id,edit]of Object.entries(selectionEdits))for(const [field,value]of Object.entries(edit.bio||{}))if(field!=='weight'&&value!==originalSelection(id).bio[field])newText.add(value);const textUsed=[...newText].reduce((n,text)=>n+text.length+1,0);
+ const newText=new Set();for(const id of Object.keys(S.characters))for(const [field,value]of Object.entries(selectionState(id).bio)){if(field==='weight')continue;const address=S.characters[id].fields[field],pointer=0x2e0000+(rom[address]|rom[address+1]<<8);if(value!==originalSelection(id).bio[field]||S.text_regions.some(r=>pointer>=r.offset&&pointer<r.offset+r.length))newText.add(value);}const textUsed=[...newText].reduce((n,text)=>n+text.length+1,0);
  $('selection-status').textContent=`128 × 120 portrait · 64 colors · ${Object.values(selectionEdits).filter(e=>e.portrait).length} imported portraits. Bio text space: ${textUsed} of 183 used. Original shared strings are preserved.`;renderProfileAssets();
 }
 function validateBio(bio,id=M.id){const limits={name:[1,14],from:[3,12],height:[1,8],special:[3,11],weight:[1,3]};
@@ -44,11 +44,12 @@ function validateSelection(edits){if(!edits||typeof edits!=='object'||Array.isAr
  if(edit.portrait){const p=edit.portrait;if(!Array.isArray(p.pixels)||p.pixels.length!==15360||p.pixels.some(v=>!Number.isInteger(v)||v<0||v>63)||!Array.isArray(p.colors)||p.colors.length!==64||p.colors.some(v=>!Number.isInteger(v)||v<0||v>32767))throw Error('Invalid portrait pixels or colors');}}
 }
 function selectionRecords(){const records=[],strings=new Map(),regions=S.text_regions.map(r=>({...r}));let expanded=false;
- for(const [id,edit]of Object.entries(selectionEdits)){
-  const meta=S.characters[id];
+ for(const id of Object.keys(S.characters)){
+  const edit=selectionEdits[id]||{},meta=S.characters[id];
   if(edit.portrait){expanded=true;const address=S.portrait_base+Number(id)*S.portrait_stride,packet=portraitPacket(edit.portrait.pixels);records.push([address,packet],[meta.record,new Uint8Array([address&255,address>>8&255,(address>>16)|192])]);const palette=new Uint8Array(128);edit.portrait.colors.forEach((v,i)=>{palette[i*2]=v&255;palette[i*2+1]=v>>8;});records.push([meta.palette_offset,palette]);}
-  for(const [field,value]of Object.entries(edit.bio||{})){
-   if(value===originalSelection(id).bio[field])continue;
+  for(const [field,value]of Object.entries(selectionState(id).bio)){
+   const pointer=field==='weight'?0:0x2e0000+(rom[meta.fields[field]]|rom[meta.fields[field]+1]<<8),relocated=S.text_regions.some(r=>pointer>=r.offset&&pointer<r.offset+r.length);
+   if(value===originalSelection(id).bio[field]&&(!relocated||!Object.values(selectionEdits).some(e=>e.bio)))continue;
    if(field==='weight'){const packet=new Uint8Array(4);packet.set(Array.from(value,c=>c.charCodeAt(0)));records.push([meta.fields.weight,packet]);continue;}
    let address=strings.get(value);
    if(address===undefined){const packet=new Uint8Array(Array.from(value.replaceAll('\n','\r')+'\0',c=>c.charCodeAt(0))),region=regions.find(r=>r.length>=packet.length);if(!region)throw Error('Edited bios exceed the available text space. Shorten some text before exporting.');address=region.offset;region.offset+=packet.length;region.length-=packet.length;strings.set(value,address);records.push([address,packet]);}

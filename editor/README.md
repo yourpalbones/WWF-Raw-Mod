@@ -4,7 +4,7 @@
 
 ## Easy download
 
-[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.2.zip)
+[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.3.zip)
 
 1. Click the download link above.
 2. Right-click the downloaded ZIP → **Extract All**.
@@ -13,7 +13,7 @@
 5. Choose a wrestler. Edit **Sprites** or **Portrait & bio**.
 6. Under **Save & play**, click **Save playable ROM** and open the saved file in your emulator.
 
-This is the browser editor, not an EXE. Once downloaded, it works offline. Use **Save project** to keep work editable; **Open project** restores it after loading the original ROM. Your original ROM stays unchanged, and no ROM is bundled or uploaded. If you only have an edited ROM, load the original first, then use **Open edited ROM** to recover supported changes. This checks the ROM checksum and refuses changes outside the editor’s supported areas.
+This is the browser editor, not an EXE. Once downloaded, it works offline. Use **Save project** to keep work editable; **Open project** restores it after loading the same ROM you started with. Your original ROM stays unchanged, and no ROM is bundled or uploaded. **Load ROM** also accepts a WrestleEdit edited ROM directly, keeping its existing portraits, bios, sprites and other assets. Checksums and supported asset locations are checked. Restore/reset returns to the ROM you loaded. Projects are tied to that starting ROM.
 
 A Windows EXE preview was built, but GitHub release uploads are blocked by the cloud integration. Its local task-output link also failed in the chat client. The ZIP above is committed to the repository so it has a normal public download URL. [Desktop build details](../desktop/README.md).
 
@@ -90,7 +90,7 @@ Choose a wrestler, then open **Portrait & bio**.
 - Main portrait uploads also update the **Small monitor photo** by default. Uncheck that option to keep the two images separate. You can import another small photo, click **Use main portrait**, or restore it independently. These images are 48 × 48 with 31 visible colors; export updates the announcer and other verified picture directories.
 - The typed name updates the main selection title and shared text. Separate name artwork is used by the Royal Rumble name card and other logo routines. **Save bio** generates new artwork by default when the name changes. You can turn that option off, enter a separate graphic name, upload a transparent logo, or restore the original. Generated names use lettering decoded from your ROM. Imports fit 256 × 224 and 15 visible colors; excessive tile counts are refused.
 - **Theme song** lets you choose one of the 12 existing wrestler themes, then click **Save theme**. Undo and projects retain the assignment. This does not import or compose new music.
-- **Open edited ROM** recovers editor-supported changes after loading the original ROM. The uploaded test ROM retained its seven replaced portraits and Scott Hall, Syxx and Kevin Nash names; unchanged old logos for renamed wrestlers receive generated replacements. Save a project after recovery.
+- **Load ROM** opens an edited mod directly. **Open edited ROM** remains available for importing edits onto a loaded original ROM. The uploaded test ROM retained its seven replaced portraits and Scott Hall, Syxx and Kevin Nash names; unchanged old logos for renamed wrestlers receive generated replacements. Save a project after recovery.
 
 [See native monitor-photo and name-card proof](../evidence/profile-assets/game-comparison.png).
 
