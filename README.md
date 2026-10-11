@@ -2,7 +2,7 @@
 
 ## Wrestler editor prototype
 
-[Download the Windows app](https://github.com/yourpalbones/WWF-Raw-Mod/releases/download/wrestleedit-v0.1.0/WrestleEdit-Windows-x64.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
+[WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
 
 Paint all 12 wrestlers’ original sprites, preview 102 captured poses,
 change selection portraits and bios, save projects and export IPS patches. Full animation coverage remains incomplete.

@@ -4,9 +4,9 @@
 
 ## Windows app — easiest option
 
-[**Download WrestleEdit for Windows**](https://github.com/yourpalbones/WWF-Raw-Mod/releases/download/wrestleedit-v0.1.0/WrestleEdit-Windows-x64.zip)
+The portable Windows preview is packaged as `WrestleEdit-Windows-x64.zip`. A public download is pending: GitHub release asset upload returned HTTP 401 in the cloud environment. The built ZIP is available as an output of the packaging task; see [desktop packaging](../desktop/README.md) to reproduce it.
 
-1. Click the download link above.
+1. Download the supplied `WrestleEdit-Windows-x64.zip` package.
 2. Right-click the downloaded ZIP and choose **Extract All**.
 3. Open the extracted **WrestleEdit** folder and double-click **WrestleEdit.exe**.
 4. Click **Load ROM** and choose your original WWF Raw USA ROM.
