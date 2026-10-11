@@ -1,0 +1,219 @@
+{
+  "source_sheet_sha256": "c5f41eb59ed12b022339d50c03c4468e0d5c58bc72e6374da8d7a2e6f592f04b",
+  "artwork_origin": "Reference-guided generated pixel-art sheet, converted into native indexed assets; not extracted game body pixels",
+  "native_palette": [
+    [
+      0,
+      82,
+      0
+    ],
+    [
+      32,
+      32,
+      32
+    ],
+    [
+      115,
+      0,
+      0
+    ],
+    [
+      197,
+      0,
+      0
+    ],
+    [
+      115,
+      0,
+      0
+    ],
+    [
+      197,
+      0,
+      0
+    ],
+    [
+      180,
+      180,
+      180
+    ],
+    [
+      164,
+      98,
+      57
+    ],
+    [
+      255,
+      255,
+      255
+    ],
+    [
+      90,
+      49,
+      0
+    ],
+    [
+      123,
+      65,
+      8
+    ],
+    [
+      189,
+      123,
+      90
+    ],
+    [
+      148,
+      82,
+      24
+    ],
+    [
+      189,
+      131,
+      16
+    ],
+    [
+      189,
+      148,
+      0
+    ],
+    [
+      213,
+      148,
+      123
+    ]
+  ],
+  "alpha_threshold": 200,
+  "uniform_scale": 0.1702127659574468,
+  "target_support_boot_anchor": [
+    44,
+    89
+  ],
+  "frames": [
+    {
+      "pose": 0,
+      "source_bounds": [
+        0,
+        26,
+        259,
+        496
+      ],
+      "support_boot_anchor": [
+        29.5,
+        495
+      ],
+      "sha256": "69348a154ee59e47d30d445e77f15a8b46bce89a38a1e66910f95b9c1d080c55"
+    },
+    {
+      "pose": 1,
+      "source_bounds": [
+        0,
+        26,
+        252,
+        496
+      ],
+      "support_boot_anchor": [
+        82.0,
+        495
+      ],
+      "sha256": "424a9ae0f794e6b8f9a7883e953e7226cb6cb4275ffebe0d745aa33e4b568ddb"
+    },
+    {
+      "pose": 2,
+      "source_bounds": [
+        0,
+        78,
+        480,
+        496
+      ],
+      "support_boot_anchor": [
+        184.5,
+        495
+      ],
+      "sha256": "2158b41b1536757e931c71394a9ea6300858e3f64d3d63c7eecd853bd172a933"
+    },
+    {
+      "pose": 3,
+      "source_bounds": [
+        0,
+        73,
+        458,
+        496
+      ],
+      "support_boot_anchor": [
+        204.5,
+        495
+      ],
+      "sha256": "4cc416f9f2627da53f7ecf913a2b1bc84acdcaacc674ddf1f854b26c328c88cb"
+    },
+    {
+      "pose": 4,
+      "source_bounds": [
+        0,
+        19,
+        242,
+        473
+      ],
+      "support_boot_anchor": [
+        66.5,
+        472
+      ],
+      "sha256": "7342494bf5acf5db30f4e1e4074afd19714d8e71c2f9cb9921c4f657e9dd74b0"
+    },
+    {
+      "pose": 5,
+      "source_bounds": [
+        0,
+        23,
+        253,
+        473
+      ],
+      "support_boot_anchor": [
+        66.0,
+        472
+      ],
+      "sha256": "8ff2181d7f256b1c945b224ee67744bf107bfae030d49b50e0c5b1764808be1f"
+    },
+    {
+      "pose": 6,
+      "source_bounds": [
+        0,
+        19,
+        266,
+        475
+      ],
+      "support_boot_anchor": [
+        33.5,
+        474
+      ],
+      "sha256": "ca55c296a4cb0bf38295f2d64727daab2a111efb079e312e16c5e3b7a5c64033"
+    },
+    {
+      "pose": 7,
+      "source_bounds": [
+        0,
+        19,
+        260,
+        475
+      ],
+      "support_boot_anchor": [
+        34.0,
+        474
+      ],
+      "sha256": "76d60869ec5fc35f754fd393df1c7baf457a7084856c291abe580d87bc1ecd3e"
+    }
+  ],
+  "motion_reference": "https://d2thvodm3xyo6j.cloudfront.net/media/2016/05/7f9970d1dcb91d3a-600x338.gif",
+  "reference_observed_frames": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    20
+  ]
+}

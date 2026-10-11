@@ -54,7 +54,9 @@ def pack(image):
     return candidates
 
 
-def build(rom, reference, art_dir=None):
+def build(rom, reference, art_dir=None, step_back=0):
+    if not 0 <= step_back <= 8:
+        raise ValueError("Step-back distance must be between zero and eight pixels")
     r = bytearray(build_pose(rom, reference)[0])
     tiles = 0
     report = []
@@ -62,7 +64,11 @@ def build(rom, reference, art_dir=None):
     for i in range(len(POSES)):
         profile = 0x2000 + i * 14
         r[0x311000 + i * 7 : 0x311007 + i * 7] = (
-            bytes([0xF1]) + profile.to_bytes(2, "little") + bytes(4)
+            bytes([0xF1])
+            + profile.to_bytes(2, "little")
+            + bytes(
+                [(-step_back if i == 0 else step_back if i == 1 else 0) & 255, 0, 0, 0]
+            )
         )
         descriptor = 0x4000 + i * 0x300
         ident = 600 + i * 3
@@ -257,6 +263,8 @@ def build(rom, reference, art_dir=None):
         else None,
         "native_sequence_entries": len(POSES),
         "stock_kick_sequence_entries": 4,
+        "step_back_world_pixels": step_back,
+        "sequence_forward_offsets": [-step_back, step_back] + [0] * 6,
         "experimental": True,
         "limitations": [
             "Reference-guided artwork draft; style and transitions still need review"
@@ -275,8 +283,16 @@ def main():
     ap.add_argument("reference", type=Path)
     ap.add_argument("--output", type=Path, required=True)
     ap.add_argument("--art-dir", type=Path, help="Hash-checked authored indexed poses")
+    ap.add_argument(
+        "--step-back",
+        type=int,
+        default=0,
+        help="Native backward/forward preparation step (0 to 8 world pixels)",
+    )
     args = ap.parse_args()
-    rom, ips, report = build(args.rom.read_bytes(), args.reference, args.art_dir)
+    rom, ips, report = build(
+        args.rom.read_bytes(), args.reference, args.art_dir, args.step_back
+    )
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / "shawn-superkick-animation.sfc").write_bytes(rom)
     (args.output / "shawn-superkick-animation.ips").write_bytes(ips)

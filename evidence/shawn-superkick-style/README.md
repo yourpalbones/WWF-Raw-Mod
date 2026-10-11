@@ -1,5 +1,7 @@
 # Shawn superkick: game-style artwork revision
 
+Latest: [front-facing revision with a backward preparation step](../shawn-superkick-front/README.md).
+
 The eight-pose finisher now uses reference-guided pixel art with fuller muscle
 shading, long golden hair, patterned red tights and white boots. The original
 Shawn sprite guided proportions and shading; the supplied Sweet Chin Music GIF

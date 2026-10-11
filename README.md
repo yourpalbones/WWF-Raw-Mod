@@ -59,6 +59,10 @@ uses newly authored indexed sprites guided by the original Shawn art and the
 viewed Sweet Chin Music reference. Both directions pass pixel and gameplay
 checks; transitions and likeness still need visual refinement.
 
+The [front-facing revision](evidence/shawn-superkick-front/README.md) opens
+Shawn's chest toward the screen at impact and adds a native four-pixel
+backward/forward preparation step. Actual emulator footage shows both directions.
+
 No ROM, raw extracted game data, emulator binary, or patched ROM is included.
 The evidence package includes screenshots and a small IPS patch.
 Supply your own local ROM; generated outputs stay in ignored output folders.

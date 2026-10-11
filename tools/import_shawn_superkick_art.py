@@ -9,10 +9,48 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+from collections import deque
 from PIL import Image
 
 
-def convert(sheet, cgram, output):
+def connected_regions(band, mask):
+    width, height = mask.size
+    foreground = bytearray(mask.tobytes())
+    components = []
+    for seed in range(len(foreground)):
+        if not foreground[seed]:
+            continue
+        foreground[seed] = 0
+        queue = deque([seed])
+        pixels = []
+        while queue:
+            k = queue.popleft()
+            pixels.append(k)
+            x = k % width
+            y = k // width
+            for yy in range(max(0, y - 1), min(height, y + 2)):
+                for xx in range(max(0, x - 1), min(width, x + 2)):
+                    n = yy * width + xx
+                    if foreground[n]:
+                        foreground[n] = 0
+                        queue.append(n)
+        if len(pixels) > 1000:
+            components.append(pixels)
+    if len(components) != 4:
+        raise ValueError(("Expected four complete foreground bodies", len(components)))
+    regions = []
+    for pixels in components:
+        xs = [k % width for k in pixels]
+        ys = [k // width for k in pixels]
+        bbox = (min(xs), min(ys), max(xs) + 1, max(ys) + 1)
+        own = Image.new("L", (bbox[2] - bbox[0], height), 0)
+        for k in pixels:
+            own.putpixel((k % width - bbox[0], k // width), 255)
+        regions.append((bbox[0], band.crop((bbox[0], 0, bbox[2], height)), own))
+    return [(cell, own) for _, cell, own in sorted(regions, key=lambda r: r[0])]
+
+
+def convert(sheet, cgram, output, motion_reference=None, reference_frames=None):
     source = Image.open(sheet).convert("RGBA")
     width, height = source.size
     colors = []
@@ -34,13 +72,17 @@ def convert(sheet, cgram, output):
                 groups.append([])
             groups[-1].append(x)
         if len(groups) != 4:
-            raise ValueError(
-                ("Expected four separate authored sprites per row", row, len(groups))
-            )
-        for group in groups:
-            # Generated sprites can cross nominal grid boundaries; use actual alpha silhouettes.
-            cell = band.crop((group[0], 0, group[-1] + 1, band.height))
-            mask = band_mask.crop((group[0], 0, group[-1] + 1, band.height))
+            # Chin-high boots can overlap the next figure's x range without touching it.
+            regions = connected_regions(band, band_mask)
+        else:
+            regions = [
+                (
+                    band.crop((g[0], 0, g[-1] + 1, band.height)),
+                    band_mask.crop((g[0], 0, g[-1] + 1, band.height)),
+                )
+                for g in groups
+            ]
+        for cell, mask in regions:
             bbox = mask.getbbox()
             if not bbox:
                 raise ValueError("Empty sprite cell")
@@ -110,8 +152,11 @@ def convert(sheet, cgram, output):
         "uniform_scale": scale,
         "target_support_boot_anchor": [44, 89],
         "frames": rows,
-        "motion_reference": "https://media1.tenor.com/m/ljOwV-Xx_QUAAAAd/shawn-michaels-sweet-chin-music.gif",
-        "reference_observed_frames": list(range(24, 33)),
+        "motion_reference": motion_reference
+        or "https://media1.tenor.com/m/ljOwV-Xx_QUAAAAd/shawn-michaels-sweet-chin-music.gif",
+        "reference_observed_frames": reference_frames
+        if reference_frames is not None
+        else list(range(24, 33)),
     }
     (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     return manifest
@@ -139,9 +184,24 @@ def main():
     ap.add_argument("sheet", type=Path)
     ap.add_argument("cgram", type=Path)
     ap.add_argument("--output", type=Path, required=True)
+    ap.add_argument("--motion-reference")
+    ap.add_argument(
+        "--reference-frames", help="Comma-separated inspected frame numbers"
+    )
     args = ap.parse_args()
     print(
-        json.dumps(convert(args.sheet, args.cgram.read_bytes(), args.output), indent=2)
+        json.dumps(
+            convert(
+                args.sheet,
+                args.cgram.read_bytes(),
+                args.output,
+                args.motion_reference,
+                [int(n) for n in args.reference_frames.split(",")]
+                if args.reference_frames
+                else None,
+            ),
+            indent=2,
+        )
     )
 
 

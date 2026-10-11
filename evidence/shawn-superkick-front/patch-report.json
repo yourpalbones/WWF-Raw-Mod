@@ -1,0 +1,77 @@
+{
+  "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "patched_sha256": "6c424743cf2d2a5284cd0a175d29e756bb4c762e36ed9c138935552b3b8c2446",
+  "ips_sha256": "766eb163a08a849961f1ecb9361d7a508e29061f3629a3f3e16413dc3e61bd5d",
+  "poses": [
+    {
+      "pose": 0,
+      "primary_id": 600,
+      "objects": 17,
+      "tiles_including_shadow": 60
+    },
+    {
+      "pose": 1,
+      "primary_id": 603,
+      "objects": 17,
+      "tiles_including_shadow": 48
+    },
+    {
+      "pose": 2,
+      "primary_id": 606,
+      "objects": 17,
+      "tiles_including_shadow": 57
+    },
+    {
+      "pose": 3,
+      "primary_id": 609,
+      "objects": 17,
+      "tiles_including_shadow": 51
+    },
+    {
+      "pose": 4,
+      "primary_id": 612,
+      "objects": 16,
+      "tiles_including_shadow": 44
+    },
+    {
+      "pose": 5,
+      "primary_id": 615,
+      "objects": 17,
+      "tiles_including_shadow": 54
+    },
+    {
+      "pose": 6,
+      "primary_id": 618,
+      "objects": 17,
+      "tiles_including_shadow": 57
+    },
+    {
+      "pose": 7,
+      "primary_id": 621,
+      "objects": 17,
+      "tiles_including_shadow": 60
+    }
+  ],
+  "newly_drawn_artwork": true,
+  "artwork_assets": "assets/shawn-superkick-front-art",
+  "artwork_manifest_sha256": "16bf6b626db355236fcb3aae49c599bb4a43cb08992e97697a080fcb42b30753",
+  "native_sequence_entries": 8,
+  "stock_kick_sequence_entries": 4,
+  "step_back_world_pixels": 4,
+  "sequence_forward_offsets": [
+    -4,
+    4,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "experimental": true,
+  "limitations": [
+    "Reference-guided artwork draft; style and transitions still need review",
+    "Native kick collision/damage logic retained; new visual sequence requires gameplay validation",
+    "Full match, interruptions, AI and player 2 as Shawn unverified"
+  ]
+}

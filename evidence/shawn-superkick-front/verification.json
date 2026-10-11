@@ -1,0 +1,217 @@
+{
+  "patched_rom_sha256": "6c424743cf2d2a5284cd0a175d29e756bb4c762e36ed9c138935552b3b8c2446",
+  "checks": {
+    "left": {
+      "opponent_health": [
+        222,
+        78
+      ],
+      "returns_to_idle": true,
+      "marker_cleared": true,
+      "preparation_step_back_world_pixels": 4,
+      "returns_forward_to_start_position": true,
+      "source_pixel_checks": [
+        {
+          "pose": 0,
+          "frame": 12,
+          "pixels_match_drawn_source": true,
+          "screen_translation": [
+            4,
+            0
+          ]
+        },
+        {
+          "pose": 1,
+          "frame": 18,
+          "pixels_match_drawn_source": true,
+          "screen_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "pose": 2,
+          "frame": 24,
+          "pixels_match_drawn_source": true,
+          "screen_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "pose": 3,
+          "frame": 30,
+          "pixels_match_drawn_source": true,
+          "screen_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "pose": 4,
+          "frame": 36,
+          "pixels_match_drawn_source": true,
+          "screen_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "pose": 5,
+          "frame": 42,
+          "pixels_match_drawn_source": true,
+          "screen_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "pose": 6,
+          "frame": 48,
+          "pixels_match_drawn_source": true,
+          "screen_translation": [
+            2,
+            8
+          ]
+        },
+        {
+          "pose": 7,
+          "frame": 54,
+          "pixels_match_drawn_source": true,
+          "screen_translation": [
+            6,
+            0
+          ]
+        }
+      ]
+    },
+    "right": {
+      "opponent_health": [
+        238,
+        94
+      ],
+      "returns_to_idle": true,
+      "marker_cleared": true,
+      "preparation_step_back_world_pixels": 4,
+      "returns_forward_to_start_position": true,
+      "source_pixel_checks": [
+        {
+          "pose": 0,
+          "frame": 12,
+          "pixels_match_drawn_source": true,
+          "screen_translation": [
+            -5,
+            -4
+          ]
+        },
+        {
+          "pose": 1,
+          "frame": 18,
+          "pixels_match_drawn_source": true,
+          "screen_translation": [
+            -1,
+            -4
+          ]
+        },
+        {
+          "pose": 2,
+          "frame": 24,
+          "pixels_match_drawn_source": true,
+          "screen_translation": [
+            -1,
+            -4
+          ]
+        },
+        {
+          "pose": 3,
+          "frame": 30,
+          "pixels_match_drawn_source": true,
+          "screen_translation": [
+            -1,
+            -4
+          ]
+        },
+        {
+          "pose": 4,
+          "frame": 36,
+          "pixels_match_drawn_source": true,
+          "screen_translation": [
+            -1,
+            -4
+          ]
+        },
+        {
+          "pose": 5,
+          "frame": 42,
+          "pixels_match_drawn_source": true,
+          "screen_translation": [
+            -1,
+            -4
+          ]
+        },
+        {
+          "pose": 6,
+          "frame": 48,
+          "pixels_match_drawn_source": true,
+          "screen_translation": [
+            -1,
+            3
+          ]
+        },
+        {
+          "pose": 7,
+          "frame": 54,
+          "pixels_match_drawn_source": true,
+          "screen_translation": [
+            -1,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "normal_A_and_Undertaker_finisher_endpoint_health_and_action_match_original": true,
+  "normal_A_actor_vram_matches_original_at_frames": [
+    18,
+    24,
+    30
+  ],
+  "defender_getup_and_attacker_walking_verified": true,
+  "ips_round_trip_exact": true,
+  "snes_checksum_valid": true,
+  "setup": "Both captures load controller-generated original-ROM save states; press R at frame 10 for eight frames; run 180 frames with interval one",
+  "limitations": [
+    "Reference-guided generated artwork converted to the native palette; transitions and likeness still need review",
+    "Eight newly drawn poses, native collision/damage logic retained",
+    "Fresh-boot setup reproduction remains unresolved; no fresh-boot finisher claim",
+    "Full match, interruptions, AI, player 2 as Shawn and gear patch combination unverified"
+  ],
+  "artwork_manifest_sha256": "16bf6b626db355236fcb3aae49c599bb4a43cb08992e97697a080fcb42b30753",
+  "motion_reference_viewed": true,
+  "reference_kick_frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "motion_reference": "https://d2thvodm3xyo6j.cloudfront.net/media/2016/05/7f9970d1dcb91d3a-600x338.gif",
+  "reference_total_frames": 59,
+  "reference_duration_ms": 1770
+}
