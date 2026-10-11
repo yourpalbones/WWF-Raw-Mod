@@ -1,0 +1,64 @@
+{
+  "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "patched_sha256": "4d1fe1f455ca9877ecd27aa0971985fdc2e04cfe3d2d77c6cf093c1a2bb2e959",
+  "ips_sha256": "9f4f87d034104cd8f072c5674a236f59e6fcd7158bc65c9dab4880db28c77982",
+  "poses": [
+    {
+      "pose": 0,
+      "primary_id": 600,
+      "objects": 16,
+      "tiles_including_shadow": 41
+    },
+    {
+      "pose": 1,
+      "primary_id": 603,
+      "objects": 17,
+      "tiles_including_shadow": 42
+    },
+    {
+      "pose": 2,
+      "primary_id": 606,
+      "objects": 17,
+      "tiles_including_shadow": 51
+    },
+    {
+      "pose": 3,
+      "primary_id": 609,
+      "objects": 17,
+      "tiles_including_shadow": 54
+    },
+    {
+      "pose": 4,
+      "primary_id": 612,
+      "objects": 17,
+      "tiles_including_shadow": 48
+    },
+    {
+      "pose": 5,
+      "primary_id": 615,
+      "objects": 17,
+      "tiles_including_shadow": 45
+    },
+    {
+      "pose": 6,
+      "primary_id": 618,
+      "objects": 17,
+      "tiles_including_shadow": 45
+    },
+    {
+      "pose": 7,
+      "primary_id": 621,
+      "objects": 16,
+      "tiles_including_shadow": 44
+    }
+  ],
+  "newly_drawn_artwork": true,
+  "native_sequence_entries": 8,
+  "stock_kick_sequence_entries": 4,
+  "experimental": true,
+  "limitations": [
+    "Initial artwork is a geometric pixel-art draft",
+    "Native kick collision/damage logic retained; new visual sequence requires gameplay validation",
+    "Full match, interruptions, AI and player 2 as Shawn unverified"
+  ]
+}

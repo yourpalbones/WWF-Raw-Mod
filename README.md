@@ -49,6 +49,11 @@ three torso phases and the impact leg while retaining stock timing. Both
 directions connect and recover in loaded-state captures; fresh-boot setup
 reproduction remains unresolved.
 
+The [newly drawn eight-pose animation](evidence/shawn-superkick-animation/README.md)
+replaces the entire experimental kick sequence with complete drawn body poses.
+All eight assembled poses match the authored artwork in both directions; this
+is still an artwork draft with native kick collision logic.
+
 No ROM, raw extracted game data, emulator binary, or patched ROM is included.
 The evidence package includes screenshots and a small IPS patch.
 Supply your own local ROM; generated outputs stay in ignored output folders.

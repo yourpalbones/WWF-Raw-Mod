@@ -1,5 +1,8 @@
 # Shawn superkick: leaning full-body prototype
 
+Superseded by the [newly drawn eight-pose animation](../shawn-superkick-animation/README.md).
+This page documents the earlier rotated-art prototype.
+
 This revision reposes Shawn's torso during the chamber, impact and retraction.
 At impact he leans back over the planted support leg and raises the kicking
 boot toward the opponent's head, following the supplied reference photo.
