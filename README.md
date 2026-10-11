@@ -63,11 +63,6 @@ The [front-facing revision](evidence/shawn-superkick-front/README.md) opens
 Shawn's chest toward the screen at impact and adds a native four-pixel
 backward/forward preparation step. Actual emulator footage shows both directions.
 
-The [standing/walking redesign](evidence/shawn-redesign/README.md) gives Shawn
-matching front and rear idle/walk sprites in the superkick design. Actual
-before/after gameplay shows the new look, with 28 pose/orientation combinations
-verified. Other actions still need matching artwork.
-
 No ROM, raw extracted game data, emulator binary, or patched ROM is included.
 The evidence package includes screenshots and a small IPS patch.
 Supply your own local ROM; generated outputs stay in ignored output folders.
