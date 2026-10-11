@@ -1,5 +1,13 @@
 # WWF Raw SNES research tools
 
+## Gear editor prototype
+
+[Try the Bret gear workshop](editor/README.md) · [View the running editor](evidence/gear-editor/workshop.png)
+
+Paint assembled original sprites, preview 15 captured standing/walking poses,
+save projects and export IPS patches. Full animation coverage remains incomplete.
+
+
 Original tools for decoding and reconstructing WWF Raw (USA) graphics.
 We have recovered complete in-ring frames of **Bret Hart** and **Undertaker**,
 including their palettes and object layouts. We also decoded interface graphics

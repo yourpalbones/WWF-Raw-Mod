@@ -1,0 +1,21 @@
+{
+  "poses_matched_native_assembly": 15,
+  "sources_byte_exact_roundtrips": 215,
+  "browser_checks": [
+    "paint",
+    "undo",
+    "project_reload",
+    "IPS_tile_roundtrip",
+    "checksum",
+    "compressed_overflow_refusal"
+  ],
+  "existing_tests_passed": 21,
+  "emulator_patch_capture_frame": 2940,
+  "changed_gameplay_pixels": [
+    [
+      76,
+      86
+    ]
+  ],
+  "edited_animation_coverage_complete": false
+}
