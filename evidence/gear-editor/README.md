@@ -31,3 +31,21 @@ This proves a first editor-to-ROM roundtrip, not complete outfit or animation
 coverage. Unknown shared users, unmapped ordinary actions and relocation remain
 future work. The walking preview cycles samples rather than replaying native
 animation timing. Original standing/walking sprite work is retained.
+
+## Palette editing
+
+![Original at left; exported green palette at right](palette-gameplay.png)
+
+Palette slots 1–15 can now be recolored with a color picker. The editor snaps
+colors to SNES 5-bit RGB, previews all loaded poses, counts visible uses in the
+current pose, and saves palette edits alongside tile edits in version 2 projects.
+Version 1 projects remain supported with their original palette. Undo and reset
+cover both kinds of edits; slot 0 remains locked for transparency.
+
+Browser verification checked exact selected-slot recoloring, restoration and
+undo, palette project reload, legacy project loading, refusal of invalid slot 0,
+and the palette bytes/checksum in the exported IPS. The resulting test patch
+was cold-booted with the same 2940-frame schedule: native CGRAM slot 4 was the
+expected green word `03E0`, and 88 screen pixels differed from the original.
+The test patch also includes the previous one-pixel garment edit. This verifies
+palette export in this capture, not complete palette ownership or move coverage.

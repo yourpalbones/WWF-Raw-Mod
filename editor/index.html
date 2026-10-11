@@ -11,6 +11,8 @@ body{background:#14161e;color:#eee;font:16px system-ui;margin:0;padding:28px;max
 <div class="row"><label>Pose <select id="pose" disabled></select></label><button id="play" disabled>Play poses</button><label>Zoom <select id="zoom"><option>4</option><option selected>6</option><option>8</option></select></label></div>
 <div class="workspace"><canvas id="sprite" width="32" height="88" aria-label="Editable assembled wrestler sprite"></canvas><aside>
 <h2>Paint gear</h2><p>Select a native color, then paint directly on the wrestler. Transparent pixels are locked in this first version.</p><div id="colors"></div>
+<div class="row"><label>Selected color <input id="palette-color" type="color" disabled></label><button id="palette-apply" disabled>Change color</button><button id="palette-restore" disabled>Restore color</button></div>
+<p id="palette-usage">Select a color to see its use in the current pose.</p>
 <div class="row"><button id="undo" disabled>Undo</button><button id="reset" disabled>Reset edits</button></div>
 <p id="details">No ROM loaded.</p>
 <h2>Save your work</h2><div class="row"><button id="save" disabled>Save project</button><button id="patch" disabled>Export IPS patch</button><button id="png" disabled>Save pose PNG</button></div>

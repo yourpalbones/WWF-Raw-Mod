@@ -18,7 +18,10 @@ original-game capture evidence, not a ROM or extracted tile library.
 - 15 original standing and sampled walking layouts, assembled from native OAM
   positions, palettes and flips. Play poses cycles captured samples at a fixed
   preview speed; it does not reproduce the game's animation timing.
-- Paint using the native 15 visible palette colors. Transparency is locked.
+- Paint with 15 visible palette slots, or select a slot and use **Change color**
+  to choose a new color. Colors snap to the SNES’s 5-bit RGB precision.
+  The usage count reports visible pixels in the current pose; changes apply
+  wherever the palette slot is used. Transparency is locked.
 - Edits change ROM tile sources and appear in every loaded pose using that source.
 - Undo, reset, save/load project, native-resolution PNG and IPS export.
 - Exact original USA ROM hash validation, optional copier-header removal,
@@ -26,7 +29,7 @@ original-game capture evidence, not a ROM or extracted tile library.
   Apply patches to an unheadered copy of the original ROM.
 
 Bret is the first editable character. This prototype does not include all twelve
-characters, every animation, palette editing, tile relocation, automatic shared
+characters, every animation, tile relocation, automatic shared
 asset isolation or an emulator inside the editor. A source may also be used in
 unloaded actions or by another wrestler. Check edited patches in actual gameplay.
 Compressed edits that exceed their original allocations are refused.
@@ -44,7 +47,8 @@ python3 tools/verify_editor.py '/path/to/WWF Raw (USA).sfc' \
 
 This serves the editor for local testing, compares 15 assembled sprites against
 native OAM extraction, verifies all 215 tile sources re-encode byte for byte,
-and exercises painting, undo, project reload, IPS output/checksum and overflow
+and exercises painting, palette recoloring/restore/undo, current and legacy
+project reload, invalid palette rejection, IPS output/checksum and overflow
 refusal. It writes a private test ROM and screenshot under ignored `outputs/`.
 See [evidence and limits](../evidence/gear-editor/README.md).
 
@@ -59,3 +63,6 @@ capture prefixes (`--snapshot LABEL=PREFIX`); standing should come first so its
 compressed sources are available for subsequent walking snapshots. The shipped
 walking samples are the first 15 captures from `gear-walk-original`, after the
 verified `emulator-coldboot/frame-002940` standing capture.
+
+[Palette editing emulator proof](../evidence/gear-editor/palette-gameplay.png):
+an exported patch changes Bret’s pink palette slot to green in the actual game.

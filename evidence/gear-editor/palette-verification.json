@@ -1,0 +1,16 @@
+{
+  "palette_slot": 4,
+  "native_color_word": 992,
+  "emulator_frame": 2940,
+  "changed_gameplay_pixels": 88,
+  "test_also_includes_single_garment_pixel_edit": true,
+  "browser_checks": [
+    "exact selected-slot recoloring",
+    "restore and undo",
+    "palette IPS record and checksum",
+    "version 2 palette project reload",
+    "version 1 compatibility",
+    "invalid slot 0 refusal"
+  ],
+  "full_animation_verification": false
+}

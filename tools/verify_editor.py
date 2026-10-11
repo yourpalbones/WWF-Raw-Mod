@@ -42,6 +42,23 @@ with sync_playwright() as p:
   assert actual.crop(actual.getbbox()).tobytes()==native.tobytes(),label
  print('15 assembled poses match native OAM captures exactly; all 215 sources re-encode byte for byte')
  page.locator('#pose').select_option('0')
+ # Palette changes must recolor precisely the selected slot, without changing tiles.
+ page.get_by_role('button',name='Native color 4',exact=True).click()
+ before=page.evaluate('Array.from(ctx.getImageData(0,0,canvas.width,canvas.height).data)')
+ matches=page.evaluate('cells.map(c=>Boolean(c && pixels(c.key)[c.index]===4))')
+ page.locator('#palette-color').fill('#00ff00')
+ page.locator('#palette-apply').click()
+ assert page.evaluate('paletteEdits')=={'4': 992}
+ after=page.evaluate('Array.from(ctx.getImageData(0,0,canvas.width,canvas.height).data)')
+ assert any(matches)
+ for index,match in enumerate(matches):
+  assert after[index*4:index*4+4]==([0,255,0,255] if match else before[index*4:index*4+4])
+ assert page.evaluate('Object.keys(edits).length')==0
+ page.locator('#palette-restore').click()
+ assert page.evaluate('paletteEdits')=={}
+ page.locator('#undo').click()
+ assert page.evaluate('paletteEdits')=={'4':992}
+ page.get_by_role('button',name='Native color 1',exact=True).click()
  # Paint a visible, nonblack source pixel, export and verify actual tile changes.
  target=page.evaluate('cells.findIndex(c=>c && [4,5].includes(pixels(c.key)[c.index]))')
  width=page.evaluate('canvas.width');rect=page.locator('#sprite').bounding_box()
@@ -60,6 +77,8 @@ with sync_playwright() as p:
   assert tile(decoded,0,4)==pixels_
  args.output.parent.mkdir(parents=True,exist_ok=True)
  (args.output.parent/'editor-test.sfc').write_bytes(data)
+ palette_offset=page.evaluate('M.palette_offset')
+ assert int.from_bytes(data[palette_offset+8:palette_offset+10],'little')==992
  assert (sum(data[:0x200000])+2*sum(data[0x200000:]))&65535==int.from_bytes(data[0xffde:0xffe0],'little')
  with page.expect_download() as d:page.locator('#save').click()
  project=Path(d.value.path()).read_bytes()
@@ -67,14 +86,27 @@ with sync_playwright() as p:
  page.locator('#project').set_input_files({'name':'project.json','mimeType':'application/json','buffer':project})
  page.wait_for_function("document.getElementById('status').textContent.startsWith('Project loaded')")
  assert page.evaluate('edits')==edited
+ assert page.evaluate('paletteEdits')=={'4':992}
+ # Old projects load with the original palette; invalid transparency edits fail atomically.
+ import json
+ old=json.loads(project);old['version']=1;old.pop('palette_edits')
+ page.locator('#project').set_input_files({'name':'old.json','mimeType':'application/json','buffer':json.dumps(old).encode()})
+ page.wait_for_function('Object.keys(paletteEdits).length===0')
+ invalid=json.loads(project);invalid['palette_edits']={'0':992}
+ page.locator('#project').set_input_files({'name':'bad.json','mimeType':'application/json','buffer':json.dumps(invalid).encode()})
+ page.wait_for_function("document.getElementById('status').textContent.includes('invalid palette')")
+ assert page.evaluate('edits')==edited and page.evaluate('paletteEdits')=={}
  # Failed oversized sparse packets must be blocked rather than corrupt neighbors.
  page.evaluate("const key=Object.keys(M.sources).find(k=>M.sources[k].compressed && M.sources[k].length<36); edits[key]=Array(64).fill(15)")
  assert page.evaluate("(()=>{try{patch();return false}catch(e){return e.message.includes('more space')}})()")
  page.locator('#reset').click()
  args.output.parent.mkdir(parents=True,exist_ok=True)
+ page.get_by_role('button',name='Native color 4',exact=True).click()
+ page.locator('#palette-color').fill('#00ff00')
+ page.locator('#palette-apply').click()
  page.screenshot(path=str(args.output),full_page=True)
  assert not errors,errors
  browser.close()
- print('Paint, IPS tile roundtrip/checksum, undo, project reload and overflow refusal passed')
+ print('Paint, palette recoloring/restore/undo, IPS colors/checksum, current and legacy projects, invalid palette and overflow refusal passed')
 
 server.shutdown()
