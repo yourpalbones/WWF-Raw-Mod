@@ -2,7 +2,7 @@
 
 ## Wrestler editor prototype
 
-[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.4.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
+[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.5.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
 
 Paint all 12 wrestlers’ original sprites, preview 102 captured poses,
 change selection portraits, monitor photos, bios, in-match names and existing
@@ -134,3 +134,5 @@ outputs as well. Partial/yielded blocks are counted separately and skipped.
 
 Not yet completed: common/lower animation inventories, semantic move mapping,
 full wrestler replacement, gameplay changes, or complete game editing.
+
+Custom MIDI songs are available in v0.5: [complete-song playback proof and instructions](evidence/custom-midi/README.md).

@@ -1,0 +1,83 @@
+{
+  "all_twelve_theme_slots": [
+    {
+      "wrestler_id": 0,
+      "theme_id": 19,
+      "uploaded_streams": 8,
+      "native_audio_peak": 14147
+    },
+    {
+      "wrestler_id": 1,
+      "theme_id": 16,
+      "uploaded_streams": 8,
+      "native_audio_peak": 14155
+    },
+    {
+      "wrestler_id": 2,
+      "theme_id": 7,
+      "uploaded_streams": 8,
+      "native_audio_peak": 14153
+    },
+    {
+      "wrestler_id": 3,
+      "theme_id": 8,
+      "uploaded_streams": 8,
+      "native_audio_peak": 14151
+    },
+    {
+      "wrestler_id": 4,
+      "theme_id": 9,
+      "uploaded_streams": 8,
+      "native_audio_peak": 14149
+    },
+    {
+      "wrestler_id": 5,
+      "theme_id": 10,
+      "uploaded_streams": 8,
+      "native_audio_peak": 14152,
+      "loop_start_frames": [
+        50,
+        5620,
+        11191
+      ]
+    },
+    {
+      "wrestler_id": 6,
+      "theme_id": 11,
+      "uploaded_streams": 8,
+      "native_audio_peak": 14149
+    },
+    {
+      "wrestler_id": 7,
+      "theme_id": 12,
+      "uploaded_streams": 8,
+      "native_audio_peak": 14145
+    },
+    {
+      "wrestler_id": 8,
+      "theme_id": 13,
+      "uploaded_streams": 8,
+      "native_audio_peak": 14151
+    },
+    {
+      "wrestler_id": 9,
+      "theme_id": 14,
+      "uploaded_streams": 8,
+      "native_audio_peak": 14142
+    },
+    {
+      "wrestler_id": 10,
+      "theme_id": 15,
+      "uploaded_streams": 8,
+      "native_audio_peak": 14142
+    },
+    {
+      "wrestler_id": 11,
+      "theme_id": 6,
+      "uploaded_streams": 8,
+      "native_audio_peak": 14151
+    }
+  ],
+  "complete_92_8_second_song_reaches_end_and_loops_twice": true,
+  "physical_channels_used": 4
+}

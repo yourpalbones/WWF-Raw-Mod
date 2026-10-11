@@ -80,11 +80,14 @@ The editor now updates the in-match health-bar name separately from the bio and
 large logo. All twelve exported labels are verified in native drawing buffers;
 see [name evidence](../evidence/match-names/README.md).
 
-Theme reassignment is available in the editor. The audio-bank directory and all
-21 song headers are inventoried, and a new eight-note composition runs through
-the original audio driver with its existing instruments. The next music step is
-a native song compiler/import workflow with timing, loops, instrument choices
-and SPC memory validation. See [audio evidence](../evidence/theme-music/README.md).
+Theme reassignment and custom melodic MIDI import are available in v0.5. Complete
+songs compile into up to eight native streams with tempo changes, sustain,
+velocity, rests, long notes and looping. All twelve theme slots pass native
+upload/playback checks; a 92.8-second four-part composition completes and loops
+twice. Projects preserve imported notes and exported ROMs reopen byte-for-byte.
+Stock sound selection replaces MIDI program changes. Percussion, pitch bends,
+General MIDI instrument mapping and recorded-audio streaming remain future work.
+See [playback proof](../evidence/custom-midi/README.md).
 
 A relocated thirteenth profile is selectable and enters a native match. It still
 uses a placeholder label and Shawn's directory, and reads beyond the stock

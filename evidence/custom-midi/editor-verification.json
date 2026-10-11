@@ -1,0 +1,13 @@
+{
+  "full_midi_notes": 640,
+  "duration_seconds": 92.8,
+  "tempo_changes": true,
+  "polyphonic_voices": 4,
+  "sustain_and_running_status": true,
+  "malformed_and_unsupported_imports_atomic": true,
+  "polyphony_overflow_refused": true,
+  "undo_and_project7_reload": true,
+  "twelve_independent_theme_slots": true,
+  "stock_samples_and_instruments_preserved": true,
+  "edited_rom_reload_byte_exact": true
+}

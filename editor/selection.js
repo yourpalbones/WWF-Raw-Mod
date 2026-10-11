@@ -33,14 +33,14 @@ function renderSelection(){if(!rom)return;const state=selectionState(M.id),canva
  state.portrait.pixels.forEach((value,i)=>{const w=state.portrait.colors[value];image.data.set([0,5,10].map(s=>Math.floor((w>>s&31)*255/31)).concat(255),i*4);});context.putImageData(image,0,0);
  for(const [field,value]of Object.entries(state.bio))$('bio-'+field).value=value;
  const newText=new Set();for(const id of Object.keys(S.characters))for(const [field,value]of Object.entries(selectionState(id).bio)){if(field==='weight')continue;const address=S.characters[id].fields[field],pointer=0x2e0000+(rom[address]|rom[address+1]<<8);if(value!==originalSelection(id).bio[field]||S.text_regions.some(r=>pointer>=r.offset&&pointer<r.offset+r.length))newText.add(value);}const textUsed=[...newText].reduce((n,text)=>n+text.length+1,0);
- $('selection-status').textContent=`128 × 120 portrait · 64 colors · ${Object.values(selectionEdits).filter(e=>e.portrait).length} imported portraits. Bio text space: ${textUsed} of 183 used. Original shared strings are preserved.`;renderProfileAssets();renderMatchName();
+ $('selection-status').textContent=`128 × 120 portrait · 64 colors · ${Object.values(selectionEdits).filter(e=>e.portrait).length} imported portraits. Bio text space: ${textUsed} of 183 used. Original shared strings are preserved.`;renderProfileAssets();renderMatchName();renderCustomMusic();
 }
 function validateBio(bio,id=M.id){const limits={name:[1,14],from:[3,12],height:[1,8],special:[3,11],weight:[1,3]};
  if(!bio||typeof bio!=='object'||Array.isArray(bio))throw Error('Invalid bio data');
  for(const [field,value]of Object.entries(bio)){if(field==='name'&&value!==originalSelection(id).bio.name&&!/^[A-Z ]+$/.test(value))throw Error('New names support uppercase letters and spaces.');if(!Object.hasOwn(limits,field)||typeof value!=='string')throw Error('Invalid bio field');const [lines,width]=limits[field],parts=value.split('\n');if(!value||parts.length>lines||parts.some(p=>!p.length||(p.length>width&&(field!=='name'||value!==originalSelection(id).bio.name)))||!/^[A-Z0-9 .,\-'"%\n]+$/.test(value)||(field==='weight'&&!/^\d{1,3}$/.test(value)))throw Error(`Check ${field}: uppercase text, up to ${lines} lines of ${width} characters.`);}
 }
 function validateSelection(edits){if(!edits||typeof edits!=='object'||Array.isArray(edits))throw Error('Invalid selection edits');
- for(const [id,edit]of Object.entries(edits)){if(!Object.hasOwn(S.characters,id)||!edit||typeof edit!=='object'||Array.isArray(edit)||Object.keys(edit).some(k=>!['portrait','bio','monitor','logo','logoName','theme','hudName','hud'].includes(k)))throw Error('Invalid selection character');if(edit.bio)validateBio(edit.bio,id);validateProfileAssets(edit,id);if(edit.hudName!==undefined)matchNamePixels(edit.hudName);if(edit.hud&&(!Array.isArray(edit.hud.pixels)||edit.hud.pixels.length!==512||edit.hud.pixels.some(v=>!Number.isInteger(v)||v<0||v>15)||edit.hudName!==undefined))throw Error('Invalid match name graphics');
+ for(const [id,edit]of Object.entries(edits)){if(!Object.hasOwn(S.characters,id)||!edit||typeof edit!=='object'||Array.isArray(edit)||Object.keys(edit).some(k=>!['portrait','bio','monitor','logo','logoName','theme','hudName','hud','song'].includes(k)))throw Error('Invalid selection character');if(edit.song)compileSong(edit.song);if(edit.bio)validateBio(edit.bio,id);validateProfileAssets(edit,id);if(edit.hudName!==undefined)matchNamePixels(edit.hudName);if(edit.hud&&(!Array.isArray(edit.hud.pixels)||edit.hud.pixels.length!==512||edit.hud.pixels.some(v=>!Number.isInteger(v)||v<0||v>15)||edit.hudName!==undefined))throw Error('Invalid match name graphics');
  if(edit.portrait){const p=edit.portrait;if(!Array.isArray(p.pixels)||p.pixels.length!==15360||p.pixels.some(v=>!Number.isInteger(v)||v<0||v>63)||!Array.isArray(p.colors)||p.colors.length!==64||p.colors.some(v=>!Number.isInteger(v)||v<0||v>32767))throw Error('Invalid portrait pixels or colors');}}
 }
 function selectionRecords(){const records=[],strings=new Map(),regions=S.text_regions.map(r=>({...r}));let expanded=false;
@@ -57,7 +57,7 @@ function selectionRecords(){const records=[],strings=new Map(),regions=S.text_re
   }
  }
  const companion=profileAssetRecords();records.push(...companion.records);expanded ||= companion.expanded;const match=matchNameRecords();records.push(...match.records);expanded ||= match.expanded;
- return {records,expanded};
+ const music=customMusicRecords();records.push(...music.records);expanded ||= music.expanded;return {records,expanded};
 }
 function quantizePortrait(rgba,limit=64){
  const counts=new Map();for(let i=0;i<rgba.length;i+=4){const channels=[0,1,2].map(c=>Math.round(rgba[i+c]*31/255)),word=channels[0]|channels[1]<<5|channels[2]<<10;counts.set(word,(counts.get(word)||0)+1);}

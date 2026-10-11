@@ -4,7 +4,7 @@
 
 ## Easy download
 
-[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.4.zip)
+[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.5.zip)
 
 1. Click the download link above.
 2. Right-click the downloaded ZIP → **Extract All**.
@@ -152,7 +152,7 @@ Verify the app workflow, pose PNG imports, local playable-ROM download and mobil
 python3 tools/verify_app.py '/path/to/WWF Raw (USA).sfc'
 ```
 
-To verify monitor and logo imports, themes, version 6 projects and edited-ROM recovery:
+To verify monitor and logo imports, themes, version 7 projects and edited-ROM recovery:
 
 ```sh
 python3 tools/verify_profile_assets.py '/path/to/WWF Raw (USA).sfc'
@@ -169,5 +169,13 @@ python3 tools/verify_match_names.py '/path/to/WWF Raw (USA).sfc' --edited-rom '/
 python3 tools/verify_direct_mod_load.py '/path/to/WWF-Raw-edited.sfc'
 ```
 
-Projects now use version 6. Older project versions are accepted when their base
+Projects now use version 7. Older project versions are accepted when their base
 ROM matches; renamed old bios gain a matching health-bar label on import.
+
+## Custom MIDI songs (v0.5)
+
+Load your ROM, choose a wrestler, open **Portrait & bio**, and scroll to **Custom song**. Choose a stock sound and whether it loops, then click **Import MIDI**. Use **Preview notes** for an approximate preview and **Save playable ROM** to hear the real game instruments in your emulator. Save a project to keep the imported notes editable.
+
+The importer supports complete melodic MIDI songs with tempo changes, chords, note velocity and sustain, up to eight overlapping notes. It uses your chosen stock sound for all tracks. Percussion and pitch bends need to be removed before import; transpose can bring notes into range. Memory overflow stops the import without changing your project. Changing a theme affects other wrestlers assigned that theme.
+
+[Full-song native playback and all twelve slot checks](../evidence/custom-midi/README.md). Reopening an exported ROM preserves its custom music; load the matching saved project to edit the notes again. Removing a pending custom song restores the loaded ROM's music.

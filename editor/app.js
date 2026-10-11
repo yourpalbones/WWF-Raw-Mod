@@ -1,7 +1,7 @@
 /* Simple workflow shell, pose-image import and local playable-ROM export. */
 function showPanel(name){stop();for(const key of ['sprite','profile','export']){$(key+'-panel').hidden=key!==name;$('tab-'+key).setAttribute('aria-selected',String(key===name));}}
 for(const name of ['sprite','profile','export'])$('tab-'+name).onclick=()=>showPanel(name);
-function refreshApp(){document.body.classList.toggle('has-rom',Boolean(rom));$('rom-status').textContent=rom?(baseDigest===C.original_sha256?'Original ROM verified':'Edited ROM loaded'):'No ROM loaded';if(!rom)return;
+function refreshApp(){for(const id of ['song-import','song-transpose','song-instrument','song-loop','song-preview','song-stop','song-restore'])$(id).disabled=!rom;document.body.classList.toggle('has-rom',Boolean(rom));$('rom-status').textContent=rom?(baseDigest===C.original_sha256?'Original ROM verified':'Edited ROM loaded'):'No ROM loaded';if(!rom)return;
  for(const option of $('wrestler').options)option.textContent=selectionState(option.value).bio.name;
  $('character-title').textContent=selectionState(M.id).bio.name+' · Original slot: '+M.character;
  const tiles=Object.keys(edits).length,colors=Object.values(palettes).reduce((n,p)=>n+Object.keys(p).length,0),profiles=Object.values(selectionEdits).length;

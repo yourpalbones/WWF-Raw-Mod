@@ -1,0 +1,62 @@
+/* Compile user-owned MIDI locally into the native SPC driver's note streams. */
+const MUSIC={base:0x3c0000,stride:0x5000,bankDirectory:0x11903,stockDirectory:236599,spc:0x8c79,limit:0xfb00,ticks:50,instruments:[112,113,114,117,118,120,121]};
+let musicPreview=null;
+function readMIDI(bytes,transpose=0){
+ if(!(bytes instanceof Uint8Array)||bytes.length>4*1024*1024)throw Error('Choose a MIDI file smaller than 4 MB.');
+ const view=new DataView(bytes.buffer,bytes.byteOffset,bytes.byteLength),text=p=>String.fromCharCode(...bytes.slice(p,p+4));
+ if(bytes.length<14||text(0)!=='MThd'||view.getUint32(4)<6)throw Error('Choose a standard .mid or .midi song.');
+ const format=view.getUint16(8),tracks=view.getUint16(10),division=view.getUint16(12);if(format>1||!division||(division&32768)||!tracks||tracks>256)throw Error('MIDI must use format 0 or 1 with musical tick timing.');
+ let p=8+view.getUint32(4),order=0;const events=[];
+ for(let track=0;track<tracks;track++){
+  if(p+8>bytes.length||text(p)!=='MTrk')throw Error('Missing MIDI track.');const end=p+8+view.getUint32(p+4);p+=8;if(end>bytes.length)throw Error('Truncated MIDI track.');let tick=0,running=0;
+  const byte=()=>{if(p>=end)throw Error('Truncated MIDI event.');return bytes[p++];};
+  const vlq=()=>{let n=0;for(let i=0;i<4;i++){const v=byte();n=n*128+(v&127);if(!(v&128))return n;}throw Error('Invalid MIDI event length.');};
+  while(p<end){tick+=vlq();let status=byte();if(status<128){if(!running)throw Error('MIDI running status has no preceding event.');p--;status=running;}else if(status<240)running=status;
+   if(status===255){const kind=byte(),length=vlq();if(p+length>end)throw Error('Truncated MIDI metadata.');if(kind===81){if(length!==3)throw Error('Invalid MIDI tempo.');const tempo=bytes[p]*65536+bytes[p+1]*256+bytes[p+2];if(!tempo)throw Error('Invalid MIDI tempo.');events.push({tick,order:order++,type:'tempo',tempo});}p+=length;if(kind===47){events.push({tick,order:order++,type:'end'});p=end;break;}continue;}
+   if(status===240||status===247){const length=vlq();if(p+length>end)throw Error('Truncated MIDI system event.');p+=length;running=0;continue;}
+   if(status>=240)throw Error('Unsupported MIDI system event.');const type=status>>4,ch=status&15,a=byte(),b=(type===12||type===13)?0:byte();if(a>127||b>127)throw Error('Invalid MIDI data byte.');events.push({tick,order:order++,type,ch,a,b});if(events.length>250000)throw Error('MIDI has too many events.');
+  }
+ }
+ events.sort((a,b)=>a.tick-b.tick||a.order-b.order);let tick=0,time=0,tempo=500000;const active=new Map(),sustain=Array(16).fill(false),notes=[];
+ const close=(n,end)=>{n.end=end;if(end>n.start){notes.push(n);if(notes.length>20000)throw Error('The MIDI has more than 20,000 notes.');}};
+ for(const e of events){time+=(e.tick-tick)*tempo/division/1e6;tick=e.tick;if(e.type==='tempo'){tempo=e.tempo;continue;}const key=e.ch+':'+e.a;
+  if(e.type===9&&e.b){if(e.ch===9)throw Error('This importer currently needs a MIDI without a percussion track. Export its melodic tracks from your music program.');const pitch=e.a+transpose;if(pitch<32||pitch>95)throw Error('Notes must fit MIDI pitches 32–95. Adjust Transpose and import again.');const list=active.get(key)||[];list.push({start:time,pitch,velocity:e.b,ch:e.ch,released:false});active.set(key,list);}
+  else if(e.type===8||(e.type===9&&!e.b)){const list=active.get(key)||[],n=list.find(n=>!n.released);if(n){n.released=true;if(!sustain[e.ch]){close(n,time);list.splice(list.indexOf(n),1);}}}
+  else if(e.type===11&&e.a===64){sustain[e.ch]=e.b>=64;if(!sustain[e.ch])for(const [k,list]of active)if(k.startsWith(e.ch+':'))for(const n of [...list])if(n.released){close(n,time);list.splice(list.indexOf(n),1);}}
+  else if(e.type===11&&(e.a===120||e.a===123)){for(const [k,list]of active)if(k.startsWith(e.ch+':')){for(const n of list)close(n,time);list.length=0;}sustain[e.ch]=false;}
+  else if(e.type===14&&(e.a!==0||e.b!==64))throw Error('Pitch bends need to be removed before importing this MIDI.');
+ }
+ for(const list of active.values())for(const n of list)close(n,time);if(!notes.length)throw Error('The MIDI contains no playable notes.');
+ notes.sort((a,b)=>a.start-b.start||a.pitch-b.pitch);const duration=Math.max(time,...notes.map(n=>n.end));if(duration>600)throw Error('Songs can be up to ten minutes.');return {notes:notes.map(n=>({start:Math.round(n.start*MUSIC.ticks),end:Math.max(Math.round(n.start*MUSIC.ticks)+1,Math.round(n.end*MUSIC.ticks)),pitch:n.pitch,velocity:n.velocity})),duration:Math.ceil(duration*MUSIC.ticks-1e-7)};
+}
+function validateSong(song){if(!song||song.version!==1||typeof song.name!=='string'||song.name.length>120||!MUSIC.instruments.includes(song.instrument)||typeof song.loop!=='boolean'||!Number.isInteger(song.duration)||song.duration<1||song.duration>30000||!Array.isArray(song.notes)||!song.notes.length||song.notes.length>20000)throw Error('Invalid custom song.');let previous=-1;for(const n of song.notes){if(!Number.isInteger(n.start)||n.start<previous||!Number.isInteger(n.end)||n.end<=n.start||n.end>song.duration||!Number.isInteger(n.pitch)||n.pitch<32||n.pitch>95||!Number.isInteger(n.velocity)||n.velocity<1||n.velocity>127)throw Error('Invalid custom song note.');previous=n.start;}}
+function compileSong(song){
+ validateSong(song);const voices=Array.from({length:8},()=>[]),ends=Array(8).fill(0);
+ for(const n of song.notes){const v=ends.findIndex(end=>end<=n.start);if(v<0)throw Error('The song has more than eight overlapping notes. Reduce its chords or tracks before importing.');voices[v].push(n);ends[v]=n.end;}
+ let destination=MUSIC.spc+19;const streams=[],pointers=[];
+ for(const notes of voices){const out=[0xf5,song.instrument],body=[];let tick=0,level=-1;
+  const rest=count=>{while(count>0){const length=Math.min(32,count);body.push(0xbf+length);count-=length;}};
+  for(const n of notes){rest(n.start-tick);const volume=Math.max(1,Math.round(n.velocity*63/127));if(volume!==level){body.push(0xf2,volume);level=volume;}let count=n.end-n.start;while(count>0){const length=Math.min(255,count);if(count!==n.end-n.start)body.push(0xfc);body.push(n.pitch+0x60,length);count-=length;}tick=n.end;}
+  rest(song.duration-tick);
+  if(song.loop&&notes.length){const start=destination+13,end=start+body.length;out.push(0xf6,start&255,start>>8,end&255,end>>8,0,0,0,255,127,0,...body,0xf0);}else out.push(...body,0xf0);
+  pointers.push(destination);streams.push(new Uint8Array(out));destination+=out.length;
+ }
+ const header=new Uint8Array(19);header.set([MUSIC.spc&255,MUSIC.spc>>8,8]);pointers.forEach((p,i)=>{header[3+i*2]=p&255;header[4+i*2]=p>>8;});
+ if(destination>MUSIC.limit)throw Error('The song exceeds SNES sound memory. Simplify some tracks.');return {header,streams,pointers,bytes:destination-MUSIC.spc,voices:voices.filter(v=>v.length).length};
+}
+function stockMusicRecords(data=rom){const count=data[MUSIC.stockDirectory]|data[MUSIC.stockDirectory+1]<<8;if(count!==94)throw Error('Unsupported original audio bank.');return Array.from({length:count},(_,i)=>{const p=MUSIC.stockDirectory+2+i*7;return {length:data[p]|data[p+1]<<8,source:romPointer(data,p+2),destination:data[p+5]|data[p+6]<<8};});}
+function customMusicRecords(){const records=[];for(const [id,edit]of Object.entries(selectionEdits)){if(!edit.song)continue;const theme=S.characters[id].theme,bank=rom[0x11936+theme],compiled=compileSong(edit.song),address=MUSIC.base+Number(id)*MUSIC.stride,stock=stockMusicRecords().filter(r=>r.destination!==0x24f4&&r.destination<MUSIC.spc);let cursor=address+2+(stock.length+10)*7;const directory=[];
+ if(!Number.isInteger(bank)||bank<0||bank>16)throw Error('Unsupported song bank assignment.');
+ const packet=(length,source,destination)=>directory.push(length&255,length>>8,source&255,source>>8&255,source>>16|192,destination&255,destination>>8);
+ for(const r of stock)packet(r.length,r.source,r.destination);
+ const write=(data,destination)=>{packet(data.length,cursor,destination);records.push([cursor,data]);cursor+=data.length;};write(compiled.header.slice(0,2),0x24e0+theme*2);write(compiled.header.slice(2),MUSIC.spc);compiled.streams.forEach((stream,i)=>write(stream,compiled.pointers[i]));
+ if(cursor>address+MUSIC.stride)throw Error('The song exceeds its ROM allocation. Simplify some tracks.');records.push([address,new Uint8Array([stock.length+10,0,...directory])],[MUSIC.bankDirectory+bank*3,new Uint8Array([address&255,address>>8&255,address>>16|192])]);
+ }return {records,expanded:records.length>0};}
+function stopMusicPreview(){if(musicPreview){musicPreview.close();musicPreview=null;}}
+function renderCustomMusic(){if(!rom)return;for(const id of ['song-import','song-transpose','song-instrument','song-loop','song-preview','song-stop','song-restore'])$(id).disabled=false;const song=selectionEdits[M.id]?.song;if(song){$('song-instrument').value=String(song.instrument);$('song-loop').checked=song.loop;}$('song-status').textContent=song?`${song.name} · ${(song.duration/50).toFixed(1)} seconds · ${song.notes.length} notes · ${compileSong(song).voices} voices${song.loop?' · loops':''}`:(romPointer(rom,MUSIC.bankDirectory+rom[0x11936+S.characters[M.id].theme]*3)>=MUSIC.base?'A custom song is already saved in this ROM. Reimport its MIDI to change it.':'No custom song added. Import a MIDI to replace this wrestler’s original theme slot.');}
+$('song-import').onchange=async event=>{try{if(!rom)throw Error('Load a ROM first.');const file=event.target.files[0];if(!file)return;if(file.size>4*1024*1024)throw Error('Choose a MIDI smaller than 4 MB.');const id=M.id,transpose=Number($('song-transpose').value);if(!Number.isInteger(transpose)||Math.abs(transpose)>48)throw Error('Transpose must be an integer from −48 to 48.');const parsed=readMIDI(new Uint8Array(await file.arrayBuffer()),transpose),song={version:1,name:file.name.slice(0,120),instrument:Number($('song-instrument').value),loop:$('song-loop').checked,...parsed};compileSong(song);const test={...selectionEdits,[id]:{...selectionEdits[id],song}};const previous=selectionEdits;try{selectionEdits=test;customMusicRecords();}finally{selectionEdits=previous;}remember();(selectionEdits[id] ||= {}).song=song;selectionEdits[id].theme=S.characters[id].theme;render();status('Full MIDI song imported. Save a playable ROM to hear it with the game’s instruments.');}catch(e){status(e.message);}event.target.value='';};
+$('song-restore').onclick=()=>{remember();if(selectionEdits[M.id])delete selectionEdits[M.id].song;render();status('Custom song removed from pending edits. The loaded ROM’s music is preserved.');};
+$('song-stop').onclick=stopMusicPreview;
+$('song-preview').onclick=async()=>{try{const song=selectionEdits[M.id]?.song;if(!song)throw Error('Import a MIDI first.');$('song-stop').click();const audio=new AudioContext();musicPreview=audio;await audio.resume();for(const n of song.notes){const oscillator=audio.createOscillator(),gain=audio.createGain(),start=audio.currentTime+.08+n.start/50,end=start+(n.end-n.start)/50;oscillator.type='triangle';oscillator.frequency.value=440*2**((n.pitch-69)/12);gain.gain.setValueAtTime(0,start);gain.gain.linearRampToValueAtTime(n.velocity/127*.075,start+.008);gain.gain.setValueAtTime(n.velocity/127*.075,Math.max(start+.008,end-.01));gain.gain.linearRampToValueAtTime(0,end);oscillator.connect(gain);gain.connect(audio.destination);oscillator.start(start);oscillator.stop(end+.01);}status('Playing an approximate note preview. The exported ROM uses the game’s instruments.');}catch(e){status(e.message);}};
+
+for(const control of ['song-instrument','song-loop'])$(control).onchange=()=>{try{const existing=selectionEdits[M.id]?.song;if(!existing)return;const song={...existing,instrument:Number($('song-instrument').value),loop:$('song-loop').checked};compileSong(song);remember();selectionEdits[M.id].song=song;render();status('Custom song settings updated.');}catch(e){status(e.message);}};

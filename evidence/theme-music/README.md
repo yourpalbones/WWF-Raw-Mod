@@ -2,7 +2,7 @@
 
 The editor's **Theme song → Save theme** assigns any of the twelve built-in
 wrestler themes. [Earlier native command evidence](../profile-assets/README.md)
-verified every assignment. Custom audio import is not yet an editor feature.
+verified every assignment. The newer [v0.5 MIDI importer](../custom-midi/README.md) supports complete melodic songs. This page records the earlier research proof.
 
 [Listen to the custom melody](custom-melody.wav). This is a short original
 composition played by the actual WWF Raw audio driver in Snes9x. It replaces
@@ -54,7 +54,7 @@ python3 tools/verify_theme_melody_probe.py "$WWF_RAW_ROM" outputs/melody-probe o
 ```
 
 The optional probe exposes read-only SPC RAM and logs reads in Razor's sequence
-range. The next editor milestone is a native melody/song compiler with timing,
+range. The v0.5 editor now includes a native MIDI song compiler with timing,
 loop, instrument and SPC memory checks. Importing arbitrary MP3/WAV audio requires
 sample conversion and memory planning; it is not the same operation as replacing
 a native note sequence.
