@@ -36,6 +36,11 @@ unfinished. Bret's earlier [Sharpshooter](evidence/finisher-research/sharpshoote
 and [Mega Move](evidence/finisher-research/bret-mega.md) comparisons provide
 additional condition checks and shared-frame findings.
 
+The [first Shawn kick-finisher prototype](evidence/shawn-kick-prototype/README.md)
+reroutes R to a standing kick with damage on contact and verified subsequent
+get-up/walking. It still uses stock kick artwork; a finished Sweet Chin Music
+animation and full match validation remain future work.
+
 No ROM, raw extracted game data, emulator binary, or patched ROM is included.
 The evidence package includes screenshots and a small IPS patch.
 Supply your own local ROM; generated outputs stay in ignored output folders.

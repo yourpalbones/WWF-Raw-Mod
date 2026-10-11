@@ -1,0 +1,19 @@
+{
+  "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "patched_sha256": "09e615a374708c0aa0fa6b7fdb1a1674387d2d9ce52fadde0f7816e9cc542180",
+  "ips_sha256": "b4cb95db24b3f1bb7874a57be729a56f2367221fd0d4269f23f0bb6cc9b53296",
+  "experimental": true,
+  "new_sprite_artwork": false,
+  "additional_health_loss_on_contact": 126,
+  "observed_total_health_loss": 144,
+  "hooks": [
+    "0x2CECBE",
+    "0x00CD22",
+    "0x2CD117"
+  ],
+  "limitations": [
+    "Uses the stock ordinary kick pose; not a finished Sweet Chin Music animation.",
+    "Existing special-hold counter carries a temporary contact marker.",
+    "Full match, interruption, AI and multi-opponent behavior require further testing."
+  ]
+}
