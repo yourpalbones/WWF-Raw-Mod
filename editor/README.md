@@ -4,7 +4,7 @@
 
 ## Easy download
 
-[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.6.zip)
+[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.7.zip)
 
 1. Click the download link above.
 2. Right-click the downloaded ZIP → **Extract All**.
@@ -152,7 +152,7 @@ Verify the app workflow, pose PNG imports, local playable-ROM download and mobil
 python3 tools/verify_app.py '/path/to/WWF Raw (USA).sfc'
 ```
 
-To verify monitor and logo imports, themes, version 7 projects and edited-ROM recovery:
+To verify monitor and logo imports, themes, version 8 projects and edited-ROM recovery:
 
 ```sh
 python3 tools/verify_profile_assets.py '/path/to/WWF Raw (USA).sfc'
@@ -169,7 +169,7 @@ python3 tools/verify_match_names.py '/path/to/WWF Raw (USA).sfc' --edited-rom '/
 python3 tools/verify_direct_mod_load.py '/path/to/WWF-Raw-edited.sfc'
 ```
 
-Projects now use version 7. Older project versions are accepted when their base
+Projects now use version 8. Older project versions are accepted when their base
 ROM matches; renamed old bios gain a matching health-bar label on import.
 
 ## Custom MIDI songs (v0.5)
@@ -181,3 +181,5 @@ The importer supports complete melodic MIDI songs with tempo changes, chords, no
 [Full-song native playback and all twelve slot checks](../evidence/custom-midi/README.md). Reopening an exported ROM preserves its custom music; load the matching saved project to edit the notes again. Removing a pending custom song restores the loaded ROM's music.
 
 Version 0.6 combines identical note layers at native timing resolution, keeping the strongest velocity. Import errors appear directly in the Custom song panel. The supplied `nwo.mid` now imports and plays its complete 125.7-second song in six voices, with no distinct notes dropped. [Exact-file native verification](../evidence/nwo-midi-import/README.md).
+
+Version 0.7 fixes the instrument mapping: the default is a verified melodic sample, and **Preview game sound** uses that same game sample instead of a generic synth. Existing exported ROMs need the MIDI reimported and the ROM exported again; old projects migrate effect instruments to the melodic default. [Native NWO recording, pitch/sample checks and preview limits](../evidence/melodic-music-fix/README.md).

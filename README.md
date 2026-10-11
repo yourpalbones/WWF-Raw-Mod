@@ -2,7 +2,7 @@
 
 ## Wrestler editor prototype
 
-[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.6.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
+[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.7.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
 
 Paint all 12 wrestlers’ original sprites, preview 102 captured poses,
 change selection portraits, monitor photos, bios, in-match names and existing
@@ -138,3 +138,5 @@ full wrestler replacement, gameplay changes, or complete game editing.
 Custom MIDI songs are available in v0.5: [complete-song playback proof and instructions](evidence/custom-midi/README.md).
 
 Version 0.6 fixes layered MIDI imports and displays errors beside the button. [The supplied NWO MIDI imports and loops in the emulator](evidence/nwo-midi-import/README.md).
+
+Version 0.7 fixes the effect-sample selection and misleading generic preview. [Hear the corrected NWO import in the emulator](evidence/melodic-music-fix/README.md).

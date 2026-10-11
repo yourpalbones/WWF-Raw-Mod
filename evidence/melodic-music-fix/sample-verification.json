@@ -1,0 +1,17 @@
+{
+  "default_native_instrument": 113,
+  "native_sample_index": 46,
+  "razor_intro_sample_index_excluded": 50,
+  "native_test_frequencies_hz": [
+    261.1201664643662,
+    522.2403329287324
+  ],
+  "browser_preview_matches_native_brr_decode": true,
+  "preview_uses_game_sample_not_triangle_oscillator": true,
+  "preview_reference_dsp_pitch": 661,
+  "native_reference_dsp_pitch": 660,
+  "nwo_active_voices_point_to_melodic_sample": [
+    0
+  ],
+  "scope": "Matching sample and pitch; browser envelopes/effects remain approximate"
+}

@@ -31,7 +31,7 @@ with sync_playwright() as p:
  saved=page.evaluate('selectionEdits');page.locator('#monitor-copy').click();assert page.evaluate('selectionEdits[M.id].monitor')!=saved[id]['monitor'];page.locator('#undo').click();assert page.evaluate('selectionEdits')==saved
  page.locator('#theme-restore').click();assert page.evaluate('profileState(M.id).theme')==page.evaluate('S.characters[M.id].theme');page.locator('#undo').click()
  with page.expect_download() as d:page.locator('#save').click()
- project=Path(d.value.path()).read_bytes();assert json.loads(project)['version']==7
+ project=Path(d.value.path()).read_bytes();assert json.loads(project)['version']==8
  page.locator('#reset').click();page.locator('#project').set_input_files({'name':'project.json','mimeType':'application/json','buffer':project});page.wait_for_function('Object.keys(selectionEdits).length===12');assert page.evaluate('selectionEdits')==saved
  legacy=json.loads(project);legacy['version']=4
  for e in legacy['selection_edits'].values():
@@ -66,11 +66,11 @@ with sync_playwright() as p:
   recovered=page.evaluate('({profiles:selectionEdits,tiles:Object.keys(edits).length,colors:palettes})')
   assert recovered['profiles']['5']['bio']['name']=='SCOTT HALL' and recovered['profiles']['9']['bio']['name']=='SYXX' and recovered['profiles']['10']['bio']['name']=='KEVIN NASH'
   assert len([e for e in recovered['profiles'].values() if 'portrait' in e])==7
-  (args.output/'recovered-project.json').write_text(page.evaluate('JSON.stringify({version:7,original_sha256:C.original_sha256,edits,palettes,selection_edits:selectionEdits})'))
+  (args.output/'recovered-project.json').write_text(page.evaluate('JSON.stringify({version:8,original_sha256:C.original_sha256,edits,palettes,selection_edits:selectionEdits})'))
   (args.output/'recovered-test.sfc').write_bytes(bytes(page.evaluate('Array.from(playableROM())')))
   page.locator('#tab-profile').click();page.locator('#wrestler').select_option('5');page.locator('#monitor-copy').click();page.screenshot(path=str(args.output/'recovered-workshop.png'),full_page=True)
   page.locator('#project').set_input_files({'name':'project.json','mimeType':'application/json','buffer':project});page.wait_for_function('Boolean(selectionEdits[M.id].monitor)')
  (args.output/'profile-test.sfc').write_bytes(result);(args.output/'expected.json').write_text(json.dumps(expected))
  page.locator('#tab-profile').click();page.locator('#wrestler').select_option('5');page.screenshot(path=str(args.output/'workshop.png'),full_page=True)
  assert not errors,errors;browser.close()
-server.shutdown();(args.output/'verification.json').write_text(json.dumps({'original_monitor_decodes':12,'original_logo_decodes':12,'monitor_import_roundtrips':12,'generated_logo_roundtrips':12,'theme_assignments':12,'main_portraits_preserved':True,'version7_reload_undo':True,'version4_name_art_migration':True,'invalid_theme_and_logo_refusal':True,'expanded_rom_checksum':True,'edited_rom_recovery_roundtrip':True,'unsupported_rom_recovery_atomic':True,'uploaded_rom_recovery':bool(args.edited_rom)},indent=2)+'\n');print('All 12 monitor photos, native name artwork, theme assignments, imports, project compatibility and export checks passed')
+server.shutdown();(args.output/'verification.json').write_text(json.dumps({'original_monitor_decodes':12,'original_logo_decodes':12,'monitor_import_roundtrips':12,'generated_logo_roundtrips':12,'theme_assignments':12,'main_portraits_preserved':True,'version8_reload_undo':True,'version4_name_art_migration':True,'invalid_theme_and_logo_refusal':True,'expanded_rom_checksum':True,'edited_rom_recovery_roundtrip':True,'unsupported_rom_recovery_atomic':True,'uploaded_rom_recovery':bool(args.edited_rom)},indent=2)+'\n');print('All 12 monitor photos, native name artwork, theme assignments, imports, project compatibility and export checks passed')

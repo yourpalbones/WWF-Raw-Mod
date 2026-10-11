@@ -235,6 +235,7 @@ def main():
             (0x10011, "oam"),
             (0x10012, "registers"),
             (0x10013, "spc-ram"),
+            (0x10014, "dsp-registers"),
         ]:
             ptr = core.retro_get_memory_data(ident)
             size = core.retro_get_memory_size(ident)

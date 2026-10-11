@@ -1,0 +1,37 @@
+--- a/apu/apu.cpp
++++ b/apu/apu.cpp
+@@ -383,3 +383,4 @@
+ }
+ 
+ uint8* WWFAPURAM() { return SNES::smp.apuram; }
++uint8* WWFDSPRAM() { static uint8 regs[128]; for (unsigned i=0;i<128;i++) regs[i]=SNES::dsp.spc_dsp.read(i); return regs; }
+--- a/libretro/libretro.cpp
++++ b/libretro/libretro.cpp
+@@ -2322,6 +2322,7 @@
+ }
+ 
+ extern uint8* WWFAPURAM();
++extern uint8* WWFDSPRAM();
+ void* retro_get_memory_data(unsigned type)
+ {
+     void* data;
+@@ -2349,6 +2350,9 @@
+             break;
+         case 0x10011:
+             data = PPU.OAMData;
++            break;
++        case 0x10014:
++            data = WWFDSPRAM();
+             break;
+         case 0x10013:
+             data = WWFAPURAM();
+@@ -2395,6 +2399,9 @@
+             break;
+         case 0x10011:
+             size = 544;
++            break;
++        case 0x10014:
++            size = 128;
+             break;
+         case 0x10013:
+             size = 65536;

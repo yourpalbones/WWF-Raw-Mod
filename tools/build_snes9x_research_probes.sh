@@ -8,11 +8,20 @@ if [[ -d "$build_dir/.git" && "$(git -C "$build_dir" rev-parse HEAD)" != "$revis
     echo "Choose a build directory at the documented Snes9x revision." >&2
     exit 1
 fi
+dsp_patch="$script_dir/snes9x-dsp-probe.patch"
+# Remove our small extension before checking the underlying probe's exact context.
+if git -C "$build_dir" apply --reverse --check "$dsp_patch" 2>/dev/null; then
+    git -C "$build_dir" apply --reverse "$dsp_patch"
+fi
 patch="$script_dir/snes9x-research-probes.patch"
 if ! git -C "$build_dir" apply --reverse --check "$patch" 2>/dev/null; then
     bash "$script_dir/build_snes9x_profile_trace.sh" "$build_dir"
     git -C "$build_dir" apply --check "$patch"
     git -C "$build_dir" apply "$patch"
     touch "$build_dir/apu/bapu/smp/smp.cpp"
+fi
+dsp_patch="$script_dir/snes9x-dsp-probe.patch"
+if ! git -C "$build_dir" apply --reverse --check "$dsp_patch" 2>/dev/null; then
+    git -C "$build_dir" apply "$dsp_patch"
 fi
 make -C "$build_dir/libretro" -j"${WWF_SNES9X_JOBS:-3}"
