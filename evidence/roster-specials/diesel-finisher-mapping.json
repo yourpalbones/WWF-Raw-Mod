@@ -1,0 +1,3159 @@
+{
+  "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "scope": "Controlled original-game input cases; no edited outfit validation",
+  "complete_animation_coverage": false,
+  "cases": [
+    {
+      "case": "roster-diesel-finisher",
+      "observed_action": "Diesel finisher attacker",
+      "actor_slot": 0,
+      "input_schedule": [
+        [
+          0,
+          10,
+          9,
+          8
+        ],
+        [
+          0,
+          60,
+          11,
+          8
+        ],
+        [
+          0,
+          80,
+          11,
+          8
+        ],
+        [
+          0,
+          100,
+          11,
+          8
+        ],
+        [
+          0,
+          120,
+          11,
+          8
+        ],
+        [
+          0,
+          140,
+          11,
+          8
+        ],
+        [
+          0,
+          160,
+          11,
+          8
+        ],
+        [
+          0,
+          180,
+          11,
+          8
+        ],
+        [
+          0,
+          200,
+          11,
+          8
+        ],
+        [
+          0,
+          220,
+          11,
+          8
+        ],
+        [
+          0,
+          240,
+          11,
+          8
+        ],
+        [
+          0,
+          260,
+          11,
+          8
+        ],
+        [
+          0,
+          280,
+          11,
+          8
+        ],
+        [
+          0,
+          300,
+          11,
+          8
+        ],
+        [
+          0,
+          320,
+          11,
+          8
+        ],
+        [
+          0,
+          340,
+          11,
+          8
+        ],
+        [
+          0,
+          360,
+          11,
+          8
+        ],
+        [
+          0,
+          380,
+          11,
+          8
+        ],
+        [
+          0,
+          400,
+          11,
+          8
+        ]
+      ],
+      "input_schedule_fields": [
+        "controller_port",
+        "start_frame",
+        "button_id",
+        "duration"
+      ],
+      "sampled_gameplay_frames": 100,
+      "snapshot_interval": 6,
+      "selection_window": [
+        1,
+        600
+      ],
+      "native_part_requests_checked": 118,
+      "native_tile_fields_checked": 1464,
+      "primary_part_ids_in_input_window": [
+        6,
+        321,
+        327,
+        2520,
+        2523,
+        2526,
+        2529,
+        2532,
+        2535,
+        2538,
+        2541,
+        2544,
+        2547,
+        2550,
+        2553
+      ],
+      "secondary_part_ids_in_input_window": [
+        0,
+        9,
+        24,
+        114,
+        501,
+        507,
+        2094,
+        2100,
+        2103,
+        2106,
+        2109,
+        2112,
+        2115,
+        2118,
+        2121,
+        2124
+      ],
+      "observed_part_request_sequence": [
+        {
+          "frame": 10,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 321,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 12952464,
+          "profile_pointer": 13126726,
+          "d": 0
+        },
+        {
+          "frame": 10,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 501,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 14362166,
+          "profile_pointer": 13126726,
+          "d": 0
+        },
+        {
+          "frame": 10,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 14304667,
+          "profile_pointer": 13126726,
+          "d": 0
+        },
+        {
+          "frame": 17,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 327,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 12952421,
+          "profile_pointer": 13126754,
+          "d": 0
+        },
+        {
+          "frame": 17,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 507,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 14362108,
+          "profile_pointer": 13126754,
+          "d": 0
+        },
+        {
+          "frame": 17,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 14304667,
+          "profile_pointer": 13126754,
+          "d": 0
+        },
+        {
+          "frame": 220,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2520,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 12880349,
+          "profile_pointer": 13136858,
+          "d": 0
+        },
+        {
+          "frame": 220,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2094,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14316633,
+          "profile_pointer": 13136858,
+          "d": 0
+        },
+        {
+          "frame": 220,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14304667,
+          "profile_pointer": 13136858,
+          "d": 0
+        },
+        {
+          "frame": 227,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2523,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 12880398,
+          "profile_pointer": 13136874,
+          "d": 0
+        },
+        {
+          "frame": 227,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2100,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14316748,
+          "profile_pointer": 13136874,
+          "d": 0
+        },
+        {
+          "frame": 227,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14304667,
+          "profile_pointer": 13136874,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2526,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 12880436,
+          "profile_pointer": 13136890,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2103,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14316790,
+          "profile_pointer": 13136890,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14304667,
+          "profile_pointer": 13136890,
+          "d": 0
+        },
+        {
+          "frame": 241,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2529,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 12880470,
+          "profile_pointer": 13136906,
+          "d": 0
+        },
+        {
+          "frame": 241,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2106,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14316829,
+          "profile_pointer": 13136906,
+          "d": 0
+        },
+        {
+          "frame": 241,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 0,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14304630,
+          "profile_pointer": 13136906,
+          "d": 0
+        },
+        {
+          "frame": 248,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2532,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 12880505,
+          "profile_pointer": 13136920,
+          "d": 0
+        },
+        {
+          "frame": 248,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2109,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14316865,
+          "profile_pointer": 13136920,
+          "d": 0
+        },
+        {
+          "frame": 248,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 0,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14304630,
+          "profile_pointer": 13136920,
+          "d": 0
+        },
+        {
+          "frame": 255,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2535,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 12880551,
+          "profile_pointer": 13136934,
+          "d": 0
+        },
+        {
+          "frame": 255,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2112,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14316903,
+          "profile_pointer": 13136934,
+          "d": 0
+        },
+        {
+          "frame": 255,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 0,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14304630,
+          "profile_pointer": 13136934,
+          "d": 0
+        },
+        {
+          "frame": 262,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2538,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 12880592,
+          "profile_pointer": 13136948,
+          "d": 0
+        },
+        {
+          "frame": 262,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2541,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 12880623,
+          "profile_pointer": 13136948,
+          "d": 0
+        },
+        {
+          "frame": 262,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2115,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14316939,
+          "profile_pointer": 13136948,
+          "d": 0
+        },
+        {
+          "frame": 262,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14304667,
+          "profile_pointer": 13136948,
+          "d": 0
+        },
+        {
+          "frame": 269,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2544,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 12880662,
+          "profile_pointer": 13136968,
+          "d": 0
+        },
+        {
+          "frame": 269,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2547,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 12880672,
+          "profile_pointer": 13136968,
+          "d": 0
+        },
+        {
+          "frame": 269,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2118,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14316978,
+          "profile_pointer": 13136968,
+          "d": 0
+        },
+        {
+          "frame": 269,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14304667,
+          "profile_pointer": 13136968,
+          "d": 0
+        },
+        {
+          "frame": 276,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2550,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 12880720,
+          "profile_pointer": 13136988,
+          "d": 0
+        },
+        {
+          "frame": 276,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2121,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14317020,
+          "profile_pointer": 13136988,
+          "d": 0
+        },
+        {
+          "frame": 276,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14304667,
+          "profile_pointer": 13136988,
+          "d": 0
+        },
+        {
+          "frame": 284,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2553,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 12880765,
+          "profile_pointer": 13137002,
+          "d": 0
+        },
+        {
+          "frame": 284,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2124,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14317053,
+          "profile_pointer": 13137002,
+          "d": 0
+        },
+        {
+          "frame": 284,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 16,
+          "actor_table_offset": 20,
+          "descriptor": 14304667,
+          "profile_pointer": 13137002,
+          "d": 0
+        },
+        {
+          "frame": 291,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 6,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 12947332,
+          "profile_pointer": 13125014,
+          "d": 0
+        },
+        {
+          "frame": 291,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 114,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 14356468,
+          "profile_pointer": 13125014,
+          "d": 0
+        },
+        {
+          "frame": 291,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 24,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 14304719,
+          "profile_pointer": 13125014,
+          "d": 0
+        }
+      ],
+      "codec_verification": {
+        "complete_blocks": 0,
+        "partial_blocks_skipped": 0,
+        "tile_events": 1051,
+        "distinct_tile_sources": 618,
+        "byte_identical_tile_encodings": 1051,
+        "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+        "errors": []
+      },
+      "complete_action_variant_coverage": false
+    },
+    {
+      "case": "roster-diesel-finisher",
+      "observed_action": "Diesel finisher opponent",
+      "actor_slot": 2,
+      "input_schedule": [
+        [
+          0,
+          10,
+          9,
+          8
+        ],
+        [
+          0,
+          60,
+          11,
+          8
+        ],
+        [
+          0,
+          80,
+          11,
+          8
+        ],
+        [
+          0,
+          100,
+          11,
+          8
+        ],
+        [
+          0,
+          120,
+          11,
+          8
+        ],
+        [
+          0,
+          140,
+          11,
+          8
+        ],
+        [
+          0,
+          160,
+          11,
+          8
+        ],
+        [
+          0,
+          180,
+          11,
+          8
+        ],
+        [
+          0,
+          200,
+          11,
+          8
+        ],
+        [
+          0,
+          220,
+          11,
+          8
+        ],
+        [
+          0,
+          240,
+          11,
+          8
+        ],
+        [
+          0,
+          260,
+          11,
+          8
+        ],
+        [
+          0,
+          280,
+          11,
+          8
+        ],
+        [
+          0,
+          300,
+          11,
+          8
+        ],
+        [
+          0,
+          320,
+          11,
+          8
+        ],
+        [
+          0,
+          340,
+          11,
+          8
+        ],
+        [
+          0,
+          360,
+          11,
+          8
+        ],
+        [
+          0,
+          380,
+          11,
+          8
+        ],
+        [
+          0,
+          400,
+          11,
+          8
+        ]
+      ],
+      "input_schedule_fields": [
+        "controller_port",
+        "start_frame",
+        "button_id",
+        "duration"
+      ],
+      "sampled_gameplay_frames": 100,
+      "snapshot_interval": 6,
+      "selection_window": [
+        1,
+        600
+      ],
+      "native_part_requests_checked": 118,
+      "native_tile_fields_checked": 1464,
+      "primary_part_ids_in_input_window": [
+        45,
+        60,
+        66,
+        312,
+        315,
+        1545,
+        1548,
+        1551,
+        1554,
+        1557,
+        1560,
+        1563,
+        1566,
+        1569,
+        1572,
+        1575,
+        1578
+      ],
+      "secondary_part_ids_in_input_window": [
+        0,
+        9,
+        12,
+        78,
+        81,
+        216,
+        231,
+        237,
+        492,
+        495,
+        582,
+        714,
+        729,
+        1263,
+        1266,
+        1269,
+        1272,
+        1275
+      ],
+      "observed_part_request_sequence": [
+        {
+          "frame": 11,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 312,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13009645,
+          "profile_pointer": 13126664,
+          "d": 0
+        },
+        {
+          "frame": 11,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 492,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14413471,
+          "profile_pointer": 13126664,
+          "d": 0
+        },
+        {
+          "frame": 11,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14304667,
+          "profile_pointer": 13126664,
+          "d": 0
+        },
+        {
+          "frame": 18,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 315,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13009724,
+          "profile_pointer": 13126698,
+          "d": 0
+        },
+        {
+          "frame": 18,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 495,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14413604,
+          "profile_pointer": 13126698,
+          "d": 0
+        },
+        {
+          "frame": 18,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14304667,
+          "profile_pointer": 13126698,
+          "d": 0
+        },
+        {
+          "frame": 221,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1545,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 12966249,
+          "profile_pointer": 13132928,
+          "d": 0
+        },
+        {
+          "frame": 221,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1548,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13023614,
+          "profile_pointer": 13132928,
+          "d": 0
+        },
+        {
+          "frame": 221,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1263,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14425054,
+          "profile_pointer": 13132928,
+          "d": 0
+        },
+        {
+          "frame": 221,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13132928,
+          "d": 0
+        },
+        {
+          "frame": 227,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1551,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13023645,
+          "profile_pointer": 13132948,
+          "d": 0
+        },
+        {
+          "frame": 227,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1554,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 12947009,
+          "profile_pointer": 13132948,
+          "d": 0
+        },
+        {
+          "frame": 227,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1266,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14425091,
+          "profile_pointer": 13132948,
+          "d": 0
+        },
+        {
+          "frame": 227,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 0,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14304630,
+          "profile_pointer": 13132948,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1557,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 12947034,
+          "profile_pointer": 13132968,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1560,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13023661,
+          "profile_pointer": 13132968,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 714,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14417126,
+          "profile_pointer": 13132968,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 0,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14304630,
+          "profile_pointer": 13132968,
+          "d": 0
+        },
+        {
+          "frame": 241,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1563,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13023694,
+          "profile_pointer": 13132988,
+          "d": 0
+        },
+        {
+          "frame": 241,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 729,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14417349,
+          "profile_pointer": 13132988,
+          "d": 0
+        },
+        {
+          "frame": 248,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1566,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13023750,
+          "profile_pointer": 13132998,
+          "d": 0
+        },
+        {
+          "frame": 248,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1269,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14425120,
+          "profile_pointer": 13132998,
+          "d": 0
+        },
+        {
+          "frame": 255,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1569,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13023799,
+          "profile_pointer": 13133008,
+          "d": 0
+        },
+        {
+          "frame": 255,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1272,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14425165,
+          "profile_pointer": 13133008,
+          "d": 0
+        },
+        {
+          "frame": 262,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1572,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 12947225,
+          "profile_pointer": 13133018,
+          "d": 0
+        },
+        {
+          "frame": 262,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1575,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13023844,
+          "profile_pointer": 13133018,
+          "d": 0
+        },
+        {
+          "frame": 262,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 582,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14415038,
+          "profile_pointer": 13133018,
+          "d": 0
+        },
+        {
+          "frame": 269,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1578,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13023887,
+          "profile_pointer": 13133034,
+          "d": 0
+        },
+        {
+          "frame": 269,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1275,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14425218,
+          "profile_pointer": 13133034,
+          "d": 0
+        },
+        {
+          "frame": 269,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 78,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14304981,
+          "profile_pointer": 13133034,
+          "d": 0
+        },
+        {
+          "frame": 276,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 60,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13005533,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 276,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 231,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14409395,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 285,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 66,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13005623,
+          "profile_pointer": 13125590,
+          "d": 0
+        },
+        {
+          "frame": 285,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 237,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14409489,
+          "profile_pointer": 13125590,
+          "d": 0
+        },
+        {
+          "frame": 285,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 81,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14304997,
+          "profile_pointer": 13125590,
+          "d": 0
+        },
+        {
+          "frame": 292,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 60,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13005533,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 292,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 231,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14409395,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 299,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 45,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13005315,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 299,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 216,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14409156,
+          "profile_pointer": 13125500,
+          "d": 0
+        }
+      ],
+      "codec_verification": {
+        "complete_blocks": 0,
+        "partial_blocks_skipped": 0,
+        "tile_events": 1051,
+        "distinct_tile_sources": 618,
+        "byte_identical_tile_encodings": 1051,
+        "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+        "errors": []
+      },
+      "complete_action_variant_coverage": false
+    }
+  ],
+  "gameplay_observations": [
+    {
+      "frame": 6,
+      "actor_action_words": [
+        0,
+        0
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        347,
+        322
+      ],
+      "actor_world_y": [
+        262,
+        255
+      ]
+    },
+    {
+      "frame": 12,
+      "actor_action_words": [
+        152,
+        158
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 18,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 24,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 30,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 36,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 42,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 48,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 54,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 60,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 66,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 72,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 78,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 84,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 90,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 96,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 102,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 108,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 114,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 120,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 126,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 132,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 138,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 144,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 150,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 156,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 162,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 168,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 174,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 180,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 186,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 192,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 198,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 204,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 210,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 216,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        355,
+        314
+      ],
+      "actor_world_y": [
+        256,
+        256
+      ]
+    },
+    {
+      "frame": 222,
+      "actor_action_words": [
+        610,
+        550
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        353,
+        312
+      ],
+      "actor_world_y": [
+        256,
+        257
+      ]
+    },
+    {
+      "frame": 228,
+      "actor_action_words": [
+        610,
+        550
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        349,
+        308
+      ],
+      "actor_world_y": [
+        256,
+        259
+      ]
+    },
+    {
+      "frame": 234,
+      "actor_action_words": [
+        610,
+        550
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        347,
+        308
+      ],
+      "actor_world_y": [
+        256,
+        259
+      ]
+    },
+    {
+      "frame": 240,
+      "actor_action_words": [
+        610,
+        550
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        347,
+        306
+      ],
+      "actor_world_y": [
+        256,
+        260
+      ]
+    },
+    {
+      "frame": 246,
+      "actor_action_words": [
+        610,
+        550
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        345,
+        304
+      ],
+      "actor_world_y": [
+        257,
+        261
+      ]
+    },
+    {
+      "frame": 252,
+      "actor_action_words": [
+        610,
+        550
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        343,
+        302
+      ],
+      "actor_world_y": [
+        258,
+        262
+      ]
+    },
+    {
+      "frame": 258,
+      "actor_action_words": [
+        610,
+        550
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        341,
+        300
+      ],
+      "actor_world_y": [
+        259,
+        263
+      ]
+    },
+    {
+      "frame": 264,
+      "actor_action_words": [
+        610,
+        550
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        339,
+        298
+      ],
+      "actor_world_y": [
+        260,
+        264
+      ]
+    },
+    {
+      "frame": 270,
+      "actor_action_words": [
+        610,
+        550
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        336,
+        295
+      ],
+      "actor_world_y": [
+        261,
+        265
+      ]
+    },
+    {
+      "frame": 276,
+      "actor_action_words": [
+        610,
+        550
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        333,
+        295
+      ],
+      "actor_world_y": [
+        262,
+        265
+      ]
+    },
+    {
+      "frame": 282,
+      "actor_action_words": [
+        610,
+        550
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        333,
+        292
+      ],
+      "actor_world_y": [
+        262,
+        266
+      ]
+    },
+    {
+      "frame": 288,
+      "actor_action_words": [
+        610,
+        550
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        289
+      ],
+      "actor_world_y": [
+        263,
+        268
+      ]
+    },
+    {
+      "frame": 294,
+      "actor_action_words": [
+        0,
+        550
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 300,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 306,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 312,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 318,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 324,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 330,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 336,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 342,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 348,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 354,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 360,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 366,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 372,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 378,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 384,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 390,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 396,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 402,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 408,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 414,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 420,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 426,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 432,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 438,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 444,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 450,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 456,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 462,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 468,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 474,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 480,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 486,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 492,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 498,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 504,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 510,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 516,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 522,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 528,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 534,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 540,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 546,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 552,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 558,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        910,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 564,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        926,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 570,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        926,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 576,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        926,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 582,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        926,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 588,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        926,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 594,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        926,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    },
+    {
+      "frame": 600,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        926,
+        0
+      ],
+      "actor_world_x": [
+        330,
+        290
+      ],
+      "actor_world_y": [
+        263,
+        267
+      ]
+    }
+  ],
+  "recipe_id": "diesel-finisher",
+  "observed_action_word": 610
+}

@@ -27,14 +27,14 @@ need research.
 The [first controlled action maps](evidence/action-mapping/README.md) connect
 Bret walking/punching/kicking and Undertaker walking to native frame-part
 requests. The capture frontend now supports both controllers.
-[Finisher and Mega Move research](evidence/finisher-research/README.md) tracks
-all twelve wrestlers separately; reproducible attack/knockdown setup captures
-are available. Bret's [Sharpshooter](evidence/finisher-research/sharpshooter.md)
-now has verified entry, hold, automatic release and recovery captures; other
-finishers and edited-gear coverage remain unfinished. Bret's
-[Mega Move](evidence/finisher-research/bret-mega.md) is also verified, including
-new shared frame references beyond the initial directory inventories. Other
-wrestlers' Mega Moves remain unfinished.
+[Watch all twelve wrestlers' finishers and Mega Moves](evidence/roster-specials/README.md):
+all 24 specials now have an original-game capture and native frame-part maps.
+[Cold-boot recipes](data/roster-special-captures.json) reproduce the setups using
+both controllers and verify snapshot hashes. This covers one working setup per
+special; alternate variants, interruption/escape behavior and edited gear remain
+unfinished. Bret's earlier [Sharpshooter](evidence/finisher-research/sharpshooter.md)
+and [Mega Move](evidence/finisher-research/bret-mega.md) comparisons provide
+additional condition checks and shared-frame findings.
 
 No ROM, raw extracted game data, emulator binary, or patched ROM is included.
 The evidence package includes screenshots and a small IPS patch.

@@ -1,0 +1,22 @@
+{
+  "cases": [
+    {
+      "id": "undertaker-finisher",
+      "stages": 8,
+      "endpoint_hash_checks": 40,
+      "result": "all matched"
+    },
+    {
+      "id": "123-kid-mega",
+      "stages": 19,
+      "endpoint_hash_checks": 95,
+      "result": "all matched"
+    }
+  ],
+  "scope": "Two representative complete cold-boot replays. Native parts/codec checks cover all 24 captures.",
+  "test_suite": {
+    "executed": 21,
+    "passed": 21,
+    "skipped": 0
+  }
+}

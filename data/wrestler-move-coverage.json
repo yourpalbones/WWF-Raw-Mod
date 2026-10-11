@@ -17,9 +17,9 @@
         "recovery_verified": true,
         "edited_gear_verified": false,
         "evidence": [
-          "evidence/finisher-research/sharpshooter.md",
-          "evidence/finisher-research/sharpshooter.gif",
-          "evidence/finisher-research/sharpshooter-mapping.json"
+          "evidence/roster-specials/bret.gif",
+          "evidence/roster-specials/bret-finisher-mapping.json",
+          "data/roster-special-captures.json"
         ],
         "reported_button_ids": [
           11
@@ -29,7 +29,15 @@
         "reported_energy_requirement": "red health bar",
         "hold_phase_verified": true,
         "escape_during_hold_verified": false,
-        "automatic_release_verified": true
+        "automatic_release_verified": true,
+        "observed_opponent_action_words": [
+          70,
+          532
+        ],
+        "observed_attacker_action_word": 592,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "bret-finisher"
       },
       "mega_move": {
         "name": null,
@@ -40,9 +48,9 @@
         "recovery_verified": true,
         "edited_gear_verified": false,
         "evidence": [
-          "evidence/finisher-research/bret-mega.md",
-          "evidence/finisher-research/bret-mega.gif",
-          "evidence/finisher-research/bret-mega-mapping.json"
+          "evidence/roster-specials/bret.gif",
+          "evidence/roster-specials/bret-mega-mapping.json",
+          "data/roster-special-captures.json"
         ],
         "reported_sequence_button_ids": [
           [
@@ -153,7 +161,15 @@
           1566,
           1569,
           1572
-        ]
+        ],
+        "observed_opponent_action_words": [
+          70,
+          508,
+          512
+        ],
+        "observed_attacker_action_word": 568,
+        "native_frame_parts_verified": true,
+        "capture_recipe_id": "bret-mega"
       }
     },
     {
@@ -162,30 +178,50 @@
       "finisher": {
         "in_game_special_move_name": "Tombstone",
         "name_source": "Original character-selection screen",
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
         "hold_escape_release_verified": null,
-        "recovery_verified": false,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/undertaker.gif",
+          "evidence/roster-specials/undertaker-finisher-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_button_ids": [
           11
         ],
         "reported_opponent_state": "tie-up",
         "reported_attacker_position": "grapple",
-        "reported_energy_requirement": "red health bar"
+        "reported_energy_requirement": "red health bar",
+        "observed_opponent_action_words": [
+          0,
+          70,
+          84,
+          156,
+          158,
+          534
+        ],
+        "observed_attacker_action_word": 594,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "undertaker-finisher"
       },
       "mega_move": {
         "name": null,
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
         "defender_sequence_verified": false,
-        "recovery_verified": false,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/undertaker.gif",
+          "evidence/roster-specials/undertaker-mega-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_sequence_button_ids": [
           [
             6
@@ -200,7 +236,20 @@
         ],
         "reported_conditions": [],
         "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
-        "sequence_timing_verified": false
+        "sequence_timing_verified": true,
+        "observed_opponent_action_words": [
+          0
+        ],
+        "observed_attacker_action_word": 574,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "undertaker-mega",
+        "verified_modifier_button_options": [
+          [
+            10,
+            11
+          ]
+        ]
       }
     },
     {
@@ -209,30 +258,47 @@
       "finisher": {
         "in_game_special_move_name": "Banzai Drop",
         "name_source": "Original character-selection screen",
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
         "hold_escape_release_verified": null,
-        "recovery_verified": false,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/yokozuna.gif",
+          "evidence/roster-specials/yokozuna-finisher-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_button_ids": [
           11
         ],
         "reported_opponent_state": "downed",
         "reported_attacker_position": "near upper turnbuckle",
-        "reported_energy_requirement": "red health bar"
+        "reported_energy_requirement": "red health bar",
+        "observed_opponent_action_words": [
+          70,
+          512,
+          536
+        ],
+        "observed_attacker_action_word": 596,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "yokozuna-finisher"
       },
       "mega_move": {
         "name": null,
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
-        "recovery_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/yokozuna.gif",
+          "evidence/roster-specials/yokozuna-mega-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_sequence_button_ids": [
           [
             5
@@ -249,8 +315,22 @@
           "upper turnbuckle"
         ],
         "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
-        "sequence_timing_verified": false,
-        "reported_cost": "Drains attacker health; unverified"
+        "sequence_timing_verified": true,
+        "reported_cost": "Drains attacker health; unverified",
+        "observed_opponent_action_words": [
+          70,
+          72
+        ],
+        "observed_attacker_action_word": 560,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "yokozuna-mega",
+        "verified_modifier_button_options": [
+          [
+            10,
+            11
+          ]
+        ]
       }
     },
     {
@@ -259,30 +339,47 @@
       "finisher": {
         "in_game_special_move_name": "Headbutt off the top rope",
         "name_source": "Original character-selection screen",
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
         "hold_escape_release_verified": null,
-        "recovery_verified": false,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/bam-bam-bigelow.gif",
+          "evidence/roster-specials/bam-bam-bigelow-finisher-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_button_ids": [
           11
         ],
         "reported_opponent_state": "downed",
         "reported_attacker_position": "on upper turnbuckle",
-        "reported_energy_requirement": "red health bar"
+        "reported_energy_requirement": "red health bar",
+        "observed_opponent_action_words": [
+          70,
+          506,
+          512
+        ],
+        "observed_attacker_action_word": 598,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "bam-bam-bigelow-finisher"
       },
       "mega_move": {
         "name": null,
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
-        "recovery_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/bam-bam-bigelow.gif",
+          "evidence/roster-specials/bam-bam-bigelow-mega-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_sequence_button_ids": [
           [
             4
@@ -299,7 +396,7 @@
           "final direction may be left or right"
         ],
         "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
-        "sequence_timing_verified": false,
+        "sequence_timing_verified": true,
         "reported_alternate_sequence_button_ids": [
           [
             4
@@ -313,7 +410,22 @@
           ]
         ],
         "alternate_opponent_condition": "downed",
-        "alternate_sequence_verified": false
+        "alternate_sequence_verified": false,
+        "observed_opponent_action_words": [
+          0,
+          70,
+          72
+        ],
+        "observed_attacker_action_word": 580,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "bam-bam-bigelow-mega",
+        "verified_modifier_button_options": [
+          [
+            10,
+            11
+          ]
+        ]
       }
     },
     {
@@ -322,30 +434,49 @@
       "finisher": {
         "in_game_special_move_name": "Razor\u2019s Edge",
         "name_source": "Original character-selection screen",
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
         "hold_escape_release_verified": null,
-        "recovery_verified": false,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/razor-ramon.gif",
+          "evidence/roster-specials/razor-ramon-finisher-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_button_ids": [
           11
         ],
         "reported_opponent_state": "tie-up",
         "reported_attacker_position": "grapple",
-        "reported_energy_requirement": "red health bar"
+        "reported_energy_requirement": "red health bar",
+        "observed_opponent_action_words": [
+          0,
+          70,
+          156,
+          158,
+          540
+        ],
+        "observed_attacker_action_word": 600,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "razor-ramon-finisher"
       },
       "mega_move": {
         "name": null,
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
-        "recovery_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/razor-ramon.gif",
+          "evidence/roster-specials/razor-ramon-mega-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_sequence_button_ids": [
           [
             6
@@ -362,7 +493,21 @@
           "below downed opponent"
         ],
         "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
-        "sequence_timing_verified": false
+        "sequence_timing_verified": true,
+        "observed_opponent_action_words": [
+          70,
+          86
+        ],
+        "observed_attacker_action_word": 558,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "razor-ramon-mega",
+        "verified_modifier_button_options": [
+          [
+            10,
+            11
+          ]
+        ]
       }
     },
     {
@@ -371,30 +516,50 @@
       "finisher": {
         "in_game_special_move_name": "Running Forearm",
         "name_source": "Original character-selection screen",
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
         "hold_escape_release_verified": null,
-        "recovery_verified": false,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/lex-luger.gif",
+          "evidence/roster-specials/lex-luger-finisher-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_button_ids": [
           11
         ],
         "reported_opponent_state": "running from opposite ropes",
         "reported_attacker_position": "bounce from near ropes",
-        "reported_energy_requirement": "red health bar"
+        "reported_energy_requirement": "red health bar",
+        "observed_opponent_action_words": [
+          70,
+          98,
+          100,
+          118,
+          146,
+          184
+        ],
+        "observed_attacker_action_word": 602,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "lex-luger-finisher"
       },
       "mega_move": {
         "name": null,
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
-        "recovery_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/lex-luger.gif",
+          "evidence/roster-specials/lex-luger-mega-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_sequence_button_ids": [
           [
             4
@@ -409,8 +574,23 @@
         ],
         "reported_conditions": [],
         "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
-        "sequence_timing_verified": false,
-        "reported_followup": "Rapid A/B input may increase damage; unverified"
+        "sequence_timing_verified": true,
+        "reported_followup": "Rapid A/B input may increase damage; unverified",
+        "observed_opponent_action_words": [
+          0,
+          70,
+          514
+        ],
+        "observed_attacker_action_word": 562,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "lex-luger-mega",
+        "verified_modifier_button_options": [
+          [
+            10,
+            11
+          ]
+        ]
       }
     },
     {
@@ -419,30 +599,47 @@
       "finisher": {
         "in_game_special_move_name": "Whoopee Cushion",
         "name_source": "Original character-selection screen",
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
         "hold_escape_release_verified": null,
-        "recovery_verified": false,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/doink.gif",
+          "evidence/roster-specials/doink-finisher-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_button_ids": [
           11
         ],
         "reported_opponent_state": "downed",
         "reported_attacker_position": "on upper turnbuckle",
-        "reported_energy_requirement": "red health bar"
+        "reported_energy_requirement": "red health bar",
+        "observed_opponent_action_words": [
+          70,
+          508,
+          512
+        ],
+        "observed_attacker_action_word": 604,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "doink-finisher"
       },
       "mega_move": {
         "name": null,
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
-        "recovery_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/doink.gif",
+          "evidence/roster-specials/doink-mega-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_sequence_button_ids": [
           [
             6
@@ -459,7 +656,7 @@
           "behind dizzy opponent"
         ],
         "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
-        "sequence_timing_verified": false,
+        "sequence_timing_verified": true,
         "reported_alternate_sequence_button_ids": [
           [
             4
@@ -473,7 +670,23 @@
           ]
         ],
         "alternate_opponent_condition": "downed",
-        "alternate_sequence_verified": false
+        "alternate_sequence_verified": false,
+        "observed_opponent_action_words": [
+          70,
+          84,
+          474,
+          520
+        ],
+        "observed_attacker_action_word": 572,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "doink-mega",
+        "verified_modifier_button_options": [
+          [
+            10,
+            11
+          ]
+        ]
       }
     },
     {
@@ -482,30 +695,48 @@
       "finisher": {
         "in_game_special_move_name": "Slingshot Suplex",
         "name_source": "Original character-selection screen",
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
         "hold_escape_release_verified": null,
-        "recovery_verified": false,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/shawn-michaels.gif",
+          "evidence/roster-specials/shawn-michaels-finisher-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_button_ids": [
           11
         ],
         "reported_opponent_state": "dizzy",
         "reported_attacker_position": "behind opponent",
-        "reported_energy_requirement": "red health bar"
+        "reported_energy_requirement": "red health bar",
+        "observed_opponent_action_words": [
+          70,
+          90,
+          474,
+          546
+        ],
+        "observed_attacker_action_word": 606,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "shawn-michaels-finisher"
       },
       "mega_move": {
         "name": null,
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
-        "recovery_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/shawn-michaels.gif",
+          "evidence/roster-specials/shawn-michaels-mega-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_sequence_button_ids": [
           [
             5
@@ -520,8 +751,23 @@
         ],
         "reported_conditions": [],
         "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
-        "sequence_timing_verified": false,
-        "reported_followup": "Rapid A/B input may increase damage; unverified"
+        "sequence_timing_verified": true,
+        "reported_followup": "Rapid A/B input may increase damage; unverified",
+        "observed_opponent_action_words": [
+          70,
+          474,
+          514
+        ],
+        "observed_attacker_action_word": 564,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "shawn-michaels-mega",
+        "verified_modifier_button_options": [
+          [
+            10,
+            11
+          ]
+        ]
       }
     },
     {
@@ -530,30 +776,48 @@
       "finisher": {
         "in_game_special_move_name": "Moonsault",
         "name_source": "Original character-selection screen",
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
         "hold_escape_release_verified": null,
-        "recovery_verified": false,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/123-kid.gif",
+          "evidence/roster-specials/123-kid-finisher-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_button_ids": [
           11
         ],
         "reported_opponent_state": "dizzy",
         "reported_attacker_position": "on upper turnbuckle",
-        "reported_energy_requirement": "red health bar"
+        "reported_energy_requirement": "red health bar",
+        "observed_opponent_action_words": [
+          70,
+          298,
+          474,
+          548
+        ],
+        "observed_attacker_action_word": 608,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "123-kid-finisher"
       },
       "mega_move": {
         "name": null,
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
-        "recovery_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/123-kid.gif",
+          "evidence/roster-specials/123-kid-mega-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_sequence_button_ids": [
           [
             4
@@ -570,7 +834,22 @@
           "opponent down"
         ],
         "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
-        "sequence_timing_verified": false
+        "sequence_timing_verified": true,
+        "observed_opponent_action_words": [
+          70,
+          508,
+          512
+        ],
+        "observed_attacker_action_word": 586,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "123-kid-mega",
+        "verified_modifier_button_options": [
+          [
+            10,
+            11
+          ]
+        ]
       }
     },
     {
@@ -579,30 +858,49 @@
       "finisher": {
         "in_game_special_move_name": "Jackknife",
         "name_source": "Original character-selection screen",
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
         "hold_escape_release_verified": null,
-        "recovery_verified": false,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/diesel.gif",
+          "evidence/roster-specials/diesel-finisher-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_button_ids": [
           11
         ],
         "reported_opponent_state": "tie-up",
         "reported_attacker_position": "grapple",
-        "reported_energy_requirement": "red health bar"
+        "reported_energy_requirement": "red health bar",
+        "observed_opponent_action_words": [
+          0,
+          70,
+          156,
+          158,
+          550
+        ],
+        "observed_attacker_action_word": 610,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "diesel-finisher"
       },
       "mega_move": {
         "name": null,
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
-        "recovery_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/diesel.gif",
+          "evidence/roster-specials/diesel-mega-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_sequence_button_ids": [
           [
             5
@@ -619,7 +917,23 @@
           "behind dizzy opponent"
         ],
         "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
-        "sequence_timing_verified": false
+        "sequence_timing_verified": true,
+        "observed_opponent_action_words": [
+          70,
+          84,
+          474,
+          518
+        ],
+        "observed_attacker_action_word": 566,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "diesel-mega",
+        "verified_modifier_button_options": [
+          [
+            10,
+            11
+          ]
+        ]
       }
     },
     {
@@ -628,30 +942,49 @@
       "finisher": {
         "in_game_special_move_name": "Sharpshooter",
         "name_source": "Original character-selection screen",
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
         "hold_escape_release_verified": false,
-        "recovery_verified": false,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/owen-hart.gif",
+          "evidence/roster-specials/owen-hart-finisher-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_button_ids": [
           11
         ],
         "reported_opponent_state": "downed",
         "reported_attacker_position": "near legs",
-        "reported_energy_requirement": "red health bar"
+        "reported_energy_requirement": "red health bar",
+        "observed_opponent_action_words": [
+          70,
+          552
+        ],
+        "observed_attacker_action_word": 612,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "owen-hart-finisher",
+        "hold_phase_verified": true,
+        "automatic_release_verified": true,
+        "escape_during_hold_verified": false
       },
       "mega_move": {
         "name": null,
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
-        "recovery_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/owen-hart.gif",
+          "evidence/roster-specials/owen-hart-mega-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_sequence_button_ids": [
           [
             4
@@ -668,8 +1001,23 @@
           "hold final run button"
         ],
         "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
-        "sequence_timing_verified": false,
-        "reported_cost": "Drains attacker health; unverified"
+        "sequence_timing_verified": true,
+        "reported_cost": "Drains attacker health; unverified",
+        "observed_opponent_action_words": [
+          0,
+          70,
+          72
+        ],
+        "observed_attacker_action_word": 576,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "owen-hart-mega",
+        "verified_modifier_button_options": [
+          [
+            10,
+            11
+          ]
+        ]
       }
     },
     {
@@ -678,30 +1026,47 @@
       "finisher": {
         "in_game_special_move_name": "Luna Eclipse",
         "name_source": "Original character-selection screen",
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
         "hold_escape_release_verified": null,
-        "recovery_verified": false,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/luna-vachon.gif",
+          "evidence/roster-specials/luna-vachon-finisher-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_button_ids": [
           11
         ],
         "reported_opponent_state": "downed",
         "reported_attacker_position": "near upper turnbuckle",
-        "reported_energy_requirement": "red health bar"
+        "reported_energy_requirement": "red health bar",
+        "observed_opponent_action_words": [
+          70,
+          86,
+          512
+        ],
+        "observed_attacker_action_word": 590,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "luna-vachon-finisher"
       },
       "mega_move": {
         "name": null,
-        "controls_verified": false,
-        "setup_conditions_verified": false,
-        "attacker_sequence_verified": false,
-        "defender_sequence_verified": false,
-        "recovery_verified": false,
+        "controls_verified": true,
+        "setup_conditions_verified": true,
+        "attacker_sequence_verified": true,
+        "defender_sequence_verified": true,
+        "recovery_verified": true,
         "edited_gear_verified": false,
-        "evidence": [],
+        "evidence": [
+          "evidence/roster-specials/luna-vachon.gif",
+          "evidence/roster-specials/luna-vachon-mega-mapping.json",
+          "data/roster-special-captures.json"
+        ],
         "reported_sequence_button_ids": [
           [
             6
@@ -718,7 +1083,7 @@
           "above downed opponent"
         ],
         "reported_modifier": "L/R held; whether one or both shoulder buttons is required remains unverified",
-        "sequence_timing_verified": false,
+        "sequence_timing_verified": true,
         "reported_alternate_sequence_button_ids": [
           [
             4
@@ -732,7 +1097,21 @@
           ]
         ],
         "alternate_opponent_condition": "downed",
-        "alternate_sequence_verified": false
+        "alternate_sequence_verified": false,
+        "observed_opponent_action_words": [
+          70,
+          86
+        ],
+        "observed_attacker_action_word": 554,
+        "native_frame_parts_verified": true,
+        "complete_variant_coverage": false,
+        "capture_recipe_id": "luna-vachon-mega",
+        "verified_modifier_button_options": [
+          [
+            10,
+            11
+          ]
+        ]
       }
     }
   ],
@@ -742,5 +1121,12 @@
     "revision": "1.00",
     "date": "1998-10-10",
     "provenance": "Text supplied by the user; factual inputs recorded, full FAQ not reproduced"
+  },
+  "roster_special_capture_summary": {
+    "finisher_triggers_verified": 12,
+    "mega_move_triggers_verified": 12,
+    "edited_gear_verified": false,
+    "complete_variant_coverage": false,
+    "scope": "One working original-game setup per special, with native parts for both actors. Undertaker levitation capture has no opponent contact. Alternate Mega variants and escape inputs remain unverified."
   }
 }

@@ -3,13 +3,13 @@
 [Coverage tracker](../../data/wrestler-move-coverage.json) records a finisher and
 Mega Move research entry for each of the twelve selectable wrestlers. Finisher
 names come from the original character-selection screens. Mega Move names remain
-unconfirmed. Their controls are recorded as guide-reported research candidates;
-Bret's [Mega Move](bret-mega.md) now has verified gameplay captures.
+unconfirmed. Guide-reported controls remain separate from verified captures.
+[All twelve wrestlers now have finisher and Mega Move gameplay proof](../roster-specials/README.md),
+with native frame maps and controller-only cold-boot recipes.
 
 Bret's [Sharpshooter](sharpshooter.md) now has verified original-game captures.
-The other finishers and Mega Moves still need setup/control checks,
-attacker and defender frame sequences, recovery, and eventual edited-gear checks.
-Submissions additionally need hold, escape and release coverage. Two wrestlers
+The roster captures verify one setup per special. Alternate variants,
+interruptions, edited gear and submission escapes remain unverified. Two wrestlers
 having a Sharpshooter listed does not prove they share the same implementation.
 
 ## Verified setup progress
@@ -60,6 +60,7 @@ python3 tools/map_action_parts.py "$WWF_RAW_ROM" TRACE_ROOT \
 ```
 
 The user supplied William Sigler, Jr.'s SNES move FAQ, giving us research inputs
-for all twelve wrestlers. Bret's Sharpshooter and Mega Move are now captured.
-Next: capture the remaining specials with both attacker and defender traces,
-and extend the shared-frame inventory revealed by Bret's Mega Move.
+for all twelve wrestlers. All 24 specials now have captures linked in the
+[roster evidence index](../roster-specials/README.md). Next: extend shared-frame
+inventories and cover remaining ordinary actions and special variants before
+validating edited outfits across them.

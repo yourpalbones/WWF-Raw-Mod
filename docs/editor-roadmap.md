@@ -22,11 +22,13 @@ Capture controlled matches to cover walking, running, turns, ropes, strikes,
 grapples, special moves, damage, falls, recovery, pins and ringside actions.
 Directory entry counts describe an inventory, not completed move coverage.
 
-Current evidence: Bret's primary directory has 527 entries and 526 distinct
-frame descriptions. Common/lower parts and action mapping remain incomplete.
-Bret's current outfit is verified for 173 paired movement frames. Bret and
-Undertaker have recovered in-ring frames; the rest of the roster is not yet
-mapped and verified.
+Current evidence: all twelve roster identities and primary/secondary directories
+are inventoried. Each wrestler now has a verified original-game finisher and
+Mega Move capture with native part references for both actors; see the
+[roster special evidence](../evidence/roster-specials/README.md). This is one
+working setup per special, not complete action or variant coverage. Shared
+fallback inventories and ordinary action mapping remain incomplete. Bret's
+edited outfit is verified for 173 paired movement frames, not these specials.
 
 ## 2. Build the first character editor
 
@@ -74,7 +76,7 @@ attacker and defender behavior.
 
 ## Immediate next milestone
 
-Build a roster-wide directory inventory, identify shared/common and lower-body
-assets, and connect those entries to controlled gameplay captures. Publish an
-evidence-linked coverage table so progress can be inspected character by
-character and action by action. Keep unverified features out of editor claims.
+Extend the shared fallback inventory using the new special captures, then map
+ordinary grapples, strikes, rope interactions, damage and recovery across the
+roster. Use the evidence-linked coverage table to track remaining actions and
+validate edited outfits before including them in editor claims.

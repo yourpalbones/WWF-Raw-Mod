@@ -1,0 +1,5155 @@
+{
+  "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "scope": "Controlled original-game input cases; no edited outfit validation",
+  "complete_animation_coverage": false,
+  "cases": [
+    {
+      "case": "roster-owen-hart-finisher",
+      "observed_action": "Owen Hart finisher attacker",
+      "actor_slot": 0,
+      "input_schedule": [
+        [
+          0,
+          10,
+          6,
+          35
+        ],
+        [
+          0,
+          80,
+          11,
+          8
+        ]
+      ],
+      "input_schedule_fields": [
+        "controller_port",
+        "start_frame",
+        "button_id",
+        "duration"
+      ],
+      "sampled_gameplay_frames": 100,
+      "snapshot_interval": 6,
+      "selection_window": [
+        1,
+        600
+      ],
+      "native_part_requests_checked": 310,
+      "native_tile_fields_checked": 3479,
+      "primary_part_ids_in_input_window": [
+        6,
+        30,
+        33,
+        36,
+        39,
+        42,
+        1995,
+        2559,
+        2562,
+        2565,
+        2568,
+        2571,
+        2574,
+        2577,
+        2580,
+        2583,
+        2586,
+        2589,
+        2592
+      ],
+      "secondary_part_ids_in_input_window": [
+        9,
+        12,
+        18,
+        24,
+        36,
+        45,
+        114,
+        168,
+        171,
+        174,
+        177,
+        180,
+        183,
+        186,
+        1659,
+        2130,
+        2133,
+        2136,
+        2139,
+        2142,
+        2145,
+        2148,
+        2151,
+        2154,
+        2157,
+        2160,
+        2163
+      ],
+      "observed_part_request_sequence": [
+        {
+          "frame": 10,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 39,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13005224,
+          "profile_pointer": 13125336,
+          "d": 0
+        },
+        {
+          "frame": 10,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 180,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14408605,
+          "profile_pointer": 13125336,
+          "d": 0
+        },
+        {
+          "frame": 10,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 24,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14304719,
+          "profile_pointer": 13125336,
+          "d": 0
+        },
+        {
+          "frame": 16,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 42,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13005269,
+          "profile_pointer": 13125350,
+          "d": 0
+        },
+        {
+          "frame": 16,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 183,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14408648,
+          "profile_pointer": 13125350,
+          "d": 0
+        },
+        {
+          "frame": 16,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14304667,
+          "profile_pointer": 13125350,
+          "d": 0
+        },
+        {
+          "frame": 19,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 39,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13005224,
+          "profile_pointer": 13125364,
+          "d": 0
+        },
+        {
+          "frame": 19,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 186,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14408703,
+          "profile_pointer": 13125364,
+          "d": 0
+        },
+        {
+          "frame": 19,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14304667,
+          "profile_pointer": 13125364,
+          "d": 0
+        },
+        {
+          "frame": 24,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 42,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13005269,
+          "profile_pointer": 13125350,
+          "d": 0
+        },
+        {
+          "frame": 24,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 183,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14408648,
+          "profile_pointer": 13125350,
+          "d": 0
+        },
+        {
+          "frame": 24,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14304667,
+          "profile_pointer": 13125350,
+          "d": 0
+        },
+        {
+          "frame": 29,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 39,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13005224,
+          "profile_pointer": 13125336,
+          "d": 0
+        },
+        {
+          "frame": 29,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 180,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14408605,
+          "profile_pointer": 13125336,
+          "d": 0
+        },
+        {
+          "frame": 29,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 24,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14304719,
+          "profile_pointer": 13125336,
+          "d": 0
+        },
+        {
+          "frame": 35,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 33,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13005123,
+          "profile_pointer": 13125322,
+          "d": 0
+        },
+        {
+          "frame": 35,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 177,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14408556,
+          "profile_pointer": 13125322,
+          "d": 0
+        },
+        {
+          "frame": 35,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 18,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14304695,
+          "profile_pointer": 13125322,
+          "d": 0
+        },
+        {
+          "frame": 41,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 36,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13005173,
+          "profile_pointer": 13125308,
+          "d": 0
+        },
+        {
+          "frame": 41,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 174,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14408495,
+          "profile_pointer": 13125308,
+          "d": 0
+        },
+        {
+          "frame": 41,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 36,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14304767,
+          "profile_pointer": 13125308,
+          "d": 0
+        },
+        {
+          "frame": 46,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 33,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13005123,
+          "profile_pointer": 13125294,
+          "d": 0
+        },
+        {
+          "frame": 46,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 171,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14408451,
+          "profile_pointer": 13125294,
+          "d": 0
+        },
+        {
+          "frame": 46,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14304667,
+          "profile_pointer": 13125294,
+          "d": 0
+        },
+        {
+          "frame": 52,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 30,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13005080,
+          "profile_pointer": 13125266,
+          "d": 0
+        },
+        {
+          "frame": 52,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 168,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14408403,
+          "profile_pointer": 13125266,
+          "d": 0
+        },
+        {
+          "frame": 52,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 24,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14304719,
+          "profile_pointer": 13125266,
+          "d": 0
+        },
+        {
+          "frame": 80,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 1995,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12870972,
+          "profile_pointer": 13137016,
+          "d": 0
+        },
+        {
+          "frame": 80,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1659,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14310247,
+          "profile_pointer": 13137016,
+          "d": 0
+        },
+        {
+          "frame": 80,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 45,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304811,
+          "profile_pointer": 13137016,
+          "d": 0
+        },
+        {
+          "frame": 87,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2559,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12880867,
+          "profile_pointer": 13137030,
+          "d": 0
+        },
+        {
+          "frame": 87,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 45,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304811,
+          "profile_pointer": 13137030,
+          "d": 0
+        },
+        {
+          "frame": 94,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2562,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12880953,
+          "profile_pointer": 13137040,
+          "d": 0
+        },
+        {
+          "frame": 94,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 45,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304811,
+          "profile_pointer": 13137040,
+          "d": 0
+        },
+        {
+          "frame": 101,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2565,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881027,
+          "profile_pointer": 13137050,
+          "d": 0
+        },
+        {
+          "frame": 101,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137050,
+          "d": 0
+        },
+        {
+          "frame": 108,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2568,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881098,
+          "profile_pointer": 13137060,
+          "d": 0
+        },
+        {
+          "frame": 108,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137060,
+          "d": 0
+        },
+        {
+          "frame": 115,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2571,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881188,
+          "profile_pointer": 13137070,
+          "d": 0
+        },
+        {
+          "frame": 115,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2130,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317172,
+          "profile_pointer": 13137070,
+          "d": 0
+        },
+        {
+          "frame": 115,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137070,
+          "d": 0
+        },
+        {
+          "frame": 122,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2571,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881188,
+          "profile_pointer": 13137086,
+          "d": 0
+        },
+        {
+          "frame": 122,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2133,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317247,
+          "profile_pointer": 13137086,
+          "d": 0
+        },
+        {
+          "frame": 122,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137086,
+          "d": 0
+        },
+        {
+          "frame": 129,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2574,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881205,
+          "profile_pointer": 13137102,
+          "d": 0
+        },
+        {
+          "frame": 129,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2136,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317320,
+          "profile_pointer": 13137102,
+          "d": 0
+        },
+        {
+          "frame": 129,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137102,
+          "d": 0
+        },
+        {
+          "frame": 136,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2577,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881217,
+          "profile_pointer": 13137118,
+          "d": 0
+        },
+        {
+          "frame": 136,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2139,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317405,
+          "profile_pointer": 13137118,
+          "d": 0
+        },
+        {
+          "frame": 136,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137118,
+          "d": 0
+        },
+        {
+          "frame": 143,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2580,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881232,
+          "profile_pointer": 13137132,
+          "d": 0
+        },
+        {
+          "frame": 143,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2142,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317479,
+          "profile_pointer": 13137132,
+          "d": 0
+        },
+        {
+          "frame": 143,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137132,
+          "d": 0
+        },
+        {
+          "frame": 150,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2583,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881247,
+          "profile_pointer": 13137146,
+          "d": 0
+        },
+        {
+          "frame": 150,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2145,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317536,
+          "profile_pointer": 13137146,
+          "d": 0
+        },
+        {
+          "frame": 150,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137146,
+          "d": 0
+        },
+        {
+          "frame": 157,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2586,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881274,
+          "profile_pointer": 13137160,
+          "d": 0
+        },
+        {
+          "frame": 157,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2148,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317605,
+          "profile_pointer": 13137160,
+          "d": 0
+        },
+        {
+          "frame": 157,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137160,
+          "d": 0
+        },
+        {
+          "frame": 164,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 164,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2151,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317635,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 164,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 171,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137188,
+          "d": 0
+        },
+        {
+          "frame": 171,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2154,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317665,
+          "profile_pointer": 13137188,
+          "d": 0
+        },
+        {
+          "frame": 171,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137188,
+          "d": 0
+        },
+        {
+          "frame": 178,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 178,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2151,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317635,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 178,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 185,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 185,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2151,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317635,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 185,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 192,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137188,
+          "d": 0
+        },
+        {
+          "frame": 192,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2154,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317665,
+          "profile_pointer": 13137188,
+          "d": 0
+        },
+        {
+          "frame": 192,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137188,
+          "d": 0
+        },
+        {
+          "frame": 199,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 199,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2151,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317635,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 199,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 206,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 206,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2151,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317635,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 206,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 213,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137188,
+          "d": 0
+        },
+        {
+          "frame": 213,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2154,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317665,
+          "profile_pointer": 13137188,
+          "d": 0
+        },
+        {
+          "frame": 213,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137188,
+          "d": 0
+        },
+        {
+          "frame": 220,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 220,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2151,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317635,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 220,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 227,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 227,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2151,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317635,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 227,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137188,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2154,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317665,
+          "profile_pointer": 13137188,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137188,
+          "d": 0
+        },
+        {
+          "frame": 241,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 241,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2151,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317635,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 241,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 248,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 248,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2151,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317635,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 248,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 255,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137188,
+          "d": 0
+        },
+        {
+          "frame": 255,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2154,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317665,
+          "profile_pointer": 13137188,
+          "d": 0
+        },
+        {
+          "frame": 255,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137188,
+          "d": 0
+        },
+        {
+          "frame": 262,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 262,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2151,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317635,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 262,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 269,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 269,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2151,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317635,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 269,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 276,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 276,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2151,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317635,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 276,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 283,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 283,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2151,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317635,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 283,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 290,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 290,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2151,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317635,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 290,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 297,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 297,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2151,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317635,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 297,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 304,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137202,
+          "d": 0
+        },
+        {
+          "frame": 304,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2157,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317702,
+          "profile_pointer": 13137202,
+          "d": 0
+        },
+        {
+          "frame": 304,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137202,
+          "d": 0
+        },
+        {
+          "frame": 311,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2589,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881342,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 311,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2151,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317635,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 311,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137174,
+          "d": 0
+        },
+        {
+          "frame": 318,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2586,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881274,
+          "profile_pointer": 13137160,
+          "d": 0
+        },
+        {
+          "frame": 318,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2148,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317605,
+          "profile_pointer": 13137160,
+          "d": 0
+        },
+        {
+          "frame": 318,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137160,
+          "d": 0
+        },
+        {
+          "frame": 325,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2583,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881247,
+          "profile_pointer": 13137146,
+          "d": 0
+        },
+        {
+          "frame": 325,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2145,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317536,
+          "profile_pointer": 13137146,
+          "d": 0
+        },
+        {
+          "frame": 325,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137146,
+          "d": 0
+        },
+        {
+          "frame": 332,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2577,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881217,
+          "profile_pointer": 13137216,
+          "d": 0
+        },
+        {
+          "frame": 332,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2160,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317739,
+          "profile_pointer": 13137216,
+          "d": 0
+        },
+        {
+          "frame": 332,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137216,
+          "d": 0
+        },
+        {
+          "frame": 339,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2577,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881217,
+          "profile_pointer": 13137216,
+          "d": 0
+        },
+        {
+          "frame": 339,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2160,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317739,
+          "profile_pointer": 13137216,
+          "d": 0
+        },
+        {
+          "frame": 339,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137216,
+          "d": 0
+        },
+        {
+          "frame": 346,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2574,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881205,
+          "profile_pointer": 13137230,
+          "d": 0
+        },
+        {
+          "frame": 346,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2136,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317320,
+          "profile_pointer": 13137230,
+          "d": 0
+        },
+        {
+          "frame": 346,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137230,
+          "d": 0
+        },
+        {
+          "frame": 353,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2571,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881188,
+          "profile_pointer": 13137244,
+          "d": 0
+        },
+        {
+          "frame": 353,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2163,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317796,
+          "profile_pointer": 13137244,
+          "d": 0
+        },
+        {
+          "frame": 353,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137244,
+          "d": 0
+        },
+        {
+          "frame": 360,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2571,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881188,
+          "profile_pointer": 13137244,
+          "d": 0
+        },
+        {
+          "frame": 360,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 2163,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14317796,
+          "profile_pointer": 13137244,
+          "d": 0
+        },
+        {
+          "frame": 360,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137244,
+          "d": 0
+        },
+        {
+          "frame": 367,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2592,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12881381,
+          "profile_pointer": 13137258,
+          "d": 0
+        },
+        {
+          "frame": 367,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304676,
+          "profile_pointer": 13137258,
+          "d": 0
+        },
+        {
+          "frame": 374,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2559,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 12880867,
+          "profile_pointer": 13137030,
+          "d": 0
+        },
+        {
+          "frame": 374,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 45,
+          "selected_table_offset": 16,
+          "actor_table_offset": 22,
+          "descriptor": 14304811,
+          "profile_pointer": 13137030,
+          "d": 0
+        },
+        {
+          "frame": 381,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 6,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 13004684,
+          "profile_pointer": 13125014,
+          "d": 0
+        },
+        {
+          "frame": 381,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 114,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14407580,
+          "profile_pointer": 13125014,
+          "d": 0
+        },
+        {
+          "frame": 381,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 24,
+          "selected_table_offset": 22,
+          "actor_table_offset": 22,
+          "descriptor": 14304719,
+          "profile_pointer": 13125014,
+          "d": 0
+        }
+      ],
+      "codec_verification": {
+        "complete_blocks": 0,
+        "partial_blocks_skipped": 0,
+        "tile_events": 2500,
+        "distinct_tile_sources": 584,
+        "byte_identical_tile_encodings": 2500,
+        "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+        "errors": []
+      },
+      "complete_action_variant_coverage": false
+    },
+    {
+      "case": "roster-owen-hart-finisher",
+      "observed_action": "Owen Hart finisher opponent",
+      "actor_slot": 2,
+      "input_schedule": [
+        [
+          0,
+          10,
+          6,
+          35
+        ],
+        [
+          0,
+          80,
+          11,
+          8
+        ]
+      ],
+      "input_schedule_fields": [
+        "controller_port",
+        "start_frame",
+        "button_id",
+        "duration"
+      ],
+      "sampled_gameplay_frames": 100,
+      "snapshot_interval": 6,
+      "selection_window": [
+        1,
+        600
+      ],
+      "native_part_requests_checked": 310,
+      "native_tile_fields_checked": 3479,
+      "primary_part_ids_in_input_window": [
+        45,
+        1185,
+        1458,
+        1461,
+        1464,
+        1467
+      ],
+      "secondary_part_ids_in_input_window": [
+        57,
+        63,
+        75,
+        96,
+        216,
+        861,
+        1044,
+        1185,
+        1188,
+        1191,
+        1194,
+        1197,
+        1200,
+        1203
+      ],
+      "observed_part_request_sequence": [
+        {
+          "frame": 81,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 45,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 12873954,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 81,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 216,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14312994,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 87,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 45,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 12873954,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 87,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 216,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14312994,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 94,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 45,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 12873954,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 94,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 216,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14312994,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 101,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 45,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 12873954,
+          "profile_pointer": 13132458,
+          "d": 0
+        },
+        {
+          "frame": 101,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 861,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14489792,
+          "profile_pointer": 13132458,
+          "d": 0
+        },
+        {
+          "frame": 101,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 57,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304867,
+          "profile_pointer": 13132458,
+          "d": 0
+        },
+        {
+          "frame": 108,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1185,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13098893,
+          "profile_pointer": 13130330,
+          "d": 0
+        },
+        {
+          "frame": 108,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1044,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14492130,
+          "profile_pointer": 13130330,
+          "d": 0
+        },
+        {
+          "frame": 108,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 75,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304965,
+          "profile_pointer": 13130330,
+          "d": 0
+        },
+        {
+          "frame": 115,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1185,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13098893,
+          "profile_pointer": 13132472,
+          "d": 0
+        },
+        {
+          "frame": 115,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1185,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494644,
+          "profile_pointer": 13132472,
+          "d": 0
+        },
+        {
+          "frame": 115,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 57,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304867,
+          "profile_pointer": 13132472,
+          "d": 0
+        },
+        {
+          "frame": 122,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1185,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13098893,
+          "profile_pointer": 13132472,
+          "d": 0
+        },
+        {
+          "frame": 122,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1185,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494644,
+          "profile_pointer": 13132472,
+          "d": 0
+        },
+        {
+          "frame": 122,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 57,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304867,
+          "profile_pointer": 13132472,
+          "d": 0
+        },
+        {
+          "frame": 129,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1185,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13098893,
+          "profile_pointer": 13132486,
+          "d": 0
+        },
+        {
+          "frame": 129,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1188,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494690,
+          "profile_pointer": 13132486,
+          "d": 0
+        },
+        {
+          "frame": 129,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132486,
+          "d": 0
+        },
+        {
+          "frame": 136,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1185,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13098893,
+          "profile_pointer": 13132500,
+          "d": 0
+        },
+        {
+          "frame": 136,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1191,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494738,
+          "profile_pointer": 13132500,
+          "d": 0
+        },
+        {
+          "frame": 136,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132500,
+          "d": 0
+        },
+        {
+          "frame": 143,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1185,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13098893,
+          "profile_pointer": 13132500,
+          "d": 0
+        },
+        {
+          "frame": 143,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1191,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494738,
+          "profile_pointer": 13132500,
+          "d": 0
+        },
+        {
+          "frame": 143,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132500,
+          "d": 0
+        },
+        {
+          "frame": 150,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1458,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103068,
+          "profile_pointer": 13132514,
+          "d": 0
+        },
+        {
+          "frame": 150,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1194,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494772,
+          "profile_pointer": 13132514,
+          "d": 0
+        },
+        {
+          "frame": 150,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132514,
+          "d": 0
+        },
+        {
+          "frame": 157,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1461,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103115,
+          "profile_pointer": 13132528,
+          "d": 0
+        },
+        {
+          "frame": 157,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1197,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494811,
+          "profile_pointer": 13132528,
+          "d": 0
+        },
+        {
+          "frame": 157,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132528,
+          "d": 0
+        },
+        {
+          "frame": 164,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1464,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103166,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 164,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1200,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494860,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 164,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 171,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1467,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103215,
+          "profile_pointer": 13132556,
+          "d": 0
+        },
+        {
+          "frame": 171,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1203,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494886,
+          "profile_pointer": 13132556,
+          "d": 0
+        },
+        {
+          "frame": 171,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 96,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14305095,
+          "profile_pointer": 13132556,
+          "d": 0
+        },
+        {
+          "frame": 178,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1464,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103166,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 178,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1200,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494860,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 178,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 185,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1464,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103166,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 185,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1200,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494860,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 185,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 192,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1467,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103215,
+          "profile_pointer": 13132556,
+          "d": 0
+        },
+        {
+          "frame": 192,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1203,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494886,
+          "profile_pointer": 13132556,
+          "d": 0
+        },
+        {
+          "frame": 192,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 96,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14305095,
+          "profile_pointer": 13132556,
+          "d": 0
+        },
+        {
+          "frame": 199,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1464,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103166,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 199,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1200,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494860,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 199,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 206,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1464,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103166,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 206,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1200,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494860,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 206,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 213,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1467,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103215,
+          "profile_pointer": 13132556,
+          "d": 0
+        },
+        {
+          "frame": 213,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1203,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494886,
+          "profile_pointer": 13132556,
+          "d": 0
+        },
+        {
+          "frame": 213,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 96,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14305095,
+          "profile_pointer": 13132556,
+          "d": 0
+        },
+        {
+          "frame": 220,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1464,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103166,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 220,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1200,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494860,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 220,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 227,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1464,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103166,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 227,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1200,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494860,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 227,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1467,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103215,
+          "profile_pointer": 13132556,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1203,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494886,
+          "profile_pointer": 13132556,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 96,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14305095,
+          "profile_pointer": 13132556,
+          "d": 0
+        },
+        {
+          "frame": 241,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1464,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103166,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 241,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1200,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494860,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 241,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 248,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1464,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103166,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 248,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1200,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494860,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 248,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 255,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1467,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103215,
+          "profile_pointer": 13132556,
+          "d": 0
+        },
+        {
+          "frame": 255,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1203,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494886,
+          "profile_pointer": 13132556,
+          "d": 0
+        },
+        {
+          "frame": 255,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 96,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14305095,
+          "profile_pointer": 13132556,
+          "d": 0
+        },
+        {
+          "frame": 262,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1464,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103166,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 262,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1200,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494860,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 262,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 269,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1464,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103166,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 269,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1200,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494860,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 269,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 276,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1464,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103166,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 276,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1200,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494860,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 276,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 283,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1464,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103166,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 283,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1200,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494860,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 283,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 290,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1464,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103166,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 290,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1200,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494860,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 290,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 297,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1464,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103166,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 297,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1200,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494860,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 297,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 304,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1467,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103215,
+          "profile_pointer": 13132556,
+          "d": 0
+        },
+        {
+          "frame": 304,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1203,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494886,
+          "profile_pointer": 13132556,
+          "d": 0
+        },
+        {
+          "frame": 304,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 96,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14305095,
+          "profile_pointer": 13132556,
+          "d": 0
+        },
+        {
+          "frame": 311,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1464,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103166,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 311,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1200,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494860,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 311,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132542,
+          "d": 0
+        },
+        {
+          "frame": 318,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1461,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103115,
+          "profile_pointer": 13132528,
+          "d": 0
+        },
+        {
+          "frame": 318,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1197,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494811,
+          "profile_pointer": 13132528,
+          "d": 0
+        },
+        {
+          "frame": 318,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132528,
+          "d": 0
+        },
+        {
+          "frame": 325,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1458,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13103068,
+          "profile_pointer": 13132514,
+          "d": 0
+        },
+        {
+          "frame": 325,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1194,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494772,
+          "profile_pointer": 13132514,
+          "d": 0
+        },
+        {
+          "frame": 325,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132514,
+          "d": 0
+        },
+        {
+          "frame": 332,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1185,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13098893,
+          "profile_pointer": 13132500,
+          "d": 0
+        },
+        {
+          "frame": 332,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1191,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494738,
+          "profile_pointer": 13132500,
+          "d": 0
+        },
+        {
+          "frame": 332,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132500,
+          "d": 0
+        },
+        {
+          "frame": 339,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1185,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13098893,
+          "profile_pointer": 13132500,
+          "d": 0
+        },
+        {
+          "frame": 339,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1191,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494738,
+          "profile_pointer": 13132500,
+          "d": 0
+        },
+        {
+          "frame": 339,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132500,
+          "d": 0
+        },
+        {
+          "frame": 346,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1185,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13098893,
+          "profile_pointer": 13132486,
+          "d": 0
+        },
+        {
+          "frame": 346,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1188,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494690,
+          "profile_pointer": 13132486,
+          "d": 0
+        },
+        {
+          "frame": 346,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 63,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304899,
+          "profile_pointer": 13132486,
+          "d": 0
+        },
+        {
+          "frame": 353,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1185,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13098893,
+          "profile_pointer": 13132472,
+          "d": 0
+        },
+        {
+          "frame": 353,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1185,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494644,
+          "profile_pointer": 13132472,
+          "d": 0
+        },
+        {
+          "frame": 353,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 57,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304867,
+          "profile_pointer": 13132472,
+          "d": 0
+        },
+        {
+          "frame": 360,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1185,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13098893,
+          "profile_pointer": 13132472,
+          "d": 0
+        },
+        {
+          "frame": 360,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1185,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14494644,
+          "profile_pointer": 13132472,
+          "d": 0
+        },
+        {
+          "frame": 360,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 57,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304867,
+          "profile_pointer": 13132472,
+          "d": 0
+        },
+        {
+          "frame": 367,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1185,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 13098893,
+          "profile_pointer": 13130330,
+          "d": 0
+        },
+        {
+          "frame": 367,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1044,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14492130,
+          "profile_pointer": 13130330,
+          "d": 0
+        },
+        {
+          "frame": 367,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 75,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14304965,
+          "profile_pointer": 13130330,
+          "d": 0
+        },
+        {
+          "frame": 374,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 45,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 12873954,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 374,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 216,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14312994,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 382,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 45,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 12873954,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 382,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 216,
+          "selected_table_offset": 0,
+          "actor_table_offset": 0,
+          "descriptor": 14312994,
+          "profile_pointer": 13125500,
+          "d": 0
+        }
+      ],
+      "codec_verification": {
+        "complete_blocks": 0,
+        "partial_blocks_skipped": 0,
+        "tile_events": 2500,
+        "distinct_tile_sources": 584,
+        "byte_identical_tile_encodings": 2500,
+        "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+        "errors": []
+      },
+      "complete_action_variant_coverage": false
+    }
+  ],
+  "gameplay_observations": [
+    {
+      "frame": 6,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        347,
+        338
+      ],
+      "actor_world_y": [
+        262,
+        255
+      ]
+    },
+    {
+      "frame": 12,
+      "actor_action_words": [
+        8,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        340,
+        338
+      ],
+      "actor_world_y": [
+        262,
+        255
+      ]
+    },
+    {
+      "frame": 18,
+      "actor_action_words": [
+        8,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        333,
+        338
+      ],
+      "actor_world_y": [
+        262,
+        255
+      ]
+    },
+    {
+      "frame": 24,
+      "actor_action_words": [
+        8,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        319,
+        338
+      ],
+      "actor_world_y": [
+        262,
+        255
+      ]
+    },
+    {
+      "frame": 30,
+      "actor_action_words": [
+        8,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        312,
+        338
+      ],
+      "actor_world_y": [
+        262,
+        255
+      ]
+    },
+    {
+      "frame": 36,
+      "actor_action_words": [
+        6,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        305,
+        338
+      ],
+      "actor_world_y": [
+        262,
+        255
+      ]
+    },
+    {
+      "frame": 42,
+      "actor_action_words": [
+        6,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        298,
+        338
+      ],
+      "actor_world_y": [
+        262,
+        255
+      ]
+    },
+    {
+      "frame": 48,
+      "actor_action_words": [
+        6,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        291,
+        338
+      ],
+      "actor_world_y": [
+        262,
+        255
+      ]
+    },
+    {
+      "frame": 54,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        291,
+        338
+      ],
+      "actor_world_y": [
+        262,
+        255
+      ]
+    },
+    {
+      "frame": 60,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        291,
+        338
+      ],
+      "actor_world_y": [
+        262,
+        255
+      ]
+    },
+    {
+      "frame": 66,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        291,
+        338
+      ],
+      "actor_world_y": [
+        262,
+        255
+      ]
+    },
+    {
+      "frame": 72,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        291,
+        338
+      ],
+      "actor_world_y": [
+        262,
+        255
+      ]
+    },
+    {
+      "frame": 78,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        291,
+        338
+      ],
+      "actor_world_y": [
+        262,
+        255
+      ]
+    },
+    {
+      "frame": 84,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 90,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 96,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 102,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 108,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 114,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 120,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 126,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 132,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 138,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 144,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 150,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 156,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 162,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 168,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 174,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 180,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 186,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 192,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 198,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 204,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 210,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 216,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 222,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 228,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 234,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 240,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 246,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 252,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 258,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 264,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 270,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 276,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 282,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 288,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 294,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 300,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 306,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 312,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 318,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 324,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 330,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 336,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 342,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 348,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 354,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 360,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 366,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 372,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 378,
+      "actor_action_words": [
+        612,
+        552
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 384,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 390,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 396,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 402,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 408,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 414,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 420,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 426,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 432,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 438,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 444,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 450,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 456,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 462,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 468,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 474,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 480,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 486,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 492,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 498,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 504,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 510,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 516,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 522,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 528,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 534,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 540,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 546,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 552,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 558,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 564,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 570,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 576,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 582,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 588,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 594,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    },
+    {
+      "frame": 600,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        304,
+        338
+      ],
+      "actor_world_y": [
+        251,
+        255
+      ]
+    }
+  ],
+  "recipe_id": "owen-hart-finisher",
+  "observed_action_word": 612
+}

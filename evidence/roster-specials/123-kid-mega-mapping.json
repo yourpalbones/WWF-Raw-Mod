@@ -1,0 +1,3104 @@
+{
+  "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "scope": "Controlled original-game input cases; no edited outfit validation",
+  "complete_animation_coverage": false,
+  "cases": [
+    {
+      "case": "roster-123-kid-mega",
+      "observed_action": "1-2-3 Kid mega attacker",
+      "actor_slot": 0,
+      "input_schedule": [
+        [
+          0,
+          1,
+          10,
+          100
+        ],
+        [
+          0,
+          1,
+          11,
+          100
+        ],
+        [
+          0,
+          5,
+          7,
+          4
+        ],
+        [
+          0,
+          15,
+          4,
+          4
+        ],
+        [
+          0,
+          25,
+          4,
+          4
+        ],
+        [
+          0,
+          35,
+          4,
+          4
+        ],
+        [
+          0,
+          41,
+          8,
+          8
+        ]
+      ],
+      "input_schedule_fields": [
+        "controller_port",
+        "start_frame",
+        "button_id",
+        "duration"
+      ],
+      "sampled_gameplay_frames": 100,
+      "snapshot_interval": 6,
+      "selection_window": [
+        1,
+        600
+      ],
+      "native_part_requests_checked": 164,
+      "native_tile_fields_checked": 2459,
+      "primary_part_ids_in_input_window": [
+        30,
+        2082,
+        2085,
+        2088,
+        2091,
+        2094,
+        2097,
+        2103,
+        2106,
+        2109,
+        2112,
+        2115,
+        2118,
+        2121,
+        2124,
+        2127,
+        2130,
+        2133
+      ],
+      "secondary_part_ids_in_input_window": [
+        12,
+        24,
+        168,
+        1746,
+        1749,
+        1752,
+        1755,
+        1758,
+        1761,
+        1767,
+        1770,
+        1773,
+        1776,
+        1779,
+        1782,
+        1785,
+        1788,
+        1791,
+        1794,
+        1797
+      ],
+      "observed_part_request_sequence": [
+        {
+          "frame": 41,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2082,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872423,
+          "profile_pointer": 13135044,
+          "d": 0
+        },
+        {
+          "frame": 41,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1746,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311447,
+          "profile_pointer": 13135044,
+          "d": 0
+        },
+        {
+          "frame": 47,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2085,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872466,
+          "profile_pointer": 13135054,
+          "d": 0
+        },
+        {
+          "frame": 47,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1749,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311502,
+          "profile_pointer": 13135054,
+          "d": 0
+        },
+        {
+          "frame": 53,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2088,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872505,
+          "profile_pointer": 13135064,
+          "d": 0
+        },
+        {
+          "frame": 53,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1752,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311537,
+          "profile_pointer": 13135064,
+          "d": 0
+        },
+        {
+          "frame": 59,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2091,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872557,
+          "profile_pointer": 13135074,
+          "d": 0
+        },
+        {
+          "frame": 59,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1755,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311588,
+          "profile_pointer": 13135074,
+          "d": 0
+        },
+        {
+          "frame": 65,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2091,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872557,
+          "profile_pointer": 13135074,
+          "d": 0
+        },
+        {
+          "frame": 65,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1755,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311588,
+          "profile_pointer": 13135074,
+          "d": 0
+        },
+        {
+          "frame": 71,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2091,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872557,
+          "profile_pointer": 13135074,
+          "d": 0
+        },
+        {
+          "frame": 71,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1755,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311588,
+          "profile_pointer": 13135074,
+          "d": 0
+        },
+        {
+          "frame": 77,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2094,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872618,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 77,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1758,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311621,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 83,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2094,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872618,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 83,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1758,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311621,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 89,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2094,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872618,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 89,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1758,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311621,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 95,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2094,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872618,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 95,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1758,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311621,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 101,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2094,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872618,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 101,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1758,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311621,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 107,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2097,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872673,
+          "profile_pointer": 13135094,
+          "d": 0
+        },
+        {
+          "frame": 107,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1761,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311666,
+          "profile_pointer": 13135094,
+          "d": 0
+        },
+        {
+          "frame": 113,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2082,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872423,
+          "profile_pointer": 13135044,
+          "d": 0
+        },
+        {
+          "frame": 113,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1746,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311447,
+          "profile_pointer": 13135044,
+          "d": 0
+        },
+        {
+          "frame": 119,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2085,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872466,
+          "profile_pointer": 13135054,
+          "d": 0
+        },
+        {
+          "frame": 119,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1749,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311502,
+          "profile_pointer": 13135054,
+          "d": 0
+        },
+        {
+          "frame": 125,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2088,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872505,
+          "profile_pointer": 13135064,
+          "d": 0
+        },
+        {
+          "frame": 125,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1752,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311537,
+          "profile_pointer": 13135064,
+          "d": 0
+        },
+        {
+          "frame": 131,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2091,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872557,
+          "profile_pointer": 13135074,
+          "d": 0
+        },
+        {
+          "frame": 131,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1755,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311588,
+          "profile_pointer": 13135074,
+          "d": 0
+        },
+        {
+          "frame": 137,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2091,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872557,
+          "profile_pointer": 13135074,
+          "d": 0
+        },
+        {
+          "frame": 137,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1755,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311588,
+          "profile_pointer": 13135074,
+          "d": 0
+        },
+        {
+          "frame": 143,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2091,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872557,
+          "profile_pointer": 13135074,
+          "d": 0
+        },
+        {
+          "frame": 143,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1755,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311588,
+          "profile_pointer": 13135074,
+          "d": 0
+        },
+        {
+          "frame": 149,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2094,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872618,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 149,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1758,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311621,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 155,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2094,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872618,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 155,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1758,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311621,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 161,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2094,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872618,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 161,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1758,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311621,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 167,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2094,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872618,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 167,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1758,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311621,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 173,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2094,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872618,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 173,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1758,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311621,
+          "profile_pointer": 13135084,
+          "d": 0
+        },
+        {
+          "frame": 179,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2097,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872673,
+          "profile_pointer": 13135094,
+          "d": 0
+        },
+        {
+          "frame": 179,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1761,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311666,
+          "profile_pointer": 13135094,
+          "d": 0
+        },
+        {
+          "frame": 185,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2103,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872769,
+          "profile_pointer": 13135104,
+          "d": 0
+        },
+        {
+          "frame": 185,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1767,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311776,
+          "profile_pointer": 13135104,
+          "d": 0
+        },
+        {
+          "frame": 191,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2106,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872811,
+          "profile_pointer": 13135114,
+          "d": 0
+        },
+        {
+          "frame": 191,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1770,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311811,
+          "profile_pointer": 13135114,
+          "d": 0
+        },
+        {
+          "frame": 197,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2109,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872843,
+          "profile_pointer": 13135124,
+          "d": 0
+        },
+        {
+          "frame": 197,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1773,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311840,
+          "profile_pointer": 13135124,
+          "d": 0
+        },
+        {
+          "frame": 203,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2112,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872895,
+          "profile_pointer": 13135134,
+          "d": 0
+        },
+        {
+          "frame": 203,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1776,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311881,
+          "profile_pointer": 13135134,
+          "d": 0
+        },
+        {
+          "frame": 209,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2115,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872947,
+          "profile_pointer": 13135144,
+          "d": 0
+        },
+        {
+          "frame": 209,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1779,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311933,
+          "profile_pointer": 13135144,
+          "d": 0
+        },
+        {
+          "frame": 215,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2118,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12872996,
+          "profile_pointer": 13135154,
+          "d": 0
+        },
+        {
+          "frame": 215,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1782,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14311974,
+          "profile_pointer": 13135154,
+          "d": 0
+        },
+        {
+          "frame": 221,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2121,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12873048,
+          "profile_pointer": 13135164,
+          "d": 0
+        },
+        {
+          "frame": 221,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1785,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14312007,
+          "profile_pointer": 13135164,
+          "d": 0
+        },
+        {
+          "frame": 228,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2121,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12873048,
+          "profile_pointer": 13135174,
+          "d": 0
+        },
+        {
+          "frame": 228,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1788,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14312044,
+          "profile_pointer": 13135174,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2124,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12873086,
+          "profile_pointer": 13135184,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1791,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14312084,
+          "profile_pointer": 13135184,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14304676,
+          "profile_pointer": 13135184,
+          "d": 0
+        },
+        {
+          "frame": 240,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2127,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12873137,
+          "profile_pointer": 13135198,
+          "d": 0
+        },
+        {
+          "frame": 240,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2130,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12873168,
+          "profile_pointer": 13135198,
+          "d": 0
+        },
+        {
+          "frame": 240,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1794,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14312116,
+          "profile_pointer": 13135198,
+          "d": 0
+        },
+        {
+          "frame": 240,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14304676,
+          "profile_pointer": 13135198,
+          "d": 0
+        },
+        {
+          "frame": 246,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2133,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 12873209,
+          "profile_pointer": 13135218,
+          "d": 0
+        },
+        {
+          "frame": 246,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1797,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14312138,
+          "profile_pointer": 13135218,
+          "d": 0
+        },
+        {
+          "frame": 246,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 12,
+          "selected_table_offset": 16,
+          "actor_table_offset": 18,
+          "descriptor": 14304676,
+          "profile_pointer": 13135218,
+          "d": 0
+        },
+        {
+          "frame": 252,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 30,
+          "selected_table_offset": 18,
+          "actor_table_offset": 18,
+          "descriptor": 12966964,
+          "profile_pointer": 13125266,
+          "d": 0
+        },
+        {
+          "frame": 252,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 168,
+          "selected_table_offset": 18,
+          "actor_table_offset": 18,
+          "descriptor": 14374148,
+          "profile_pointer": 13125266,
+          "d": 0
+        },
+        {
+          "frame": 252,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 24,
+          "selected_table_offset": 18,
+          "actor_table_offset": 18,
+          "descriptor": 14304719,
+          "profile_pointer": 13125266,
+          "d": 0
+        }
+      ],
+      "codec_verification": {
+        "complete_blocks": 0,
+        "partial_blocks_skipped": 0,
+        "tile_events": 1848,
+        "distinct_tile_sources": 522,
+        "byte_identical_tile_encodings": 1848,
+        "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+        "errors": []
+      },
+      "complete_action_variant_coverage": false
+    },
+    {
+      "case": "roster-123-kid-mega",
+      "observed_action": "1-2-3 Kid mega opponent",
+      "actor_slot": 2,
+      "input_schedule": [
+        [
+          0,
+          1,
+          10,
+          100
+        ],
+        [
+          0,
+          1,
+          11,
+          100
+        ],
+        [
+          0,
+          5,
+          7,
+          4
+        ],
+        [
+          0,
+          15,
+          4,
+          4
+        ],
+        [
+          0,
+          25,
+          4,
+          4
+        ],
+        [
+          0,
+          35,
+          4,
+          4
+        ],
+        [
+          0,
+          41,
+          8,
+          8
+        ]
+      ],
+      "input_schedule_fields": [
+        "controller_port",
+        "start_frame",
+        "button_id",
+        "duration"
+      ],
+      "sampled_gameplay_frames": 100,
+      "snapshot_interval": 6,
+      "selection_window": [
+        1,
+        600
+      ],
+      "native_part_requests_checked": 164,
+      "native_tile_fields_checked": 2459,
+      "primary_part_ids_in_input_window": [
+        45,
+        60,
+        66
+      ],
+      "secondary_part_ids_in_input_window": [
+        81,
+        216,
+        231,
+        237
+      ],
+      "observed_part_request_sequence": [
+        {
+          "frame": 221,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 45,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 12947989,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 221,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 216,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 14358047,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 228,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 60,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 12948203,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 228,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 231,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 14358291,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 66,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 12948295,
+          "profile_pointer": 13125590,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 237,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 14358386,
+          "profile_pointer": 13125590,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 81,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 14304997,
+          "profile_pointer": 13125590,
+          "d": 0
+        },
+        {
+          "frame": 240,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 60,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 12948203,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 240,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 231,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 14358291,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 246,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 45,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 12947989,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 246,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 216,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 14358047,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 252,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 45,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 12947989,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 252,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 216,
+          "selected_table_offset": 20,
+          "actor_table_offset": 20,
+          "descriptor": 14358047,
+          "profile_pointer": 13125500,
+          "d": 0
+        }
+      ],
+      "codec_verification": {
+        "complete_blocks": 0,
+        "partial_blocks_skipped": 0,
+        "tile_events": 1848,
+        "distinct_tile_sources": 522,
+        "byte_identical_tile_encodings": 1848,
+        "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+        "errors": []
+      },
+      "complete_action_variant_coverage": false
+    }
+  ],
+  "gameplay_observations": [
+    {
+      "frame": 6,
+      "actor_action_words": [
+        68,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        146,
+        272
+      ],
+      "actor_world_y": [
+        208,
+        228
+      ]
+    },
+    {
+      "frame": 12,
+      "actor_action_words": [
+        68,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        146,
+        272
+      ],
+      "actor_world_y": [
+        208,
+        228
+      ]
+    },
+    {
+      "frame": 18,
+      "actor_action_words": [
+        68,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        146,
+        272
+      ],
+      "actor_world_y": [
+        208,
+        228
+      ]
+    },
+    {
+      "frame": 24,
+      "actor_action_words": [
+        68,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        146,
+        272
+      ],
+      "actor_world_y": [
+        208,
+        228
+      ]
+    },
+    {
+      "frame": 30,
+      "actor_action_words": [
+        68,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        146,
+        272
+      ],
+      "actor_world_y": [
+        208,
+        228
+      ]
+    },
+    {
+      "frame": 36,
+      "actor_action_words": [
+        68,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        146,
+        272
+      ],
+      "actor_world_y": [
+        208,
+        228
+      ]
+    },
+    {
+      "frame": 42,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        170,
+        272
+      ],
+      "actor_world_y": [
+        157,
+        228
+      ]
+    },
+    {
+      "frame": 48,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        195,
+        272
+      ],
+      "actor_world_y": [
+        157,
+        228
+      ]
+    },
+    {
+      "frame": 54,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        220,
+        272
+      ],
+      "actor_world_y": [
+        157,
+        228
+      ]
+    },
+    {
+      "frame": 60,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        245,
+        272
+      ],
+      "actor_world_y": [
+        157,
+        228
+      ]
+    },
+    {
+      "frame": 66,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        270,
+        272
+      ],
+      "actor_world_y": [
+        125,
+        228
+      ]
+    },
+    {
+      "frame": 72,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        295,
+        272
+      ],
+      "actor_world_y": [
+        75,
+        228
+      ]
+    },
+    {
+      "frame": 78,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        320,
+        272
+      ],
+      "actor_world_y": [
+        125,
+        228
+      ]
+    },
+    {
+      "frame": 84,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        320,
+        272
+      ],
+      "actor_world_y": [
+        125,
+        228
+      ]
+    },
+    {
+      "frame": 90,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        320,
+        272
+      ],
+      "actor_world_y": [
+        125,
+        228
+      ]
+    },
+    {
+      "frame": 96,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        320,
+        272
+      ],
+      "actor_world_y": [
+        125,
+        228
+      ]
+    },
+    {
+      "frame": 102,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        345,
+        272
+      ],
+      "actor_world_y": [
+        158,
+        228
+      ]
+    },
+    {
+      "frame": 108,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        370,
+        272
+      ],
+      "actor_world_y": [
+        159,
+        228
+      ]
+    },
+    {
+      "frame": 114,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        346,
+        272
+      ],
+      "actor_world_y": [
+        159,
+        228
+      ]
+    },
+    {
+      "frame": 120,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        321,
+        272
+      ],
+      "actor_world_y": [
+        159,
+        228
+      ]
+    },
+    {
+      "frame": 126,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        296,
+        272
+      ],
+      "actor_world_y": [
+        159,
+        228
+      ]
+    },
+    {
+      "frame": 132,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        271,
+        272
+      ],
+      "actor_world_y": [
+        159,
+        228
+      ]
+    },
+    {
+      "frame": 138,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        246,
+        272
+      ],
+      "actor_world_y": [
+        127,
+        228
+      ]
+    },
+    {
+      "frame": 144,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        221,
+        272
+      ],
+      "actor_world_y": [
+        77,
+        228
+      ]
+    },
+    {
+      "frame": 150,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        196,
+        272
+      ],
+      "actor_world_y": [
+        127,
+        228
+      ]
+    },
+    {
+      "frame": 156,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        196,
+        272
+      ],
+      "actor_world_y": [
+        127,
+        228
+      ]
+    },
+    {
+      "frame": 162,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        196,
+        272
+      ],
+      "actor_world_y": [
+        127,
+        228
+      ]
+    },
+    {
+      "frame": 168,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        196,
+        272
+      ],
+      "actor_world_y": [
+        127,
+        228
+      ]
+    },
+    {
+      "frame": 174,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        171,
+        272
+      ],
+      "actor_world_y": [
+        160,
+        228
+      ]
+    },
+    {
+      "frame": 180,
+      "actor_action_words": [
+        586,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        146,
+        272
+      ],
+      "actor_world_y": [
+        161,
+        228
+      ]
+    },
+    {
+      "frame": 186,
+      "actor_action_words": [
+        588,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        155,
+        272
+      ],
+      "actor_world_y": [
+        165,
+        228
+      ]
+    },
+    {
+      "frame": 192,
+      "actor_action_words": [
+        588,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        164,
+        272
+      ],
+      "actor_world_y": [
+        169,
+        228
+      ]
+    },
+    {
+      "frame": 198,
+      "actor_action_words": [
+        588,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        173,
+        272
+      ],
+      "actor_world_y": [
+        173,
+        228
+      ]
+    },
+    {
+      "frame": 204,
+      "actor_action_words": [
+        588,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        187,
+        272
+      ],
+      "actor_world_y": [
+        181,
+        228
+      ]
+    },
+    {
+      "frame": 210,
+      "actor_action_words": [
+        588,
+        512
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        201,
+        272
+      ],
+      "actor_world_y": [
+        189,
+        228
+      ]
+    },
+    {
+      "frame": 216,
+      "actor_action_words": [
+        588,
+        508
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        215,
+        272
+      ],
+      "actor_world_y": [
+        197,
+        228
+      ]
+    },
+    {
+      "frame": 222,
+      "actor_action_words": [
+        588,
+        508
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        229,
+        272
+      ],
+      "actor_world_y": [
+        205,
+        228
+      ]
+    },
+    {
+      "frame": 228,
+      "actor_action_words": [
+        588,
+        508
+      ],
+      "actor_energy_words": [
+        928,
+        122
+      ],
+      "actor_world_x": [
+        244,
+        272
+      ],
+      "actor_world_y": [
+        214,
+        228
+      ]
+    },
+    {
+      "frame": 234,
+      "actor_action_words": [
+        588,
+        508
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        254,
+        272
+      ],
+      "actor_world_y": [
+        219,
+        228
+      ]
+    },
+    {
+      "frame": 240,
+      "actor_action_words": [
+        588,
+        508
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        264,
+        272
+      ],
+      "actor_world_y": [
+        224,
+        228
+      ]
+    },
+    {
+      "frame": 246,
+      "actor_action_words": [
+        588,
+        508
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 252,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 258,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 264,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 270,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 276,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 282,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 288,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 294,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 300,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 306,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 312,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 318,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 324,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 330,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 336,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 342,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 348,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 354,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 360,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 366,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 372,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 378,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 384,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 390,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 396,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 402,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 408,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 414,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 420,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 426,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 432,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 438,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 444,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 450,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 456,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 462,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 468,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 474,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 480,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 486,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 492,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 498,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 504,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 510,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 516,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 522,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 528,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 534,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 540,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 546,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 552,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 558,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 564,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 570,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 576,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 582,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 588,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 594,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    },
+    {
+      "frame": 600,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        274,
+        272
+      ],
+      "actor_world_y": [
+        229,
+        228
+      ]
+    }
+  ],
+  "recipe_id": "123-kid-mega",
+  "observed_action_word": 586
+}

@@ -1,0 +1,3299 @@
+{
+  "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "scope": "Controlled original-game input cases; no edited outfit validation",
+  "complete_animation_coverage": false,
+  "cases": [
+    {
+      "case": "roster-undertaker-finisher",
+      "observed_action": "Undertaker finisher attacker",
+      "actor_slot": 0,
+      "input_schedule": [
+        [
+          0,
+          10,
+          9,
+          8
+        ],
+        [
+          0,
+          60,
+          11,
+          8
+        ],
+        [
+          0,
+          80,
+          11,
+          8
+        ],
+        [
+          0,
+          100,
+          11,
+          8
+        ],
+        [
+          0,
+          120,
+          11,
+          8
+        ],
+        [
+          0,
+          140,
+          11,
+          8
+        ],
+        [
+          0,
+          160,
+          11,
+          8
+        ],
+        [
+          0,
+          180,
+          11,
+          8
+        ],
+        [
+          0,
+          200,
+          11,
+          8
+        ],
+        [
+          0,
+          220,
+          11,
+          8
+        ],
+        [
+          0,
+          240,
+          11,
+          8
+        ],
+        [
+          0,
+          260,
+          11,
+          8
+        ],
+        [
+          0,
+          280,
+          11,
+          8
+        ],
+        [
+          0,
+          300,
+          11,
+          8
+        ],
+        [
+          0,
+          320,
+          11,
+          8
+        ],
+        [
+          0,
+          340,
+          11,
+          8
+        ],
+        [
+          0,
+          360,
+          11,
+          8
+        ],
+        [
+          0,
+          380,
+          11,
+          8
+        ],
+        [
+          0,
+          400,
+          11,
+          8
+        ]
+      ],
+      "input_schedule_fields": [
+        "controller_port",
+        "start_frame",
+        "button_id",
+        "duration"
+      ],
+      "sampled_gameplay_frames": 100,
+      "snapshot_interval": 6,
+      "selection_window": [
+        1,
+        600
+      ],
+      "native_part_requests_checked": 133,
+      "native_tile_fields_checked": 1921,
+      "primary_part_ids_in_input_window": [
+        6,
+        321,
+        327,
+        2223,
+        2226,
+        2229,
+        2232,
+        2235,
+        2238,
+        2241,
+        2244,
+        2247,
+        2250,
+        2253,
+        2256,
+        2259,
+        2262
+      ],
+      "secondary_part_ids_in_input_window": [
+        6,
+        9,
+        21,
+        24,
+        27,
+        39,
+        45,
+        114,
+        501,
+        507,
+        1890,
+        1893,
+        1896,
+        1899
+      ],
+      "observed_part_request_sequence": [
+        {
+          "frame": 10,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 321,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 13028848,
+          "profile_pointer": 13126726,
+          "d": 0
+        },
+        {
+          "frame": 10,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 501,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 14430947,
+          "profile_pointer": 13126726,
+          "d": 0
+        },
+        {
+          "frame": 10,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 14304667,
+          "profile_pointer": 13126726,
+          "d": 0
+        },
+        {
+          "frame": 17,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 327,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 12874501,
+          "profile_pointer": 13126754,
+          "d": 0
+        },
+        {
+          "frame": 17,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 507,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 14313663,
+          "profile_pointer": 13126754,
+          "d": 0
+        },
+        {
+          "frame": 17,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 14304667,
+          "profile_pointer": 13126754,
+          "d": 0
+        },
+        {
+          "frame": 220,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2223,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 12874545,
+          "profile_pointer": 13135660,
+          "d": 0
+        },
+        {
+          "frame": 220,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2226,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 12874561,
+          "profile_pointer": 13135660,
+          "d": 0
+        },
+        {
+          "frame": 220,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1890,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14313721,
+          "profile_pointer": 13135660,
+          "d": 0
+        },
+        {
+          "frame": 220,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 6,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14304654,
+          "profile_pointer": 13135660,
+          "d": 0
+        },
+        {
+          "frame": 227,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2229,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 12874581,
+          "profile_pointer": 13135680,
+          "d": 0
+        },
+        {
+          "frame": 227,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 21,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14304707,
+          "profile_pointer": 13135680,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2232,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 12874650,
+          "profile_pointer": 13135690,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 21,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14304707,
+          "profile_pointer": 13135690,
+          "d": 0
+        },
+        {
+          "frame": 241,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2235,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 12874725,
+          "profile_pointer": 13135700,
+          "d": 0
+        },
+        {
+          "frame": 241,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 21,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14304707,
+          "profile_pointer": 13135700,
+          "d": 0
+        },
+        {
+          "frame": 248,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2235,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 12874725,
+          "profile_pointer": 13135700,
+          "d": 0
+        },
+        {
+          "frame": 248,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 21,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14304707,
+          "profile_pointer": 13135700,
+          "d": 0
+        },
+        {
+          "frame": 255,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2235,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 12874725,
+          "profile_pointer": 13135700,
+          "d": 0
+        },
+        {
+          "frame": 255,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 21,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14304707,
+          "profile_pointer": 13135700,
+          "d": 0
+        },
+        {
+          "frame": 262,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2238,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 12874808,
+          "profile_pointer": 13135710,
+          "d": 0
+        },
+        {
+          "frame": 262,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 21,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14304707,
+          "profile_pointer": 13135710,
+          "d": 0
+        },
+        {
+          "frame": 269,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2241,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 12874889,
+          "profile_pointer": 13135720,
+          "d": 0
+        },
+        {
+          "frame": 269,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 21,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14304707,
+          "profile_pointer": 13135720,
+          "d": 0
+        },
+        {
+          "frame": 276,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2244,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 12874963,
+          "profile_pointer": 13135730,
+          "d": 0
+        },
+        {
+          "frame": 276,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 27,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14304731,
+          "profile_pointer": 13135730,
+          "d": 0
+        },
+        {
+          "frame": 283,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2247,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 12875048,
+          "profile_pointer": 13135740,
+          "d": 0
+        },
+        {
+          "frame": 283,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 27,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14304731,
+          "profile_pointer": 13135740,
+          "d": 0
+        },
+        {
+          "frame": 290,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2250,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 12875115,
+          "profile_pointer": 13135750,
+          "d": 0
+        },
+        {
+          "frame": 290,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 27,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14304731,
+          "profile_pointer": 13135750,
+          "d": 0
+        },
+        {
+          "frame": 297,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2253,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 12875192,
+          "profile_pointer": 13135760,
+          "d": 0
+        },
+        {
+          "frame": 297,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 27,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14304731,
+          "profile_pointer": 13135760,
+          "d": 0
+        },
+        {
+          "frame": 304,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2253,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 12875192,
+          "profile_pointer": 13135760,
+          "d": 0
+        },
+        {
+          "frame": 304,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 27,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14304731,
+          "profile_pointer": 13135760,
+          "d": 0
+        },
+        {
+          "frame": 311,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2256,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 12875275,
+          "profile_pointer": 13135770,
+          "d": 0
+        },
+        {
+          "frame": 311,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1893,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14313756,
+          "profile_pointer": 13135770,
+          "d": 0
+        },
+        {
+          "frame": 311,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 39,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14304783,
+          "profile_pointer": 13135770,
+          "d": 0
+        },
+        {
+          "frame": 318,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2259,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 12875333,
+          "profile_pointer": 13135784,
+          "d": 0
+        },
+        {
+          "frame": 318,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1896,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14313801,
+          "profile_pointer": 13135784,
+          "d": 0
+        },
+        {
+          "frame": 318,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 45,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14304811,
+          "profile_pointer": 13135784,
+          "d": 0
+        },
+        {
+          "frame": 325,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 2262,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 12875384,
+          "profile_pointer": 13135798,
+          "d": 0
+        },
+        {
+          "frame": 325,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 1899,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14313843,
+          "profile_pointer": 13135798,
+          "d": 0
+        },
+        {
+          "frame": 325,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 45,
+          "selected_table_offset": 16,
+          "actor_table_offset": 4,
+          "descriptor": 14304811,
+          "profile_pointer": 13135798,
+          "d": 0
+        },
+        {
+          "frame": 332,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 6,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 13023931,
+          "profile_pointer": 13125014,
+          "d": 0
+        },
+        {
+          "frame": 332,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 114,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 14425264,
+          "profile_pointer": 13125014,
+          "d": 0
+        },
+        {
+          "frame": 332,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 24,
+          "selected_table_offset": 4,
+          "actor_table_offset": 4,
+          "descriptor": 14304719,
+          "profile_pointer": 13125014,
+          "d": 0
+        }
+      ],
+      "codec_verification": {
+        "complete_blocks": 0,
+        "partial_blocks_skipped": 0,
+        "tile_events": 1374,
+        "distinct_tile_sources": 645,
+        "byte_identical_tile_encodings": 1374,
+        "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+        "errors": []
+      },
+      "complete_action_variant_coverage": false
+    },
+    {
+      "case": "roster-undertaker-finisher",
+      "observed_action": "Undertaker finisher opponent",
+      "actor_slot": 2,
+      "input_schedule": [
+        [
+          0,
+          10,
+          9,
+          8
+        ],
+        [
+          0,
+          60,
+          11,
+          8
+        ],
+        [
+          0,
+          80,
+          11,
+          8
+        ],
+        [
+          0,
+          100,
+          11,
+          8
+        ],
+        [
+          0,
+          120,
+          11,
+          8
+        ],
+        [
+          0,
+          140,
+          11,
+          8
+        ],
+        [
+          0,
+          160,
+          11,
+          8
+        ],
+        [
+          0,
+          180,
+          11,
+          8
+        ],
+        [
+          0,
+          200,
+          11,
+          8
+        ],
+        [
+          0,
+          220,
+          11,
+          8
+        ],
+        [
+          0,
+          240,
+          11,
+          8
+        ],
+        [
+          0,
+          260,
+          11,
+          8
+        ],
+        [
+          0,
+          280,
+          11,
+          8
+        ],
+        [
+          0,
+          300,
+          11,
+          8
+        ],
+        [
+          0,
+          320,
+          11,
+          8
+        ],
+        [
+          0,
+          340,
+          11,
+          8
+        ],
+        [
+          0,
+          360,
+          11,
+          8
+        ],
+        [
+          0,
+          380,
+          11,
+          8
+        ],
+        [
+          0,
+          400,
+          11,
+          8
+        ]
+      ],
+      "input_schedule_fields": [
+        "controller_port",
+        "start_frame",
+        "button_id",
+        "duration"
+      ],
+      "sampled_gameplay_frames": 100,
+      "snapshot_interval": 6,
+      "selection_window": [
+        1,
+        600
+      ],
+      "native_part_requests_checked": 133,
+      "native_tile_fields_checked": 1921,
+      "primary_part_ids_in_input_window": [
+        45,
+        60,
+        312,
+        315,
+        402,
+        837,
+        1086,
+        1095,
+        1098,
+        1101,
+        1470,
+        1473,
+        1476,
+        1479
+      ],
+      "secondary_part_ids_in_input_window": [
+        9,
+        33,
+        57,
+        96,
+        216,
+        231,
+        492,
+        495,
+        825,
+        957,
+        960,
+        963,
+        966,
+        969,
+        1206,
+        1209,
+        1212,
+        1215
+      ],
+      "observed_part_request_sequence": [
+        {
+          "frame": 11,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 312,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13049228,
+          "profile_pointer": 13126664,
+          "d": 0
+        },
+        {
+          "frame": 11,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 492,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14448613,
+          "profile_pointer": 13126664,
+          "d": 0
+        },
+        {
+          "frame": 11,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14304667,
+          "profile_pointer": 13126664,
+          "d": 0
+        },
+        {
+          "frame": 17,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 315,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13049326,
+          "profile_pointer": 13126698,
+          "d": 0
+        },
+        {
+          "frame": 17,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 495,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14448746,
+          "profile_pointer": 13126698,
+          "d": 0
+        },
+        {
+          "frame": 17,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 9,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14304667,
+          "profile_pointer": 13126698,
+          "d": 0
+        },
+        {
+          "frame": 220,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 837,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13055262,
+          "profile_pointer": 13128902,
+          "d": 0
+        },
+        {
+          "frame": 220,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 825,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14453813,
+          "profile_pointer": 13128902,
+          "d": 0
+        },
+        {
+          "frame": 220,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 33,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14304755,
+          "profile_pointer": 13128902,
+          "d": 0
+        },
+        {
+          "frame": 227,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1470,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13063877,
+          "profile_pointer": 13132570,
+          "d": 0
+        },
+        {
+          "frame": 227,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1206,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14459602,
+          "profile_pointer": 13132570,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1086,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13057940,
+          "profile_pointer": 13132580,
+          "d": 0
+        },
+        {
+          "frame": 234,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 957,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14455298,
+          "profile_pointer": 13132580,
+          "d": 0
+        },
+        {
+          "frame": 241,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1473,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13063916,
+          "profile_pointer": 13132590,
+          "d": 0
+        },
+        {
+          "frame": 241,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1209,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14459615,
+          "profile_pointer": 13132590,
+          "d": 0
+        },
+        {
+          "frame": 248,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1473,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13063916,
+          "profile_pointer": 13132590,
+          "d": 0
+        },
+        {
+          "frame": 248,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1209,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14459615,
+          "profile_pointer": 13132590,
+          "d": 0
+        },
+        {
+          "frame": 255,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1473,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13063916,
+          "profile_pointer": 13132590,
+          "d": 0
+        },
+        {
+          "frame": 255,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1209,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14459615,
+          "profile_pointer": 13132590,
+          "d": 0
+        },
+        {
+          "frame": 262,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1473,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13063916,
+          "profile_pointer": 13132590,
+          "d": 0
+        },
+        {
+          "frame": 262,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1209,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14459615,
+          "profile_pointer": 13132590,
+          "d": 0
+        },
+        {
+          "frame": 269,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1086,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13057940,
+          "profile_pointer": 13132580,
+          "d": 0
+        },
+        {
+          "frame": 269,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 957,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14455298,
+          "profile_pointer": 13132580,
+          "d": 0
+        },
+        {
+          "frame": 276,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1086,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13057940,
+          "profile_pointer": 13132580,
+          "d": 0
+        },
+        {
+          "frame": 276,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 957,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14455298,
+          "profile_pointer": 13132580,
+          "d": 0
+        },
+        {
+          "frame": 283,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1476,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13063959,
+          "profile_pointer": 13132600,
+          "d": 0
+        },
+        {
+          "frame": 283,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 960,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14455347,
+          "profile_pointer": 13132600,
+          "d": 0
+        },
+        {
+          "frame": 290,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1095,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13058016,
+          "profile_pointer": 13132610,
+          "d": 0
+        },
+        {
+          "frame": 290,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 963,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14455379,
+          "profile_pointer": 13132610,
+          "d": 0
+        },
+        {
+          "frame": 297,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1098,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13058066,
+          "profile_pointer": 13132620,
+          "d": 0
+        },
+        {
+          "frame": 297,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 966,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14455430,
+          "profile_pointer": 13132620,
+          "d": 0
+        },
+        {
+          "frame": 304,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1101,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13058119,
+          "profile_pointer": 13129930,
+          "d": 0
+        },
+        {
+          "frame": 304,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 969,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14455480,
+          "profile_pointer": 13129930,
+          "d": 0
+        },
+        {
+          "frame": 304,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 57,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14304867,
+          "profile_pointer": 13129930,
+          "d": 0
+        },
+        {
+          "frame": 311,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 402,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13049934,
+          "profile_pointer": 13132630,
+          "d": 0
+        },
+        {
+          "frame": 311,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1212,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14459667,
+          "profile_pointer": 13132630,
+          "d": 0
+        },
+        {
+          "frame": 318,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 1479,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13063997,
+          "profile_pointer": 13132640,
+          "d": 0
+        },
+        {
+          "frame": 318,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1215,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14459722,
+          "profile_pointer": 13132640,
+          "d": 0
+        },
+        {
+          "frame": 318,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 96,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14305095,
+          "profile_pointer": 13132640,
+          "d": 0
+        },
+        {
+          "frame": 326,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 402,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13049934,
+          "profile_pointer": 13132630,
+          "d": 0
+        },
+        {
+          "frame": 326,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 1212,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14459667,
+          "profile_pointer": 13132630,
+          "d": 0
+        },
+        {
+          "frame": 332,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 60,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13044978,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 333,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 231,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14444391,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 339,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 60,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13044978,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 339,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 231,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14444391,
+          "profile_pointer": 13125566,
+          "d": 0
+        },
+        {
+          "frame": 347,
+          "actor_slot": 2,
+          "secondary": 0,
+          "part_id": 45,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 13044730,
+          "profile_pointer": 13125500,
+          "d": 0
+        },
+        {
+          "frame": 347,
+          "actor_slot": 2,
+          "secondary": 1,
+          "part_id": 216,
+          "selected_table_offset": 6,
+          "actor_table_offset": 6,
+          "descriptor": 14444137,
+          "profile_pointer": 13125500,
+          "d": 0
+        }
+      ],
+      "codec_verification": {
+        "complete_blocks": 0,
+        "partial_blocks_skipped": 0,
+        "tile_events": 1374,
+        "distinct_tile_sources": 645,
+        "byte_identical_tile_encodings": 1374,
+        "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+        "errors": []
+      },
+      "complete_action_variant_coverage": false
+    }
+  ],
+  "gameplay_observations": [
+    {
+      "frame": 6,
+      "actor_action_words": [
+        0,
+        0
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        348,
+        322
+      ],
+      "actor_world_y": [
+        267,
+        260
+      ]
+    },
+    {
+      "frame": 12,
+      "actor_action_words": [
+        152,
+        158
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 18,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 24,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 30,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 36,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 42,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 48,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 54,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 60,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 66,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 72,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 78,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 84,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 90,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 96,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 102,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 108,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 114,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 120,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 126,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 132,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 138,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 144,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 150,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 156,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 162,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 168,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 174,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 180,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 186,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 192,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 198,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 204,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 210,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 216,
+      "actor_action_words": [
+        150,
+        156
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        356,
+        315
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 222,
+      "actor_action_words": [
+        594,
+        534
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        354,
+        313
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 228,
+      "actor_action_words": [
+        594,
+        534
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        352,
+        311
+      ],
+      "actor_world_y": [
+        262,
+        261
+      ]
+    },
+    {
+      "frame": 234,
+      "actor_action_words": [
+        594,
+        534
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        348,
+        311
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 240,
+      "actor_action_words": [
+        594,
+        534
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        348,
+        307
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 246,
+      "actor_action_words": [
+        594,
+        534
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        346,
+        305
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 252,
+      "actor_action_words": [
+        594,
+        534
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        344,
+        303
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 258,
+      "actor_action_words": [
+        594,
+        534
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        342,
+        301
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 264,
+      "actor_action_words": [
+        594,
+        534
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        340,
+        299
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 270,
+      "actor_action_words": [
+        594,
+        534
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        338,
+        297
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 276,
+      "actor_action_words": [
+        594,
+        534
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        336,
+        297
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 282,
+      "actor_action_words": [
+        594,
+        534
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        336,
+        294
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 288,
+      "actor_action_words": [
+        594,
+        534
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        334,
+        291
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 294,
+      "actor_action_words": [
+        594,
+        534
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        331,
+        288
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 300,
+      "actor_action_words": [
+        594,
+        534
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        328,
+        285
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 306,
+      "actor_action_words": [
+        594,
+        534
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        325,
+        282
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 312,
+      "actor_action_words": [
+        594,
+        534
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        322,
+        279
+      ],
+      "actor_world_y": [
+        262,
+        261
+      ]
+    },
+    {
+      "frame": 318,
+      "actor_action_words": [
+        594,
+        534
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        319,
+        279
+      ],
+      "actor_world_y": [
+        261,
+        261
+      ]
+    },
+    {
+      "frame": 324,
+      "actor_action_words": [
+        594,
+        534
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        319,
+        276
+      ],
+      "actor_world_y": [
+        261,
+        262
+      ]
+    },
+    {
+      "frame": 330,
+      "actor_action_words": [
+        594,
+        534
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 336,
+      "actor_action_words": [
+        0,
+        84
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 342,
+      "actor_action_words": [
+        0,
+        84
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 348,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 354,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 360,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 366,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 372,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 378,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 384,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 390,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 396,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 402,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 408,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 414,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 420,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 426,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 432,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 438,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 444,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 450,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 456,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 462,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 468,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 474,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 480,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 486,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 492,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 498,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 504,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 510,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 516,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 522,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        912,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 528,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 534,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 540,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 546,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 552,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 558,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 564,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 570,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        0
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 576,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 582,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 588,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 594,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    },
+    {
+      "frame": 600,
+      "actor_action_words": [
+        0,
+        70
+      ],
+      "actor_energy_words": [
+        928,
+        16
+      ],
+      "actor_world_x": [
+        316,
+        273
+      ],
+      "actor_world_y": [
+        261,
+        263
+      ]
+    }
+  ],
+  "recipe_id": "undertaker-finisher",
+  "observed_action_word": 594
+}
