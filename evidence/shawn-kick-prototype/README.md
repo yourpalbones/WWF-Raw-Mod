@@ -6,6 +6,10 @@ facing him. It uses the original kick animation and collision/reaction code.
 **This is a functional move-editing proof, not a finished Sweet Chin Music
 animation.** There is no new leg/head-contact artwork or corner wind-up yet.
 
+The [raised-leg pose update](../shawn-superkick-pose/README.md) adds an isolated
+extension and two-direction captures. This earlier package retains its original
+stock-art checks; those exact-byte results do not apply to the later graphics build.
+
 ## Actual emulator footage
 
 [Open the original/prototype comparison GIF](comparison.gif)

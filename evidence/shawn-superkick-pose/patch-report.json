@@ -1,0 +1,16 @@
+{
+  "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "patched_sha256": "13e07a857b62d921edaf33ded3342abebccf24f783c7a063bd817c31a0d2afc8",
+  "ips_sha256": "47cd72112c9a7226b6409a2e39c571975ffaa37eb771dc0b2d7048cc4f16c92c",
+  "experimental": true,
+  "authored_pose_changes": "Rotate the stock kicking leg upward 30 degrees about the hip; supporting leg retains its original pixels and coordinates.",
+  "private_secondary_part_id": 393,
+  "private_descriptor_bank": "F1",
+  "private_raw_tile_bank": "F2",
+  "private_objects": 9,
+  "private_tiles": 36,
+  "private_tile_bytes": 1152,
+  "scope": "One extension phase; stock wind-up, knee lift and recovery retained.",
+  "complete_move_validation": false,
+  "marker": "$5343 pending contact, $5344 after contact; cleared on idle part request or ordinary kick entry."
+}

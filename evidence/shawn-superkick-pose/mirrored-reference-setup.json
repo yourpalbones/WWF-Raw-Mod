@@ -1,0 +1,657 @@
+{
+  "scope": "Controller-only original-ROM setup for the mirrored reference. Patched-ROM cold-boot replay of this setup has not been verified.",
+  "stages": [
+    {
+      "purpose": "roster-selection-baseline",
+      "frames": 1000,
+      "inputs": [
+        [
+          600,
+          3,
+          8
+        ],
+        [
+          900,
+          3,
+          8
+        ],
+        [
+          1100,
+          8,
+          8
+        ],
+        [
+          1300,
+          8,
+          8
+        ],
+        [
+          1500,
+          8,
+          8
+        ]
+      ],
+      "snapshot_sha256": {
+        ".png": "857f4b957ccc2c82aab436e976ba74b8ebd67b0b67441f4df3af80d5e525800b",
+        "-wram.bin": "e3b1e269f17498d57cdcc51f4b6da5be6f5062f84c9517a84db63e115e5cb926",
+        "-vram.bin": "dc35662532ce10ae9b3631084501b21e829a8a77939296a1763a9e1c28d4340d",
+        "-oam.bin": "c5d14b688923053db5128227ee5913e98bf04d9e7d16407efea7dcef8d411673",
+        "-cgram.bin": "d29bf3bd5fe89168b26611e84fae8573f1915324ab205509f6b5d85514c3685c"
+      }
+    },
+    {
+      "purpose": "two-player-menu",
+      "frames": 800,
+      "inputs": [
+        [
+          0,
+          20,
+          5,
+          8
+        ],
+        [
+          0,
+          100,
+          8,
+          8
+        ],
+        [
+          0,
+          300,
+          8,
+          8
+        ],
+        [
+          0,
+          500,
+          8,
+          8
+        ],
+        [
+          0,
+          700,
+          3,
+          8
+        ]
+      ],
+      "snapshot_sha256": {
+        ".png": "1514eafe33146c7fcd15d63c4994ab61139ef7b22feab20102122275b21a006a",
+        "-wram.bin": "b1be039e67e6b716020920baeb3c4fb85ac3d1e5be59522d6275b71ef8292a31",
+        "-vram.bin": "46918ad92ac812a5ce241696f73157e1e384e88c5798904e7f862495e18f2633",
+        "-oam.bin": "a0a9f16242efd473f69a7764b5b52c1bd1b35433ce5ee7aae709e8a225cbf549",
+        "-cgram.bin": "36551a7409a1fe6ef87ca45184a3749ab2d39172ad4c30b9a01de3a32406a786"
+      }
+    },
+    {
+      "purpose": "special-ready-v2-shawn-michaels",
+      "frames": 3550,
+      "inputs": [
+        [
+          0,
+          1,
+          7,
+          8
+        ],
+        [
+          0,
+          301,
+          7,
+          8
+        ],
+        [
+          0,
+          601,
+          7,
+          8
+        ],
+        [
+          0,
+          901,
+          7,
+          8
+        ],
+        [
+          0,
+          1201,
+          7,
+          8
+        ],
+        [
+          0,
+          1501,
+          7,
+          8
+        ],
+        [
+          0,
+          1801,
+          7,
+          8
+        ],
+        [
+          0,
+          2150,
+          8,
+          8
+        ],
+        [
+          0,
+          2950,
+          3,
+          8
+        ],
+        [
+          0,
+          3150,
+          8,
+          8
+        ],
+        [
+          0,
+          3350,
+          3,
+          8
+        ],
+        [
+          1,
+          2451,
+          7,
+          8
+        ],
+        [
+          1,
+          2750,
+          8,
+          8
+        ]
+      ],
+      "snapshot_sha256": {
+        ".png": "86dc93f5413a26cd4815180b3ce4cb3989ba0b4fe5af9148c8f99df4733590c7",
+        "-wram.bin": "342473372b78aa06607581cde4cbce8102199e567e5e6b88ed14e72876848b15",
+        "-vram.bin": "5571c57fe138fd6b4752c3668f4f1639041db532a55c185d3881a0d04735bdf1",
+        "-oam.bin": "132ea45441dd15408ff7240ac1845bdc5cc594561abb19c3a966fba9fcbd9323",
+        "-cgram.bin": "b19998a4e186ea3f0e90f6a623cb02ec8791b94caf656bad416680a4a8d27589"
+      }
+    },
+    {
+      "purpose": "special-contact-shawn-michaels",
+      "frames": 600,
+      "inputs": [
+        [
+          0,
+          1,
+          3,
+          8
+        ],
+        [
+          0,
+          30,
+          7,
+          55
+        ],
+        [
+          0,
+          90,
+          5,
+          4
+        ],
+        [
+          0,
+          120,
+          0,
+          8
+        ],
+        [
+          0,
+          160,
+          0,
+          8
+        ],
+        [
+          0,
+          200,
+          0,
+          8
+        ],
+        [
+          0,
+          240,
+          0,
+          8
+        ],
+        [
+          0,
+          280,
+          0,
+          8
+        ],
+        [
+          0,
+          320,
+          0,
+          8
+        ],
+        [
+          0,
+          360,
+          0,
+          8
+        ],
+        [
+          0,
+          400,
+          0,
+          8
+        ],
+        [
+          0,
+          440,
+          0,
+          8
+        ],
+        [
+          0,
+          480,
+          0,
+          8
+        ],
+        [
+          0,
+          520,
+          0,
+          8
+        ],
+        [
+          0,
+          560,
+          0,
+          8
+        ],
+        [
+          0,
+          600,
+          0,
+          8
+        ]
+      ],
+      "snapshot_sha256": {
+        ".png": "89b457ebcf368b5da984185a91287646c01bff76919852e80a18aef01bee69e9",
+        "-wram.bin": "57662b9bffaf5f507d4765e04915860f08c1cee00f78e3f1c89b54a7a380e027",
+        "-vram.bin": "e93d67fa82afb807aaeae56e255d9787c16ccf07081af088b21df1ce9769973e",
+        "-oam.bin": "aee53dca9eb0865589c913983d4a706ab8aebb65eef0a33559fbdaf1c6ad871d",
+        "-cgram.bin": "614e1c2e5afd2c0434f89bc20c4d229e9e0812227996e6b3949f7e14f3c53f9e"
+      }
+    },
+    {
+      "purpose": "special-drained-shawn-michaels",
+      "frames": 2100,
+      "inputs": [
+        [
+          0,
+          1,
+          7,
+          10
+        ],
+        [
+          0,
+          30,
+          0,
+          8
+        ],
+        [
+          0,
+          101,
+          7,
+          10
+        ],
+        [
+          0,
+          130,
+          0,
+          8
+        ],
+        [
+          0,
+          201,
+          7,
+          10
+        ],
+        [
+          0,
+          230,
+          0,
+          8
+        ],
+        [
+          0,
+          301,
+          7,
+          10
+        ],
+        [
+          0,
+          330,
+          0,
+          8
+        ],
+        [
+          0,
+          401,
+          7,
+          10
+        ],
+        [
+          0,
+          430,
+          0,
+          8
+        ],
+        [
+          0,
+          501,
+          7,
+          10
+        ],
+        [
+          0,
+          530,
+          0,
+          8
+        ],
+        [
+          0,
+          601,
+          7,
+          10
+        ],
+        [
+          0,
+          630,
+          0,
+          8
+        ],
+        [
+          0,
+          701,
+          7,
+          10
+        ],
+        [
+          0,
+          730,
+          0,
+          8
+        ],
+        [
+          0,
+          801,
+          7,
+          10
+        ],
+        [
+          0,
+          830,
+          0,
+          8
+        ],
+        [
+          0,
+          901,
+          7,
+          10
+        ],
+        [
+          0,
+          930,
+          0,
+          8
+        ],
+        [
+          0,
+          1001,
+          7,
+          10
+        ],
+        [
+          0,
+          1030,
+          0,
+          8
+        ],
+        [
+          0,
+          1101,
+          7,
+          10
+        ],
+        [
+          0,
+          1130,
+          0,
+          8
+        ],
+        [
+          0,
+          1201,
+          7,
+          10
+        ],
+        [
+          0,
+          1230,
+          0,
+          8
+        ],
+        [
+          0,
+          1301,
+          7,
+          10
+        ],
+        [
+          0,
+          1330,
+          0,
+          8
+        ],
+        [
+          0,
+          1401,
+          7,
+          10
+        ],
+        [
+          0,
+          1430,
+          0,
+          8
+        ],
+        [
+          0,
+          1501,
+          7,
+          10
+        ],
+        [
+          0,
+          1530,
+          0,
+          8
+        ],
+        [
+          0,
+          1601,
+          7,
+          10
+        ],
+        [
+          0,
+          1630,
+          0,
+          8
+        ],
+        [
+          0,
+          1701,
+          7,
+          10
+        ],
+        [
+          0,
+          1730,
+          0,
+          8
+        ],
+        [
+          0,
+          1801,
+          7,
+          10
+        ],
+        [
+          0,
+          1830,
+          0,
+          8
+        ],
+        [
+          0,
+          1901,
+          7,
+          10
+        ],
+        [
+          0,
+          1930,
+          0,
+          8
+        ],
+        [
+          0,
+          2001,
+          7,
+          10
+        ],
+        [
+          0,
+          2030,
+          0,
+          8
+        ]
+      ],
+      "snapshot_sha256": {
+        ".png": "f8911cdf20ce08539c5189b195fbc67d95087633875960db5fb586b1c2729e7a",
+        "-wram.bin": "32509f0d1447bbe939649fe425f670b053dbd2b970dedc40a076c7186389e641",
+        "-vram.bin": "18875aecafcad49b997b7526df6bfb52c68c681aa1d0f2feb8d24fe1f1cca26e",
+        "-oam.bin": "4dc5c639d0cd1ef1f2252762c9811eeb22d94fc31c42efd846deff4f3c8f41d7",
+        "-cgram.bin": "614e1c2e5afd2c0434f89bc20c4d229e9e0812227996e6b3949f7e14f3c53f9e"
+      }
+    },
+    {
+      "purpose": "scm-mirror-getup",
+      "frames": 600,
+      "inputs": [
+        [
+          0,
+          10,
+          6,
+          60
+        ],
+        [
+          0,
+          300,
+          7,
+          35
+        ],
+        [
+          1,
+          160,
+          0,
+          8
+        ]
+      ],
+      "snapshot_sha256": {
+        ".png": "182555a832ce5b6220877e4bf1c2efae3c950624a5caed513a63de216049e0ca",
+        "-wram.bin": "f9ca051ee5169c7fda8d44554a82ad0d8bed8337d6712ea06886259310832acd",
+        "-vram.bin": "4a79ef55bafdc74c5ce37ea4a627284cdd9348f433698a277c4028b463dc5191",
+        "-oam.bin": "c95d15484233d0de7a429bbc05a14e915f670429f5502830a493cfa209c62b39",
+        "-cgram.bin": "614e1c2e5afd2c0434f89bc20c4d229e9e0812227996e6b3949f7e14f3c53f9e"
+      }
+    },
+    {
+      "purpose": "scm-mirror-headlock",
+      "frames": 360,
+      "inputs": [
+        [
+          0,
+          10,
+          9,
+          8
+        ]
+      ],
+      "snapshot_sha256": {
+        ".png": "d6fddda5cf104022f44c42701d19d6d42736d2f5e0434aea959b5f8d7e23de8b",
+        "-wram.bin": "ec7941a53c22430fb182ff0c5d5d78913b9a98195fd4f51dbb75b1ae41cb9d23",
+        "-vram.bin": "8352bbc4c0f2921d5b523dd0df3add221afade4ce47245e341a1e3824d7c43cb",
+        "-oam.bin": "c3c6451e69cf002dbcd5a1952d1a8c0bccbaa61a379e954792af3534944ede72",
+        "-cgram.bin": "614e1c2e5afd2c0434f89bc20c4d229e9e0812227996e6b3949f7e14f3c53f9e"
+      }
+    },
+    {
+      "purpose": "scm-mirror-recover-face",
+      "frames": 1200,
+      "inputs": [
+        [
+          0,
+          1050,
+          7,
+          8
+        ],
+        [
+          1,
+          900,
+          6,
+          4
+        ]
+      ],
+      "snapshot_sha256": {
+        ".png": "de60c7d8d5b0d7f25969837e05d98ca03cd1d7a3ec8089118a8781b66e9bb163",
+        "-wram.bin": "38237300eeeaa9b3d1cf06cc291487ec4c55612963d3b8d11eb6feb68b5d6222",
+        "-vram.bin": "d42db37a5201cf376d8de426c662b5c5c10af96706e647d4fedec429e235df66",
+        "-oam.bin": "e13f795ecf622abf15f5d0b4c7a491d32689308d8408cb24503a593cf8851c50",
+        "-cgram.bin": "614e1c2e5afd2c0434f89bc20c4d229e9e0812227996e6b3949f7e14f3c53f9e"
+      }
+    },
+    {
+      "purpose": "scm-mirror-final-dizzy",
+      "frames": 143,
+      "inputs": [
+        [
+          0,
+          30,
+          0,
+          8
+        ],
+        [
+          0,
+          70,
+          0,
+          8
+        ],
+        [
+          0,
+          110,
+          0,
+          8
+        ]
+      ],
+      "snapshot_sha256": {
+        ".png": "02c99e1d45648f5ce5ccce21bc329f5910e9c55133cf71c54fe4e946554a75c3",
+        "-wram.bin": "e097c132f5e46bc4928a4cbc4820baa29243d5913c40ca3a984b7092036803f8",
+        "-vram.bin": "26a144db87876919726126fe6f30fa931d91d99e630f7233d7a465c25e56999b",
+        "-oam.bin": "193afa011100c2fc97ef9774852db31fe1c63cf668eedee6a59443d9a870ffbe",
+        "-cgram.bin": "614e1c2e5afd2c0434f89bc20c4d229e9e0812227996e6b3949f7e14f3c53f9e"
+      }
+    }
+  ]
+}

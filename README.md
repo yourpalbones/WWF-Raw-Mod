@@ -40,6 +40,9 @@ The [first Shawn kick-finisher prototype](evidence/shawn-kick-prototype/README.m
 reroutes R to a standing kick with damage on contact and verified subsequent
 get-up/walking. It still uses stock kick artwork; a finished Sweet Chin Music
 animation and full match validation remain future work.
+The [raised-leg extension update](evidence/shawn-superkick-pose/README.md) now
+renders the experimental kick in both directions, with contact and recovery
+checks. Additional graphics hooks shift timing slightly; this remains a prototype.
 
 No ROM, raw extracted game data, emulator binary, or patched ROM is included.
 The evidence package includes screenshots and a small IPS patch.

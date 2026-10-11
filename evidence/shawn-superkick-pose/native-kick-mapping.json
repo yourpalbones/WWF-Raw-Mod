@@ -1,0 +1,230 @@
+{
+  "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "scope": "Verified native original sprite data during the R-button kick prototype; no posed graphics edits in this reference trace.",
+  "complete_animation_coverage": false,
+  "cases": [
+    {
+      "case": "kick-map",
+      "observed_action": "Shawn experimental R-trigger; stock kick graphics",
+      "actor_slot": 0,
+      "input_schedule": [
+        [
+          0,
+          10,
+          11,
+          8
+        ]
+      ],
+      "input_schedule_fields": [
+        "controller_port",
+        "start_frame",
+        "button_id",
+        "duration"
+      ],
+      "sampled_gameplay_frames": 90,
+      "snapshot_interval": 1,
+      "selection_window": [
+        10,
+        34
+      ],
+      "native_part_requests_checked": 47,
+      "native_tile_fields_checked": 619,
+      "primary_part_ids_in_input_window": [
+        30,
+        207,
+        210,
+        213,
+        216
+      ],
+      "secondary_part_ids_in_input_window": [
+        24,
+        33,
+        36,
+        54,
+        75,
+        168,
+        378,
+        390,
+        393,
+        396
+      ],
+      "observed_part_request_sequence": [
+        {
+          "frame": 10,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 207,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 12892231,
+          "profile_pointer": 13126198,
+          "d": 0
+        },
+        {
+          "frame": 10,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 378,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 14321976,
+          "profile_pointer": 13126198,
+          "d": 0
+        },
+        {
+          "frame": 10,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 36,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 14304767,
+          "profile_pointer": 13126198,
+          "d": 0
+        },
+        {
+          "frame": 16,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 210,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 12892262,
+          "profile_pointer": 13126212,
+          "d": 0
+        },
+        {
+          "frame": 16,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 390,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 14322155,
+          "profile_pointer": 13126212,
+          "d": 0
+        },
+        {
+          "frame": 16,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 33,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 14304755,
+          "profile_pointer": 13126212,
+          "d": 0
+        },
+        {
+          "frame": 22,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 213,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 12892304,
+          "profile_pointer": 13126226,
+          "d": 0
+        },
+        {
+          "frame": 22,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 393,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 14322214,
+          "profile_pointer": 13126226,
+          "d": 0
+        },
+        {
+          "frame": 22,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 54,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 14304851,
+          "profile_pointer": 13126226,
+          "d": 0
+        },
+        {
+          "frame": 28,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 216,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 12892354,
+          "profile_pointer": 13126240,
+          "d": 0
+        },
+        {
+          "frame": 28,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 396,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 14322275,
+          "profile_pointer": 13126240,
+          "d": 0
+        },
+        {
+          "frame": 28,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 75,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 14304965,
+          "profile_pointer": 13126240,
+          "d": 0
+        },
+        {
+          "frame": 34,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 30,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 12889500,
+          "profile_pointer": 13125266,
+          "d": 0
+        },
+        {
+          "frame": 34,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 168,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 14318700,
+          "profile_pointer": 13125266,
+          "d": 0
+        },
+        {
+          "frame": 34,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 24,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 14304719,
+          "profile_pointer": 13125266,
+          "d": 0
+        }
+      ],
+      "codec_verification": {
+        "complete_blocks": 0,
+        "partial_blocks_skipped": 0,
+        "tile_events": 420,
+        "distinct_tile_sources": 309,
+        "byte_identical_tile_encodings": 420,
+        "rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+        "errors": []
+      },
+      "complete_action_variant_coverage": false
+    }
+  ]
+}

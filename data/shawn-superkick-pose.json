@@ -1,0 +1,26 @@
+{
+  "source_phase": "Shawn stock kick extension, action $007E, frame 24 of the published prototype setup",
+  "source_objects": [
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34
+  ],
+  "secondary_part_id": 393,
+  "pivot_screen": [
+    137,
+    120
+  ],
+  "rotation_degrees": 30,
+  "source_hashes": {
+    "vram": "b43d0710e6320c4397a395160a82570a332edf7ac8ef61d7fb10a5fb68ca04c2",
+    "oam": "1884b60cd15041ef47f6230da980cf49ccb4f41160a648cda4f4c6d8fdf4073d",
+    "cgram": "614e1c2e5afd2c0434f89bc20c4d229e9e0812227996e6b3949f7e14f3c53f9e",
+    "registers": "b80244e69160f5b6ffedf74174c06068db1e811952885d90ab088dbb26dee896"
+  }
+}
