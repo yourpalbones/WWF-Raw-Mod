@@ -1,0 +1,157 @@
+{
+  "scope": "Torso chamber, impact and retraction derived from verified native source pixels; stock wind-up and timing retained. Reference photo guides the leaning impact silhouette.",
+  "camera_offset": [
+    210,
+    100
+  ],
+  "hip_pivot_screen": [
+    137,
+    120
+  ],
+  "stages": [
+    {
+      "reference_frame": 18,
+      "torso_rotation_degrees": 22,
+      "parts": [
+        {
+          "frame": 16,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 210,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 12892262,
+          "profile_pointer": 13126212,
+          "d": 0
+        },
+        {
+          "frame": 16,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 390,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 14322155,
+          "profile_pointer": 13126212,
+          "d": 0
+        }
+      ],
+      "anchors": [
+        {
+          "frame": 16,
+          "descriptor": 12892262,
+          "x": 335,
+          "y": 213
+        },
+        {
+          "frame": 16,
+          "descriptor": 14322155,
+          "x": 331,
+          "y": 261
+        }
+      ],
+      "snapshot_hashes": {
+        "vram": "5809a6960f3e10d9cc05abe6eb8ebc35fc57c15fa23eec502bc651832cad2f72",
+        "oam": "752bb554b4acb183a450f16e6121cc62bb878d63ba66846f57278c885c5a8a3a",
+        "cgram": "614e1c2e5afd2c0434f89bc20c4d229e9e0812227996e6b3949f7e14f3c53f9e",
+        "registers": "9314a57fa536a69c1236a9e51aaf324a9261bf6b8a34eb3389c00669dc4582dc"
+      }
+    },
+    {
+      "reference_frame": 24,
+      "torso_rotation_degrees": 58,
+      "parts": [
+        {
+          "frame": 22,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 213,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 12892304,
+          "profile_pointer": 13126226,
+          "d": 0
+        },
+        {
+          "frame": 22,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 393,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 14322214,
+          "profile_pointer": 13126226,
+          "d": 0
+        }
+      ],
+      "anchors": [
+        {
+          "frame": 22,
+          "descriptor": 12892304,
+          "x": 331,
+          "y": 226
+        },
+        {
+          "frame": 22,
+          "descriptor": 14322214,
+          "x": 319,
+          "y": 261
+        }
+      ],
+      "snapshot_hashes": {
+        "vram": "b43d0710e6320c4397a395160a82570a332edf7ac8ef61d7fb10a5fb68ca04c2",
+        "oam": "1884b60cd15041ef47f6230da980cf49ccb4f41160a648cda4f4c6d8fdf4073d",
+        "cgram": "614e1c2e5afd2c0434f89bc20c4d229e9e0812227996e6b3949f7e14f3c53f9e",
+        "registers": "b80244e69160f5b6ffedf74174c06068db1e811952885d90ab088dbb26dee896"
+      }
+    },
+    {
+      "reference_frame": 30,
+      "torso_rotation_degrees": 8,
+      "parts": [
+        {
+          "frame": 28,
+          "actor_slot": 0,
+          "secondary": 0,
+          "part_id": 216,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 12892354,
+          "profile_pointer": 13126240,
+          "d": 0
+        },
+        {
+          "frame": 28,
+          "actor_slot": 0,
+          "secondary": 1,
+          "part_id": 396,
+          "selected_table_offset": 16,
+          "actor_table_offset": 16,
+          "descriptor": 14322275,
+          "profile_pointer": 13126240,
+          "d": 0
+        }
+      ],
+      "anchors": [
+        {
+          "frame": 28,
+          "descriptor": 12892354,
+          "x": 329,
+          "y": 233
+        },
+        {
+          "frame": 28,
+          "descriptor": 14322275,
+          "x": 319,
+          "y": 261
+        }
+      ],
+      "snapshot_hashes": {
+        "vram": "487efb3541d1acee91cffe839a46d657f210651df6baafad26f4143587494c00",
+        "oam": "f999b847dc51cca6f50ae92bfb61452dc486ead4cf8f6cb5d9b66dcb49b2875b",
+        "cgram": "614e1c2e5afd2c0434f89bc20c4d229e9e0812227996e6b3949f7e14f3c53f9e",
+        "registers": "b520322bc3b4e93d7e4bf77a88226fb3030fe375ff4a8daa54083c140d0dd0e1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "patched_rom_sha256": "cf0805b7f34b30f51c6b7bbc4a849eccea75151a0db22dbd47b3adb697c57555",
+  "checks": {
+    "left": {
+      "initial_opponent_health": 222,
+      "contact_health": 78,
+      "end_action": 0,
+      "end_marker": 0,
+      "capture_frames": 360,
+      "inputs": [
+        [
+          0,
+          10,
+          11,
+          8
+        ]
+      ],
+      "setup": "original-ROM controller-generated save state"
+    },
+    "right": {
+      "initial_opponent_health": 238,
+      "contact_health": 94,
+      "end_action": 0,
+      "end_marker": 0,
+      "capture_frames": 360,
+      "inputs": [
+        [
+          0,
+          10,
+          11,
+          8
+        ]
+      ],
+      "setup": "original-ROM controller-generated save state"
+    }
+  },
+  "ordinary_A_kick_actor_vram_matches_stock_at_frames": [
+    18,
+    24,
+    30
+  ],
+  "opponent_vram_matches_previous_R_kick_reference_at_frames": [
+    18,
+    24,
+    30
+  ],
+  "normal_A_and_Undertaker_finisher_endpoint_health_and_action_match_stock": true,
+  "defender_getup_and_attacker_walking_verified": true,
+  "ips_reconstructs_exact_rom": true,
+  "snes_checksum_valid": true,
+  "existing_tests": {
+    "passed": 21,
+    "skipped": 0
+  },
+  "cold_boot": {
+    "status": "setup replay does not reach dizzy condition",
+    "completed_original_recipe_stages": 7,
+    "opponent_action_after_last_stage": 72,
+    "opponent_health": 222,
+    "faster_jab_schedule_also_failed_to_produce_dizzy": true
+  },
+  "limitations": [
+    "Stock wind-up and phase timing retained",
+    "Native pixels reposed; not a complete hand-drawn animation",
+    "Both gameplay clips load original-ROM controller-generated states",
+    "Fresh-boot finisher reproduction remains unverified",
+    "Full match, interruptions, AI, player 2 as Shawn and performance regression unverified"
+  ]
+}

@@ -1,5 +1,8 @@
 # Shawn superkick: raised-leg pose prototype
 
+A newer [leaning full-body prototype](../shawn-superkick-body/README.md)
+reworks three torso phases. This page documents the earlier raised-leg version.
+
 The experimental R-button finisher now has an isolated raised-leg extension.
 The kicking thigh, shin and boot rotate upward around the hip; the supporting
 leg retains its original pixels and position. Native horizontal flipping renders

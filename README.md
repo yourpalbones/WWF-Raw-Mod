@@ -44,6 +44,11 @@ The [raised-leg extension update](evidence/shawn-superkick-pose/README.md) now
 renders the experimental kick in both directions, with contact and recovery
 checks. Additional graphics hooks shift timing slightly; this remains a prototype.
 
+The [leaning full-body update](evidence/shawn-superkick-body/README.md) reposes
+three torso phases and the impact leg while retaining stock timing. Both
+directions connect and recover in loaded-state captures; fresh-boot setup
+reproduction remains unresolved.
+
 No ROM, raw extracted game data, emulator binary, or patched ROM is included.
 The evidence package includes screenshots and a small IPS patch.
 Supply your own local ROM; generated outputs stay in ignored output folders.

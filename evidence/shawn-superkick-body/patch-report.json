@@ -1,0 +1,96 @@
+{
+  "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "patched_sha256": "cf0805b7f34b30f51c6b7bbc4a849eccea75151a0db22dbd47b3adb697c57555",
+  "ips_sha256": "d4d6392aabe5a665488be806e1c0bfcdadd4777dbfec4fb150cdd84f276b5542",
+  "poses": [
+    {
+      "frame": 18,
+      "part": 0,
+      "id": 210,
+      "objects": 7,
+      "anchor": [
+        125,
+        8
+      ],
+      "angle": 22,
+      "combined_objects": 16,
+      "native_objects": 17,
+      "combined_tiles_with_shadow": 35
+    },
+    {
+      "frame": 18,
+      "part": 1,
+      "id": 390,
+      "objects": 9,
+      "anchor": [
+        121,
+        56
+      ],
+      "angle": 0,
+      "combined_objects": 16,
+      "native_objects": 17,
+      "combined_tiles_with_shadow": 35
+    },
+    {
+      "frame": 24,
+      "part": 0,
+      "id": 213,
+      "objects": 8,
+      "anchor": [
+        121,
+        21
+      ],
+      "angle": 58,
+      "combined_objects": 17,
+      "native_objects": 17,
+      "combined_tiles_with_shadow": 45
+    },
+    {
+      "frame": 24,
+      "part": 1,
+      "id": 393,
+      "objects": 9,
+      "anchor": [
+        109,
+        56
+      ],
+      "angle": 30,
+      "combined_objects": 17,
+      "native_objects": 17,
+      "combined_tiles_with_shadow": 45
+    },
+    {
+      "frame": 30,
+      "part": 0,
+      "id": 216,
+      "objects": 7,
+      "anchor": [
+        119,
+        28
+      ],
+      "angle": 8,
+      "combined_objects": 17,
+      "native_objects": 17,
+      "combined_tiles_with_shadow": 60
+    },
+    {
+      "frame": 30,
+      "part": 1,
+      "id": 396,
+      "objects": 10,
+      "anchor": [
+        109,
+        56
+      ],
+      "angle": 0,
+      "combined_objects": 17,
+      "native_objects": 17,
+      "combined_tiles_with_shadow": 60
+    }
+  ],
+  "private_tiles": 128,
+  "experimental": true,
+  "complete_animation_replacement": false,
+  "scope": "Torso chamber, impact and retraction derived from verified native source pixels; stock wind-up and timing retained. Reference photo guides the leaning impact silhouette.",
+  "allocation": "Mixed 8x8/16x16 objects; each phase fits its original combined primary/secondary object allocation and a 64-tile actor budget including shadow."
+}
