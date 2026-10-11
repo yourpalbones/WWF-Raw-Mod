@@ -1,0 +1,29 @@
+{
+  "native_spc_streams_verified": 8,
+  "new_notes_played": [
+    60,
+    64,
+    67,
+    72,
+    67,
+    64,
+    62,
+    60
+  ],
+  "note_frames": [
+    47,
+    71,
+    95,
+    119,
+    143,
+    167,
+    191,
+    215
+  ],
+  "native_end_command_executed": true,
+  "only_sequence_blocks_and_checksum_changed": true,
+  "sample_and_instrument_data_preserved": true,
+  "audio_sample_rate": 32040,
+  "audio_peak": 8515,
+  "scope": "Original test melody in Razor theme slot, not arbitrary audio import"
+}

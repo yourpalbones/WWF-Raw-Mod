@@ -4,12 +4,12 @@
 
 ## Easy download
 
-[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.3.zip)
+[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.4.zip)
 
 1. Click the download link above.
 2. Right-click the downloaded ZIP → **Extract All**.
 3. Open the extracted **WrestleEdit** folder and double-click **WrestleEdit.html**. The app opens in your browser.
-4. Click **Load ROM** and choose your original WWF Raw USA ROM.
+4. Click **Load ROM** and choose your original or edited WWF Raw USA ROM.
 5. Choose a wrestler. Edit **Sprites** or **Portrait & bio**.
 6. Under **Save & play**, click **Save playable ROM** and open the saved file in your emulator.
 
@@ -18,6 +18,23 @@ This is the browser editor, not an EXE. Once downloaded, it works offline. Use *
 A Windows EXE preview was built, but GitHub release uploads are blocked by the cloud integration. Its local task-output link also failed in the chat client. The ZIP above is committed to the repository so it has a normal public download URL. [Desktop build details](../desktop/README.md).
 
 To edit a sprite image externally, use **Save pose image**, edit that PNG, and import it back. Keep its dimensions, transparent outline and opaque visible pixels. Colors are matched to the wrestler's current palette. Import changes the selected pose's underlying tiles; it does not generate a full set of animations. Shared tiles can change other poses too, so preview them and test in an emulator.
+
+## Names and themes
+
+In **Portrait & bio**, saving a bio updates the name above the health bar too.
+For a previously renamed mod, click **Save bio** once, then export a new playable
+ROM. You can also enter **SCOTT HALL** under **In-match name** and click
+**Save match name**. The preview shows the small label used during matches.
+Long names may need a shorter match name. Stock labels remain available through
+restore/reset. The separate large name/logo graphic has its own controls.
+
+Under **Theme song**, choose a built-in theme and click **Save theme**, then export
+the ROM. Custom songs are still research: an original eight-note native melody
+has been verified, but there is no MP3/WAV or full-song importer in this release.
+
+[Scott Hall in-game proof](../evidence/match-names/README.md) ·
+[Custom melody proof and audio format](../evidence/theme-music/README.md) ·
+[Thirteenth-slot experiment](../evidence/roster-expansion/README.md)
 
 ## Available previews
 
@@ -135,7 +152,7 @@ Verify the app workflow, pose PNG imports, local playable-ROM download and mobil
 python3 tools/verify_app.py '/path/to/WWF Raw (USA).sfc'
 ```
 
-To verify monitor and logo imports, themes, version 5 projects and edited-ROM recovery:
+To verify monitor and logo imports, themes, version 6 projects and edited-ROM recovery:
 
 ```sh
 python3 tools/verify_profile_assets.py '/path/to/WWF Raw (USA).sfc'
@@ -144,3 +161,13 @@ python3 tools/verify_profile_assets.py '/path/to/WWF Raw (USA).sfc' --edited-rom
 ```
 
 [Profile asset formats and emulator evidence](../evidence/profile-assets/README.md).
+
+Verify health-bar labels, shared graphics preservation and direct edited ROM loading:
+
+```sh
+python3 tools/verify_match_names.py '/path/to/WWF Raw (USA).sfc' --edited-rom '/path/to/WWF-Raw-edited.sfc'
+python3 tools/verify_direct_mod_load.py '/path/to/WWF-Raw-edited.sfc'
+```
+
+Projects now use version 6. Older project versions are accepted when their base
+ROM matches; renamed old bios gain a matching health-bar label on import.

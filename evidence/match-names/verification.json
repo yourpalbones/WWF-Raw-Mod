@@ -1,0 +1,77 @@
+{
+  "native_game_labels_verified": 12,
+  "characters": [
+    {
+      "selector": 0,
+      "actor_directory_value": 0,
+      "native_label_bytes_checked": 256,
+      "native_hud_block_bytes": 8192
+    },
+    {
+      "selector": 1,
+      "actor_directory_value": 2,
+      "native_label_bytes_checked": 256,
+      "native_hud_block_bytes": 8192
+    },
+    {
+      "selector": 2,
+      "actor_directory_value": 4,
+      "native_label_bytes_checked": 256,
+      "native_hud_block_bytes": 8192
+    },
+    {
+      "selector": 3,
+      "actor_directory_value": 6,
+      "native_label_bytes_checked": 256,
+      "native_hud_block_bytes": 8192
+    },
+    {
+      "selector": 4,
+      "actor_directory_value": 8,
+      "native_label_bytes_checked": 256,
+      "native_hud_block_bytes": 8192
+    },
+    {
+      "selector": 5,
+      "actor_directory_value": 10,
+      "native_label_bytes_checked": 256,
+      "native_hud_block_bytes": 8192
+    },
+    {
+      "selector": 6,
+      "actor_directory_value": 12,
+      "native_label_bytes_checked": 256,
+      "native_hud_block_bytes": 8192
+    },
+    {
+      "selector": 7,
+      "actor_directory_value": 14,
+      "native_label_bytes_checked": 256,
+      "native_hud_block_bytes": 8192
+    },
+    {
+      "selector": 8,
+      "actor_directory_value": 16,
+      "native_label_bytes_checked": 256,
+      "native_hud_block_bytes": 8192
+    },
+    {
+      "selector": 9,
+      "actor_directory_value": 18,
+      "native_label_bytes_checked": 256,
+      "native_hud_block_bytes": 8192
+    },
+    {
+      "selector": 10,
+      "actor_directory_value": 20,
+      "native_label_bytes_checked": 256,
+      "native_hud_block_bytes": 8192
+    },
+    {
+      "selector": 11,
+      "actor_directory_value": 22,
+      "native_label_bytes_checked": 256,
+      "native_hud_block_bytes": 8192
+    }
+  ]
+}

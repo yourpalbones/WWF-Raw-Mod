@@ -74,9 +74,25 @@ opponent reactions, transitions and AI. Start with reassigning a verified
 existing move, then modifying it, before creating a new move with coordinated
 attacker and defender behavior.
 
-## Immediate next milestone
+## Current findings and next milestones
 
-Extend the shared fallback inventory using the new special captures, then map
-ordinary grapples, strikes, rope interactions, damage and recovery across the
-roster. Use the evidence-linked coverage table to track remaining actions and
-validate edited outfits before including them in editor claims.
+The editor now updates the in-match health-bar name separately from the bio and
+large logo. All twelve exported labels are verified in native drawing buffers;
+see [name evidence](../evidence/match-names/README.md).
+
+Theme reassignment is available in the editor. The audio-bank directory and all
+21 song headers are inventoried, and a new eight-note composition runs through
+the original audio driver with its existing instruments. The next music step is
+a native song compiler/import workflow with timing, loops, instrument choices
+and SPC memory validation. See [audio evidence](../evidence/theme-music/README.md).
+
+A relocated thirteenth profile is selectable and enters a native match. It still
+uses a placeholder label and Shawn's directory, and reads beyond the stock
+small-monitor arrays. The next expansion step is one fully independent extra
+wrestler, including its assets, initialized attributes, move/special assignments
+and match-mode tests. This experiment is not shipped as an editor feature.
+See [extra-slot evidence](../evidence/roster-expansion/README.md).
+
+Complete ordinary action and shared-fallback mapping remains necessary for gear
+editing and cross-game character imports. An added selection does not establish
+complete move coverage or safe conversion of another game's sprite set.

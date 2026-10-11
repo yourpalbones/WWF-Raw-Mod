@@ -1,0 +1,1578 @@
+{
+  "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "bootstrap_offset": 65536,
+  "driver_offset": 65760,
+  "driver_spc_destination": 1792,
+  "driver_length": 6112,
+  "driver_signature": "SNDDRVR / REN AND STIMPY",
+  "bank_directory": 71939,
+  "song_bank_table": 71990,
+  "spc_song_pointer_table": 9440,
+  "banks": [
+    {
+      "bank_id": 0,
+      "directory_offset": 231190,
+      "upload_count": 13
+    },
+    {
+      "bank_id": 1,
+      "directory_offset": 231283,
+      "upload_count": 480
+    },
+    {
+      "bank_id": 2,
+      "directory_offset": 234645,
+      "upload_count": 70
+    },
+    {
+      "bank_id": 3,
+      "directory_offset": 235137,
+      "upload_count": 72
+    },
+    {
+      "bank_id": 4,
+      "directory_offset": 235643,
+      "upload_count": 62
+    },
+    {
+      "bank_id": 5,
+      "directory_offset": 236079,
+      "upload_count": 74
+    },
+    {
+      "bank_id": 6,
+      "directory_offset": 236599,
+      "upload_count": 94
+    },
+    {
+      "bank_id": 7,
+      "directory_offset": 237259,
+      "upload_count": 80
+    },
+    {
+      "bank_id": 8,
+      "directory_offset": 237821,
+      "upload_count": 63
+    },
+    {
+      "bank_id": 9,
+      "directory_offset": 238264,
+      "upload_count": 68
+    },
+    {
+      "bank_id": 10,
+      "directory_offset": 238742,
+      "upload_count": 64
+    },
+    {
+      "bank_id": 11,
+      "directory_offset": 239192,
+      "upload_count": 23
+    },
+    {
+      "bank_id": 12,
+      "directory_offset": 239355,
+      "upload_count": 60
+    },
+    {
+      "bank_id": 13,
+      "directory_offset": 239777,
+      "upload_count": 74
+    },
+    {
+      "bank_id": 14,
+      "directory_offset": 240297,
+      "upload_count": 67
+    },
+    {
+      "bank_id": 15,
+      "directory_offset": 240768,
+      "upload_count": 63
+    },
+    {
+      "bank_id": 16,
+      "directory_offset": 241211,
+      "upload_count": 18
+    }
+  ],
+  "songs": [
+    {
+      "song_id": 0,
+      "bank_id": 1,
+      "voice_count": 8,
+      "header": {
+        "record_offset": 234232,
+        "length": 17,
+        "source_offset": 78610,
+        "spc_destination": 55463
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 234309,
+          "length": 50,
+          "source_offset": 78627,
+          "spc_destination": 55565
+        },
+        {
+          "voice": 1,
+          "record_offset": 234316,
+          "length": 41,
+          "source_offset": 82136,
+          "spc_destination": 55615
+        },
+        {
+          "voice": 2,
+          "record_offset": 234323,
+          "length": 39,
+          "source_offset": 82233,
+          "spc_destination": 55656
+        },
+        {
+          "voice": 3,
+          "record_offset": 234330,
+          "length": 42,
+          "source_offset": 82284,
+          "spc_destination": 55695
+        },
+        {
+          "voice": 4,
+          "record_offset": 234337,
+          "length": 39,
+          "source_offset": 82338,
+          "spc_destination": 55737
+        },
+        {
+          "voice": 5,
+          "record_offset": 234344,
+          "length": 39,
+          "source_offset": 82377,
+          "spc_destination": 55776
+        },
+        {
+          "voice": 6,
+          "record_offset": 234351,
+          "length": 49,
+          "source_offset": 82416,
+          "spc_destination": 55815
+        },
+        {
+          "voice": 7,
+          "record_offset": 234358,
+          "length": 46,
+          "source_offset": 83614,
+          "spc_destination": 55864
+        }
+      ]
+    },
+    {
+      "song_id": 1,
+      "bank_id": 1,
+      "voice_count": 8,
+      "header": {
+        "record_offset": 234246,
+        "length": 17,
+        "source_offset": 85716,
+        "spc_destination": 55480
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 234365,
+          "length": 131,
+          "source_offset": 85733,
+          "spc_destination": 55910
+        },
+        {
+          "voice": 1,
+          "record_offset": 234372,
+          "length": 121,
+          "source_offset": 85995,
+          "spc_destination": 56041
+        },
+        {
+          "voice": 2,
+          "record_offset": 234379,
+          "length": 114,
+          "source_offset": 86128,
+          "spc_destination": 56162
+        },
+        {
+          "voice": 3,
+          "record_offset": 234386,
+          "length": 107,
+          "source_offset": 87546,
+          "spc_destination": 56276
+        },
+        {
+          "voice": 4,
+          "record_offset": 234393,
+          "length": 118,
+          "source_offset": 87665,
+          "spc_destination": 56383
+        },
+        {
+          "voice": 5,
+          "record_offset": 234400,
+          "length": 115,
+          "source_offset": 87783,
+          "spc_destination": 56501
+        },
+        {
+          "voice": 6,
+          "record_offset": 234407,
+          "length": 52,
+          "source_offset": 87904,
+          "spc_destination": 56616
+        },
+        {
+          "voice": 7,
+          "record_offset": 234414,
+          "length": 44,
+          "source_offset": 87956,
+          "spc_destination": 56668
+        }
+      ]
+    },
+    {
+      "song_id": 2,
+      "bank_id": 1,
+      "voice_count": 8,
+      "header": {
+        "record_offset": 234260,
+        "length": 17,
+        "source_offset": 88000,
+        "spc_destination": 55497
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 234421,
+          "length": 58,
+          "source_offset": 88017,
+          "spc_destination": 56712
+        },
+        {
+          "voice": 1,
+          "record_offset": 234428,
+          "length": 54,
+          "source_offset": 88124,
+          "spc_destination": 56770
+        },
+        {
+          "voice": 2,
+          "record_offset": 234435,
+          "length": 39,
+          "source_offset": 88184,
+          "spc_destination": 56824
+        },
+        {
+          "voice": 3,
+          "record_offset": 234442,
+          "length": 42,
+          "source_offset": 88229,
+          "spc_destination": 56863
+        },
+        {
+          "voice": 4,
+          "record_offset": 234449,
+          "length": 39,
+          "source_offset": 88277,
+          "spc_destination": 56905
+        },
+        {
+          "voice": 5,
+          "record_offset": 234456,
+          "length": 39,
+          "source_offset": 88316,
+          "spc_destination": 56944
+        },
+        {
+          "voice": 6,
+          "record_offset": 234463,
+          "length": 52,
+          "source_offset": 88355,
+          "spc_destination": 56983
+        },
+        {
+          "voice": 7,
+          "record_offset": 234470,
+          "length": 47,
+          "source_offset": 88407,
+          "spc_destination": 57035
+        }
+      ]
+    },
+    {
+      "song_id": 3,
+      "bank_id": 1,
+      "voice_count": 8,
+      "header": {
+        "record_offset": 234274,
+        "length": 17,
+        "source_offset": 88454,
+        "spc_destination": 55514
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 234477,
+          "length": 65,
+          "source_offset": 88471,
+          "spc_destination": 57082
+        },
+        {
+          "voice": 1,
+          "record_offset": 234484,
+          "length": 56,
+          "source_offset": 88536,
+          "spc_destination": 57147
+        },
+        {
+          "voice": 2,
+          "record_offset": 234491,
+          "length": 42,
+          "source_offset": 88592,
+          "spc_destination": 57203
+        },
+        {
+          "voice": 3,
+          "record_offset": 234498,
+          "length": 45,
+          "source_offset": 88640,
+          "spc_destination": 57245
+        },
+        {
+          "voice": 4,
+          "record_offset": 234505,
+          "length": 42,
+          "source_offset": 88685,
+          "spc_destination": 57290
+        },
+        {
+          "voice": 5,
+          "record_offset": 234512,
+          "length": 48,
+          "source_offset": 88727,
+          "spc_destination": 57332
+        },
+        {
+          "voice": 6,
+          "record_offset": 234519,
+          "length": 47,
+          "source_offset": 88775,
+          "spc_destination": 57380
+        },
+        {
+          "voice": 7,
+          "record_offset": 234526,
+          "length": 48,
+          "source_offset": 88822,
+          "spc_destination": 57427
+        }
+      ]
+    },
+    {
+      "song_id": 4,
+      "bank_id": 1,
+      "voice_count": 8,
+      "header": {
+        "record_offset": 234288,
+        "length": 17,
+        "source_offset": 88870,
+        "spc_destination": 55531
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 234533,
+          "length": 81,
+          "source_offset": 88887,
+          "spc_destination": 57475
+        },
+        {
+          "voice": 1,
+          "record_offset": 234540,
+          "length": 62,
+          "source_offset": 88974,
+          "spc_destination": 57556
+        },
+        {
+          "voice": 2,
+          "record_offset": 234547,
+          "length": 51,
+          "source_offset": 89042,
+          "spc_destination": 57618
+        },
+        {
+          "voice": 3,
+          "record_offset": 234554,
+          "length": 48,
+          "source_offset": 89093,
+          "spc_destination": 57669
+        },
+        {
+          "voice": 4,
+          "record_offset": 234561,
+          "length": 54,
+          "source_offset": 89141,
+          "spc_destination": 57717
+        },
+        {
+          "voice": 5,
+          "record_offset": 234568,
+          "length": 54,
+          "source_offset": 89195,
+          "spc_destination": 57771
+        },
+        {
+          "voice": 6,
+          "record_offset": 234575,
+          "length": 51,
+          "source_offset": 89249,
+          "spc_destination": 57825
+        },
+        {
+          "voice": 7,
+          "record_offset": 234582,
+          "length": 47,
+          "source_offset": 89300,
+          "spc_destination": 57876
+        }
+      ]
+    },
+    {
+      "song_id": 5,
+      "bank_id": 1,
+      "voice_count": 8,
+      "header": {
+        "record_offset": 234302,
+        "length": 17,
+        "source_offset": 89347,
+        "spc_destination": 55548
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 234589,
+          "length": 35,
+          "source_offset": 89364,
+          "spc_destination": 57923
+        },
+        {
+          "voice": 1,
+          "record_offset": 234596,
+          "length": 31,
+          "source_offset": 89493,
+          "spc_destination": 57958
+        },
+        {
+          "voice": 2,
+          "record_offset": 234603,
+          "length": 25,
+          "source_offset": 89618,
+          "spc_destination": 57989
+        },
+        {
+          "voice": 3,
+          "record_offset": 234610,
+          "length": 25,
+          "source_offset": 89697,
+          "spc_destination": 58014
+        },
+        {
+          "voice": 4,
+          "record_offset": 234617,
+          "length": 31,
+          "source_offset": 89728,
+          "spc_destination": 58039
+        },
+        {
+          "voice": 5,
+          "record_offset": 234624,
+          "length": 28,
+          "source_offset": 89759,
+          "spc_destination": 58070
+        },
+        {
+          "voice": 6,
+          "record_offset": 234631,
+          "length": 50,
+          "source_offset": 89787,
+          "spc_destination": 58098
+        },
+        {
+          "voice": 7,
+          "record_offset": 234638,
+          "length": 49,
+          "source_offset": 89837,
+          "spc_destination": 58148
+        }
+      ]
+    },
+    {
+      "song_id": 6,
+      "bank_id": 2,
+      "voice_count": 8,
+      "header": {
+        "record_offset": 235074,
+        "length": 17,
+        "source_offset": 122443,
+        "spc_destination": 35346
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 235081,
+          "length": 202,
+          "source_offset": 122460,
+          "spc_destination": 35363
+        },
+        {
+          "voice": 1,
+          "record_offset": 235088,
+          "length": 156,
+          "source_offset": 128941,
+          "spc_destination": 35565
+        },
+        {
+          "voice": 2,
+          "record_offset": 235095,
+          "length": 363,
+          "source_offset": 130981,
+          "spc_destination": 35721
+        },
+        {
+          "voice": 3,
+          "record_offset": 235102,
+          "length": 648,
+          "source_offset": 132451,
+          "spc_destination": 36084
+        },
+        {
+          "voice": 4,
+          "record_offset": 235109,
+          "length": 197,
+          "source_offset": 133153,
+          "spc_destination": 36732
+        },
+        {
+          "voice": 5,
+          "record_offset": 235116,
+          "length": 193,
+          "source_offset": 141391,
+          "spc_destination": 36929
+        },
+        {
+          "voice": 6,
+          "record_offset": 235123,
+          "length": 397,
+          "source_offset": 141584,
+          "spc_destination": 37122
+        },
+        {
+          "voice": 7,
+          "record_offset": 235130,
+          "length": 411,
+          "source_offset": 145586,
+          "spc_destination": 37519
+        }
+      ]
+    },
+    {
+      "song_id": 7,
+      "bank_id": 3,
+      "voice_count": 8,
+      "header": {
+        "record_offset": 235580,
+        "length": 17,
+        "source_offset": 145997,
+        "spc_destination": 20446
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 235587,
+          "length": 89,
+          "source_offset": 146014,
+          "spc_destination": 20463
+        },
+        {
+          "voice": 1,
+          "record_offset": 235594,
+          "length": 65,
+          "source_offset": 147386,
+          "spc_destination": 20552
+        },
+        {
+          "voice": 2,
+          "record_offset": 235601,
+          "length": 72,
+          "source_offset": 147541,
+          "spc_destination": 20617
+        },
+        {
+          "voice": 3,
+          "record_offset": 235608,
+          "length": 77,
+          "source_offset": 147676,
+          "spc_destination": 20689
+        },
+        {
+          "voice": 4,
+          "record_offset": 235615,
+          "length": 71,
+          "source_offset": 147855,
+          "spc_destination": 20766
+        },
+        {
+          "voice": 5,
+          "record_offset": 235622,
+          "length": 65,
+          "source_offset": 147932,
+          "spc_destination": 20837
+        },
+        {
+          "voice": 6,
+          "record_offset": 235629,
+          "length": 52,
+          "source_offset": 149521,
+          "spc_destination": 20902
+        },
+        {
+          "voice": 7,
+          "record_offset": 235636,
+          "length": 47,
+          "source_offset": 149579,
+          "spc_destination": 20954
+        }
+      ]
+    },
+    {
+      "song_id": 8,
+      "bank_id": 4,
+      "voice_count": 8,
+      "header": {
+        "record_offset": 236016,
+        "length": 17,
+        "source_offset": 149811,
+        "spc_destination": 18024
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 236023,
+          "length": 191,
+          "source_offset": 149828,
+          "spc_destination": 18041
+        },
+        {
+          "voice": 1,
+          "record_offset": 236030,
+          "length": 208,
+          "source_offset": 150297,
+          "spc_destination": 18232
+        },
+        {
+          "voice": 2,
+          "record_offset": 236037,
+          "length": 189,
+          "source_offset": 150532,
+          "spc_destination": 18440
+        },
+        {
+          "voice": 3,
+          "record_offset": 236044,
+          "length": 66,
+          "source_offset": 150727,
+          "spc_destination": 18629
+        },
+        {
+          "voice": 4,
+          "record_offset": 236051,
+          "length": 134,
+          "source_offset": 151617,
+          "spc_destination": 18695
+        },
+        {
+          "voice": 5,
+          "record_offset": 236058,
+          "length": 54,
+          "source_offset": 151751,
+          "spc_destination": 18829
+        },
+        {
+          "voice": 6,
+          "record_offset": 236065,
+          "length": 572,
+          "source_offset": 151805,
+          "spc_destination": 18883
+        },
+        {
+          "voice": 7,
+          "record_offset": 236072,
+          "length": 47,
+          "source_offset": 154816,
+          "spc_destination": 19455
+        }
+      ]
+    },
+    {
+      "song_id": 9,
+      "bank_id": 5,
+      "voice_count": 8,
+      "header": {
+        "record_offset": 236536,
+        "length": 17,
+        "source_offset": 154879,
+        "spc_destination": 32446
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 236543,
+          "length": 47,
+          "source_offset": 154896,
+          "spc_destination": 32463
+        },
+        {
+          "voice": 1,
+          "record_offset": 236550,
+          "length": 47,
+          "source_offset": 157092,
+          "spc_destination": 32510
+        },
+        {
+          "voice": 2,
+          "record_offset": 236557,
+          "length": 65,
+          "source_offset": 159110,
+          "spc_destination": 32557
+        },
+        {
+          "voice": 3,
+          "record_offset": 236564,
+          "length": 57,
+          "source_offset": 163510,
+          "spc_destination": 32622
+        },
+        {
+          "voice": 4,
+          "record_offset": 236571,
+          "length": 128,
+          "source_offset": 163567,
+          "spc_destination": 32679
+        },
+        {
+          "voice": 5,
+          "record_offset": 236578,
+          "length": 145,
+          "source_offset": 163695,
+          "spc_destination": 32807
+        },
+        {
+          "voice": 6,
+          "record_offset": 236585,
+          "length": 67,
+          "source_offset": 164858,
+          "spc_destination": 32952
+        },
+        {
+          "voice": 7,
+          "record_offset": 236592,
+          "length": 100,
+          "source_offset": 164925,
+          "spc_destination": 33019
+        }
+      ]
+    },
+    {
+      "song_id": 10,
+      "bank_id": 6,
+      "voice_count": 8,
+      "header": {
+        "record_offset": 237196,
+        "length": 17,
+        "source_offset": 165245,
+        "spc_destination": 35961
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 237203,
+          "length": 51,
+          "source_offset": 165262,
+          "spc_destination": 35978
+        },
+        {
+          "voice": 1,
+          "record_offset": 237210,
+          "length": 183,
+          "source_offset": 168767,
+          "spc_destination": 36029
+        },
+        {
+          "voice": 2,
+          "record_offset": 237217,
+          "length": 74,
+          "source_offset": 170569,
+          "spc_destination": 36212
+        },
+        {
+          "voice": 3,
+          "record_offset": 237224,
+          "length": 180,
+          "source_offset": 170709,
+          "spc_destination": 36286
+        },
+        {
+          "voice": 4,
+          "record_offset": 237231,
+          "length": 113,
+          "source_offset": 173898,
+          "spc_destination": 36466
+        },
+        {
+          "voice": 5,
+          "record_offset": 237238,
+          "length": 86,
+          "source_offset": 174085,
+          "spc_destination": 36579
+        },
+        {
+          "voice": 6,
+          "record_offset": 237245,
+          "length": 100,
+          "source_offset": 174279,
+          "spc_destination": 36665
+        },
+        {
+          "voice": 7,
+          "record_offset": 237252,
+          "length": 70,
+          "source_offset": 174379,
+          "spc_destination": 36765
+        }
+      ]
+    },
+    {
+      "song_id": 11,
+      "bank_id": 7,
+      "voice_count": 10,
+      "header": {
+        "record_offset": 237744,
+        "length": 21,
+        "source_offset": 174449,
+        "spc_destination": 24265
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 237751,
+          "length": 506,
+          "source_offset": 174470,
+          "spc_destination": 24286
+        },
+        {
+          "voice": 1,
+          "record_offset": 237758,
+          "length": 195,
+          "source_offset": 176518,
+          "spc_destination": 24792
+        },
+        {
+          "voice": 2,
+          "record_offset": 237765,
+          "length": 1044,
+          "source_offset": 180128,
+          "spc_destination": 24987
+        },
+        {
+          "voice": 3,
+          "record_offset": 237772,
+          "length": 1066,
+          "source_offset": 182198,
+          "spc_destination": 26031
+        },
+        {
+          "voice": 4,
+          "record_offset": 237779,
+          "length": 639,
+          "source_offset": 183264,
+          "spc_destination": 27097
+        },
+        {
+          "voice": 5,
+          "record_offset": 237786,
+          "length": 642,
+          "source_offset": 184995,
+          "spc_destination": 27736
+        },
+        {
+          "voice": 6,
+          "record_offset": 237793,
+          "length": 541,
+          "source_offset": 185827,
+          "spc_destination": 28378
+        },
+        {
+          "voice": 7,
+          "record_offset": 237800,
+          "length": 104,
+          "source_offset": 187554,
+          "spc_destination": 28919
+        },
+        {
+          "voice": 8,
+          "record_offset": 237807,
+          "length": 302,
+          "source_offset": 188364,
+          "spc_destination": 29023
+        },
+        {
+          "voice": 9,
+          "record_offset": 237814,
+          "length": 713,
+          "source_offset": 188900,
+          "spc_destination": 29325
+        }
+      ]
+    },
+    {
+      "song_id": 12,
+      "bank_id": 8,
+      "voice_count": 9,
+      "header": {
+        "record_offset": 238194,
+        "length": 19,
+        "source_offset": 190123,
+        "spc_destination": 20910
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 238201,
+          "length": 478,
+          "source_offset": 190142,
+          "spc_destination": 20929
+        },
+        {
+          "voice": 1,
+          "record_offset": 238208,
+          "length": 381,
+          "source_offset": 190620,
+          "spc_destination": 21407
+        },
+        {
+          "voice": 2,
+          "record_offset": 238215,
+          "length": 216,
+          "source_offset": 191001,
+          "spc_destination": 21788
+        },
+        {
+          "voice": 3,
+          "record_offset": 238222,
+          "length": 94,
+          "source_offset": 191217,
+          "spc_destination": 22004
+        },
+        {
+          "voice": 4,
+          "record_offset": 238229,
+          "length": 659,
+          "source_offset": 191311,
+          "spc_destination": 22098
+        },
+        {
+          "voice": 5,
+          "record_offset": 238236,
+          "length": 107,
+          "source_offset": 191970,
+          "spc_destination": 22757
+        },
+        {
+          "voice": 6,
+          "record_offset": 238243,
+          "length": 20,
+          "source_offset": 192077,
+          "spc_destination": 22864
+        },
+        {
+          "voice": 7,
+          "record_offset": 238250,
+          "length": 30,
+          "source_offset": 192097,
+          "spc_destination": 22884
+        },
+        {
+          "voice": 8,
+          "record_offset": 238257,
+          "length": 57,
+          "source_offset": 192127,
+          "spc_destination": 22914
+        }
+      ]
+    },
+    {
+      "song_id": 13,
+      "bank_id": 9,
+      "voice_count": 8,
+      "header": {
+        "record_offset": 238679,
+        "length": 17,
+        "source_offset": 192330,
+        "spc_destination": 33518
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 238686,
+          "length": 166,
+          "source_offset": 192347,
+          "spc_destination": 33535
+        },
+        {
+          "voice": 1,
+          "record_offset": 238693,
+          "length": 77,
+          "source_offset": 195535,
+          "spc_destination": 33701
+        },
+        {
+          "voice": 2,
+          "record_offset": 238700,
+          "length": 105,
+          "source_offset": 195612,
+          "spc_destination": 33778
+        },
+        {
+          "voice": 3,
+          "record_offset": 238707,
+          "length": 148,
+          "source_offset": 198412,
+          "spc_destination": 33883
+        },
+        {
+          "voice": 4,
+          "record_offset": 238714,
+          "length": 29,
+          "source_offset": 198566,
+          "spc_destination": 34031
+        },
+        {
+          "voice": 5,
+          "record_offset": 238721,
+          "length": 182,
+          "source_offset": 198595,
+          "spc_destination": 34060
+        },
+        {
+          "voice": 6,
+          "record_offset": 238728,
+          "length": 31,
+          "source_offset": 198777,
+          "spc_destination": 34242
+        },
+        {
+          "voice": 7,
+          "record_offset": 238735,
+          "length": 123,
+          "source_offset": 198808,
+          "spc_destination": 34273
+        }
+      ]
+    },
+    {
+      "song_id": 14,
+      "bank_id": 10,
+      "voice_count": 8,
+      "header": {
+        "record_offset": 239129,
+        "length": 17,
+        "source_offset": 198937,
+        "spc_destination": 33693
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 239136,
+          "length": 42,
+          "source_offset": 198954,
+          "spc_destination": 33710
+        },
+        {
+          "voice": 1,
+          "record_offset": 239143,
+          "length": 31,
+          "source_offset": 199383,
+          "spc_destination": 33752
+        },
+        {
+          "voice": 2,
+          "record_offset": 239150,
+          "length": 1866,
+          "source_offset": 199435,
+          "spc_destination": 33783
+        },
+        {
+          "voice": 3,
+          "record_offset": 239157,
+          "length": 444,
+          "source_offset": 201301,
+          "spc_destination": 35649
+        },
+        {
+          "voice": 4,
+          "record_offset": 239164,
+          "length": 602,
+          "source_offset": 202951,
+          "spc_destination": 36093
+        },
+        {
+          "voice": 5,
+          "record_offset": 239171,
+          "length": 1069,
+          "source_offset": 214309,
+          "spc_destination": 36695
+        },
+        {
+          "voice": 6,
+          "record_offset": 239178,
+          "length": 201,
+          "source_offset": 215378,
+          "spc_destination": 37764
+        },
+        {
+          "voice": 7,
+          "record_offset": 239185,
+          "length": 159,
+          "source_offset": 215614,
+          "spc_destination": 37965
+        }
+      ]
+    },
+    {
+      "song_id": 15,
+      "bank_id": 11,
+      "voice_count": 5,
+      "header": {
+        "record_offset": 239313,
+        "length": 11,
+        "source_offset": 215773,
+        "spc_destination": 18654
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 239320,
+          "length": 29,
+          "source_offset": 215784,
+          "spc_destination": 18665
+        },
+        {
+          "voice": 1,
+          "record_offset": 239327,
+          "length": 42,
+          "source_offset": 219011,
+          "spc_destination": 18694
+        },
+        {
+          "voice": 2,
+          "record_offset": 239334,
+          "length": 15,
+          "source_offset": 219059,
+          "spc_destination": 18736
+        },
+        {
+          "voice": 3,
+          "record_offset": 239341,
+          "length": 18,
+          "source_offset": 219074,
+          "spc_destination": 18751
+        },
+        {
+          "voice": 4,
+          "record_offset": 239348,
+          "length": 20,
+          "source_offset": 219092,
+          "spc_destination": 18769
+        }
+      ]
+    },
+    {
+      "song_id": 16,
+      "bank_id": 12,
+      "voice_count": 8,
+      "header": {
+        "record_offset": 239714,
+        "length": 17,
+        "source_offset": 219112,
+        "spc_destination": 33099
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 239721,
+          "length": 156,
+          "source_offset": 219129,
+          "spc_destination": 33116
+        },
+        {
+          "voice": 1,
+          "record_offset": 239728,
+          "length": 302,
+          "source_offset": 219285,
+          "spc_destination": 33272
+        },
+        {
+          "voice": 2,
+          "record_offset": 239735,
+          "length": 191,
+          "source_offset": 219587,
+          "spc_destination": 33574
+        },
+        {
+          "voice": 3,
+          "record_offset": 239742,
+          "length": 70,
+          "source_offset": 219854,
+          "spc_destination": 33765
+        },
+        {
+          "voice": 4,
+          "record_offset": 239749,
+          "length": 57,
+          "source_offset": 220018,
+          "spc_destination": 33835
+        },
+        {
+          "voice": 5,
+          "record_offset": 239756,
+          "length": 23,
+          "source_offset": 220075,
+          "spc_destination": 33892
+        },
+        {
+          "voice": 6,
+          "record_offset": 239763,
+          "length": 23,
+          "source_offset": 220098,
+          "spc_destination": 33915
+        },
+        {
+          "voice": 7,
+          "record_offset": 239770,
+          "length": 26,
+          "source_offset": 220121,
+          "spc_destination": 33938
+        }
+      ]
+    },
+    {
+      "song_id": 17,
+      "bank_id": 13,
+      "voice_count": 12,
+      "header": {
+        "record_offset": 240206,
+        "length": 25,
+        "source_offset": 220147,
+        "spc_destination": 39865
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 240213,
+          "length": 47,
+          "source_offset": 220172,
+          "spc_destination": 39890
+        },
+        {
+          "voice": 1,
+          "record_offset": 240220,
+          "length": 127,
+          "source_offset": 220250,
+          "spc_destination": 39937
+        },
+        {
+          "voice": 2,
+          "record_offset": 240227,
+          "length": 295,
+          "source_offset": 220377,
+          "spc_destination": 40064
+        },
+        {
+          "voice": 3,
+          "record_offset": 240234,
+          "length": 108,
+          "source_offset": 220701,
+          "spc_destination": 40359
+        },
+        {
+          "voice": 4,
+          "record_offset": 240241,
+          "length": 153,
+          "source_offset": 221069,
+          "spc_destination": 40467
+        },
+        {
+          "voice": 5,
+          "record_offset": 240248,
+          "length": 24,
+          "source_offset": 221303,
+          "spc_destination": 40620
+        },
+        {
+          "voice": 6,
+          "record_offset": 240255,
+          "length": 38,
+          "source_offset": 221327,
+          "spc_destination": 40644
+        },
+        {
+          "voice": 7,
+          "record_offset": 240262,
+          "length": 106,
+          "source_offset": 222523,
+          "spc_destination": 40682
+        },
+        {
+          "voice": 8,
+          "record_offset": 240269,
+          "length": 19,
+          "source_offset": 222693,
+          "spc_destination": 40788
+        },
+        {
+          "voice": 9,
+          "record_offset": 240276,
+          "length": 299,
+          "source_offset": 222712,
+          "spc_destination": 40807
+        },
+        {
+          "voice": 10,
+          "record_offset": 240283,
+          "length": 24,
+          "source_offset": 223011,
+          "spc_destination": 41106
+        },
+        {
+          "voice": 11,
+          "record_offset": 240290,
+          "length": 28,
+          "source_offset": 223035,
+          "spc_destination": 41130
+        }
+      ]
+    },
+    {
+      "song_id": 18,
+      "bank_id": 14,
+      "voice_count": 9,
+      "header": {
+        "record_offset": 240698,
+        "length": 19,
+        "source_offset": 223063,
+        "spc_destination": 36776
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 240705,
+          "length": 1162,
+          "source_offset": 223082,
+          "spc_destination": 36795
+        },
+        {
+          "voice": 1,
+          "record_offset": 240712,
+          "length": 522,
+          "source_offset": 224244,
+          "spc_destination": 37957
+        },
+        {
+          "voice": 2,
+          "record_offset": 240719,
+          "length": 808,
+          "source_offset": 224811,
+          "spc_destination": 38479
+        },
+        {
+          "voice": 3,
+          "record_offset": 240726,
+          "length": 91,
+          "source_offset": 225619,
+          "spc_destination": 39287
+        },
+        {
+          "voice": 4,
+          "record_offset": 240733,
+          "length": 121,
+          "source_offset": 225710,
+          "spc_destination": 39378
+        },
+        {
+          "voice": 5,
+          "record_offset": 240740,
+          "length": 508,
+          "source_offset": 225831,
+          "spc_destination": 39499
+        },
+        {
+          "voice": 6,
+          "record_offset": 240747,
+          "length": 682,
+          "source_offset": 226339,
+          "spc_destination": 40007
+        },
+        {
+          "voice": 7,
+          "record_offset": 240754,
+          "length": 368,
+          "source_offset": 227021,
+          "spc_destination": 40689
+        },
+        {
+          "voice": 8,
+          "record_offset": 240761,
+          "length": 345,
+          "source_offset": 227389,
+          "spc_destination": 41057
+        }
+      ]
+    },
+    {
+      "song_id": 19,
+      "bank_id": 15,
+      "voice_count": 9,
+      "header": {
+        "record_offset": 241141,
+        "length": 19,
+        "source_offset": 227734,
+        "spc_destination": 32416
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 241148,
+          "length": 222,
+          "source_offset": 227753,
+          "spc_destination": 32435
+        },
+        {
+          "voice": 1,
+          "record_offset": 241155,
+          "length": 359,
+          "source_offset": 227975,
+          "spc_destination": 32657
+        },
+        {
+          "voice": 2,
+          "record_offset": 241162,
+          "length": 749,
+          "source_offset": 228334,
+          "spc_destination": 33016
+        },
+        {
+          "voice": 3,
+          "record_offset": 241169,
+          "length": 528,
+          "source_offset": 229083,
+          "spc_destination": 33765
+        },
+        {
+          "voice": 4,
+          "record_offset": 241176,
+          "length": 424,
+          "source_offset": 229611,
+          "spc_destination": 34293
+        },
+        {
+          "voice": 5,
+          "record_offset": 241183,
+          "length": 305,
+          "source_offset": 230035,
+          "spc_destination": 34717
+        },
+        {
+          "voice": 6,
+          "record_offset": 241190,
+          "length": 200,
+          "source_offset": 230340,
+          "spc_destination": 35022
+        },
+        {
+          "voice": 7,
+          "record_offset": 241197,
+          "length": 114,
+          "source_offset": 230540,
+          "spc_destination": 35222
+        },
+        {
+          "voice": 8,
+          "record_offset": 241204,
+          "length": 205,
+          "source_offset": 230654,
+          "spc_destination": 35336
+        }
+      ]
+    },
+    {
+      "song_id": 20,
+      "bank_id": 16,
+      "voice_count": 6,
+      "header": {
+        "record_offset": 241290,
+        "length": 13,
+        "source_offset": 230859,
+        "spc_destination": 14633
+      },
+      "streams": [
+        {
+          "voice": 0,
+          "record_offset": 241297,
+          "length": 8,
+          "source_offset": 230872,
+          "spc_destination": 14646
+        },
+        {
+          "voice": 1,
+          "record_offset": 241304,
+          "length": 8,
+          "source_offset": 231149,
+          "spc_destination": 14654
+        },
+        {
+          "voice": 2,
+          "record_offset": 241311,
+          "length": 8,
+          "source_offset": 231157,
+          "spc_destination": 14662
+        },
+        {
+          "voice": 3,
+          "record_offset": 241318,
+          "length": 8,
+          "source_offset": 231165,
+          "spc_destination": 14670
+        },
+        {
+          "voice": 4,
+          "record_offset": 241325,
+          "length": 8,
+          "source_offset": 231173,
+          "spc_destination": 14678
+        },
+        {
+          "voice": 5,
+          "record_offset": 241332,
+          "length": 9,
+          "source_offset": 231181,
+          "spc_destination": 14686
+        }
+      ]
+    }
+  ],
+  "notes": "Address inventory; not a complete decoder or arbitrary-audio importer"
+}

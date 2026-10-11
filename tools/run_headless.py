@@ -9,6 +9,8 @@ import ctypes as ct
 import json
 from pathlib import Path
 import os
+import wave
+import struct
 from PIL import Image
 
 
@@ -23,6 +25,20 @@ class GameInfo(ct.Structure):
 
 class Variable(ct.Structure):
     _fields_ = [("key", ct.c_char_p), ("value", ct.c_char_p)]
+
+
+class Geometry(ct.Structure):
+    _fields_ = [("base_width", ct.c_uint), ("base_height", ct.c_uint),
+                ("max_width", ct.c_uint), ("max_height", ct.c_uint),
+                ("aspect_ratio", ct.c_float)]
+
+
+class Timing(ct.Structure):
+    _fields_ = [("fps", ct.c_double), ("sample_rate", ct.c_double)]
+
+
+class AVInfo(ct.Structure):
+    _fields_ = [("geometry", Geometry), ("timing", Timing)]
 
 
 ENV = ct.CFUNCTYPE(ct.c_bool, ct.c_uint, ct.c_void_p)
@@ -47,6 +63,7 @@ def main():
         help="frame:button_id[:duration]; START=3, A=8, B=0, directions=4..7",
     )
     ap.add_argument("--load-state", type=Path)
+    ap.add_argument("--audio", action="store_true", help="Capture local stereo PCM audio for sound research")
     ap.add_argument(
         "--press-p2",
         action="append",
@@ -69,6 +86,7 @@ def main():
     frame = 0
     pixel_format = 0
     last_frame = None
+    audio_frames = bytearray()
     presses = []
     for port, schedule in enumerate((args.press, args.press_p2)):
         for p in schedule:
@@ -121,10 +139,11 @@ def main():
 
     @AUDIO
     def audio(left, right):
-        pass
+        if args.audio:audio_frames.extend(struct.pack("<hh",left,right))
 
     @BATCH
     def batch(data, count):
+        if args.audio:audio_frames.extend(ct.string_at(data,count*4))
         return count
 
     @POLL
@@ -215,6 +234,7 @@ def main():
             (0x10010, "cgram"),
             (0x10011, "oam"),
             (0x10012, "registers"),
+            (0x10013, "spc-ram"),
         ]:
             ptr = core.retro_get_memory_data(ident)
             size = core.retro_get_memory_size(ident)
@@ -228,6 +248,13 @@ def main():
             raise RuntimeError("Save-state capture failed")
         Path(str(prefix) + ".state").write_bytes(sb.raw)
 
+    audio_rate = 0
+    if args.audio:
+        av = AVInfo()
+        core.retro_get_system_av_info.argtypes = [ct.POINTER(AVInfo)]
+        core.retro_get_system_av_info(ct.byref(av))
+        audio_rate = round(av.timing.sample_rate)
+        if audio_rate <= 0:raise RuntimeError("Core did not supply an audio sample rate")
     core.retro_run.restype = None
     for frame in range(1, args.frames + 1):
         core.retro_run()
@@ -247,6 +274,9 @@ def main():
         )
         + "\n"
     )
+    if args.audio:
+        with wave.open(str(args.output / "audio.wav"), "wb") as audio_file:
+            audio_file.setnchannels(2);audio_file.setsampwidth(2);audio_file.setframerate(audio_rate);audio_file.writeframes(audio_frames)
     core.retro_unload_game()
     core.retro_deinit()
 

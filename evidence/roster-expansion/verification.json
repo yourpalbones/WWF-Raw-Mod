@@ -1,0 +1,14 @@
+{
+  "menu_index": 12,
+  "selectable_profile_count": 13,
+  "expanded_profile_table_offset": 3899392,
+  "record_stride": 45,
+  "new_profile_is_duplicate_of_bret": true,
+  "native_match_actor_directory_value": 24,
+  "native_primary_part_events_during_movement": 18,
+  "directory_aliases_shawn": true,
+  "new_slot_monitor_references_supported": false,
+  "full_move_ai_roster_coverage_verified": false,
+  "shipped_in_editor": false,
+  "note": "A selectable extra slot and a native match are proven. This is an internal reuse probe, not a fully independent new wrestler."
+}

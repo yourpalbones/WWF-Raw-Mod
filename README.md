@@ -2,11 +2,16 @@
 
 ## Wrestler editor prototype
 
-[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.3.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
+[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.4.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
 
 Paint all 12 wrestlers’ original sprites, preview 102 captured poses,
-change selection portraits and bios, save projects and export IPS patches. Full animation coverage remains incomplete.
+change selection portraits, monitor photos, bios, in-match names and existing
+theme assignments, save projects and export playable ROMs or IPS patches. Full animation coverage remains incomplete.
 
+
+[Scott Hall health-bar name proof](evidence/match-names/README.md) ·
+[Custom theme melody proof](evidence/theme-music/README.md) ·
+[Thirteenth-slot research](evidence/roster-expansion/README.md)
 
 Original tools for decoding and reconstructing WWF Raw (USA) graphics.
 We have recovered complete in-ring frames of **Bret Hart** and **Undertaker**,

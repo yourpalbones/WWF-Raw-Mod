@@ -1,0 +1,72 @@
+--- a/cpuexec.cpp
++++ b/cpuexec.cpp
+@@ -108,6 +108,8 @@
+     if (!dir) return;
+     unsigned pc = Registers.PBPC & 0xffffff;
+     WWFTraceTile(pc, dir);
++    if(std::getenv("WWF_LIMIT_PROBE")){unsigned off=pc&0x3fffff,op=Memory.ROM[off],imm=Memory.ROM[off+1]|(Memory.ROM[off+2]<<8);if((op==0xc9||op==0xc0||op==0xe0)&&(imm==12||imm==24||imm==11||imm==22)){char path[1024];std::snprintf(path,sizeof(path),"%s/limits.jsonl",dir);FILE*f=std::fopen(path,"a");if(f){std::fprintf(f,"{\"frame\":%u,\"pc\":%u,\"op\":%u,\"imm\":%u,\"a\":%u,\"x\":%u,\"y\":%u}\n",WWFFrame,pc,op,imm,Registers.A.W,Registers.X.W,Registers.Y.W);std::fclose(f);}}}
++
+     if (pc == 0x80ecc1 || pc == 0x80ed19) {
+         unsigned table = pc == 0x80ecc1 ? 0x2dd513 : 0x2dd547;
+         unsigned x = Registers.X.W, part = Registers.A.W;
+--- a/libretro/libretro.cpp
++++ b/libretro/libretro.cpp
+@@ -2321,6 +2321,7 @@
+     return Settings.PAL ? RETRO_REGION_PAL : RETRO_REGION_NTSC;
+ }
+ 
++extern uint8* WWFAPURAM();
+ void* retro_get_memory_data(unsigned type)
+ {
+     void* data;
+@@ -2348,6 +2349,9 @@
+             break;
+         case 0x10011:
+             data = PPU.OAMData;
++            break;
++        case 0x10013:
++            data = WWFAPURAM();
+             break;
+         case 0x10012:
+             data = Memory.FillRAM;
+@@ -2391,6 +2395,9 @@
+             break;
+         case 0x10011:
+             size = 544;
++            break;
++        case 0x10013:
++            size = 65536;
+             break;
+         case 0x10012:
+             size = 32768;
+--- a/apu/apu.cpp
++++ b/apu/apu.cpp
+@@ -381,3 +381,5 @@
+     // blargg stores CPUIx in regs_in
+     memcpy(SNES::cpu.registers, regs_in + 4, 4);
+ }
++
++uint8* WWFAPURAM() { return SNES::smp.apuram; }
+--- a/apu/bapu/smp/core.cpp
++++ b/apu/bapu/smp/core.cpp
+@@ -25,6 +25,8 @@
+ }
+ 
+ uint8 SMP::op_read(uint16 addr) {
++  const char*dir=std::getenv("WWF_TRACE_DIR");if(dir && std::getenv("WWF_AUDIO_PROBE") && addr>=0x8c79 && addr<0x8fe3){char path[1024];std::snprintf(path,sizeof(path),"%s/score-reads.txt",dir);FILE*f=std::fopen(path,"a");if(f){std::fprintf(f,"%u %04x %04x %02x A=%02x X=%02x Y=%02x\n",::WWFFrame,regs.pc,addr,apuram[addr],regs.B.a,regs.x,regs.B.y);std::fclose(f);}}
++
+   tick();
+   if((addr & 0xfff0) == 0x00f0) return mmio_read(addr);
+   if(addr >= 0xffc0 && status.iplrom_enable) return iplrom[addr & 0x3f];
+--- a/apu/bapu/smp/smp.cpp
++++ b/apu/bapu/smp/smp.cpp
+@@ -5,6 +5,9 @@
+ #endif
+ 
+ #include "../snes/snes.hpp"
++#include <cstdio>
++#include <cstdlib>
++extern unsigned WWFFrame;
+ 
+ #define SMP_CPP
+ namespace SNES {
