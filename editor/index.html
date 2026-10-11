@@ -2,7 +2,7 @@
 <html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>WWF Raw • Gear workshop</title>
 <style>
-body{background:#14161e;color:#eee;font:16px system-ui;margin:0;padding:28px;max-width:1100px}h1{margin:0 0 8px}p{color:#bbc1d1;line-height:1.5}button,select,input{font:inherit}button,select,.file{background:#292d3e;color:white;border:1px solid #52596d;border-radius:6px;padding:9px;cursor:pointer}button:disabled{opacity:.4;cursor:default}.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:16px 0}.workspace{display:flex;gap:32px;flex-wrap:wrap}canvas{image-rendering:pixelated;background:repeating-conic-gradient(#303441 0% 25%,#252936 0% 50%) 0/16px 16px;touch-action:none;max-width:100%}#colors{display:flex;gap:5px;flex-wrap:wrap;max-width:350px}.swatch{width:36px;height:36px;padding:0}.swatch.selected{outline:3px solid white;outline-offset:2px}#status{min-height:48px}a{color:#eb87c8}.file input{max-width:250px}aside{max-width:390px}small{color:#bbc1d1}
+body{background:#14161e;color:#eee;font:16px system-ui;margin:0;padding:28px;max-width:1100px}h1{margin:0 0 8px}p{color:#bbc1d1;line-height:1.5}button,select,input,textarea{font:inherit}textarea{width:240px}button,select,.file{background:#292d3e;color:white;border:1px solid #52596d;border-radius:6px;padding:9px;cursor:pointer}button:disabled{opacity:.4;cursor:default}.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:16px 0}.workspace{display:flex;gap:32px;flex-wrap:wrap}canvas{image-rendering:pixelated;background:repeating-conic-gradient(#303441 0% 25%,#252936 0% 50%) 0/16px 16px;touch-action:none;max-width:100%}#colors{display:flex;gap:5px;flex-wrap:wrap;max-width:350px}.swatch{width:36px;height:36px;padding:0}.swatch.selected{outline:3px solid white;outline-offset:2px}#status{min-height:48px}a{color:#eb87c8}.file input{max-width:250px}aside{max-width:390px}small{color:#bbc1d1}
 </style>
 <h1>Gear workshop</h1>
 <p id="character-title">All 12 wrestlers · Original WWF Raw sprite work · Captured poses</p>
@@ -20,5 +20,17 @@ body{background:#14161e;color:#eee;font:16px system-ui;margin:0;padding:28px;max
 <p><strong>Coverage:</strong> these sampled layouts come from original-game captures. They do not cover every move. New edits still need emulator testing through the rest of the moves. Shared tiles may affect other poses or characters. The exporter refuses compressed edits that exceed their original allocation.</p>
 <a href="../docs/editor-roadmap.md">Editor roadmap and remaining coverage</a>
 </aside></div>
-<script src="roster-layouts.js"></script><script src="editor.js"></script>
+<section><h2>Selection image and bio</h2>
+<p>Choose a wrestler above. Import an image to replace their selection portrait. The image is centered, cropped to 128 × 120, and reduced to 64 SNES colors.</p>
+<div class="workspace"><div><canvas id="portrait" width="128" height="120" style="width:256px;height:240px" aria-label="Selection portrait preview"></canvas><p><label class="file">Import portrait <input id="portrait-import" type="file" accept="image/png,image/jpeg,image/webp" disabled></label></p></div>
+<div id="bio-form"><p><label>Name (letters and spaces; also used elsewhere in the game)<br><input id="bio-name" maxlength="14" disabled></label></p>
+<p><label>From (up to 3 lines, 12 characters each)<br><textarea id="bio-from" rows="3" disabled></textarea></label></p>
+<p><label>Weight in pounds<br><input id="bio-weight" maxlength="3" inputmode="numeric" disabled></label></p>
+<p><label>Height<br><input id="bio-height" maxlength="8" disabled></label></p>
+<p><label>Special move label (up to 3 lines, 11 characters each)<br><textarea id="bio-special" rows="3" disabled></textarea></label></p>
+<div class="row"><button id="bio-apply" disabled>Save bio</button><button id="selection-restore" disabled>Restore portrait and bio</button></div>
+<p>The special move label changes its displayed name. Use the move editor research to change its gameplay.</p></div></div>
+<p id="selection-status" role="status">Load the original ROM to preview selection assets.</p>
+<p>Portrait patches expand a copy of the ROM to 4 MiB. Bio export preserves original shared strings and refuses edits that exceed the available text space.</p></section>
+<script src="roster-layouts.js"></script><script src="selection-layouts.js"></script><script src="editor.js"></script><script src="selection.js"></script>
 </html>

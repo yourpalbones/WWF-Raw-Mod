@@ -1,0 +1,86 @@
+{
+  "characters": 12,
+  "portrait_decodes_matched": 12,
+  "portrait_patch_roundtrips": 12,
+  "bios_patch_roundtrips": 12,
+  "expanded_rom_bytes": 4194304,
+  "checksum_verified": true,
+  "shared_original_strings_preserved": true,
+  "project_undo_and_validation_passed": true,
+  "text_space_overflow_refused": true,
+  "emulator_checks": [
+    {
+      "character": "Undertaker",
+      "portrait_vram_exact": true,
+      "portrait_palette_cgram_exact": true,
+      "menu_frame": 300
+    },
+    {
+      "character": "Yokozuna",
+      "portrait_vram_exact": true,
+      "portrait_palette_cgram_exact": true,
+      "menu_frame": 600
+    },
+    {
+      "character": "Bam Bam Bigelow",
+      "portrait_vram_exact": true,
+      "portrait_palette_cgram_exact": true,
+      "menu_frame": 900
+    },
+    {
+      "character": "Razor Ramon",
+      "portrait_vram_exact": true,
+      "portrait_palette_cgram_exact": true,
+      "menu_frame": 1200
+    },
+    {
+      "character": "Lex Luger",
+      "portrait_vram_exact": true,
+      "portrait_palette_cgram_exact": true,
+      "menu_frame": 1500
+    },
+    {
+      "character": "Doink",
+      "portrait_vram_exact": true,
+      "portrait_palette_cgram_exact": true,
+      "menu_frame": 1800
+    },
+    {
+      "character": "Shawn Michaels",
+      "portrait_vram_exact": true,
+      "portrait_palette_cgram_exact": true,
+      "menu_frame": 2100
+    },
+    {
+      "character": "1-2-3 Kid",
+      "portrait_vram_exact": true,
+      "portrait_palette_cgram_exact": true,
+      "menu_frame": 2400
+    },
+    {
+      "character": "Diesel",
+      "portrait_vram_exact": true,
+      "portrait_palette_cgram_exact": true,
+      "menu_frame": 2700
+    },
+    {
+      "character": "Owen Hart",
+      "portrait_vram_exact": true,
+      "portrait_palette_cgram_exact": true,
+      "menu_frame": 3000
+    },
+    {
+      "character": "Luna Vachon",
+      "portrait_vram_exact": true,
+      "portrait_palette_cgram_exact": true,
+      "menu_frame": 3300
+    },
+    {
+      "character": "Bret Hart",
+      "portrait_vram_exact": true,
+      "portrait_palette_cgram_exact": true,
+      "menu_frame": 3600
+    }
+  ],
+  "patched_rom_sha256": "6deaff0b4743184a5d81c7dc4cd71351945c9f93baabdeb6c46686b152ae2e32"
+}

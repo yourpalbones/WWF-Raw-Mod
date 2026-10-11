@@ -1,11 +1,11 @@
 # WWF Raw SNES research tools
 
-## Gear editor prototype
+## Wrestler editor prototype
 
 [Try the 12-wrestler gear workshop](editor/README.md) · [View the running editor](evidence/roster-editor/workshop.png)
 
 Paint all 12 wrestlers’ original sprites, preview 102 captured poses,
-save projects and export IPS patches. Full animation coverage remains incomplete.
+change selection portraits and bios, save projects and export IPS patches. Full animation coverage remains incomplete.
 
 
 Original tools for decoding and reconstructing WWF Raw (USA) graphics.

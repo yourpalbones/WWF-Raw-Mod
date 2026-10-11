@@ -2,7 +2,7 @@
 <html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>WWF Raw • Gear workshop</title>
 <style>
-body{background:#14161e;color:#eee;font:16px system-ui;margin:0;padding:28px;max-width:1100px}h1{margin:0 0 8px}p{color:#bbc1d1;line-height:1.5}button,select,input{font:inherit}button,select,.file{background:#292d3e;color:white;border:1px solid #52596d;border-radius:6px;padding:9px;cursor:pointer}button:disabled{opacity:.4;cursor:default}.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:16px 0}.workspace{display:flex;gap:32px;flex-wrap:wrap}canvas{image-rendering:pixelated;background:repeating-conic-gradient(#303441 0% 25%,#252936 0% 50%) 0/16px 16px;touch-action:none;max-width:100%}#colors{display:flex;gap:5px;flex-wrap:wrap;max-width:350px}.swatch{width:36px;height:36px;padding:0}.swatch.selected{outline:3px solid white;outline-offset:2px}#status{min-height:48px}a{color:#eb87c8}.file input{max-width:250px}aside{max-width:390px}small{color:#bbc1d1}
+body{background:#14161e;color:#eee;font:16px system-ui;margin:0;padding:28px;max-width:1100px}h1{margin:0 0 8px}p{color:#bbc1d1;line-height:1.5}button,select,input,textarea{font:inherit}textarea{width:240px}button,select,.file{background:#292d3e;color:white;border:1px solid #52596d;border-radius:6px;padding:9px;cursor:pointer}button:disabled{opacity:.4;cursor:default}.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:16px 0}.workspace{display:flex;gap:32px;flex-wrap:wrap}canvas{image-rendering:pixelated;background:repeating-conic-gradient(#303441 0% 25%,#252936 0% 50%) 0/16px 16px;touch-action:none;max-width:100%}#colors{display:flex;gap:5px;flex-wrap:wrap;max-width:350px}.swatch{width:36px;height:36px;padding:0}.swatch.selected{outline:3px solid white;outline-offset:2px}#status{min-height:48px}a{color:#eb87c8}.file input{max-width:250px}aside{max-width:390px}small{color:#bbc1d1}
 </style>
 <h1>Gear workshop</h1>
 <p id="character-title">All 12 wrestlers · Original WWF Raw sprite work · Captured poses</p>
@@ -20,6 +20,18 @@ body{background:#14161e;color:#eee;font:16px system-ui;margin:0;padding:28px;max
 <p><strong>Coverage:</strong> these sampled layouts come from original-game captures. They do not cover every move. New edits still need emulator testing through the rest of the moves. Shared tiles may affect other poses or characters. The exporter refuses compressed edits that exceed their original allocation.</p>
 <a href="https://github.com/yourpalbones/WWF-Raw-Mod/blob/main/docs/editor-roadmap.md">Editor roadmap and remaining coverage</a>
 </aside></div>
+<section><h2>Selection image and bio</h2>
+<p>Choose a wrestler above. Import an image to replace their selection portrait. The image is centered, cropped to 128 × 120, and reduced to 64 SNES colors.</p>
+<div class="workspace"><div><canvas id="portrait" width="128" height="120" style="width:256px;height:240px" aria-label="Selection portrait preview"></canvas><p><label class="file">Import portrait <input id="portrait-import" type="file" accept="image/png,image/jpeg,image/webp" disabled></label></p></div>
+<div id="bio-form"><p><label>Name (letters and spaces; also used elsewhere in the game)<br><input id="bio-name" maxlength="14" disabled></label></p>
+<p><label>From (up to 3 lines, 12 characters each)<br><textarea id="bio-from" rows="3" disabled></textarea></label></p>
+<p><label>Weight in pounds<br><input id="bio-weight" maxlength="3" inputmode="numeric" disabled></label></p>
+<p><label>Height<br><input id="bio-height" maxlength="8" disabled></label></p>
+<p><label>Special move label (up to 3 lines, 11 characters each)<br><textarea id="bio-special" rows="3" disabled></textarea></label></p>
+<div class="row"><button id="bio-apply" disabled>Save bio</button><button id="selection-restore" disabled>Restore portrait and bio</button></div>
+<p>The special move label changes its displayed name. Use the move editor research to change its gameplay.</p></div></div>
+<p id="selection-status" role="status">Load the original ROM to preview selection assets.</p>
+<p>Portrait patches expand a copy of the ROM to 4 MiB. Bio export preserves original shared strings and refuses edits that exceed the available text space.</p></section>
 <script>
 window.RAW_EDITOR_MANIFEST = {
   "version": 2,
@@ -44619,6 +44631,200 @@ window.RAW_EDITOR_MANIFEST = {
 };
 
 </script><script>
+window.RAW_SELECTION_MANIFEST = {
+  "characters": {
+    "0": {
+      "record": 3078901,
+      "portrait_offset": 2981888,
+      "portrait_length": 8466,
+      "palette_offset": 3066973,
+      "width": 128,
+      "height": 120,
+      "fields": {
+        "name": 3078929,
+        "from": 3078931,
+        "weight": 3078933,
+        "height": 3078937,
+        "special": 3078939
+      }
+    },
+    "1": {
+      "record": 3078946,
+      "portrait_offset": 2850816,
+      "portrait_length": 7311,
+      "palette_offset": 3001526,
+      "width": 128,
+      "height": 120,
+      "fields": {
+        "name": 3078974,
+        "from": 3078976,
+        "weight": 3078978,
+        "height": 3078982,
+        "special": 3078984
+      }
+    },
+    "2": {
+      "record": 3078991,
+      "portrait_offset": 2902364,
+      "portrait_length": 4681,
+      "palette_offset": 3001334,
+      "width": 128,
+      "height": 120,
+      "fields": {
+        "name": 3079019,
+        "from": 3079021,
+        "weight": 3079023,
+        "height": 3079027,
+        "special": 3079029
+      }
+    },
+    "3": {
+      "record": 3079036,
+      "portrait_offset": 241339,
+      "portrait_length": 7575,
+      "palette_offset": 38546,
+      "width": 128,
+      "height": 120,
+      "fields": {
+        "name": 3079064,
+        "from": 3079066,
+        "weight": 3079068,
+        "height": 3079072,
+        "special": 3079074
+      }
+    },
+    "4": {
+      "record": 3079081,
+      "portrait_offset": 3112960,
+      "portrait_length": 6782,
+      "palette_offset": 32509,
+      "width": 128,
+      "height": 120,
+      "fields": {
+        "name": 3079109,
+        "from": 3079111,
+        "weight": 3079113,
+        "height": 3079117,
+        "special": 3079119
+      }
+    },
+    "5": {
+      "record": 3079126,
+      "portrait_offset": 2960954,
+      "portrait_length": 8881,
+      "palette_offset": 1721297,
+      "width": 128,
+      "height": 120,
+      "fields": {
+        "name": 3079154,
+        "from": 3079156,
+        "weight": 3079158,
+        "height": 3079162,
+        "special": 3079164
+      }
+    },
+    "6": {
+      "record": 3079171,
+      "portrait_offset": 2916352,
+      "portrait_length": 6718,
+      "palette_offset": 1690685,
+      "width": 128,
+      "height": 120,
+      "fields": {
+        "name": 3079199,
+        "from": 3079201,
+        "weight": 3079203,
+        "height": 3079207,
+        "special": 3079209
+      }
+    },
+    "7": {
+      "record": 3079216,
+      "portrait_offset": 2794890,
+      "portrait_length": 5881,
+      "palette_offset": 1933031,
+      "width": 128,
+      "height": 120,
+      "fields": {
+        "name": 3079244,
+        "from": 3079246,
+        "weight": 3079248,
+        "height": 3079252,
+        "special": 3079254
+      }
+    },
+    "8": {
+      "record": 3079261,
+      "portrait_offset": 3047424,
+      "portrait_length": 8157,
+      "palette_offset": 2935865,
+      "width": 128,
+      "height": 120,
+      "fields": {
+        "name": 3079289,
+        "from": 3079291,
+        "weight": 3079293,
+        "height": 3079297,
+        "special": 3079299
+      }
+    },
+    "9": {
+      "record": 3079306,
+      "portrait_offset": 3090233,
+      "portrait_length": 9910,
+      "palette_offset": 1670864,
+      "width": 128,
+      "height": 120,
+      "fields": {
+        "name": 3079334,
+        "from": 3079336,
+        "weight": 3079338,
+        "height": 3079342,
+        "special": 3079344
+      }
+    },
+    "10": {
+      "record": 3079351,
+      "portrait_offset": 3025485,
+      "portrait_length": 9818,
+      "palette_offset": 2981644,
+      "width": 128,
+      "height": 120,
+      "fields": {
+        "name": 3079379,
+        "from": 3079381,
+        "weight": 3079383,
+        "height": 3079387,
+        "special": 3079389
+      }
+    },
+    "11": {
+      "record": 3079396,
+      "portrait_offset": 1643267,
+      "portrait_length": 9990,
+      "palette_offset": 2870250,
+      "width": 128,
+      "height": 120,
+      "fields": {
+        "name": 3079424,
+        "from": 3079426,
+        "weight": 3079428,
+        "height": 3079432,
+        "special": 3079434
+      }
+    }
+  },
+  "text_regions": [
+    {
+      "offset": 3080009,
+      "length": 183
+    }
+  ],
+  "portrait_base": 3145728,
+  "portrait_stride": 16384
+};
+
+</script><script>
 /* ROM bytes remain local; the published layout contains addresses only. */
 'use strict';
 const C=window.RAW_EDITOR_MANIFEST, $=id=>document.getElementById(id);
@@ -44652,46 +44858,120 @@ function render(){if(!rom)return;currentPalette();const pose=M.poses[Number($('p
  for(const part of [...pose.parts].reverse())for(let y=0;y<part.size;y++)for(let x=0;x<part.size;x++){
  const sx=part.hflip?part.size-1-x:x,sy=part.vflip?part.size-1-y:y,key=part.tiles[(sy>>3)*(part.size>>3)+(sx>>3)];if(key===null)continue;
  const index=(sy%8)*8+sx%8,color=pixels(key)[index];if(!color)continue;const dest=(part.y+y)*pose.width+part.x+x;image.data.set([...colors[color],255],dest*4);cells[dest]={key,index};}
- ctx.putImageData(image,0,0);refreshColors();$('undo').disabled=!history.length;
+ renderSelection();ctx.putImageData(image,0,0);refreshColors();$('undo').disabled=!history.length;
  const shared=Object.keys(edits).filter(key=>M.sources[key] && C.characters.some(c=>c.id!==M.id && c.sources[key]));
  const users=C.characters.filter(c=>c.id!==M.id && shared.some(key=>c.sources[key])).map(c=>c.character);
  $('shared').textContent=users.length?'Edited tiles in this wrestler are also used by: '+users.join(', ')+'. Changes apply to those shared sources too.':'No edited sources shared with another loaded wrestler are detected. Shared uses outside these captures remain unverified.';
  $('details').textContent=`${Object.keys(edits).length} edited tile sources; ${Object.values(palettes).reduce((n,p)=>n+Object.keys(p).length,0)} changed palette colors across the roster. Edits follow the same source into every loaded pose that uses it. Other animations and shared users remain unverified.`;
 }
-function remember(){history.push(structuredClone({edits,palettes}));if(history.length>100)history.shift();}
+function remember(){history.push(structuredClone({edits,palettes,selectionEdits}));if(history.length>100)history.shift();}
 function paint(event){if(!rom)return;const rect=canvas.getBoundingClientRect(),x=Math.floor((event.clientX-rect.left)*canvas.width/rect.width),y=Math.floor((event.clientY-rect.top)*canvas.height/rect.height);if(x<0||y<0||x>=canvas.width||y>=canvas.height)return;const cell=cells[y*canvas.width+x];if(!cell)return;
  const copy=pixels(cell.key).slice();copy[cell.index]=selected;
  if(copy.every((c,i)=>c===originals[cell.key][i]))delete edits[cell.key];else edits[cell.key]=copy;render();}
 function download(name,data,type){const url=URL.createObjectURL(new Blob([data],{type})),link=document.createElement('a');link.href=url;link.download=name;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
-function patch(){if(!rom)throw Error('Load a ROM first');const result=rom.slice(),records=[];for(const [key,p] of Object.entries(edits)){const source=C.sources[key],packet=encode(p,source.compressed);if(packet.length>source.length)throw Error(`Tile at ${source.offset.toString(16)} needs more space. Undo or simplify that edit; relocation is not supported yet.`);result.set(packet,source.offset);records.push([source.offset,packet]);}
+function patch(){if(!rom)throw Error('Load a ROM first');const selection=selectionRecords(),result=new Uint8Array(selection.expanded?0x400000:rom.length),records=[];result.fill(255);result.set(rom);for(const [key,p] of Object.entries(edits)){const source=C.sources[key],packet=encode(p,source.compressed);if(packet.length>source.length)throw Error(`Tile at ${source.offset.toString(16)} needs more space. Undo or simplify that edit; relocation is not supported yet.`);result.set(packet,source.offset);records.push([source.offset,packet]);}
  for(const character of C.characters)for(const [index,value] of Object.entries(palettes[character.id]||{})){const offset=character.palette_offset+Number(index)*2,packet=new Uint8Array([value&255,value>>8]);result.set(packet,offset);records.push([offset,packet]);}
+ for(const [offset,packet]of selection.records){result.set(packet,offset);records.push([offset,packet]);}
  // 3 MiB HiROM is mirrored to 4 MiB for the native checksum.
- let checksum=0;for(let i=0;i<result.length;i++)checksum=(checksum+result[i]*(i>=0x200000?2:1))&65535;
+ let checksum=0;for(let i=0;i<result.length;i++)checksum=(checksum+result[i]*(result.length===0x300000&&i>=0x200000?2:1))&65535;
  const complement=checksum^65535;records.push([0xffdc,new Uint8Array([complement&255,complement>>8,checksum&255,checksum>>8])]);
- const out=[80,65,84,67,72];for(const [offset,packet]of records)out.push(offset>>16,(offset>>8)&255,offset&255,packet.length>>8,packet.length&255,...packet);out.push(69,79,70);return new Uint8Array(out);}
+ const out=[80,65,84,67,72];if(selection.expanded)for(let address=0x300000;address<0x400000;){const length=Math.min(65535,0x400000-address);out.push(address>>16,address>>8&255,address&255,0,0,length>>8,length&255,255);address+=length;}for(const [offset,packet]of records)out.push(offset>>16,(offset>>8)&255,offset&255,packet.length>>8,packet.length&255,...packet);out.push(69,79,70);return new Uint8Array(out);}
 function stop(){clearInterval(timer);timer=null;$('play').textContent='Play poses';}
-$('rom').onchange=async event=>{stop();rom=null;try{let bytes=new Uint8Array(await event.target.files[0].arrayBuffer());if(bytes.length%1024===512)bytes=bytes.slice(512);const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');if(digest!==M.original_sha256)throw Error('This version requires the original, unmodified WWF Raw USA ROM.');rom=bytes;originals={};edits={};palettes={};paletteEdits={};history=[];for(const [key,source]of Object.entries(C.sources))originals[key]=decode(rom,source);
- $('wrestler').replaceChildren(...C.characters.map(c=>new Option(c.character,c.id)));$('wrestler').value=M.id;loadCharacter(M.id);for(const id of ['wrestler','pose','play','reset','save','patch','png','project','palette-color','palette-apply'])$(id).disabled=false;status('Original ROM verified. Paint a pose or preview the captured layouts.');render();}catch(e){for(const id of ['wrestler','pose','play','reset','save','patch','png','project','undo','palette-color','palette-apply','palette-restore'])$(id).disabled=true;ctx.clearRect(0,0,canvas.width,canvas.height);status(e.message);}};
+$('rom').onchange=async event=>{stop();rom=null;try{let bytes=new Uint8Array(await event.target.files[0].arrayBuffer());if(bytes.length%1024===512)bytes=bytes.slice(512);const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');if(digest!==M.original_sha256)throw Error('This version requires the original, unmodified WWF Raw USA ROM.');rom=bytes;originals={};edits={};palettes={};selectionEdits={};selectionOriginals={};paletteEdits={};history=[];for(const [key,source]of Object.entries(C.sources))originals[key]=decode(rom,source);
+ $('wrestler').replaceChildren(...C.characters.map(c=>new Option(c.character,c.id)));$('wrestler').value=M.id;loadCharacter(M.id);for(const id of ['wrestler','pose','play','reset','save','patch','png','project','palette-color','palette-apply','portrait-import','bio-name','bio-from','bio-weight','bio-height','bio-special','bio-apply','selection-restore'])$(id).disabled=false;status('Original ROM verified. Paint a pose or preview the captured layouts.');render();}catch(e){for(const id of ['wrestler','pose','play','reset','save','patch','png','project','undo','palette-color','palette-apply','palette-restore','portrait-import','bio-name','bio-from','bio-weight','bio-height','bio-special','bio-apply','selection-restore'])$(id).disabled=true;ctx.clearRect(0,0,canvas.width,canvas.height);status(e.message);}};
 function loadCharacter(id){stop();M=C.characters.find(c=>c.id===id);$('character-title').textContent=M.character+' · Original WWF Raw sprites · Captured poses';$('pose').replaceChildren(...M.poses.map((p,i)=>new Option(p.label,i)));render();}
 $('wrestler').onchange=()=>loadCharacter($('wrestler').value);
 $('pose').onchange=()=>{stop();render();};$('zoom').onchange=render;
 canvas.onpointerdown=e=>{if(!rom)return;stop();remember();drawing=true;canvas.setPointerCapture(e.pointerId);paint(e);};canvas.onpointermove=e=>{if(drawing)paint(e);};canvas.onpointerup=canvas.onpointercancel=()=>{drawing=false;};
-$('undo').onclick=()=>{const previous=history.pop();if(previous){edits=previous.edits;palettes=previous.palettes;}render();};$('reset').onclick=()=>{remember();edits={};palettes={};render();};
+$('undo').onclick=()=>{const previous=history.pop();if(previous){edits=previous.edits;palettes=previous.palettes;selectionEdits=previous.selectionEdits;}render();};$('reset').onclick=()=>{remember();edits={};palettes={};selectionEdits={};render();};
 $('palette-apply').onclick=()=>{if(!rom)return;const hex=$('palette-color').value;const rgb=[1,3,5].map(i=>Math.round(parseInt(hex.slice(i,i+2),16)*31/255));const value=rgb[0]|rgb[1]<<5|rgb[2]<<10;if(value===paletteValue(selected))return;remember();const original=rom[M.palette_offset+selected*2]|rom[M.palette_offset+selected*2+1]<<8;if(value===original)delete paletteEdits[selected];else paletteEdits[selected]=value;render();status('Color updated to the nearest SNES color. Preview other poses to check every visible use.');};
 $('palette-restore').onclick=()=>{if(!rom)return;remember();delete paletteEdits[selected];render();};
 $('play').onclick=()=>{if(timer){stop();return;}$('play').textContent='Stop';timer=setInterval(()=>{$('pose').value=(Number($('pose').value)+1)%M.poses.length;render();},160);};
-$('save').onclick=()=>download('raw-gear-project.json',JSON.stringify({version:3,original_sha256:C.original_sha256,edits,palettes},null,2),'application/json');
+$('save').onclick=()=>download('raw-gear-project.json',JSON.stringify({version:4,original_sha256:C.original_sha256,edits,palettes,selection_edits:selectionEdits},null,2),'application/json');
 $('project').onchange=async event=>{try{
  const project=JSON.parse(await event.target.files[0].text());
- if(![1,2,3].includes(project.version)||project.original_sha256!==C.original_sha256||!project.edits||typeof project.edits!=='object'||Array.isArray(project.edits))throw Error('Project does not match this editor.');
+ if(![1,2,3,4].includes(project.version)||project.original_sha256!==C.original_sha256||!project.edits||typeof project.edits!=='object'||Array.isArray(project.edits))throw Error('Project does not match this editor.');
  for(const [key,p]of Object.entries(project.edits))if(!Object.hasOwn(C.sources,key)||!Array.isArray(p)||p.length!==64||p.some((v,i)=>!Number.isInteger(v)||v<0||v>15||((originals[key][i]===0)!==(v===0))))throw Error('Project contains invalid tile edits.');
- const colors=project.version===3?project.palettes:{'1':project.version===1?{}:project.palette_edits};
+ const colors=project.version>=3?project.palettes:{'1':project.version===1?{}:project.palette_edits};
  if(!colors||typeof colors!=='object'||Array.isArray(colors))throw Error('Project contains invalid palette edits.');
  for(const [id,p]of Object.entries(colors))if(!C.characters.some(c=>c.id===id)||!p||typeof p!=='object'||Array.isArray(p)||Object.entries(p).some(([key,v])=>!/^([1-9]|1[0-5])$/.test(key)||!Number.isInteger(v)||v<0||v>32767))throw Error('Project contains invalid palette edits.');
- remember();edits=structuredClone(project.edits);palettes=structuredClone(colors);render();status('Project loaded. Edits still need emulator verification.');
+ const selection=project.version===4?project.selection_edits:{};validateSelection(selection);
+ remember();edits=structuredClone(project.edits);palettes=structuredClone(colors);selectionEdits=structuredClone(selection);render();status('Project loaded. Edits still need emulator verification.');
  }catch(e){status(e.message);}event.target.value='';};
 $('patch').onclick=()=>{try{download('raw-gear.ips',patch(),'application/octet-stream');status('Patch exported. Apply it to a copy of your original ROM, then test in an emulator.');}catch(e){status(e.message);}};
 $('png').onclick=()=>canvas.toBlob(blob=>download(M.character.toLowerCase().replaceAll(' ','-')+'-pose.png',blob,'image/png'));
+
+</script><script>
+/* Selection assets are decoded locally from the verified original ROM. */
+const S=window.RAW_SELECTION_MANIFEST;
+let selectionEdits={}, selectionOriginals={};
+function decodePortrait(data,offset){
+ const length=data[offset]|data[offset+1]<<8, mode=data[offset+2], out=new Uint8Array(length);let cursor=offset+3,y=length+(mode===2&&length%2===0?1:0),first=true;
+ const read=()=>data[cursor++],put=(p,v)=>{if(p<0||p>=length)throw Error('Invalid portrait block');out[p]=v;};
+ for(let limit=0;limit<length*2+1024;limit++){
+  if(mode===2&&first&&y===1){y=length+(length&1);first=false;}
+  const control=read(),step=mode===2?2:1;
+  if(control&128){const distance=((control&7)<<8|read())+1,count=((control&120)>>3)+3;y-=step*count;let source=y+step*distance;if(mode===2&&source>=length)source=source-length+(length%2===0?1:0);for(let i=count-1;i>=0;i--)put(y+step*i,out[source+step*i]);}
+  else if(control&64){const count=(control&63)+1,values=Array.from({length:count},read);y-=step*count;values.forEach((v,i)=>put(y+step*i,v));}
+  else if(mode===1&&control&32){y--;put(y,out[y+(control&31)+1]);}
+  else if(mode===2&&control&32){const count=(control&31)+3,value=read();for(let i=0;i<count;i++){y-=2;put(y,(value-i)&255);}}
+  else if(control){const count=(control&31)+2,value=read();y-=step*count;for(let i=0;i<count;i++)put(y+step*i,value);}
+  else return out;
+ }
+ throw Error('Portrait decoder did not finish');
+}
+function portraitPacket(pixels){
+ const data=new Uint8Array(15360);
+ for(let y=0;y<120;y++)for(let x=0;x<128;x++){const color=pixels[y*128+x]+64,base=((y>>3)*16+(x>>3))*64;for(let p=0;p<8;p++)data[base+(p>>1)*16+(y%8)*2+(p&1)]|=((color>>p)&1)<<(7-x%8);}
+ const out=[0,60,1];for(let end=data.length;end>0;){const start=Math.max(0,end-64);out.push(64+(end-start)-1,...data.slice(start,end));end=start;}out.push(0);return new Uint8Array(out);
+}
+function originalSelection(id){
+ if(selectionOriginals[id])return selectionOriginals[id];const meta=S.characters[id],bytes=decodePortrait(rom,meta.portrait_offset),pixels=[];
+ for(let y=0;y<120;y++)for(let x=0;x<128;x++){let color=0,base=((y>>3)*16+(x>>3))*64;for(let p=0;p<8;p++)color|=((bytes[base+(p>>1)*16+(y%8)*2+(p&1)]>>(7-x%8))&1)<<p;if(color<64||color>127)throw Error('Unexpected portrait color range');pixels.push(color-64);}
+ const colors=Array.from({length:64},(_,i)=>rom[meta.palette_offset+i*2]|rom[meta.palette_offset+i*2+1]<<8);
+ const bio={};for(const [field,address]of Object.entries(meta.fields)){let pos=field==='weight'?address:0x2e0000+(rom[address]|rom[address+1]<<8),text='';while(rom[pos]!==0&&text.length<64)text+=String.fromCharCode(rom[pos++]);bio[field]=text.replaceAll('\r','\n');}
+ return selectionOriginals[id]={pixels,colors,bio};
+}
+function selectionState(id){const original=originalSelection(id),edit=selectionEdits[id]||{};return {portrait:edit.portrait||original,bio:{...original.bio,...edit.bio}};}
+function renderSelection(){if(!rom)return;const state=selectionState(M.id),canvas=$('portrait'),context=canvas.getContext('2d'),image=context.createImageData(128,120);
+ state.portrait.pixels.forEach((value,i)=>{const w=state.portrait.colors[value];image.data.set([0,5,10].map(s=>Math.floor((w>>s&31)*255/31)).concat(255),i*4);});context.putImageData(image,0,0);
+ for(const [field,value]of Object.entries(state.bio))$('bio-'+field).value=value;
+ const newText=new Set();for(const [id,edit]of Object.entries(selectionEdits))for(const [field,value]of Object.entries(edit.bio||{}))if(field!=='weight'&&value!==originalSelection(id).bio[field])newText.add(value);const textUsed=[...newText].reduce((n,text)=>n+text.length+1,0);
+ $('selection-status').textContent=`128 × 120 portrait · 64 colors · ${Object.values(selectionEdits).filter(e=>e.portrait).length} imported portraits. Bio text space: ${textUsed} of 183 used. Original shared strings are preserved.`;
+}
+function validateBio(bio,id=M.id){const limits={name:[1,14],from:[3,12],height:[1,8],special:[3,11],weight:[1,3]};
+ if(!bio||typeof bio!=='object'||Array.isArray(bio))throw Error('Invalid bio data');
+ for(const [field,value]of Object.entries(bio)){if(field==='name'&&value!==originalSelection(id).bio.name&&!/^[A-Z ]+$/.test(value))throw Error('New names support uppercase letters and spaces.');if(!Object.hasOwn(limits,field)||typeof value!=='string')throw Error('Invalid bio field');const [lines,width]=limits[field],parts=value.split('\n');if(!value||parts.length>lines||parts.some(p=>!p.length||p.length>width)||!/^[A-Z0-9 .,\-'"%\n]+$/.test(value)||(field==='weight'&&!/^\d{1,3}$/.test(value)))throw Error(`Check ${field}: uppercase text, up to ${lines} lines of ${width} characters.`);}
+}
+function validateSelection(edits){if(!edits||typeof edits!=='object'||Array.isArray(edits))throw Error('Invalid selection edits');
+ for(const [id,edit]of Object.entries(edits)){if(!Object.hasOwn(S.characters,id)||!edit||typeof edit!=='object'||Array.isArray(edit)||Object.keys(edit).some(k=>!['portrait','bio'].includes(k)))throw Error('Invalid selection character');if(edit.bio)validateBio(edit.bio,id);
+ if(edit.portrait){const p=edit.portrait;if(!Array.isArray(p.pixels)||p.pixels.length!==15360||p.pixels.some(v=>!Number.isInteger(v)||v<0||v>63)||!Array.isArray(p.colors)||p.colors.length!==64||p.colors.some(v=>!Number.isInteger(v)||v<0||v>32767))throw Error('Invalid portrait pixels or colors');}}
+}
+function selectionRecords(){const records=[],strings=new Map(),regions=S.text_regions.map(r=>({...r}));let expanded=false;
+ for(const [id,edit]of Object.entries(selectionEdits)){
+  const meta=S.characters[id];
+  if(edit.portrait){expanded=true;const address=S.portrait_base+Number(id)*S.portrait_stride,packet=portraitPacket(edit.portrait.pixels);records.push([address,packet],[meta.record,new Uint8Array([address&255,address>>8&255,(address>>16)|192])]);const palette=new Uint8Array(128);edit.portrait.colors.forEach((v,i)=>{palette[i*2]=v&255;palette[i*2+1]=v>>8;});records.push([meta.palette_offset,palette]);}
+  for(const [field,value]of Object.entries(edit.bio||{})){
+   if(value===originalSelection(id).bio[field])continue;
+   if(field==='weight'){const packet=new Uint8Array(4);packet.set(Array.from(value,c=>c.charCodeAt(0)));records.push([meta.fields.weight,packet]);continue;}
+   let address=strings.get(value);
+   if(address===undefined){const packet=new Uint8Array(Array.from(value.replaceAll('\n','\r')+'\0',c=>c.charCodeAt(0))),region=regions.find(r=>r.length>=packet.length);if(!region)throw Error('Edited bios exceed the available text space. Shorten some text before exporting.');address=region.offset;region.offset+=packet.length;region.length-=packet.length;strings.set(value,address);records.push([address,packet]);}
+   records.push([meta.fields[field],new Uint8Array([address&255,address>>8&255])]);
+  }
+ }
+ return {records,expanded};
+}
+function quantizePortrait(rgba){
+ const counts=new Map();for(let i=0;i<rgba.length;i+=4){const channels=[0,1,2].map(c=>Math.round(rgba[i+c]*31/255)),word=channels[0]|channels[1]<<5|channels[2]<<10;counts.set(word,(counts.get(word)||0)+1);}
+ let boxes=[[...counts].map(([word,count])=>({word,count,rgb:[word&31,word>>5&31,word>>10&31]}))];
+ const range=box=>[0,1,2].map(c=>Math.max(...box.map(p=>p.rgb[c]))-Math.min(...box.map(p=>p.rgb[c])));
+ while(boxes.length<64){let choice=-1,score=-1,axis=0;boxes.forEach((box,i)=>{if(box.length<2)return;const ranges=range(box),span=Math.max(...ranges);if(span>score){choice=i;score=span;axis=ranges.indexOf(span);}});if(choice<0)break;const box=boxes[choice].sort((a,b)=>a.rgb[axis]-b.rgb[axis]),total=box.reduce((n,p)=>n+p.count,0);let sum=0,cut=1;for(let i=0;i<box.length-1;i++){sum+=box[i].count;cut=i+1;if(sum>=total/2)break;}boxes.splice(choice,1,box.slice(0,cut),box.slice(cut));}
+ const colors=boxes.map(box=>{const total=box.reduce((n,p)=>n+p.count,0),rgb=[0,1,2].map(c=>Math.round(box.reduce((n,p)=>n+p.rgb[c]*p.count,0)/total));return rgb[0]|rgb[1]<<5|rgb[2]<<10;});while(colors.length<64)colors.push(colors[0]);const cache=new Map(),pixels=[];
+ for(let i=0;i<rgba.length;i+=4){const rgb=[0,1,2].map(c=>Math.round(rgba[i+c]*31/255)),word=rgb[0]|rgb[1]<<5|rgb[2]<<10;if(!cache.has(word)){let best=0,dist=Infinity;colors.forEach((v,k)=>{const d=[0,5,10].reduce((n,s,c)=>n+(rgb[c]-(v>>s&31))**2,0);if(d<dist){dist=d;best=k;}});cache.set(word,best);}pixels.push(cache.get(word));}return {pixels,colors};
+}
+$('portrait-import').onchange=async event=>{try{if(!rom)throw Error('Load the original ROM first');const file=event.target.files[0];if(!file||file.size>16*1024*1024)throw Error('Choose an image smaller than 16 MB');const id=M.id,bitmap=await createImageBitmap(file),temp=document.createElement('canvas');temp.width=128;temp.height=120;const context=temp.getContext('2d');context.fillStyle='black';context.fillRect(0,0,128,120);const scale=Math.max(128/bitmap.width,120/bitmap.height);context.drawImage(bitmap,(128-bitmap.width*scale)/2,(120-bitmap.height*scale)/2,bitmap.width*scale,bitmap.height*scale);bitmap.close();const portrait=quantizePortrait(context.getImageData(0,0,128,120).data);remember();(selectionEdits[id] ||= {}).portrait=portrait;render();status('Portrait imported, centered and cropped to 128 × 120 with 64 SNES colors.');}catch(e){status(e.message);}event.target.value='';};
+$('bio-apply').onclick=()=>{try{const bio={};for(const field of Object.keys(S.characters[M.id].fields))bio[field]=$('bio-'+field).value.toUpperCase();validateBio(bio);remember();(selectionEdits[M.id] ||= {}).bio=bio;render();status('Bio saved to the project. Export a patch to change the game.');}catch(e){status(e.message);}};
+$('selection-restore').onclick=()=>{remember();delete selectionEdits[M.id];render();};
 
 </script>
 </html>
