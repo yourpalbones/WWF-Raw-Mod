@@ -9,6 +9,7 @@ from build_shawn_superkick_pose import build as build_pose
 from build_shawn_kick_prototype import Program
 from build_bret_gear import planar
 from draw_shawn_superkick import POSES, pose
+from import_shawn_superkick_art import load_pose
 
 
 def pack(image):
@@ -53,7 +54,7 @@ def pack(image):
     return candidates
 
 
-def build(rom, reference):
+def build(rom, reference, art_dir=None):
     r = bytearray(build_pose(rom, reference)[0])
     tiles = 0
     report = []
@@ -82,7 +83,7 @@ def build(rom, reference):
         total_objects = total_cost = 0
         packed = []
         for part in range(2):
-            image = pose(i)
+            image = load_pose(i, art_dir) if art_dir else pose(i)
             for yy in range(96):
                 if (yy < 48) != (part == 0):
                     for xx in range(96):
@@ -248,11 +249,19 @@ def build(rom, reference):
         "ips_sha256": hashlib.sha256(patch).hexdigest(),
         "poses": report,
         "newly_drawn_artwork": True,
+        "artwork_assets": str(art_dir) if art_dir else None,
+        "artwork_manifest_sha256": hashlib.sha256(
+            (art_dir / "manifest.json").read_bytes()
+        ).hexdigest()
+        if art_dir
+        else None,
         "native_sequence_entries": len(POSES),
         "stock_kick_sequence_entries": 4,
         "experimental": True,
         "limitations": [
-            "Initial artwork is a geometric pixel-art draft",
+            "Reference-guided artwork draft; style and transitions still need review"
+            if art_dir
+            else "Initial artwork is a geometric pixel-art draft",
             "Native kick collision/damage logic retained; new visual sequence requires gameplay validation",
             "Full match, interruptions, AI and player 2 as Shawn unverified",
         ],
@@ -265,8 +274,9 @@ def main():
     ap.add_argument("rom", type=Path)
     ap.add_argument("reference", type=Path)
     ap.add_argument("--output", type=Path, required=True)
+    ap.add_argument("--art-dir", type=Path, help="Hash-checked authored indexed poses")
     args = ap.parse_args()
-    rom, ips, report = build(args.rom.read_bytes(), args.reference)
+    rom, ips, report = build(args.rom.read_bytes(), args.reference, args.art_dir)
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / "shawn-superkick-animation.sfc").write_bytes(rom)
     (args.output / "shawn-superkick-animation.ips").write_bytes(ips)

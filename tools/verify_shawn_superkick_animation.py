@@ -9,10 +9,11 @@ import json
 from pathlib import Path
 from PIL import Image
 from draw_shawn_superkick import pose
+from import_shawn_superkick_art import load_pose
 from extract_oam import objects
 
 
-def verify(root, report):
+def verify(root, report, art_dir=None):
     rows = []
     for i, entry in enumerate(report["poses"]):
         frame = 12 + i * 6
@@ -34,7 +35,7 @@ def verify(root, report):
         for rec, image in reversed(actor_records):
             actual.alpha_composite(image, (rec["x"], rec["y"]))
         expected = Image.new("RGBA", (256, 224))
-        source = pose(i)
+        source = load_pose(i, art_dir) if art_dir else pose(i)
         for y in range(96):
             for x in range(96):
                 c = source.getpixel((x, y))
@@ -78,9 +79,13 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("capture", type=Path)
     ap.add_argument("report", type=Path)
+    ap.add_argument("--art-dir", type=Path)
     args = ap.parse_args()
     print(
-        json.dumps(verify(args.capture, json.loads(args.report.read_text())), indent=2)
+        json.dumps(
+            verify(args.capture, json.loads(args.report.read_text()), args.art_dir),
+            indent=2,
+        )
     )
 
 

@@ -1,0 +1,218 @@
+{
+  "source_sheet_sha256": "51859c3e145c2ac526c9263064d18f532b6453267ef54c8e7be2ce8208087e38",
+  "artwork_origin": "Reference-guided generated pixel-art sheet, converted into native indexed assets; not extracted game body pixels",
+  "native_palette": [
+    [
+      0,
+      82,
+      0
+    ],
+    [
+      32,
+      32,
+      32
+    ],
+    [
+      115,
+      0,
+      0
+    ],
+    [
+      197,
+      0,
+      0
+    ],
+    [
+      115,
+      0,
+      0
+    ],
+    [
+      197,
+      0,
+      0
+    ],
+    [
+      180,
+      180,
+      180
+    ],
+    [
+      164,
+      98,
+      57
+    ],
+    [
+      255,
+      255,
+      255
+    ],
+    [
+      90,
+      49,
+      0
+    ],
+    [
+      123,
+      65,
+      8
+    ],
+    [
+      189,
+      123,
+      90
+    ],
+    [
+      148,
+      82,
+      24
+    ],
+    [
+      189,
+      131,
+      16
+    ],
+    [
+      189,
+      148,
+      0
+    ],
+    [
+      213,
+      148,
+      123
+    ]
+  ],
+  "alpha_threshold": 200,
+  "uniform_scale": 0.1909307875894988,
+  "target_support_boot_anchor": [
+    44,
+    89
+  ],
+  "frames": [
+    {
+      "pose": 0,
+      "source_bounds": [
+        0,
+        48,
+        223,
+        467
+      ],
+      "support_boot_anchor": [
+        35.0,
+        463
+      ],
+      "sha256": "f07c12ede8ab39a52ee3b9aeadb49b5968822121d360abd15657c83aa6eef605"
+    },
+    {
+      "pose": 1,
+      "source_bounds": [
+        0,
+        48,
+        201,
+        467
+      ],
+      "support_boot_anchor": [
+        69.0,
+        466
+      ],
+      "sha256": "c7897312be31e9c5c67b6151dd7d7dc147c86d1a96b3505fd7363cc65f59caeb"
+    },
+    {
+      "pose": 2,
+      "source_bounds": [
+        0,
+        87,
+        438,
+        467
+      ],
+      "support_boot_anchor": [
+        193.5,
+        466
+      ],
+      "sha256": "cc033afd81b4928de936620627c6746f58de20dffe69703d13aeaeb1acc0f671"
+    },
+    {
+      "pose": 3,
+      "source_bounds": [
+        0,
+        82,
+        351,
+        467
+      ],
+      "support_boot_anchor": [
+        203.5,
+        466
+      ],
+      "sha256": "76c5805d24a7c1137ced717f8821c61350c73b000e1ed04bebe29617560b115d"
+    },
+    {
+      "pose": 4,
+      "source_bounds": [
+        0,
+        38,
+        259,
+        451
+      ],
+      "support_boot_anchor": [
+        117.5,
+        450
+      ],
+      "sha256": "a1542e866af812f0a7aab6527f1c09e4231b8070f2ab9a4bd02dea40c2f4b7ff"
+    },
+    {
+      "pose": 5,
+      "source_bounds": [
+        0,
+        29,
+        242,
+        451
+      ],
+      "support_boot_anchor": [
+        79.5,
+        450
+      ],
+      "sha256": "c8c7f76d9abf4e6f10e7ba6d1a9e5fb7094963caad3be3b7392d2b8d572ef383"
+    },
+    {
+      "pose": 6,
+      "source_bounds": [
+        0,
+        31,
+        208,
+        451
+      ],
+      "support_boot_anchor": [
+        38.5,
+        450
+      ],
+      "sha256": "edac4586eb96cf9e4f3754f063e935b46be4766b118f5498fa76bc294757fa91"
+    },
+    {
+      "pose": 7,
+      "source_bounds": [
+        0,
+        31,
+        220,
+        455
+      ],
+      "support_boot_anchor": [
+        36.5,
+        450
+      ],
+      "sha256": "e7aa800e8ec6cea0e3c104ca9440590487f884d81985a85e82c7925132c51140"
+    }
+  ],
+  "motion_reference": "https://media1.tenor.com/m/ljOwV-Xx_QUAAAAd/shawn-michaels-sweet-chin-music.gif",
+  "reference_observed_frames": [
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32
+  ]
+}

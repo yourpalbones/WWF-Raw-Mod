@@ -1,5 +1,8 @@
 # Shawn superkick: newly drawn eight-pose animation
 
+A newer [game-style artwork revision](../shawn-superkick-style/README.md)
+replaces the geometric drawing while retaining this sequence implementation.
+
 This revision replaces the experimental finisher's entire four-pose stock kick
 sequence with eight newly drawn full-body poses. The sequence covers stance,
 knee chamber, extension, follow-through, retraction, lowering the leg and

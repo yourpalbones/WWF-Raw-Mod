@@ -54,6 +54,11 @@ replaces the entire experimental kick sequence with complete drawn body poses.
 All eight assembled poses match the authored artwork in both directions; this
 is still an artwork draft with native kick collision logic.
 
+The [game-style artwork revision](evidence/shawn-superkick-style/README.md)
+uses newly authored indexed sprites guided by the original Shawn art and the
+viewed Sweet Chin Music reference. Both directions pass pixel and gameplay
+checks; transitions and likeness still need visual refinement.
+
 No ROM, raw extracted game data, emulator binary, or patched ROM is included.
 The evidence package includes screenshots and a small IPS patch.
 Supply your own local ROM; generated outputs stay in ignored output folders.
