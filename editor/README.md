@@ -1,68 +1,85 @@
-# First gear editor: Bret
+# Gear editor: all 12 wrestlers
 
-![The editor running with the original Bret sprite](../evidence/gear-editor/workshop.png)
+![The editor running with original Shawn Michaels sprites](../evidence/roster-editor/workshop.png)
 
 ## Try it
 
 1. Open [gear-workshop.html](gear-workshop.html) on GitHub and click **Download raw file**.
 2. Open that downloaded file in Chrome, Edge or Firefox.
 3. Click **Open your original USA ROM** and choose your unmodified WWF Raw ROM.
-4. Choose a color and paint on Bret. Use **Save project** to keep editable work,
-   or **Export IPS patch** to apply your changes to a copy of the ROM.
+4. Choose a wrestler, then select a color and paint directly on their sprite.
+   To recolor a palette slot, use **Change color**.
+5. Use **Save project** to keep editable work, or **Export IPS patch** to apply
+   your changes to an unheadered copy of the original ROM.
 
 The ROM stays on your computer. This repository contains layout addresses and
 original-game capture evidence, not a ROM or extracted tile library.
 
-## What works
+## Available previews
 
-- 15 original standing and sampled walking layouts, assembled from native OAM
-  positions, palettes and flips. Play poses cycles captured samples at a fixed
-  preview speed; it does not reproduce the game's animation timing.
-- Paint with 15 visible palette slots, or select a slot and use **Change color**
-  to choose a new color. Colors snap to the SNES’s 5-bit RGB precision.
-  The usage count reports visible pixels in the current pose; changes apply
-  wherever the palette slot is used. Transparency is locked.
-- Edits change ROM tile sources and appear in every loaded pose using that source.
-- Undo, reset, save/load project, native-resolution PNG and IPS export.
-- Exact original USA ROM hash validation, optional copier-header removal,
-  native sparse-tile compression, allocation checks and HiROM checksum updates.
-  Apply patches to an unheadered copy of the original ROM.
+| Wrestler | Captured poses |
+| --- | ---: |
+| Bret Hart | 15 |
+| Undertaker | 10 |
+| Yokozuna | 7 |
+| Bam Bam Bigelow | 4 |
+| Razor Ramon | 3 |
+| Lex Luger | 11 |
+| Doink | 8 |
+| Shawn Michaels | 10 |
+| 1-2-3 Kid | 10 |
+| Diesel | 10 |
+| Owen Hart | 8 |
+| Luna Vachon | 6 |
 
-Bret is the first editable character. This prototype does not include all twelve
-characters, every animation, tile relocation, automatic shared
-asset isolation or an emulator inside the editor. A source may also be used in
-unloaded actions or by another wrestler. Check edited patches in actual gameplay.
-Compressed edits that exceed their original allocations are refused.
+These 102 sampled layouts use native positions, palettes and flips. Bret retains
+his previous standing/walking set; the other characters use captured movement
+sequences that may include opponent interactions. Counts describe sampled poses,
+not every animation. **Play poses** cycles samples at a fixed preview speed,
+rather than reproducing native animation timing.
+
+## Editing behavior
+
+- Paint with 15 visible palette slots, or select a slot and choose a new color.
+  Colors snap to SNES 5-bit RGB. Transparency remains locked.
+- The usage count reports visible pixels in the current pose. Palette changes
+  recolor all uses of that slot, including skin or hair sharing it.
+- Tile edits follow the same ROM source across loaded poses and wrestlers.
+  The editor names other loaded wrestlers using an edited shared source.
+  Shared users outside these captures remain unverified.
+- Switching wrestlers retains your edits. Export includes all edited wrestlers.
+- Undo covers tile and palette edits across the roster. **Reset all edits** clears
+  the entire project. Save/load projects and native-resolution PNGs are supported.
+- Version 3 projects store the full roster. Existing version 1/2 Bret projects
+  remain supported; their palette edits always belong to Bret.
+- Export validates the original USA ROM hash, accepts an optional copier header,
+  uses native sparse compression and updates the HiROM checksum. Compressed
+  edits exceeding their original allocations are refused.
+
+Full action coverage, palette ownership outside the verified captures, tile
+relocation, automatic shared-asset isolation and an embedded emulator remain
+future work. Test edited patches through the rest of the moves in an emulator.
+Original sprite work is retained, including Shawn's original look.
 
 ## Developer validation
 
-The editor itself needs only a browser. Optional automated verification needs
-Python, Pillow, Playwright and Chromium, plus your local original ROM and the
-original capture directories described in the repository's evidence reports:
+The editor needs only a browser. Optional automated verification needs Python,
+Pillow, Playwright and Chromium, a local original ROM, the earlier research
+captures and the new movement captures:
 
 ```sh
 python3 tools/verify_editor.py '/path/to/WWF Raw (USA).sfc' \
-  --capture-root /path/to/raw-analysis --chromium /usr/bin/chromium
+  --capture-root /path/to/raw-analysis \
+  --movement-root outputs/editor-roster-live \
+  --chromium /usr/bin/chromium --page gear-workshop.html
 ```
 
-This serves the editor for local testing, compares 15 assembled sprites against
-native OAM extraction, verifies all 215 tile sources re-encode byte for byte,
-and exercises painting, palette recoloring/restore/undo, current and legacy
-project reload, invalid palette rejection, IPS output/checksum and overflow
-refusal. It writes a private test ROM and screenshot under ignored `outputs/`.
-See [evidence and limits](../evidence/gear-editor/README.md).
+This compares all 102 browser previews against native OAM extraction, checks
+2,174 source tiles re-encode byte for byte, exercises editing and export for all
+12 wrestlers, validates roster/legacy projects and shared-source warnings, and
+checks invalid palette and compression overflow refusal. Private test ROMs and
+screenshots are written under ignored `outputs/`.
 
-To rebuild the single-file download after changes:
-
-```sh
-python3 tools/bundle_editor.py
-```
-
-`tools/build_editor_manifest.py` derives address-only layouts from original
-capture prefixes (`--snapshot LABEL=PREFIX`); standing should come first so its
-compressed sources are available for subsequent walking snapshots. The shipped
-walking samples are the first 15 captures from `gear-walk-original`, after the
-verified `emulator-coldboot/frame-002940` standing capture.
-
-[Palette editing emulator proof](../evidence/gear-editor/palette-gameplay.png):
-an exported patch changes Bret’s pink palette slot to green in the actual game.
+See [roster evidence and reproduction](../evidence/roster-editor/README.md).
+Regenerate the address-only manifest using `tools/build_roster_editor.py`, then
+rebuild the standalone download with `python3 tools/bundle_editor.py`.

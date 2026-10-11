@@ -1,5 +1,8 @@
 # First ROM-backed gear editor
 
+This records the initial Bret milestone. The current editor supports all twelve
+wrestlers; see [the roster milestone](../roster-editor/README.md).
+
 ![Browser editor using original Bret sprites](workshop.png)
 
 The first editor supports 15 captured standing/walking layouts and 215 original

@@ -5,20 +5,20 @@
 body{background:#14161e;color:#eee;font:16px system-ui;margin:0;padding:28px;max-width:1100px}h1{margin:0 0 8px}p{color:#bbc1d1;line-height:1.5}button,select,input{font:inherit}button,select,.file{background:#292d3e;color:white;border:1px solid #52596d;border-radius:6px;padding:9px;cursor:pointer}button:disabled{opacity:.4;cursor:default}.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:16px 0}.workspace{display:flex;gap:32px;flex-wrap:wrap}canvas{image-rendering:pixelated;background:repeating-conic-gradient(#303441 0% 25%,#252936 0% 50%) 0/16px 16px;touch-action:none;max-width:100%}#colors{display:flex;gap:5px;flex-wrap:wrap;max-width:350px}.swatch{width:36px;height:36px;padding:0}.swatch.selected{outline:3px solid white;outline-offset:2px}#status{min-height:48px}a{color:#eb87c8}.file input{max-width:250px}aside{max-width:390px}small{color:#bbc1d1}
 </style>
 <h1>Gear workshop</h1>
-<p>Bret Hart · Original WWF Raw sprite work · Standing and sampled walking poses</p>
+<p id="character-title">All 12 wrestlers · Original WWF Raw sprite work · Captured poses</p>
 <label class="file">Open your original USA ROM <input id="rom" type="file" accept=".sfc,.smc"></label>
 <p id="status" role="status">Your ROM stays in your browser. Load it to see the assembled sprites.</p>
-<div class="row"><label>Pose <select id="pose" disabled></select></label><button id="play" disabled>Play poses</button><label>Zoom <select id="zoom"><option>4</option><option selected>6</option><option>8</option></select></label></div>
+<div class="row"><label>Wrestler <select id="wrestler" disabled></select></label><label>Pose <select id="pose" disabled></select></label><button id="play" disabled>Play poses</button><label>Zoom <select id="zoom"><option>4</option><option selected>6</option><option>8</option></select></label></div>
 <div class="workspace"><canvas id="sprite" width="32" height="88" aria-label="Editable assembled wrestler sprite"></canvas><aside>
 <h2>Paint gear</h2><p>Select a native color, then paint directly on the wrestler. Transparent pixels are locked in this first version.</p><div id="colors"></div>
 <div class="row"><label>Selected color <input id="palette-color" type="color" disabled></label><button id="palette-apply" disabled>Change color</button><button id="palette-restore" disabled>Restore color</button></div>
 <p id="palette-usage">Select a color to see its use in the current pose.</p>
-<div class="row"><button id="undo" disabled>Undo</button><button id="reset" disabled>Reset edits</button></div>
-<p id="details">No ROM loaded.</p>
+<div class="row"><button id="undo" disabled>Undo</button><button id="reset" disabled>Reset all edits</button></div>
+<p id="shared"></p><p id="details">No ROM loaded.</p>
 <h2>Save your work</h2><div class="row"><button id="save" disabled>Save project</button><button id="patch" disabled>Export IPS patch</button><button id="png" disabled>Save pose PNG</button></div>
 <label class="file">Open project <input id="project" type="file" accept=".json" disabled></label>
-<p><strong>Coverage:</strong> these layouts come from original-game captures. New edits still need emulator testing through the rest of the moves. Shared tiles may affect other poses or characters. The exporter refuses compressed edits that exceed their original allocation.</p>
+<p><strong>Coverage:</strong> these sampled layouts come from original-game captures. They do not cover every move. New edits still need emulator testing through the rest of the moves. Shared tiles may affect other poses or characters. The exporter refuses compressed edits that exceed their original allocation.</p>
 <a href="../docs/editor-roadmap.md">Editor roadmap and remaining coverage</a>
 </aside></div>
-<script src="bret-layouts.js"></script><script src="editor.js"></script>
+<script src="roster-layouts.js"></script><script src="editor.js"></script>
 </html>

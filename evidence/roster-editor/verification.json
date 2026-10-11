@@ -1,0 +1,201 @@
+{
+  "characters": 12,
+  "native_poses_matched": 102,
+  "tile_sources_byte_exact_roundtrips": 2174,
+  "browser_checks": [
+    "paint each wrestler",
+    "per-wrestler palette selection",
+    "palette and tile patch output",
+    "cross-wrestler edit retention",
+    "version 3 roster project reload",
+    "version 1 and 2 compatibility",
+    "shared-source warning",
+    "invalid palette rejection",
+    "overflow refusal"
+  ],
+  "characters_summary": [
+    {
+      "character": "Bret Hart",
+      "poses": 15,
+      "sources": 215,
+      "palette_offset": "0x2cc4fa"
+    },
+    {
+      "character": "Undertaker",
+      "poses": 10,
+      "sources": 303,
+      "palette_offset": "0x2cc51a"
+    },
+    {
+      "character": "Yokozuna",
+      "poses": 7,
+      "sources": 232,
+      "palette_offset": "0x2cc53a"
+    },
+    {
+      "character": "Bam Bam Bigelow",
+      "poses": 4,
+      "sources": 66,
+      "palette_offset": "0x2cc55a"
+    },
+    {
+      "character": "Razor Ramon",
+      "poses": 3,
+      "sources": 62,
+      "palette_offset": "0x2cc57a"
+    },
+    {
+      "character": "Lex Luger",
+      "poses": 11,
+      "sources": 298,
+      "palette_offset": "0x2cc59a"
+    },
+    {
+      "character": "Doink",
+      "poses": 8,
+      "sources": 164,
+      "palette_offset": "0x2cc5ba"
+    },
+    {
+      "character": "Shawn Michaels",
+      "poses": 10,
+      "sources": 196,
+      "palette_offset": "0x2cc5da"
+    },
+    {
+      "character": "1-2-3 Kid",
+      "poses": 10,
+      "sources": 239,
+      "palette_offset": "0x2cc5fa"
+    },
+    {
+      "character": "Diesel",
+      "poses": 10,
+      "sources": 266,
+      "palette_offset": "0x2cc61a"
+    },
+    {
+      "character": "Owen Hart",
+      "poses": 8,
+      "sources": 217,
+      "palette_offset": "0x2cc63a"
+    },
+    {
+      "character": "Luna Vachon",
+      "poses": 6,
+      "sources": 192,
+      "palette_offset": "0x2cc4da"
+    }
+  ],
+  "emulator_checks": [
+    {
+      "character": "Bret Hart",
+      "palette_slot": 4,
+      "expected_native_word": 992,
+      "actual_native_word": 992,
+      "capture_frame": 1230,
+      "oam_matches_original": true,
+      "changed_screen_pixels": 169
+    },
+    {
+      "character": "Undertaker",
+      "palette_slot": 4,
+      "expected_native_word": 992,
+      "actual_native_word": 992,
+      "capture_frame": 1230,
+      "oam_matches_original": true,
+      "changed_screen_pixels": 152
+    },
+    {
+      "character": "Yokozuna",
+      "palette_slot": 4,
+      "expected_native_word": 992,
+      "actual_native_word": 992,
+      "capture_frame": 1230,
+      "oam_matches_original": true,
+      "changed_screen_pixels": 354
+    },
+    {
+      "character": "Bam Bam Bigelow",
+      "palette_slot": 4,
+      "expected_native_word": 992,
+      "actual_native_word": 992,
+      "capture_frame": 1230,
+      "oam_matches_original": true,
+      "changed_screen_pixels": 294
+    },
+    {
+      "character": "Razor Ramon",
+      "palette_slot": 4,
+      "expected_native_word": 992,
+      "actual_native_word": 992,
+      "capture_frame": 1230,
+      "oam_matches_original": true,
+      "changed_screen_pixels": 401
+    },
+    {
+      "character": "Lex Luger",
+      "palette_slot": 4,
+      "expected_native_word": 992,
+      "actual_native_word": 992,
+      "capture_frame": 1230,
+      "oam_matches_original": true,
+      "changed_screen_pixels": 167
+    },
+    {
+      "character": "Doink",
+      "palette_slot": 4,
+      "expected_native_word": 992,
+      "actual_native_word": 992,
+      "capture_frame": 1230,
+      "oam_matches_original": true,
+      "changed_screen_pixels": 43
+    },
+    {
+      "character": "Shawn Michaels",
+      "palette_slot": 4,
+      "expected_native_word": 992,
+      "actual_native_word": 992,
+      "capture_frame": 1230,
+      "oam_matches_original": true,
+      "changed_screen_pixels": 272
+    },
+    {
+      "character": "1-2-3 Kid",
+      "palette_slot": 4,
+      "expected_native_word": 992,
+      "actual_native_word": 992,
+      "capture_frame": 1230,
+      "oam_matches_original": true,
+      "changed_screen_pixels": 221
+    },
+    {
+      "character": "Diesel",
+      "palette_slot": 4,
+      "expected_native_word": 992,
+      "actual_native_word": 992,
+      "capture_frame": 1230,
+      "oam_matches_original": true,
+      "changed_screen_pixels": 177
+    },
+    {
+      "character": "Owen Hart",
+      "palette_slot": 4,
+      "expected_native_word": 992,
+      "actual_native_word": 992,
+      "capture_frame": 1230,
+      "oam_matches_original": true,
+      "changed_screen_pixels": 406
+    },
+    {
+      "character": "Luna Vachon",
+      "palette_slot": 4,
+      "expected_native_word": 992,
+      "actual_native_word": 992,
+      "capture_frame": 1230,
+      "oam_matches_original": true,
+      "changed_screen_pixels": 28
+    }
+  ],
+  "complete_animation_coverage": false
+}

@@ -11,6 +11,7 @@ import argparse
 parser=argparse.ArgumentParser(description='Verify assembled editor poses and patch/project behavior in Chromium.')
 parser.add_argument('rom',type=Path)
 parser.add_argument('--capture-root',type=Path,required=True)
+parser.add_argument('--movement-root',type=Path,default=Path('outputs/editor-roster-live'))
 parser.add_argument('--page',default='index.html',choices=['index.html','gear-workshop.html'])
 parser.add_argument('--chromium',default='/usr/bin/chromium')
 parser.add_argument('--output',type=Path,default=Path('outputs/editor-preview.png'))
@@ -26,21 +27,27 @@ with sync_playwright() as p:
  page.goto(f'http://127.0.0.1:{server.server_port}/editor/{args.page}')
  page.locator('#rom').set_input_files(str(rom))
  page.wait_for_function('rom !== null')
- assert page.evaluate('Object.entries(M.sources).every(([key,source])=>{const packet=encode(originals[key],source.compressed);return packet.length===source.length && packet.every((v,i)=>v===rom[source.offset+i]);})')
- # Native compositor must match capture byte for byte before any editing.
- for i in range(15):
-  page.locator('#pose').select_option(str(i))
-  label=page.locator('#pose option:checked').inner_text()
-  prefix=(args.capture_root/'emulator-coldboot/frame-002940') if i==0 else sorted((args.capture_root/'gear-walk-original').glob('frame-*.png'))[int(label.split()[-1])-1].with_suffix('')
-  def read(name):return Path(str(prefix)+'-'+name+'.bin').read_bytes()
-  records=objects(read('vram'),read('oam'),read('cgram'),read('registers')[0x2101])
-  indices=[j for j,(r,im) in enumerate(records) if r['palette']==0 and 0<=r['y']<190 and -20<=r['x']<256 and im.getbbox()]
-  native,_=assemble(records,indices)
-  data=page.evaluate('Array.from(ctx.getImageData(0,0,canvas.width,canvas.height).data)')
-  size=page.evaluate('[canvas.width,canvas.height]')
-  actual=Image.frombytes('RGBA',tuple(size),bytes(data))
-  assert actual.crop(actual.getbbox()).tobytes()==native.tobytes(),label
- print('15 assembled poses match native OAM captures exactly; all 215 sources re-encode byte for byte')
+ assert page.evaluate('Object.entries(C.sources).every(([key,source])=>{const packet=encode(originals[key],source.compressed);return packet.length===source.length && packet.every((v,i)=>v===rom[source.offset+i]);})')
+ # Every published layout must match the native captured OAM composition.
+ characters=page.evaluate('C.characters')
+ count=0
+ for character in characters:
+  page.locator('#wrestler').select_option(character['id'])
+  for i,pose in enumerate(character['poses']):
+   page.locator('#pose').select_option(str(i))
+   capture=pose['capture']
+   prefix=(args.capture_root/capture) if character['id']=='1' else (args.movement_root/capture)
+   def read(name):return Path(str(prefix)+'-'+name+'.bin').read_bytes()
+   records=objects(read('vram'),read('oam'),read('cgram'),read('registers')[0x2101])
+   indices=[j for j,(r,im) in enumerate(records) if r['palette']==0 and 0<=r['y']<190 and -20<=r['x']<256 and im.getbbox()]
+   native,_=assemble(records,indices)
+   data=page.evaluate('Array.from(ctx.getImageData(0,0,canvas.width,canvas.height).data)')
+   size=page.evaluate('[canvas.width,canvas.height]')
+   actual=Image.frombytes('RGBA',tuple(size),bytes(data))
+   assert actual.crop(actual.getbbox()).tobytes()==native.tobytes(), (character['character'],pose['label'])
+   count+=1
+ print(f'{len(characters)} characters, {count} poses match native captures; all sources re-encode byte for byte')
+ page.locator('#wrestler').select_option('1')
  page.locator('#pose').select_option('0')
  # Palette changes must recolor precisely the selected slot, without changing tiles.
  page.get_by_role('button',name='Native color 4',exact=True).click()
@@ -71,7 +78,7 @@ with sync_playwright() as p:
   assert length>0;data[offset:offset+length]=patch[cursor:cursor+length];cursor+=length
  from decode_sprite_tile import decode_sprite_tile
  from inspect_rom import tile
- edited=page.evaluate('edits');sources=page.evaluate('M.sources')
+ edited=page.evaluate('edits');sources=page.evaluate('C.sources')
  for key,pixels_ in edited.items():
   source=sources[key];decoded=decode_sprite_tile(data,source['offset'])[0] if source['compressed'] else data[source['offset']:source['offset']+32]
   assert tile(decoded,0,4)==pixels_
@@ -87,12 +94,33 @@ with sync_playwright() as p:
  page.wait_for_function("document.getElementById('status').textContent.startsWith('Project loaded')")
  assert page.evaluate('edits')==edited
  assert page.evaluate('paletteEdits')=={'4':992}
+ # Character switching must retain edits and use distinct palette addresses.
+ page.locator('#wrestler').select_option('2')
+ assert page.evaluate('paletteEdits')=={}
+ page.get_by_role('button',name='Native color 4',exact=True).click()
+ page.locator('#palette-color').fill('#0000ff');page.locator('#palette-apply').click()
+ assert page.evaluate('paletteEdits')=={'4':31744}
+ page.locator('#wrestler').select_option('1')
+ assert page.evaluate('paletteEdits')=={'4':992} and page.evaluate('edits')==edited
+ both=page.evaluate('Array.from(patch())')
+ merged=bytearray(rom.read_bytes());pos=5
+ while bytes(both[pos:pos+3])!=b'EOF':
+  offset=int.from_bytes(bytes(both[pos:pos+3]),'big');length=int.from_bytes(bytes(both[pos+3:pos+5]),'big');pos+=5
+  merged[offset:offset+length]=bytes(both[pos:pos+length]);pos+=length
+ assert int.from_bytes(merged[0x2cc502:0x2cc504],'little')==992
+ assert int.from_bytes(merged[0x2cc522:0x2cc524],'little')==31744
+ # Restoring a saved project replaces all characters' edit states.
+ page.locator('#project').set_input_files({'name':'project.json','mimeType':'application/json','buffer':project})
+ page.wait_for_function("Object.keys(palettes['2']||{}).length===0")
  # Old projects load with the original palette; invalid transparency edits fail atomically.
  import json
- old=json.loads(project);old['version']=1;old.pop('palette_edits')
+ legacy=json.loads(project);legacy['version']=2;legacy.pop('palettes');legacy['palette_edits']={'4':992}
+ page.locator('#project').set_input_files({'name':'legacy.json','mimeType':'application/json','buffer':json.dumps(legacy).encode()})
+ page.wait_for_function("paletteEdits['4']===992 && Object.keys(palettes['2']||{}).length===0")
+ old=json.loads(project);old['version']=1;old.pop('palettes')
  page.locator('#project').set_input_files({'name':'old.json','mimeType':'application/json','buffer':json.dumps(old).encode()})
  page.wait_for_function('Object.keys(paletteEdits).length===0')
- invalid=json.loads(project);invalid['palette_edits']={'0':992}
+ invalid=json.loads(project);invalid['palettes']={'1':{'0':992}}
  page.locator('#project').set_input_files({'name':'bad.json','mimeType':'application/json','buffer':json.dumps(invalid).encode()})
  page.wait_for_function("document.getElementById('status').textContent.includes('invalid palette')")
  assert page.evaluate('edits')==edited and page.evaluate('paletteEdits')=={}
@@ -105,6 +133,51 @@ with sync_playwright() as p:
  page.locator('#palette-color').fill('#00ff00')
  page.locator('#palette-apply').click()
  page.screenshot(path=str(args.output),full_page=True)
+ # Exercise painting and palette export for every wrestler, not just Bret.
+ page.locator('#reset').click()
+ for character in characters:
+  page.locator('#wrestler').select_option(character['id'])
+  page.locator('#pose').select_option('0')
+  page.get_by_role('button',name='Native color 1',exact=True).click()
+  target=page.evaluate('cells.findIndex(c=>c && !C.sources[c.key].compressed && pixels(c.key)[c.index]!==1)')
+  assert target>=0,character['character']
+  page.evaluate('window.scrollTo(0,0)')
+  width=page.evaluate('canvas.width');rect=page.locator('#sprite').bounding_box()
+  page.mouse.click(rect['x']+(target%width+.5)*6,rect['y']+(target//width+.5)*6)
+  assert page.evaluate('(target)=>{const c=cells[target];return pixels(c.key)[c.index]===1;}',target),character['character']
+  page.get_by_role('button',name='Native color 4',exact=True).click()
+  page.locator('#palette-color').fill('#00ff00');page.locator('#palette-apply').click()
+ combined=page.evaluate('Array.from(patch())');multi=bytearray(rom.read_bytes());pos=5
+ while bytes(combined[pos:pos+3])!=b'EOF':
+  offset=int.from_bytes(bytes(combined[pos:pos+3]),'big');length=int.from_bytes(bytes(combined[pos+3:pos+5]),'big');pos+=5
+  multi[offset:offset+length]=bytes(combined[pos:pos+length]);pos+=length
+ for character in characters:
+  assert int.from_bytes(multi[character['palette_offset']+8:character['palette_offset']+10],'little')==992
+ for key,p in page.evaluate('edits').items():
+  source=page.evaluate('C.sources')[key]
+  actual=decode_sprite_tile(multi,source['offset'])[0] if source['compressed'] else multi[source['offset']:source['offset']+32]
+  assert tile(actual,0,4)==p
+ assert (sum(multi[:0x200000])+2*sum(multi[0x200000:]))&65535==int.from_bytes(multi[0xffde:0xffe0],'little')
+ (args.output.parent/'editor-roster-test.sfc').write_bytes(multi)
+ # Verify a saved multi-wrestler project restores edits and all 12 palettes.
+ with page.expect_download() as d:page.locator('#save').click()
+ roster_project=Path(d.value.path()).read_bytes();expected=page.evaluate('({edits,palettes})')
+ page.locator('#reset').click()
+ page.locator('#project').set_input_files({'name':'roster.json','mimeType':'application/json','buffer':roster_project})
+ page.wait_for_function('Object.keys(edits).length>0')
+ assert page.evaluate('({edits,palettes})')==expected
+ page.locator('#reset').click()
+ # A shared-source edit must identify another loaded wrestler using it.
+ shared=page.evaluate('C.characters.flatMap(c=>Object.keys(c.sources).filter(k=>C.characters.some(other=>other.id!==c.id && other.sources[k])).map(k=>({id:c.id,key:k}))).find(s=>originals[s.key].some(v=>v>1))')
+ assert shared
+ page.locator('#wrestler').select_option(shared['id'])
+ page.evaluate('(key)=>{remember();edits[key]=originals[key].map(v=>v>1?1:v);render();}',shared['key'])
+ assert 'also used by:' in page.locator('#shared').inner_text()
+ page.locator('#reset').click()
+ print('All 12 painting, palette export, multi-wrestler project reload and shared-source warning checks passed')
+ page.locator('#wrestler').select_option('8')
+ page.evaluate('window.scrollTo(0,0)')
+ page.screenshot(path=str(args.output.parent/'roster-workshop.png'),full_page=True)
  assert not errors,errors
  browser.close()
  print('Paint, palette recoloring/restore/undo, IPS colors/checksum, current and legacy projects, invalid palette and overflow refusal passed')

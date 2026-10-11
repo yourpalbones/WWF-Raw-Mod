@@ -2,9 +2,9 @@
 
 ## Gear editor prototype
 
-[Try the Bret gear workshop](editor/README.md) · [View the running editor](evidence/gear-editor/workshop.png)
+[Try the 12-wrestler gear workshop](editor/README.md) · [View the running editor](evidence/roster-editor/workshop.png)
 
-Paint assembled original sprites, preview 15 captured standing/walking poses,
+Paint all 12 wrestlers’ original sprites, preview 102 captured poses,
 save projects and export IPS patches. Full animation coverage remains incomplete.
 
 
