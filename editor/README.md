@@ -2,16 +2,24 @@
 
 ![WrestleEdit sprite editor](../evidence/app-interface/sprites.png)
 
-## Try it
+## Windows app — easiest option
 
-1. Download [gear-workshop.html](gear-workshop.html) using GitHub's **Download raw file** button, then open it in Chrome, Edge or Firefox.
-2. Click **Load ROM** and choose your original WWF Raw USA ROM.
-3. Choose a wrestler. Use **Sprites** to paint, recolor or import a pose PNG; use **Portrait & bio** to upload their selection image and edit their details.
-4. Open **Save & play**, then click **Save playable ROM**. Open the saved `.sfc` file in your emulator.
+[**Download WrestleEdit for Windows**](https://github.com/yourpalbones/WWF-Raw-Mod/releases/download/wrestleedit-v0.1.0/WrestleEdit-Windows-x64.zip)
 
-Use **Save project** to keep work editable. **Open project** restores it after loading the original ROM. IPS export is also available.
+1. Click the download link above.
+2. Right-click the downloaded ZIP and choose **Extract All**.
+3. Open the extracted **WrestleEdit** folder and double-click **WrestleEdit.exe**.
+4. Click **Load ROM** and choose your original WWF Raw USA ROM.
+5. Choose a wrestler. Edit **Sprites** or **Portrait & bio**.
+6. Under **Save & play**, click **Save playable ROM** and open that saved file in your emulator.
 
-Everything runs locally in your browser. Your original ROM stays unchanged, and no ROM is included in this repository.
+Keep all files together in the extracted folder. This preview is unsigned. Windows launch testing is still pending; the editor itself has automated Chromium coverage.
+
+Use **Save project** to keep work editable. **Open project** restores it after loading the original ROM. Everything runs locally; your original ROM stays unchanged. No ROM is included.
+
+### Browser option
+
+Download [gear-workshop.html](gear-workshop.html) using GitHub's **Download raw file** button, then open it in Chrome, Edge or Firefox. It has the same editor features, without the desktop wrapper.
 
 To edit a sprite image externally, use **Save pose image**, edit that PNG, and import it back. Keep its dimensions, transparent outline and opaque visible pixels. Colors are matched to the wrestler's current palette. Import changes the selected pose's underlying tiles; it does not generate a full set of animations. Shared tiles can change other poses too, so preview them and test in an emulator.
 

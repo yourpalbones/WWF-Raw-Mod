@@ -1,0 +1,8 @@
+{
+  "name": "wrestleedit",
+  "productName": "WrestleEdit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local WWF Raw character editor",
+  "main": "main.js"
+}
