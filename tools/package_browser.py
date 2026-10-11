@@ -11,5 +11,5 @@ with zipfile.ZipFile(output) as z:
  assert z.testzip() is None
  assert z.read('WrestleEdit/WrestleEdit.html')==(repo/'editor/gear-workshop.html').read_bytes()
  assert not any(n.lower().endswith(('.sfc','.smc')) for n in z.namelist())
-shutil.copyfile(output,repo/'downloads/WrestleEdit-v0.5.zip')
+shutil.copyfile(output,repo/'downloads/WrestleEdit-v0.6.zip')
 print(f'Created and verified {output.name}: {output.stat().st_size:,} bytes')

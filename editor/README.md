@@ -4,7 +4,7 @@
 
 ## Easy download
 
-[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.5.zip)
+[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.6.zip)
 
 1. Click the download link above.
 2. Right-click the downloaded ZIP → **Extract All**.
@@ -179,3 +179,5 @@ Load your ROM, choose a wrestler, open **Portrait & bio**, and scroll to **Custo
 The importer supports complete melodic MIDI songs with tempo changes, chords, note velocity and sustain, up to eight overlapping notes. It uses your chosen stock sound for all tracks. Percussion and pitch bends need to be removed before import; transpose can bring notes into range. Memory overflow stops the import without changing your project. Changing a theme affects other wrestlers assigned that theme.
 
 [Full-song native playback and all twelve slot checks](../evidence/custom-midi/README.md). Reopening an exported ROM preserves its custom music; load the matching saved project to edit the notes again. Removing a pending custom song restores the loaded ROM's music.
+
+Version 0.6 combines identical note layers at native timing resolution, keeping the strongest velocity. Import errors appear directly in the Custom song panel. The supplied `nwo.mid` now imports and plays its complete 125.7-second song in six voices, with no distinct notes dropped. [Exact-file native verification](../evidence/nwo-midi-import/README.md).

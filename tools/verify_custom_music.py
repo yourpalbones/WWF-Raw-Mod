@@ -29,9 +29,12 @@ def main():
   # Running status, velocity-zero release, and sustain pedal.
   sustained=midi([b'\0\xb0\x40\x7f\0\x90\x3c\x64'+vlq(240)+b'\x3c\0'+vlq(240)+b'\xb0\x40\0\0\xff\x2f\0'])
   parsed=page.evaluate('b=>readMIDI(new Uint8Array(b))',list(sustained));assert parsed['notes']==[{'start':0,'end':25,'pitch':60,'velocity':100}]
+  # Layered MIDI duplicates are redundant when using one native instrument.
+  duplicated=midi([b'\0\x90\x3c\x64\0\x91\x3c\x70'+vlq(480)+b'\x80\x3c\0\0\x81\x3c\0\0\xff\x2f\0'])
+  merged=page.evaluate('b=>readMIDI(new Uint8Array(b))',list(duplicated));assert merged['mergedNotes']==1 and merged['notes']==[{'start':0,'end':25,'pitch':60,'velocity':112}]
   saved=page.evaluate('JSON.stringify(selectionEdits)')
   for bad in [b'not midi',song[:-10],midi([b'\0\x99\x24\x64'+vlq(480)+b'\x89\x24\0\0\xff\x2f\0']),midi([b'\0\x90\x7f\x64'+vlq(480)+b'\x80\x7f\0\0\xff\x2f\0'])]:
-   page.locator('#song-import').set_input_files({'name':'bad.mid','mimeType':'audio/midi','buffer':bad});page.wait_for_function("document.getElementById('song-import').value===''");assert page.evaluate('JSON.stringify(selectionEdits)')==saved
+   page.locator('#song-import').set_input_files({'name':'bad.mid','mimeType':'audio/midi','buffer':bad});page.wait_for_function("document.getElementById('song-import').value===''");assert page.evaluate('JSON.stringify(selectionEdits)')==saved;assert page.locator('#song-status').get_attribute('data-error')=='true';assert page.locator('#song-status').inner_text().startswith('Import failed:')
   assert page.evaluate("(()=>{const s=structuredClone(selectionEdits['5'].song);s.notes=Array.from({length:9},(_,i)=>({start:0,end:20,pitch:40+i,velocity:100}));try{compileSong(s);return false}catch(e){return e.message.includes('eight')}})()")
   page.locator('#song-restore').click();assert page.evaluate('!selectionEdits["5"].song');page.locator('#undo').click();assert page.evaluate('JSON.stringify(selectionEdits)')==saved
   with page.expect_download() as d:page.locator('#save').click()

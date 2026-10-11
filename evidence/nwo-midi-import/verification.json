@@ -1,0 +1,20 @@
+{
+  "file": "nwo.mid",
+  "original_note_events": 1131,
+  "notes_after_duplicate_merge": 719,
+  "duplicate_notes_combined": 412,
+  "distinct_notes_dropped": 0,
+  "native_voices": 6,
+  "duration_seconds": 125.7,
+  "native_uploaded_streams": 8,
+  "loop_start_frames": [
+    52,
+    7597,
+    15142
+  ],
+  "native_audio_peak": 6026,
+  "packaged_editor_import": true,
+  "project_reload_exact": true,
+  "edited_rom_reload_exact": true,
+  "export_checksum_valid": true
+}

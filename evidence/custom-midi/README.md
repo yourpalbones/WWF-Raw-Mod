@@ -8,7 +8,7 @@ optional indefinite looping. Songs use the selected stock sound instead of MIDI
 program assignments. The seven choices are native instrument codes
 112, 113, 114, 117, 118, 120 and 121 from the Razor audio bank.
 
-[Download the editor](../../downloads/WrestleEdit-v0.5.zip).
+[Download the editor](../../downloads/WrestleEdit-v0.6.zip).
 Load your original or edited ROM, choose a wrestler, open **Portrait & bio**,
 scroll to **Custom song**, choose sound and loop settings, and click **Import MIDI**.
 Save a project to preserve the editable notes; save a playable ROM for your emulator.
