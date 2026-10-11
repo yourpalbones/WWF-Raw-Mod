@@ -4,7 +4,7 @@
 
 ## Easy download
 
-[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit.zip)
+[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.2.zip)
 
 1. Click the download link above.
 2. Right-click the downloaded ZIP → **Extract All**.
@@ -13,7 +13,7 @@
 5. Choose a wrestler. Edit **Sprites** or **Portrait & bio**.
 6. Under **Save & play**, click **Save playable ROM** and open the saved file in your emulator.
 
-This is the browser editor, not an EXE. Once downloaded, it works offline. Use **Save project** to keep work editable; **Open project** restores it after loading the original ROM. Your original ROM stays unchanged, and no ROM is bundled or uploaded.
+This is the browser editor, not an EXE. Once downloaded, it works offline. Use **Save project** to keep work editable; **Open project** restores it after loading the original ROM. Your original ROM stays unchanged, and no ROM is bundled or uploaded. If you only have an edited ROM, load the original first, then use **Open edited ROM** to recover supported changes. This checks the ROM checksum and refuses changes outside the editor’s supported areas.
 
 A Windows EXE preview was built, but GitHub release uploads are blocked by the cloud integration. Its local task-output link also failed in the chat client. The ZIP above is committed to the repository so it has a normal public download URL. [Desktop build details](../desktop/README.md).
 
@@ -54,8 +54,7 @@ rather than reproducing native animation timing.
 - Switching wrestlers retains your edits. Export includes all edited wrestlers.
 - Undo covers tile and palette edits across the roster. **Reset all edits** clears
   the entire project. Save/load projects and native-resolution PNGs are supported.
-- Version 4 projects store the full roster, selection portraits and bios. Existing version 1/2 Bret and version 3 roster projects
-  remain supported; their palette edits always belong to Bret.
+- Version 5 projects include sprites, palettes, main portraits, monitor photos, name artwork, bios and theme assignments. Versions 1–4 remain supported. Versions 1/2 attach their palette edits to Bret; version 4 renamed characters receive generated name artwork.
 - Export validates the original USA ROM hash, accepts an optional copier header,
   uses native sparse compression and updates the HiROM checksum. Compressed
   edits exceeding their original allocations are refused.
@@ -75,7 +74,7 @@ Choose a wrestler, then open **Portrait & bio**.
 - Edit name, hometown (**From**), weight, height and the special move label, then
   click **Save bio**. The move label changes the displayed text, not move behavior.
 - New names use uppercase letters and spaces, up to 14 characters. Original
-  names such as `1-2-3 KID` can remain unchanged. Other fields accept supported
+  names such as `1-2-3 KID` and the 15-character `BAM BAM BIGELOW` can remain unchanged. Other fields accept supported
   uppercase text and punctuation; line limits are shown beside each field.
 - Names are reused elsewhere in the game. Original shared bio strings are kept;
   edited text receives separate storage. The editor shows text-space usage and
@@ -83,8 +82,17 @@ Choose a wrestler, then open **Portrait & bio**.
 - Undo, roster switching, project saving/loading and IPS export include these
   edits. **Restore portrait and bio** restores only the selected wrestler's
   selection assets. **Reset all edits** clears gear and selection edits together.
-- An imported portrait expands the exported patch target to 4 MiB and relocates
+- An imported portrait, monitor photo or replacement name graphic expands the exported patch target to 4 MiB and relocates
   the new graphics. Your original ROM remains unchanged.
+
+### Small photos, name artwork and themes
+
+- Main portrait uploads also update the **Small monitor photo** by default. Uncheck that option to keep the two images separate. You can import another small photo, click **Use main portrait**, or restore it independently. These images are 48 × 48 with 31 visible colors; export updates the announcer and other verified picture directories.
+- The typed name updates the main selection title and shared text. Separate name artwork is used by the Royal Rumble name card and other logo routines. **Save bio** generates new artwork by default when the name changes. You can turn that option off, enter a separate graphic name, upload a transparent logo, or restore the original. Generated names use lettering decoded from your ROM. Imports fit 256 × 224 and 15 visible colors; excessive tile counts are refused.
+- **Theme song** lets you choose one of the 12 existing wrestler themes, then click **Save theme**. Undo and projects retain the assignment. This does not import or compose new music.
+- **Open edited ROM** recovers editor-supported changes after loading the original ROM. The uploaded test ROM retained its seven replaced portraits and Scott Hall, Syxx and Kevin Nash names; unchanged old logos for renamed wrestlers receive generated replacements. Save a project after recovery.
+
+[See native monitor-photo and name-card proof](../evidence/profile-assets/game-comparison.png).
 
 [See all 12 selection screens with editor-created changes](../evidence/selection-editor/selection-comparison.png).
 
@@ -126,3 +134,13 @@ Verify the app workflow, pose PNG imports, local playable-ROM download and mobil
 ```sh
 python3 tools/verify_app.py '/path/to/WWF Raw (USA).sfc'
 ```
+
+To verify monitor and logo imports, themes, version 5 projects and edited-ROM recovery:
+
+```sh
+python3 tools/verify_profile_assets.py '/path/to/WWF Raw (USA).sfc'
+# Optional recovery check for a previous edited ROM:
+python3 tools/verify_profile_assets.py '/path/to/WWF Raw (USA).sfc' --edited-rom '/path/to/WWF-Raw-edited.sfc'
+```
+
+[Profile asset formats and emulator evidence](../evidence/profile-assets/README.md).

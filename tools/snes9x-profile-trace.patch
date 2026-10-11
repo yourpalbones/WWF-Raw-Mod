@@ -1,0 +1,59 @@
+--- a/cpuexec.cpp
++++ b/cpuexec.cpp
+@@ -579,3 +579,9 @@
+ 			eventname[CPU.WhichEvent], CPU.NextEvent, CPU.Cycles);
+ #endif
+ }
++
++void WWFTraceRecordRead(uint32 Address) {
++ const char *dir = std::getenv("WWF_TRACE_DIR"); if (!dir) return;
++ char path[1024]; std::snprintf(path,sizeof(path),"%s/records.jsonl",dir);
++ FILE *f=std::fopen(path,"a"); if(f){std::fprintf(f,"{\"frame\":%u,\"pc\":%u,\"address\":%u,\"a\":%u,\"x\":%u,\"y\":%u,\"db\":%u,\"d\":%u}\n",WWFFrame,Registers.PBPC&0xffffff,Address,Registers.A.W,Registers.X.W,Registers.Y.W,Registers.DB,Registers.D.W);std::fclose(f);}
++}
+--- a/getset.h
++++ b/getset.h
+@@ -55,8 +55,10 @@
+ 	return (TWO_CYCLES);
+ }
+ 
++extern void WWFTraceRecordRead(uint32 Address);
+ inline uint8 S9xGetByte (uint32 Address)
+ {
++    if ((Address & 0x3fffff) >= 0x2efaf5 && (Address & 0x3fffff) < 0x2efd11) WWFTraceRecordRead(Address);
+ 	int		block = (Address & 0xffffff) >> MEMMAP_SHIFT;
+ 	uint8	*GetAddress = Memory.Map[block];
+ 	int32	speed = memory_speed(Address);
+@@ -170,6 +172,7 @@
+ 
+ inline uint16 S9xGetWord (uint32 Address, enum s9xwrap_t w = WRAP_NONE)
+ {
++    if ((Address & 0x3fffff) >= 0x2efaf5 && (Address & 0x3fffff) < 0x2efd11) WWFTraceRecordRead(Address);
+ 	uint16	word;
+ 
+ 	uint32	mask = MEMMAP_MASK & (w == WRAP_PAGE ? 0xff : (w == WRAP_BANK ? 0xffff : 0xffffff));
+--- a/ppu.cpp
++++ b/ppu.cpp
+@@ -5,6 +5,9 @@
+ \*****************************************************************************/
+ 
+ #include "snes9x.h"
++#include <cstdio>
++#include <cstdlib>
++extern unsigned WWFFrame;
+ #include "memmap.h"
+ #include "dma.h"
+ #include "apu/apu.h"
+@@ -242,8 +245,11 @@
+ 		S9xMSU1WritePort(Address & 7, Byte);
+ 	else
+ 	if ((Address & 0xffc0) == 0x2140) // APUIO0, APUIO1, APUIO2, APUIO3
+-		// write_port will run the APU until given clock before writing value
+-		S9xAPUWritePort(Address & 3, Byte);
++    {
++        const char *dir=std::getenv("WWF_TRACE_DIR");
++        if(dir && (Registers.PBPC&0xffffff)==0xade71a && (Address&3)==3){char path[1024];std::snprintf(path,sizeof(path),"%s/music.jsonl",dir);FILE *f=std::fopen(path,"a");if(f){std::fprintf(f,"{\"frame\":%u,\"pc\":%u,\"port\":%u,\"value\":%u,\"a\":%u,\"x\":%u,\"y\":%u}\n",WWFFrame,Registers.PBPC&0xffffff,Address&3,Byte,Registers.A.W,Registers.X.W,Registers.Y.W);std::fclose(f);}}
++        S9xAPUWritePort(Address & 3, Byte);
++    }
+ 	else
+ 	if (Address <= 0x2183)
+ 	{

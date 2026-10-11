@@ -36,6 +36,7 @@ with sync_playwright() as p:
   buffer=io.BytesIO();image.save(buffer,format='PNG')
   page.locator('#portrait-import').set_input_files({'name':'test.png','mimeType':'image/png','buffer':buffer.getvalue()})
   page.wait_for_function('(id)=>Boolean(selectionEdits[id]?.portrait)',arg=id)
+  assert page.evaluate('Boolean(selectionEdits[M.id].monitor)') # default portrait/monitor link
   name='TEST '+['ALPHA','BRAVO','CHARLIE','DELTA','ECHO','FOXTROT','GOLF','HOTEL','INDIA','JULIET','KILO','LIMA'][int(id)]
   for field,value in {'name':name,'from':'TEST CITY','weight':'999','height':'6\'0"','special':'TEST KICK'}.items():page.locator('#bio-'+field).fill(value)
   page.locator('#bio-apply').click();assert page.evaluate('selectionEdits[M.id].bio.name')==name

@@ -3,13 +3,17 @@
 <style>
 :root{color-scheme:dark;--bg:#10131b;--panel:#1b2130;--edge:#323c50;--muted:#a9b6cc;--accent:#c88aff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#edf1f8;font:15px system-ui,sans-serif}button,input,select,textarea{font:inherit}button,.file-button{border:1px solid var(--edge);background:#283246;color:inherit;border-radius:9px;padding:11px 16px;cursor:pointer;font-weight:600;display:inline-block}button:hover,.file-button:hover{border-color:var(--accent)}button:disabled{opacity:.4;cursor:default}.primary{background:var(--accent);color:#241233;border-color:var(--accent)}input,select,textarea{border:1px solid var(--edge);background:#111724;color:inherit;border-radius:7px;padding:10px;width:100%}input[type=color]{width:58px;height:42px;padding:4px}textarea{resize:vertical}.file-input{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}.file-button:has(input:disabled){opacity:.4;cursor:default}h1,h2,h3,p{margin:0}h1{font-size:25px;letter-spacing:-.7px}h2{font-size:21px;margin-bottom:10px}h3{font-size:16px;margin-bottom:12px}p{line-height:1.55;color:var(--muted)}small{color:var(--muted)}a{color:var(--accent)}header{border-bottom:1px solid var(--edge);padding:22px 30px;display:flex;justify-content:space-between;gap:24px;align-items:center}.brand p{margin-top:5px}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.tag{background:#273447;color:#bfe3cd;border-radius:20px;padding:7px 12px;font-size:12px}#status{padding:14px 30px;border-bottom:1px solid var(--edge);min-height:50px}.layout{display:grid;grid-template-columns:245px minmax(0,1fr);gap:24px;max-width:1250px;margin:26px auto;padding:0 26px}.sidebar,.card{background:var(--panel);border:1px solid var(--edge);border-radius:14px;padding:22px}.sidebar{align-self:start;position:sticky;top:20px}.sidebar label{display:block;font-weight:600;margin:16px 0 8px}.thumb-wrap{background:#111724;border-radius:9px;display:flex;justify-content:center;padding:12px;margin:18px 0}.sidebar p{font-size:13px}.sidebar hr{border:0;border-top:1px solid var(--edge);margin:20px 0}nav{display:flex;gap:8px;margin-bottom:20px}nav button{flex:1;text-align:left;padding:15px}nav button[aria-selected=true]{background:#3c2d51;border-color:var(--accent)}[hidden]{display:none!important}.step{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:1px;margin-bottom:8px}.workspace{display:grid;grid-template-columns:minmax(235px,1fr) minmax(250px,1fr);gap:22px}.canvas-stage{min-height:355px;background:#111724;border:1px solid var(--edge);border-radius:12px;display:flex;align-items:center;justify-content:center;overflow:auto;padding:22px}canvas{image-rendering:pixelated;touch-action:none;background:repeating-conic-gradient(#30394b 0% 25%,#252d3e 0% 50%) 0/16px 16px;max-width:100%;height:auto!important}#portrait-thumb{width:128px;height:120px}#colors{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0}.swatch{width:33px;height:33px;padding:0;border-radius:6px}.swatch.selected{outline:2px solid white;outline-offset:2px}.controls label{display:block;margin:16px 0 7px}.hint{font-size:13px;margin:12px 0}.section-gap{margin-top:22px}details{border-top:1px solid var(--edge);padding-top:16px;margin-top:20px;color:var(--muted);font-size:13px}summary{cursor:pointer;color:#d1d9e8}details p{margin:10px 0}.fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}.fields label{display:block;font-size:13px;font-weight:600;margin-bottom:7px}.wide{grid-column:1/-1}.footer{margin-top:20px;padding:17px 20px;background:var(--panel);border:1px solid var(--edge);border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:12px}.empty{max-width:650px;margin:65px auto;text-align:center;padding:36px}.empty h2{font-size:28px}.empty p{margin:14px 0 25px}body:not(.has-rom) .editor-content{display:none}body.has-rom .empty{display:none}#profile-panel .canvas-stage{min-height:285px}#export-panel .card+.card{margin-top:18px}.export-steps{margin:16px 0 0;padding-left:20px;color:var(--muted);line-height:1.9}@media(max-width:850px){header{padding:18px;align-items:start;flex-wrap:wrap}.layout{grid-template-columns:1fr;padding:0 16px}.sidebar{position:static}.thumb-wrap{display:none}.sidebar hr{margin:12px 0}.workspace{grid-template-columns:1fr}nav button{padding:12px;font-size:13px}.fields{grid-template-columns:1fr}.footer{flex-wrap:wrap}#status{padding:12px 18px}.empty{margin:30px 16px}}
 </style></head><body>
-<header><div class="brand"><h1>WrestleEdit</h1><p>WWF Raw · Character editor</p></div><div class="row"><span id="rom-status" class="tag">No ROM loaded</span><label class="file-button" for="rom">Load ROM</label><input id="rom" class="file-input" type="file" accept=".sfc,.smc" aria-label="Load original USA ROM"></div></header>
+<header><div class="brand"><h1>WrestleEdit</h1><p>WWF Raw · Character editor · v0.2</p></div><div class="row"><span id="rom-status" class="tag">No ROM loaded</span><label class="file-button" for="rom">Load ROM</label><input id="rom" class="file-input" type="file" accept=".sfc,.smc" aria-label="Load original USA ROM"></div></header>
 <p id="status" role="status">Load your original WWF Raw USA ROM to begin. Your files stay on your computer.</p>
 <section class="empty card"><div class="step">START HERE</div><h2>Make the roster your own.</h2><p>Load a ROM, choose a wrestler, and change their sprites, selection portrait and bio. Save a project to keep editing, or save a playable ROM for your emulator.</p><label class="file-button primary" for="rom">Load WWF Raw ROM</label><p class="hint">Use an original, unmodified USA ROM. No installation or account needed.</p></section>
-<div class="layout editor-content"><aside class="sidebar"><div class="step">YOUR ROSTER</div><label for="wrestler">Choose wrestler</label><select id="wrestler" disabled></select><div class="thumb-wrap"><canvas id="portrait-thumb" width="128" height="120" aria-label="Selected wrestler portrait"></canvas></div><p id="character-title">All 12 original wrestlers</p><hr><p id="change-summary">No changes yet.</p><label class="file-button section-gap">Open project<input id="project" class="file-input" type="file" accept=".json" aria-label="Open saved project" disabled></label></aside>
+<div class="layout editor-content"><aside class="sidebar"><div class="step">YOUR ROSTER</div><label for="wrestler">Choose wrestler</label><select id="wrestler" disabled></select><div class="thumb-wrap"><canvas id="portrait-thumb" width="128" height="120" aria-label="Selected wrestler portrait"></canvas></div><p id="character-title">All 12 original wrestlers</p><hr><p id="change-summary">No changes yet.</p><label class="file-button section-gap">Open project<input id="project" class="file-input" type="file" accept=".json" aria-label="Open saved project" disabled></label><label class="file-button section-gap">Open edited ROM<input id="recover-rom" class="file-input" type="file" accept=".sfc,.smc" aria-label="Recover edits from an exported ROM" disabled></label><p class="hint">Load your original ROM first. Open an edited ROM to recover changes if you did not save a project.</p></aside>
 <main><nav role="tablist" aria-label="Character editing"><button id="tab-sprite" role="tab" aria-controls="sprite-panel" aria-selected="true" disabled>1 · Sprites</button><button id="tab-profile" role="tab" aria-controls="profile-panel" aria-selected="false" disabled>2 · Portrait & bio</button><button id="tab-export" role="tab" aria-controls="export-panel" aria-selected="false" disabled>3 · Save & play</button></nav>
 <section id="sprite-panel" role="tabpanel" aria-labelledby="tab-sprite"><div class="card"><h2>Edit wrestler sprites</h2><p>Choose a pose. Paint on the preview, or import an edited pose image.</p><div class="row section-gap"><label>Pose <select id="pose" disabled></select></label><button id="play" disabled>Play poses</button><label>Zoom <select id="zoom"><option>4</option><option selected>6</option><option>8</option></select></label></div><div class="workspace section-gap"><div><div class="canvas-stage"><canvas id="sprite" width="32" height="88" aria-label="Editable assembled wrestler sprite"></canvas></div><div class="row section-gap"><button id="png" disabled>Save pose image</button><label class="file-button">Import pose image<input id="sprite-import" class="file-input" type="file" accept="image/png" aria-label="Import edited pose image" disabled></label></div><p id="sprite-import-hint" class="hint">Save the pose image, edit it in your image editor, then import it here.</p></div><div class="controls"><h3>Colors and painting</h3><p class="hint">Pick a color, then click or drag on the wrestler.</p><div id="colors"></div><div class="row"><input id="palette-color" type="color" aria-label="Selected palette color" disabled><button id="palette-apply" disabled>Change color</button><button id="palette-restore" disabled>Restore color</button></div><p id="palette-usage" class="hint"></p><p id="shared" class="hint"></p><details><summary>Coverage and editing limits</summary><p id="details">No ROM loaded.</p><p>These are sampled poses, not every animation. Imported poses use the current 15 visible colors and keep the original outline. Tile edits may also affect shared poses or wrestlers. Test your changes through the other moves in an emulator.</p><a href="https://github.com/yourpalbones/WWF-Raw-Mod/blob/main/docs/editor-roadmap.md">Research and remaining coverage</a></details></div></div></div></section>
-<section id="profile-panel" role="tabpanel" aria-labelledby="tab-profile" hidden><div class="card"><h2>Selection portrait and bio</h2><p>Update the image and details shown when players choose this wrestler.</p><div class="workspace section-gap"><div><div class="canvas-stage"><canvas id="portrait" width="128" height="120" style="width:256px;height:240px" aria-label="Selection portrait preview"></canvas></div><label class="file-button section-gap">Choose portrait image<input id="portrait-import" class="file-input" type="file" accept="image/png,image/jpeg,image/webp" aria-label="Choose portrait image" disabled></label><p class="hint">PNG, JPEG or WebP. Automatically cropped to 128 × 120 and converted to 64 colors.</p><p id="selection-status" class="hint" role="status"></p></div><div id="bio-form" class="fields"><div class="wide"><label for="bio-name">Wrestler name</label><input id="bio-name" maxlength="14" disabled><small>Letters and spaces, up to 14 characters. Also used elsewhere in the game.</small></div><div class="wide"><label for="bio-from">Hometown</label><textarea id="bio-from" rows="3" disabled></textarea><small>Up to 3 lines, 12 characters each.</small></div><div><label for="bio-weight">Weight (lb)</label><input id="bio-weight" maxlength="3" inputmode="numeric" disabled></div><div><label for="bio-height">Height</label><input id="bio-height" maxlength="8" disabled></div><div class="wide"><label for="bio-special">Special move name</label><textarea id="bio-special" rows="3" disabled></textarea><small>Up to 3 lines, 11 characters each. Changes the label, not the move itself.</small></div><div class="wide row"><button id="bio-apply" class="primary" disabled>Save bio</button><button id="selection-restore" disabled>Restore portrait and bio</button></div></div></div></div></section>
+<section id="profile-panel" role="tabpanel" aria-labelledby="tab-profile" hidden><div class="card"><h2>Selection portrait and bio</h2><p>Update the image and details shown when players choose this wrestler.</p><div class="workspace section-gap"><div><div class="canvas-stage"><canvas id="portrait" width="128" height="120" style="width:256px;height:240px" aria-label="Selection portrait preview"></canvas></div><label class="file-button section-gap">Choose portrait image<input id="portrait-import" class="file-input" type="file" accept="image/png,image/jpeg,image/webp" aria-label="Choose portrait image" disabled></label><label class="hint"><input id="sync-monitor" type="checkbox" checked disabled style="width:auto"> Also update the small monitor photo</label><p class="hint">PNG, JPEG or WebP. Automatically cropped to 128 × 120 and converted to 64 colors.</p><p id="selection-status" class="hint" role="status"></p></div><div id="bio-form" class="fields"><div class="wide"><label for="bio-name">Wrestler name</label><input id="bio-name" maxlength="14" disabled><small>Letters and spaces, up to 14 characters. Updates the selection title and shared name text.</small><label class="hint"><input id="sync-logo" type="checkbox" checked disabled style="width:auto"> Also update the name/logo graphic when this name changes</label></div><div class="wide"><label for="bio-from">Hometown</label><textarea id="bio-from" rows="3" disabled></textarea><small>Up to 3 lines, 12 characters each.</small></div><div><label for="bio-weight">Weight (lb)</label><input id="bio-weight" maxlength="3" inputmode="numeric" disabled></div><div><label for="bio-height">Height</label><input id="bio-height" maxlength="8" disabled></div><div class="wide"><label for="bio-special">Special move name</label><textarea id="bio-special" rows="3" disabled></textarea><small>Up to 3 lines, 11 characters each. Changes the label, not the move itself.</small></div><div class="wide row"><button id="bio-apply" class="primary" disabled>Save bio</button><button id="selection-restore" disabled>Restore portrait and bio</button></div></div></div></div>
+<div class="card section-gap"><h2>Small monitor photo</h2><p>The announcers’ TV monitors use a separate photo from the main portrait.</p><div class="workspace section-gap"><div><canvas id="monitor" width="48" height="48" style="width:192px" aria-label="Small monitor photo preview"></canvas></div><div><label class="file-button">Choose monitor photo<input id="monitor-import" class="file-input" type="file" accept="image/png,image/jpeg,image/webp" aria-label="Choose monitor photo" disabled></label><div class="row section-gap"><button id="monitor-copy" disabled>Use main portrait</button><button id="monitor-restore" disabled>Restore monitor photo</button></div><p class="hint">48 × 48 pixels, 31 visible colors. You can reuse the main portrait or choose another image.</p></div></div></div>
+<div class="card section-gap"><h2>Name / logo graphic</h2><p>This artwork is separate from the typed name. Generate it from a name, or import your own logo.</p><div class="workspace section-gap"><div><canvas id="name-logo" width="256" height="224" style="width:256px" aria-label="Name logo preview"></canvas></div><div><label for="logo-name">Name for graphic</label><input id="logo-name" maxlength="14" disabled><div class="row section-gap"><button id="logo-apply" disabled>Use this name</button><button id="logo-restore" disabled>Restore original logo</button></div><label class="file-button section-gap">Choose logo image<input id="logo-import" class="file-input" type="file" accept="image/png,image/jpeg,image/webp" aria-label="Choose name logo image" disabled></label><p id="logo-status" class="hint"></p><p class="hint">Imports fit inside 256 × 224. Transparent pixels become the background. The generated name uses the game’s own lettering.</p></div></div></div>
+<div class="card section-gap"><h2>Theme song</h2><p>Choose which existing WWF Raw theme plays for this wrestler.</p><div class="row section-gap"><label for="theme-choice">Theme <select id="theme-choice" disabled></select></label><button id="theme-apply" disabled>Save theme</button><button id="theme-restore" disabled>Restore theme</button></div><p class="hint">This assigns one of the 12 existing themes. Importing a new song needs further sound-format research.</p></div>
+</section>
 <section id="export-panel" role="tabpanel" aria-labelledby="tab-export" hidden><div class="card"><div class="step">KEEP EDITING</div><h2>Save your project</h2><p>Your project includes sprite, palette, portrait and bio edits for every wrestler. Load the original ROM and open this project next time.</p><p class="hint">Use <strong>Save project</strong> below. The project file does not contain your ROM.</p></div><div class="card"><div class="step">PLAY YOUR CHANGES</div><h2>Save a playable ROM</h2><p>Download a new ROM with your changes, then open it in your SNES emulator.</p><div class="row section-gap"><button id="rom-export" class="primary" disabled>Save playable ROM</button><button id="patch" disabled>Export IPS patch</button></div><ol class="export-steps"><li>Save your project as well, so you can keep editing.</li><li>Open the downloaded ROM in your emulator.</li><li>Check your edited wrestlers through their moves.</li></ol><details><summary>Export details</summary><p>Portrait replacements expand the new ROM to 4 MiB. Bio text is checked against its available space. Compressed sprite edits must fit their original allocation. Export stops with an explanation if an edit cannot fit.</p></details></div></section>
 <footer class="footer"><div class="row"><button id="undo" disabled>Undo</button><button id="reset" disabled>Reset all edits</button></div><button id="save" class="primary" disabled>Save project</button></footer></main></div>
 <script>
@@ -44620,6 +44624,20 @@ window.RAW_SELECTION_MANIFEST = {
       "palette_offset": 3066973,
       "width": 128,
       "height": 120,
+      "monitor_directory_offset": 3138421,
+      "monitor_palette_directory_offset": 3138469,
+      "announcer_monitor_word": 3074319,
+      "announcer_monitor_bank": 3074343,
+      "announcer_palette_word": 3074367,
+      "announcer_palette_bank": 3074391,
+      "monitor_offset": 2810633,
+      "monitor_palette_offset": 2812107,
+      "logo_offset": 3127153,
+      "logo_map_offset": 3128395,
+      "logo_palette_offset": 3128724,
+      "logo_tile_limit": 146,
+      "theme_offset": 3078945,
+      "theme": 19,
       "fields": {
         "name": 3078929,
         "from": 3078931,
@@ -44635,6 +44653,20 @@ window.RAW_SELECTION_MANIFEST = {
       "palette_offset": 3001526,
       "width": 128,
       "height": 120,
+      "monitor_directory_offset": 3138401,
+      "monitor_palette_directory_offset": 3138449,
+      "announcer_monitor_word": 3074321,
+      "announcer_monitor_bank": 3074345,
+      "announcer_palette_word": 3074369,
+      "announcer_palette_bank": 3074393,
+      "monitor_offset": 1717618,
+      "monitor_palette_offset": 1719114,
+      "logo_offset": 3104400,
+      "logo_map_offset": 3106686,
+      "logo_palette_offset": 3107138,
+      "logo_tile_limit": 282,
+      "theme_offset": 3078990,
+      "theme": 16,
       "fields": {
         "name": 3078974,
         "from": 3078976,
@@ -44650,6 +44682,20 @@ window.RAW_SELECTION_MANIFEST = {
       "palette_offset": 3001334,
       "width": 128,
       "height": 120,
+      "monitor_directory_offset": 3138437,
+      "monitor_palette_directory_offset": 3138485,
+      "announcer_monitor_word": 3074323,
+      "announcer_monitor_bank": 3074347,
+      "announcer_palette_word": 3074371,
+      "announcer_palette_bank": 3074395,
+      "monitor_offset": 29160,
+      "monitor_palette_offset": 30407,
+      "logo_offset": 1933312,
+      "logo_map_offset": 1936525,
+      "logo_palette_offset": 1936858,
+      "logo_tile_limit": 280,
+      "theme_offset": 3079035,
+      "theme": 7,
       "fields": {
         "name": 3079019,
         "from": 3079021,
@@ -44665,6 +44711,20 @@ window.RAW_SELECTION_MANIFEST = {
       "palette_offset": 38546,
       "width": 128,
       "height": 120,
+      "monitor_directory_offset": 3138441,
+      "monitor_palette_directory_offset": 3138489,
+      "announcer_monitor_word": 3074325,
+      "announcer_monitor_bank": 3074349,
+      "announcer_palette_word": 3074373,
+      "announcer_palette_bank": 3074397,
+      "monitor_offset": 3043353,
+      "monitor_palette_offset": 3044806,
+      "logo_offset": 1936886,
+      "logo_map_offset": 1938361,
+      "logo_palette_offset": 1938734,
+      "logo_tile_limit": 207,
+      "theme_offset": 3079080,
+      "theme": 8,
       "fields": {
         "name": 3079064,
         "from": 3079066,
@@ -44680,6 +44740,20 @@ window.RAW_SELECTION_MANIFEST = {
       "palette_offset": 32509,
       "width": 128,
       "height": 120,
+      "monitor_directory_offset": 3138397,
+      "monitor_palette_directory_offset": 3138445,
+      "announcer_monitor_word": 3074327,
+      "announcer_monitor_bank": 3074351,
+      "announcer_palette_word": 3074375,
+      "announcer_palette_bank": 3074399,
+      "monitor_offset": 2932595,
+      "monitor_palette_offset": 2933850,
+      "logo_offset": 1678317,
+      "logo_map_offset": 1682156,
+      "logo_palette_offset": 1682528,
+      "logo_tile_limit": 350,
+      "theme_offset": 3079125,
+      "theme": 9,
       "fields": {
         "name": 3079109,
         "from": 3079111,
@@ -44695,6 +44769,20 @@ window.RAW_SELECTION_MANIFEST = {
       "palette_offset": 1721297,
       "width": 128,
       "height": 120,
+      "monitor_directory_offset": 3138429,
+      "monitor_palette_directory_offset": 3138477,
+      "announcer_monitor_word": 3074329,
+      "announcer_monitor_bank": 3074353,
+      "announcer_palette_word": 3074377,
+      "announcer_palette_bank": 3074401,
+      "monitor_offset": 2910570,
+      "monitor_palette_offset": 2912121,
+      "logo_offset": 1713185,
+      "logo_map_offset": 1715405,
+      "logo_palette_offset": 1715747,
+      "logo_tile_limit": 219,
+      "theme_offset": 3079170,
+      "theme": 10,
       "fields": {
         "name": 3079154,
         "from": 3079156,
@@ -44710,6 +44798,20 @@ window.RAW_SELECTION_MANIFEST = {
       "palette_offset": 1690685,
       "width": 128,
       "height": 120,
+      "monitor_directory_offset": 3138417,
+      "monitor_palette_directory_offset": 3138465,
+      "announcer_monitor_word": 3074331,
+      "announcer_monitor_bank": 3074355,
+      "announcer_palette_word": 3074379,
+      "announcer_palette_bank": 3074403,
+      "monitor_offset": 3128756,
+      "monitor_palette_offset": 3130192,
+      "logo_offset": 252909,
+      "logo_map_offset": 254952,
+      "logo_palette_offset": 255408,
+      "logo_tile_limit": 255,
+      "theme_offset": 3079215,
+      "theme": 11,
       "fields": {
         "name": 3079199,
         "from": 3079201,
@@ -44725,6 +44827,20 @@ window.RAW_SELECTION_MANIFEST = {
       "palette_offset": 1933031,
       "width": 128,
       "height": 120,
+      "monitor_directory_offset": 3138409,
+      "monitor_palette_directory_offset": 3138457,
+      "announcer_monitor_word": 3074333,
+      "announcer_monitor_bank": 3074357,
+      "announcer_palette_word": 3074381,
+      "announcer_palette_bank": 3074405,
+      "monitor_offset": 3063273,
+      "monitor_palette_offset": 3064669,
+      "logo_offset": 2907045,
+      "logo_map_offset": 2910017,
+      "logo_palette_offset": 2910538,
+      "logo_tile_limit": 296,
+      "theme_offset": 3079260,
+      "theme": 12,
       "fields": {
         "name": 3079244,
         "from": 3079246,
@@ -44740,6 +44856,20 @@ window.RAW_SELECTION_MANIFEST = {
       "palette_offset": 2935865,
       "width": 128,
       "height": 120,
+      "monitor_directory_offset": 3138433,
+      "monitor_palette_directory_offset": 3138481,
+      "announcer_monitor_word": 3074335,
+      "announcer_monitor_bank": 3074359,
+      "announcer_palette_word": 3074383,
+      "announcer_palette_bank": 3074407,
+      "monitor_offset": 3107164,
+      "monitor_palette_offset": 3108749,
+      "logo_offset": 2973611,
+      "logo_map_offset": 2975789,
+      "logo_palette_offset": 2976017,
+      "logo_tile_limit": 183,
+      "theme_offset": 3079305,
+      "theme": 13,
       "fields": {
         "name": 3079289,
         "from": 3079291,
@@ -44755,6 +44885,20 @@ window.RAW_SELECTION_MANIFEST = {
       "palette_offset": 1670864,
       "width": 128,
       "height": 120,
+      "monitor_directory_offset": 3138413,
+      "monitor_palette_directory_offset": 3138461,
+      "announcer_monitor_word": 3074337,
+      "announcer_monitor_bank": 3074361,
+      "announcer_palette_word": 3074385,
+      "announcer_palette_bank": 3074409,
+      "monitor_offset": 3061672,
+      "monitor_palette_offset": 3063209,
+      "logo_offset": 1662519,
+      "logo_map_offset": 1665520,
+      "logo_palette_offset": 1665934,
+      "logo_tile_limit": 286,
+      "theme_offset": 3079350,
+      "theme": 14,
       "fields": {
         "name": 3079334,
         "from": 3079336,
@@ -44770,6 +44914,20 @@ window.RAW_SELECTION_MANIFEST = {
       "palette_offset": 2981644,
       "width": 128,
       "height": 120,
+      "monitor_directory_offset": 3138405,
+      "monitor_palette_directory_offset": 3138453,
+      "announcer_monitor_word": 3074339,
+      "announcer_monitor_bank": 3074363,
+      "announcer_palette_word": 3074387,
+      "announcer_palette_bank": 3074411,
+      "monitor_offset": 2866579,
+      "monitor_palette_offset": 2868073,
+      "logo_offset": 3059309,
+      "logo_map_offset": 3061318,
+      "logo_palette_offset": 3061652,
+      "logo_tile_limit": 208,
+      "theme_offset": 3079395,
+      "theme": 15,
       "fields": {
         "name": 3079379,
         "from": 3079381,
@@ -44785,6 +44943,20 @@ window.RAW_SELECTION_MANIFEST = {
       "palette_offset": 2870250,
       "width": 128,
       "height": 120,
+      "monitor_directory_offset": 3138425,
+      "monitor_palette_directory_offset": 3138473,
+      "announcer_monitor_word": 3074341,
+      "announcer_monitor_bank": 3074365,
+      "announcer_palette_word": 3074389,
+      "announcer_palette_bank": 3074413,
+      "monitor_offset": 2996200,
+      "monitor_palette_offset": 2997736,
+      "logo_offset": 1658476,
+      "logo_map_offset": 1661988,
+      "logo_palette_offset": 1662497,
+      "logo_tile_limit": 392,
+      "theme_offset": 3079440,
+      "theme": 6,
       "fields": {
         "name": 3079424,
         "from": 3079426,
@@ -44801,7 +44973,12 @@ window.RAW_SELECTION_MANIFEST = {
     }
   ],
   "portrait_base": 3145728,
-  "portrait_stride": 16384
+  "portrait_stride": 16384,
+  "monitor_base": 3342336,
+  "monitor_stride": 4096,
+  "logo_base": 3407872,
+  "logo_stride": 32768,
+  "font_offset": 2808803
 };
 
 </script><script>
@@ -44858,7 +45035,7 @@ function patch(){if(!rom)throw Error('Load a ROM first');const selection=selecti
  const out=[80,65,84,67,72];if(selection.expanded)for(let address=0x300000;address<0x400000;){const length=Math.min(65535,0x400000-address);out.push(address>>16,address>>8&255,address&255,0,0,length>>8,length&255,255);address+=length;}for(const [offset,packet]of records)out.push(offset>>16,(offset>>8)&255,offset&255,packet.length>>8,packet.length&255,...packet);out.push(69,79,70);return new Uint8Array(out);}
 function stop(){clearInterval(timer);timer=null;$('play').textContent='Play poses';}
 $('rom').onchange=async event=>{stop();rom=null;refreshApp();try{let bytes=new Uint8Array(await event.target.files[0].arrayBuffer());if(bytes.length%1024===512)bytes=bytes.slice(512);const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');if(digest!==M.original_sha256)throw Error('This version requires the original, unmodified WWF Raw USA ROM.');rom=bytes;originals={};edits={};palettes={};selectionEdits={};selectionOriginals={};paletteEdits={};history=[];for(const [key,source]of Object.entries(C.sources))originals[key]=decode(rom,source);
- $('wrestler').replaceChildren(...C.characters.map(c=>new Option(c.character,c.id)));$('wrestler').value=M.id;loadCharacter(M.id);for(const id of ['wrestler','pose','play','reset','save','patch','png','project','palette-color','palette-apply','portrait-import','bio-name','bio-from','bio-weight','bio-height','bio-special','bio-apply','selection-restore','sprite-import','rom-export','tab-sprite','tab-profile','tab-export'])$(id).disabled=false;status('Original ROM verified. Paint a pose or preview the captured layouts.');render();}catch(e){for(const id of ['wrestler','pose','play','reset','save','patch','png','project','undo','palette-color','palette-apply','palette-restore','portrait-import','bio-name','bio-from','bio-weight','bio-height','bio-special','bio-apply','selection-restore','sprite-import','rom-export','tab-sprite','tab-profile','tab-export'])$(id).disabled=true;ctx.clearRect(0,0,canvas.width,canvas.height);refreshApp();status(e.message);}};
+ $('wrestler').replaceChildren(...C.characters.map(c=>new Option(c.character,c.id)));$('wrestler').value=M.id;loadCharacter(M.id);for(const id of ['wrestler','pose','play','reset','save','patch','png','project','palette-color','palette-apply','portrait-import','bio-name','bio-from','bio-weight','bio-height','bio-special','bio-apply','selection-restore','sprite-import','rom-export','tab-sprite','tab-profile','tab-export','monitor-import','monitor-copy','monitor-restore','logo-import','logo-name','logo-apply','logo-restore','theme-choice','theme-apply','theme-restore','sync-logo','sync-monitor','recover-rom'])$(id).disabled=false;status('Original ROM verified. Paint a pose or preview the captured layouts.');render();}catch(e){for(const id of ['wrestler','pose','play','reset','save','patch','png','project','undo','palette-color','palette-apply','palette-restore','portrait-import','bio-name','bio-from','bio-weight','bio-height','bio-special','bio-apply','selection-restore','sprite-import','rom-export','tab-sprite','tab-profile','tab-export','monitor-import','monitor-copy','monitor-restore','logo-import','logo-name','logo-apply','logo-restore','theme-choice','theme-apply','theme-restore','sync-logo','sync-monitor','recover-rom'])$(id).disabled=true;ctx.clearRect(0,0,canvas.width,canvas.height);refreshApp();status(e.message);}};
 function loadCharacter(id){stop();M=C.characters.find(c=>c.id===id);$('character-title').textContent=M.character+' · Original WWF Raw sprites · Captured poses';$('pose').replaceChildren(...M.poses.map((p,i)=>new Option(p.label,i)));render();}
 $('wrestler').onchange=()=>loadCharacter($('wrestler').value);
 $('pose').onchange=()=>{stop();render();};$('zoom').onchange=render;
@@ -44867,16 +45044,16 @@ $('undo').onclick=()=>{const previous=history.pop();if(previous){edits=previous.
 $('palette-apply').onclick=()=>{if(!rom)return;const hex=$('palette-color').value;const rgb=[1,3,5].map(i=>Math.round(parseInt(hex.slice(i,i+2),16)*31/255));const value=rgb[0]|rgb[1]<<5|rgb[2]<<10;if(value===paletteValue(selected))return;remember();const original=rom[M.palette_offset+selected*2]|rom[M.palette_offset+selected*2+1]<<8;if(value===original)delete paletteEdits[selected];else paletteEdits[selected]=value;render();status('Color updated to the nearest SNES color. Preview other poses to check every visible use.');};
 $('palette-restore').onclick=()=>{if(!rom)return;remember();delete paletteEdits[selected];render();};
 $('play').onclick=()=>{if(timer){stop();return;}$('play').textContent='Stop';timer=setInterval(()=>{$('pose').value=(Number($('pose').value)+1)%M.poses.length;render();},160);};
-$('save').onclick=()=>download('raw-gear-project.json',JSON.stringify({version:4,original_sha256:C.original_sha256,edits,palettes,selection_edits:selectionEdits},null,2),'application/json');
+$('save').onclick=()=>download('raw-gear-project.json',JSON.stringify({version:5,original_sha256:C.original_sha256,edits,palettes,selection_edits:selectionEdits},null,2),'application/json');
 $('project').onchange=async event=>{try{
  const project=JSON.parse(await event.target.files[0].text());
- if(![1,2,3,4].includes(project.version)||project.original_sha256!==C.original_sha256||!project.edits||typeof project.edits!=='object'||Array.isArray(project.edits))throw Error('Project does not match this editor.');
+ if(![1,2,3,4,5].includes(project.version)||project.original_sha256!==C.original_sha256||!project.edits||typeof project.edits!=='object'||Array.isArray(project.edits))throw Error('Project does not match this editor.');
  for(const [key,p]of Object.entries(project.edits))if(!Object.hasOwn(C.sources,key)||!Array.isArray(p)||p.length!==64||p.some((v,i)=>!Number.isInteger(v)||v<0||v>15||((originals[key][i]===0)!==(v===0))))throw Error('Project contains invalid tile edits.');
  const colors=project.version>=3?project.palettes:{'1':project.version===1?{}:project.palette_edits};
  if(!colors||typeof colors!=='object'||Array.isArray(colors))throw Error('Project contains invalid palette edits.');
  for(const [id,p]of Object.entries(colors))if(!C.characters.some(c=>c.id===id)||!p||typeof p!=='object'||Array.isArray(p)||Object.entries(p).some(([key,v])=>!/^([1-9]|1[0-5])$/.test(key)||!Number.isInteger(v)||v<0||v>32767))throw Error('Project contains invalid palette edits.');
- const selection=project.version===4?project.selection_edits:{};validateSelection(selection);
- remember();edits=structuredClone(project.edits);palettes=structuredClone(colors);selectionEdits=structuredClone(selection);render();status('Project loaded. Edits still need emulator verification.');
+ const selection=project.version>=4?project.selection_edits:{};validateSelection(selection);
+ remember();edits=structuredClone(project.edits);palettes=structuredClone(colors);selectionEdits=structuredClone(selection);if(project.version===4)for(const [id,edit]of Object.entries(selectionEdits))if(edit.bio?.name&&edit.bio.name!==originalSelection(id).bio.name)edit.logoName=edit.bio.name;render();status('Project loaded. Edits still need emulator verification.');
  }catch(e){status(e.message);}event.target.value='';};
 $('patch').onclick=()=>{try{download('raw-gear.ips',patch(),'application/octet-stream');status('Patch exported. Apply it to a copy of your original ROM, then test in an emulator.');}catch(e){status(e.message);}};
 $('png').onclick=()=>canvas.toBlob(blob=>download(M.character.toLowerCase().replaceAll(' ','-')+'-pose.png',blob,'image/png'));
@@ -44917,14 +45094,14 @@ function renderSelection(){if(!rom)return;const state=selectionState(M.id),canva
  state.portrait.pixels.forEach((value,i)=>{const w=state.portrait.colors[value];image.data.set([0,5,10].map(s=>Math.floor((w>>s&31)*255/31)).concat(255),i*4);});context.putImageData(image,0,0);
  for(const [field,value]of Object.entries(state.bio))$('bio-'+field).value=value;
  const newText=new Set();for(const [id,edit]of Object.entries(selectionEdits))for(const [field,value]of Object.entries(edit.bio||{}))if(field!=='weight'&&value!==originalSelection(id).bio[field])newText.add(value);const textUsed=[...newText].reduce((n,text)=>n+text.length+1,0);
- $('selection-status').textContent=`128 × 120 portrait · 64 colors · ${Object.values(selectionEdits).filter(e=>e.portrait).length} imported portraits. Bio text space: ${textUsed} of 183 used. Original shared strings are preserved.`;
+ $('selection-status').textContent=`128 × 120 portrait · 64 colors · ${Object.values(selectionEdits).filter(e=>e.portrait).length} imported portraits. Bio text space: ${textUsed} of 183 used. Original shared strings are preserved.`;renderProfileAssets();
 }
 function validateBio(bio,id=M.id){const limits={name:[1,14],from:[3,12],height:[1,8],special:[3,11],weight:[1,3]};
  if(!bio||typeof bio!=='object'||Array.isArray(bio))throw Error('Invalid bio data');
- for(const [field,value]of Object.entries(bio)){if(field==='name'&&value!==originalSelection(id).bio.name&&!/^[A-Z ]+$/.test(value))throw Error('New names support uppercase letters and spaces.');if(!Object.hasOwn(limits,field)||typeof value!=='string')throw Error('Invalid bio field');const [lines,width]=limits[field],parts=value.split('\n');if(!value||parts.length>lines||parts.some(p=>!p.length||p.length>width)||!/^[A-Z0-9 .,\-'"%\n]+$/.test(value)||(field==='weight'&&!/^\d{1,3}$/.test(value)))throw Error(`Check ${field}: uppercase text, up to ${lines} lines of ${width} characters.`);}
+ for(const [field,value]of Object.entries(bio)){if(field==='name'&&value!==originalSelection(id).bio.name&&!/^[A-Z ]+$/.test(value))throw Error('New names support uppercase letters and spaces.');if(!Object.hasOwn(limits,field)||typeof value!=='string')throw Error('Invalid bio field');const [lines,width]=limits[field],parts=value.split('\n');if(!value||parts.length>lines||parts.some(p=>!p.length||(p.length>width&&(field!=='name'||value!==originalSelection(id).bio.name)))||!/^[A-Z0-9 .,\-'"%\n]+$/.test(value)||(field==='weight'&&!/^\d{1,3}$/.test(value)))throw Error(`Check ${field}: uppercase text, up to ${lines} lines of ${width} characters.`);}
 }
 function validateSelection(edits){if(!edits||typeof edits!=='object'||Array.isArray(edits))throw Error('Invalid selection edits');
- for(const [id,edit]of Object.entries(edits)){if(!Object.hasOwn(S.characters,id)||!edit||typeof edit!=='object'||Array.isArray(edit)||Object.keys(edit).some(k=>!['portrait','bio'].includes(k)))throw Error('Invalid selection character');if(edit.bio)validateBio(edit.bio,id);
+ for(const [id,edit]of Object.entries(edits)){if(!Object.hasOwn(S.characters,id)||!edit||typeof edit!=='object'||Array.isArray(edit)||Object.keys(edit).some(k=>!['portrait','bio','monitor','logo','logoName','theme'].includes(k)))throw Error('Invalid selection character');if(edit.bio)validateBio(edit.bio,id);validateProfileAssets(edit,id);
  if(edit.portrait){const p=edit.portrait;if(!Array.isArray(p.pixels)||p.pixels.length!==15360||p.pixels.some(v=>!Number.isInteger(v)||v<0||v>63)||!Array.isArray(p.colors)||p.colors.length!==64||p.colors.some(v=>!Number.isInteger(v)||v<0||v>32767))throw Error('Invalid portrait pixels or colors');}}
 }
 function selectionRecords(){const records=[],strings=new Map(),regions=S.text_regions.map(r=>({...r}));let expanded=false;
@@ -44939,19 +45116,64 @@ function selectionRecords(){const records=[],strings=new Map(),regions=S.text_re
    records.push([meta.fields[field],new Uint8Array([address&255,address>>8&255])]);
   }
  }
+ const companion=profileAssetRecords();records.push(...companion.records);expanded ||= companion.expanded;
  return {records,expanded};
 }
-function quantizePortrait(rgba){
+function quantizePortrait(rgba,limit=64){
  const counts=new Map();for(let i=0;i<rgba.length;i+=4){const channels=[0,1,2].map(c=>Math.round(rgba[i+c]*31/255)),word=channels[0]|channels[1]<<5|channels[2]<<10;counts.set(word,(counts.get(word)||0)+1);}
  let boxes=[[...counts].map(([word,count])=>({word,count,rgb:[word&31,word>>5&31,word>>10&31]}))];
  const range=box=>[0,1,2].map(c=>Math.max(...box.map(p=>p.rgb[c]))-Math.min(...box.map(p=>p.rgb[c])));
- while(boxes.length<64){let choice=-1,score=-1,axis=0;boxes.forEach((box,i)=>{if(box.length<2)return;const ranges=range(box),span=Math.max(...ranges);if(span>score){choice=i;score=span;axis=ranges.indexOf(span);}});if(choice<0)break;const box=boxes[choice].sort((a,b)=>a.rgb[axis]-b.rgb[axis]),total=box.reduce((n,p)=>n+p.count,0);let sum=0,cut=1;for(let i=0;i<box.length-1;i++){sum+=box[i].count;cut=i+1;if(sum>=total/2)break;}boxes.splice(choice,1,box.slice(0,cut),box.slice(cut));}
- const colors=boxes.map(box=>{const total=box.reduce((n,p)=>n+p.count,0),rgb=[0,1,2].map(c=>Math.round(box.reduce((n,p)=>n+p.rgb[c]*p.count,0)/total));return rgb[0]|rgb[1]<<5|rgb[2]<<10;});while(colors.length<64)colors.push(colors[0]);const cache=new Map(),pixels=[];
+ while(boxes.length<limit){let choice=-1,score=-1,axis=0;boxes.forEach((box,i)=>{if(box.length<2)return;const ranges=range(box),span=Math.max(...ranges);if(span>score){choice=i;score=span;axis=ranges.indexOf(span);}});if(choice<0)break;const box=boxes[choice].sort((a,b)=>a.rgb[axis]-b.rgb[axis]),total=box.reduce((n,p)=>n+p.count,0);let sum=0,cut=1;for(let i=0;i<box.length-1;i++){sum+=box[i].count;cut=i+1;if(sum>=total/2)break;}boxes.splice(choice,1,box.slice(0,cut),box.slice(cut));}
+ const colors=boxes.map(box=>{const total=box.reduce((n,p)=>n+p.count,0),rgb=[0,1,2].map(c=>Math.round(box.reduce((n,p)=>n+p.rgb[c]*p.count,0)/total));return rgb[0]|rgb[1]<<5|rgb[2]<<10;});while(colors.length<limit)colors.push(colors[0]);const cache=new Map(),pixels=[];
  for(let i=0;i<rgba.length;i+=4){const rgb=[0,1,2].map(c=>Math.round(rgba[i+c]*31/255)),word=rgb[0]|rgb[1]<<5|rgb[2]<<10;if(!cache.has(word)){let best=0,dist=Infinity;colors.forEach((v,k)=>{const d=[0,5,10].reduce((n,s,c)=>n+(rgb[c]-(v>>s&31))**2,0);if(d<dist){dist=d;best=k;}});cache.set(word,best);}pixels.push(cache.get(word));}return {pixels,colors};
 }
-$('portrait-import').onchange=async event=>{try{if(!rom)throw Error('Load the original ROM first');const file=event.target.files[0];if(!file||file.size>16*1024*1024)throw Error('Choose an image smaller than 16 MB');const id=M.id,bitmap=await createImageBitmap(file),temp=document.createElement('canvas');temp.width=128;temp.height=120;const context=temp.getContext('2d');context.fillStyle='black';context.fillRect(0,0,128,120);const scale=Math.max(128/bitmap.width,120/bitmap.height);context.drawImage(bitmap,(128-bitmap.width*scale)/2,(120-bitmap.height*scale)/2,bitmap.width*scale,bitmap.height*scale);bitmap.close();const portrait=quantizePortrait(context.getImageData(0,0,128,120).data);remember();(selectionEdits[id] ||= {}).portrait=portrait;render();status('Portrait imported, centered and cropped to 128 × 120 with 64 SNES colors.');}catch(e){status(e.message);}event.target.value='';};
-$('bio-apply').onclick=()=>{try{const bio={};for(const field of Object.keys(S.characters[M.id].fields))bio[field]=$('bio-'+field).value.toUpperCase();validateBio(bio);remember();(selectionEdits[M.id] ||= {}).bio=bio;render();status('Bio saved to the project. Export a patch to change the game.');}catch(e){status(e.message);}};
+$('portrait-import').onchange=async event=>{try{if(!rom)throw Error('Load the original ROM first');const file=event.target.files[0];if(!file||file.size>16*1024*1024)throw Error('Choose an image smaller than 16 MB');const id=M.id,bitmap=await createImageBitmap(file),temp=document.createElement('canvas');temp.width=128;temp.height=120;const context=temp.getContext('2d');context.fillStyle='black';context.fillRect(0,0,128,120);const scale=Math.max(128/bitmap.width,120/bitmap.height);context.drawImage(bitmap,(128-bitmap.width*scale)/2,(120-bitmap.height*scale)/2,bitmap.width*scale,bitmap.height*scale);bitmap.close();const portrait=quantizePortrait(context.getImageData(0,0,128,120).data);remember();const edit=selectionEdits[id] ||= {};edit.portrait=portrait;if($('sync-monitor').checked)edit.monitor=monitorFromPortrait(portrait,id);render();status('Portrait imported, centered and cropped to 128 × 120 with 64 SNES colors.');}catch(e){status(e.message);}event.target.value='';};
+$('bio-apply').onclick=()=>{try{const bio={};for(const field of Object.keys(S.characters[M.id].fields))bio[field]=$('bio-'+field).value.toUpperCase();validateBio(bio);const nameChanged=bio.name!==selectionState(M.id).bio.name;remember();const edit=selectionEdits[M.id] ||= {};edit.bio=bio;if(nameChanged&&$('sync-logo').checked){edit.logoName=bio.name;delete edit.logo;}render();status('Bio saved. Name text and, if enabled, the name graphic will update in your exported ROM.');}catch(e){status(e.message);}};
 $('selection-restore').onclick=()=>{remember();delete selectionEdits[M.id];render();};
+
+</script><script>
+/* Independent monitor pictures, name artwork and existing theme assignments. */
+let profileOriginals={}, nativeNameFont=null;
+function planarPixels(bytes,width,height,bpp){const out=[];for(let y=0;y<height;y++)for(let x=0;x<width;x++){const base=((y>>3)*(width>>3)+(x>>3))*bpp*8;let value=0;for(let p=0;p<bpp;p++)value|=((bytes[base+(p>>1)*16+(y&7)*2+(p&1)]>>(7-(x&7)))&1)<<p;out.push(value);}return out;}
+function nativeBlock(bytes){const out=[bytes.length&255,bytes.length>>8,1];for(let end=bytes.length;end>0;){const start=Math.max(0,end-64);out.push(63+end-start,...bytes.slice(start,end));end=start;}out.push(0);return new Uint8Array(out);}
+function imageTiles(pixels,width,height,bpp){const bytes=new Uint8Array(width*height*bpp/8);pixels.forEach((value,i)=>{const x=i%width,y=Math.floor(i/width),base=((y>>3)*(width>>3)+(x>>3))*bpp*8;for(let p=0;p<bpp;p++)bytes[base+(p>>1)*16+(y&7)*2+(p&1)]|=((value>>p)&1)<<(7-(x&7));});return bytes;}
+function originalProfileAssets(id){if(profileOriginals[id])return profileOriginals[id];const meta=S.characters[id];const readColors=(offset,count)=>Array.from({length:count},(_,i)=>(rom[offset+i*2]|rom[offset+i*2+1]<<8)&32767);const monitor={pixels:planarPixels(decodePortrait(rom,meta.monitor_offset),48,48,8),colors:readColors(meta.monitor_palette_offset,32)};const tiles=decodePortrait(rom,meta.logo_offset),map=decodePortrait(rom,meta.logo_map_offset),logo={pixels:Array(256*224).fill(0),colors:readColors(meta.logo_palette_offset,16)};
+ for(let tile=0;tile<32*28;tile++){const word=map[tile*2]|map[tile*2+1]<<8;if(word&0x1c00)throw Error('Unsupported name logo palette');const number=word&1023;if(number>=meta.logo_tile_limit)throw Error('Invalid name logo tile');const pixels=planarPixels(tiles.slice(number*32,number*32+32),8,8,4);for(let y=0;y<8;y++)for(let x=0;x<8;x++)logo.pixels[(Math.floor(tile/32)*8+y)*256+(tile%32)*8+x]=pixels[(word&0x8000?7-y:y)*8+(word&0x4000?7-x:x)];}
+ return profileOriginals[id]={monitor,logo,theme:meta.theme};}
+function generateNameLogo(name,id){if(!/^[A-Z ]{1,14}$/.test(name)||!name.trim())throw Error('Name graphics support 1–14 letters and spaces.');nativeNameFont ||= decodePortrait(rom,S.font_offset);const pixels=Array(256*224).fill(0),colors=originalProfileAssets(id).logo.colors.slice();colors[0]=0;colors[1]=32767;colors[2]=0;colors[3]=16912;const lines=[name.trim()],scale=name.trim().length<=7?2:1,top=24;
+ lines.forEach(text=>{const left=Math.floor((256-text.length*16*scale)/2);[...text].forEach((letter,index)=>{if(letter===' ')return;const start=(letter.charCodeAt(0)-65)*4;for(let y=0;y<16;y++)for(let x=0;x<16;x++){const tile=start+(y>>3)*2+(x>>3),base=tile*16+(y&7)*2;const value=((nativeNameFont[base]>>(7-(x&7)))&1)|(((nativeNameFont[base+1]>>(7-(x&7)))&1)<<1);for(let sy=0;sy<scale;sy++)for(let sx=0;sx<scale;sx++)pixels[(top+y*scale+sy)*256+left+index*16*scale+x*scale+sx]=value;}});});return {pixels,colors};}
+function profileState(id){const original=originalProfileAssets(id),edit=selectionEdits[id]||{};return {monitor:edit.monitor||original.monitor,logo:edit.logo||(edit.logoName?generateNameLogo(edit.logoName,id):original.logo),theme:edit.theme??original.theme};}
+function drawProfileImage(element,image,width,height,transparent=true){const context=element.getContext('2d'),rgba=context.createImageData(width,height);image.pixels.forEach((value,i)=>{const color=image.colors[value];rgba.data.set([0,5,10].map(s=>Math.floor((color>>s&31)*255/31)).concat(transparent&&value===0?0:255),i*4);});context.putImageData(rgba,0,0);}
+function logoTiles(logo,id){const data=imageTiles(logo.pixels,256,224,4),unique=[Array(32).fill(0)],lookup=new Map([[unique[0].join(','),0]]),map=new Uint8Array(2048);for(let tile=0;tile<896;tile++){const bytes=Array.from(data.slice(tile*32,tile*32+32)),key=bytes.join(',');let number=lookup.get(key);if(number===undefined){number=unique.length;lookup.set(key,number);unique.push(bytes);}map[tile*2]=number&255;map[tile*2+1]=number>>8;}if(unique.length>S.characters[id].logo_tile_limit)throw Error(`This logo uses ${unique.length} tiles; this slot supports ${S.characters[id].logo_tile_limit}. Simplify its detail before exporting.`);return {graphics:new Uint8Array(unique.flat()),map,count:unique.length};}
+function renderProfileAssets(){const state=profileState(M.id);drawProfileImage($('monitor'),state.monitor,48,48);drawProfileImage($('name-logo'),state.logo,256,224);$('logo-name').value=selectionEdits[M.id]?.logoName||selectionState(M.id).bio.name;try{const packed=logoTiles(state.logo,M.id);$('logo-status').textContent=`256 × 224 · 15 visible colors · ${packed.count} of ${S.characters[M.id].logo_tile_limit} tiles used.`;}catch(e){$('logo-status').textContent=e.message;}
+ if(!$('theme-choice').options.length)$('theme-choice').replaceChildren(...C.characters.map(c=>new Option(c.character+' theme',String(S.characters[c.id].theme))));$('theme-choice').value=String(state.theme);}
+function validateProfileAssets(edit,id){const check=(image,count,length,min)=>{if(!image||!Array.isArray(image.pixels)||image.pixels.length!==length||image.pixels.some(v=>!Number.isInteger(v)||v<min||v>=count)||!Array.isArray(image.colors)||image.colors.length!==count||image.colors.some(v=>!Number.isInteger(v)||v<0||v>32767))throw Error('Invalid monitor or name logo image');};if(edit.monitor)check(edit.monitor,32,2304,1);if(edit.logo){check(edit.logo,16,57344,0);logoTiles(edit.logo,id);}if(edit.logoName!==undefined&&(!/^[A-Z ]{1,14}$/.test(edit.logoName)||!edit.logoName.trim()))throw Error('Invalid name graphic text');if(edit.logo&&edit.logoName!==undefined)throw Error('Choose a name graphic or an imported logo, not both');if(edit.theme!==undefined&&!Object.values(S.characters).some(c=>c.theme===edit.theme))throw Error('Invalid theme assignment');}
+function profileAssetRecords(){const records=[];let expanded=false;const pointer=(address)=>new Uint8Array([address&255,address>>8&255,(address>>16)|192]);const palette=colors=>new Uint8Array(colors.flatMap(c=>[c&255,c>>8]));for(const [id,edit]of Object.entries(selectionEdits)){const meta=S.characters[id];validateProfileAssets(edit,id);if(edit.monitor){expanded=true;const address=S.monitor_base+Number(id)*S.monitor_stride;records.push([address,nativeBlock(imageTiles(edit.monitor.pixels,48,48,8))],[address+0xf00,palette(edit.monitor.colors)],[meta.record+20,pointer(address)],[meta.record+24,pointer(address+0xf00)],[meta.monitor_directory_offset,pointer(address)],[meta.monitor_palette_directory_offset,pointer(address+0xf00)],[meta.announcer_monitor_word,pointer(address).slice(0,2)],[meta.announcer_monitor_bank,pointer(address).slice(2)],[meta.announcer_palette_word,pointer(address+0xf00).slice(0,2)],[meta.announcer_palette_bank,pointer(address+0xf00).slice(2)]);}if(edit.logo||edit.logoName){expanded=true;const logo=edit.logo||generateNameLogo(edit.logoName,id),packed=logoTiles(logo,id),address=S.logo_base+Number(id)*S.logo_stride;records.push([address,nativeBlock(packed.graphics)],[address+0x6000,nativeBlock(packed.map)],[address+0x6f00,palette(logo.colors)],[meta.record+8,pointer(address)],[meta.record+12,pointer(address+0x6000)],[meta.record+16,pointer(address+0x6f00)]);}if(edit.theme!==undefined)records.push([meta.theme_offset,new Uint8Array([edit.theme])]);}return {records,expanded};}
+async function importProfileImage(file,kind,id){if(!file||file.size>16*1024*1024)throw Error('Choose an image smaller than 16 MB');const bitmap=await createImageBitmap(file),width=kind==='monitor'?48:256,height=kind==='monitor'?48:224,temp=document.createElement('canvas');temp.width=width;temp.height=height;const context=temp.getContext('2d');if(kind==='monitor'){context.fillStyle='black';context.fillRect(0,0,width,height);}const scale=(kind==='monitor'?Math.max:Math.min)(width/bitmap.width,height/bitmap.height);context.drawImage(bitmap,(width-bitmap.width*scale)/2,(height-bitmap.height*scale)/2,bitmap.width*scale,bitmap.height*scale);bitmap.close();const rgba=context.getImageData(0,0,width,height).data;if(kind==='monitor'){const image=quantizePortrait(rgba,31);return {pixels:image.pixels.map(v=>v+1),colors:[originalProfileAssets(id).monitor.colors[0],...image.colors]};}const opaque=[];for(let i=0;i<rgba.length;i+=4)if(rgba[i+3]>=128)opaque.push(...rgba.slice(i,i+4));if(!opaque.length)throw Error('Choose a logo with visible pixels');const image=quantizePortrait(opaque,15),pixels=[];let cursor=0;for(let i=0;i<rgba.length;i+=4)pixels.push(rgba[i+3]>=128?image.pixels[cursor++]+1:0);const logo={pixels,colors:[originalProfileAssets(id).logo.colors[0],...image.colors]};logoTiles(logo,id);return logo;}
+for(const kind of ['monitor','logo'])$(kind+'-import').onchange=async event=>{try{if(!rom)throw Error('Load the original ROM first');const id=M.id,image=await importProfileImage(event.target.files[0],kind,id);remember();const edit=selectionEdits[id] ||= {};edit[kind]=image;if(kind==='logo')delete edit.logoName;render();status(kind==='monitor'?'Small monitor photo saved.':'Name/logo image saved.');}catch(e){status(e.message);}event.target.value='';};
+function monitorFromPortrait(source,id){const temp=document.createElement('canvas');temp.width=128;temp.height=120;drawProfileImage(temp,source,128,120,false);const thumb=document.createElement('canvas');thumb.width=thumb.height=48;const context=thumb.getContext('2d');context.drawImage(temp,4,0,120,120,0,0,48,48);const image=quantizePortrait(context.getImageData(0,0,48,48).data,31);return {pixels:image.pixels.map(v=>v+1),colors:[originalProfileAssets(id).monitor.colors[0],...image.colors]};}
+$('monitor-copy').onclick=()=>{remember();(selectionEdits[M.id] ||= {}).monitor=monitorFromPortrait(selectionState(M.id).portrait,M.id);render();status('Main portrait copied to the small monitor photo.');};
+$('logo-apply').onclick=()=>{try{const name=$('logo-name').value.toUpperCase();const logo=generateNameLogo(name,M.id);logoTiles(logo,M.id);remember();const edit=selectionEdits[M.id] ||= {};edit.logoName=name;delete edit.logo;render();status('Name/logo graphic saved using the game’s lettering.');}catch(e){status(e.message);}};
+$('theme-apply').onclick=()=>{remember();(selectionEdits[M.id] ||= {}).theme=Number($('theme-choice').value);render();status('Existing theme reassigned. Check it when selecting this wrestler in the emulator.');};
+for(const kind of ['monitor','logo','theme'])$(kind+'-restore').onclick=()=>{remember();const edit=selectionEdits[M.id];if(edit){delete edit[kind];if(kind==='logo')delete edit.logoName;}render();};
+function recoverEditedROM(data){
+ if(!rom)throw Error('Load your original ROM first, then open the edited ROM.');if(data.length%1024===512)data=data.slice(512);if(![rom.length,0x400000].includes(data.length))throw Error('Choose a WWF Raw ROM exported by this editor.');
+ let checksum=0;for(let i=0;i<data.length;i++)checksum=(checksum+data[i]*(data.length===0x300000&&i>=0x200000?2:1))&65535;if(checksum!==(data[0xffde]|data[0xffdf]<<8)||((data[0xffdc]|data[0xffdd]<<8)^checksum)!==65535)throw Error('The edited ROM checksum is invalid. Choose a ROM saved by this editor.');
+ const allowed=new Uint8Array(rom.length),permit=(offset,length)=>allowed.fill(1,offset,Math.min(offset+length,allowed.length)),tileEdits={},colorEdits={},profiles={};permit(0xffdc,4);for(const region of S.text_regions)permit(region.offset,region.length);
+ for(const [key,source]of Object.entries(C.sources)){permit(source.offset,source.length);const values=decode(data,source);if(values.some((v,i)=>(v===0)!==(originals[key][i]===0)))throw Error('This ROM changes a sprite outline that the editor cannot recover.');if(values.some((v,i)=>v!==originals[key][i])){if(encode(values,source.compressed).length>source.length)throw Error('A sprite edit exceeds its supported storage.');tileEdits[key]=values;}}
+ const word=offset=>data[offset]|data[offset+1]<<8,pointer=offset=>data[offset]|data[offset+1]<<8|data[offset+2]<<16,colors=(offset,count)=>Array.from({length:count},(_,i)=>word(offset+i*2)&32767);
+ for(const character of C.characters){const id=character.id,meta=S.characters[id],record=meta.record,edit={},original=originalSelection(id),assets=originalProfileAssets(id);permit(character.palette_offset,32);const palette={};for(let i=1;i<16;i++){const value=word(character.palette_offset+i*2),base=rom[character.palette_offset+i*2]|rom[character.palette_offset+i*2+1]<<8;if(value>32767)throw Error('Invalid in-ring palette');if(value!==base)palette[i]=value;}if(Object.keys(palette).length)colorEdits[id]=palette;
+  for(const offset of [0,8,12,16,20,24])permit(record+offset,3);permit(meta.palette_offset,128);permit(meta.theme_offset,1);permit(meta.monitor_directory_offset,3);permit(meta.monitor_palette_directory_offset,3);for(const key of ['announcer_monitor_word','announcer_palette_word'])permit(meta[key],2);for(const key of ['announcer_monitor_bank','announcer_palette_bank'])permit(meta[key],1);
+  const requirePointer=(offset,expected)=>{const value=pointer(offset)&0x3fffff;if(!expected.includes(value))throw Error('This ROM uses an asset location the editor cannot recover.');return value;};
+  const portraitAddress=requirePointer(record,[meta.portrait_offset,S.portrait_base+Number(id)*S.portrait_stride]);if(pointer(record+4)!==(rom[record+4]|rom[record+5]<<8|rom[record+6]<<16))throw Error('Unsupported selection palette relocation');const portraitPixels=planarPixels(decodePortrait(data,portraitAddress),128,120,8).map(v=>v-64),portraitColors=colors(meta.palette_offset,64);if(portraitPixels.some((v,i)=>v!==original.pixels[i])||portraitColors.some((v,i)=>v!==original.colors[i]))edit.portrait={pixels:portraitPixels,colors:portraitColors};
+  const monitorBase=S.monitor_base+Number(id)*S.monitor_stride,monitorAddress=requirePointer(record+20,[meta.monitor_offset,monitorBase]),monitorPalette=requirePointer(record+24,[meta.monitor_palette_offset,monitorBase+0xf00]),monitor={pixels:planarPixels(decodePortrait(data,monitorAddress),48,48,8),colors:colors(monitorPalette,32)};if(monitor.pixels.some((v,i)=>v!==assets.monitor.pixels[i])||monitor.colors.some((v,i)=>v!==assets.monitor.colors[i]))edit.monitor=monitor;
+  const logoBase=S.logo_base+Number(id)*S.logo_stride,logoAddress=requirePointer(record+8,[meta.logo_offset,logoBase]),logoMap=requirePointer(record+12,[meta.logo_map_offset,logoBase+0x6000]),logoPalette=requirePointer(record+16,[meta.logo_palette_offset,logoBase+0x6f00]);const graphics=decodePortrait(data,logoAddress),map=decodePortrait(data,logoMap);if(map.length!==2048||graphics.length%32)throw Error('Invalid name artwork');const logo={pixels:Array(57344).fill(0),colors:colors(logoPalette,16)};for(let tile=0;tile<896;tile++){const value=map[tile*2]|map[tile*2+1]<<8,index=value&1023;if(value&0x1c00||index*32>=graphics.length)throw Error('Invalid name artwork tiles');const pixels=planarPixels(graphics.slice(index*32,index*32+32),8,8,4);for(let y=0;y<8;y++)for(let x=0;x<8;x++)logo.pixels[(Math.floor(tile/32)*8+y)*256+(tile%32)*8+x]=pixels[(value&0x8000?7-y:y)*8+(value&0x4000?7-x:x)];}if(logo.pixels.some((v,i)=>v!==assets.logo.pixels[i])||logo.colors.some((v,i)=>v!==assets.logo.colors[i]))edit.logo=logo;
+  const bio={};for(const [field,offset]of Object.entries(meta.fields)){permit(offset,field==='weight'?4:2);let position=field==='weight'?offset:0x2e0000+word(offset);if((position&65535)<0x8000)throw Error('Invalid bio text address');let text='';while(position<data.length&&data[position]!==0&&text.length<64)text+=String.fromCharCode(data[position++]);if(position>=data.length||data[position]!==0)throw Error('Invalid bio text');bio[field]=text.replaceAll('\r','\n');}try{validateBio(bio,id);}catch(e){throw Error(C.characters.find(c=>c.id===id).character+': '+e.message);}if(Object.keys(bio).some(field=>bio[field]!==original.bio[field]))edit.bio=bio;
+  if(bio.name!==original.bio.name&&!edit.logo)edit.logoName=bio.name;const theme=data[meta.theme_offset];if(theme!==meta.theme)edit.theme=theme;if(Object.keys(edit).length)profiles[id]=edit;
+ }
+ for(let offset=0;offset<rom.length;offset++)if(data[offset]!==rom[offset]&&!allowed[offset])throw Error('This ROM includes changes the editor cannot recover. Open its saved project instead.');validateSelection(profiles);return {edits:tileEdits,palettes:colorEdits,selectionEdits:profiles};
+}
+$('recover-rom').onchange=async event=>{try{const file=event.target.files[0];if(!file)throw Error('Choose your edited ROM.');const project=recoverEditedROM(new Uint8Array(await file.arrayBuffer()));remember();edits=project.edits;palettes=project.palettes;selectionEdits=project.selectionEdits;render();status('Edits recovered from your ROM. Save a project now, then update monitor photos, name artwork or themes.');}catch(e){status(e.message);}event.target.value='';};
 
 </script><script>
 /* Simple workflow shell, pose-image import and local playable-ROM export. */
