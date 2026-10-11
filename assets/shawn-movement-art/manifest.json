@@ -1,0 +1,225 @@
+{
+  "source_sheet_sha256": "59fa8a8a4654619ea27bca4e166881c2e2b2eebfde2d32e75fead97267e2e197",
+  "artwork_origin": "Reference-guided generated pixel-art sheet, converted into native indexed assets; not extracted game body pixels",
+  "native_palette": [
+    [
+      0,
+      82,
+      0
+    ],
+    [
+      32,
+      32,
+      32
+    ],
+    [
+      115,
+      0,
+      0
+    ],
+    [
+      197,
+      0,
+      0
+    ],
+    [
+      115,
+      0,
+      0
+    ],
+    [
+      197,
+      0,
+      0
+    ],
+    [
+      180,
+      180,
+      180
+    ],
+    [
+      164,
+      98,
+      57
+    ],
+    [
+      255,
+      255,
+      255
+    ],
+    [
+      90,
+      49,
+      0
+    ],
+    [
+      123,
+      65,
+      8
+    ],
+    [
+      189,
+      123,
+      90
+    ],
+    [
+      148,
+      82,
+      24
+    ],
+    [
+      189,
+      131,
+      16
+    ],
+    [
+      189,
+      148,
+      0
+    ],
+    [
+      213,
+      148,
+      123
+    ]
+  ],
+  "alpha_threshold": 200,
+  "uniform_scale": 0.16964285714285715,
+  "native_reference_height": 76,
+  "registration_mode": "waist",
+  "target_registration_anchor": [
+    59,
+    89
+  ],
+  "target_support_boot_anchor": null,
+  "frames": [
+    {
+      "pose": 0,
+      "source_bounds": [
+        0,
+        26,
+        262,
+        474
+      ],
+      "sha256": "c7511e6b5ae9d97778b6f3291f39f16747ff961af9fc0169a72354d1a630c1e4",
+      "source_registration_anchor": [
+        127.81632653061224,
+        473
+      ],
+      "source_scale": 0.16964285714285715
+    },
+    {
+      "pose": 1,
+      "source_bounds": [
+        0,
+        26,
+        251,
+        475
+      ],
+      "sha256": "2c9df28d285c5de91c0eb5d578cff10b8bb822718608290498773bb67bb0a327",
+      "source_registration_anchor": [
+        122.44922547332186,
+        474
+      ],
+      "source_scale": 0.16964285714285715
+    },
+    {
+      "pose": 2,
+      "source_bounds": [
+        0,
+        26,
+        333,
+        477
+      ],
+      "sha256": "98daed2196659559bc200835bed24422a40bab92481475ba4928c15711619e29",
+      "source_registration_anchor": [
+        186.00294550810014,
+        476
+      ],
+      "source_scale": 0.16964285714285715
+    },
+    {
+      "pose": 3,
+      "source_bounds": [
+        0,
+        26,
+        228,
+        477
+      ],
+      "sha256": "ebbf25bbf1969c11ad8c1962d5d7551da1262f60df445d3a8bc9bfb23f81c80d",
+      "source_registration_anchor": [
+        125.48318042813456,
+        476
+      ],
+      "source_scale": 0.16964285714285715
+    },
+    {
+      "pose": 4,
+      "source_bounds": [
+        0,
+        16,
+        273,
+        458
+      ],
+      "sha256": "7f48586f672a754d9642d74ea09c447030b3e7e209ca69cd97f1324952a5ed41",
+      "source_registration_anchor": [
+        152.27722772277227,
+        457
+      ],
+      "source_scale": 0.16964285714285715
+    },
+    {
+      "pose": 5,
+      "source_bounds": [
+        0,
+        16,
+        356,
+        461
+      ],
+      "sha256": "39e46128e88d323b7bfd19d5acae848c8bba9f19608859b05f631696b998b316",
+      "source_registration_anchor": [
+        195.3145299145299,
+        460
+      ],
+      "source_scale": 0.16964285714285715
+    },
+    {
+      "pose": 6,
+      "source_bounds": [
+        0,
+        16,
+        226,
+        463
+      ],
+      "sha256": "eb7e2d4cc937d5a2ea34b8d6f78f081e6ce58a545d6981bdfd3bd534974bb8bc",
+      "source_registration_anchor": [
+        116.78894472361809,
+        462
+      ],
+      "source_scale": 0.16964285714285715
+    },
+    {
+      "pose": 7,
+      "source_bounds": [
+        0,
+        16,
+        285,
+        461
+      ],
+      "sha256": "50cbba7107654a0c16dc11cd33d4f9768e718f56982b60849aa0ddbaf73ff539",
+      "source_registration_anchor": [
+        170.17171717171718,
+        460
+      ],
+      "source_scale": 0.16964285714285715
+    }
+  ],
+  "motion_reference": null,
+  "reference_observed_frames": [],
+  "appearance_reference": "assets/shawn-superkick-front-art",
+  "scope": "Authored idle and walking poses; no walking motion footage used",
+  "row_scales": [
+    0.16964285714285715,
+    0.16964285714285715
+  ]
+}

@@ -1,5 +1,7 @@
 # Shawn superkick: front-facing revision
 
+Latest: [matching standing and walking sprites](../shawn-redesign/README.md), including this finisher.
+
 Shawn now keeps his face, chest and abs open toward the screen during the
 kick. The eight newly authored poses include preparation, a small backward
 step, entry into the kick, extension and standing recovery. Native animation

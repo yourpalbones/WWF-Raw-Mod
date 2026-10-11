@@ -1,0 +1,228 @@
+{
+  "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "patched_sha256": "5a60796d70d30e5230ce6e1c9c89f55bf6dbcb8df316e77bf35391ae7e439cbc",
+  "ips_sha256": "cb8e546b15672cea9be8b3b7ad716a35dfcbfd09f86a717aeb21f39b91de060a",
+  "movement_artwork_manifest_sha256": "21ca256e0f8b60f0fd85bbd21824ca16c427f04014570d7bfdfb31b218389fb8",
+  "back_artwork_manifest_sha256": "8d7d64225c136482d8dc5b6cbf6769d09774b63ed634be0f6a52ea0c994b8ba7",
+  "authored_body_vertical_offset_pixels": 8,
+  "movement_poses": [
+    {
+      "pose": 0,
+      "primary_id": 624,
+      "objects": 17,
+      "tiles_including_shadow": 57
+    },
+    {
+      "pose": 1,
+      "primary_id": 627,
+      "objects": 17,
+      "tiles_including_shadow": 54
+    },
+    {
+      "pose": 2,
+      "primary_id": 630,
+      "objects": 17,
+      "tiles_including_shadow": 60
+    },
+    {
+      "pose": 3,
+      "primary_id": 633,
+      "objects": 17,
+      "tiles_including_shadow": 48
+    },
+    {
+      "pose": 4,
+      "primary_id": 636,
+      "objects": 17,
+      "tiles_including_shadow": 54
+    },
+    {
+      "pose": 5,
+      "primary_id": 639,
+      "objects": 17,
+      "tiles_including_shadow": 63
+    },
+    {
+      "pose": 6,
+      "primary_id": 642,
+      "objects": 16,
+      "tiles_including_shadow": 47
+    },
+    {
+      "pose": 7,
+      "primary_id": 645,
+      "objects": 17,
+      "tiles_including_shadow": 60
+    },
+    {
+      "pose": 8,
+      "primary_id": 648,
+      "objects": 17,
+      "tiles_including_shadow": 51
+    },
+    {
+      "pose": 9,
+      "primary_id": 651,
+      "objects": 17,
+      "tiles_including_shadow": 51
+    },
+    {
+      "pose": 10,
+      "primary_id": 654,
+      "objects": 17,
+      "tiles_including_shadow": 51
+    },
+    {
+      "pose": 11,
+      "primary_id": 657,
+      "objects": 16,
+      "tiles_including_shadow": 44
+    },
+    {
+      "pose": 12,
+      "primary_id": 660,
+      "objects": 17,
+      "tiles_including_shadow": 60
+    },
+    {
+      "pose": 13,
+      "primary_id": 663,
+      "objects": 17,
+      "tiles_including_shadow": 63
+    },
+    {
+      "pose": 14,
+      "primary_id": 666,
+      "objects": 17,
+      "tiles_including_shadow": 54
+    },
+    {
+      "pose": 15,
+      "primary_id": 669,
+      "objects": 17,
+      "tiles_including_shadow": 63
+    }
+  ],
+  "native_idle_walk_sequence_range": [
+    "C403A2",
+    "C40671"
+  ],
+  "native_profile_mapping": {
+    "C84692": 0,
+    "C846AE": 2,
+    "C846BC": 3,
+    "C846CA": 4,
+    "C846D8": 5,
+    "C846E6": 6,
+    "C846F4": 7,
+    "C84702": 3,
+    "C84710": 4,
+    "C8471E": 5,
+    "C8472C": 6,
+    "C8473A": 7,
+    "C84748": 5,
+    "C84756": 6,
+    "C84764": 7,
+    "C84596": 8,
+    "C845B2": 10,
+    "C845C0": 11,
+    "C845CE": 12,
+    "C845DC": 13,
+    "C845EA": 14,
+    "C845F8": 15,
+    "C84606": 10,
+    "C84614": 11,
+    "C84622": 12,
+    "C84630": 14,
+    "C8463E": 15,
+    "C8464C": 11,
+    "C8465A": 12,
+    "C84668": 13,
+    "C84676": 14,
+    "C84684": 15
+  },
+  "finisher": {
+    "original_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+    "patched_sha256": "6c424743cf2d2a5284cd0a175d29e756bb4c762e36ed9c138935552b3b8c2446",
+    "ips_sha256": "766eb163a08a849961f1ecb9361d7a508e29061f3629a3f3e16413dc3e61bd5d",
+    "poses": [
+      {
+        "pose": 0,
+        "primary_id": 600,
+        "objects": 17,
+        "tiles_including_shadow": 60
+      },
+      {
+        "pose": 1,
+        "primary_id": 603,
+        "objects": 17,
+        "tiles_including_shadow": 48
+      },
+      {
+        "pose": 2,
+        "primary_id": 606,
+        "objects": 17,
+        "tiles_including_shadow": 57
+      },
+      {
+        "pose": 3,
+        "primary_id": 609,
+        "objects": 17,
+        "tiles_including_shadow": 51
+      },
+      {
+        "pose": 4,
+        "primary_id": 612,
+        "objects": 16,
+        "tiles_including_shadow": 44
+      },
+      {
+        "pose": 5,
+        "primary_id": 615,
+        "objects": 17,
+        "tiles_including_shadow": 54
+      },
+      {
+        "pose": 6,
+        "primary_id": 618,
+        "objects": 17,
+        "tiles_including_shadow": 57
+      },
+      {
+        "pose": 7,
+        "primary_id": 621,
+        "objects": 17,
+        "tiles_including_shadow": 60
+      }
+    ],
+    "newly_drawn_artwork": true,
+    "artwork_assets": "assets/shawn-superkick-front-art",
+    "artwork_manifest_sha256": "16bf6b626db355236fcb3aae49c599bb4a43cb08992e97697a080fcb42b30753",
+    "native_sequence_entries": 8,
+    "stock_kick_sequence_entries": 4,
+    "step_back_world_pixels": 4,
+    "sequence_forward_offsets": [
+      -4,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "experimental": true,
+    "limitations": [
+      "Reference-guided artwork draft; style and transitions still need review",
+      "Native kick collision/damage logic retained; new visual sequence requires gameplay validation",
+      "Full match, interruptions, AI and player 2 as Shawn unverified"
+    ]
+  },
+  "experimental": true,
+  "scope": "Shawn idle and walking profiles plus front-facing superkick; other actions still use stock artwork",
+  "limitations": [
+    "Idle variants 1 and 9 authored but unused by the stock idle profiles",
+    "Walk pose transitions and likeness need visual review",
+    "Full character animation replacement is unfinished"
+  ]
+}

@@ -54,53 +54,77 @@ def pack(image):
     return candidates
 
 
-def build(rom, reference, art_dir=None, step_back=0):
-    if not 0 <= step_back <= 8:
-        raise ValueError("Step-back distance must be between zero and eight pixels")
-    r = bytearray(build_pose(rom, reference)[0])
+def install_poses(
+    r,
+    art_dir,
+    count=8,
+    *,
+    profile_base=0x2000,
+    descriptor_base=0x4000,
+    tile_base=0,
+    primary_id=600,
+    secondary_id=1008,
+    upper_table=0x1C00,
+    lower_table=0x1D00,
+    sequence=True,
+    step_back=0,
+):
+    """Install complete indexed poses into private graphics profiles and tiles."""
     tiles = 0
     report = []
     # 7-byte native sequence entries point at 14-byte graphics profiles.
-    for i in range(len(POSES)):
-        profile = 0x2000 + i * 14
-        r[0x311000 + i * 7 : 0x311007 + i * 7] = (
-            bytes([0xF1])
-            + profile.to_bytes(2, "little")
-            + bytes(
-                [(-step_back if i == 0 else step_back if i == 1 else 0) & 255, 0, 0, 0]
+    for i in range(count):
+        profile = profile_base + i * 14
+        if sequence:
+            r[0x311000 + i * 7 : 0x311007 + i * 7] = (
+                bytes([0xF1])
+                + profile.to_bytes(2, "little")
+                + bytes(
+                    [
+                        (-step_back if i == 0 else step_back if i == 1 else 0) & 255,
+                        0,
+                        0,
+                        0,
+                    ]
+                )
             )
+        descriptor = descriptor_base + i * 0x300
+        ident = primary_id + i * 3
+        r[0x310000 + upper_table + i * 3 : 0x310003 + upper_table + i * 3] = (
+            descriptor.to_bytes(2, "little") + bytes(1)
         )
-        descriptor = 0x4000 + i * 0x300
-        ident = 600 + i * 3
-        r[0x311C00 + i * 3 : 0x311C03 + i * 3] = descriptor.to_bytes(
-            2, "little"
-        ) + bytes(1)
-        r[0x311D00 + i * 3 : 0x311D03 + i * 3] = (descriptor + 0x180).to_bytes(
-            2, "little"
-        ) + bytes(1)
+        r[0x310000 + lower_table + i * 3 : 0x310003 + lower_table + i * 3] = (
+            descriptor + 0x180
+        ).to_bytes(2, "little") + bytes(1)
         # Fixed anchors, upper/lower body descriptors and native shadow.
         record = (
             ident.to_bytes(2, "little")
             + bytes.fromhex("03 d1")
-            + (0x8000 | 1008 + i * 3).to_bytes(2, "little")
+            + (0x8000 | secondary_id + i * 3).to_bytes(2, "little")
             + bytes.fromhex("00 ff 24 80 00 ff ff ff")
         )
         r[0x310000 + profile : 0x310000 + profile + 14] = record
         total_objects = total_cost = 0
-        packed = []
-        for part in range(2):
-            image = load_pose(i, art_dir) if art_dir else pose(i)
-            for yy in range(96):
-                if (yy < 48) != (part == 0):
-                    for xx in range(96):
-                        image.putpixel((xx, yy), 0)
-            packed.append(pack(image))
-        pairs = [
-            (a, b)
-            for a in packed[0]
-            for b in packed[1]
-            if a[0][0] + b[0][0] <= 17 and a[0][1] + b[0][1] <= 60
-        ]
+        pairs = []
+        # Keep the established split when it fits. Broad neutral stances may
+        # need a different upper/lower boundary to avoid wasted tile rows.
+        for split_y in (48, 40, 44, 52, 56, 60):
+            packed = []
+            for part in range(2):
+                image = load_pose(i, art_dir) if art_dir else pose(i)
+                for yy in range(96):
+                    if (yy < split_y) != (part == 0):
+                        for xx in range(96):
+                            image.putpixel((xx, yy), 0)
+                packed.append(pack(image))
+            pairs = [
+                (a, b)
+                for a in packed[0]
+                for b in packed[1]
+                if a[0][0] + b[0][0] <= 17 and a[0][1] + b[0][1] <= 60
+            ]
+            if pairs:
+                break
         if not pairs:
             raise ValueError(("Cannot pack combined artwork", i))
         chosen = min(
@@ -139,8 +163,11 @@ def build(rom, reference, art_dir=None, step_back=0):
                                 for xx in range(8)
                             ]
                         )
-                        r[0x320000 + tiles * 32 : 0x320020 + tiles * 32] = packet
-                        d.extend(tiles.to_bytes(2, "little"))
+                        r[
+                            0x320000 + (tile_base + tiles) * 32 : 0x320020
+                            + (tile_base + tiles) * 32
+                        ] = packet
+                        d.extend((tile_base + tiles).to_bytes(2, "little"))
                         tiles += 1
             address = 0x310000 + descriptor + part * 0x180
             r[address : address + len(d)] = d
@@ -156,6 +183,14 @@ def build(rom, reference, art_dir=None, step_back=0):
                 "tiles_including_shadow": total_cost + 4,
             }
         )
+    return report
+
+
+def build(rom, reference, art_dir=None, step_back=0):
+    if not 0 <= step_back <= 8:
+        raise ValueError("Step-back distance must be between zero and eight pixels")
+    r = bytearray(build_pose(rom, reference)[0])
+    report = install_poses(r, art_dir, step_back=step_back)
     r[0x311000 + len(POSES) * 7] = 255
     r[0x313E00:0x313E02] = bytes(2)
     # Redirect only the marked special to its own native sequence table.
