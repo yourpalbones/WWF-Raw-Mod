@@ -1,19 +1,19 @@
-# WWF Raw editor: gear, portraits and bios
+# WrestleEdit — WWF Raw browser app
 
-![The editor running with original Shawn Michaels sprites](../evidence/roster-editor/workshop.png)
+![WrestleEdit sprite editor](../evidence/app-interface/sprites.png)
 
 ## Try it
 
-1. Open [gear-workshop.html](gear-workshop.html) on GitHub and click **Download raw file**.
-2. Open that downloaded file in Chrome, Edge or Firefox.
-3. Click **Open your original USA ROM** and choose your unmodified WWF Raw ROM.
-4. Choose a wrestler, then select a color and paint directly on their sprite.
-   To recolor a palette slot, use **Change color**.
-5. Use **Save project** to keep editable work, or **Export IPS patch** to apply
-   your changes to an unheadered copy of the original ROM.
+1. Download [gear-workshop.html](gear-workshop.html) using GitHub's **Download raw file** button, then open it in Chrome, Edge or Firefox.
+2. Click **Load ROM** and choose your original WWF Raw USA ROM.
+3. Choose a wrestler. Use **Sprites** to paint, recolor or import a pose PNG; use **Portrait & bio** to upload their selection image and edit their details.
+4. Open **Save & play**, then click **Save playable ROM**. Open the saved `.sfc` file in your emulator.
 
-The ROM stays on your computer. This repository contains layout addresses and
-original-game capture evidence, not a ROM or extracted tile library.
+Use **Save project** to keep work editable. **Open project** restores it after loading the original ROM. IPS export is also available.
+
+Everything runs locally in your browser. Your original ROM stays unchanged, and no ROM is included in this repository.
+
+To edit a sprite image externally, use **Save pose image**, edit that PNG, and import it back. Keep its dimensions, transparent outline and opaque visible pixels. Colors are matched to the wrestler's current palette. Import changes the selected pose's underlying tiles; it does not generate a full set of animations. Shared tiles can change other poses too, so preview them and test in an emulator.
 
 ## Available previews
 
@@ -63,9 +63,9 @@ Original sprite work is retained, including Shawn's original look.
 
 ## Selection portraits and bios
 
-Choose a wrestler above, then scroll to **Selection image and bio**.
+Choose a wrestler, then open **Portrait & bio**.
 
-- **Import portrait** accepts PNG, JPEG or WebP. Images are centered and cropped
+- **Choose portrait image** accepts PNG, JPEG or WebP. Images are centered and cropped
   to 128 × 120, reduced to 64 colors, and snapped to SNES color precision.
   Portrait colors are independent of the in-ring palette.
 - Edit name, hometown (**From**), weight, height and the special move label, then
@@ -116,3 +116,9 @@ python3 tools/verify_selection_editor.py '/path/to/WWF Raw (USA).sfc'
 
 Rebuild selection metadata with `tools/build_selection_manifest.py`, then run
 `tools/bundle_editor.py`. [Selection evidence and emulator reproduction](../evidence/selection-editor/README.md).
+
+Verify the app workflow, pose PNG imports, local playable-ROM download and mobile layout with:
+
+```sh
+python3 tools/verify_app.py '/path/to/WWF Raw (USA).sfc'
+```

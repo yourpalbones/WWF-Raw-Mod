@@ -23,7 +23,7 @@ with sync_playwright() as p:
  browser=p.chromium.launch(executable_path=args.chromium,headless=True,args=['--no-sandbox'])
  page=browser.new_page(viewport={'width':1200,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
  page.goto(f'http://127.0.0.1:{server.server_port}/editor/gear-workshop.html')
- page.locator('#rom').set_input_files(str(args.rom));page.wait_for_function('rom!==null')
+ page.locator('#rom').set_input_files(str(args.rom));page.wait_for_function('rom!==null');page.locator('#tab-profile').click()
  characters=page.evaluate('C.characters')
  for character in characters:
   id=character['id'];page.locator('#wrestler').select_option(id)
@@ -58,7 +58,8 @@ with sync_playwright() as p:
  page.locator('#bio-from').fill('X'*13);page.locator('#bio-apply').click()
  assert 'Check from' in page.locator('#status').inner_text()
  assert page.evaluate('selectionEdits[M.id].bio.from')=='TEST CITY'
- with page.expect_download() as d:page.locator('#patch').click()
+ with page.expect_download() as d:
+  page.locator('#tab-export').click();page.locator('#patch').click();page.locator('#tab-profile').click()
  patch=Path(d.value.path()).read_bytes();(args.output/'selection-test.ips').write_bytes(patch)
  result=bytearray(original);cursor=5
  while patch[cursor:cursor+3]!=b'EOF':
@@ -68,6 +69,10 @@ with sync_playwright() as p:
    length=int.from_bytes(patch[cursor:cursor+2],'big');packet=bytes([patch[cursor+2]])*length;cursor+=3
   if address+length>len(result):result.extend(b'\xff'*(address+length-len(result)))
   result[address:address+length]=packet
+ page.locator('#tab-export').click()
+ with page.expect_download() as d:page.locator('#rom-export').click()
+ assert Path(d.value.path()).read_bytes()==bytes(result)
+ page.locator('#tab-profile').click()
  assert len(result)==0x400000
  assert sum(result)&65535==int.from_bytes(result[0xffde:0xffe0],'little')
  for case in cases:

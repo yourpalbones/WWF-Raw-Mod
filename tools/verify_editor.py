@@ -69,9 +69,10 @@ with sync_playwright() as p:
  # Paint a visible, nonblack source pixel, export and verify actual tile changes.
  target=page.evaluate('cells.findIndex(c=>c && [4,5].includes(pixels(c.key)[c.index]))')
  width=page.evaluate('canvas.width');rect=page.locator('#sprite').bounding_box()
- page.mouse.click(rect['x']+(target%width+.5)*6,rect['y']+(target//width+.5)*6)
+ page.mouse.click(rect['x']+(target%width+.5)*rect['width']/width,rect['y']+(target//width+.5)*rect['height']/page.evaluate('canvas.height'))
  assert page.evaluate('Object.keys(edits).length')==1
- with page.expect_download() as d:page.locator('#patch').click()
+ with page.expect_download() as d:
+  page.locator('#tab-export').click();page.locator('#patch').click();page.locator('#tab-sprite').click()
  patch=Path(d.value.path()).read_bytes();data=bytearray(rom.read_bytes());cursor=5
  while patch[cursor:cursor+3]!=b'EOF':
   offset=int.from_bytes(patch[cursor:cursor+3],'big');length=int.from_bytes(patch[cursor+3:cursor+5],'big');cursor+=5
@@ -143,7 +144,7 @@ with sync_playwright() as p:
   assert target>=0,character['character']
   page.evaluate('window.scrollTo(0,0)')
   width=page.evaluate('canvas.width');rect=page.locator('#sprite').bounding_box()
-  page.mouse.click(rect['x']+(target%width+.5)*6,rect['y']+(target//width+.5)*6)
+  page.mouse.click(rect['x']+(target%width+.5)*rect['width']/width,rect['y']+(target//width+.5)*rect['height']/page.evaluate('canvas.height'))
   assert page.evaluate('(target)=>{const c=cells[target];return pixels(c.key)[c.index]===1;}',target),character['character']
   page.get_by_role('button',name='Native color 4',exact=True).click()
   page.locator('#palette-color').fill('#00ff00');page.locator('#palette-apply').click()

@@ -2,7 +2,7 @@
 
 ## Wrestler editor prototype
 
-[Try the 12-wrestler gear workshop](editor/README.md) · [View the running editor](evidence/roster-editor/workshop.png)
+[Try WrestleEdit: sprites, portraits and bios](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
 
 Paint all 12 wrestlers’ original sprites, preview 102 captured poses,
 change selection portraits and bios, save projects and export IPS patches. Full animation coverage remains incomplete.
