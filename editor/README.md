@@ -4,7 +4,7 @@
 
 ## Easy download
 
-[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.8.zip)
+[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.9.zip)
 
 1. Click the download link above.
 2. Right-click the downloaded ZIP → **Extract All**.
@@ -19,14 +19,15 @@ A Windows EXE preview was built, but GitHub release uploads are blocked by the c
 
 To edit a sprite image externally, use **Save pose image**, edit that PNG, and import it back. Keep its dimensions, transparent outline and opaque visible pixels. Colors are matched to the wrestler's current palette. Import changes the selected pose's underlying tiles; it does not generate a full set of animations. Shared tiles can change other poses too, so preview them and test in an emulator.
 
-## Scott Hall reference gear
+## Scott, Nash and Syxx reference gear
 
-1. Load your latest edited ROM and choose **Scott Hall** (original Razor slot).
-2. In **Sprites**, click **Use Scott reference gear**.
+1. Load your latest edited ROM and choose Scott Hall, Kevin Nash (Diesel slot), or Syxx (1-2-3 Kid slot).
+2. In **Sprites**, click the reference gear button. Repeat for the other two wrestlers if wanted.
 3. Open **Save & play** and click **Save playable ROM**.
 4. Run that file in Snes9x. Your previous portraits, bios, names and songs are kept.
 
-[See the before/after and gameplay GIFs](../evidence/scott-hall-gear/README.md).
+[See the native gameplay GIFs](../evidence/nwo-gear/README.md).
+Nash wears all red; Syxx wears black/red with a red bandana and small goatee. Scott’s Edge now uses his updated gear.
 The reference pass retains native body shapes and animation timing, adds black
 trunks with red detail, red boots and black/red knee-pad details, and removes the
 old gold jewelry. Stubble, chest hair and new elbow-pad artwork are not included.

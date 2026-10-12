@@ -44,17 +44,19 @@ def main():
   # All twelve upload directories fit without sharing relocated song storage.
   page.evaluate("()=>{const song=selectionEdits['5'].song;for(const id of Object.keys(S.characters))selectionEdits[id]={song:structuredClone(song),theme:S.characters[id].theme};render();}")
   exported=bytes(page.evaluate('Array.from(playableROM())'));(args.output/'all-12-custom.sfc').write_bytes(exported);original=args.rom.read_bytes();allow=bytearray(len(original));allow[0xffdc:0xffe0]=b'\1'*4
+  if len(original)==0x600000:allow[0x400000:0x410000]=b'\1'*65536
   for offset,size in page.evaluate('customMusicRecords().records.map(([o,b])=>[o,b.length])'):
    if offset<len(original):allow[offset:offset+size]=b'\1'*size
   for c in page.evaluate('Object.values(S.characters)'):allow[c['theme_offset']]=1
   assert all(a==b or allow[i] for i,(a,b) in enumerate(zip(original,exported))),'Changed original samples, instruments or unrelated data'
-  assert sum(exported)&65535==int.from_bytes(exported[0xffde:0xffe0],'little')
+  assert (sum(exported[:0x400000])+2*sum(exported[0x400000:]) if len(exported)==0x600000 else sum(exported))&65535==int.from_bytes(exported[0xffde:0xffe0],'little')
+  if len(exported)==0x600000:assert exported[0x400000:0x410000]==exported[:65536]
   native=[]
   for id,meta in page.evaluate('Object.entries(S.characters)'):
    native.append({'id':id,'theme':meta['theme'],'bank':original[0x11936+meta['theme']],'compiled':result['compiled']})
   (args.output/'native-expectations.json').write_text(json.dumps(native,indent=2))
   page.screenshot(path=str(args.output/'workshop.png'),full_page=True)
-  page.locator('#rom').set_input_files({'name':'custom-edited.sfc','mimeType':'application/octet-stream','buffer':exported});page.wait_for_function('rom!==null&&rom.length===0x400000');assert bytes(page.evaluate('Array.from(playableROM())'))==exported
+  page.locator('#rom').set_input_files({'name':'custom-edited.sfc','mimeType':'application/octet-stream','buffer':exported});page.wait_for_function('n=>rom!==null&&rom.length===n',arg=len(exported));assert bytes(page.evaluate('Array.from(playableROM())'))==exported
   # A further import must preserve the other eleven custom-bank pointers.
   page.locator('#wrestler').select_option('5');page.locator('#song-loop').uncheck();page.locator('#song-import').set_input_files(str(args.output/'original-theme.mid'));page.wait_for_function('selectionEdits["5"]?.song?.loop===false');edited=bytes(page.evaluate('Array.from(playableROM())'))
   for n in native:

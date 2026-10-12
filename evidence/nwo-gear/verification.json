@@ -1,0 +1,17 @@
+{
+  "base_sha256": "42434945cac01da84bac6c9ce1481b02a55a56f4f69e018dee7e7039d8a34994",
+  "patched_sha256": "fe2b967f242f5d3e1172b7b6b3bde634380da764e1be5c7575c246c9e44463f2",
+  "all_three_recipes_byte_exact": true,
+  "legacy_scott_upgrade_byte_exact": true,
+  "native_preview_counts": {
+    "scott": 130,
+    "nash": 109,
+    "syxx": 146
+  },
+  "private_raw_tile_calls": 16083,
+  "original_opaque_masks_preserved": true,
+  "other_input_bytes_preserved": true,
+  "project_and_png_roundtrip": true,
+  "bio_export_6mib": true,
+  "complete_gameplay_coverage": false
+}

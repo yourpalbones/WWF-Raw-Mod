@@ -6,10 +6,10 @@ from inspect_rom import tile
 from PIL import Image
 SELECTOR=5
 KINDS=[('primary',0x2dd513,0x2dd52d,527,0x4d55,0xc8,0x79e0,0),('secondary',0x2dd547,0x2dd561,426,0x1fff,0xdd,0xa880,0x27c)]
-def catalog(rom,wram):
+def catalog(rom,wram,selector=SELECTOR):
  result=[]
  for kind,table,banks,count,threshold,bank,base,directory in KINDS:
-  directory_offset=(rom[banks+10]<<16|int.from_bytes(rom[table+10:table+12],'little'))&0x3fffff
+  directory_offset=(rom[banks+selector*2]<<16|int.from_bytes(rom[table+selector*2:table+selector*2+2],'little'))&0x3fffff
   common_offset=(rom[banks+16]<<16|int.from_bytes(rom[table+16:table+18],'little'))&0x3fffff
   limit=998 if kind=='primary'else 722
   for i in range(limit):

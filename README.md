@@ -2,7 +2,7 @@
 
 ## Wrestler editor prototype
 
-[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.8.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
+[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.9.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
 
 Paint all 12 wrestlers’ original sprites, preview captured poses,
 change selection portraits, monitor photos, bios, in-match names and existing
@@ -13,13 +13,14 @@ theme assignments, save projects and export playable ROMs or IPS patches. Full a
 [Custom theme melody proof](evidence/theme-music/README.md) ·
 [Thirteenth-slot research](evidence/roster-expansion/README.md)
 
-[Scott Hall gear and native gameplay proof](evidence/scott-hall-gear/README.md):
-v0.8 adds **Use Scott reference gear**, retaining the original body artwork while
-applying black/red gear to the known Scott and common frame pieces. It includes
-207 full-body Scott captures and 1,720 decoded frame pieces. Load your current ROM,
-choose Scott, apply the gear, then save the playable ROM. The resulting 6 MiB
-ExHiROM has been exercised in Snes9x. Exhaustive live animation coverage remains
-unverified; other wrestlers still have their sampled pose sets.
+[Scott, Nash and Syxx native gameplay proof](evidence/nwo-gear/README.md):
+v0.9 fixes Scott's black/red gear during Razor's Edge and adds Nash's all-red
+outfit and Syxx's black/red gear, red bandana and goatee. Each preset retains the
+native body artwork and maps all 1,720 known frame entries. The editor includes
+130 Scott, 109 Nash and 146 Syxx captured full-body poses alongside the frame
+pieces. Load your current ROM, apply each wrestler's reference gear in Sprites,
+then save the playable 6 MiB ROM. All six finishers/Mega Moves were exercised in
+Snes9x. Exhaustive live interaction coverage remains unverified.
 
 Original tools for decoding and reconstructing WWF Raw (USA) graphics.
 We have recovered complete in-ring frames of **Bret Hart** and **Undertaker**,

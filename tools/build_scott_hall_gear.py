@@ -16,7 +16,7 @@ PACKETS=0x440000;PACKET_END=0x4b0000
 POINTERS=0x4b0000;POINTER_END=0x4bc000
 PRIMARY=0x4bc000;SECONDARY=0x4bd000
 PROGRAM=0x4be000;SIGNATURE=0x4bf000
-MAGIC=b'SCOTT-HALL-GEAR1'
+MAGIC=b'SCOTT-HALL-GEAR2'
 
 def components(points,colors):
  remaining={p for p,c in points.items()if c in colors};out=[]
@@ -83,11 +83,23 @@ def decorate(frame):
      # Red fringe and top trim remain attached to the native pad silhouette.
      if y==t or (y==t+1 and (x-l)%3==0):continue
      put((x,y),1 if points[x,y]==2 else 5)
+ # The Edge uses full-body common frames whose trunks use red slots 2/3,
+ # unlike the normal Scott cloth in slots 4/5. Keep their native gold-mark
+ # garment boundaries, then recolor the cloth rather than the whole palette.
+ if frame.get('common'):
+  for group in components(points,{2,3,6,8}):
+   cloth={q for q in group if points[q]in[2,3]}
+   if not cloth:continue
+   has_mark=any(points[q]in[6,8]for q in group)
+   for q in cloth:put(q,4 if points[q]==2 else 5)
+   if has_mark:
+    for q in group:
+     if points[q]in[6,8]:put(q,8)
  return changes
 
 def lookup_program():
  p=Program();p.emit('48 a5 82 29 ff 00 c9 42 00');p.branch('f0','private');p.emit('c9 43 00');p.branch('d0','fallback');p.label('private');p.emit('68 48 c9 00 c0');p.branch('90','fallback')
- p.emit('68 29 ff 3f da 48 0a 18 63 01 aa 68 bf 00 00 4b 85 db e2 20 bf 02 00 4b 85 dd c2 20 fa a9 01 00 6b')
+ p.emit('68 29 ff 3f da 48 0a 18 63 01 aa 68 bf 00 00 4b 85 db e2 20 bf 02 00 4b 85 dd c2 20 fa a9 00 00 6b')
  p.label('fallback');p.emit('68 cf 48 0f 00 5c e8 f6 ac');return p.finish()
 
 def part_program(secondary=False):
@@ -115,10 +127,10 @@ def build(rom,wram,details=True):
     if any((p==0)!=(q==0)for p,q in zip(pixels,ref['pixels'])):raise ValueError('Detail changes native transparency.')
     raw=planar(pixels)
     if raw not in tiles:
-     idx=len(tiles);packet=encode_sprite_tile(raw)
+     idx=len(tiles);packet=raw
      if (packet_cursor&65535)+36>65536:packet_cursor=(packet_cursor+65535)&~65535
      if idx>=16384 or POINTERS+idx*3+3>POINTER_END or packet_cursor+36>PACKET_END:raise ValueError(('Scott detail tiles exceed their private space',idx,packet_cursor-PACKETS,cursor-FRAMES,f['kind'],f['index']))
-     tiles[raw]=idx;tile_sources.append({'offset':packet_cursor,'original_offset':ref['source'],'original_compressed':ref['compressed'],'original_length':ref['length'],'length':36,'compressed':True});out[packet_cursor:packet_cursor+len(packet)]=packet;assert decode_sprite_tile(out,packet_cursor)[0]==raw
+     tiles[raw]=idx;tile_sources.append({'offset':packet_cursor,'original_offset':ref['source'],'original_compressed':ref['compressed'],'original_length':ref['length'],'length':36,'compressed':False});out[packet_cursor:packet_cursor+len(packet)]=packet;assert out[packet_cursor:packet_cursor+32]==raw
      address=packet_cursor;out[POINTERS+idx*3:POINTERS+idx*3+3]=address.to_bytes(3,'little');packet_cursor+=36
     idx=tiles[raw];data[ref['relative']:ref['relative']+2]=(0xc000|idx).to_bytes(2,'little');variants.append(ref['field'])
   if not variants:continue
