@@ -1,0 +1,387 @@
+{
+  "version": 1,
+  "selector": 9,
+  "method": "All 49 original brow/eye/nose/upper-lip pixels match exactly; no crown-relative beard placement.",
+  "templates": {
+    "1": {
+      "primary_piece": 1,
+      "landmarks": {
+        "eyes": [
+          [
+            1,
+            -35
+          ],
+          [
+            2,
+            -35
+          ],
+          [
+            4,
+            -35
+          ]
+        ],
+        "nose": [
+          3,
+          -33
+        ],
+        "mouth": [
+          [
+            3,
+            -31
+          ],
+          [
+            3,
+            -30
+          ]
+        ],
+        "jaw": [
+          3,
+          -29
+        ]
+      },
+      "user_grid": {
+        "nose": [
+          11,
+          11
+        ],
+        "mouth": [
+          [
+            11,
+            13
+          ],
+          [
+            11,
+            14
+          ]
+        ],
+        "eyes": [
+          [
+            9,
+            9
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            12,
+            9
+          ]
+        ]
+      },
+      "jaw_note": "Jaw row 15 inferred below the user-marked mouth; not separately marked by the user."
+    }
+  },
+  "heads": {
+    "1": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "exact_pixels": 49
+    },
+    "2": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        -3,
+        5
+      ],
+      "exact_pixels": 49
+    },
+    "3": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "exact_pixels": 49
+    },
+    "4": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        -2,
+        0
+      ],
+      "exact_pixels": 49
+    },
+    "5": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        -1,
+        -3
+      ],
+      "exact_pixels": 49
+    },
+    "6": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        1,
+        -3
+      ],
+      "exact_pixels": 49
+    },
+    "7": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        3,
+        -2
+      ],
+      "exact_pixels": 49
+    },
+    "8": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        2,
+        -4
+      ],
+      "exact_pixels": 49
+    },
+    "24": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        8,
+        0
+      ],
+      "exact_pixels": 49
+    },
+    "33": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        5,
+        10
+      ],
+      "exact_pixels": 49
+    },
+    "38": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        -2,
+        6
+      ],
+      "exact_pixels": 49
+    },
+    "150": {
+      "template": 1,
+      "transform": [
+        -1,
+        -1,
+        6,
+        -41
+      ],
+      "exact_pixels": 49
+    },
+    "162": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "exact_pixels": 49
+    },
+    "402": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "exact_pixels": 49
+    },
+    "404": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        -1,
+        5
+      ],
+      "exact_pixels": 49
+    },
+    "411": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        -6,
+        2
+      ],
+      "exact_pixels": 49
+    },
+    "412": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        -6,
+        2
+      ],
+      "exact_pixels": 49
+    },
+    "425": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "exact_pixels": 49
+    },
+    "426": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        0,
+        3
+      ],
+      "exact_pixels": 49
+    },
+    "427": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        -2,
+        5
+      ],
+      "exact_pixels": 49
+    },
+    "428": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        -1,
+        2
+      ],
+      "exact_pixels": 49
+    },
+    "429": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        1,
+        -2
+      ],
+      "exact_pixels": 49
+    },
+    "430": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        3,
+        1
+      ],
+      "exact_pixels": 49
+    },
+    "431": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        2,
+        -4
+      ],
+      "exact_pixels": 49
+    },
+    "462": {
+      "template": 1,
+      "transform": [
+        -1,
+        1,
+        5,
+        5
+      ],
+      "exact_pixels": 49
+    },
+    "464": {
+      "template": 1,
+      "transform": [
+        -1,
+        1,
+        3,
+        5
+      ],
+      "exact_pixels": 49
+    },
+    "476": {
+      "template": 1,
+      "transform": [
+        -1,
+        1,
+        2,
+        8
+      ],
+      "exact_pixels": 49
+    },
+    "483": {
+      "template": 1,
+      "transform": [
+        -1,
+        1,
+        0,
+        -5
+      ],
+      "exact_pixels": 49
+    },
+    "694": {
+      "template": 1,
+      "transform": [
+        -1,
+        1,
+        -5,
+        10
+      ],
+      "exact_pixels": 49
+    },
+    "699": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        5,
+        10
+      ],
+      "exact_pixels": 49
+    },
+    "700": {
+      "template": 1,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "exact_pixels": 49
+    }
+  }
+}
