@@ -11,9 +11,13 @@ def anatomy():return json.loads((Path(__file__).resolve().parents[1]/'data/nwo-n
 @lru_cache(maxsize=1)
 def common_anatomy():return json.loads((Path(__file__).resolve().parents[1]/'data/syxx-common-heads.json').read_text())['heads']
 
+@lru_cache(maxsize=1)
+def syxx_overrides():return json.loads((Path(__file__).resolve().parents[1]/'data/syxx-head-anchors.json').read_text())['heads']
+
 def head_region(frame,points,include_common=False):
  if frame['kind']!='primary':return {},None
  entry=anatomy().get(str(frame['index']))if not frame.get('common') else common_anatomy().get(str(frame['index']))if include_common else None
+ if include_common:entry=syxx_overrides().get(str(frame['index']),entry)
  if not entry:return {},None
  l,t,r,b=entry['bounds'];head={q:v for q,v in points.items()if l<=q[0]<=r and t<=q[1]<=b};outside=[q for q,v in points.items()if q not in head and v in SKIN]
  cx,cy=(l+r)/2,(t+b)/2
@@ -21,7 +25,8 @@ def head_region(frame,points,include_common=False):
   dx=sum(x for x,y in outside)/len(outside)-cx;dy=sum(y for x,y in outside)/len(outside)-cy
  else:dx,dy=0,1
  # The neck points toward the rest of the torso, not the screen bottom.
- if abs(dx)>abs(dy)*1.3:neck=(1 if dx>=0 else -1,0)
+ if 'neck'in entry:neck=tuple(entry['neck'])
+ elif abs(dx)>abs(dy)*1.3:neck=(1 if dx>=0 else -1,0)
  else:neck=(0,1 if dy>=0 else -1)
  return head,neck
 

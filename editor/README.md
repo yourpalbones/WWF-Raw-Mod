@@ -4,7 +4,7 @@
 
 ## Easy download
 
-[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.10.zip)
+[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.11.zip)
 
 1. Click the download link above.
 2. Right-click the downloaded ZIP → **Extract All**.
@@ -26,8 +26,12 @@ To edit a sprite image externally, use **Save pose image**, edit that PNG, and i
 3. Open **Save & play** and click **Save playable ROM**.
 4. Run that file in Snes9x. Your previous portraits, bios, names and songs are kept.
 
-[See the native gameplay GIFs](../evidence/nwo-art-revision/README.md).
-Nash wears a red top with small Outsiders lettering, black pants/boots and dark brown hair. Syxx wears black/red with a red bandana, dark hair and chin detail; stray white gear marks are removed. Scott’s previously plain trunk pieces gain red detail.
+[See Syxx's native gameplay GIFs](../evidence/syxx-head-revision/README.md) and the
+[previous trio captures](../evidence/nwo-art-revision/README.md).
+Nash wears a red top with small Outsiders lettering, black pants/boots and dark brown hair. Syxx wears black/red with a red bandana, dark hair and a connected lower-face beard in registered head drawings; stray white gear marks are removed. Scott’s previously plain trunk pieces gain red detail.
+The Syxx pass registers 269 head pieces using separate native face templates.
+Occluded faces keep the covering arm intact. Some other head drawings still
+need mapping; full live coverage remains unverified.
 The reference pass retains native body shapes and animation timing, adds black
 trunks with red detail, red boots and black/red knee-pad details, and removes the
 old gold jewelry. Stubble, chest hair and new elbow-pad artwork are not included.
@@ -74,19 +78,19 @@ import is not supported.
 | Lex Luger | 11 |
 | Doink | 8 |
 | Shawn Michaels | 10 |
-| 1-2-3 Kid / Syxx | 146 plus 1,720 frame pieces |
+| 1-2-3 Kid / Syxx | 145 plus 1,720 frame pieces |
 | Diesel / Kevin Nash | 109 plus 1,720 frame pieces |
 | Owen Hart | 8 |
 | Luna Vachon | 6 |
 
-Scott, Nash and Syxx have 385 captured full-body poses combined and 1,720 known
+Scott, Nash and Syxx have 384 captured full-body poses combined and 1,720 known
 frame pieces each. The other wrestlers retain their existing samples. Layouts
 use native positions, palettes and flips. Counts describe samples rather than
 every live animation. **Play poses** cycles samples at a fixed preview speed;
 use the emulator gameplay GIFs to judge native timing.
 
-v0.9 ROMs retain their older captured previews until you apply the revised
-reference gear. Apply the three buttons to update all three wrestlers. Existing
+v0.9 and v0.10 ROMs retain their older captured previews until you apply revised
+reference gear. A v0.10 mod needs only the Syxx update for this release. Existing
 portraits, bios, names and songs are preserved; each button replaces that
 wrestler's preset gear artwork. Save the new ROM before reopening a project
 saved from it. v0.8 Scott ROMs are supported too.

@@ -2,7 +2,7 @@
 
 ## Wrestler editor prototype
 
-[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.10.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
+[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.11.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
 
 Paint all 12 wrestlers’ original sprites, preview captured poses,
 change selection portraits, monitor photos, bios, in-match names and existing
@@ -13,7 +13,19 @@ theme assignments, save projects and export playable ROMs or IPS patches. Full a
 [Custom theme melody proof](evidence/theme-music/README.md) ·
 [Thirteenth-slot research](evidence/roster-expansion/README.md)
 
-[Revised Scott, Nash and Syxx gameplay proof](evidence/nwo-art-revision/README.md):
+[Syxx beard and bandana gameplay proof](evidence/syxx-head-revision/README.md):
+v0.11 applies the approved lower-face beard placement to registered native head
+drawings, with separate masks for turned and folded poses. It registers 269 head
+pieces, protects marked facial features, and avoids painting a beard over a raised
+arm. Syxx's finisher, Mega Move and basic actions have native emulator captures,
+with ten additional grapple/reaction controller samples. The editor includes
+145 unique Syxx full-body captures and all 1,720 known pieces. Older v0.9/v0.10
+preview layouts remain available before upgrading. Load your current mod,
+select the 1-2-3 Kid / Syxx slot, apply reference gear in Sprites, and save the
+playable ROM. Some other head drawings and full live interaction coverage still
+need research.
+
+[Previous Scott, Nash and Syxx gameplay proof](evidence/nwo-art-revision/README.md):
 v0.10 gives Nash black pants/boots, dark brown hair and small Outsiders chest
 lettering. Syxx gets an improved red bandana, dark hair and chin detail, a red
 chest mark and removal of stray white gear marks. Scott's plain trunk pieces

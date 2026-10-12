@@ -1,0 +1,846 @@
+{
+  "version": 1,
+  "method": "At least 90 identical skin-pixel matches across five distinct normalized native body tiles; transferred head bounds from the best registered character-specific pose.",
+  "heads": {
+    "551": {
+      "bounds": [
+        -6,
+        -26,
+        8,
+        -13
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 85,
+      "matching_skin_pixels": 122,
+      "matching_tile_sources": 5,
+      "transform": [
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    "565": {
+      "bounds": [
+        -7,
+        -33,
+        7,
+        -17
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 37,
+      "matching_skin_pixels": 100,
+      "matching_tile_sources": 5,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "566": {
+      "bounds": [
+        -8,
+        -36,
+        6,
+        -22
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 38,
+      "matching_skin_pixels": 198,
+      "matching_tile_sources": 8,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "567": {
+      "bounds": [
+        -17,
+        -23,
+        -1,
+        -13
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 39,
+      "matching_skin_pixels": 168,
+      "matching_tile_sources": 5,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "570": {
+      "bounds": [
+        -3,
+        -33,
+        12,
+        -19
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 33,
+      "matching_skin_pixels": 202,
+      "matching_tile_sources": 5,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "582": {
+      "bounds": [
+        -9,
+        -43,
+        7,
+        -26
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 1,
+      "matching_skin_pixels": 178,
+      "matching_tile_sources": 7,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "592": {
+      "bounds": [
+        -9,
+        -43,
+        7,
+        -26
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 1,
+      "matching_skin_pixels": 212,
+      "matching_tile_sources": 7,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "593": {
+      "bounds": [
+        4,
+        -38,
+        20,
+        -23
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 94,
+      "matching_skin_pixels": 182,
+      "matching_tile_sources": 5,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "595": {
+      "bounds": [
+        -15,
+        -36,
+        1,
+        -23
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 95,
+      "matching_skin_pixels": 178,
+      "matching_tile_sources": 6,
+      "transform": [
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    "596": {
+      "bounds": [
+        -18,
+        -41,
+        -4,
+        -27
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 482,
+      "matching_skin_pixels": 282,
+      "matching_tile_sources": 10,
+      "transform": [
+        -1,
+        1,
+        0,
+        0
+      ]
+    },
+    "605": {
+      "bounds": [
+        -11,
+        -46,
+        5,
+        -29
+      ],
+      "neck": [
+        1,
+        0
+      ],
+      "donor_primary_piece": 98,
+      "matching_skin_pixels": 356,
+      "matching_tile_sources": 12,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "606": {
+      "bounds": [
+        -15,
+        -38,
+        3,
+        -24
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 99,
+      "matching_skin_pixels": 162,
+      "matching_tile_sources": 7,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "611": {
+      "bounds": [
+        -9,
+        -38,
+        7,
+        -25
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 386,
+      "matching_skin_pixels": 312,
+      "matching_tile_sources": 8,
+      "transform": [
+        -1,
+        1,
+        -1,
+        0
+      ]
+    },
+    "620": {
+      "bounds": [
+        -12,
+        -37,
+        2,
+        -22
+      ],
+      "neck": [
+        1,
+        0
+      ],
+      "donor_primary_piece": 234,
+      "matching_skin_pixels": 268,
+      "matching_tile_sources": 10,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "623": {
+      "bounds": [
+        -9,
+        -43,
+        7,
+        -26
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 1,
+      "matching_skin_pixels": 299,
+      "matching_tile_sources": 12,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "624": {
+      "bounds": [
+        -3,
+        -33,
+        12,
+        -19
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 33,
+      "matching_skin_pixels": 318,
+      "matching_tile_sources": 10,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "639": {
+      "bounds": [
+        -15,
+        -32,
+        2,
+        -18
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 22,
+      "matching_skin_pixels": 274,
+      "matching_tile_sources": 8,
+      "transform": [
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    "640": {
+      "bounds": [
+        -17,
+        -27,
+        -1,
+        -14
+      ],
+      "neck": [
+        1,
+        0
+      ],
+      "donor_primary_piece": 134,
+      "matching_skin_pixels": 184,
+      "matching_tile_sources": 9,
+      "transform": [
+        -1,
+        1,
+        -1,
+        0
+      ]
+    },
+    "641": {
+      "bounds": [
+        -20,
+        -23,
+        -5,
+        -8
+      ],
+      "neck": [
+        1,
+        0
+      ],
+      "donor_primary_piece": 15,
+      "matching_skin_pixels": 204,
+      "matching_tile_sources": 8,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "653": {
+      "bounds": [
+        4,
+        -38,
+        20,
+        -23
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 94,
+      "matching_skin_pixels": 182,
+      "matching_tile_sources": 5,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "654": {
+      "bounds": [
+        -10,
+        -46,
+        7,
+        -31
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 72,
+      "matching_skin_pixels": 204,
+      "matching_tile_sources": 6,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "665": {
+      "bounds": [
+        -9,
+        -43,
+        7,
+        -26
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 1,
+      "matching_skin_pixels": 299,
+      "matching_tile_sources": 12,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "666": {
+      "bounds": [
+        -6,
+        -35,
+        11,
+        -20
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 103,
+      "matching_skin_pixels": 142,
+      "matching_tile_sources": 5,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "681": {
+      "bounds": [
+        -15,
+        -39,
+        0,
+        -24
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 57,
+      "matching_skin_pixels": 117,
+      "matching_tile_sources": 5,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "694": {
+      "bounds": [
+        -12,
+        -33,
+        3,
+        -19
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 33,
+      "matching_skin_pixels": 355,
+      "matching_tile_sources": 12,
+      "transform": [
+        -1,
+        1,
+        0,
+        0
+      ]
+    },
+    "697": {
+      "bounds": [
+        -1,
+        -39,
+        15,
+        -26
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 95,
+      "matching_skin_pixels": 120,
+      "matching_tile_sources": 5,
+      "transform": [
+        -1,
+        1,
+        -1,
+        -3
+      ]
+    },
+    "699": {
+      "bounds": [
+        -3,
+        -33,
+        12,
+        -19
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 33,
+      "matching_skin_pixels": 355,
+      "matching_tile_sources": 12,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "700": {
+      "bounds": [
+        -9,
+        -43,
+        7,
+        -26
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 1,
+      "matching_skin_pixels": 327,
+      "matching_tile_sources": 14,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "703": {
+      "bounds": [
+        -4,
+        -47,
+        10,
+        -33
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 162,
+      "matching_skin_pixels": 147,
+      "matching_tile_sources": 5,
+      "transform": [
+        1,
+        1,
+        1,
+        -7
+      ]
+    },
+    "705": {
+      "bounds": [
+        -14,
+        -34,
+        2,
+        -19
+      ],
+      "neck": [
+        1,
+        0
+      ],
+      "donor_primary_piece": 35,
+      "matching_skin_pixels": 253,
+      "matching_tile_sources": 12,
+      "transform": [
+        1,
+        1,
+        1,
+        -1
+      ]
+    },
+    "723": {
+      "bounds": [
+        -14,
+        -34,
+        1,
+        -21
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 58,
+      "matching_skin_pixels": 161,
+      "matching_tile_sources": 5,
+      "transform": [
+        -1,
+        1,
+        -4,
+        0
+      ]
+    },
+    "758": {
+      "bounds": [
+        -4,
+        -34,
+        11,
+        -19
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 29,
+      "matching_skin_pixels": 119,
+      "matching_tile_sources": 5,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "782": {
+      "bounds": [
+        -8,
+        -26,
+        8,
+        -13
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 378,
+      "matching_skin_pixels": 181,
+      "matching_tile_sources": 9,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "783": {
+      "bounds": [
+        -7,
+        -26,
+        7,
+        -13
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 85,
+      "matching_skin_pixels": 290,
+      "matching_tile_sources": 9,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "797": {
+      "bounds": [
+        0,
+        -43,
+        15,
+        -29
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 24,
+      "matching_skin_pixels": 146,
+      "matching_tile_sources": 5,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "799": {
+      "bounds": [
+        -5,
+        -45,
+        10,
+        -31
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 42,
+      "matching_skin_pixels": 196,
+      "matching_tile_sources": 7,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "803": {
+      "bounds": [
+        -7,
+        -36,
+        8,
+        -21
+      ],
+      "neck": [
+        -1,
+        0
+      ],
+      "donor_primary_piece": 404,
+      "matching_skin_pixels": 182,
+      "matching_tile_sources": 6,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "829": {
+      "bounds": [
+        -7,
+        -42,
+        5,
+        -28
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 9,
+      "matching_skin_pixels": 319,
+      "matching_tile_sources": 11,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "830": {
+      "bounds": [
+        -3,
+        -40,
+        14,
+        -25
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 77,
+      "matching_skin_pixels": 221,
+      "matching_tile_sources": 9,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "852": {
+      "bounds": [
+        -9,
+        -43,
+        7,
+        -26
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "donor_primary_piece": 1,
+      "matching_skin_pixels": 326,
+      "matching_tile_sources": 13,
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "original_monitor_decodes": 12,
+  "original_logo_decodes": 12,
+  "monitor_import_roundtrips": 12,
+  "generated_logo_roundtrips": 12,
+  "theme_assignments": 12,
+  "main_portraits_preserved": true,
+  "version9_reload_undo": true,
+  "version4_name_art_migration": true,
+  "invalid_theme_and_logo_refusal": true,
+  "expanded_rom_checksum": true,
+  "edited_rom_recovery_roundtrip": true,
+  "unsupported_rom_recovery_atomic": true,
+  "uploaded_rom_recovery": false
+}

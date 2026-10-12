@@ -629,7 +629,12 @@
         -32,
         0,
         -17
-      ]
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
     },
     "699": {
       "bounds": [
@@ -660,12 +665,16 @@
     },
     "702": {
       "bounds": [
-        -2,
+        -3,
         -38,
         12,
-        -32
+        -23
       ],
-      "matched_head_pixels": 74
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
     },
     "703": {
       "bounds": [
@@ -687,12 +696,16 @@
     },
     "706": {
       "bounds": [
-        -3,
+        -5,
         -33,
         9,
-        -25
+        -18
       ],
-      "matched_head_pixels": 94
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
     },
     "708": {
       "bounds": [
@@ -1079,50 +1092,76 @@
         -4,
         -15
       ],
-      "matched_head_pixels": 144
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
     },
     "832": {
       "bounds": [
-        -13,
+        -15,
         -30,
         0,
-        -15
-      ]
+        -12
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
     },
     "833": {
       "bounds": [
         -16,
-        -25,
+        -23,
         1,
         -10
       ],
-      "matched_head_pixels": 139
+      "neck": [
+        1,
+        0
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
     },
     "834": {
       "bounds": [
         -18,
-        -26,
+        -27,
         -3,
-        -19
+        -13
       ],
-      "matched_head_pixels": 127
+      "neck": [
+        1,
+        0
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
     },
     "835": {
       "bounds": [
-        -5,
+        -11,
         -37,
-        2,
-        -30
+        5,
+        -21
       ],
-      "matched_head_pixels": 58
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
     },
     "839": {
       "bounds": [
-        -8,
+        -10,
         -27,
-        7,
-        -12
-      ]
+        4,
+        -16
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
     },
     "843": {
       "bounds": [
@@ -1195,6 +1234,84 @@
         -66
       ],
       "matched_head_pixels": 57
+    },
+    "697": {
+      "bounds": [
+        -1,
+        -39,
+        15,
+        -23
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "705": {
+      "bounds": [
+        -14,
+        -34,
+        2,
+        -19
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "707": {
+      "bounds": [
+        -8,
+        -34,
+        6,
+        -18
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "711": {
+      "bounds": [
+        -10,
+        -34,
+        6,
+        -17
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "836": {
+      "bounds": [
+        -6,
+        -33,
+        6,
+        -22
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "837": {
+      "bounds": [
+        -8,
+        -37,
+        1,
+        -24
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
     }
   }
 }

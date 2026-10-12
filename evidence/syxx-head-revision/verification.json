@@ -1,0 +1,30 @@
+{
+  "base_sha256": "42434945cac01da84bac6c9ce1481b02a55a56f4f69e018dee7e7039d8a34994",
+  "patched_sha256": "d4c644214e02b6d0d5762b2c34c26efebfea52e8056165d36b577854dc664b0c",
+  "all_three_recipes_byte_exact": true,
+  "legacy_scott_upgrade_byte_exact": true,
+  "previous_version_checks": [
+    {
+      "sha256": "fe2b967f242f5d3e1172b7b6b3bde634380da764e1be5c7575c246c9e44463f2",
+      "captured_previews_available": true,
+      "upgrade_byte_exact": true
+    },
+    {
+      "sha256": "640436cfd937129116b75ff794567064fdb8e65ff8fcdec62191791c3490cde0",
+      "captured_previews_available": true,
+      "upgrade_byte_exact": true
+    }
+  ],
+  "native_preview_counts": {
+    "scott": 130,
+    "nash": 109,
+    "syxx": 145
+  },
+  "reused_unchanged_scott_nash_captures": true,
+  "private_raw_tile_calls": 67264,
+  "original_opaque_masks_preserved": true,
+  "other_input_bytes_preserved": true,
+  "project_and_png_roundtrip": true,
+  "bio_export_6mib": true,
+  "complete_gameplay_coverage": false
+}

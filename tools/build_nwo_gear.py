@@ -6,7 +6,7 @@ from build_scott_hall_gear import components
 from build_bret_gear import planar
 from build_shawn_kick_prototype import Program
 from decode_sprite_tile import encode_sprite_tile,decode_sprite_tile
-CONFIGS={10:dict(name='Kevin Nash',frames_start=0x4c0100,frames_end=0x4e0000,packets_start=0x4e0000,packets_end=0x560000,pointers=0x5f0000,pointer_end=0x5fa000,primary_table=0x410000,secondary_table=0x411000,program=0x412000,signature_offset=0x416000,signature='NASH-NATIVE-GEAR2'),9:dict(name='Syxx',frames_start=0x560100,frames_end=0x580000,packets_start=0x580000,packets_end=0x5f0000,pointers=0x5fa000,pointer_end=0x600000,primary_table=0x413000,secondary_table=0x414000,program=0x415000,signature_offset=0x417000,signature='SYXX-NATIVE-GEAR2'),5:dict(name='Scott Hall',frames_start=0x420100,frames_end=0x440000,packets_start=0x440000,packets_end=0x4b0000,pointers=0x4b0000,pointer_end=0x4bc000,primary_table=0x4bc000,secondary_table=0x4bd000,program=0x4be000,signature_offset=0x4bf000,signature='SCOTT-HALL-GEAR3')}
+CONFIGS={10:dict(name='Kevin Nash',frames_start=0x4c0100,frames_end=0x4e0000,packets_start=0x4e0000,packets_end=0x560000,pointers=0x5f0000,pointer_end=0x5fa000,primary_table=0x410000,secondary_table=0x411000,program=0x412000,signature_offset=0x416000,signature='NASH-NATIVE-GEAR2'),9:dict(name='Syxx',frames_start=0x560100,frames_end=0x580000,packets_start=0x580000,packets_end=0x5f0000,pointers=0x5fa000,pointer_end=0x600000,primary_table=0x413000,secondary_table=0x414000,program=0x415000,signature_offset=0x417000,signature='SYXX-NATIVE-GEAR3'),5:dict(name='Scott Hall',frames_start=0x420100,frames_end=0x440000,packets_start=0x440000,packets_end=0x4b0000,pointers=0x4b0000,pointer_end=0x4bc000,primary_table=0x4bc000,secondary_table=0x4bd000,program=0x4be000,signature_offset=0x4bf000,signature='SCOTT-HALL-GEAR3')}
 def emit_address(p,opcode,address):p.emit(opcode+' '+address.to_bytes(3,'little').hex(' '))
 def dispatcher(secondary=None):
  p=Program()
@@ -56,7 +56,9 @@ def checksum(out):
  s=(sum(out[:0x400000])+2*sum(out[0x400000:]))&65535
  for o in[0xffdc,0x40ffdc]:out[o:o+4]=(s^65535).to_bytes(2,'little')+s.to_bytes(2,'little')
 def build(base,wram,slot):
- c=CONFIGS[slot];frames=catalog(base,wram,slot);known=json.loads((Path(__file__).resolve().parents[1]/'data/nwo-common-frame-ids.json').read_text())[str(slot)];frames.sort(key=lambda f:bool(f.get('common')and f['index']not in known[f['kind']]));out=bytearray(base)+bytearray(b'\xff'*(0x600000-len(base)));out[c['primary_table']:c['primary_table']+998*3]=bytes(998*3);out[c['secondary_table']:c['secondary_table']+722*3]=bytes(722*3);fc=c['frames_start'];pc=c['packets_start'];tiles={};descs={};rows=[];fingerprint=hashlib.sha256();metadata=[]
+ c=CONFIGS[slot];frames=catalog(base,wram,slot);known=json.loads((Path(__file__).resolve().parents[1]/'data/nwo-common-frame-ids.json').read_text())[str(slot)];frames.sort(key=lambda f:bool(f.get('common')and f['index']not in known[f['kind']]));out=bytearray(base)+bytearray(b'\xff'*(0x600000-len(base)));
+ for start,end in[(c['frames_start'],c['frames_end']),(c['packets_start'],c['packets_end']),(c['pointers'],c['pointer_end'])]:out[start:end]=b'\xff'*(end-start)
+ out[c['primary_table']:c['primary_table']+998*3]=bytes(998*3);out[c['secondary_table']:c['secondary_table']+722*3]=bytes(722*3);fc=c['frames_start'];pc=c['packets_start'];tiles={};descs={};rows=[];fingerprint=hashlib.sha256();metadata=[]
  for f in frames:
   changes=decorate(f,slot);fields=[];descriptor=bytearray(base[f['offset']:f['offset']+f['length']])
   for part in f['parts']:

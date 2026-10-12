@@ -14,7 +14,9 @@ The same original brow/eye/nose texture matches **31 primary pieces exactly**, i
 
 The reference is the user's Syxx figure-package photograph: long wet hair framing the face and shoulders, a connected beard, and a tall bandana visible through the hair. The previous small chin patch did not depict that.
 
-Shared special-move head pieces are being mapped as part of the same pass. Gameplay verification and the new editor release remain pending. The existing downloadable editor is still v0.10.
+This original 31-piece study was accepted by the user. It led to the expanded
+v0.11 pass, with 269 registered head pieces and native emulator replays.
+[See the current gameplay proof and download](../syxx-head-revision/README.md).
 
 The [previous comparison](comparison.png) is retained as a rejected draft: its beard sat too high. The old crown-relative chin patch has been removed from the new drawing code.
 

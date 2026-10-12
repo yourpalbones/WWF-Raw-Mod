@@ -10,7 +10,7 @@ function activateScottSources(data){
  C.sources=structuredClone(baseRosterSources);C.characters=structuredClone(baseGearCharacters);
  for(const manifest of[SCOTT,window.RAW_NASH_MANIFEST,window.RAW_SYXX_MANIFEST]){
   const id=manifest.selector,active=nativeGearRevision(data,id)>0,character=C.characters.find(c=>c.id===id),mapping={},read24=p=>data[p]|data[p+1]<<8|data[p+2]<<16;character.sources={};
-  const previous=window.RAW_LEGACY_GEAR_MANIFESTS?.[id],legacy=active&&!hasNativeGear(data,id)&&previous&&String.fromCharCode(...data.slice(manifest.signature_offset,manifest.signature_offset+previous.signature.length))===previous.signature?previous:null;
+  const previous=window.RAW_LEGACY_GEAR_MANIFESTS?.[id],versions=Array.isArray(previous)?previous:previous?[previous]:[],legacy=active&&!hasNativeGear(data,id)?versions.find(version=>String.fromCharCode(...data.slice(manifest.signature_offset,manifest.signature_offset+version.signature.length))===version.signature):null;
   for(const [key,meta]of Object.entries({...manifest.sources,...(legacy?.sources||{})})){
    let source={offset:meta.offset,compressed:meta.compressed,length:meta.length};
    if(meta.private_packet_offset){source=hasNativeGear(data,id)||legacy&&legacy.sources[key]?{offset:meta.private_packet_offset,compressed:legacy&&legacy.sources[key]?legacy.private_compressed:manifest.private_compressed,length:36}:{offset:meta.original_offset,compressed:meta.original_compressed,length:meta.original_length};}

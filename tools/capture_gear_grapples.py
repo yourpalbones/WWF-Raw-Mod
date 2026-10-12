@@ -2,8 +2,9 @@
 import argparse,json,subprocess,os,hashlib
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
-p=argparse.ArgumentParser(description=__doc__);p.add_argument('core',type=Path);p.add_argument('rom',type=Path);p.add_argument('--captures',type=Path,required=True);p.add_argument('--recipes',type=Path,required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args();repo=Path(__file__).resolve().parents[1];jobs=[];digest=hashlib.sha256(a.rom.read_bytes()).hexdigest()
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('core',type=Path);p.add_argument('rom',type=Path);p.add_argument('--captures',type=Path,required=True);p.add_argument('--recipes',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--only',choices=['scott','nash','syxx']);a=p.parse_args();repo=Path(__file__).resolve().parents[1];jobs=[];digest=hashlib.sha256(a.rom.read_bytes()).hexdigest()
 for name in ['scott','nash','syxx']:
+ if a.only and a.only!=name:continue
  ready=next((a.captures/f'captures-{name}'/'ready'/name).glob('*.state'))
  for old in sorted(a.recipes.iterdir()):
   if old.is_dir()and(old/'run.json').exists():jobs.append((name,ready,old))

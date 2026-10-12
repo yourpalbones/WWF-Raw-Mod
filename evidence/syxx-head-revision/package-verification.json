@@ -1,0 +1,10 @@
+{
+  "zip_sha256": "e93e8c64d1f56ff813da38e1595428f5b7f91c629d9f0df909dd9ff69dc143ce",
+  "zip_integrity_verified": true,
+  "contains_rom": false,
+  "packaged_html_loads_revised_rom": true,
+  "syxx_captured_poses": 145,
+  "offline_edit_and_identical_rom_export": true,
+  "page_initialization": "Extracted HTML served over local HTTP; networking disabled before ROM load.",
+  "direct_file_url_check": "Blocked by cloud Chromium administrative policy; policy not altered."
+}

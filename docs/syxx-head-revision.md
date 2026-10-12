@@ -1,22 +1,26 @@
-# Syxx head revision checkpoint
+# Syxx head revision checkpoint — v0.11
 
-User supplied a Syxx figure-package reference with long wet hair, tall red forehead bandana and connected moustache/beard. They rejected v0.10's small chin patch. New connected-beard draft was published in evidence/syxx-head-study; user says the bandana is better but the beard sits in the middle of the face. They offered to point out the nose. Do not publish this beard in the editor until the facial landmarks are corrected.
+The user marked the original primary1 eyes (grid row9, columns9/10 and12), nose (col11,row11), and mouth (col11,rows13/14), then approved the corrected lower-face beard. Native coordinates map columns0..16 to x=-8..8 and rows0..20 to y=-44..-24. Jaw row15 is inferred. The accepted front mask remains in data/syxx-face-seeds.json template1.
 
-Original native head grid: evidence/syxx-head-study/original-head-grid.png. Its columns 0..16 map to native x=-8..8; rows 0..20 map to native y=-44..-24 in primary piece 1. User marked eyes at row9 (cols9/10 and12), nose col11,row11, and mouth col11,rows13/14. Jaw row15 is inferred, not separately user-marked.
+v0.11 uses 22 separately authored source templates and 269 registered head pieces, including 9 occluded heads whose covering arm receives no beard. Registration requires every non-skin feature and every skin-mask pixel to match, with at least 75 percent identical original shades. The template1 front texture is exact in its original 31 copies; other templates and shade variants expand the pass. Bandana positions and beard masks transfer with the face transform. Painting is limited to tile fields participating in the matched face core. Verified manual bounds in data/syxx-head-anchors.json replace misleading body/arm boxes, including six recovered full-piece heads. Limb/weapon/effect-only boxes with insufficient native hair receive no bandana. Native brown hair highlights are darkened only when surrounded by original hair.
 
-The corrected study now uses those landmarks: upper lip row12, beard sides rows13/14, jaw15. The previous chin patch code is removed completely, so it cannot paint a second beard higher on the face. tools/register_syxx_face_landmarks.py matches all49 original brow/eye/nose/upper-lip pixels exactly under translation/reflection and registers31 primary pieces in data/syxx-face-landmarks.json. Original marked facial features are protected. Other head drawings still need separate registration; they receive no guessed beard. New evidence PNGs are art studies, not gameplay captures.
+Current private native build: outputs/syxx-head-revision/final/syxx/gear.sfc, SHA256 d4c644214e02b6d0d5762b2c34c26efebfea52e8056165d36b577854dc664b0c. Syxx marker SYXX-NATIVE-GEAR3; 1,419 modified entries and 7,538 private raw tiles. Scott/Nash art is unchanged from v0.10. Reserved frame/packet/pointer ranges are cleared when upgrading an older 6 MiB input so native/browser outputs agree byte-for-byte.
 
-Work files:
-- tools/syxx_head_art.py: corrected landmark-anchored beard draft. The accepted bandana direction remains. Head bounds/hair proposals still need review.
-- tools/native_gear_art.py: calls the draft head drawing for selector 9, including shared heads when mapped. Nash/Scott art is unchanged.
-- tools/build_nwo_gear.py: Syxx marker3, and reserved selected ranges are cleared before rebuilding so old-ROM upgrades remain byte-exact.
-- data/syxx-common-heads.json: 133 shared head proposals from exact native head-source pixels and a thick-hair tile filter, with three hand-checked bounds in data/syxx-head-anchors.json. Several bounds are partial and need review before claiming coverage.
-- data/syxx-registered-heads.json: 38 shared heads registered with original body tile sources. data/syxx-pixel-registered-heads.json confirms only piece705 matches a known own-body pose exactly at present. These registrations are not yet merged into the art module.
-- tools/register_shared_heads.py and register_shared_heads_pixels.py are anatomical research; no source game pixels are published in their output.
-- tools/find_shared_head_cores.py produces unreviewed proposals under outputs/syxx-head-revision/head-proposals.json. Do not blindly merge proposals; head/arm ambiguity remains in shared poses.
+Validation completed:
+- Syxx cold-boot controller replays: finisher 608, Mega 586, walk, running/ropes, punch, kick. Ten giving/taking grapple controller samples also replayed. give-back-suplex remained a tie-up; do not claim ten successful moves.
+- All 1,720 original opaque masks preserved; 1,247 visible protected feature pixels preserved across 269 registered pieces.
+- Browser presets match the native build byte-for-byte. 384 native OAM/VRAM previews pass: Scott 130, Nash 109, Syxx 145. Unchanged Scott/Nash v0.10 fixtures are reused; Syxx was replayed on this ROM.
+- v0.8 Scott, published v0.9 and v0.10 upgrades pass. Legacy manifest records are arrays keyed by marker, preserving older captures before upgrading.
+- PNG/project roundtrip, direct edited-ROM reload and 6 MiB profile export pass. Twelve-slot custom MIDI and twelve-character profile regressions pass.
+- ZIP integrity and packaged HTML verified; network disabled before ROM load/edit/export. Direct file:// navigation is blocked by cloud Chromium administrative policy, so packaged HTML was served locally for the test; no policy was altered.
 
-Current private draft build: outputs/syxx-head-revision/build/gear.sfc, SHA256 b6f78c946a4f3c4a6d221c79cfabf624bd3279335800d78400b35d4ced7302f6. It has not been verified in gameplay and is not a release.
+Published package: downloads/WrestleEdit-v0.11.zip plus downloads/WrestleEdit.zip. Evidence: evidence/syxx-head-revision (native screenshot,before/after,eight GIFs,verification JSON). The original approved face study remains under evidence/syxx-head-study.
 
-The current public downloadable editor is still v0.10. v0.10 Syxx native captures and grapple snapshots were preserved in a lossless archive /tmp/wwf-raw-v010-syxx-evidence.tar.gz; all 110,027 files were compared byte-for-byte before approved deletion of the duplicate directories to free space. Original evidence and public GIFs remain committed. Can restore with tar when required; other Scott/Nash capture directories remain present.
+Private capture backups (do not publish):
+- /tmp/wwf-raw-v010-syxx-evidence.tar.gz: v0.10 Syxx captures/grapples, 110,027 files, individually SHA-verified before approved deletion of duplicate directories.
+- /tmp/wwf-raw-syxx-v011-first-replay.tar.gz: first v0.11 replay plus ROM/metadata, 110,216 files, individually SHA-verified; archive SHA e5fcc8ab411475d1766cc8703be68d652cfc9c2cbbff996a3c71e70136f08c92. Duplicate first-pass capture/grapple directories were removed after automatic approval; corrected replays now occupy their paths.
+- v0.9 Syxx/Nash backups are also in /tmp. Preserve user uploads and /workspace/raw-analysis.
 
-Next: show corrected enlarged art, anchor other unique head drawings, review shared-pose head boxes and orientations, replay Syxx specials/movement/grapples, update the Syxx editor manifest and old-version preview handling, run byte/pixel/export checks, then publish a new version. Do not change Nash or Scott art as part of this correction.
+Fixture caution: outputs/nwo-gear/complete/syxx/gear.sfc is the published v0.9 layout (SHA fe2b967f242f5d3e1172b7b6b3bde634380da764e1be5c7575c246c9e44463f2). outputs/nwo-gear/final/syxx/gear.sfc is an earlier unnormalized research ROM using bank 55; it is not the published v0.9 upgrade fixture.
+
+Remaining work: other visible head drawings still need registration, and complete live animation/opponent/interrupt coverage is unverified. Data for exploratory body registration and hair-core proposals is not used as a blanket paint rule. Do not claim all animations or every move is finished. Keep the game-native silhouettes/style and verify future corrections against actual face landmarks, not skull-height guesses.

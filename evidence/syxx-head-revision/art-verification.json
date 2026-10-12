@@ -1,0 +1,11 @@
+{
+  "original_rom_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+  "frame_pieces_checked": 1720,
+  "opaque_masks_preserved": true,
+  "registered_head_pieces": 269,
+  "protected_visible_feature_pixels_checked": 1247,
+  "protected_visible_feature_pixels_preserved": true,
+  "registered_occluded_head_pieces": 9,
+  "matching_rule": "Every non-skin feature and every skin-mask pixel match under translation/reflection; at least 75 percent of original shades match exactly. No crown-relative beard placement.",
+  "complete_head_or_gameplay_coverage": false
+}

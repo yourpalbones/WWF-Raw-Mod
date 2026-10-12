@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "method": "At least 160 exact skin-shade matches and 94 percent of the known donor body skin. FFT proposes alignment; explicit world-coordinate comparison rejects wrapping.",
+  "heads": {
+    "705": {
+      "bounds": [
+        -14,
+        -34,
+        2,
+        -19
+      ],
+      "neck": [
+        1,
+        0
+      ],
+      "donor_primary_piece": 35,
+      "matching_skin_pixels": 253,
+      "body_skin_fraction": 1.0,
+      "transform": [
+        1,
+        1,
+        1,
+        -1
+      ]
+    }
+  }
+}

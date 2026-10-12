@@ -1,0 +1,261 @@
+{
+  "version": 1,
+  "method": "Head bounds checked against enlarged native shared-pose artwork; coordinates refer to the native primary descriptor raster.",
+  "heads": {
+    "698": {
+      "bounds": [
+        -13,
+        -32,
+        0,
+        -17
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "832": {
+      "bounds": [
+        -15,
+        -30,
+        0,
+        -12
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "839": {
+      "bounds": [
+        -10,
+        -27,
+        4,
+        -16
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "697": {
+      "bounds": [
+        -1,
+        -39,
+        15,
+        -23
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "702": {
+      "bounds": [
+        -3,
+        -38,
+        12,
+        -23
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "705": {
+      "bounds": [
+        -14,
+        -34,
+        2,
+        -19
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "706": {
+      "bounds": [
+        -5,
+        -33,
+        9,
+        -18
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "707": {
+      "bounds": [
+        -8,
+        -34,
+        6,
+        -18
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "711": {
+      "bounds": [
+        -10,
+        -34,
+        6,
+        -17
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "831": {
+      "bounds": [
+        -15,
+        -32,
+        -4,
+        -15
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "833": {
+      "bounds": [
+        -16,
+        -23,
+        1,
+        -10
+      ],
+      "neck": [
+        1,
+        0
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "834": {
+      "bounds": [
+        -18,
+        -27,
+        -3,
+        -13
+      ],
+      "neck": [
+        1,
+        0
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "835": {
+      "bounds": [
+        -11,
+        -37,
+        5,
+        -21
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "836": {
+      "bounds": [
+        -6,
+        -33,
+        6,
+        -22
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "837": {
+      "bounds": [
+        -8,
+        -37,
+        1,
+        -24
+      ],
+      "neck": [
+        0,
+        1
+      ],
+      "review": "Compared with full native pose and enlarged head crop; arm/torso centroid must not determine bandana orientation."
+    },
+    "324": {
+      "bounds": [
+        -13,
+        -34,
+        2,
+        -20
+      ],
+      "review": "Full native pose reviewed after >=95 percent original shade recovery; old heuristic box selected a limb.",
+      "donor_primary_piece": 697
+    },
+    "327": {
+      "bounds": [
+        1,
+        -27,
+        15,
+        -18
+      ],
+      "review": "Full native pose reviewed after >=95 percent original shade recovery; old heuristic box selected a limb.",
+      "donor_primary_piece": 74
+    },
+    "328": {
+      "bounds": [
+        0,
+        -40,
+        14,
+        -31
+      ],
+      "review": "Full native pose reviewed after >=95 percent original shade recovery; old heuristic box selected a limb.",
+      "donor_primary_piece": 74
+    },
+    "329": {
+      "bounds": [
+        -14,
+        -43,
+        3,
+        -31
+      ],
+      "review": "Full native pose reviewed after >=95 percent original shade recovery; old heuristic box selected a limb.",
+      "donor_primary_piece": 73
+    },
+    "708": {
+      "bounds": [
+        -6,
+        -21,
+        8,
+        -12
+      ],
+      "review": "Full native pose reviewed after >=95 percent original shade recovery; old heuristic box selected a limb.",
+      "donor_primary_piece": 74
+    },
+    "710": {
+      "bounds": [
+        -12,
+        -36,
+        -1,
+        -19
+      ],
+      "review": "Full native pose reviewed after >=95 percent original shade recovery; old heuristic box selected a limb.",
+      "donor_primary_piece": 831
+    }
+  }
+}
