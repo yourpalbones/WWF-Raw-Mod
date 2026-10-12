@@ -7,6 +7,8 @@ from build_bret_gear import planar
 from build_shawn_kick_prototype import Program
 from decode_sprite_tile import encode_sprite_tile,decode_sprite_tile
 CONFIGS={10:dict(name='Kevin Nash',frames_start=0x4c0100,frames_end=0x4e0000,packets_start=0x4e0000,packets_end=0x560000,pointers=0x5f0000,pointer_end=0x5fa000,primary_table=0x410000,secondary_table=0x411000,program=0x412000,signature_offset=0x416000,signature='NASH-NATIVE-GEAR2'),9:dict(name='Syxx',frames_start=0x560100,frames_end=0x580000,packets_start=0x580000,packets_end=0x5f0000,pointers=0x5fa000,pointer_end=0x600000,primary_table=0x413000,secondary_table=0x414000,program=0x415000,signature_offset=0x417000,signature='SYXX-NATIVE-GEAR3'),5:dict(name='Scott Hall',frames_start=0x420100,frames_end=0x440000,packets_start=0x440000,packets_end=0x4b0000,pointers=0x4b0000,pointer_end=0x4bc000,primary_table=0x4bc000,secondary_table=0x4bd000,program=0x4be000,signature_offset=0x4bf000,signature='SCOTT-HALL-GEAR3')}
+CONFIGS[7]=dict(name='Sting',frames_start=0x600100,frames_end=0x620000,packets_start=0x620000,packets_end=0x6c0000,pointers=0x6c0000,pointer_end=0x6cc000,primary_table=0x6cc000,secondary_table=0x6cd000,program=0x6ce000,signature_offset=0x6cf000,signature='STING-NATIVE-GEAR1',rom_size=0x800000)
+
 def emit_address(p,opcode,address):p.emit(opcode+' '+address.to_bytes(3,'little').hex(' '))
 def dispatcher(secondary=None):
  p=Program()
@@ -47,16 +49,19 @@ def head_part(part):
  return head,world
 
 def decorate(frame,slot):
+ if slot==7:
+  from sting_gear_art import decorate as author
+  return author(frame)
  from native_gear_art import decorate as author
  return author(frame,slot)
 
 def checksum(out):
  out[0xffd5]=0x25;out[0xffd7]=13;out[0x400000:0x410000]=out[:65536]
  for o in[0xffdc,0x40ffdc]:out[o:o+4]=bytes.fromhex('ffff0000')
- s=(sum(out[:0x400000])+2*sum(out[0x400000:]))&65535
+ s=(sum(out[:0x400000])+(2 if len(out)==0x600000 else 1)*sum(out[0x400000:]))&65535
  for o in[0xffdc,0x40ffdc]:out[o:o+4]=(s^65535).to_bytes(2,'little')+s.to_bytes(2,'little')
 def build(base,wram,slot):
- c=CONFIGS[slot];frames=catalog(base,wram,slot);known=json.loads((Path(__file__).resolve().parents[1]/'data/nwo-common-frame-ids.json').read_text())[str(slot)];frames.sort(key=lambda f:bool(f.get('common')and f['index']not in known[f['kind']]));out=bytearray(base)+bytearray(b'\xff'*(0x600000-len(base)));
+ c=CONFIGS[slot];frames=catalog(base,wram,slot);known=json.loads((Path(__file__).resolve().parents[1]/'data/nwo-common-frame-ids.json').read_text()).get(str(slot),{'primary':[],'secondary':[]});frames.sort(key=lambda f:bool(f.get('common')and f['index']not in known[f['kind']]));out=bytearray(base)+bytearray(b'\xff'*(max(len(base),c.get('rom_size',0x600000))-len(base)));
  for start,end in[(c['frames_start'],c['frames_end']),(c['packets_start'],c['packets_end']),(c['pointers'],c['pointer_end'])]:out[start:end]=b'\xff'*(end-start)
  out[c['primary_table']:c['primary_table']+998*3]=bytes(998*3);out[c['secondary_table']:c['secondary_table']+722*3]=bytes(722*3);fc=c['frames_start'];pc=c['packets_start'];tiles={};descs={};rows=[];fingerprint=hashlib.sha256();metadata=[]
  for f in frames:
@@ -81,13 +86,21 @@ def build(base,wram,slot):
   table=(c['primary_table']if f['kind']=='primary'else c['secondary_table'])+f['index']*3;out[table:table+3]=descs[key].to_bytes(3,'little')
  rgb=lambda r,g,b:r|g<<5|b<<10
  palette={2:rgb(1,1,1),3:rgb(5,5,5),6:rgb(18,0,1),8:rgb(29,3,3),13:rgb(2,1,0),14:rgb(7,4,2)}if slot==10 else{2:rgb(29,2,2),3:rgb(16,0,0),4:rgb(1,1,1),5:rgb(29,29,29),6:rgb(2,1,1),8:rgb(6,6,6)}
+ if slot==7:
+  stock=Path(__file__).resolve().parents[1]/'data/sting-palette.json'
+  palette={int(k):v for k,v in json.loads(stock.read_text()).items()}
  offset=0x2cc4da+slot*32
  for i,v in palette.items():out[offset+i*2:offset+i*2+2]=v.to_bytes(2,'little')
  out[c['signature_offset']:c['signature_offset']+len(c['signature'])]=c['signature'].encode()
  for p in programs():
+  if p['offset']+256>len(out):continue
   out[p['offset']:p['offset']+256]=b'\xff'*256;out[p['offset']:p['offset']+len(p['code'])]=bytes(p['code'])
   if 'hook'in p:out[p['hook']:p['hook']+4]=bytes([0x5c,p['offset']&255,p['offset']>>8&255,p['offset']>>16])
+ extra_records=[]
+ if slot==7:
+  for table in [0x2dd36f,0x2dd387,0x2dd39f,0x2dd3b7,0x2dd3cf,0x2dd3e7]:
+   address=table+14;data=base[table+2:table+4];out[address:address+2]=data;extra_records.append(dict(offset=address,code=list(data)))
  checksum(out)
- recipe={**c,'private_compressed':False,'version':2,'selector':str(slot),'source_fingerprint':fingerprint.hexdigest(),'palette_offset':offset,'palette':palette,'frames':rows,'programs':programs()};report=dict(selector=slot,known_entries=len(frames),modified_entries=len(rows),private_tiles=len(tiles),tile_sources=metadata,patched_sha256=hashlib.sha256(out).hexdigest());return bytes(out),recipe,report
+ recipe={**c,'private_compressed':False,'version':2,'selector':str(slot),'source_fingerprint':fingerprint.hexdigest(),'palette_offset':offset,'palette':palette,'frames':rows,'programs':programs(),'extra_records':extra_records};report=dict(selector=slot,known_entries=len(frames),modified_entries=len(rows),private_tiles=len(tiles),tile_sources=metadata,patched_sha256=hashlib.sha256(out).hexdigest());return bytes(out),recipe,report
 if __name__=='__main__':
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('rom',type=Path);p.add_argument('wram',type=Path);p.add_argument('selector',type=int,choices=[9,10]);p.add_argument('--output',type=Path,required=True);a=p.parse_args();a.output.mkdir(parents=True,exist_ok=True);out,recipe,report=build(a.rom.read_bytes(),a.wram.read_bytes(),a.selector);(a.output/'gear.sfc').write_bytes(out);(a.output/'recipe.json').write_text(json.dumps(recipe,separators=(',',':')));(a.output/'report.json').write_text(json.dumps(report));print({k:v for k,v in report.items()if k!='tile_sources'})
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('rom',type=Path);p.add_argument('wram',type=Path);p.add_argument('selector',type=int,choices=[7,9,10]);p.add_argument('--output',type=Path,required=True);a=p.parse_args();a.output.mkdir(parents=True,exist_ok=True);out,recipe,report=build(a.rom.read_bytes(),a.wram.read_bytes(),a.selector);(a.output/'gear.sfc').write_bytes(out);(a.output/'recipe.json').write_text(json.dumps(recipe,separators=(',',':')));(a.output/'report.json').write_text(json.dumps(report));print({k:v for k,v in report.items()if k!='tile_sources'})

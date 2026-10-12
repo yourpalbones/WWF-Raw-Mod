@@ -1,0 +1,6 @@
+{
+  "zip_integrity": true,
+  "extracted_html_offline_export_byte_exact": true,
+  "playable_rom_sha256": "f0bf584f736702b47bb800d989960704471a9633b323a2884c9360e0a2fd6e8f",
+  "launch_method": "Local HTTP solely to satisfy managed Chromium file:// policy; offline before load/edit/export."
+}

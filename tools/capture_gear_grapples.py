@@ -2,18 +2,18 @@
 import argparse,json,subprocess,os,hashlib
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
-p=argparse.ArgumentParser(description=__doc__);p.add_argument('core',type=Path);p.add_argument('rom',type=Path);p.add_argument('--captures',type=Path,required=True);p.add_argument('--recipes',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--only',choices=['scott','nash','syxx']);a=p.parse_args();repo=Path(__file__).resolve().parents[1];jobs=[];digest=hashlib.sha256(a.rom.read_bytes()).hexdigest()
-for name in ['scott','nash','syxx']:
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('core',type=Path);p.add_argument('rom',type=Path);p.add_argument('--captures',type=Path,required=True);p.add_argument('--recipes',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--only',choices=['scott','nash','syxx','sting']);p.add_argument('--case',action='append',default=[]);a=p.parse_args();repo=Path(__file__).resolve().parents[1];jobs=[];digest=hashlib.sha256(a.rom.read_bytes()).hexdigest()
+for name in (['sting']if a.only=='sting'else['scott','nash','syxx']):
  if a.only and a.only!=name:continue
- ready=next((a.captures/f'captures-{name}'/'ready'/name).glob('*.state'))
+ ready=next((a.captures/'setup-2' if name=='sting' else a.captures/f'captures-{name}'/'ready'/name).glob('*.state'))
  for old in sorted(a.recipes.iterdir()):
-  if old.is_dir()and(old/'run.json').exists():jobs.append((name,ready,old))
+  if old.is_dir()and(old/'run.json').exists()and(not a.case or old.name in a.case):jobs.append((name,ready,old))
 def run(job):
- name,state,old=job;j=json.loads((old/'run.json').read_text());out=a.output/name/old.name;context={'rom_sha256':digest,'ready_sha256':hashlib.sha256(state.read_bytes()).hexdigest(),'inputs':j['presses'],'frames':j['frames']}
+ name,state,old=job;j=json.loads((old/'run.json').read_text());out=a.output/name/old.name;inputs=([[0,1,3,8]]if name=='sting'else[])+j['presses'];context={'rom_sha256':digest,'ready_sha256':hashlib.sha256(state.read_bytes()).hexdigest(),'inputs':inputs,'frames':j['frames']}
  if(out/'capture-context.json').exists():
   assert json.loads((out/'capture-context.json').read_text())==context;return name,old.name,'cached'
  cmd=['python3',str(repo/'tools/run_headless.py'),str(a.core),str(a.rom),'--output',str(out),'--load-state',str(state),'--frames',str(j['frames']),'--interval','18']
- for port,f,b,d in j['presses']:cmd+=['--press-p2'if port else'--press',f'{f}:{b}:{d}']
+ for port,f,b,d in inputs:cmd+=['--press-p2'if port else'--press',f'{f}:{b}:{d}']
  subprocess.run(cmd,env={**os.environ,'WWF_TRACE_DIR':str(out.resolve())},check=True,stdout=subprocess.DEVNULL)
  for snapshot in out.glob('*.state'):snapshot.unlink()
  log=out/'tiles.jsonl';kept=[];seen=set()

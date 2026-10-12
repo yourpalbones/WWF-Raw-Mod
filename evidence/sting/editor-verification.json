@@ -1,0 +1,12 @@
+{
+  "native_gear_sha256": "e6a2e2b513d26eec974d60f425f1bd666757417fdb3594c62ca599876cfca476",
+  "playable_rom_sha256": "f0bf584f736702b47bb800d989960704471a9633b323a2884c9360e0a2fd6e8f",
+  "rom_bytes": 8388608,
+  "browser_native_recipe_byte_exact": true,
+  "existing_gear_and_user_assets_preserved": true,
+  "only_doink_finisher_tables_changed": true,
+  "sting_bio_select_name_and_health_bar_name": true,
+  "offline_export_and_reopen": true,
+  "private_tile_png_and_project_roundtrip": true,
+  "complete_animation_coverage": false
+}

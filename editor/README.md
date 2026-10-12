@@ -4,7 +4,7 @@
 
 ## Easy download
 
-[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.11.zip)
+[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.12.zip)
 
 1. Click the download link above.
 2. Right-click the downloaded ZIP → **Extract All**.
@@ -18,6 +18,24 @@ This is the browser editor, not an EXE. Once downloaded, it works offline. Use *
 A Windows EXE preview was built, but GitHub release uploads are blocked by the cloud integration. Its local task-output link also failed in the chat client. The ZIP above is committed to the repository so it has a normal public download URL. [Desktop build details](../desktop/README.md).
 
 To edit a sprite image externally, use **Save pose image**, edit that PNG, and import it back. Keep its dimensions, transparent outline and opaque visible pixels. Colors are matched to the wrestler's current palette. Import changes the selected pose's underlying tiles; it does not generate a full set of animations. Shared tiles can change other poses too, so preview them and test in an emulator.
+
+## Sting conversion
+
+Load your latest mod, choose **Doink**, then **Sprites → Apply Sting reference
+gear → Save & play**. The first Crow Sting pass includes white/black face paint,
+dark hair, a black sleeveless scorpion shirt and full black tights/boots. It also
+assigns Bret's Sharpshooter as the **Scorpion Deathlock** and updates the bio,
+selection name artwork and health-bar name to **STING**. Use R near a downed
+opponent's legs while their health is red.
+
+The existing Hall/Nash/Syxx gear and other user edits are retained. This fourth
+pack creates an **8 MiB ExHiROM**, tested in Snes9x. The new slot exposes 59
+captured full-body poses and 1,720 parsed frame pieces. Every captured preview
+was compared with native PPU snapshots. This remains an art pass: individual
+poses still need refinement, the main/monitor portraits remain independent, and
+the Mega Move has not been verified on this edited base.
+
+[View the actual gameplay and Deathlock GIF](../evidence/sting/README.md).
 
 ## Scott, Nash and Syxx reference gear
 
@@ -76,7 +94,7 @@ import is not supported.
 | Bam Bam Bigelow | 4 |
 | Razor Ramon / Scott Hall | 130 plus 1,720 frame pieces |
 | Lex Luger | 11 |
-| Doink | 8 |
+| Doink / Sting | 59 plus 1,720 frame pieces |
 | Shawn Michaels | 10 |
 | 1-2-3 Kid / Syxx | 145 plus 1,720 frame pieces |
 | Diesel / Kevin Nash | 109 plus 1,720 frame pieces |
@@ -84,13 +102,13 @@ import is not supported.
 | Luna Vachon | 6 |
 
 Scott, Nash and Syxx have 384 captured full-body poses combined and 1,720 known
-frame pieces each. The other wrestlers retain their existing samples. Layouts
+frame pieces each. Sting adds 59 full-body poses and 1,720 pieces. The other wrestlers retain their existing samples. Layouts
 use native positions, palettes and flips. Counts describe samples rather than
 every live animation. **Play poses** cycles samples at a fixed preview speed;
 use the emulator gameplay GIFs to judge native timing.
 
 v0.9 and v0.10 ROMs retain their older captured previews until you apply revised
-reference gear. A v0.10 mod needs only the Syxx update for this release. Existing
+reference gear. A v0.10 mod needs only the Syxx update to reach v0.11; Sting is an optional new conversion in v0.12. Existing
 portraits, bios, names and songs are preserved; each button replaces that
 wrestler's preset gear artwork. Save the new ROM before reopening a project
 saved from it. v0.8 Scott ROMs are supported too.

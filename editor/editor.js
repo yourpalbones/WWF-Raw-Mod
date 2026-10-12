@@ -47,20 +47,20 @@ function patch(){if(!rom)throw Error('Load a ROM first');const selection=selecti
  for(const character of C.characters)for(const [index,value] of Object.entries(palettes[character.id]||{})){const offset=character.palette_offset+Number(index)*2,packet=new Uint8Array([value&255,value>>8]);result.set(packet,offset);records.push([offset,packet]);}
  for(const [offset,packet]of selection.records){result.set(packet,offset);records.push([offset,packet]);}
  // ExHiROM's reset/interrupt bank mirrors the original first bank.
- if(result.length===0x600000){for(let i=0;i<0x10000;){if(result[0x400000+i]===result[i]){i++;continue;}const start=i;while(i<0x10000&&result[0x400000+i]!==result[i]&&i-start<65535)i++;const packet=result.slice(start,i);result.set(packet,0x400000+start);records.push([0x400000+start,packet]);}}
+ if(result.length>=0x600000){for(let i=0;i<0x10000;){if(result[0x400000+i]===result[i]){i++;continue;}const start=i;while(i<0x10000&&result[0x400000+i]!==result[i]&&i-start<65535)i++;const packet=result.slice(start,i);result.set(packet,0x400000+start);records.push([0x400000+start,packet]);}}
  // 3 MiB and 6 MiB layouts mirror their final power-of-two portion.
 
  let checksum=0;for(let i=0;i<result.length;i++)checksum=(checksum+result[i]*(((result.length===0x300000&&i>=0x200000)||(result.length===0x600000&&i>=0x400000))?2:1))&65535;
  const complement=checksum^65535;records.push([0xffdc,new Uint8Array([complement&255,complement>>8,checksum&255,checksum>>8])]);
- if(result.length===0x600000)records.push([0x40ffdc,new Uint8Array([complement&255,complement>>8,checksum&255,checksum>>8])]);
+ if(result.length>=0x600000)records.push([0x40ffdc,new Uint8Array([complement&255,complement>>8,checksum&255,checksum>>8])]);
  const out=[80,65,84,67,72];if(selection.expanded&&rom.length<0x400000)for(let address=0x300000;address<0x400000;){const length=Math.min(65535,0x400000-address);out.push(address>>16,address>>8&255,address&255,0,0,length>>8,length&255,255);address+=length;}for(const [offset,packet]of records)out.push(offset>>16,(offset>>8)&255,offset&255,packet.length>>8,packet.length&255,...packet);out.push(69,79,70);return new Uint8Array(out);}
 function stop(){clearInterval(timer);timer=null;$('play').textContent='Play poses';}
 function romPointer(data,offset){return (data[offset]|data[offset+1]<<8|data[offset+2]<<16)&0x3fffff;}
 function validateLoadedMod(data){
- if(![0x300000,0x400000,0x600000].includes(data.length))throw Error('Choose a WWF Raw USA ROM or a WrestleEdit edited ROM.');
+ if(![0x300000,0x400000,0x600000,0x800000].includes(data.length))throw Error('Choose a WWF Raw USA ROM or a WrestleEdit edited ROM.');
  const word=p=>data[p]|data[p+1]<<8;let sum=0;for(let i=0;i<data.length;i++)sum=(sum+data[i]*(((data.length===0x300000&&i>=0x200000)||(data.length===0x600000&&i>=0x400000))?2:1))&65535;
  if((word(0xffdc)^word(0xffde))!==65535||sum!==word(0xffde))throw Error('This ROM has an invalid checksum. Please choose a complete exported ROM.');
- if(data.length===0x600000&&(!hasAnyNativeGear(data)||data[0xffd5]!==0x25||data[0x40ffd5]!==0x25||word(0x40ffde)!==sum||(word(0x40ffdc)^word(0x40ffde))!==65535))throw Error('Choose a supported Scott Hall expanded ROM.');
+ if(data.length>=0x600000&&(!hasAnyNativeGear(data)||data[0xffd5]!==0x25||data[0x40ffd5]!==0x25||word(0x40ffde)!==sum||(word(0x40ffdc)^word(0x40ffde))!==65535))throw Error('Choose a supported WrestleEdit expanded ROM.');
  if(String.fromCharCode(...data.slice(0xffc0,0xffd5)).trim()!=='WWF RAW')throw Error('Choose a WWF Raw USA ROM.');
  const hud=hudSource(data);if(![H.source,H.destination].includes(hud)||hud>=data.length)throw Error('Unsupported match name graphics location.');
  for(const [id,meta]of Object.entries(S.characters)){
