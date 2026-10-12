@@ -7,30 +7,53 @@ from build_bret_gear import planar
 from build_shawn_kick_prototype import Program
 from decode_sprite_tile import encode_sprite_tile,decode_sprite_tile
 CONFIGS={10:dict(name='Kevin Nash',frames_start=0x4c0100,frames_end=0x4e0000,packets_start=0x4e0000,packets_end=0x560000,pointers=0x5f0000,pointer_end=0x5fa000,primary_table=0x410000,secondary_table=0x411000,program=0x412000,signature_offset=0x416000,signature='NASH-NATIVE-GEAR2'),9:dict(name='Syxx',frames_start=0x560100,frames_end=0x580000,packets_start=0x580000,packets_end=0x5f0000,pointers=0x5fa000,pointer_end=0x600000,primary_table=0x413000,secondary_table=0x414000,program=0x415000,signature_offset=0x417000,signature='SYXX-NATIVE-GEAR3'),5:dict(name='Scott Hall',frames_start=0x420100,frames_end=0x440000,packets_start=0x440000,packets_end=0x4b0000,pointers=0x4b0000,pointer_end=0x4bc000,primary_table=0x4bc000,secondary_table=0x4bd000,program=0x4be000,signature_offset=0x4bf000,signature='SCOTT-HALL-GEAR3')}
-CONFIGS[7]=dict(name='Sting',frames_start=0x600100,frames_end=0x620000,packets_start=0x620000,packets_end=0x6c0000,pointers=0x6c0000,pointer_end=0x6cc000,primary_table=0x6cc000,secondary_table=0x6cd000,program=0x6ce000,signature_offset=0x6cf000,signature='STING-NATIVE-GEAR1',rom_size=0x800000)
+CONFIGS[7]=dict(name='Sting',frames_start=0x600100,frames_end=0x620000,packets_start=0x620000,packets_end=0x6e0000,pointers=0x6e0000,pointer_end=0x6ec000,secondary_pointers=0x6f0000,secondary_pointer_end=0x6fc000,primary_table=0x6fc000,secondary_table=0x6fd000,program=0x6fe000,signature_offset=0x6ff000,signature='STING-NATIVE-GEAR2',rom_size=0x800000)
 
 def emit_address(p,opcode,address):p.emit(opcode+' '+address.to_bytes(3,'little').hex(' '))
+def sting_marker(p,address,failure):
+ emit_address(p,'af',address);p.emit('c9 53 54');p.branch('d0',failure)
+ emit_address(p,'af',address+2);p.emit('c9 49 4e');p.branch('d0',failure)
 def dispatcher(secondary=None):
  p=Program()
  if secondary is None:
   p.emit('48 a5 82 29 ff 00')
   for slot,c in CONFIGS.items():
    for bank in[c['frames_start']>>16,(c['frames_end']>>16)-1]:
-    label=f'next{slot}_{bank}';p.emit('c9 '+bank.to_bytes(2,'little').hex(' '));p.branch('d0',label);emit_address(p,'5c',c['program']+0x500);p.label(label)
+    label=f'next{slot}_{bank}';p.emit('c9 '+bank.to_bytes(2,'little').hex(' '));p.branch('d0',label)
+    if slot==7:
+     legacy=f'legacy_lookup_{bank}';sting_marker(p,c['signature_offset'],legacy);emit_address(p,'5c',c['program']+0x500);p.label(legacy);sting_marker(p,0x6cf000,'original_lookup');emit_address(p,'5c',0x6ce500)
+    else:emit_address(p,'5c',c['program']+0x500)
+    p.label(label)
+  p.label('original_lookup')
   p.emit('68 cf 48 0f 00 5c e8 f6 ac')
  else:
   p.emit('08 48 da a6 36 bd 74 0b')
   for slot,c in CONFIGS.items():
-   label=f'next{slot}';p.emit('c9 '+(slot*2).to_bytes(2,'little').hex(' '));p.branch('d0',label);emit_address(p,'af',c['signature_offset']);p.emit('c9 '+c['signature'][:2].encode().hex(' '));p.branch('d0','fallback');emit_address(p,'5c',c['program']+(0x400 if secondary else 0x300));p.label(label)
+   label=f'next{slot}';p.emit('c9 '+(slot*2).to_bytes(2,'little').hex(' '));p.branch('d0',label)
+   if slot==7:
+    sting_marker(p,c['signature_offset'],'legacy_sting');emit_address(p,'5c',c['program']+(0x400 if secondary else 0x300));p.label('legacy_sting');sting_marker(p,0x6cf000,'fallback');emit_address(p,'5c',0x6ce000+(0x400 if secondary else 0x300))
+   else:
+    emit_address(p,'af',c['signature_offset']);p.emit('c9 '+c['signature'][:2].encode().hex(' '));p.branch('d0','fallback');emit_address(p,'5c',c['program']+(0x400 if secondary else 0x300))
+   p.label(label)
   p.label('fallback');p.emit('fa 68 28 '+('7f 47 d5 ad 5c 1d ed 80'if secondary else'7f 13 d5 ad 5c c5 ec 80'))
  return p.finish()
 def worker(c,secondary=False):
  p=Program();p.emit('fa 68 c9 '+('76 08'if secondary else'b2 0b'));p.branch('b0','original');p.emit('48 da aa');table=c['secondary_table']if secondary else c['primary_table'];emit_address(p,'bf',table);p.branch('f0','unmapped');p.emit('85 80');emit_address(p,'bf',table+2);p.emit('29 ff 00 85 82 fa 68 28 a5 80');p.emit('99 50 05 a5 82 99 52 05 5c 38 ed 80'if secondary else'99 4e 05 a5 82 99 50 05 c8 c8 5c e2 ec 80');p.label('unmapped');p.emit('fa 68');p.label('original');p.emit('28 '+('7f 47 d5 ad 5c 1d ed 80'if secondary else'7f 13 d5 ad 5c c5 ec 80'));return p.finish()
 def lookup(c):
- p=Program();p.emit('68 48 c9 00 c0');p.branch('90','fallback');p.emit('68 29 ff 3f da 48 0a 18 63 01 aa 68');emit_address(p,'bf',c['pointers']);p.emit('85 db e2 20');emit_address(p,'bf',c['pointers']+2);p.emit('85 dd c2 20 fa')
- if c['name']=='Scott Hall':
-  emit_address(p,'af',c['signature_offset']+15);p.emit('29 ff 00 c9 31 00');p.branch('d0','raw');p.emit('a9 01 00 6b');p.label('raw')
- p.emit('a9 00 00 6b');p.label('fallback');p.emit('68 cf 48 0f 00 5c e8 f6 ac');return p.finish()
+ p=Program();p.emit('68 48 c9 00 c0');p.branch('90','fallback');p.emit('68 29 ff 3f da 48 0a 18 63 01 aa 68')
+ if c['name']=='Sting':
+  p.emit('a5 82 29 ff 00 c9 61 00');p.branch('f0','secondary')
+ def raw(pointer):
+  emit_address(p,'bf',pointer);p.emit('85 db e2 20');emit_address(p,'bf',pointer+2);p.emit('85 dd c2 20 fa a9 00 00 6b')
+ if c['name']=='Sting':
+  raw(c['pointers']);p.label('secondary');raw(c['secondary_pointers'])
+ else:
+  emit_address(p,'bf',c['pointers']);p.emit('85 db e2 20');emit_address(p,'bf',c['pointers']+2);p.emit('85 dd c2 20 fa')
+  if c['name']=='Scott Hall':
+   emit_address(p,'af',c['signature_offset']+15);p.emit('29 ff 00 c9 31 00');p.branch('d0','raw');p.emit('a9 01 00 6b');p.label('raw')
+  p.emit('a9 00 00 6b')
+ p.label('fallback');p.emit('68 cf 48 0f 00 5c e8 f6 ac');return p.finish()
+
 def programs():
  result=[]
  for offset,code,hook,expected in[(0x4be000,dispatcher(),0x2cf6e4,'cf480f00'),(0x4be100,dispatcher(False),0xecc1,'7f13d5ad'),(0x4be200,dispatcher(True),0xed19,'7f47d5ad')]:result.append(dict(offset=offset,code=list(code),hook=hook,expected=list(bytes.fromhex(expected))))
@@ -61,6 +84,9 @@ def checksum(out):
  s=(sum(out[:0x400000])+(2 if len(out)==0x600000 else 1)*sum(out[0x400000:]))&65535
  for o in[0xffdc,0x40ffdc]:out[o:o+4]=(s^65535).to_bytes(2,'little')+s.to_bytes(2,'little')
 def build(base,wram,slot):
+ if slot==7:
+  from build_sting_replacement import build as replacement
+  return replacement(base,wram)
  c=CONFIGS[slot];frames=catalog(base,wram,slot);known=json.loads((Path(__file__).resolve().parents[1]/'data/nwo-common-frame-ids.json').read_text()).get(str(slot),{'primary':[],'secondary':[]});frames.sort(key=lambda f:bool(f.get('common')and f['index']not in known[f['kind']]));out=bytearray(base)+bytearray(b'\xff'*(max(len(base),c.get('rom_size',0x600000))-len(base)));
  for start,end in[(c['frames_start'],c['frames_end']),(c['packets_start'],c['packets_end']),(c['pointers'],c['pointer_end'])]:out[start:end]=b'\xff'*(end-start)
  out[c['primary_table']:c['primary_table']+998*3]=bytes(998*3);out[c['secondary_table']:c['secondary_table']+722*3]=bytes(722*3);fc=c['frames_start'];pc=c['packets_start'];tiles={};descs={};rows=[];fingerprint=hashlib.sha256();metadata=[]

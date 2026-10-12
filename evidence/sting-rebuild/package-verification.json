@@ -1,0 +1,7 @@
+{
+  "zip_integrity": true,
+  "extracted_html_offline_upgrade_export_byte_exact": true,
+  "native_previews": 101,
+  "rom_sha256": "7cf1bbb37be4f5cf0b2fa93e8a0540333463952c480374b12cd4a28ad40713c9",
+  "launch_method": "Local HTTP to satisfy managed Chromium file policy; offline before load, rebuild and export."
+}

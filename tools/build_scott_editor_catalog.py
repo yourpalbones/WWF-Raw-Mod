@@ -7,7 +7,7 @@ from pathlib import Path
 from scott_frame_catalog import catalog
 from decode_sprite_tile import decode_sprite_tile
 from extract_oam import objects
-p=argparse.ArgumentParser(description=__doc__);p.add_argument('original',type=Path);p.add_argument('edited',type=Path);p.add_argument('wram',type=Path);p.add_argument('report',type=Path);p.add_argument('captures',type=Path);p.add_argument('seed',type=Path);p.add_argument('--extra-captures',type=Path,action='append',default=[]);p.add_argument('--source-shift',action='append',default=[]);p.add_argument('--selector',type=int,default=5);p.add_argument('--destination',default='scott-layouts.js');p.add_argument('--window-name',default='RAW_SCOTT_MANIFEST');args=p.parse_args();repo=Path(__file__).resolve().parents[1];original=args.original.read_bytes();edited=args.edited.read_bytes();frames=catalog(original,args.wram.read_bytes(),args.selector);private={r['offset']:r for r in json.loads(args.report.read_text())['tile_sources']};sources={};pieces=[];captured=[]
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('original',type=Path);p.add_argument('edited',type=Path);p.add_argument('wram',type=Path);p.add_argument('report',type=Path);p.add_argument('captures',type=Path);p.add_argument('seed',type=Path);p.add_argument('--extra-captures',type=Path,action='append',default=[]);p.add_argument('--source-shift',action='append',default=[]);p.add_argument('--selector',type=int,default=5);p.add_argument('--donor-selector',type=int);p.add_argument('--pieces-only',action='store_true');p.add_argument('--destination',default='scott-layouts.js');p.add_argument('--window-name',default='RAW_SCOTT_MANIFEST');args=p.parse_args();repo=Path(__file__).resolve().parents[1];original=args.original.read_bytes();edited=args.edited.read_bytes();frames=catalog(original,args.wram.read_bytes(),args.donor_selector or args.selector);private={r['offset']:r for r in json.loads(args.report.read_text())['tile_sources']};sources={};pieces=[];captured=[]
 for frame in frames:
  parts=[]
  for part in frame['parts']:
@@ -31,8 +31,8 @@ def trace(root,limit=None):
   if key not in decoded:decoded[key]=decode_sprite_tile(edited,offset)if compressed else(edited[offset:offset+32],32)
   data,length=decoded[key];cache[(e['destination'],data)]=(offset,compressed,length);i+=1
  trace_cursors[root]=i
-trace(args.seed)
-folders=[folder for root in[args.captures,*args.extra_captures]for folder in sorted(root.iterdir())]
+if not args.pieces_only:trace(args.seed)
+folders=[]if args.pieces_only else [folder for root in[args.captures,*args.extra_captures]for folder in sorted(root.iterdir())]
 for folder in folders:
  if not folder.is_dir()or not(folder/'tile_calls.jsonl').exists():continue
  snapshots=sorted(folder.glob('frame-*.png'))
@@ -56,9 +56,11 @@ for folder in folders:
   if not parts:continue
   left=min(part['x']for part in parts);top=min(part['y']for part in parts)
   for part in parts:part['x']-=left;part['y']-=top
-  action=int.from_bytes(read('wram')[0x6b4:0x6b6],'little');labels={0:'Standing',6:'Walking',120:'Punch',126:'Kick',150:'Tie-up',152:'Tie-up',156:'Receiving grapple',158:'Receiving grapple',592:'Scorpion Deathlock',600:'Outsider’s Edge',610:'Jackknife',608:'Top-rope finisher',566:'Mega Move',586:'Mega Move',558:'Mega Move',12:'Walking',70:'Downed',76:'Getting up',238:'Fallaway slam',240:'Taking fallaway slam',242:'Body slam',248:'Taking faceplant',250:'Belly-to-belly suplex',256:'Taking piledriver',206:'Atomic drop',208:'Taking atomic drop',210:'Back suplex',212:'Taking back suplex'};label=labels.get(action,('Running / ropes'if folder.name=='run-ropes'else'Grapple / reaction')+f' · state {action:03X}');pose={'label':label+f' · frame {number:03d}','category':'captured','capture':folder.name+'/'+file.stem,'width':max(p['x']+p['size']for p in parts),'height':max(p['y']+p['size']for p in parts),'parts':parts}
+  action=int.from_bytes(read('wram')[0x6b4:0x6b6],'little');labels={0:'Standing',6:'Walking',120:'Punch',126:'Kick',174:'Vertical suplex',176:'Taking vertical suplex',234:'Samoan drop',246:'Faceplant',150:'Tie-up',152:'Tie-up',156:'Receiving grapple',158:'Receiving grapple',592:'Scorpion Deathlock',600:'Outsider’s Edge',610:'Jackknife',608:'Top-rope finisher',566:'Mega Move',586:'Mega Move',558:'Mega Move',12:'Walking',70:'Downed',76:'Getting up',238:'Fallaway slam',240:'Taking fallaway slam',242:'Body slam',248:'Taking faceplant',250:'Belly-to-belly suplex',256:'Taking piledriver',206:'Atomic drop',208:'Taking atomic drop',210:'Back suplex',212:'Taking back suplex'};label=labels.get(action,('Running / ropes'if folder.name=='run-ropes'else'Grapple / reaction')+f' · state {action:03X}');pose={'label':label+f' · frame {number:03d}','category':'captured','capture':folder.name+'/'+file.stem,'width':max(p['x']+p['size']for p in parts),'height':max(p['y']+p['size']for p in parts),'parts':parts}
   if not any(old['parts']==parts for old in captured):captured.append(pose)
 manifest={'version':1,'selector':str(args.selector),'signature_offset':0x4bf000,'signature':'SCOTT-HALL-GEAR1','primary_table':0x4bc000,'secondary_table':0x4bd000,'pointer_table':0x4b0000,'descriptor_bank':0x42,'private_tag':0xc000,'private_mask':0x3fff,'sources':sources,'poses':captured+pieces,'captured_poses':len(captured),'known_pieces':len(pieces),'coverage':'953 wrestler-specific entries and 767 structurally parsed common entries, plus native full-body captures. Exhaustive live gameplay coverage remains unverified.'}
 from build_nwo_gear import CONFIGS
-config=CONFIGS[args.selector];manifest.update({k:config[k]for k in['signature_offset','signature','primary_table','secondary_table']});manifest['pointer_table']=config['pointers'];manifest['descriptor_bank']=config['frames_start']>>16;manifest['private_compressed']=False;manifest['coverage']='Known wrestler-specific and parsed common frame pieces, plus captured native poses. Complete live coverage remains unverified.'
+config=CONFIGS[args.selector];manifest.update({k:config[k]for k in['signature_offset','signature','primary_table','secondary_table']});manifest['pointer_table']=config['pointers'];manifest['descriptor_bank']=config['frames_start']>>16;manifest['private_compressed']=False;
+if config.get('secondary_pointers'):manifest['secondary_pointer_table']=config['secondary_pointers']
+manifest['coverage']='Known wrestler-specific and parsed common frame pieces, plus captured native poses. Complete live coverage remains unverified.'
 (repo/'editor'/args.destination).write_text('window.'+args.window_name+' = '+json.dumps(manifest,separators=(',',':'))+';\n');print('Added',len(captured),'captured full-body poses and',len(pieces),'known frame pieces;',len(sources),'address references')

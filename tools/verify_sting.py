@@ -10,10 +10,12 @@ p.add_argument('base',type=Path);p.add_argument('native',type=Path)
 p.add_argument('--output',type=Path,required=True)
 a=p.parse_args();repo=Path(__file__).resolve().parents[1];a.output.mkdir(parents=True,exist_ok=True)
 base=a.base.read_bytes();native=a.native.read_bytes()
-assert len(base)==0x600000 and len(native)==0x800000
+assert len(base)in [0x600000,0x800000] and len(native)==0x800000
 allowed=set()
 for start,length in [(0xffdc,4),(0x40ffdc,4),(0x4be000,768),(0x2cc5ba,32),*[(t+14,2)for t in [0x2dd36f,0x2dd387,0x2dd39f,0x2dd3b7,0x2dd3cf,0x2dd3e7]]]:
     allowed.update(range(start,start+length))
+if len(base)==0x800000:
+    for start,end in [(0x600100,0x620000),(0x620000,0x6e0000),(0x6e0000,0x6ec000),(0x6f0000,0x6fc000),(0x6fc000,0x6fc000+998*3),(0x6fd000,0x6fd000+722*3),(0x6fe000,0x6fe600),(0x6ff000,0x6ff000+18)]:allowed.update(range(start,end))
 assert all(v==native[i] or i in allowed for i,v in enumerate(base)), 'Changed an existing roster asset'
 assert native[0x400000:0x410000]==native[:65536]
 assert sum(native)&65535==int.from_bytes(native[0xffde:0xffe0],'little')
@@ -66,7 +68,7 @@ with sync_playwright()as pw:
 server.shutdown()
 report={'native_gear_sha256':raw_digest,'playable_rom_sha256':exported_digest,
         'rom_bytes':len(exported.read_bytes()),'browser_native_recipe_byte_exact':True,
-        'existing_gear_and_user_assets_preserved':True,'only_doink_finisher_tables_changed':True,
+        'existing_gear_and_user_assets_preserved':True,'only_doink_finisher_tables_changed':True,'complete_sprite_replacement':True,'upper_lower_tile_namespaces':True,
         'sting_bio_select_name_and_health_bar_name':True,'offline_export_and_reopen':True,
         'private_tile_png_and_project_roundtrip':True,'complete_animation_coverage':False}
 (a.output/'verification.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))

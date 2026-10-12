@@ -1,5 +1,8 @@
 # Crow Sting in Doink's slot — first playable version
 
+**This is the earlier v0.12 pass. [See the rebuilt v0.13 Sting and complete
+Deathlock proof](../sting-rebuild/README.md).**
+
 These are actual Snes9x captures of the exported ROM, using controller inputs.
 The submitted reference gear is interpreted at the original game's pixel size:
 white/black face paint, dark hair, a black sleeveless scorpion shirt, full black

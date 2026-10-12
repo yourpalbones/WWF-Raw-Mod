@@ -2,7 +2,7 @@
 
 ## Wrestler editor prototype
 
-[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.12.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
+[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.13.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
 
 Paint all 12 wrestlers’ original sprites, preview captured poses,
 change selection portraits, monitor photos, bios, in-match names and existing
@@ -13,14 +13,14 @@ theme assignments, save projects and export playable ROMs or IPS patches. Full a
 [Custom theme melody proof](evidence/theme-music/README.md) ·
 [Thirteenth-slot research](evidence/roster-expansion/README.md)
 
-[Sting and Scorpion Deathlock gameplay proof](evidence/sting/README.md):
-v0.12 adds the first Crow Sting gear pass to Doink's slot, assigns Bret's
-Sharpshooter and updates Sting's selection/bio and health-bar names. The editor
-includes 59 native full-body captures and 1,720 parsed pieces for the slot. Load
-your current mod, select Doink, and apply Sting reference gear in Sprites.
+[Rebuilt Sting and Scorpion Deathlock gameplay proof](evidence/sting-rebuild/README.md):
+v0.13 replaces Doink's graphics using Undertaker's native body and flowing hair
+foundation, with authored Crow makeup and scorpion artwork. All tiles are private,
+including shared submission heads and the Deathlock's entry poses. The editor
+includes 101 native full-body captures and 1,720 parsed pieces. Load your current
+mod, select Doink / Sting, and click **Sprites → Rebuild Sting sprites**.
 Existing trio gear and user edits are preserved; the 8 MiB export was tested in
-Snes9x. Portrait replacement, further pose refinement and Mega verification
-remain unfinished.
+Snes9x. Rare poses, portraits and Mega verification still need review.
 
 [Syxx beard and bandana gameplay proof](evidence/syxx-head-revision/README.md):
 v0.11 applies the approved lower-face beard placement to registered native head

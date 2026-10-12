@@ -1,0 +1,34 @@
+[
+  {
+    "fixture_sha256": "0af7b0d3022acd24a1fb15865a076519f7f56e7a4b33f12b6d851b3a91e5388c",
+    "sting_or_doink_poses": 1728,
+    "reload_byte_exact": true
+  },
+  {
+    "fixture_sha256": "562d4a4bc095bdaece6a846397b8d167e3750e8ec9cdf4469788a37f93fc05ba",
+    "sting_or_doink_poses": 1728,
+    "reload_byte_exact": true
+  },
+  {
+    "fixture_sha256": "fe2b967f242f5d3e1172b7b6b3bde634380da764e1be5c7575c246c9e44463f2",
+    "sting_or_doink_poses": 1728,
+    "reload_byte_exact": true
+  },
+  {
+    "fixture_sha256": "640436cfd937129116b75ff794567064fdb8e65ff8fcdec62191791c3490cde0",
+    "sting_or_doink_poses": 1728,
+    "reload_byte_exact": true
+  },
+  {
+    "fixture_sha256": "f0bf584f736702b47bb800d989960704471a9633b323a2884c9360e0a2fd6e8f",
+    "sting_or_doink_poses": 1779,
+    "reload_byte_exact": true
+  },
+  {
+    "peer_gear_upgrade_retains_old_sting_bytes": true,
+    "legacy_sting_revision_retained": true
+  },
+  {
+    "native_legacy_sting_after_peer_upgrade_pixel_exact": true
+  }
+]
