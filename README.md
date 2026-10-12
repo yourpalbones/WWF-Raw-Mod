@@ -2,7 +2,7 @@
 
 ## Wrestler editor prototype
 
-[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.9.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
+[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.10.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
 
 Paint all 12 wrestlers’ original sprites, preview captured poses,
 change selection portraits, monitor photos, bios, in-match names and existing
@@ -13,14 +13,17 @@ theme assignments, save projects and export playable ROMs or IPS patches. Full a
 [Custom theme melody proof](evidence/theme-music/README.md) ·
 [Thirteenth-slot research](evidence/roster-expansion/README.md)
 
-[Scott, Nash and Syxx native gameplay proof](evidence/nwo-gear/README.md):
-v0.9 fixes Scott's black/red gear during Razor's Edge and adds Nash's all-red
-outfit and Syxx's black/red gear, red bandana and goatee. Each preset retains the
-native body artwork and maps all 1,720 known frame entries. The editor includes
-130 Scott, 109 Nash and 146 Syxx captured full-body poses alongside the frame
-pieces. Load your current ROM, apply each wrestler's reference gear in Sprites,
-then save the playable 6 MiB ROM. All six finishers/Mega Moves were exercised in
-Snes9x. Exhaustive live interaction coverage remains unverified.
+[Revised Scott, Nash and Syxx gameplay proof](evidence/nwo-art-revision/README.md):
+v0.10 gives Nash black pants/boots, dark brown hair and small Outsiders chest
+lettering. Syxx gets an improved red bandana, dark hair and chin detail, a red
+chest mark and removal of stray white gear marks. Scott's plain trunk pieces
+receive red detail while existing marked poses are retained. All three preserve
+the native body artwork and expose 1,720 known frame pieces each. The editor
+includes 130 Scott, 109 Nash and 146 Syxx captured full-body poses. Load your
+current ROM, apply each wrestler's reference gear in Sprites, then save the
+playable 6 MiB ROM. All six specials ran in Snes9x; 385 editor previews match
+native captures pixel for pixel. v0.8 Scott and v0.9 mods upgrade successfully.
+Exhaustive live interaction coverage remains unverified.
 
 Original tools for decoding and reconstructing WWF Raw (USA) graphics.
 We have recovered complete in-ring frames of **Bret Hart** and **Undertaker**,

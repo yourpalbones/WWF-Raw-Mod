@@ -16,7 +16,7 @@ PACKETS=0x440000;PACKET_END=0x4b0000
 POINTERS=0x4b0000;POINTER_END=0x4bc000
 PRIMARY=0x4bc000;SECONDARY=0x4bd000
 PROGRAM=0x4be000;SIGNATURE=0x4bf000
-MAGIC=b'SCOTT-HALL-GEAR2'
+MAGIC=b'SCOTT-HALL-GEAR3'
 
 def components(points,colors):
  remaining={p for p,c in points.items()if c in colors};out=[]
@@ -95,7 +95,8 @@ def decorate(frame):
    if has_mark:
     for q in group:
      if points[q]in[6,8]:put(q,8)
- return changes
+ from scott_trunk_art import finish_trunks
+ return finish_trunks(frame,changes)
 
 def lookup_program():
  p=Program();p.emit('48 a5 82 29 ff 00 c9 42 00');p.branch('f0','private');p.emit('c9 43 00');p.branch('d0','fallback');p.label('private');p.emit('68 48 c9 00 c0');p.branch('90','fallback')

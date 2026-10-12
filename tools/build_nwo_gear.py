@@ -6,7 +6,7 @@ from build_scott_hall_gear import components
 from build_bret_gear import planar
 from build_shawn_kick_prototype import Program
 from decode_sprite_tile import encode_sprite_tile,decode_sprite_tile
-CONFIGS={10:dict(name='Kevin Nash',frames_start=0x4c0100,frames_end=0x4e0000,packets_start=0x4e0000,packets_end=0x560000,pointers=0x5f0000,pointer_end=0x5fa000,primary_table=0x410000,secondary_table=0x411000,program=0x412000,signature_offset=0x416000,signature='NASH-NATIVE-GEAR1'),9:dict(name='Syxx',frames_start=0x560100,frames_end=0x580000,packets_start=0x580000,packets_end=0x5f0000,pointers=0x5fa000,pointer_end=0x600000,primary_table=0x413000,secondary_table=0x414000,program=0x415000,signature_offset=0x417000,signature='SYXX-NATIVE-GEAR1'),5:dict(name='Scott Hall',frames_start=0x420100,frames_end=0x440000,packets_start=0x440000,packets_end=0x4b0000,pointers=0x4b0000,pointer_end=0x4bc000,primary_table=0x4bc000,secondary_table=0x4bd000,program=0x4be000,signature_offset=0x4bf000,signature='SCOTT-HALL-GEAR2')}
+CONFIGS={10:dict(name='Kevin Nash',frames_start=0x4c0100,frames_end=0x4e0000,packets_start=0x4e0000,packets_end=0x560000,pointers=0x5f0000,pointer_end=0x5fa000,primary_table=0x410000,secondary_table=0x411000,program=0x412000,signature_offset=0x416000,signature='NASH-NATIVE-GEAR2'),9:dict(name='Syxx',frames_start=0x560100,frames_end=0x580000,packets_start=0x580000,packets_end=0x5f0000,pointers=0x5fa000,pointer_end=0x600000,primary_table=0x413000,secondary_table=0x414000,program=0x415000,signature_offset=0x417000,signature='SYXX-NATIVE-GEAR2'),5:dict(name='Scott Hall',frames_start=0x420100,frames_end=0x440000,packets_start=0x440000,packets_end=0x4b0000,pointers=0x4b0000,pointer_end=0x4bc000,primary_table=0x4bc000,secondary_table=0x4bd000,program=0x4be000,signature_offset=0x4bf000,signature='SCOTT-HALL-GEAR3')}
 def emit_address(p,opcode,address):p.emit(opcode+' '+address.to_bytes(3,'little').hex(' '))
 def dispatcher(secondary=None):
  p=Program()
@@ -47,52 +47,8 @@ def head_part(part):
  return head,world
 
 def decorate(frame,slot):
- points,mapping=raster(frame);changes={}
- def put(q,value):
-  if q in mapping:
-   ref,k=mapping[q];changes.setdefault(ref['field'],ref['pixels'].copy())[k]=value
- if slot==10:
-  # Preserve native skin/hair/outline. Recolor the cloth shades, with skin
-  # boundary protection in the head tile; silver hardware becomes dark red.
-  for q,v in points.items():
-   if v in[2,3,4,5,6,8,13,14]:put(q,{2:6,3:8,4:6,5:8,6:6,8:8,13:8,14:8}[v])
-  if frame['kind']=='primary'and frame['parts']:
-   part=frame['parts'][0];head,world=head_part(part);head={q:v for q,v in head.items()if q[1]<14}
-   if head:
-    for q,v in head.items():
-     if v in[2,3,4,5,6,8,13,14]:put(world(q),2 if v in[2,4,6]else 3)
- else:
-  for q,v in points.items():
-   if v==5:put(q,8) # free the blue highlight for authored white details
-  # Add a small red/white nWo-style chest mark within the native blue cloth.
-  if frame['kind']=='primary':
-   for group in components(points,{4,5}):
-    l=min(x for x,y in group);r=max(x for x,y in group);t=min(y for x,y in group);b=max(y for x,y in group)
-    if 8<=r-l+1<=28 and 7<=b-t+1<=28 and len(group)>45:
-     pattern=['110101010','101101101','101111010'];ox=(l+r)//2-4;oy=t+max(2,(b-t)//3)
-     for y,row in enumerate(pattern):
-      for x,v in enumerate(row):
-       if v=='1'and(ox+x,oy+y)in group:put((ox+x,oy+y),5)
-  # Head details attach to the native first head object, including its flips.
-  # Reject pieces that start with a limb/cloth rather than a recognizable head.
-  if frame['kind']=='primary'and frame['parts']:
-   part=frame['parts'][0];head,world=head_part(part);l=t=0;size=part['size'];skin={7,9,10,11,12,15};face=[q for q,v in head.items()if v in{7,11,15}and q[1]<t+9];hair=[q for q,v in head.items()if v==1 and q[1]<t+8]
-   if len(hair)>=8 and sum(v in[4,5]for v in head.values())<15 :
-    ft=min(y for x,y in face)if face else 7;fl=min(x for x,y in face)if face else 0;fr=max(x for x,y in face)if face else size-1;row=ft-1
-    for y in[row,row+1]:
-     for x in range(max(l,fl-3),min(l+16,fr+3)):
-      if head.get((x,y))in skin|{1}:put(world((x,y)),13 if y==row else 2)
-    # Tiny white marks in the bandana, clipped to the actual native head.
-    for x in range(fl,fr+1,4):
-     if head.get((x,row))in skin|{1}:put(world((x,row)),5)
-    jaw=ft+8
-    for y in[jaw,jaw+1]:
-     xs=[x for(x,yy),v in head.items()if yy==y and v in skin]
-     if len(face)>=10 and 3<=len(xs)<=9:
-      center=(min(xs)+max(xs))//2
-      for x in range(center-1,center+2):
-       if head.get((x,y))in skin:put(world((x,y)),6)
- return changes
+ from native_gear_art import decorate as author
+ return author(frame,slot)
 
 def checksum(out):
  out[0xffd5]=0x25;out[0xffd7]=13;out[0x400000:0x410000]=out[:65536]
@@ -122,7 +78,7 @@ def build(base,wram,slot):
    assert fc+len(key)<=c['frames_end'];descs[key]=fc;out[fc:fc+len(key)]=key;fc+=len(key)
   table=(c['primary_table']if f['kind']=='primary'else c['secondary_table'])+f['index']*3;out[table:table+3]=descs[key].to_bytes(3,'little')
  rgb=lambda r,g,b:r|g<<5|b<<10
- palette={6:rgb(18,0,1),8:rgb(29,3,3)}if slot==10 else{2:rgb(29,2,2),3:rgb(16,0,0),4:rgb(1,1,1),5:rgb(29,29,29),6:rgb(2,2,2),8:rgb(6,6,6)}
+ palette={2:rgb(1,1,1),3:rgb(5,5,5),6:rgb(18,0,1),8:rgb(29,3,3),13:rgb(2,1,0),14:rgb(7,4,2)}if slot==10 else{2:rgb(29,2,2),3:rgb(16,0,0),4:rgb(1,1,1),5:rgb(29,29,29),6:rgb(2,1,1),8:rgb(6,6,6)}
  offset=0x2cc4da+slot*32
  for i,v in palette.items():out[offset+i*2:offset+i*2+2]=v.to_bytes(2,'little')
  out[c['signature_offset']:c['signature_offset']+len(c['signature'])]=c['signature'].encode()
@@ -130,6 +86,6 @@ def build(base,wram,slot):
   out[p['offset']:p['offset']+256]=b'\xff'*256;out[p['offset']:p['offset']+len(p['code'])]=bytes(p['code'])
   if 'hook'in p:out[p['hook']:p['hook']+4]=bytes([0x5c,p['offset']&255,p['offset']>>8&255,p['offset']>>16])
  checksum(out)
- recipe={**c,'private_compressed':False,'version':1,'selector':str(slot),'source_fingerprint':fingerprint.hexdigest(),'palette_offset':offset,'palette':palette,'frames':rows,'programs':programs()};report=dict(selector=slot,known_entries=len(frames),modified_entries=len(rows),private_tiles=len(tiles),tile_sources=metadata,patched_sha256=hashlib.sha256(out).hexdigest());return bytes(out),recipe,report
+ recipe={**c,'private_compressed':False,'version':2,'selector':str(slot),'source_fingerprint':fingerprint.hexdigest(),'palette_offset':offset,'palette':palette,'frames':rows,'programs':programs()};report=dict(selector=slot,known_entries=len(frames),modified_entries=len(rows),private_tiles=len(tiles),tile_sources=metadata,patched_sha256=hashlib.sha256(out).hexdigest());return bytes(out),recipe,report
 if __name__=='__main__':
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('rom',type=Path);p.add_argument('wram',type=Path);p.add_argument('selector',type=int,choices=[9,10]);p.add_argument('--output',type=Path,required=True);a=p.parse_args();a.output.mkdir(parents=True,exist_ok=True);out,recipe,report=build(a.rom.read_bytes(),a.wram.read_bytes(),a.selector);(a.output/'gear.sfc').write_bytes(out);(a.output/'recipe.json').write_text(json.dumps(recipe,separators=(',',':')));(a.output/'report.json').write_text(json.dumps(report));print({k:v for k,v in report.items()if k!='tile_sources'})

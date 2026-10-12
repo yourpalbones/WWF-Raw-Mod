@@ -1,0 +1,317 @@
+[
+  {
+    "character": "scott",
+    "controller_recipe": "give-atomic",
+    "observed_action_words": [
+      0,
+      12,
+      150,
+      206
+    ]
+  },
+  {
+    "character": "scott",
+    "controller_recipe": "give-back-suplex",
+    "observed_action_words": [
+      0,
+      12,
+      76,
+      150,
+      210
+    ]
+  },
+  {
+    "character": "scott",
+    "controller_recipe": "give-fallaway",
+    "observed_action_words": [
+      0,
+      12,
+      76,
+      138,
+      140,
+      150,
+      238
+    ]
+  },
+  {
+    "character": "scott",
+    "controller_recipe": "give-slam",
+    "observed_action_words": [
+      0,
+      12,
+      150,
+      242,
+      260
+    ]
+  },
+  {
+    "character": "scott",
+    "controller_recipe": "give-suplex",
+    "observed_action_words": [
+      0,
+      12,
+      76,
+      150,
+      250,
+      272,
+      274,
+      284,
+      306
+    ]
+  },
+  {
+    "character": "scott",
+    "controller_recipe": "take-atomic",
+    "observed_action_words": [
+      0,
+      12,
+      156,
+      208
+    ]
+  },
+  {
+    "character": "scott",
+    "controller_recipe": "take-back-suplex",
+    "observed_action_words": [
+      0,
+      12,
+      70,
+      156,
+      212
+    ]
+  },
+  {
+    "character": "scott",
+    "controller_recipe": "take-faceplant",
+    "observed_action_words": [
+      0,
+      12,
+      70,
+      156,
+      248,
+      478
+    ]
+  },
+  {
+    "character": "scott",
+    "controller_recipe": "take-fallaway",
+    "observed_action_words": [
+      0,
+      12,
+      70,
+      156,
+      240
+    ]
+  },
+  {
+    "character": "scott",
+    "controller_recipe": "take-piledriver",
+    "observed_action_words": [
+      0,
+      12,
+      70,
+      156,
+      256
+    ]
+  },
+  {
+    "character": "nash",
+    "controller_recipe": "give-atomic",
+    "observed_action_words": [
+      0,
+      12,
+      150,
+      206
+    ]
+  },
+  {
+    "character": "nash",
+    "controller_recipe": "give-back-suplex",
+    "observed_action_words": [
+      0,
+      12,
+      76,
+      150,
+      210
+    ]
+  },
+  {
+    "character": "nash",
+    "controller_recipe": "give-fallaway",
+    "observed_action_words": [
+      0,
+      12,
+      150,
+      230
+    ]
+  },
+  {
+    "character": "nash",
+    "controller_recipe": "give-slam",
+    "observed_action_words": [
+      0,
+      12,
+      150,
+      242,
+      260
+    ]
+  },
+  {
+    "character": "nash",
+    "controller_recipe": "give-suplex",
+    "observed_action_words": [
+      0,
+      12,
+      70,
+      72,
+      150,
+      174
+    ]
+  },
+  {
+    "character": "nash",
+    "controller_recipe": "take-atomic",
+    "observed_action_words": [
+      0,
+      12,
+      156,
+      208
+    ]
+  },
+  {
+    "character": "nash",
+    "controller_recipe": "take-back-suplex",
+    "observed_action_words": [
+      0,
+      12,
+      156
+    ]
+  },
+  {
+    "character": "nash",
+    "controller_recipe": "take-faceplant",
+    "observed_action_words": [
+      0,
+      12,
+      70,
+      156,
+      244
+    ]
+  },
+  {
+    "character": "nash",
+    "controller_recipe": "take-fallaway",
+    "observed_action_words": [
+      0,
+      12,
+      70,
+      156,
+      240
+    ]
+  },
+  {
+    "character": "nash",
+    "controller_recipe": "take-piledriver",
+    "observed_action_words": [
+      0,
+      12,
+      70,
+      156,
+      256
+    ]
+  },
+  {
+    "character": "syxx",
+    "controller_recipe": "give-atomic",
+    "observed_action_words": [
+      0,
+      150,
+      206
+    ]
+  },
+  {
+    "character": "syxx",
+    "controller_recipe": "give-back-suplex",
+    "observed_action_words": [
+      0,
+      150
+    ]
+  },
+  {
+    "character": "syxx",
+    "controller_recipe": "give-fallaway",
+    "observed_action_words": [
+      0,
+      76,
+      150,
+      234
+    ]
+  },
+  {
+    "character": "syxx",
+    "controller_recipe": "give-slam",
+    "observed_action_words": [
+      0,
+      150,
+      246
+    ]
+  },
+  {
+    "character": "syxx",
+    "controller_recipe": "give-suplex",
+    "observed_action_words": [
+      0,
+      150,
+      254
+    ]
+  },
+  {
+    "character": "syxx",
+    "controller_recipe": "take-atomic",
+    "observed_action_words": [
+      0,
+      156,
+      208
+    ]
+  },
+  {
+    "character": "syxx",
+    "controller_recipe": "take-back-suplex",
+    "observed_action_words": [
+      0,
+      70,
+      156,
+      212
+    ]
+  },
+  {
+    "character": "syxx",
+    "controller_recipe": "take-faceplant",
+    "observed_action_words": [
+      0,
+      70,
+      156,
+      244
+    ]
+  },
+  {
+    "character": "syxx",
+    "controller_recipe": "take-fallaway",
+    "observed_action_words": [
+      0,
+      70,
+      156,
+      232
+    ]
+  },
+  {
+    "character": "syxx",
+    "controller_recipe": "take-piledriver",
+    "observed_action_words": [
+      0,
+      70,
+      156,
+      176
+    ]
+  }
+]

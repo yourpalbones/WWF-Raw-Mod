@@ -4,7 +4,7 @@
 
 ## Easy download
 
-[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.9.zip)
+[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.10.zip)
 
 1. Click the download link above.
 2. Right-click the downloaded ZIP → **Extract All**.
@@ -26,15 +26,15 @@ To edit a sprite image externally, use **Save pose image**, edit that PNG, and i
 3. Open **Save & play** and click **Save playable ROM**.
 4. Run that file in Snes9x. Your previous portraits, bios, names and songs are kept.
 
-[See the native gameplay GIFs](../evidence/nwo-gear/README.md).
-Nash wears all red; Syxx wears black/red with a red bandana and small goatee. Scott’s Edge now uses his updated gear.
+[See the native gameplay GIFs](../evidence/nwo-art-revision/README.md).
+Nash wears a red top with small Outsiders lettering, black pants/boots and dark brown hair. Syxx wears black/red with a red bandana, dark hair and chin detail; stray white gear marks are removed. Scott’s previously plain trunk pieces gain red detail.
 The reference pass retains native body shapes and animation timing, adds black
 trunks with red detail, red boots and black/red knee-pad details, and removes the
 old gold jewelry. Stubble, chest hair and new elbow-pad artwork are not included.
 Tiny trunk markings remain a first pass, particularly in narrow or rotated views.
 
 The gear button expands the ROM to 6 MiB using ExHiROM mapping. It checks the
-original Scott artwork before applying; conflicting body edits or engine hooks
+original wrestler artwork before applying; conflicting body edits or engine hooks
 are refused. You can then paint or import poses using the private detail tiles.
 Full-body previews are grouped separately from upper/lower and common pieces.
 The 1,720 parsed entries do not prove every live animation variant is covered.
@@ -70,22 +70,26 @@ import is not supported.
 | Undertaker | 10 |
 | Yokozuna | 7 |
 | Bam Bam Bigelow | 4 |
-| Razor Ramon / Scott Hall | 207 plus 1,720 frame pieces |
+| Razor Ramon / Scott Hall | 130 plus 1,720 frame pieces |
 | Lex Luger | 11 |
 | Doink | 8 |
 | Shawn Michaels | 10 |
-| 1-2-3 Kid | 10 |
-| Diesel | 10 |
+| 1-2-3 Kid / Syxx | 146 plus 1,720 frame pieces |
+| Diesel / Kevin Nash | 109 plus 1,720 frame pieces |
 | Owen Hart | 8 |
 | Luna Vachon | 6 |
 
-The other eleven wrestlers retain their 99 sampled layouts. Scott has 207 full-body
-captures and 1,720 upper/lower frame pieces. These layouts use native positions,
-palettes and flips. Bret retains
-his previous standing/walking set; the other characters use captured movement
-sequences that may include opponent interactions. Counts describe sampled poses,
-not every animation. **Play poses** cycles samples at a fixed preview speed,
-rather than reproducing native animation timing.
+Scott, Nash and Syxx have 385 captured full-body poses combined and 1,720 known
+frame pieces each. The other wrestlers retain their existing samples. Layouts
+use native positions, palettes and flips. Counts describe samples rather than
+every live animation. **Play poses** cycles samples at a fixed preview speed;
+use the emulator gameplay GIFs to judge native timing.
+
+v0.9 ROMs retain their older captured previews until you apply the revised
+reference gear. Apply the three buttons to update all three wrestlers. Existing
+portraits, bios, names and songs are preserved; each button replaces that
+wrestler's preset gear artwork. Save the new ROM before reopening a project
+saved from it. v0.8 Scott ROMs are supported too.
 
 ## Editing behavior
 

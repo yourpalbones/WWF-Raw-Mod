@@ -3,19 +3,23 @@ const SCOTT=window.RAW_SCOTT_MANIFEST;
 const baseRosterSources=structuredClone(C.sources),baseGearCharacters=structuredClone(C.characters),baseScottCharacter=structuredClone(C.characters.find(c=>c.id==='5'));
 function hasScottGear(data){return data.length===0x600000&&String.fromCharCode(...data.slice(0x4bf000,0x4bf00f)).startsWith('SCOTT-HALL-GEAR');}
 function hasNativeGear(data,id){const r=window.RAW_NWO_GEAR_PATTERNS[id];return !!r&&data.length===0x600000&&String.fromCharCode(...data.slice(r.signature_offset,r.signature_offset+r.signature.length))===r.signature;}
-function hasAnyNativeGear(data){return Object.keys(window.RAW_NWO_GEAR_PATTERNS).some(id=>hasNativeGear(data,id))||hasScottGear(data);}
+function nativeGearRevision(data,id){const r=window.RAW_NWO_GEAR_PATTERNS[id];if(!r||data.length!==0x600000)return 0;const prefix=r.signature.slice(0,-1),text=String.fromCharCode(...data.slice(r.signature_offset,r.signature_offset+prefix.length+1));return text.startsWith(prefix)&&/^[1-9]$/.test(text.slice(-1))?Number(text.slice(-1)):0;}
+function hasAnyNativeGear(data){return Object.keys(window.RAW_NWO_GEAR_PATTERNS).some(id=>nativeGearRevision(data,id)>0);}
+
 function activateScottSources(data){
  C.sources=structuredClone(baseRosterSources);C.characters=structuredClone(baseGearCharacters);
  for(const manifest of[SCOTT,window.RAW_NASH_MANIFEST,window.RAW_SYXX_MANIFEST]){
-  const id=manifest.selector,active=hasNativeGear(data,id)||(id==='5'&&hasScottGear(data)),character=C.characters.find(c=>c.id===id),mapping={},read24=p=>data[p]|data[p+1]<<8|data[p+2]<<16;character.sources={};
-  for(const [key,meta]of Object.entries(manifest.sources)){
+  const id=manifest.selector,active=nativeGearRevision(data,id)>0,character=C.characters.find(c=>c.id===id),mapping={},read24=p=>data[p]|data[p+1]<<8|data[p+2]<<16;character.sources={};
+  const previous=window.RAW_LEGACY_GEAR_MANIFESTS?.[id],legacy=active&&!hasNativeGear(data,id)&&previous&&String.fromCharCode(...data.slice(manifest.signature_offset,manifest.signature_offset+previous.signature.length))===previous.signature?previous:null;
+  for(const [key,meta]of Object.entries({...manifest.sources,...(legacy?.sources||{})})){
    let source={offset:meta.offset,compressed:meta.compressed,length:meta.length};
-   if(meta.private_packet_offset){source=hasNativeGear(data,id)?{offset:meta.private_packet_offset,compressed:manifest.private_compressed,length:36}:{offset:meta.original_offset,compressed:meta.original_compressed,length:meta.original_length};}
-   else if(active&&meta.frame_kind){const table=meta.frame_kind==='primary'?manifest.primary_table:manifest.secondary_table,low=data[table+meta.frame_index*3]|data[table+meta.frame_index*3+1]<<8;if(low){const descriptor=data[table+meta.frame_index*3+2]*65536+low,field=descriptor+meta.field_relative,tileId=data[field]|data[field+1]<<8;if(tileId>=manifest.private_tag){source={offset:read24(manifest.pointer_table+(tileId&manifest.private_mask)*3),compressed:(id==='5'&&!hasNativeGear(data,id))||manifest.private_compressed,length:36};}}}
+   if(meta.private_packet_offset){source=hasNativeGear(data,id)||legacy&&legacy.sources[key]?{offset:meta.private_packet_offset,compressed:legacy&&legacy.sources[key]?legacy.private_compressed:manifest.private_compressed,length:36}:{offset:meta.original_offset,compressed:meta.original_compressed,length:meta.original_length};}
+   else if(active&&meta.frame_kind){const table=meta.frame_kind==='primary'?manifest.primary_table:manifest.secondary_table,low=data[table+meta.frame_index*3]|data[table+meta.frame_index*3+1]<<8;if(low){const descriptor=data[table+meta.frame_index*3+2]*65536+low,field=descriptor+meta.field_relative,tileId=data[field]|data[field+1]<<8;if(tileId>=manifest.private_tag){source={offset:read24(manifest.pointer_table+(tileId&manifest.private_mask)*3),compressed:(id==='5'&&nativeGearRevision(data,id)===1)||manifest.private_compressed,length:36};}}}
    if(source.offset+source.length>data.length||source.offset<0)throw Error('Wrestler sprite data points outside the loaded ROM.');
    const canonical=String(source.offset);mapping[key]=canonical;if(C.sources[canonical]&&(C.sources[canonical].offset!==source.offset||C.sources[canonical].compressed!==source.compressed))throw Error('Conflicting native sprite source.');C.sources[canonical]=source;character.sources[canonical]=source;
   }
-  character.poses=manifest.poses.filter(p=>!(id==='5'&&active&&!hasNativeGear(data,id)&&p.category==='captured')).map(p=>({...structuredClone(p),parts:p.parts.map(part=>({...part,tiles:part.tiles.map(key=>key===null?null:mapping[key])}))}));character.scope=manifest.coverage;
+  const poses=legacy?[...legacy.poses,...manifest.poses.filter(p=>p.category!=='captured')]:manifest.poses;
+  character.poses=poses.filter(p=>!(active&&!hasNativeGear(data,id)&&!legacy&&p.category==='captured')).map(p=>({...structuredClone(p),parts:p.parts.map(part=>({...part,tiles:part.tiles.map(key=>key===null?null:mapping[key])}))}));character.scope=manifest.coverage;
  }
 }
 async function applyScottReferenceGear(base,selector=M.id){
