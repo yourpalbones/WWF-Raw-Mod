@@ -1,0 +1,23 @@
+{
+  "base_sha256": "42434945cac01da84bac6c9ce1481b02a55a56f4f69e018dee7e7039d8a34994",
+  "patched_sha256": "562d4a4bc095bdaece6a846397b8d167e3750e8ec9cdf4469788a37f93fc05ba",
+  "unrelated_input_bytes_preserved": true,
+  "browser_recipe_matches_native_builder": true,
+  "native_tile_decodes_compared": 40703,
+  "private_tile_decodes_compared": 11992,
+  "native_full_body_previews_pixel_exact": 207,
+  "known_frame_pieces": 1720,
+  "private_packet_edit_undo_project_reopen": true,
+  "bio_export_preserves_6mib_layout": true,
+  "live_coverage_exhaustive": false,
+  "private_calls_only_scott_actor": 11992,
+  "coldboot_mapping_baseline_video_and_memory_exact": true,
+  "resumed_match_mapping_baseline_exact": true,
+  "existing_profile_regression_passed": true,
+  "existing_midi_regression_passed": true,
+  "local_file_browser_check": "Blocked by cloud Chromium administrator policy; HTTP browser workflow and ZIP integrity verified",
+  "other_native_palettes_preserved": true,
+  "bundled_zip_http_workflow_verified": true,
+  "full_body_pose_player_excludes_frame_pieces": true,
+  "midi_import_into_6mib_rom_verified": true
+}

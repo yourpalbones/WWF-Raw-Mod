@@ -38,7 +38,7 @@ def main():
   assert page.evaluate("(()=>{const s=structuredClone(selectionEdits['5'].song);s.notes=Array.from({length:9},(_,i)=>({start:0,end:20,pitch:40+i,velocity:100}));try{compileSong(s);return false}catch(e){return e.message.includes('eight')}})()")
   page.locator('#song-restore').click();assert page.evaluate('!selectionEdits["5"].song');page.locator('#undo').click();assert page.evaluate('JSON.stringify(selectionEdits)')==saved
   with page.expect_download() as d:page.locator('#save').click()
-  project=Path(d.value.path()).read_bytes();assert json.loads(project)['version']==8;page.locator('#reset').click();page.locator('#project').set_input_files({'name':'song-project.json','mimeType':'application/json','buffer':project});page.wait_for_function('selectionEdits["5"]?.song!==undefined');assert page.evaluate('JSON.stringify(selectionEdits)')==saved
+  project=Path(d.value.path()).read_bytes();assert json.loads(project)['version']==9;page.locator('#reset').click();page.locator('#project').set_input_files({'name':'song-project.json','mimeType':'application/json','buffer':project});page.wait_for_function('selectionEdits["5"]?.song!==undefined');assert page.evaluate('JSON.stringify(selectionEdits)')==saved
   legacy=json.loads(project);legacy['version']=7;legacy['selection_edits']['5']['song']['instrument']=112
   page.locator('#project').set_input_files({'name':'legacy-effect-project.json','mimeType':'application/json','buffer':json.dumps(legacy).encode()});page.wait_for_function('selectionEdits["5"].song.instrument===113');assert page.evaluate('JSON.stringify(selectionEdits)')==saved
   # All twelve upload directories fit without sharing relocated song storage.
@@ -60,5 +60,5 @@ def main():
   for n in native:
    if n['id']!='5':at=0x11903+n['bank']*3;assert edited[at:at+3]==exported[at:at+3]
   assert not errors,errors;browser.close()
- server.shutdown();report={'full_midi_notes':640,'duration_seconds':92.8,'tempo_changes':True,'polyphonic_voices':4,'sustain_and_running_status':True,'malformed_and_unsupported_imports_atomic':True,'polyphony_overflow_refused':True,'undo_and_project8_reload':True,'twelve_independent_theme_slots':True,'stock_samples_and_instruments_preserved':True,'edited_rom_reload_byte_exact':True};(args.output/'verification.json').write_text(json.dumps(report,indent=2)+'\n');print('PASS: full 92.8-second four-voice MIDI, tempo/sustain/running status, import refusal, undo/projects, 12 independent songs and edited-ROM reload')
+ server.shutdown();report={'full_midi_notes':640,'duration_seconds':92.8,'tempo_changes':True,'polyphonic_voices':4,'sustain_and_running_status':True,'malformed_and_unsupported_imports_atomic':True,'polyphony_overflow_refused':True,'undo_and_project9_reload':True,'twelve_independent_theme_slots':True,'stock_samples_and_instruments_preserved':True,'edited_rom_reload_byte_exact':True};(args.output/'verification.json').write_text(json.dumps(report,indent=2)+'\n');print('PASS: full 92.8-second four-voice MIDI, tempo/sustain/running status, import refusal, undo/projects, 12 independent songs and edited-ROM reload')
 if __name__=='__main__':main()

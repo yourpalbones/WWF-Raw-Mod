@@ -4,7 +4,7 @@ from pathlib import Path
 root = Path(__file__).resolve().parents[1]
 editor = root / 'editor'
 html = (editor / 'index.html').read_text()
-for filename in ('roster-layouts.js', 'selection-layouts.js', 'editor.js', 'selection.js', 'profile-assets.js', 'match-names.js', 'custom-music.js', 'app.js'):
+for filename in ('roster-layouts.js', 'scott-layouts.js', 'scott-gear-patterns.js', 'selection-layouts.js', 'editor.js', 'selection.js', 'profile-assets.js', 'match-names.js', 'custom-music.js', 'scott-sprites.js', 'app.js'):
     script = (editor / filename).read_text().replace('</script', '<\\/script')
     html = html.replace(f'<script src="{filename}"></script>', f'<script>\n{script}\n</script>')
 html = html.replace('../docs/editor-roadmap.md', 'https://github.com/yourpalbones/WWF-Raw-Mod/blob/main/docs/editor-roadmap.md')

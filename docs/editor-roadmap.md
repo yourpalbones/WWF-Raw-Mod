@@ -1,3 +1,14 @@
+## Scott gear pass (v0.8)
+
+Scott now has 207 native full-body captures and 1,720 parsed frame pieces:
+953 wrestler-specific entries plus 767 structurally decoded common entries.
+The reference gear recipe clones modified descriptors and tiles into a 6 MiB
+ExHiROM. Actor guards redirect the common pieces only for Scott; original shared
+sources and other eleven palettes remain unchanged. Captures cover walking,
+strikes, rope running, giving/taking grapples, finisher and Mega Move.
+Exhaustive action, interruption, reversal and ring-position coverage remains
+unverified. Detailed trunk marks and elbow artwork need further visual review.
+
 # WWF Raw editor roadmap
 
 The goal is an editor that lets people change wrestlers and eventually the

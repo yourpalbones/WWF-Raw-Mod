@@ -4,7 +4,7 @@
 
 ## Easy download
 
-[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.7.zip)
+[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.8.zip)
 
 1. Click the download link above.
 2. Right-click the downloaded ZIP → **Extract All**.
@@ -19,6 +19,30 @@ A Windows EXE preview was built, but GitHub release uploads are blocked by the c
 
 To edit a sprite image externally, use **Save pose image**, edit that PNG, and import it back. Keep its dimensions, transparent outline and opaque visible pixels. Colors are matched to the wrestler's current palette. Import changes the selected pose's underlying tiles; it does not generate a full set of animations. Shared tiles can change other poses too, so preview them and test in an emulator.
 
+## Scott Hall reference gear
+
+1. Load your latest edited ROM and choose **Scott Hall** (original Razor slot).
+2. In **Sprites**, click **Use Scott reference gear**.
+3. Open **Save & play** and click **Save playable ROM**.
+4. Run that file in Snes9x. Your previous portraits, bios, names and songs are kept.
+
+[See the before/after and gameplay GIFs](../evidence/scott-hall-gear/README.md).
+The reference pass retains native body shapes and animation timing, adds black
+trunks with red detail, red boots and black/red knee-pad details, and removes the
+old gold jewelry. Stubble, chest hair and new elbow-pad artwork are not included.
+Tiny trunk markings remain a first pass, particularly in narrow or rotated views.
+
+The gear button expands the ROM to 6 MiB using ExHiROM mapping. It checks the
+original Scott artwork before applying; conflicting body edits or engine hooks
+are refused. You can then paint or import poses using the private detail tiles.
+Full-body previews are grouped separately from upper/lower and common pieces.
+The 1,720 parsed entries do not prove every live animation variant is covered.
+Other wrestlers continue to use their existing sampled poses.
+
+Projects saved after applying the gear belong to the new starting ROM. Save that
+ROM too and load it before reopening the project. The button incorporates any
+pending portrait, bio and song edits into that new starting ROM.
+
 ## Names and themes
 
 In **Portrait & bio**, saving a bio updates the name above the health bar too.
@@ -29,8 +53,9 @@ Long names may need a shorter match name. Stock labels remain available through
 restore/reset. The separate large name/logo graphic has its own controls.
 
 Under **Theme song**, choose a built-in theme and click **Save theme**, then export
-the ROM. Custom songs are still research: an original eight-note native melody
-has been verified, but there is no MP3/WAV or full-song importer in this release.
+the ROM. Import a full MIDI song with the game’s melodic samples. Preview notes uses a
+browser synthesizer; the actual instrument is heard in your emulator. MP3/WAV
+import is not supported.
 
 [Scott Hall in-game proof](../evidence/match-names/README.md) ·
 [Custom melody proof and audio format](../evidence/theme-music/README.md) ·
@@ -44,7 +69,7 @@ has been verified, but there is no MP3/WAV or full-song importer in this release
 | Undertaker | 10 |
 | Yokozuna | 7 |
 | Bam Bam Bigelow | 4 |
-| Razor Ramon | 3 |
+| Razor Ramon / Scott Hall | 207 plus 1,720 frame pieces |
 | Lex Luger | 11 |
 | Doink | 8 |
 | Shawn Michaels | 10 |
@@ -53,7 +78,9 @@ has been verified, but there is no MP3/WAV or full-song importer in this release
 | Owen Hart | 8 |
 | Luna Vachon | 6 |
 
-These 102 sampled layouts use native positions, palettes and flips. Bret retains
+The other eleven wrestlers retain their 99 sampled layouts. Scott has 207 full-body
+captures and 1,720 upper/lower frame pieces. These layouts use native positions,
+palettes and flips. Bret retains
 his previous standing/walking set; the other characters use captured movement
 sequences that may include opponent interactions. Counts describe sampled poses,
 not every animation. **Play poses** cycles samples at a fixed preview speed,
