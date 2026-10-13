@@ -83,6 +83,7 @@ with sync_playwright() as playwright:
         page.locator('#bio-'+field).fill(value)
     page.locator('#bio-apply').click()
     assert page.evaluate("selectionEdits['12'].bio.name") == 'CURT HENNIG'
+    palette_at=page.evaluate('M.palette_offset')
     page.evaluate("palettes['12']={1:31};render();")
     with page.expect_download() as download:
         page.locator('#save').click()
@@ -102,7 +103,7 @@ with sync_playwright() as playwright:
     assert pointer != growth['offset'] and 0x750000 <= pointer < 0x7d0000
     for offset in growth['pointers']:
         assert int.from_bytes(data[offset:offset+3], 'little') == pointer
-    assert int.from_bytes(data[0x7085c2:0x7085c4], 'little') == 31
+    assert int.from_bytes(data[palette_at+2:palette_at+4], 'little') == 31
     page.locator('#rom').set_input_files(str(edited.resolve()))
     page.wait_for_function('rom!==null&&C.characters.length===13')
     page.locator('#wrestler').select_option('12')

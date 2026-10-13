@@ -1,15 +1,13 @@
-Portable Windows 10/11 (64-bit) preview. Extract the entire ZIP and open
-**WrestleEdit/WrestleEdit.exe**. Keep its supporting files together.
+Referee/announcer palette hotfix for WrestleEdit v0.16.1.
 
-This build adds **Add wrestler → Royal Rumble → Mr. Perfect**. Supply your own
-USA SNES Raw and Royal Rumble ROMs locally. The importer creates an 8 MiB Raw ROM
-with a separate thirteenth slot, source portrait, editable bio/name/monitor and
-the Perfect-Plex. The original twelve profiles, palettes and gear are retained.
+Extract all files and open WrestleEdit/WrestleEdit.exe. Load your existing v0.16
+edited ROM and choose Save & play → Save playable ROM. The export repairs the
+NPC palettes while preserving all thirteen wrestler profiles, palettes and
+sprite edits. New imports include the full NPC palette range.
 
-This is a first playable import: 289 pieces use Royal source art; 1,431 retain
-adapted Raw art. Other Royal wrestlers and further new slots are not enabled.
-Automatic bridge-to-pin behavior and exhaustive match/AI coverage remain open.
-The exported ROM was checked in Snes9x. The Windows executable itself has not
-been launched in the Linux development environment.
+The Perfect-Plex receiving animation is still an inaccurate generic-suplex
+approximation in this build. Its replacement with the actual Royal receiving
+artwork is in progress. This hotfix does not claim to correct that animation.
 
-No ROM is included. The app works locally. This preview is unsigned.
+No ROM is included. The archive and browser workflows are verified. Native
+Windows executable launch remains untested in the Linux development environment.

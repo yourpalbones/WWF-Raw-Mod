@@ -3,6 +3,12 @@ const RI=window.RAW_ROYAL_IMPORT_CORE,RM=window.RAW_ROYAL_IMPORT_MANIFEST;
 const originalSelectionManifest=structuredClone(S);
 let royalSource=null;
 function hasImportedWorker(data){return data.length===0x800000&&String.fromCharCode(...data.slice(0x70fe00,0x70fe00+'PERFECT-SLOT-PROTO1'.length))==='PERFECT-SLOT-PROTO1';}
+function importedPaletteRecords(data){
+ if(!hasImportedWorker(data)||RI.word(data,0x2cf212)!==0x8400)return [];
+ for(let p=0x70e800;p<0x70ea60;p++)if(data[p]!==255)throw Error('Referee repair space is occupied; no repair was applied.');
+ const palette=new Uint8Array(0x260);palette.set(data.slice(0x708400,0x7085e0));palette.set(data.slice(0x2cc67a,0x2cc6fa),0x1e0);
+ return [[0x70e800,palette],[0x2cf212,new Uint8Array([0,232])]];
+}
 function resetImportedMetadata(){for(const key of Object.keys(S))delete S[key];Object.assign(S,structuredClone(originalSelectionManifest));H.destination=0x3a0000;}
 function importedProfileAssets(base,result){
  const out=result.bytes,record=0x708000+12*45,rgba=RI.royalPortrait(royalSource),photo=quantizePortrait(rgba);
@@ -42,11 +48,12 @@ function activateImportedWorker(data){
  if(!hasImportedWorker(data))return;
  if(data[0x19d43f]!==13||data[0xffd5]!==0x25||RI.long(data,0x70fdf0)<0x750000||RI.long(data,0x70fdf0)>0x7d0000)throw Error('Imported wrestler metadata is invalid.');
  H.destination=0x738000;
+ const paletteBase=0x700000+RI.word(data,0x2cf212);if(![0x708400,0x70e800].includes(paletteBase))throw Error('Unsupported imported palette location.');
  for(const [id,meta]of Object.entries(S.characters)){
   const index=Number(id),record=0x708000+index*45;meta.record=record;meta.theme_offset=record+44;
   meta.fields={name:record+28,from:record+30,weight:record+32,height:record+36,special:record+38};
   meta.announcer_monitor_word=0x70e400+index*2;meta.announcer_monitor_bank=0x70e420+index;meta.announcer_palette_word=0x70e440+index*2;meta.announcer_palette_bank=0x70e460+index;
-  C.characters.find(c=>c.id===id).palette_offset=0x708440+index*32;
+  C.characters.find(c=>c.id===id).palette_offset=paletteBase+64+index*32;
  }
  const record=0x708000+12*45;
  S.characters['12']={...structuredClone(S.characters['1']),record,portrait_offset:0x708800,palette_offset:0x708740,
@@ -77,13 +84,14 @@ function activateImportedWorker(data){
  for(let i=0;i<12;i++)pose('Perfect-Plex · '+(i+1),'Perfect-Plex',descriptor(RI.long(data,0x710000+(1000+i)*3),'primary'));
  for(const f of RM.frames){const address=RI.long(data,(f.kind==='primary'?0x710000:0x711000)+f.index*3);pose((f.common?'Common ':'')+(f.kind==='primary'?'Upper':'Lower')+' piece '+f.index,(f.common?'common-':'')+f.kind,descriptor(address,f.kind));}
  for(const [key,p]of pointerUsers)sources[key].pointer_offsets=[...new Set(p)];
- Object.assign(C.sources,sources);C.characters.push({id:'12',character:'Mr. Perfect',palette_offset:0x7085c0,sources,poses,
+ Object.assign(C.sources,sources);C.characters.push({id:'12',character:'Mr. Perfect',palette_offset:paletteBase+0x1c0,sources,poses,
   scope:`${RM.coverage.royal_poses} Royal source pieces; ${RM.coverage.adapted_raw_poses} adapted Raw pieces; native Perfect-Plex. Remaining art conversion is listed in the import coverage.`});
 }
 function refreshRoyalImport(){
  const loaded=Boolean(rom),added=loaded&&hasImportedWorker(rom);$('royal-rom').disabled=!loaded;$('royal-add').disabled=!loaded||!royalSource||added;
  $('royal-worker').disabled=!loaded||!royalSource||added;
  if(added)$('royal-status').textContent='Mr. Perfect occupies slot 13, including the Perfect-Plex. 289 pieces use Royal artwork; 1,431 use adapted Raw artwork. Save this ROM to keep editing it later. One extra slot is supported.';
+ if(added&&RI.word(rom,0x2cf212)===0x8400)$('royal-status').textContent+=' Save playable ROM to restore the referee and announcer palettes in this older import.';
 }
 $('royal-rom').onchange=async event=>{try{
  const file=event.target.files[0];if(!file)return;let data=new Uint8Array(await file.arrayBuffer());if(data.length%1024===512)data=data.slice(512);

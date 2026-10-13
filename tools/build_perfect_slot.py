@@ -77,10 +77,9 @@ def build(base,cgram,original=None,portrait=None):
     write(back+1,b'\x0b',b'\x0c')
     # The palette copier uses (directory value + 4) * 16, then adds C49A.
     # Keep the 64-byte prefix and all twelve edited palettes exactly intact.
-    out[0x708400:0x708440]=base[0x2cc49a:0x2cc4da]
-    out[0x708440:0x7085c0]=base[0x2cc4da:0x2cc65a]
-    out[0x7085c0:0x7085e0]=cgram[320:352]
-    write(0x2cf212,bytes.fromhex('9a c4'),bytes.fromhex('00 84'))
+    out[0x70e800:0x70ea60]=base[0x2cc49a:0x2cc6fa]
+    out[0x70e9c0:0x70e9e0]=cgram[320:352]
+    write(0x2cf212,bytes.fromhex('9a c4'),bytes.fromhex('00 e8'))
     write(0x2cf218,b'\xac',b'\x70')
     # Extend all six signature arrays. Index twelve is deliberately disabled
     # until the actual Perfect-Plex action is implemented, never assigned Bret's.

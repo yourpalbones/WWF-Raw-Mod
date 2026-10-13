@@ -130,7 +130,7 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
   const stats=out.slice(0x708000+12*45+40,0x708000+12*45+44),values=[(-(stats[0]-6)*4)&65535,stats[2]+4,stats[1],stats[3]],tail=search(base,bytes('a9 f0 ff 99 36 0e a9 0e 00 99 50 0e'),0x2afebc,0x2aff30);
   if(tail<0)throw Error('Unsupported Raw extra attribute entry.');[1,7,13,19].forEach((d,i)=>putWord(out,tail+d,values[i]));
   if(base[0x19d43f]!==12)throw Error('This ROM already changes the roster count.');out[0x19d43f]=13;const back=search(base,bytes('a9 0b 00'),0x19d420,0x19d440);if(back<0)throw Error('Unsupported Raw character selector.');out[back+1]=12;
-  out.set(base.slice(0x2cc49a,0x2cc65a),0x708400);out.set(source.slice(manifest.palette.offset,manifest.palette.offset+32),0x7085c0);putWord(out,0x2cf212,0x8400);out[0x2cf218]=0x70;
+  out.set(base.slice(0x2cc49a,0x2cc6fa),0x70e800);out.set(source.slice(manifest.palette.offset,manifest.palette.offset+32),0x70e9c0);putWord(out,0x2cf212,0xe800);out[0x2cf218]=0x70;
   const specials=[1,600,540,266,65535,65535];
   [0x2dd36f,0x2dd387,0x2dd39f,0x2dd3b7,0x2dd3cf,0x2dd3e7].forEach((old,i)=>{
    const target=0x708600+i*32;out.set(base.slice(old,old+24),target);putWord(out,target+24,specials[i]);let refs=0;
