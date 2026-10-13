@@ -100,5 +100,11 @@
     "perfect_plex_source_poses": 12,
     "complete_art_port": false,
     "automatic_pin": false
+  },
+  "reproducibility": {
+    "fresh_pinned_core_built": true,
+    "snes9x_revision": "fae2fea08f74180759ef540ee94259213f503480",
+    "cold_boot_repeated_on_clean_core": true,
+    "python_and_browser_used_sprite_packets_equal": true
   }
 }
