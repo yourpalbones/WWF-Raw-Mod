@@ -1,0 +1,22 @@
+{
+  "all_1720_descriptors_fully_private": true,
+  "native_sting_tile_requests": 11735,
+  "stock_graphics_fallbacks": 0,
+  "makeup_in_every_visible_deathlock_head": {
+    "primary:623": 27,
+    "primary:729": 16,
+    "primary:730": 9,
+    "primary:731": 16,
+    "primary:732": 16,
+    "primary:737": 8,
+    "primary:738": 12,
+    "secondary:617": 9,
+    "secondary:618": 9,
+    "secondary:619": 16,
+    "secondary:620": 16,
+    "secondary:621": 16,
+    "secondary:622": 10,
+    "secondary:628": 16
+  },
+  "complete_live_animation_coverage": false
+}

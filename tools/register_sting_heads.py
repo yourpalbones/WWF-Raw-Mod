@@ -25,6 +25,11 @@ def register(rom,wram,seeds):
         for field,value in [('face',5),('face_shadow',13),('eyes',1),('cheeks',1),('mouth',1),('nose',13)]:
             for q in seed.get(field,[]):
                 if tuple(q)in points:paint[tuple(q)]=value
+        for x,y,value in seed.get('paint',[]):
+            # A transferred jaw can overlap the donor neckline. Registered
+            # heads may author that plane, but garment tiles must never carry
+            # face paint into unrelated trousers sharing the same tile hash.
+            if points.get((x,y))in SKIN|{1}:paint[x,y]=value
         for q,value in paint.items():
             ref,k=mapping[q];digest=hashlib.sha256(planar(ref['pixels'])).hexdigest()
             mask=tile_masks.setdefault(digest,{})

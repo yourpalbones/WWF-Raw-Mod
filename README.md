@@ -2,7 +2,7 @@
 
 ## Wrestler editor prototype
 
-[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.13.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
+[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.14.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
 
 Paint all 12 wrestlers’ original sprites, preview captured poses,
 change selection portraits, monitor photos, bios, in-match names and existing
@@ -12,6 +12,13 @@ theme assignments, save projects and export playable ROMs or IPS patches. Full a
 [Scott Hall health-bar name proof](evidence/match-names/README.md) ·
 [Custom theme melody proof](evidence/theme-music/README.md) ·
 [Thirteenth-slot research](evidence/roster-expansion/README.md)
+
+[Current Sting head and gear proof](evidence/sting-head-revision/README.md):
+v0.14 uses native facial shading and Kid/Syxx eye, nose and lip landmarks for
+the front face, with thin paint trails and dark tapered hair. Gear review fixes
+the Deathlock's exposed waist and stray white pixels on shared leg tiles. Load
+your current mod, select Doink / Sting, and click **Sprites → Rebuild Sting sprites**.
+The 101 editor captures match native PPU pixels. This remains a visual candidate.
 
 [Rebuilt Sting and Scorpion Deathlock gameplay proof](evidence/sting-rebuild/README.md):
 v0.13 replaces Doink's graphics using Undertaker's native body and flowing hair

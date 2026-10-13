@@ -1,5 +1,7 @@
 # Rebuilt Crow Sting — v0.13 candidate
 
+**[See the current v0.14 native face and gear revision](../sting-head-revision/README.md).**
+
 This replaces the Doink sprite set with a donor-based Sting character. The
 sleeveless body, native movement and flowing hair foundation come from
 Undertaker's graphics. Crow face paint, hair shaping and scorpion artwork are

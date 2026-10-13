@@ -6,6 +6,7 @@ p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('core',type=Path);p.add_argument('rom',type=Path)
 p.add_argument('--output',type=Path,required=True)
 p.add_argument('--mega',action='store_true')
+p.add_argument('--trace-preparation',action='store_true',help='Also trace intermediate opponent-damage setup; not needed for sprite proofs')
 a=p.parse_args();repo=Path(__file__).resolve().parents[1]
 recipes=json.loads((repo/'data/roster-special-captures.json').read_text())['captures']
 doink=next(c for c in recipes if c['id']=='doink-finisher')
@@ -50,7 +51,7 @@ for name,button in [('walk',7),('run-ropes',7),('punch',0),('kick',8)]:
     run({'frames':240,'inputs':inputs},a.output/'actions'/name,ready,6,True)
 for i,st in enumerate(bret['stages'][1:-1],3):
     stage={k:st[k] for k in ['frames','inputs']}
-    state=run(stage,a.output/f'setup-{i}',state,trace=True)
+    state=run(stage,a.output/f'setup-{i}',state,trace=a.trace_preparation)
 last=bret['stages'][-1]
 state=run({k:last[k] for k in ['frames','inputs']},a.output/'specials/finisher',state,6,True)
 actions={int.from_bytes(p.read_bytes()[0x6b4:0x6b6],'little') for p in state.parent.glob('*-wram.bin')}

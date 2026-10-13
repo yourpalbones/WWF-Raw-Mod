@@ -1,0 +1,448 @@
+{
+  "native_kid_eye_nose_lip_landmarks_verified": true,
+  "eye_nose_lip_rows": [
+    -35,
+    -33,
+    -31
+  ],
+  "wrestler_specific_lower_body_drawings_checked": 426,
+  "unchanged_lower_drawings": 380,
+  "stray_white_leg_pixels_corrected": [
+    {
+      "piece": 52,
+      "point": [
+        8,
+        -18
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 61,
+      "point": [
+        12,
+        -9
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 76,
+      "point": [
+        2,
+        -19
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 92,
+      "point": [
+        12,
+        -25
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 94,
+      "point": [
+        7,
+        -43
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 97,
+      "point": [
+        21,
+        -18
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 103,
+      "point": [
+        -7,
+        -20
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 111,
+      "point": [
+        -5,
+        -29
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 114,
+      "point": [
+        10,
+        -20
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 130,
+      "point": [
+        -8,
+        -33
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 131,
+      "point": [
+        10,
+        -46
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 137,
+      "point": [
+        1,
+        0
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 139,
+      "point": [
+        -4,
+        -23
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 148,
+      "point": [
+        -8,
+        -41
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 160,
+      "point": [
+        2,
+        -1
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 162,
+      "point": [
+        4,
+        -4
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 177,
+      "point": [
+        -1,
+        -24
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 185,
+      "point": [
+        20,
+        -20
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 188,
+      "point": [
+        -9,
+        -19
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 191,
+      "point": [
+        11,
+        -29
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 194,
+      "point": [
+        3,
+        -26
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 196,
+      "point": [
+        13,
+        0
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 206,
+      "point": [
+        12,
+        -32
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 214,
+      "point": [
+        10,
+        -7
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 216,
+      "point": [
+        8,
+        -23
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 226,
+      "point": [
+        3,
+        -2
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 240,
+      "point": [
+        -10,
+        -22
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 258,
+      "point": [
+        -2,
+        -53
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 263,
+      "point": [
+        -3,
+        -14
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 267,
+      "point": [
+        16,
+        -29
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 267,
+      "point": [
+        14,
+        -6
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 280,
+      "point": [
+        7,
+        -1
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 286,
+      "point": [
+        9,
+        -4
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 295,
+      "point": [
+        8,
+        -23
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 305,
+      "point": [
+        -1,
+        -1
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 323,
+      "point": [
+        -3,
+        -27
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 324,
+      "point": [
+        -3,
+        -7
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 337,
+      "point": [
+        3,
+        -7
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 343,
+      "point": [
+        9,
+        -4
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 356,
+      "point": [
+        -6,
+        -51
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 356,
+      "point": [
+        -12,
+        -42
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 360,
+      "point": [
+        -8,
+        -17
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 369,
+      "point": [
+        -9,
+        -15
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 376,
+      "point": [
+        10,
+        -33
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 381,
+      "point": [
+        -6,
+        -24
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 383,
+      "point": [
+        11,
+        0
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 406,
+      "point": [
+        -2,
+        0
+      ],
+      "before": 5,
+      "after": 1
+    },
+    {
+      "piece": 414,
+      "point": [
+        5,
+        0
+      ],
+      "before": 5,
+      "after": 1
+    }
+  ],
+  "palette_unchanged": true,
+  "deathlock_shirt_covers_flank_and_waist": true,
+  "foreground_arm_preserved": true,
+  "art_likeness_requires_visual_review": true
+}

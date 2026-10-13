@@ -60,7 +60,7 @@ def build(base,wram):
             'materialize_all_tiles':True,'allow_outline_changes':True,'namespace_by_kind':True,
             'private_compressed':False,'source_fingerprint':fingerprint.hexdigest(),
             'palette_offset':offset,'palette':palette,'frames':rows,'programs':programs(),'extra_records':extra,
-            'legacy_signatures':[{'offset':0x6cf000,'signature':'STING-NATIVE-GEAR1'}]}
+            'legacy_signatures':[{'offset':0x6ff000,'signature':'STING-NATIVE-GEAR2'},{'offset':0x6cf000,'signature':'STING-NATIVE-GEAR1'}]}
     report={'selector':7,'donor_selector':2,'known_entries':len(frames),
             'private_tiles_by_kind':{k:len(v)for k,v in tile_maps.items()},'private_tiles':sum(map(len,tile_maps.values())),
             'every_tile_materialized':True,'tile_sources':metadata,'source_fingerprint':fingerprint.hexdigest(),

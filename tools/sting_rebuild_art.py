@@ -42,7 +42,9 @@ def author(frame):
     for part in frame['parts']:
         for ref in part['refs']:
             changes[ref['field']]=[({2:2,3:3,4:2,5:3,6:3,8:2,13:2,14:3}.get(v,v))for v in ref['pixels']]
-            mask=atlas().get('tile_masks',{}).get(hashlib.sha256(planar(ref['pixels'])).hexdigest(),{});masks[ref['field']]=mask
+            # The 426 wrestler-specific lower pieces contain legs, not heads.
+            # Exact shared tile hashes alone cannot establish facial anatomy.
+            mask={}if frame['kind']=='secondary'and frame['index']<426 else atlas().get('tile_masks',{}).get(hashlib.sha256(planar(ref['pixels'])).hexdigest(),{});masks[ref['field']]=mask
             for k,v in mask.items():changes[ref['field']][int(k)]=v
     if frame['kind']in {'primary','secondary'}:
         # Native hair is drawn with black plus the same brown shades as skin.
@@ -81,6 +83,10 @@ def author(frame):
                 q=world(x,y)
                 if points.get(q)in SKIN|{1}:put(q,value)
         for x,y,value in seed.get('hair',[]):put(world(x,y),value,True)
+        # Authored revision heads replace the complete face plane, including
+        # native hair/shirt colors inside the reviewed head silhouette. Gating
+        # the eye sockets on skin shades dropped features in the previous pass.
+        for x,y,value in seed.get('paint',[]):put(world(x,y),value,True)
         # A raised hand must keep its foreground pixels. Known occluded head
         # drawings receive a dedicated mask instead of an entire frontal face.
         for x,y in seed.get('occlusion',[]):
@@ -134,4 +140,13 @@ def author(frame):
         # Keep the reference's black gloves through the crossing-leg stage.
         for q,v in points.items():
             if v in SKIN:put(q,2 if v in {7,9,10,12}else 3)
+    if frame['kind']=='primary'and frame['index']==738:
+        # Seated Deathlock: the bent arm occupies the left foreground. The
+        # exposed flank/waist to its right is torso, and needs the full shirt.
+        # The old short chest rectangle left a strip of Bret's bare abdomen.
+        for y in range(-19,-4):
+            left,right=(6,8)if y>=-19 and y<=-18 else(6,9)if y<=-12 else(0,7)if y<=-8 else(-1,7)
+            for x in range(left,right+1):
+                v=points.get((x,y))
+                if v in SKIN:put((x,y),2 if v in {7,9,10,12}else 3)
     return changes

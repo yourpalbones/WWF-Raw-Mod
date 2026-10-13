@@ -1,0 +1,11 @@
+{
+  "zip_integrity": true,
+  "offline_extracted_app_upgrade_export_byte_exact": true,
+  "v012_and_v013_load_export_unchanged": true,
+  "older_captured_pose_counts": [
+    59,
+    101
+  ],
+  "rom_sha256": "c641ae86deeaaa4d69097b65e0451fa53e8be1b11564ece07d07f6b66307f6dc",
+  "current_captured_poses": 101
+}
