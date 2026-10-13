@@ -8,7 +8,7 @@ To reproduce version 0.16.0, download `electron-v44.7.0-win32-x64.zip` and `SHAS
 
 Validation: wrapper JavaScript syntax, official runtime checksums and archive contents verified; the unchanged editor passed browser workflow checks. A Linux headless Electron launch failed in this cloud environment, and the Windows executable has not been launched here. Native Windows Save As dialogs remain to be verified on Windows.
 
-[Download the published v0.16 Windows preview](https://github.com/yourpalbones/WWF-Raw-Mod/releases/download/wrestleedit-v0.16.0/WrestleEdit-Windows-x64.zip).
+[Download the published v0.16 Windows preview](https://github.com/yourpalbones/WWF-Raw-Mod/releases/download/wrestleedit-v0.16.1/WrestleEdit-Windows-x64.zip).
 GitHub Actions built and published this archive successfully. Its official
 Electron runtime checksum, archive integrity and embedded editor contents
 were verified. Direct release uploads from the cloud integration had previously

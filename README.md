@@ -2,6 +2,12 @@
 
 ## Wrestler editor prototype
 
+v0.16.1 restores the referee and announcer palettes. Load an existing v0.16
+ROM and save a playable ROM to apply the repair while preserving your edits.
+[Referee proof](evidence/referee-repair/README.md). The Perfect-Plex receiving
+animation is inaccurate in the released build; its native-source replacement
+is [under visual revision](evidence/perfect-plex-receivers/README.md).
+
 [**Mr. Perfect in slot 13: actual gameplay and importer proof**](evidence/mr-perfect-import/README.md)
 
 v0.16 adds a Royal Rumble importer for Mr. Perfect, creating an independent
@@ -10,7 +16,7 @@ profile and the Perfect-Plex. The original twelve are retained. This is a first
 playable import: many ordinary pieces still use adapted Raw artwork; automatic
 bridge-to-pin behavior and full AI/match coverage remain open.
 
-[Download Windows app](https://github.com/yourpalbones/WWF-Raw-Mod/releases/download/wrestleedit-v0.16.0/WrestleEdit-Windows-x64.zip) · [Browser ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.16.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
+[Download Windows app](https://github.com/yourpalbones/WWF-Raw-Mod/releases/download/wrestleedit-v0.16.1/WrestleEdit-Windows-x64.zip) · [Browser ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.16.1.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
 
 Paint all 12 wrestlers’ original sprites, preview captured poses,
 change selection portraits, monitor photos, bios, in-match names and existing
