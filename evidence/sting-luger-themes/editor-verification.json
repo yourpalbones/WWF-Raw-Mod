@@ -1,0 +1,34 @@
+{
+  "themes": [
+    {
+      "file": "sting-snes-ready.mid",
+      "wrestler_id": 7,
+      "duration_seconds": 96.0,
+      "native_voices": 5,
+      "imported_notes": 279,
+      "native_sequence_bytes": 1398,
+      "instrument": 113,
+      "transpose": 0,
+      "loop": true,
+      "import_success": true
+    },
+    {
+      "file": "luger-snes-ready.mid",
+      "wrestler_id": 6,
+      "duration_seconds": 115.5,
+      "native_voices": 8,
+      "imported_notes": 1101,
+      "native_sequence_bytes": 4816,
+      "instrument": 113,
+      "transpose": 0,
+      "loop": true,
+      "import_success": true
+    }
+  ],
+  "offline_packaged_app": true,
+  "both_songs_project_roundtrip": true,
+  "edited_rom_reopen_byte_exact": true,
+  "existing_graphics_profiles_other_themes_and_samples_preserved": true,
+  "checksum_valid": true,
+  "rom_sha256": "9869d435f30c81acaba8edc3d6cdc34d384cd1ef06962e3eeb075d8435f33c73"
+}

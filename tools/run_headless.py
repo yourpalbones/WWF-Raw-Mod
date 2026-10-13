@@ -56,6 +56,7 @@ def main():
     ap.add_argument("--output", type=Path, required=True)
     ap.add_argument("--frames", type=int, default=1800)
     ap.add_argument("--interval", type=int, default=120)
+    ap.add_argument("--snapshot-frame",type=int,action="append",default=[],help="Capture an additional specific frame without increasing periodic snapshot frequency")
     ap.add_argument(
         "--press",
         action="append",
@@ -73,6 +74,9 @@ def main():
     args = ap.parse_args()
     if args.frames < 1 or args.interval < 1:
         raise ValueError("Frame count and snapshot interval must be positive")
+    if any(n<1 or n>args.frames for n in args.snapshot_frame):
+        raise ValueError("Specific snapshot frames must be within the run")
+    extra_snapshots=set(args.snapshot_frame)
     args.output.mkdir(parents=True, exist_ok=True)
     if any(path.is_file() for path in args.output.rglob("*")):
         raise ValueError("Choose an empty output directory for each run")
@@ -259,7 +263,7 @@ def main():
     core.retro_run.restype = None
     for frame in range(1, args.frames + 1):
         core.retro_run()
-        if frame % args.interval == 0 or frame == args.frames:
+        if frame % args.interval == 0 or frame == args.frames or frame in extra_snapshots:
             snapshot()
             print(f"Captured frame {frame}", flush=True)
     (args.output / "run.json").write_text(
@@ -268,6 +272,7 @@ def main():
                 "core": str(args.core.resolve()),
                 "frames": args.frames,
                 "interval": args.interval,
+                "snapshot_frames": sorted(extra_snapshots),
                 "presses": presses,
                 "loaded_state": str(args.load_state) if args.load_state else None,
             },

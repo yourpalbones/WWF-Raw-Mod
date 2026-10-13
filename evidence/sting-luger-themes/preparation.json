@@ -1,0 +1,56 @@
+{
+  "themes": [
+    {
+      "source": "sting.mid",
+      "prepared": "sting-snes-ready.mid",
+      "source_sha256": "f4b37911c89e143ced2ce747164409a971662ccc0fd24c06d1d50e2540b05535",
+      "prepared_sha256": "252cf2d51d112716227fa4f1edd21d58472b0c23777a19eb88c6f9d981e1f7f9",
+      "removed_percussion_events": {
+        "control_change": 8,
+        "note_on": 984
+      },
+      "removed_percussion_notes": 492,
+      "original_melodic_notes": 279,
+      "retained_melodic_notes": 279,
+      "melodic_channels_before_merge": {
+        "0": 117,
+        "1": 117,
+        "2": 45
+      },
+      "redundant_simultaneous_notes_combined": 0,
+      "seconds": 96.0,
+      "melodic_events_and_metadata_tick_exact": true,
+      "distinct_note_pitch_onset_sustain_and_velocity_preserved": true,
+      "metadata_tick_exact": true,
+      "transpose_semitones": 0,
+      "pitch_bends_removed": 0
+    },
+    {
+      "source": "luger.mid",
+      "prepared": "luger-snes-ready.mid",
+      "source_sha256": "dd08a6ab77b3bb5f28f7b794786fa7a6d8e868aa0c0c21da8ea232c4125c7cd1",
+      "prepared_sha256": "fbbdce8dc42386fa045cafffce25376c342bdab6116b96be7ccd0eb824a5458a",
+      "removed_percussion_events": {
+        "control_change": 1,
+        "program_change": 1,
+        "note_on": 354,
+        "note_off": 354
+      },
+      "removed_percussion_notes": 354,
+      "original_melodic_notes": 1169,
+      "retained_melodic_notes": 1107,
+      "melodic_channels_before_merge": {
+        "0": 440,
+        "2": 164,
+        "3": 565
+      },
+      "redundant_simultaneous_notes_combined": 62,
+      "seconds": 115.48292375,
+      "melodic_events_and_metadata_tick_exact": false,
+      "distinct_note_pitch_onset_sustain_and_velocity_preserved": true,
+      "metadata_tick_exact": true,
+      "transpose_semitones": 0,
+      "pitch_bends_removed": 0
+    }
+  ]
+}

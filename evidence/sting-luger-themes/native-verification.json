@@ -1,0 +1,51 @@
+{
+  "themes": [
+    {
+      "file": "sting-snes-ready.mid",
+      "wrestler_id": 7,
+      "duration_seconds": 96.0,
+      "native_voices": 5,
+      "all_eight_streams_uploaded_exactly": true,
+      "loop_start_frames": [
+        48,
+        5810,
+        11573
+      ],
+      "whole_song_loops_twice": true,
+      "active_voices_checked": [
+        0,
+        1,
+        2
+      ],
+      "native_melodic_sample": 46,
+      "razor_intro_sample_excluded": 50,
+      "native_audio_peak": 16716
+    },
+    {
+      "file": "luger-snes-ready.mid",
+      "wrestler_id": 6,
+      "duration_seconds": 115.5,
+      "native_voices": 8,
+      "all_eight_streams_uploaded_exactly": true,
+      "loop_start_frames": [
+        54,
+        6988,
+        13924
+      ],
+      "whole_song_loops_twice": true,
+      "active_voices_checked": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "native_melodic_sample": 46,
+      "razor_intro_sample_excluded": 50,
+      "native_audio_peak": 28322
+    }
+  ],
+  "method": "Controller-generated selection states, then Right input; pinned Snes9x with read-only SPC/DSP probes."
+}

@@ -11,6 +11,7 @@ theme assignments, save projects and export playable ROMs or IPS patches. Full a
 
 [Scott Hall health-bar name proof](evidence/match-names/README.md) ·
 [Custom theme melody proof](evidence/theme-music/README.md) ·
+[Ready Sting and Luger themes](evidence/sting-luger-themes/README.md) ·
 [Thirteenth-slot research](evidence/roster-expansion/README.md)
 
 [Current Sting head and gear proof](evidence/sting-head-revision/README.md):
