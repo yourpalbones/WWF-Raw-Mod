@@ -14,6 +14,7 @@ parser.add_argument('raw', type=Path)
 parser.add_argument('royal', type=Path)
 parser.add_argument('--output', type=Path, required=True)
 parser.add_argument('--page', default='editor/gear-workshop.html')
+parser.add_argument('--offline', action='store_true', help='Open the standalone HTML directly with file://')
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[1]
 args.output.mkdir(parents=True, exist_ok=True)
@@ -25,7 +26,7 @@ with sync_playwright() as playwright:
     page = browser.new_page(viewport={'width': 1440, 'height': 1000})
     errors = []
     page.on('pageerror', lambda error: errors.append(str(error)))
-    page.goto(f'http://127.0.0.1:{server.server_port}/{args.page}')
+    page.goto((root/args.page).as_uri() if args.offline else f'http://127.0.0.1:{server.server_port}/{args.page}')
     page.locator('#rom').set_input_files(str(args.raw.resolve()))
     page.wait_for_function('rom!==null')
     snapshot = '''Object.fromEntries(C.characters.filter(c=>c.id!=='12').map(c=>[c.id,{
@@ -117,7 +118,7 @@ with sync_playwright() as playwright:
     report = {'slot_count':13,'piece_count':1732,'original_twelve_preserved':True,
               'wrong_donor_rejected':True,'project_roundtrip':True,'edited_rom_reopened':True,
               'sprite_packet_relocated':True,'portrait_and_monitor_roundtrip':True,
-              'theme_reassigned':True,'page_errors':errors}
+              'theme_reassigned':True,'offline_file':args.offline,'page_errors':errors}
     (args.output/'verification.json').write_text(json.dumps(report, indent=2)+'\n')
     print(json.dumps(report, indent=2))
     browser.close()

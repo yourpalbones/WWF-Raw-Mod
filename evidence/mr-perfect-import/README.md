@@ -24,6 +24,8 @@ Royal ROM, not reconstructed from a screenshot.
 
 ## Try the importer
 
+[**Windows app ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/releases/download/wrestleedit-v0.16.0/WrestleEdit-Windows-x64.zip): extract all files and open **WrestleEdit/WrestleEdit.exe**. The published archive and embedded editor were verified; native Windows launch remains untested here.
+
 1. [Download WrestleEdit v0.16](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.16.zip), extract it, and open **WrestleEdit.html**.
 2. Load your original or current edited USA SNES **WWF Raw** ROM.
 3. Under **Add wrestler**, choose your unmodified USA SNES **WWF Royal Rumble** ROM.

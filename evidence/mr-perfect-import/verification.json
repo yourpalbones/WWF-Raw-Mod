@@ -106,5 +106,18 @@
     "snes9x_revision": "fae2fea08f74180759ef540ee94259213f503480",
     "cold_boot_repeated_on_clean_core": true,
     "python_and_browser_used_sprite_packets_equal": true
+  },
+  "windows_release": {
+    "published": true,
+    "bytes": 164024317,
+    "sha256": "4b6fd617799beb2e9b5b373746591dbebf4ef5b693133262b5fba8355b9124ef",
+    "archive_valid": true,
+    "editor_matches_repository": true,
+    "rom_bundled": false,
+    "native_windows_launch_tested": false
+  },
+  "offline_file_test": {
+    "status": "blocked_by_environment",
+    "reason": "Cloud Chromium rejects file:// navigation with ERR_BLOCKED_BY_ADMINISTRATOR; HTTP standalone-editor checks passed."
   }
 }

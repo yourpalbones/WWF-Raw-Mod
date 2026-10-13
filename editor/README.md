@@ -15,7 +15,11 @@
 
 This is the browser editor, not an EXE. Once downloaded, it works offline. Use **Save project** to keep work editable; **Open project** restores it after loading the same ROM you started with. Your original ROM stays unchanged, and no ROM is bundled or uploaded. **Load ROM** also accepts a WrestleEdit edited ROM directly, keeping its existing portraits, bios, sprites and other assets. Checksums and supported asset locations are checked. Restore/reset returns to the ROM you loaded. Projects are tied to that starting ROM.
 
-A Windows EXE preview was built, but GitHub release uploads are blocked by the cloud integration. Its local task-output link also failed in the chat client. The ZIP above is committed to the repository so it has a normal public download URL. [Desktop build details](../desktop/README.md).
+[**Download the Windows app ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/releases/download/wrestleedit-v0.16.0/WrestleEdit-Windows-x64.zip).
+Extract all files, open the **WrestleEdit** folder and double-click
+**WrestleEdit.exe**. Keep the supporting files together. The published archive
+and editor contents were verified; the executable has not been launched on
+Windows here. [Desktop build details](../desktop/README.md).
 
 To edit a sprite image externally, use **Save pose image**, edit that PNG, and import it back. Keep its dimensions, transparent outline and opaque visible pixels. Colors are matched to the wrestler's current palette. Import changes the selected pose's underlying tiles; it does not generate a full set of animations. Shared tiles can change other poses too, so preview them and test in an emulator.
 
