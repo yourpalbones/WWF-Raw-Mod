@@ -1,0 +1,5362 @@
+{
+  "method": "Exact opaque silhouette, translated to bounding-box origin",
+  "semantic_animation_mapping_verified": false,
+  "rows": [
+    {
+      "kind": "primary",
+      "raw_index": 0,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 1,
+      "royal_candidates": [
+        16
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 2,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 3,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 4,
+      "royal_candidates": [
+        20
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 5,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 6,
+      "royal_candidates": [
+        24
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 7,
+      "royal_candidates": [
+        26
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 8,
+      "royal_candidates": [
+        28
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 9,
+      "royal_candidates": [
+        40
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 10,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 11,
+      "royal_candidates": [
+        42
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 12,
+      "royal_candidates": [
+        44
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 13,
+      "royal_candidates": [
+        47
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 14,
+      "royal_candidates": [
+        48
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 15,
+      "royal_candidates": [
+        60
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 16,
+      "royal_candidates": [
+        62
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 17,
+      "royal_candidates": [
+        64
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 18,
+      "royal_candidates": [
+        66
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 19,
+      "royal_candidates": [
+        68
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 20,
+      "royal_candidates": [
+        70
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 21,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 22,
+      "royal_candidates": [
+        72
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 23,
+      "royal_candidates": [
+        74
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 24,
+      "royal_candidates": [
+        78
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 25,
+      "royal_candidates": [
+        82
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 26,
+      "royal_candidates": [
+        84
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 27,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 28,
+      "royal_candidates": [
+        88
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 29,
+      "royal_candidates": [
+        91
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 30,
+      "royal_candidates": [
+        93
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 31,
+      "royal_candidates": [
+        95
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 32,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 33,
+      "royal_candidates": [
+        99
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 34,
+      "royal_candidates": [
+        101
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 35,
+      "royal_candidates": [
+        105
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 36,
+      "royal_candidates": [
+        107
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 37,
+      "royal_candidates": [
+        109
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 38,
+      "royal_candidates": [
+        111
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 39,
+      "royal_candidates": [
+        113
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 40,
+      "royal_candidates": [
+        115
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 41,
+      "royal_candidates": [
+        117
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 42,
+      "royal_candidates": [
+        119
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 43,
+      "royal_candidates": [
+        121
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 44,
+      "royal_candidates": [
+        123
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 45,
+      "royal_candidates": [
+        125
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 46,
+      "royal_candidates": [
+        127
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 47,
+      "royal_candidates": [
+        129
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 48,
+      "royal_candidates": [
+        130
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 49,
+      "royal_candidates": [
+        132
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 50,
+      "royal_candidates": [
+        134
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 51,
+      "royal_candidates": [
+        136
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 52,
+      "royal_candidates": [
+        138
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 53,
+      "royal_candidates": [
+        140
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 54,
+      "royal_candidates": [
+        142
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 55,
+      "royal_candidates": [
+        144
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 56,
+      "royal_candidates": [
+        150
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 57,
+      "royal_candidates": [
+        152
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 58,
+      "royal_candidates": [
+        154
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 59,
+      "royal_candidates": [
+        156
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 60,
+      "royal_candidates": [
+        158
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 61,
+      "royal_candidates": [
+        160
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 62,
+      "royal_candidates": [
+        161
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 63,
+      "royal_candidates": [
+        163
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 64,
+      "royal_candidates": [
+        164
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 65,
+      "royal_candidates": [
+        166
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 66,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 67,
+      "royal_candidates": [
+        172
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 68,
+      "royal_candidates": [
+        174
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 69,
+      "royal_candidates": [
+        175
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 70,
+      "royal_candidates": [
+        177
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 71,
+      "royal_candidates": [
+        179
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 72,
+      "royal_candidates": [
+        180
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 73,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 74,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 75,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 76,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 77,
+      "royal_candidates": [
+        184
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 78,
+      "royal_candidates": [
+        186
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 79,
+      "royal_candidates": [
+        188
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 80,
+      "royal_candidates": [
+        190
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 81,
+      "royal_candidates": [
+        192
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 82,
+      "royal_candidates": [
+        194
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 83,
+      "royal_candidates": [
+        196
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 84,
+      "royal_candidates": [
+        198
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 85,
+      "royal_candidates": [
+        202
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 86,
+      "royal_candidates": [
+        204
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 87,
+      "royal_candidates": [
+        546
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 88,
+      "royal_candidates": [
+        206
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 89,
+      "royal_candidates": [
+        209
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 90,
+      "royal_candidates": [
+        211
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 91,
+      "royal_candidates": [
+        213
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 92,
+      "royal_candidates": [
+        215
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 93,
+      "royal_candidates": [
+        217
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 94,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 95,
+      "royal_candidates": [
+        220
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 96,
+      "royal_candidates": [
+        222
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 97,
+      "royal_candidates": [
+        224
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 98,
+      "royal_candidates": [
+        226
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 99,
+      "royal_candidates": [
+        228
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 100,
+      "royal_candidates": [
+        230
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 101,
+      "royal_candidates": [
+        232
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 102,
+      "royal_candidates": [
+        234
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 103,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 104,
+      "royal_candidates": [
+        238
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 105,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 106,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 107,
+      "royal_candidates": [
+        244
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 108,
+      "royal_candidates": [
+        246
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 109,
+      "royal_candidates": [
+        248
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 110,
+      "royal_candidates": [
+        272
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 111,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 112,
+      "royal_candidates": [
+        275
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 113,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 114,
+      "royal_candidates": [
+        278
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 115,
+      "royal_candidates": [
+        279
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 116,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 117,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 118,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 119,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 120,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 121,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 122,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 123,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 124,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 125,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 126,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 127,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 128,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 129,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 130,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 131,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 132,
+      "royal_candidates": [
+        302
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 133,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 134,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 135,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 136,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 137,
+      "royal_candidates": [
+        332
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 138,
+      "royal_candidates": [
+        334
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 139,
+      "royal_candidates": [
+        336
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 140,
+      "royal_candidates": [
+        341
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 141,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 142,
+      "royal_candidates": [
+        344
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 143,
+      "royal_candidates": [
+        345
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 144,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 145,
+      "royal_candidates": [
+        334
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 146,
+      "royal_candidates": [
+        350
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 147,
+      "royal_candidates": [
+        351
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 148,
+      "royal_candidates": [
+        353
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 149,
+      "royal_candidates": [
+        354
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 150,
+      "royal_candidates": [
+        356
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 151,
+      "royal_candidates": [
+        359
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 152,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 153,
+      "royal_candidates": [
+        362
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 154,
+      "royal_candidates": [
+        365
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 155,
+      "royal_candidates": [
+        367
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 156,
+      "royal_candidates": [
+        369
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 157,
+      "royal_candidates": [
+        371
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 158,
+      "royal_candidates": [
+        375
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 159,
+      "royal_candidates": [
+        377
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 160,
+      "royal_candidates": [
+        378
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 161,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 162,
+      "royal_candidates": [
+        314
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 163,
+      "royal_candidates": [
+        260
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 164,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 165,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 166,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 167,
+      "royal_candidates": [
+        385
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 168,
+      "royal_candidates": [
+        387
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 169,
+      "royal_candidates": [
+        388
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 170,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 171,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 172,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 173,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 174,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 175,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 176,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 177,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 178,
+      "royal_candidates": [
+        399
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 179,
+      "royal_candidates": [
+        400
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 180,
+      "royal_candidates": [
+        402
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 181,
+      "royal_candidates": [
+        403
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 182,
+      "royal_candidates": [
+        405
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 183,
+      "royal_candidates": [
+        407
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 184,
+      "royal_candidates": [
+        408
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 185,
+      "royal_candidates": [
+        410
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 186,
+      "royal_candidates": [
+        412
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 187,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 188,
+      "royal_candidates": [
+        416
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 189,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 190,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 191,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 192,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 193,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 194,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 195,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 196,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 197,
+      "royal_candidates": [
+        427
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 198,
+      "royal_candidates": [
+        428
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 199,
+      "royal_candidates": [
+        430
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 200,
+      "royal_candidates": [
+        431
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 201,
+      "royal_candidates": [
+        433
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 202,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 203,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 204,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 205,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 206,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 207,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 208,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 209,
+      "royal_candidates": [
+        444
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 210,
+      "royal_candidates": [
+        446
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 211,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 212,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 213,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 214,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 215,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 216,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 217,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 218,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 219,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 220,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 221,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 222,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 223,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 224,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 225,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 226,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 227,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 228,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 229,
+      "royal_candidates": [
+        473
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 230,
+      "royal_candidates": [
+        474
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 231,
+      "royal_candidates": [
+        475
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 232,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 233,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 234,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 235,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 236,
+      "royal_candidates": [
+        418
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 237,
+      "royal_candidates": [
+        661
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 238,
+      "royal_candidates": [
+        551
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 239,
+      "royal_candidates": [
+        550
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 240,
+      "royal_candidates": [
+        548
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 241,
+      "royal_candidates": [
+        436
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 242,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 243,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 244,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 245,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 246,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 247,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 248,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 249,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 250,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 251,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 252,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 253,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 254,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 255,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 256,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 257,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 258,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 259,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 260,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 261,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 262,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 263,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 264,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 265,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 266,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 267,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 268,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 269,
+      "royal_candidates": [
+        305
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 270,
+      "royal_candidates": [
+        306
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 271,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 272,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 273,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 274,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 275,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 276,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 277,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 278,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 279,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 280,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 281,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 282,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 283,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 284,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 285,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 286,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 287,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 288,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 289,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 290,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 291,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 292,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 293,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 294,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 295,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 296,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 297,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 298,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 299,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 300,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 301,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 302,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 303,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 304,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 305,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 306,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 307,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 308,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 309,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 310,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 311,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 312,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 313,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 314,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 315,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 316,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 317,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 318,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 319,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 320,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 321,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 322,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 323,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 324,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 325,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 326,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 327,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 328,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 329,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 330,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 331,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 332,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 333,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 334,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 335,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 336,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 337,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 338,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 339,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 340,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 341,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 342,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 343,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 344,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 345,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 346,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 347,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 348,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 349,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 350,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 351,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 352,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 353,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 354,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 355,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 356,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 357,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 358,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 359,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 360,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 361,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 362,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 363,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 364,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 365,
+      "royal_candidates": [
+        572
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 366,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 367,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 368,
+      "royal_candidates": [
+        486
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 369,
+      "royal_candidates": [
+        488
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 370,
+      "royal_candidates": [
+        492
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 371,
+      "royal_candidates": [
+        494
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 372,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 373,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 374,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 375,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 376,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 377,
+      "royal_candidates": [
+        482
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 378,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 379,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 380,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 381,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 382,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 383,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 384,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 385,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 386,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 387,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 388,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 389,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 390,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 391,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 392,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 393,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 394,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 395,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 396,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 397,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 398,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 399,
+      "royal_candidates": [
+        512
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 400,
+      "royal_candidates": [
+        514
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 401,
+      "royal_candidates": [
+        515
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 402,
+      "royal_candidates": [
+        517
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 403,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 404,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 405,
+      "royal_candidates": [
+        524
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 406,
+      "royal_candidates": [
+        526
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 407,
+      "royal_candidates": [
+        528
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 408,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 409,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 410,
+      "royal_candidates": [
+        535
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 411,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 412,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 413,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 414,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 415,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 416,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 417,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 418,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 419,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 420,
+      "royal_candidates": [
+        556
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 421,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 422,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 423,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 424,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 425,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 426,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 427,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 428,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 429,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 430,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 431,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 432,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 433,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 434,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 435,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 436,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 437,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 438,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 439,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 440,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 441,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 442,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 443,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 444,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 445,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 446,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 447,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 448,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 449,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 450,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 451,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 452,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 453,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 454,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 455,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 456,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 457,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 458,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 459,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 460,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 461,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 462,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 463,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 464,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 465,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 466,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 467,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 468,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 469,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 470,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 471,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 472,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 473,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 474,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 475,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 476,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 477,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 478,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 479,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 480,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 481,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 482,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 483,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 484,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 485,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 486,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 487,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 488,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 489,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 490,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 491,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 492,
+      "royal_candidates": [
+        570
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 493,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 494,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 495,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 496,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 497,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 498,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 499,
+      "royal_candidates": [
+        599
+      ]
+    },
+    {
+      "kind": "primary",
+      "raw_index": 500,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 501,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 502,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 503,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 504,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 505,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 506,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 507,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 508,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 509,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 510,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 511,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 512,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 513,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 514,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 515,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 516,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 517,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 518,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 519,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 520,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 521,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 522,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 523,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 524,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 525,
+      "royal_candidates": []
+    },
+    {
+      "kind": "primary",
+      "raw_index": 526,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 0,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 1,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 2,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 3,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 4,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 5,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 6,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 7,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 8,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 9,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 10,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 11,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 12,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 13,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 14,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 15,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 16,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 17,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 18,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 19,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 20,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 21,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 22,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 23,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 24,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 25,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 26,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 27,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 28,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 29,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 30,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 31,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 32,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 33,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 34,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 35,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 36,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 37,
+      "royal_candidates": [
+        17,
+        561,
+        563
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 38,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 39,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 40,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 41,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 42,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 43,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 44,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 45,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 46,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 47,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 48,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 49,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 50,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 51,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 52,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 53,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 54,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 55,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 56,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 57,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 58,
+      "royal_candidates": [
+        45
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 59,
+      "royal_candidates": [
+        46
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 60,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 61,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 62,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 63,
+      "royal_candidates": [
+        51
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 64,
+      "royal_candidates": [
+        52
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 65,
+      "royal_candidates": [
+        53
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 66,
+      "royal_candidates": [
+        54
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 67,
+      "royal_candidates": [
+        55
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 68,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 69,
+      "royal_candidates": [
+        57
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 70,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 71,
+      "royal_candidates": [
+        680
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 72,
+      "royal_candidates": [
+        61
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 73,
+      "royal_candidates": [
+        63
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 74,
+      "royal_candidates": [
+        65
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 75,
+      "royal_candidates": [
+        67
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 76,
+      "royal_candidates": [
+        69
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 77,
+      "royal_candidates": [
+        71
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 78,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 79,
+      "royal_candidates": [
+        73
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 80,
+      "royal_candidates": [
+        75
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 81,
+      "royal_candidates": [
+        79
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 82,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 83,
+      "royal_candidates": [
+        83
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 84,
+      "royal_candidates": [
+        85
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 85,
+      "royal_candidates": [
+        87
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 86,
+      "royal_candidates": [
+        89
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 87,
+      "royal_candidates": [
+        92
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 88,
+      "royal_candidates": [
+        94
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 89,
+      "royal_candidates": [
+        96
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 90,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 91,
+      "royal_candidates": [
+        98
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 92,
+      "royal_candidates": [
+        100
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 93,
+      "royal_candidates": [
+        102
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 94,
+      "royal_candidates": [
+        106
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 95,
+      "royal_candidates": [
+        108
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 96,
+      "royal_candidates": [
+        110
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 97,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 98,
+      "royal_candidates": [
+        114
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 99,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 100,
+      "royal_candidates": [
+        118
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 101,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 102,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 103,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 104,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 105,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 106,
+      "royal_candidates": [
+        131
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 107,
+      "royal_candidates": [
+        133
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 108,
+      "royal_candidates": [
+        135
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 109,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 110,
+      "royal_candidates": [
+        139
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 111,
+      "royal_candidates": [
+        141
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 112,
+      "royal_candidates": [
+        143
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 113,
+      "royal_candidates": [
+        145
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 114,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 115,
+      "royal_candidates": [
+        151
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 116,
+      "royal_candidates": [
+        153
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 117,
+      "royal_candidates": [
+        155
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 118,
+      "royal_candidates": [
+        157
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 119,
+      "royal_candidates": [
+        159
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 120,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 121,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 122,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 123,
+      "royal_candidates": [
+        165
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 124,
+      "royal_candidates": [
+        167
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 125,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 126,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 127,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 128,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 129,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 130,
+      "royal_candidates": [
+        178
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 131,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 132,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 133,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 134,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 135,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 136,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 137,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 138,
+      "royal_candidates": [
+        187
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 139,
+      "royal_candidates": [
+        189
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 140,
+      "royal_candidates": [
+        191
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 141,
+      "royal_candidates": [
+        193
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 142,
+      "royal_candidates": [
+        195
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 143,
+      "royal_candidates": [
+        197
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 144,
+      "royal_candidates": [
+        199
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 145,
+      "royal_candidates": [
+        201
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 146,
+      "royal_candidates": [
+        203
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 147,
+      "royal_candidates": [
+        205
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 148,
+      "royal_candidates": [
+        207
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 149,
+      "royal_candidates": [
+        210
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 150,
+      "royal_candidates": [
+        212
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 151,
+      "royal_candidates": [
+        214
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 152,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 153,
+      "royal_candidates": [
+        218
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 154,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 155,
+      "royal_candidates": [
+        221
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 156,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 157,
+      "royal_candidates": [
+        225
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 158,
+      "royal_candidates": [
+        227
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 159,
+      "royal_candidates": [
+        229
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 160,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 161,
+      "royal_candidates": [
+        233
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 162,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 163,
+      "royal_candidates": [
+        237
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 164,
+      "royal_candidates": [
+        239
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 165,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 166,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 167,
+      "royal_candidates": [
+        245
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 168,
+      "royal_candidates": [
+        247
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 169,
+      "royal_candidates": [
+        249
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 170,
+      "royal_candidates": [
+        274,
+        766
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 171,
+      "royal_candidates": [
+        277
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 172,
+      "royal_candidates": [
+        280
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 173,
+      "royal_candidates": [
+        283
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 174,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 175,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 176,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 177,
+      "royal_candidates": [
+        289
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 178,
+      "royal_candidates": [
+        293
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 179,
+      "royal_candidates": [
+        297
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 180,
+      "royal_candidates": [
+        299
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 181,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 182,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 183,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 184,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 185,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 186,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 187,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 188,
+      "royal_candidates": [
+        331
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 189,
+      "royal_candidates": [
+        333
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 190,
+      "royal_candidates": [
+        335
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 191,
+      "royal_candidates": [
+        352
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 192,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 193,
+      "royal_candidates": [
+        360
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 194,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 195,
+      "royal_candidates": [
+        363
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 196,
+      "royal_candidates": [
+        368
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 197,
+      "royal_candidates": [
+        370
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 198,
+      "royal_candidates": [
+        372
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 199,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 200,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 201,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 202,
+      "royal_candidates": [
+        379
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 203,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 204,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 205,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 206,
+      "royal_candidates": [
+        386
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 207,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 208,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 209,
+      "royal_candidates": [
+        269
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 210,
+      "royal_candidates": [
+        390,
+        776
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 211,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 212,
+      "royal_candidates": [
+        395
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 213,
+      "royal_candidates": [
+        476
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 214,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 215,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 216,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 217,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 218,
+      "royal_candidates": [
+        411
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 219,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 220,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 221,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 222,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 223,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 224,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 225,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 226,
+      "royal_candidates": [
+        429
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 227,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 228,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 229,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 230,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 231,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 232,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 233,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 234,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 235,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 236,
+      "royal_candidates": [
+        445
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 237,
+      "royal_candidates": [
+        447
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 238,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 239,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 240,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 241,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 242,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 243,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 244,
+      "royal_candidates": [
+        471
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 245,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 246,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 247,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 248,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 249,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 250,
+      "royal_candidates": [
+        438
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 251,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 252,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 253,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 254,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 255,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 256,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 257,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 258,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 259,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 260,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 261,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 262,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 263,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 264,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 265,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 266,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 267,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 268,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 269,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 270,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 271,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 272,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 273,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 274,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 275,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 276,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 277,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 278,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 279,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 280,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 281,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 282,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 283,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 284,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 285,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 286,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 287,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 288,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 289,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 290,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 291,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 292,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 293,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 294,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 295,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 296,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 297,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 298,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 299,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 300,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 301,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 302,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 303,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 304,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 305,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 306,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 307,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 308,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 309,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 310,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 311,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 312,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 313,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 314,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 315,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 316,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 317,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 318,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 319,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 320,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 321,
+      "royal_candidates": [
+        573
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 322,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 323,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 324,
+      "royal_candidates": [
+        487
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 325,
+      "royal_candidates": [
+        489
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 326,
+      "royal_candidates": [
+        493
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 327,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 328,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 329,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 330,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 331,
+      "royal_candidates": [
+        483
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 332,
+      "royal_candidates": [
+        484
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 333,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 334,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 335,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 336,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 337,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 338,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 339,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 340,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 341,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 342,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 343,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 344,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 345,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 346,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 347,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 348,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 349,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 350,
+      "royal_candidates": [
+        513
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 351,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 352,
+      "royal_candidates": [
+        518
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 353,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 354,
+      "royal_candidates": [
+        525,
+        746
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 355,
+      "royal_candidates": [
+        527
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 356,
+      "royal_candidates": [
+        534
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 357,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 358,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 359,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 360,
+      "royal_candidates": [
+        559
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 361,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 362,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 363,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 364,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 365,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 366,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 367,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 368,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 369,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 370,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 371,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 372,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 373,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 374,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 375,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 376,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 377,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 378,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 379,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 380,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 381,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 382,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 383,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 384,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 385,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 386,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 387,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 388,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 389,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 390,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 391,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 392,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 393,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 394,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 395,
+      "royal_candidates": [
+        584
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 396,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 397,
+      "royal_candidates": [
+        586
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 398,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 399,
+      "royal_candidates": [
+        590
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 400,
+      "royal_candidates": [
+        592
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 401,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 402,
+      "royal_candidates": [
+        319
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 403,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 404,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 405,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 406,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 407,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 408,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 409,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 410,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 411,
+      "royal_candidates": [
+        497
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 412,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 413,
+      "royal_candidates": [
+        626
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 414,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 415,
+      "royal_candidates": [
+        632
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 416,
+      "royal_candidates": [
+        634
+      ]
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 417,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 418,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 419,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 420,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 421,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 422,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 423,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 424,
+      "royal_candidates": []
+    },
+    {
+      "kind": "secondary",
+      "raw_index": 425,
+      "royal_candidates": []
+    }
+  ]
+}

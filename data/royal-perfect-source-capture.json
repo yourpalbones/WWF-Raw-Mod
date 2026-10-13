@@ -1,0 +1,205 @@
+{
+  "rom_sha256": "51c53e36ed0b959b0695fc6ef036fa7302d1c995eca35c28261d6f3cb77df0ca",
+  "scope": "Unmodified Royal Rumble USA source match; controller inputs only, not a Raw import",
+  "stages": [
+    {
+      "name": "boot",
+      "frames": 1200,
+      "inputs": [],
+      "snapshot_sha256": {
+        ".png": "908bb763a477ab8143c38aa17d0672659776e7b154d2e0f84702a8c421fff40d",
+        "-wram.bin": "310d2059de5805064c2454808cb8e9815228ac9dfce850b2ac2feb9b5d077cff",
+        "-vram.bin": "207b6740fa411a70ac51e1f4c85d78dfea1af42fd3677fdc80bb70d15e0f79cc",
+        "-cgram.bin": "e30fd3d1724f94410120aeb4eb98f139a589878dff0b11a665a3c47a93fa6698",
+        "-oam.bin": "67f76711b2d9c75d6e77a8dcde5143ae47a5d69df9f0409a8d4f0f179a20c172"
+      }
+    },
+    {
+      "name": "menu",
+      "frames": 450,
+      "inputs": [
+        [
+          0,
+          1,
+          3,
+          8
+        ],
+        [
+          0,
+          120,
+          8,
+          8
+        ],
+        [
+          0,
+          260,
+          3,
+          8
+        ]
+      ],
+      "snapshot_sha256": {
+        ".png": "d42bd43ac89562c042ec7a16988ac5c11b6ce089fef882bc15a975b5be334dab",
+        "-wram.bin": "3b507ad00826755dfad9ac5692867221eb3c72559263310ba76e11b15f69ce1d",
+        "-vram.bin": "bf183075aea4700081f42284cac8b9161cd3249af45f9f21e77bf7c46d681dfc",
+        "-cgram.bin": "fcb38a94978cee10ba8588225d21b0a31308f2a5a65eb1728ba139abdcbfa682",
+        "-oam.bin": "f22cc022bc6533371886cf01356541b306b912e7903016f72317f1004db4745d"
+      }
+    },
+    {
+      "name": "two-player-menu",
+      "frames": 60,
+      "inputs": [
+        [
+          0,
+          1,
+          5,
+          8
+        ]
+      ],
+      "snapshot_sha256": {
+        ".png": "f9e52ccfa35dda685602ae5362f04c1a3b505afac524b7ab6421b3aad9950aa9",
+        "-wram.bin": "f6cf4f03ff0a1ddbd984102200e2de10541528f7cb478def827da29e72caa153",
+        "-vram.bin": "bf183075aea4700081f42284cac8b9161cd3249af45f9f21e77bf7c46d681dfc",
+        "-cgram.bin": "fcb38a94978cee10ba8588225d21b0a31308f2a5a65eb1728ba139abdcbfa682",
+        "-oam.bin": "ebe84aca5b7529acbbb03e8d13af8184e166bb96a1c7e7edad9226027c25dc31"
+      }
+    },
+    {
+      "name": "two-player-options",
+      "frames": 180,
+      "inputs": [
+        [
+          0,
+          1,
+          3,
+          8
+        ]
+      ],
+      "snapshot_sha256": {
+        ".png": "9c2aeedfd94d18e66824676d60ed6d4b8d08bd6bc2322087ba9e8aa387b3fc61",
+        "-wram.bin": "ff4b6813a277258f688dcd3a90076cb50384c44c00c6f2caf7e51e6318dea642",
+        "-vram.bin": "bf183075aea4700081f42284cac8b9161cd3249af45f9f21e77bf7c46d681dfc",
+        "-cgram.bin": "fcb38a94978cee10ba8588225d21b0a31308f2a5a65eb1728ba139abdcbfa682",
+        "-oam.bin": "bc6493ce7c8f7b80839d038b0544ea7ac0fe70acce58de58671492de999a353a"
+      }
+    },
+    {
+      "name": "two-player-roster",
+      "frames": 180,
+      "inputs": [
+        [
+          0,
+          1,
+          3,
+          8
+        ]
+      ],
+      "snapshot_sha256": {
+        ".png": "e371ebada544381a8c7d15effc48536d63451b3c533b2ee542232f00442abb8b",
+        "-wram.bin": "1d6ef00ac826de42913ba99833ce946dc4bcbfc4fc9ddca2a2b068842173fe18",
+        "-vram.bin": "8435733a5f1300809d827526e8d189ace38286f043486d3025d185b8de823959",
+        "-cgram.bin": "1efc9eff520b8bc59ccc8a42faf0af8ed3142c9fbff7d8dcef668bad40cf96d5",
+        "-oam.bin": "5463ea46183f3b6e7716b1066e206196dfd0a56c87eeeaa8752523ab203742fc"
+      }
+    },
+    {
+      "name": "two-player-perfect",
+      "frames": 180,
+      "inputs": [
+        [
+          0,
+          1,
+          7,
+          8
+        ],
+        [
+          0,
+          60,
+          8,
+          8
+        ],
+        [
+          0,
+          120,
+          3,
+          8
+        ]
+      ],
+      "snapshot_sha256": {
+        ".png": "2ffc554eb8f835cdc0ce6baa71079323fa579229ec66c1e521f438985f39df2f",
+        "-wram.bin": "4954cda40f3bd5d8f964831e90263cdb8a976c235f3e61afa994fa2cc56f7669",
+        "-vram.bin": "6a6e2211d41d7782e6f66eb01bbf88bd7d19a4f3418bf8af8002dc2b1243fdb2",
+        "-cgram.bin": "3e3b77422d4e9a79da25d23536f011f2500ea250a7cd9142c292dd57b6b42329",
+        "-oam.bin": "a6ddbfd8dcd70f36e1ab4e1b5ad5386b20ee071fef983bf4add78bb7e2a5ddf8"
+      }
+    },
+    {
+      "name": "two-player-confirm",
+      "frames": 360,
+      "inputs": [
+        [
+          0,
+          240,
+          3,
+          8
+        ],
+        [
+          1,
+          1,
+          8,
+          8
+        ],
+        [
+          1,
+          120,
+          3,
+          8
+        ]
+      ],
+      "snapshot_sha256": {
+        ".png": "31e052717d4066a2772a6ba5ad15f114ff56314fd7a5b127585fd6b1f2dcf352",
+        "-wram.bin": "60e9492081b259e8d765f84f7c39f762446b3c7dd9b5a86e3e9b8b4417bb9745",
+        "-vram.bin": "9bdbafdbb557a830c05bfebf97c471d6d1bd16334f0c47f0c39aac05431d2988",
+        "-cgram.bin": "3e3b77422d4e9a79da25d23536f011f2500ea250a7cd9142c292dd57b6b42329",
+        "-oam.bin": "a6ddbfd8dcd70f36e1ab4e1b5ad5386b20ee071fef983bf4add78bb7e2a5ddf8"
+      }
+    },
+    {
+      "name": "two-player-match",
+      "frames": 600,
+      "inputs": [
+        [
+          0,
+          240,
+          3,
+          8
+        ],
+        [
+          1,
+          1,
+          7,
+          8
+        ],
+        [
+          1,
+          80,
+          8,
+          8
+        ],
+        [
+          1,
+          160,
+          3,
+          8
+        ]
+      ],
+      "snapshot_sha256": {
+        ".png": "080dd9517f3a6e12884ccd335ae0d07e140590bc03bf0ac1b9b5f9971c7801e9",
+        "-wram.bin": "bf6d33299229dcf0e7fabbf27d97fb1b73ed104e898f67de1e4c556a1d7525e6",
+        "-vram.bin": "65f329264695e3a96d0e85e14d42feb0de70473428d38cf9f50d531ea1d32b6d",
+        "-cgram.bin": "2e2ce815acb901a48a0a282fbb965e8378cdda217185227a6a995215e8604e83",
+        "-oam.bin": "e1989314cad23e13eb2cd02768c3049421eeef830217dbeb5e3dd59dae52bf39"
+      }
+    }
+  ]
+}

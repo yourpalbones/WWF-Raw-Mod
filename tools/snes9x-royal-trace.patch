@@ -1,0 +1,34 @@
+--- a/cpuexec.cpp
++++ b/cpuexec.cpp
+@@ -103,10 +103,31 @@
+     }
+ }
+ 
++
++// Optional Royal Rumble read-only tile/pose trace; all game RAM is unchanged.
++static void WWFRoyalTraceCPU(unsigned pc, const char *dir) {
++    static unsigned number=0, tileID=0, destination=0, source=0;
++    if(pc==0x80d642){tileID=Registers.A.W;destination=Registers.Y.W;}
++    if(pc==0x80d646){
++        source=((Memory.RAM[0xf0]&255)<<16)|(Memory.RAM[0xf2]|(Memory.RAM[0xf3]<<8));
++        char path[1024];std::snprintf(path,sizeof(path),"%s/royal-tiles.jsonl",dir);FILE*f=std::fopen(path,"a");
++        if(f){std::fprintf(f,"{\"event\":%u,\"frame\":%u,\"tile_id\":%u,\"source\":%u,\"destination\":%u,\"compressed\":%u,\"actor\":%u,\"selector\":%u,\"pose_pointer\":%u}\n",++number,WWFFrame,tileID,source,destination,Registers.A.W,Memory.RAM[0x3a]|Memory.RAM[0x3b]<<8,Memory.RAM[0x5e]|Memory.RAM[0x5f]<<8,WWFPointer(0x84));std::fclose(f);}
++    }
++    if(pc==0x80d653||pc==0x80d67b){
++        char path[1024];std::snprintf(path,sizeof(path),"%s/assets/royal-tile-%06u-%06x.bin",dir,number,source);FILE*f=std::fopen(path,"wb");
++        if(f){std::fwrite(Memory.RAM+destination,1,32,f);std::fclose(f);}
++    }
++    if(pc==0x80d4d6||pc==0x80d50e||pc==0x80d53c||pc==0x81a82e){
++        char path[1024];std::snprintf(path,sizeof(path),"%s/royal-cpu.jsonl",dir);FILE*f=std::fopen(path,"a");
++        if(f){std::fprintf(f,"{\"frame\":%u,\"pc\":%u,\"a\":%u,\"x\":%u,\"y\":%u,\"d\":%u,\"db\":%u,\"actor\":%u,\"selector\":%u,\"part_index\":%u,\"origin_x\":%u,\"origin_y\":%u,\"animation_pointer\":%u,\"pose_pointer\":%u}\n",WWFFrame,pc,Registers.A.W,Registers.X.W,Registers.Y.W,Registers.D.W,Registers.DB,Memory.RAM[0x3a]|Memory.RAM[0x3b]<<8,Memory.RAM[0x5e]|Memory.RAM[0x5f]<<8,Memory.RAM[0x78]|Memory.RAM[0x79]<<8,Memory.RAM[0x6c]|Memory.RAM[0x6d]<<8,Memory.RAM[0x6e]|Memory.RAM[0x6f]<<8,WWFPointer(0x80),WWFPointer(0x84));std::fclose(f);}
++    }
++}
++
+ static void WWFTraceCPU() {
+     const char *dir = std::getenv("WWF_TRACE_DIR");
+     if (!dir) return;
+     unsigned pc = Registers.PBPC & 0xffffff;
++    if(std::getenv("WWF_ROYAL_PROBE")){WWFRoyalTraceCPU(pc,dir);return;}
+     WWFTraceTile(pc, dir);
+     if(std::getenv("WWF_LIMIT_PROBE")){unsigned off=pc&0x3fffff,op=Memory.ROM[off],imm=Memory.ROM[off+1]|(Memory.ROM[off+2]<<8);if((op==0xc9||op==0xc0||op==0xe0)&&(imm==12||imm==24||imm==11||imm==22)){char path[1024];std::snprintf(path,sizeof(path),"%s/limits.jsonl",dir);FILE*f=std::fopen(path,"a");if(f){std::fprintf(f,"{\"frame\":%u,\"pc\":%u,\"op\":%u,\"imm\":%u,\"a\":%u,\"x\":%u,\"y\":%u}\n",WWFFrame,pc,op,imm,Registers.A.W,Registers.X.W,Registers.Y.W);std::fclose(f);}}}
+ 
