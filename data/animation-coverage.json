@@ -1,0 +1,4765 @@
+{
+ "schema_version": 1,
+ "generated_by": "tools/build_animation_coverage.py",
+ "scope": "Twelve original Raw slots plus Mr. Perfect. Derived from tracked evidence only; no ROM read.",
+ "claim": "Complete roster animation coverage is NOT established.",
+ "art_statuses": {
+  "original": "Stock WWF Raw artwork, unmodified by this project",
+  "customized": "Stock Raw body/animation with user-edited gear, head or palette",
+  "native_port": "Donor-game drawing reproduced from native source tiles and anchors",
+  "authored_replacement": "Newly drawn native-resolution artwork",
+  "adapted_placeholder": "Existing Raw artwork standing in for a pose it was not drawn for",
+  "decoded_only": "Source recipe decoded/mapped; not inserted into any shipped Raw build",
+  "prototype_private": "Inserted only in a private test build; not released",
+  "missing": "No suitable art exists for this role",
+  "not_audited": "No tracked evidence either way"
+ },
+ "gameplay_statuses": {
+  "verified_visual": "Native gameplay capture reviewed for this role and art",
+  "verified_functional": "Controller replay proves the action runs (damage/recovery); visuals not accepted",
+  "defective": "Native gameplay capture exists and shows a visible defect",
+  "untested": "No native gameplay capture for this role and art"
+ },
+ "routing": {
+  "stock": {
+   "primary_lookup": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "secondary_lookup": "80:ED10-80:ED39; tables AD:D547 / AD:D561; part IDs >= 04FE use selector 8",
+   "common_fallback": "Primary part IDs >= 062D and secondary >= 04FE resolve through selector 8 (Shawn)",
+   "tile_lookup": "AC:F6E4 logical tile -> source pointer; AC:F959 sparse/direct copy"
+  },
+  "perfect_slot": {
+   "primary_worker": "hook 80:ECC1 -> 70:F000; slot 12 indices < 0BB2 (0BDC with Perfect-Plex) via table 71:0000",
+   "secondary_worker": "hook 80:ED19 -> 70:F100; table 71:1000 (limit 087F with Perfect-Plex)",
+   "tile_lookup": "hook AC:F6E4 -> 70:F200; private tile IDs C000+ -> pointers at 7D:0000 / 74:9800",
+   "perfect_plex_attacker": "init hook AC:ECB0 -> 70:F300, sequence hook 80:F073 -> 70:F400; stream 73:0000, descriptors 73:0100",
+   "perfect_plex_receiver_released": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate"
+  }
+ },
+ "slots": [
+  {
+   "slot": 0,
+   "original": "Luna Vachon",
+   "display": "Luna Vachon",
+   "customization": null,
+   "royal_counterpart": null,
+   "raw_selector_word": 0,
+   "customization_evidence": []
+  },
+  {
+   "slot": 1,
+   "original": "Bret Hart",
+   "display": "Bret Hart",
+   "customization": "black gear, bare arms",
+   "customization_evidence": [
+    "evidence/bret-black-gear/README.md",
+    "evidence/bret-bare-arms/README.md",
+    "evidence/bret-movement/README.md"
+   ],
+   "royal_counterpart": {
+    "selector": 3,
+    "name": "Bret Hart"
+   },
+   "raw_selector_word": 2
+  },
+  {
+   "slot": 2,
+   "original": "Undertaker",
+   "display": "Undertaker",
+   "customization": null,
+   "royal_counterpart": {
+    "selector": 2,
+    "name": "Undertaker"
+   },
+   "raw_selector_word": 4,
+   "customization_evidence": []
+  },
+  {
+   "slot": 3,
+   "original": "Yokozuna",
+   "display": "Yokozuna",
+   "customization": null,
+   "royal_counterpart": {
+    "selector": 9,
+    "name": "Yokozuna"
+   },
+   "raw_selector_word": 6,
+   "customization_evidence": []
+  },
+  {
+   "slot": 4,
+   "original": "Bam Bam Bigelow",
+   "display": "Bam Bam Bigelow",
+   "customization": null,
+   "royal_counterpart": null,
+   "raw_selector_word": 8,
+   "customization_evidence": []
+  },
+  {
+   "slot": 5,
+   "original": "Razor Ramon",
+   "display": "Scott Hall",
+   "customization": "NWO gear on native body",
+   "customization_evidence": [
+    "evidence/scott-hall-gear/README.md",
+    "evidence/nwo-gear/README.md",
+    "evidence/nwo-art-revision/README.md"
+   ],
+   "royal_counterpart": {
+    "selector": 8,
+    "name": "Razor Ramon"
+   },
+   "raw_selector_word": 10
+  },
+  {
+   "slot": 6,
+   "original": "Lex Luger",
+   "display": "Lex Luger",
+   "customization": null,
+   "royal_counterpart": {
+    "selector": 10,
+    "name": "Lex Luger"
+   },
+   "raw_selector_word": 12,
+   "customization_evidence": []
+  },
+  {
+   "slot": 7,
+   "original": "Doink",
+   "display": "Sting",
+   "customization": "rebuilt from Undertaker donor body with authored head/gear",
+   "customization_evidence": [
+    "evidence/sting-rebuild/README.md",
+    "evidence/sting-native-heads/README.md"
+   ],
+   "royal_counterpart": null,
+   "raw_selector_word": 14
+  },
+  {
+   "slot": 8,
+   "original": "Shawn Michaels",
+   "display": "Shawn Michaels",
+   "customization": "experimental superkick art",
+   "customization_evidence": [
+    "evidence/shawn-superkick-animation/README.md"
+   ],
+   "royal_counterpart": {
+    "selector": 7,
+    "name": "Shawn Michaels"
+   },
+   "raw_selector_word": 16
+  },
+  {
+   "slot": 9,
+   "original": "1-2-3 Kid",
+   "display": "Syxx",
+   "customization": "NWO gear, registered head art",
+   "customization_evidence": [
+    "evidence/nwo-gear/README.md",
+    "evidence/syxx-head-revision/README.md"
+   ],
+   "royal_counterpart": null,
+   "raw_selector_word": 18
+  },
+  {
+   "slot": 10,
+   "original": "Diesel",
+   "display": "Kevin Nash",
+   "customization": "NWO gear on native body",
+   "customization_evidence": [
+    "evidence/nwo-gear/README.md",
+    "evidence/nwo-art-revision/README.md"
+   ],
+   "royal_counterpart": null,
+   "raw_selector_word": 20
+  },
+  {
+   "slot": 11,
+   "original": "Owen Hart",
+   "display": "Owen Hart",
+   "customization": null,
+   "royal_counterpart": null,
+   "raw_selector_word": 22,
+   "customization_evidence": []
+  },
+  {
+   "slot": 12,
+   "original": null,
+   "display": "Mr. Perfect",
+   "customization": "imported thirteenth slot (Royal Rumble)",
+   "customization_evidence": [
+    "evidence/mr-perfect-import/README.md"
+   ],
+   "royal_counterpart": {
+    "selector": 1,
+    "name": "Mr. Perfect"
+   },
+   "raw_selector_word": 24
+  }
+ ],
+ "rows": [
+  {
+   "slot": 0,
+   "display_name": "Luna Vachon",
+   "action": "finisher:Luna Eclipse",
+   "role": "performer",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/luna-vachon.gif",
+    "evidence/roster-specials/luna-vachon-finisher-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 0",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 0,
+   "display_name": "Luna Vachon",
+   "action": "finisher:Luna Eclipse",
+   "role": "receiver",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/luna-vachon.gif",
+    "evidence/roster-specials/luna-vachon-finisher-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 0",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 0,
+   "display_name": "Luna Vachon",
+   "action": "mega_move:unnamed",
+   "role": "performer",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/luna-vachon.gif",
+    "evidence/roster-specials/luna-vachon-mega-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 0",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 0,
+   "display_name": "Luna Vachon",
+   "action": "mega_move:unnamed",
+   "role": "receiver",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/luna-vachon.gif",
+    "evidence/roster-specials/luna-vachon-mega-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 0",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 1,
+   "display_name": "Bret Hart",
+   "action": "finisher:Sharpshooter",
+   "role": "performer",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/bret.gif",
+    "evidence/roster-specials/bret-finisher-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/bret-black-gear/README.md",
+    "evidence/bret-bare-arms/README.md",
+    "evidence/bret-movement/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 1",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 1,
+   "display_name": "Bret Hart",
+   "action": "finisher:Sharpshooter",
+   "role": "receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/bret.gif",
+    "evidence/roster-specials/bret-finisher-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/bret-black-gear/README.md",
+    "evidence/bret-bare-arms/README.md",
+    "evidence/bret-movement/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 1",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 1,
+   "display_name": "Bret Hart",
+   "action": "mega_move:unnamed",
+   "role": "performer",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/bret.gif",
+    "evidence/roster-specials/bret-mega-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/bret-black-gear/README.md",
+    "evidence/bret-bare-arms/README.md",
+    "evidence/bret-movement/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 1",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 1,
+   "display_name": "Bret Hart",
+   "action": "mega_move:unnamed",
+   "role": "receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/bret.gif",
+    "evidence/roster-specials/bret-mega-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/bret-black-gear/README.md",
+    "evidence/bret-bare-arms/README.md",
+    "evidence/bret-movement/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 1",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 2,
+   "display_name": "Undertaker",
+   "action": "finisher:Tombstone",
+   "role": "performer",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/undertaker.gif",
+    "evidence/roster-specials/undertaker-finisher-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 2",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 2,
+   "display_name": "Undertaker",
+   "action": "finisher:Tombstone",
+   "role": "receiver",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/undertaker.gif",
+    "evidence/roster-specials/undertaker-finisher-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 2",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 2,
+   "display_name": "Undertaker",
+   "action": "mega_move:unnamed",
+   "role": "performer",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/undertaker.gif",
+    "evidence/roster-specials/undertaker-mega-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 2",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 2,
+   "display_name": "Undertaker",
+   "action": "mega_move:unnamed",
+   "role": "receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/undertaker.gif",
+    "evidence/roster-specials/undertaker-mega-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "defender_sequence_verified is false in data/wrestler-move-coverage.json",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 2",
+   "transitions": "not verified",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 3,
+   "display_name": "Yokozuna",
+   "action": "finisher:Banzai Drop",
+   "role": "performer",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/yokozuna.gif",
+    "evidence/roster-specials/yokozuna-finisher-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 3",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 3,
+   "display_name": "Yokozuna",
+   "action": "finisher:Banzai Drop",
+   "role": "receiver",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/yokozuna.gif",
+    "evidence/roster-specials/yokozuna-finisher-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 3",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 3,
+   "display_name": "Yokozuna",
+   "action": "mega_move:unnamed",
+   "role": "performer",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/yokozuna.gif",
+    "evidence/roster-specials/yokozuna-mega-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 3",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 3,
+   "display_name": "Yokozuna",
+   "action": "mega_move:unnamed",
+   "role": "receiver",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/yokozuna.gif",
+    "evidence/roster-specials/yokozuna-mega-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 3",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 4,
+   "display_name": "Bam Bam Bigelow",
+   "action": "finisher:Headbutt off the top rope",
+   "role": "performer",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/bam-bam-bigelow.gif",
+    "evidence/roster-specials/bam-bam-bigelow-finisher-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 4",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 4,
+   "display_name": "Bam Bam Bigelow",
+   "action": "finisher:Headbutt off the top rope",
+   "role": "receiver",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/bam-bam-bigelow.gif",
+    "evidence/roster-specials/bam-bam-bigelow-finisher-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 4",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 4,
+   "display_name": "Bam Bam Bigelow",
+   "action": "mega_move:unnamed",
+   "role": "performer",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/bam-bam-bigelow.gif",
+    "evidence/roster-specials/bam-bam-bigelow-mega-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 4",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 4,
+   "display_name": "Bam Bam Bigelow",
+   "action": "mega_move:unnamed",
+   "role": "receiver",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/bam-bam-bigelow.gif",
+    "evidence/roster-specials/bam-bam-bigelow-mega-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 4",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 5,
+   "display_name": "Scott Hall",
+   "action": "finisher:Razor\u2019s Edge",
+   "role": "performer",
+   "art_status": "customized",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/razor-ramon.gif",
+    "evidence/roster-specials/razor-ramon-finisher-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/scott-hall-gear/README.md",
+    "evidence/nwo-gear/README.md",
+    "evidence/nwo-art-revision/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 5",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 5,
+   "display_name": "Scott Hall",
+   "action": "finisher:Razor\u2019s Edge",
+   "role": "receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/razor-ramon.gif",
+    "evidence/roster-specials/razor-ramon-finisher-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/scott-hall-gear/README.md",
+    "evidence/nwo-gear/README.md",
+    "evidence/nwo-art-revision/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 5",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 5,
+   "display_name": "Scott Hall",
+   "action": "mega_move:unnamed",
+   "role": "performer",
+   "art_status": "customized",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/razor-ramon.gif",
+    "evidence/roster-specials/razor-ramon-mega-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/scott-hall-gear/README.md",
+    "evidence/nwo-gear/README.md",
+    "evidence/nwo-art-revision/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 5",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 5,
+   "display_name": "Scott Hall",
+   "action": "mega_move:unnamed",
+   "role": "receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/razor-ramon.gif",
+    "evidence/roster-specials/razor-ramon-mega-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/scott-hall-gear/README.md",
+    "evidence/nwo-gear/README.md",
+    "evidence/nwo-art-revision/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 5",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 6,
+   "display_name": "Lex Luger",
+   "action": "finisher:Running Forearm",
+   "role": "performer",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/lex-luger.gif",
+    "evidence/roster-specials/lex-luger-finisher-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 6",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 6,
+   "display_name": "Lex Luger",
+   "action": "finisher:Running Forearm",
+   "role": "receiver",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/lex-luger.gif",
+    "evidence/roster-specials/lex-luger-finisher-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 6",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 6,
+   "display_name": "Lex Luger",
+   "action": "mega_move:unnamed",
+   "role": "performer",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/lex-luger.gif",
+    "evidence/roster-specials/lex-luger-mega-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 6",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 6,
+   "display_name": "Lex Luger",
+   "action": "mega_move:unnamed",
+   "role": "receiver",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/lex-luger.gif",
+    "evidence/roster-specials/lex-luger-mega-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 6",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 7,
+   "display_name": "Sting",
+   "action": "finisher:Whoopee Cushion",
+   "role": "performer",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/doink.gif",
+    "evidence/roster-specials/doink-finisher-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/sting-rebuild/README.md",
+    "evidence/sting-native-heads/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 7",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 7,
+   "display_name": "Sting",
+   "action": "finisher:Whoopee Cushion",
+   "role": "receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/doink.gif",
+    "evidence/roster-specials/doink-finisher-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/sting-rebuild/README.md",
+    "evidence/sting-native-heads/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 7",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 7,
+   "display_name": "Sting",
+   "action": "mega_move:unnamed",
+   "role": "performer",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/doink.gif",
+    "evidence/roster-specials/doink-mega-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/sting-rebuild/README.md",
+    "evidence/sting-native-heads/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 7",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 7,
+   "display_name": "Sting",
+   "action": "mega_move:unnamed",
+   "role": "receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/doink.gif",
+    "evidence/roster-specials/doink-mega-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/sting-rebuild/README.md",
+    "evidence/sting-native-heads/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 7",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 8,
+   "display_name": "Shawn Michaels",
+   "action": "finisher:Slingshot Suplex",
+   "role": "performer",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/shawn-michaels.gif",
+    "evidence/roster-specials/shawn-michaels-finisher-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/shawn-superkick-animation/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 8",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 8,
+   "display_name": "Shawn Michaels",
+   "action": "finisher:Slingshot Suplex",
+   "role": "receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/shawn-michaels.gif",
+    "evidence/roster-specials/shawn-michaels-finisher-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/shawn-superkick-animation/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 8",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 8,
+   "display_name": "Shawn Michaels",
+   "action": "mega_move:unnamed",
+   "role": "performer",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/shawn-michaels.gif",
+    "evidence/roster-specials/shawn-michaels-mega-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/shawn-superkick-animation/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 8",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 8,
+   "display_name": "Shawn Michaels",
+   "action": "mega_move:unnamed",
+   "role": "receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/shawn-michaels.gif",
+    "evidence/roster-specials/shawn-michaels-mega-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/shawn-superkick-animation/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 8",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 9,
+   "display_name": "Syxx",
+   "action": "finisher:Moonsault",
+   "role": "performer",
+   "art_status": "customized",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/123-kid.gif",
+    "evidence/roster-specials/123-kid-finisher-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/nwo-gear/README.md",
+    "evidence/syxx-head-revision/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 9",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 9,
+   "display_name": "Syxx",
+   "action": "finisher:Moonsault",
+   "role": "receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/123-kid.gif",
+    "evidence/roster-specials/123-kid-finisher-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/nwo-gear/README.md",
+    "evidence/syxx-head-revision/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 9",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 9,
+   "display_name": "Syxx",
+   "action": "mega_move:unnamed",
+   "role": "performer",
+   "art_status": "customized",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/123-kid.gif",
+    "evidence/roster-specials/123-kid-mega-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/nwo-gear/README.md",
+    "evidence/syxx-head-revision/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 9",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 9,
+   "display_name": "Syxx",
+   "action": "mega_move:unnamed",
+   "role": "receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/123-kid.gif",
+    "evidence/roster-specials/123-kid-mega-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/nwo-gear/README.md",
+    "evidence/syxx-head-revision/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 9",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 10,
+   "display_name": "Kevin Nash",
+   "action": "finisher:Jackknife",
+   "role": "performer",
+   "art_status": "customized",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/diesel.gif",
+    "evidence/roster-specials/diesel-finisher-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/nwo-gear/README.md",
+    "evidence/nwo-art-revision/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 10",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 10,
+   "display_name": "Kevin Nash",
+   "action": "finisher:Jackknife",
+   "role": "receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/diesel.gif",
+    "evidence/roster-specials/diesel-finisher-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/nwo-gear/README.md",
+    "evidence/nwo-art-revision/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 10",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 10,
+   "display_name": "Kevin Nash",
+   "action": "mega_move:unnamed",
+   "role": "performer",
+   "art_status": "customized",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/diesel.gif",
+    "evidence/roster-specials/diesel-mega-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/nwo-gear/README.md",
+    "evidence/nwo-art-revision/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 10",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 10,
+   "display_name": "Kevin Nash",
+   "action": "mega_move:unnamed",
+   "role": "receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/diesel.gif",
+    "evidence/roster-specials/diesel-mega-mapping.json",
+    "data/roster-special-captures.json",
+    "evidence/nwo-gear/README.md",
+    "evidence/nwo-art-revision/README.md"
+   ],
+   "defects": [
+    "Original-outfit capture only; edited gear not verified for this role",
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 10",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 11,
+   "display_name": "Owen Hart",
+   "action": "finisher:Sharpshooter",
+   "role": "performer",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/owen-hart.gif",
+    "evidence/roster-specials/owen-hart-finisher-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 11",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 11,
+   "display_name": "Owen Hart",
+   "action": "finisher:Sharpshooter",
+   "role": "receiver",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/owen-hart.gif",
+    "evidence/roster-specials/owen-hart-finisher-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 11",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 11,
+   "display_name": "Owen Hart",
+   "action": "mega_move:unnamed",
+   "role": "performer",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/owen-hart.gif",
+    "evidence/roster-specials/owen-hart-mega-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 11",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 11,
+   "display_name": "Owen Hart",
+   "action": "mega_move:unnamed",
+   "role": "receiver",
+   "art_status": "original",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "evidence": [
+    "evidence/roster-specials/owen-hart.gif",
+    "evidence/roster-specials/owen-hart-mega-mapping.json",
+    "data/roster-special-captures.json"
+   ],
+   "defects": [
+    "Only the first verified setup; directions/escapes/variants open"
+   ],
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 11",
+   "transitions": "entry/exit captured in roster-specials GIFs",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 12,
+   "display_name": "Mr. Perfect",
+   "action": "finisher:Perfect-Plex",
+   "role": "performer",
+   "art_status": "native_port",
+   "gameplay_status": "defective",
+   "source_game": "Royal Rumble",
+   "source_ids": {
+    "royal_poses": "783-806 (12 captured attacker drawings)",
+    "raw_primary_indices": "1000-1011"
+   },
+   "descriptor_locations": {
+    "stream": "0x730000",
+    "descriptors": "0x730100+",
+    "profiles": "0x734000+"
+   },
+   "runtime_routing": "init hook AC:ECB0 -> 70:F300, sequence hook 80:F073 -> 70:F400; stream 73:0000, descriptors 73:0100",
+   "palette_owner": "slot 12",
+   "facing": "attacker capture mirrored about Royal x=145 (import_perfect_plex.build)",
+   "evidence": [
+    "evidence/mr-perfect-import/README.md",
+    "evidence/mr-perfect-import/perfect-plex.gif",
+    "evidence/mr-perfect-import/verification.json",
+    "evidence/perfect-plex-receivers/raw-undertaker-prototype.gif",
+    "docs/perfect-plex-gaps.md"
+   ],
+   "aliases": "private (tile IDs C000+ written per pose, no sharing with stock slots)",
+   "defects": [
+    "Scene plays mirrored relative to the entry tie-up: attacker crosses to the far side of the receiver on the first lift frame (PP-1)",
+    "No bridge-to-pin; attacker stands straight up after bridge (PP-5)"
+   ]
+  },
+  {
+   "slot": 0,
+   "display_name": "Luna Vachon",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "verified_functional",
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows (stock receiving-suplex)"
+   },
+   "evidence": [
+    "data/perfect-victim-layouts.json",
+    "evidence/mr-perfect-import/verification.json"
+   ],
+   "defects": [
+    "Generic Raw vertical-suplex parts; poses do not match Royal Perfect-Plex"
+   ],
+   "variant": "released v0.16.1",
+   "palette_owner": "slot 0",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
+   "source_game": "WWF Raw",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 0,
+   "display_name": "Luna Vachon",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "missing",
+   "gameplay_status": "untested",
+   "variant": "target (own receiving art)",
+   "defects": [
+    "No Royal counterpart; needs authored receiving art that keeps this slot's identity and edited gear (palette remap is insufficient)"
+   ],
+   "evidence": [
+    "docs/perfect-plex-gaps.md"
+   ],
+   "source_game": null,
+   "palette_owner": "slot 0",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 1,
+   "display_name": "Bret Hart",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows (stock receiving-suplex)"
+   },
+   "evidence": [
+    "data/perfect-victim-layouts.json",
+    "evidence/mr-perfect-import/verification.json"
+   ],
+   "defects": [
+    "Generic Raw vertical-suplex parts; poses do not match Royal Perfect-Plex"
+   ],
+   "variant": "released v0.16.1",
+   "palette_owner": "slot 1",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
+   "source_game": "WWF Raw",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 1,
+   "display_name": "Bret Hart",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "decoded_only",
+   "gameplay_status": "untested",
+   "variant": "target (own receiving art)",
+   "source_ids": {
+    "royal_selector": 3,
+    "royal_name": "Bret Hart",
+    "royal_component_poses": [
+     245,
+     265,
+     267,
+     390,
+     476,
+     637,
+     638,
+     639,
+     640,
+     641,
+     642,
+     643,
+     644,
+     645,
+     646,
+     647,
+     648,
+     649,
+     650,
+     651,
+     652,
+     653,
+     654
+    ],
+    "source_frames": [
+     56,
+     64,
+     72,
+     80,
+     88,
+     96,
+     104,
+     112,
+     120,
+     128,
+     136,
+     144
+    ]
+   },
+   "anchors": "data/perfect-receivers.json components[] (Royal OAM anchors, relative to x=145,y=162)",
+   "facing": "component hflip=true in every Royal frame; parts stored unmirrored",
+   "budget": {
+    "max_objects_incl_shadow": 17,
+    "max_tiles_incl_shadow": 46
+   },
+   "aliases": {
+    "royal_source_tiles": 320,
+    "private_to_this_worker": 58,
+    "shared_with_all_12_workers": 8,
+    "shared_with_some": 254,
+    "note": "Royal ROM addresses; Raw insertion must give each slot private copies"
+   },
+   "evidence": [
+    "data/perfect-receivers.json",
+    "docs/perfect-plex-gaps.md"
+   ],
+   "defects": [
+    "Royal counterpart art does not carry the user-edited gear; needs re-authoring"
+   ],
+   "source_game": "Royal Rumble",
+   "palette_owner": "slot 1",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate"
+  },
+  {
+   "slot": 2,
+   "display_name": "Undertaker",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows (stock receiving-suplex)"
+   },
+   "evidence": [
+    "data/perfect-victim-layouts.json",
+    "evidence/mr-perfect-import/verification.json"
+   ],
+   "defects": [
+    "Generic Raw vertical-suplex parts; poses do not match Royal Perfect-Plex"
+   ],
+   "variant": "released v0.16.1",
+   "palette_owner": "slot 2",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
+   "source_game": "WWF Raw",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 2,
+   "display_name": "Undertaker",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "prototype_private",
+   "gameplay_status": "defective",
+   "variant": "target (own receiving art)",
+   "source_ids": {
+    "royal_selector": 2,
+    "royal_name": "Undertaker",
+    "royal_component_poses": [
+     245,
+     265,
+     267,
+     390,
+     476,
+     637,
+     638,
+     639,
+     640,
+     641,
+     642,
+     643,
+     644,
+     645,
+     646,
+     647,
+     648,
+     649,
+     650,
+     651,
+     652,
+     653,
+     654
+    ],
+    "source_frames": [
+     56,
+     64,
+     72,
+     80,
+     88,
+     96,
+     104,
+     112,
+     120,
+     128,
+     136,
+     144
+    ]
+   },
+   "anchors": "data/perfect-receivers.json components[] (Royal OAM anchors, relative to x=145,y=162)",
+   "facing": "component hflip=true in every Royal frame; parts stored unmirrored",
+   "budget": {
+    "max_objects_incl_shadow": 17,
+    "max_tiles_incl_shadow": 46
+   },
+   "aliases": {
+    "royal_source_tiles": 321,
+    "private_to_this_worker": 214,
+    "shared_with_all_12_workers": 8,
+    "shared_with_some": 99,
+    "note": "Royal ROM addresses; Raw insertion must give each slot private copies"
+   },
+   "evidence": [
+    "tools/build_perfect_receiver_prototype.py",
+    "evidence/perfect-plex-receivers/raw-undertaker-prototype.gif",
+    "evidence/perfect-plex-receivers/frame-review/README.md",
+    "docs/perfect-plex-gaps.md"
+   ],
+   "defects": [
+    "Receiver drawn ~15 native px off the Royal registration; hidden behind the attacker on lift frames (PP-2)",
+    "Receiver shadow left at actor origin while body is offset +32 px (PP-3)",
+    "Receiver snaps to standing at the attacker position after the bridge (PP-4)",
+    "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
+   ],
+   "source_game": "Royal Rumble",
+   "palette_owner": "slot 2",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate"
+  },
+  {
+   "slot": 3,
+   "display_name": "Yokozuna",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows (stock receiving-suplex)"
+   },
+   "evidence": [
+    "data/perfect-victim-layouts.json",
+    "evidence/mr-perfect-import/verification.json"
+   ],
+   "defects": [
+    "Generic Raw vertical-suplex parts; poses do not match Royal Perfect-Plex"
+   ],
+   "variant": "released v0.16.1",
+   "palette_owner": "slot 3",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
+   "source_game": "WWF Raw",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 3,
+   "display_name": "Yokozuna",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "decoded_only",
+   "gameplay_status": "untested",
+   "variant": "target (own receiving art)",
+   "source_ids": {
+    "royal_selector": 9,
+    "royal_name": "Yokozuna",
+    "royal_component_poses": [
+     245,
+     265,
+     267,
+     390,
+     476,
+     637,
+     638,
+     639,
+     640,
+     641,
+     642,
+     643,
+     644,
+     645,
+     646,
+     647,
+     648,
+     649,
+     650,
+     651,
+     652,
+     653,
+     654
+    ],
+    "source_frames": [
+     56,
+     64,
+     72,
+     80,
+     88,
+     96,
+     104,
+     112,
+     120,
+     128,
+     136,
+     144
+    ]
+   },
+   "anchors": "data/perfect-receivers.json components[] (Royal OAM anchors, relative to x=145,y=162)",
+   "facing": "component hflip=true in every Royal frame; parts stored unmirrored",
+   "budget": {
+    "max_objects_incl_shadow": 17,
+    "max_tiles_incl_shadow": 49
+   },
+   "aliases": {
+    "royal_source_tiles": 332,
+    "private_to_this_worker": 250,
+    "shared_with_all_12_workers": 8,
+    "shared_with_some": 74,
+    "note": "Royal ROM addresses; Raw insertion must give each slot private copies"
+   },
+   "evidence": [
+    "data/perfect-receivers.json",
+    "docs/perfect-plex-gaps.md"
+   ],
+   "defects": [],
+   "source_game": "Royal Rumble",
+   "palette_owner": "slot 3",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate"
+  },
+  {
+   "slot": 4,
+   "display_name": "Bam Bam Bigelow",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows (stock receiving-suplex)"
+   },
+   "evidence": [
+    "data/perfect-victim-layouts.json",
+    "evidence/mr-perfect-import/verification.json"
+   ],
+   "defects": [
+    "Generic Raw vertical-suplex parts; poses do not match Royal Perfect-Plex"
+   ],
+   "variant": "released v0.16.1",
+   "palette_owner": "slot 4",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
+   "source_game": "WWF Raw",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 4,
+   "display_name": "Bam Bam Bigelow",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "missing",
+   "gameplay_status": "untested",
+   "variant": "target (own receiving art)",
+   "defects": [
+    "No Royal counterpart; needs authored receiving art that keeps this slot's identity and edited gear (palette remap is insufficient)"
+   ],
+   "evidence": [
+    "docs/perfect-plex-gaps.md"
+   ],
+   "source_game": null,
+   "palette_owner": "slot 4",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 5,
+   "display_name": "Scott Hall",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows (stock receiving-suplex)"
+   },
+   "evidence": [
+    "data/perfect-victim-layouts.json",
+    "evidence/mr-perfect-import/verification.json"
+   ],
+   "defects": [
+    "Generic Raw vertical-suplex parts; poses do not match Royal Perfect-Plex"
+   ],
+   "variant": "released v0.16.1",
+   "palette_owner": "slot 5",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
+   "source_game": "WWF Raw",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 5,
+   "display_name": "Scott Hall",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "decoded_only",
+   "gameplay_status": "untested",
+   "variant": "target (own receiving art)",
+   "source_ids": {
+    "royal_selector": 8,
+    "royal_name": "Razor Ramon",
+    "royal_component_poses": [
+     245,
+     265,
+     267,
+     390,
+     476,
+     637,
+     638,
+     639,
+     640,
+     641,
+     642,
+     643,
+     644,
+     645,
+     646,
+     647,
+     648,
+     649,
+     650,
+     651,
+     652,
+     653,
+     654
+    ],
+    "source_frames": [
+     56,
+     64,
+     72,
+     80,
+     88,
+     96,
+     104,
+     112,
+     120,
+     128,
+     136,
+     144
+    ]
+   },
+   "anchors": "data/perfect-receivers.json components[] (Royal OAM anchors, relative to x=145,y=162)",
+   "facing": "component hflip=true in every Royal frame; parts stored unmirrored",
+   "budget": {
+    "max_objects_incl_shadow": 17,
+    "max_tiles_incl_shadow": 46
+   },
+   "aliases": {
+    "royal_source_tiles": 316,
+    "private_to_this_worker": 26,
+    "shared_with_all_12_workers": 8,
+    "shared_with_some": 282,
+    "note": "Royal ROM addresses; Raw insertion must give each slot private copies"
+   },
+   "evidence": [
+    "data/perfect-receivers.json",
+    "docs/perfect-plex-gaps.md"
+   ],
+   "defects": [
+    "Royal counterpart art does not carry the user-edited gear; needs re-authoring"
+   ],
+   "source_game": "Royal Rumble",
+   "palette_owner": "slot 5",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate"
+  },
+  {
+   "slot": 6,
+   "display_name": "Lex Luger",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows (stock receiving-suplex)"
+   },
+   "evidence": [
+    "data/perfect-victim-layouts.json",
+    "evidence/mr-perfect-import/verification.json"
+   ],
+   "defects": [
+    "Generic Raw vertical-suplex parts; poses do not match Royal Perfect-Plex"
+   ],
+   "variant": "released v0.16.1",
+   "palette_owner": "slot 6",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
+   "source_game": "WWF Raw",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 6,
+   "display_name": "Lex Luger",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "decoded_only",
+   "gameplay_status": "untested",
+   "variant": "target (own receiving art)",
+   "source_ids": {
+    "royal_selector": 10,
+    "royal_name": "Lex Luger",
+    "royal_component_poses": [
+     245,
+     265,
+     267,
+     390,
+     476,
+     637,
+     638,
+     639,
+     640,
+     641,
+     642,
+     643,
+     644,
+     645,
+     646,
+     647,
+     648,
+     649,
+     650,
+     651,
+     652,
+     653,
+     654
+    ],
+    "source_frames": [
+     56,
+     64,
+     72,
+     80,
+     88,
+     96,
+     104,
+     112,
+     120,
+     128,
+     136,
+     144
+    ]
+   },
+   "anchors": "data/perfect-receivers.json components[] (Royal OAM anchors, relative to x=145,y=162)",
+   "facing": "component hflip=true in every Royal frame; parts stored unmirrored",
+   "budget": {
+    "max_objects_incl_shadow": 17,
+    "max_tiles_incl_shadow": 46
+   },
+   "aliases": {
+    "royal_source_tiles": 315,
+    "private_to_this_worker": 10,
+    "shared_with_all_12_workers": 8,
+    "shared_with_some": 297,
+    "note": "Royal ROM addresses; Raw insertion must give each slot private copies"
+   },
+   "evidence": [
+    "data/perfect-receivers.json",
+    "docs/perfect-plex-gaps.md"
+   ],
+   "defects": [],
+   "source_game": "Royal Rumble",
+   "palette_owner": "slot 6",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate"
+  },
+  {
+   "slot": 7,
+   "display_name": "Sting",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows (stock receiving-suplex)"
+   },
+   "evidence": [
+    "data/perfect-victim-layouts.json",
+    "evidence/mr-perfect-import/verification.json"
+   ],
+   "defects": [
+    "Generic Raw vertical-suplex parts; poses do not match Royal Perfect-Plex"
+   ],
+   "variant": "released v0.16.1",
+   "palette_owner": "slot 7",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
+   "source_game": "WWF Raw",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 7,
+   "display_name": "Sting",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "missing",
+   "gameplay_status": "untested",
+   "variant": "target (own receiving art)",
+   "defects": [
+    "No Royal counterpart; needs authored receiving art that keeps this slot's identity and edited gear (palette remap is insufficient)"
+   ],
+   "evidence": [
+    "docs/perfect-plex-gaps.md"
+   ],
+   "source_game": null,
+   "palette_owner": "slot 7",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 8,
+   "display_name": "Shawn Michaels",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows (stock receiving-suplex)"
+   },
+   "evidence": [
+    "data/perfect-victim-layouts.json",
+    "evidence/mr-perfect-import/verification.json"
+   ],
+   "defects": [
+    "Generic Raw vertical-suplex parts; poses do not match Royal Perfect-Plex"
+   ],
+   "variant": "released v0.16.1",
+   "palette_owner": "slot 8",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
+   "source_game": "WWF Raw",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 8,
+   "display_name": "Shawn Michaels",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "decoded_only",
+   "gameplay_status": "untested",
+   "variant": "target (own receiving art)",
+   "source_ids": {
+    "royal_selector": 7,
+    "royal_name": "Shawn Michaels",
+    "royal_component_poses": [
+     245,
+     265,
+     267,
+     390,
+     476,
+     637,
+     638,
+     639,
+     640,
+     641,
+     642,
+     643,
+     644,
+     645,
+     646,
+     647,
+     648,
+     649,
+     650,
+     651,
+     652,
+     653,
+     654
+    ],
+    "source_frames": [
+     56,
+     64,
+     72,
+     80,
+     88,
+     96,
+     104,
+     112,
+     120,
+     128,
+     136,
+     144
+    ]
+   },
+   "anchors": "data/perfect-receivers.json components[] (Royal OAM anchors, relative to x=145,y=162)",
+   "facing": "component hflip=true in every Royal frame; parts stored unmirrored",
+   "budget": {
+    "max_objects_incl_shadow": 17,
+    "max_tiles_incl_shadow": 46
+   },
+   "aliases": {
+    "royal_source_tiles": 324,
+    "private_to_this_worker": 177,
+    "shared_with_all_12_workers": 8,
+    "shared_with_some": 139,
+    "note": "Royal ROM addresses; Raw insertion must give each slot private copies"
+   },
+   "evidence": [
+    "data/perfect-receivers.json",
+    "docs/perfect-plex-gaps.md"
+   ],
+   "defects": [],
+   "source_game": "Royal Rumble",
+   "palette_owner": "slot 8",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate"
+  },
+  {
+   "slot": 9,
+   "display_name": "Syxx",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows (stock receiving-suplex)"
+   },
+   "evidence": [
+    "data/perfect-victim-layouts.json",
+    "evidence/mr-perfect-import/verification.json"
+   ],
+   "defects": [
+    "Generic Raw vertical-suplex parts; poses do not match Royal Perfect-Plex"
+   ],
+   "variant": "released v0.16.1",
+   "palette_owner": "slot 9",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
+   "source_game": "WWF Raw",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 9,
+   "display_name": "Syxx",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "missing",
+   "gameplay_status": "untested",
+   "variant": "target (own receiving art)",
+   "defects": [
+    "No Royal counterpart; needs authored receiving art that keeps this slot's identity and edited gear (palette remap is insufficient)"
+   ],
+   "evidence": [
+    "docs/perfect-plex-gaps.md"
+   ],
+   "source_game": null,
+   "palette_owner": "slot 9",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 10,
+   "display_name": "Kevin Nash",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows (stock receiving-suplex)"
+   },
+   "evidence": [
+    "data/perfect-victim-layouts.json",
+    "evidence/mr-perfect-import/verification.json"
+   ],
+   "defects": [
+    "Generic Raw vertical-suplex parts; poses do not match Royal Perfect-Plex"
+   ],
+   "variant": "released v0.16.1",
+   "palette_owner": "slot 10",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
+   "source_game": "WWF Raw",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 10,
+   "display_name": "Kevin Nash",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "missing",
+   "gameplay_status": "untested",
+   "variant": "target (own receiving art)",
+   "defects": [
+    "No Royal counterpart; needs authored receiving art that keeps this slot's identity and edited gear (palette remap is insufficient)"
+   ],
+   "evidence": [
+    "docs/perfect-plex-gaps.md"
+   ],
+   "source_game": null,
+   "palette_owner": "slot 10",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 11,
+   "display_name": "Owen Hart",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows (stock receiving-suplex)"
+   },
+   "evidence": [
+    "data/perfect-victim-layouts.json",
+    "evidence/mr-perfect-import/verification.json"
+   ],
+   "defects": [
+    "Generic Raw vertical-suplex parts; poses do not match Royal Perfect-Plex"
+   ],
+   "variant": "released v0.16.1",
+   "palette_owner": "slot 11",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
+   "source_game": "WWF Raw",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 11,
+   "display_name": "Owen Hart",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "missing",
+   "gameplay_status": "untested",
+   "variant": "target (own receiving art)",
+   "defects": [
+    "No Royal counterpart; needs authored receiving art that keeps this slot's identity and edited gear (palette remap is insufficient)"
+   ],
+   "evidence": [
+    "docs/perfect-plex-gaps.md"
+   ],
+   "source_game": null,
+   "palette_owner": "slot 11",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 12,
+   "display_name": "Mr. Perfect",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows (stock receiving-suplex)"
+   },
+   "evidence": [
+    "data/perfect-victim-layouts.json",
+    "evidence/mr-perfect-import/verification.json"
+   ],
+   "defects": [
+    "Generic Raw vertical-suplex parts; poses do not match Royal Perfect-Plex"
+   ],
+   "variant": "released v0.16.1",
+   "palette_owner": "slot 12",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
+   "source_game": "WWF Raw",
+   "aliases": "not_audited"
+  },
+  {
+   "slot": 12,
+   "display_name": "Mr. Perfect",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "decoded_only",
+   "gameplay_status": "untested",
+   "variant": "target (own receiving art)",
+   "source_ids": {
+    "royal_selector": 1,
+    "royal_name": "Mr. Perfect",
+    "royal_component_poses": [
+     245,
+     265,
+     267,
+     390,
+     476,
+     637,
+     638,
+     639,
+     640,
+     641,
+     642,
+     643,
+     644,
+     645,
+     646,
+     647,
+     648,
+     649,
+     650,
+     651,
+     652,
+     653,
+     654
+    ],
+    "source_frames": [
+     56,
+     64,
+     72,
+     80,
+     88,
+     96,
+     104,
+     112,
+     120,
+     128,
+     136,
+     144
+    ]
+   },
+   "anchors": "data/perfect-receivers.json components[] (Royal OAM anchors, relative to x=145,y=162)",
+   "facing": "component hflip=true in every Royal frame; parts stored unmirrored",
+   "budget": {
+    "max_objects_incl_shadow": 17,
+    "max_tiles_incl_shadow": 46
+   },
+   "aliases": {
+    "royal_source_tiles": 322,
+    "private_to_this_worker": 68,
+    "shared_with_all_12_workers": 8,
+    "shared_with_some": 246,
+    "note": "Royal ROM addresses; Raw insertion must give each slot private copies"
+   },
+   "evidence": [
+    "data/perfect-receivers.json",
+    "docs/perfect-plex-gaps.md"
+   ],
+   "defects": [
+    "Mirror match: receiving Perfect must use slot-12 private art, not attacker stream"
+   ],
+   "source_game": "Royal Rumble",
+   "palette_owner": "slot 12",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate"
+  },
+  {
+   "slot": 0,
+   "display_name": "Luna Vachon",
+   "action": "idle_walk",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 0",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 0,
+   "display_name": "Luna Vachon",
+   "action": "strikes",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 0",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 0,
+   "display_name": "Luna Vachon",
+   "action": "grapples",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 0",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 0,
+   "display_name": "Luna Vachon",
+   "action": "running",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 0",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 0,
+   "display_name": "Luna Vachon",
+   "action": "ropes",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 0",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 0,
+   "display_name": "Luna Vachon",
+   "action": "turnbuckles",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 0",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 0,
+   "display_name": "Luna Vachon",
+   "action": "weapons",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 0",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 0,
+   "display_name": "Luna Vachon",
+   "action": "falls_knockdowns",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 0",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 0,
+   "display_name": "Luna Vachon",
+   "action": "recovery_getup",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 0",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 0,
+   "display_name": "Luna Vachon",
+   "action": "pins",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 0",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 0,
+   "display_name": "Luna Vachon",
+   "action": "submissions",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 0",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 1,
+   "display_name": "Bret Hart",
+   "action": "idle_walk",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 1",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [
+    "evidence/bret-movement/README.md",
+    "evidence/bret-gear-anatomy/README.md"
+   ],
+   "defects": []
+  },
+  {
+   "slot": 1,
+   "display_name": "Bret Hart",
+   "action": "strikes",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 1",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [
+    "evidence/action-mapping/README.md"
+   ],
+   "defects": [
+    "Punch/kick part IDs mapped in original outfit only"
+   ]
+  },
+  {
+   "slot": 1,
+   "display_name": "Bret Hart",
+   "action": "grapples",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 1",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 1,
+   "display_name": "Bret Hart",
+   "action": "running",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 1",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [
+    "evidence/bret-movement/README.md"
+   ],
+   "defects": []
+  },
+  {
+   "slot": 1,
+   "display_name": "Bret Hart",
+   "action": "ropes",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 1",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 1,
+   "display_name": "Bret Hart",
+   "action": "turnbuckles",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 1",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 1,
+   "display_name": "Bret Hart",
+   "action": "weapons",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 1",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 1,
+   "display_name": "Bret Hart",
+   "action": "falls_knockdowns",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 1",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 1,
+   "display_name": "Bret Hart",
+   "action": "recovery_getup",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 1",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 1,
+   "display_name": "Bret Hart",
+   "action": "pins",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 1",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 1,
+   "display_name": "Bret Hart",
+   "action": "submissions",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 1",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 2,
+   "display_name": "Undertaker",
+   "action": "idle_walk",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 2",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 2,
+   "display_name": "Undertaker",
+   "action": "strikes",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 2",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 2,
+   "display_name": "Undertaker",
+   "action": "grapples",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 2",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 2,
+   "display_name": "Undertaker",
+   "action": "running",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 2",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 2,
+   "display_name": "Undertaker",
+   "action": "ropes",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 2",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 2,
+   "display_name": "Undertaker",
+   "action": "turnbuckles",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 2",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 2,
+   "display_name": "Undertaker",
+   "action": "weapons",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 2",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 2,
+   "display_name": "Undertaker",
+   "action": "falls_knockdowns",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 2",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 2,
+   "display_name": "Undertaker",
+   "action": "recovery_getup",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 2",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 2,
+   "display_name": "Undertaker",
+   "action": "pins",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 2",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 2,
+   "display_name": "Undertaker",
+   "action": "submissions",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 2",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 3,
+   "display_name": "Yokozuna",
+   "action": "idle_walk",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 3",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 3,
+   "display_name": "Yokozuna",
+   "action": "strikes",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 3",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 3,
+   "display_name": "Yokozuna",
+   "action": "grapples",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 3",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 3,
+   "display_name": "Yokozuna",
+   "action": "running",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 3",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 3,
+   "display_name": "Yokozuna",
+   "action": "ropes",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 3",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 3,
+   "display_name": "Yokozuna",
+   "action": "turnbuckles",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 3",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 3,
+   "display_name": "Yokozuna",
+   "action": "weapons",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 3",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 3,
+   "display_name": "Yokozuna",
+   "action": "falls_knockdowns",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 3",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 3,
+   "display_name": "Yokozuna",
+   "action": "recovery_getup",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 3",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 3,
+   "display_name": "Yokozuna",
+   "action": "pins",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 3",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 3,
+   "display_name": "Yokozuna",
+   "action": "submissions",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 3",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 4,
+   "display_name": "Bam Bam Bigelow",
+   "action": "idle_walk",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 4",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 4,
+   "display_name": "Bam Bam Bigelow",
+   "action": "strikes",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 4",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 4,
+   "display_name": "Bam Bam Bigelow",
+   "action": "grapples",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 4",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 4,
+   "display_name": "Bam Bam Bigelow",
+   "action": "running",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 4",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 4,
+   "display_name": "Bam Bam Bigelow",
+   "action": "ropes",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 4",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 4,
+   "display_name": "Bam Bam Bigelow",
+   "action": "turnbuckles",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 4",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 4,
+   "display_name": "Bam Bam Bigelow",
+   "action": "weapons",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 4",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 4,
+   "display_name": "Bam Bam Bigelow",
+   "action": "falls_knockdowns",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 4",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 4,
+   "display_name": "Bam Bam Bigelow",
+   "action": "recovery_getup",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 4",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 4,
+   "display_name": "Bam Bam Bigelow",
+   "action": "pins",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 4",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 4,
+   "display_name": "Bam Bam Bigelow",
+   "action": "submissions",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 4",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 5,
+   "display_name": "Scott Hall",
+   "action": "idle_walk",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 5",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [
+    "evidence/nwo-gear/README.md"
+   ],
+   "defects": []
+  },
+  {
+   "slot": 5,
+   "display_name": "Scott Hall",
+   "action": "strikes",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 5",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [
+    "evidence/nwo-gear/README.md"
+   ],
+   "defects": []
+  },
+  {
+   "slot": 5,
+   "display_name": "Scott Hall",
+   "action": "grapples",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 5",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 5,
+   "display_name": "Scott Hall",
+   "action": "running",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 5",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 5,
+   "display_name": "Scott Hall",
+   "action": "ropes",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 5",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 5,
+   "display_name": "Scott Hall",
+   "action": "turnbuckles",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 5",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 5,
+   "display_name": "Scott Hall",
+   "action": "weapons",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 5",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 5,
+   "display_name": "Scott Hall",
+   "action": "falls_knockdowns",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 5",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 5,
+   "display_name": "Scott Hall",
+   "action": "recovery_getup",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 5",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 5,
+   "display_name": "Scott Hall",
+   "action": "pins",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 5",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 5,
+   "display_name": "Scott Hall",
+   "action": "submissions",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 5",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 6,
+   "display_name": "Lex Luger",
+   "action": "idle_walk",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 6",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 6,
+   "display_name": "Lex Luger",
+   "action": "strikes",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 6",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 6,
+   "display_name": "Lex Luger",
+   "action": "grapples",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 6",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 6,
+   "display_name": "Lex Luger",
+   "action": "running",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 6",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 6,
+   "display_name": "Lex Luger",
+   "action": "ropes",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 6",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 6,
+   "display_name": "Lex Luger",
+   "action": "turnbuckles",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 6",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 6,
+   "display_name": "Lex Luger",
+   "action": "weapons",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 6",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 6,
+   "display_name": "Lex Luger",
+   "action": "falls_knockdowns",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 6",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 6,
+   "display_name": "Lex Luger",
+   "action": "recovery_getup",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 6",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 6,
+   "display_name": "Lex Luger",
+   "action": "pins",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 6",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 6,
+   "display_name": "Lex Luger",
+   "action": "submissions",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 6",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 7,
+   "display_name": "Sting",
+   "action": "idle_walk",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 7",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [
+    "evidence/sting/walk.gif"
+   ],
+   "defects": []
+  },
+  {
+   "slot": 7,
+   "display_name": "Sting",
+   "action": "strikes",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 7",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [
+    "evidence/sting-rebuild/punch.gif",
+    "evidence/sting-rebuild/kick.gif"
+   ],
+   "defects": []
+  },
+  {
+   "slot": 7,
+   "display_name": "Sting",
+   "action": "grapples",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 7",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [
+    "evidence/sting-rebuild/give-vertical-suplex.gif",
+    "evidence/sting-rebuild/take-atomic-drop.gif"
+   ],
+   "defects": []
+  },
+  {
+   "slot": 7,
+   "display_name": "Sting",
+   "action": "running",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 7",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 7,
+   "display_name": "Sting",
+   "action": "ropes",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 7",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [
+    "evidence/sting-rebuild/run-ropes.gif"
+   ],
+   "defects": []
+  },
+  {
+   "slot": 7,
+   "display_name": "Sting",
+   "action": "turnbuckles",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 7",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 7,
+   "display_name": "Sting",
+   "action": "weapons",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 7",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 7,
+   "display_name": "Sting",
+   "action": "falls_knockdowns",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 7",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 7,
+   "display_name": "Sting",
+   "action": "recovery_getup",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 7",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 7,
+   "display_name": "Sting",
+   "action": "pins",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 7",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 7,
+   "display_name": "Sting",
+   "action": "submissions",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 7",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [
+    "evidence/sting-rebuild/scorpion-deathlock.gif"
+   ],
+   "defects": []
+  },
+  {
+   "slot": 8,
+   "display_name": "Shawn Michaels",
+   "action": "idle_walk",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 8",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 8,
+   "display_name": "Shawn Michaels",
+   "action": "strikes",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 8",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 8,
+   "display_name": "Shawn Michaels",
+   "action": "grapples",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 8",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 8,
+   "display_name": "Shawn Michaels",
+   "action": "running",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 8",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 8,
+   "display_name": "Shawn Michaels",
+   "action": "ropes",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 8",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 8,
+   "display_name": "Shawn Michaels",
+   "action": "turnbuckles",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 8",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 8,
+   "display_name": "Shawn Michaels",
+   "action": "weapons",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 8",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 8,
+   "display_name": "Shawn Michaels",
+   "action": "falls_knockdowns",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 8",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 8,
+   "display_name": "Shawn Michaels",
+   "action": "recovery_getup",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 8",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 8,
+   "display_name": "Shawn Michaels",
+   "action": "pins",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 8",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 8,
+   "display_name": "Shawn Michaels",
+   "action": "submissions",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 8",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 9,
+   "display_name": "Syxx",
+   "action": "idle_walk",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 9",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [
+    "evidence/nwo-gear/README.md"
+   ],
+   "defects": []
+  },
+  {
+   "slot": 9,
+   "display_name": "Syxx",
+   "action": "strikes",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 9",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [
+    "evidence/nwo-gear/README.md"
+   ],
+   "defects": []
+  },
+  {
+   "slot": 9,
+   "display_name": "Syxx",
+   "action": "grapples",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 9",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 9,
+   "display_name": "Syxx",
+   "action": "running",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 9",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 9,
+   "display_name": "Syxx",
+   "action": "ropes",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 9",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 9,
+   "display_name": "Syxx",
+   "action": "turnbuckles",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 9",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 9,
+   "display_name": "Syxx",
+   "action": "weapons",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 9",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 9,
+   "display_name": "Syxx",
+   "action": "falls_knockdowns",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 9",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 9,
+   "display_name": "Syxx",
+   "action": "recovery_getup",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 9",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 9,
+   "display_name": "Syxx",
+   "action": "pins",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 9",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 9,
+   "display_name": "Syxx",
+   "action": "submissions",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 9",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 10,
+   "display_name": "Kevin Nash",
+   "action": "idle_walk",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 10",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [
+    "evidence/nwo-gear/README.md"
+   ],
+   "defects": []
+  },
+  {
+   "slot": 10,
+   "display_name": "Kevin Nash",
+   "action": "strikes",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "verified_visual",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 10",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [
+    "evidence/nwo-gear/README.md"
+   ],
+   "defects": []
+  },
+  {
+   "slot": 10,
+   "display_name": "Kevin Nash",
+   "action": "grapples",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 10",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 10,
+   "display_name": "Kevin Nash",
+   "action": "running",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 10",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 10,
+   "display_name": "Kevin Nash",
+   "action": "ropes",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 10",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 10,
+   "display_name": "Kevin Nash",
+   "action": "turnbuckles",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 10",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 10,
+   "display_name": "Kevin Nash",
+   "action": "weapons",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 10",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 10,
+   "display_name": "Kevin Nash",
+   "action": "falls_knockdowns",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 10",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 10,
+   "display_name": "Kevin Nash",
+   "action": "recovery_getup",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 10",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 10,
+   "display_name": "Kevin Nash",
+   "action": "pins",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 10",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 10,
+   "display_name": "Kevin Nash",
+   "action": "submissions",
+   "role": "performer_and_receiver",
+   "art_status": "customized",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 10",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 11,
+   "display_name": "Owen Hart",
+   "action": "idle_walk",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 11",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 11,
+   "display_name": "Owen Hart",
+   "action": "strikes",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 11",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 11,
+   "display_name": "Owen Hart",
+   "action": "grapples",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 11",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 11,
+   "display_name": "Owen Hart",
+   "action": "running",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 11",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 11,
+   "display_name": "Owen Hart",
+   "action": "ropes",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 11",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 11,
+   "display_name": "Owen Hart",
+   "action": "turnbuckles",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 11",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 11,
+   "display_name": "Owen Hart",
+   "action": "weapons",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 11",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 11,
+   "display_name": "Owen Hart",
+   "action": "falls_knockdowns",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 11",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 11,
+   "display_name": "Owen Hart",
+   "action": "recovery_getup",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 11",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 11,
+   "display_name": "Owen Hart",
+   "action": "pins",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 11",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 11,
+   "display_name": "Owen Hart",
+   "action": "submissions",
+   "role": "performer_and_receiver",
+   "art_status": "original",
+   "gameplay_status": "untested",
+   "source_game": "WWF Raw",
+   "runtime_routing": "80:EC80-80:ECD0; selector word at WRAM 0B74+actor; tables AD:D513 (base) / AD:D52D (bank)",
+   "palette_owner": "slot 11",
+   "aliases": "stock directories share sources; see evidence/roster-inventory/secondary-graphics.md",
+   "evidence": [],
+   "defects": [
+    "No action-to-frame map for this category"
+   ]
+  },
+  {
+   "slot": 12,
+   "display_name": "Mr. Perfect",
+   "action": "idle_walk",
+   "role": "performer_and_receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_game": "Royal Rumble + adapted WWF Raw",
+   "runtime_routing": "hook 80:ECC1 -> 70:F000; slot 12 indices < 0BB2 (0BDC with Perfect-Plex) via table 71:0000",
+   "palette_owner": "slot 12",
+   "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
+   "piece_provenance": {
+    "primary_raw": 358,
+    "primary_raw_common": 471,
+    "primary_royal": 169,
+    "secondary_raw": 306,
+    "secondary_raw_common": 296,
+    "secondary_royal": 120
+   },
+   "evidence": [
+    "evidence/mr-perfect-import/README.md",
+    "editor/royal-import-layouts.js"
+   ],
+   "defects": [
+    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Royal has no counterpart for several Raw-only actions (needs authored art)"
+   ]
+  },
+  {
+   "slot": 12,
+   "display_name": "Mr. Perfect",
+   "action": "strikes",
+   "role": "performer_and_receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_game": "Royal Rumble + adapted WWF Raw",
+   "runtime_routing": "hook 80:ECC1 -> 70:F000; slot 12 indices < 0BB2 (0BDC with Perfect-Plex) via table 71:0000",
+   "palette_owner": "slot 12",
+   "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
+   "piece_provenance": {
+    "primary_raw": 358,
+    "primary_raw_common": 471,
+    "primary_royal": 169,
+    "secondary_raw": 306,
+    "secondary_raw_common": 296,
+    "secondary_royal": 120
+   },
+   "evidence": [
+    "evidence/mr-perfect-import/README.md",
+    "editor/royal-import-layouts.js"
+   ],
+   "defects": [
+    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Royal has no counterpart for several Raw-only actions (needs authored art)"
+   ]
+  },
+  {
+   "slot": 12,
+   "display_name": "Mr. Perfect",
+   "action": "grapples",
+   "role": "performer_and_receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_game": "Royal Rumble + adapted WWF Raw",
+   "runtime_routing": "hook 80:ECC1 -> 70:F000; slot 12 indices < 0BB2 (0BDC with Perfect-Plex) via table 71:0000",
+   "palette_owner": "slot 12",
+   "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
+   "piece_provenance": {
+    "primary_raw": 358,
+    "primary_raw_common": 471,
+    "primary_royal": 169,
+    "secondary_raw": 306,
+    "secondary_raw_common": 296,
+    "secondary_royal": 120
+   },
+   "evidence": [
+    "evidence/mr-perfect-import/README.md",
+    "editor/royal-import-layouts.js"
+   ],
+   "defects": [
+    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Royal has no counterpart for several Raw-only actions (needs authored art)"
+   ]
+  },
+  {
+   "slot": 12,
+   "display_name": "Mr. Perfect",
+   "action": "running",
+   "role": "performer_and_receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_game": "Royal Rumble + adapted WWF Raw",
+   "runtime_routing": "hook 80:ECC1 -> 70:F000; slot 12 indices < 0BB2 (0BDC with Perfect-Plex) via table 71:0000",
+   "palette_owner": "slot 12",
+   "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
+   "piece_provenance": {
+    "primary_raw": 358,
+    "primary_raw_common": 471,
+    "primary_royal": 169,
+    "secondary_raw": 306,
+    "secondary_raw_common": 296,
+    "secondary_royal": 120
+   },
+   "evidence": [
+    "evidence/mr-perfect-import/README.md",
+    "editor/royal-import-layouts.js"
+   ],
+   "defects": [
+    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Royal has no counterpart for several Raw-only actions (needs authored art)"
+   ]
+  },
+  {
+   "slot": 12,
+   "display_name": "Mr. Perfect",
+   "action": "ropes",
+   "role": "performer_and_receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_game": "Royal Rumble + adapted WWF Raw",
+   "runtime_routing": "hook 80:ECC1 -> 70:F000; slot 12 indices < 0BB2 (0BDC with Perfect-Plex) via table 71:0000",
+   "palette_owner": "slot 12",
+   "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
+   "piece_provenance": {
+    "primary_raw": 358,
+    "primary_raw_common": 471,
+    "primary_royal": 169,
+    "secondary_raw": 306,
+    "secondary_raw_common": 296,
+    "secondary_royal": 120
+   },
+   "evidence": [
+    "evidence/mr-perfect-import/README.md",
+    "editor/royal-import-layouts.js"
+   ],
+   "defects": [
+    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Royal has no counterpart for several Raw-only actions (needs authored art)"
+   ]
+  },
+  {
+   "slot": 12,
+   "display_name": "Mr. Perfect",
+   "action": "turnbuckles",
+   "role": "performer_and_receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_game": "Royal Rumble + adapted WWF Raw",
+   "runtime_routing": "hook 80:ECC1 -> 70:F000; slot 12 indices < 0BB2 (0BDC with Perfect-Plex) via table 71:0000",
+   "palette_owner": "slot 12",
+   "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
+   "piece_provenance": {
+    "primary_raw": 358,
+    "primary_raw_common": 471,
+    "primary_royal": 169,
+    "secondary_raw": 306,
+    "secondary_raw_common": 296,
+    "secondary_royal": 120
+   },
+   "evidence": [
+    "evidence/mr-perfect-import/README.md",
+    "editor/royal-import-layouts.js"
+   ],
+   "defects": [
+    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Royal has no counterpart for several Raw-only actions (needs authored art)"
+   ]
+  },
+  {
+   "slot": 12,
+   "display_name": "Mr. Perfect",
+   "action": "weapons",
+   "role": "performer_and_receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_game": "Royal Rumble + adapted WWF Raw",
+   "runtime_routing": "hook 80:ECC1 -> 70:F000; slot 12 indices < 0BB2 (0BDC with Perfect-Plex) via table 71:0000",
+   "palette_owner": "slot 12",
+   "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
+   "piece_provenance": {
+    "primary_raw": 358,
+    "primary_raw_common": 471,
+    "primary_royal": 169,
+    "secondary_raw": 306,
+    "secondary_raw_common": 296,
+    "secondary_royal": 120
+   },
+   "evidence": [
+    "evidence/mr-perfect-import/README.md",
+    "editor/royal-import-layouts.js"
+   ],
+   "defects": [
+    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Royal has no counterpart for several Raw-only actions (needs authored art)"
+   ]
+  },
+  {
+   "slot": 12,
+   "display_name": "Mr. Perfect",
+   "action": "falls_knockdowns",
+   "role": "performer_and_receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_game": "Royal Rumble + adapted WWF Raw",
+   "runtime_routing": "hook 80:ECC1 -> 70:F000; slot 12 indices < 0BB2 (0BDC with Perfect-Plex) via table 71:0000",
+   "palette_owner": "slot 12",
+   "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
+   "piece_provenance": {
+    "primary_raw": 358,
+    "primary_raw_common": 471,
+    "primary_royal": 169,
+    "secondary_raw": 306,
+    "secondary_raw_common": 296,
+    "secondary_royal": 120
+   },
+   "evidence": [
+    "evidence/mr-perfect-import/README.md",
+    "editor/royal-import-layouts.js"
+   ],
+   "defects": [
+    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Royal has no counterpart for several Raw-only actions (needs authored art)"
+   ]
+  },
+  {
+   "slot": 12,
+   "display_name": "Mr. Perfect",
+   "action": "recovery_getup",
+   "role": "performer_and_receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_game": "Royal Rumble + adapted WWF Raw",
+   "runtime_routing": "hook 80:ECC1 -> 70:F000; slot 12 indices < 0BB2 (0BDC with Perfect-Plex) via table 71:0000",
+   "palette_owner": "slot 12",
+   "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
+   "piece_provenance": {
+    "primary_raw": 358,
+    "primary_raw_common": 471,
+    "primary_royal": 169,
+    "secondary_raw": 306,
+    "secondary_raw_common": 296,
+    "secondary_royal": 120
+   },
+   "evidence": [
+    "evidence/mr-perfect-import/README.md",
+    "editor/royal-import-layouts.js"
+   ],
+   "defects": [
+    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Royal has no counterpart for several Raw-only actions (needs authored art)"
+   ]
+  },
+  {
+   "slot": 12,
+   "display_name": "Mr. Perfect",
+   "action": "pins",
+   "role": "performer_and_receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_game": "Royal Rumble + adapted WWF Raw",
+   "runtime_routing": "hook 80:ECC1 -> 70:F000; slot 12 indices < 0BB2 (0BDC with Perfect-Plex) via table 71:0000",
+   "palette_owner": "slot 12",
+   "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
+   "piece_provenance": {
+    "primary_raw": 358,
+    "primary_raw_common": 471,
+    "primary_royal": 169,
+    "secondary_raw": 306,
+    "secondary_raw_common": 296,
+    "secondary_royal": 120
+   },
+   "evidence": [
+    "evidence/mr-perfect-import/README.md",
+    "editor/royal-import-layouts.js"
+   ],
+   "defects": [
+    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Royal has no counterpart for several Raw-only actions (needs authored art)"
+   ]
+  },
+  {
+   "slot": 12,
+   "display_name": "Mr. Perfect",
+   "action": "submissions",
+   "role": "performer_and_receiver",
+   "art_status": "adapted_placeholder",
+   "gameplay_status": "untested",
+   "source_game": "Royal Rumble + adapted WWF Raw",
+   "runtime_routing": "hook 80:ECC1 -> 70:F000; slot 12 indices < 0BB2 (0BDC with Perfect-Plex) via table 71:0000",
+   "palette_owner": "slot 12",
+   "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
+   "piece_provenance": {
+    "primary_raw": 358,
+    "primary_raw_common": 471,
+    "primary_royal": 169,
+    "secondary_raw": 306,
+    "secondary_raw_common": 296,
+    "secondary_royal": 120
+   },
+   "evidence": [
+    "evidence/mr-perfect-import/README.md",
+    "editor/royal-import-layouts.js"
+   ],
+   "defects": [
+    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Royal has no counterpart for several Raw-only actions (needs authored art)"
+   ]
+  }
+ ],
+ "perfect_plex_static_checks": [
+  {
+   "id": "S1",
+   "severity": "pass",
+   "summary": "Object/tile budget: worst pose uses 17/17 objects and 52/64 tiles including the shadow.",
+   "detail": null
+  },
+  {
+   "id": "S2",
+   "severity": "pass",
+   "summary": "Descriptor chunk order: every pose lists 16x16 objects before 8x8 objects, matching the header count of large objects.",
+   "detail": null
+  },
+  {
+   "id": "S3",
+   "severity": "pass",
+   "summary": "Chunk coverage: with the prototype canvas shift (+9 px x) every pose's chunks span its opaque bounding box, so pieces are not clipped at the canvas edges.",
+   "detail": null
+  },
+  {
+   "id": "S4",
+   "severity": "fail",
+   "summary": "Receiver shadow: the prototype profile draws the body at (32,0) but the Raw shadow part 0x8024 at (0,-1). The shadow stays at the actor origin, visibly detached from the body (gap PP-3). The released v0.16 layout translates every part, shadow included.",
+   "detail": {
+    "profile_offsets_in_data": [
+     [
+      32,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "S5",
+   "severity": "info",
+   "summary": "Constant receiver offset: all 144 poses use one profile offset; the released layout needed a per-frame translate (55-61 px). A single constant cannot reproduce Royal's changing pair spacing unless the attacker/receiver actor spacing is itself held constant by the init hook.",
+   "detail": {
+    "profile_offsets": [
+     [
+      32,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "S6",
+   "severity": "info",
+   "summary": "Royal receiving art is heavily shared across Royal workers: selector 0: 142/323 private, selector 1: 68/322 private, selector 2: 214/321 private, selector 3: 58/320 private, selector 4: 184/344 private, selector 5: 27/323 private, selector 6: 9/318 private, selector 7: 177/324 private, selector 8: 26/316 private, selector 9: 250/332 private, selector 10: 10/315 private, selector 11: 15/315 private. Raw insertion must give each Raw slot its own private tile IDs; the prototype de-duplicates by decoded tile bytes, which would alias slots if extended across receivers.",
+   "detail": null
+  },
+  {
+   "id": "S7",
+   "severity": "info",
+   "summary": "Facing: Royal component hflip values [True]; receiver parts keep Royal orientation while the attacker capture is mirrored about x=145 (import_perfect_plex.build). Both must be expressed in the same canonical facing, and the pair spacing sign must follow it (gap PP-1).",
+   "detail": null
+  }
+ ],
+ "summary": {
+  "adapted_placeholder": {
+   "verified_functional": 1,
+   "untested": 23
+  },
+  "customized": {
+   "untested": 71,
+   "verified_visual": 19
+  },
+  "decoded_only": {
+   "untested": 6
+  },
+  "missing": {
+   "untested": 6
+  },
+  "native_port": {
+   "defective": 1
+  },
+  "original": {
+   "verified_visual": 23,
+   "untested": 67
+  },
+  "prototype_private": {
+   "defective": 1
+  }
+ }
+}

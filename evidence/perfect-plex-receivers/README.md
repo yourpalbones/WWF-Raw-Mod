@@ -32,3 +32,12 @@ drawings. Those cases remain open.
 The experimental test currently supports **Undertaker as the receiver only**.
 The released v0.16.1 fixes referee/announcer palettes; it does not contain this
 receiving-animation prototype. ROM files and extracted pixel data are private.
+
+## Frame-by-frame review (audit, no fixes)
+
+The [labeled frame review](frame-review/README.md) compares these GIFs at
+native resolution. It identifies a mirrored scene after the tie-up, receiver
+misregistration behind the attacker, a detached receiver shadow and a missing
+exit transition. Causes and fix order are in
+[docs/perfect-plex-gaps.md](../../docs/perfect-plex-gaps.md). Roster status is in
+[docs/animation-coverage.md](../../docs/animation-coverage.md).
