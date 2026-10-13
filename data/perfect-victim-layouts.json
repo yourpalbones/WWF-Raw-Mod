@@ -1,0 +1,245 @@
+{
+  "method": "Native Raw receiving-suplex parts positioned against Royal Perfect-Plex captures; graphical review required",
+  "rows": [
+    {
+      "frame": 56,
+      "profile": 544012,
+      "native_bbox": [
+        -18,
+        -77,
+        19,
+        -2
+      ],
+      "royal_relative_bbox": [
+        4,
+        -77,
+        29,
+        -1
+      ],
+      "translate": [
+        57,
+        1
+      ]
+    },
+    {
+      "frame": 64,
+      "profile": 544026,
+      "native_bbox": [
+        -15,
+        -69,
+        14,
+        -1
+      ],
+      "royal_relative_bbox": [
+        2,
+        -82,
+        37,
+        -4
+      ],
+      "translate": [
+        61,
+        -3
+      ]
+    },
+    {
+      "frame": 72,
+      "profile": 544040,
+      "native_bbox": [
+        -25,
+        -46,
+        27,
+        -1
+      ],
+      "royal_relative_bbox": [
+        1,
+        -101,
+        30,
+        -5
+      ],
+      "translate": [
+        55,
+        -4
+      ]
+    },
+    {
+      "frame": 80,
+      "profile": 544050,
+      "native_bbox": [
+        -16,
+        -88,
+        15,
+        -1
+      ],
+      "royal_relative_bbox": [
+        -5,
+        -80,
+        31,
+        -4
+      ],
+      "translate": [
+        55,
+        -3
+      ]
+    },
+    {
+      "frame": 88,
+      "profile": 544060,
+      "native_bbox": [
+        -12,
+        -81,
+        12,
+        -2
+      ],
+      "royal_relative_bbox": [
+        -3,
+        -76,
+        30,
+        -5
+      ],
+      "translate": [
+        55,
+        -3
+      ]
+    },
+    {
+      "frame": 96,
+      "profile": 544070,
+      "native_bbox": [
+        -12,
+        -65,
+        11,
+        -1
+      ],
+      "royal_relative_bbox": [
+        -2,
+        -69,
+        23,
+        -3
+      ],
+      "translate": [
+        52,
+        -2
+      ]
+    },
+    {
+      "frame": 104,
+      "profile": 544080,
+      "native_bbox": [
+        -15,
+        -84,
+        15,
+        -1
+      ],
+      "royal_relative_bbox": [
+        -4,
+        -80,
+        24,
+        -8
+      ],
+      "translate": [
+        51,
+        -7
+      ]
+    },
+    {
+      "frame": 112,
+      "profile": 544090,
+      "native_bbox": [
+        -25,
+        -60,
+        24,
+        3
+      ],
+      "royal_relative_bbox": [
+        1,
+        -77,
+        27,
+        -7
+      ],
+      "translate": [
+        55,
+        -10
+      ]
+    },
+    {
+      "frame": 120,
+      "profile": 544100,
+      "native_bbox": [
+        -37,
+        -39,
+        36,
+        -1
+      ],
+      "royal_relative_bbox": [
+        -2,
+        -76,
+        36,
+        -9
+      ],
+      "translate": [
+        59,
+        -8
+      ]
+    },
+    {
+      "frame": 128,
+      "profile": 542588,
+      "native_bbox": [
+        -38,
+        -30,
+        36,
+        -1
+      ],
+      "royal_relative_bbox": [
+        -13,
+        -66,
+        59,
+        -15
+      ],
+      "translate": [
+        65,
+        -14
+      ]
+    },
+    {
+      "frame": 136,
+      "profile": 542654,
+      "native_bbox": [
+        -36,
+        -32,
+        35,
+        -1
+      ],
+      "royal_relative_bbox": [
+        -23,
+        -85,
+        16,
+        -7
+      ],
+      "translate": [
+        38,
+        -6
+      ]
+    },
+    {
+      "frame": 144,
+      "profile": 542678,
+      "native_bbox": [
+        -26,
+        -37,
+        23,
+        -1
+      ],
+      "royal_relative_bbox": [
+        -52,
+        -49,
+        -15,
+        3
+      ],
+      "translate": [
+        9,
+        4
+      ]
+    }
+  ]
+}

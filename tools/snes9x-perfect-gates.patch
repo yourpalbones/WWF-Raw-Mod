@@ -1,0 +1,26 @@
+--- a/cpuexec.cpp
++++ b/cpuexec.cpp
+@@ -123,11 +123,23 @@
+     }
+ }
+ 
++
++static void WWFPerfectGateTrace(unsigned pc,const char*dir){
++    unsigned realpc=pc; if(pc>=0x800000)pc&=0xbfffff;
++    if(pc!=0xacec56&&pc!=0xacec64&&pc!=0xacec72&&pc!=0xacec7c&&pc!=0xacec96&&pc!=0xacecb0&&pc!=0xacecb4&&pc!=0xaced08&&pc!=0x70f300&&pc!=0x80f073)return;
++    unsigned actor=Memory.RAM[0x36]|Memory.RAM[0x37]<<8,opp=Memory.RAM[0x56]|Memory.RAM[0x57]<<8;
++    if(actor>10)return;
++    auto word=[](unsigned a){return Memory.RAM[a&0x1ffff]|Memory.RAM[(a+1)&0x1ffff]<<8;};
++    char path[1024];std::snprintf(path,sizeof(path),"%s/perfect-gates.jsonl",dir);FILE*f=std::fopen(path,"a");
++    if(f){std::fprintf(f,"{\"frame\":%u,\"pc\":%u,\"a\":%u,\"x\":%u,\"actor\":%u,\"opponent\":%u,\"selector\":%u,\"action\":%u,\"b9\":%u,\"mode\":%u,\"bc8\":%u,\"strength\":%u,\"enemy_strength\":%u,\"enemy_health\":%u,\"marker\":%u}\n",WWFFrame,realpc,Registers.A.W,Registers.X.W,actor,opp,word(0x5a),word(0x6b4+actor),word(0xb9),word(0x40),word(0xbc8+actor),word(0xb44+actor),opp<12?word(0xb44+opp):0,opp<12?word(0xa78+opp):0,word(0xbec+actor));std::fclose(f);}
++}
++
+ static void WWFTraceCPU() {
+     const char *dir = std::getenv("WWF_TRACE_DIR");
+     if (!dir) return;
+     unsigned pc = Registers.PBPC & 0xffffff;
+     if(std::getenv("WWF_ROYAL_PROBE")){WWFRoyalTraceCPU(pc,dir);return;}
++    if(std::getenv("WWF_PERFECT_PROBE")){WWFPerfectGateTrace(pc,dir);return;}
+     WWFTraceTile(pc, dir);
+     if(std::getenv("WWF_LIMIT_PROBE")){unsigned off=pc&0x3fffff,op=Memory.ROM[off],imm=Memory.ROM[off+1]|(Memory.ROM[off+2]<<8);if((op==0xc9||op==0xc0||op==0xe0)&&(imm==12||imm==24||imm==11||imm==22)){char path[1024];std::snprintf(path,sizeof(path),"%s/limits.jsonl",dir);FILE*f=std::fopen(path,"a");if(f){std::fprintf(f,"{\"frame\":%u,\"pc\":%u,\"op\":%u,\"imm\":%u,\"a\":%u,\"x\":%u,\"y\":%u}\n",WWFFrame,pc,op,imm,Registers.A.W,Registers.X.W,Registers.Y.W);std::fclose(f);}}}
+ 

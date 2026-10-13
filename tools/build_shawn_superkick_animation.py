@@ -12,17 +12,17 @@ from draw_shawn_superkick import POSES, pose
 from import_shawn_superkick_art import load_pose
 
 
-def pack(image):
+def pack(image, canvas_size=96):
     """Choose small/large objects within the actor's OAM and tile limits."""
     candidates = []
     for gy in range(0, 16, 4):
         for gx in range(0, 16, 4):
             groups = []
-            for y in range(gy - 16, 96, 16):
-                for x in range(gx - 16, 96, 16):
+            for y in range(gy - 16, canvas_size, 16):
+                for x in range(gx - 16, canvas_size, 16):
                     block = [
                         image.getpixel((x + xx, y + yy))
-                        if 0 <= x + xx < 96 and 0 <= y + yy < 96
+                        if 0 <= x + xx < canvas_size and 0 <= y + yy < canvas_size
                         else 0
                         for yy in range(16)
                         for xx in range(16)

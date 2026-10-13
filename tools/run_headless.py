@@ -64,6 +64,7 @@ def main():
         help="frame:button_id[:duration]; START=3, A=8, B=0, directions=4..7",
     )
     ap.add_argument("--load-state", type=Path)
+    ap.add_argument("--images-only", action="store_true", help="Capture PNG frames without memory dumps or save states")
     ap.add_argument("--audio", action="store_true", help="Capture local stereo PCM audio for sound research")
     ap.add_argument(
         "--press-p2",
@@ -232,6 +233,8 @@ def main():
             Image.frombytes("RGB", (width, height), bytes(rgb)).save(
                 str(prefix) + ".png"
             )
+        if args.images_only:
+            return
         for ident, name in [
             (2, "wram"),
             (3, "vram"),

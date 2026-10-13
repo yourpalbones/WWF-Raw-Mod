@@ -1,0 +1,104 @@
+{
+  "native": {
+    "cold_boot": true,
+    "controller_only": true,
+    "emulator_memory_writes": false,
+    "rom_sha256": "deea58c019af8bcb6e15879d44f98ffbf7e1ce92e4dff0c6b832b10c15ebb84c",
+    "frames": 15690,
+    "before": [
+      {
+        "selector": 24,
+        "action": 150,
+        "health": 912,
+        "x": 314,
+        "y": 232
+      },
+      {
+        "selector": 0,
+        "action": 156,
+        "health": 218,
+        "x": 355,
+        "y": 232
+      }
+    ],
+    "active": [
+      {
+        "selector": 24,
+        "action": 600,
+        "health": 912,
+        "x": 314,
+        "y": 232
+      },
+      {
+        "selector": 0,
+        "action": 540,
+        "health": 218,
+        "x": 354,
+        "y": 232
+      }
+    ],
+    "after": [
+      {
+        "selector": 24,
+        "action": 0,
+        "health": 928,
+        "x": 314,
+        "y": 232
+      },
+      {
+        "selector": 0,
+        "action": 70,
+        "health": 58,
+        "x": 340,
+        "y": 232
+      }
+    ],
+    "native_damage": 160,
+    "attacker_recovered": true
+  },
+  "editor": {
+    "slot_count": 13,
+    "piece_count": 1732,
+    "original_twelve_preserved": true,
+    "wrong_donor_rejected": true,
+    "project_roundtrip": true,
+    "edited_rom_reopened": true,
+    "sprite_packet_relocated": true,
+    "portrait_and_monitor_roundtrip": true,
+    "theme_reassigned": true,
+    "page_errors": []
+  },
+  "stock_editor": {
+    "slot_count": 13,
+    "piece_count": 1732,
+    "original_twelve_preserved": true,
+    "wrong_donor_rejected": true,
+    "project_roundtrip": true,
+    "edited_rom_reopened": true,
+    "sprite_packet_relocated": true,
+    "portrait_and_monitor_roundtrip": true,
+    "theme_reassigned": true,
+    "page_errors": []
+  },
+  "source_portrait_native_match": {
+    "bytes": 16000,
+    "pixels": 15360,
+    "wram_and_vram_equal": true,
+    "rgb565_video_equal": true
+  },
+  "automated_tests": {
+    "passed": 28,
+    "skipped": 0
+  },
+  "existing_workflow_regressions": [
+    "all twelve sprite PNG imports and app workflow",
+    "all twelve portraits, bios, projects and checksums"
+  ],
+  "coverage": {
+    "royal_source_pieces": 289,
+    "adapted_raw_pieces": 1431,
+    "perfect_plex_source_poses": 12,
+    "complete_art_port": false,
+    "automatic_pin": false
+  }
+}

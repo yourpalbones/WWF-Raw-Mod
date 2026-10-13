@@ -20,7 +20,7 @@
 +    }
 +    if(pc==0x80d4d6||pc==0x80d50e||pc==0x80d53c||pc==0x81a82e){
 +        char path[1024];std::snprintf(path,sizeof(path),"%s/royal-cpu.jsonl",dir);FILE*f=std::fopen(path,"a");
-+        if(f){std::fprintf(f,"{\"frame\":%u,\"pc\":%u,\"a\":%u,\"x\":%u,\"y\":%u,\"d\":%u,\"db\":%u,\"actor\":%u,\"selector\":%u,\"part_index\":%u,\"origin_x\":%u,\"origin_y\":%u,\"animation_pointer\":%u,\"pose_pointer\":%u}\n",WWFFrame,pc,Registers.A.W,Registers.X.W,Registers.Y.W,Registers.D.W,Registers.DB,Memory.RAM[0x3a]|Memory.RAM[0x3b]<<8,Memory.RAM[0x5e]|Memory.RAM[0x5f]<<8,Memory.RAM[0x78]|Memory.RAM[0x79]<<8,Memory.RAM[0x6c]|Memory.RAM[0x6d]<<8,Memory.RAM[0x6e]|Memory.RAM[0x6f]<<8,WWFPointer(0x80),WWFPointer(0x84));std::fclose(f);}
++        if(f){std::fprintf(f,"{\"frame\":%u,\"pc\":%u,\"a\":%u,\"x\":%u,\"y\":%u,\"d\":%u,\"db\":%u,\"actor\":%u,\"selector\":%u,\"bg1_x\":%u,\"bg1_y\":%u,\"bg2_x\":%u,\"bg2_y\":%u,\"part_index\":%u,\"origin_x\":%u,\"origin_y\":%u,\"animation_pointer\":%u,\"pose_pointer\":%u}\n",WWFFrame,pc,Registers.A.W,Registers.X.W,Registers.Y.W,Registers.D.W,Registers.DB,Memory.RAM[0x3a]|Memory.RAM[0x3b]<<8,Memory.RAM[0x5e]|Memory.RAM[0x5f]<<8,PPU.BG[0].HOffset,PPU.BG[0].VOffset,PPU.BG[1].HOffset,PPU.BG[1].VOffset,Memory.RAM[0x78]|Memory.RAM[0x79]<<8,Memory.RAM[0x6c]|Memory.RAM[0x6d]<<8,Memory.RAM[0x6e]|Memory.RAM[0x6f]<<8,WWFPointer(0x80),WWFPointer(0x84));std::fclose(f);}
 +    }
 +}
 +

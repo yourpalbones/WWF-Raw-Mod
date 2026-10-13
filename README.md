@@ -2,7 +2,15 @@
 
 ## Wrestler editor prototype
 
-[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.15.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
+[**Mr. Perfect in slot 13: actual gameplay and importer proof**](evidence/mr-perfect-import/README.md)
+
+v0.16 adds a Royal Rumble importer for Mr. Perfect, creating an independent
+thirteenth Raw slot in an 8 MiB ROM. It includes his source portrait, editable
+profile and the Perfect-Plex. The original twelve are retained. This is a first
+playable import: many ordinary pieces still use adapted Raw artwork; automatic
+bridge-to-pin behavior and full AI/match coverage remain open.
+
+[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.16.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
 
 Paint all 12 wrestlers’ original sprites, preview captured poses,
 change selection portraits, monitor photos, bios, in-match names and existing

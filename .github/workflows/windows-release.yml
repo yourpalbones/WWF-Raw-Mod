@@ -1,0 +1,28 @@
+name: Portable Windows editor
+on:
+  push:
+    tags: ['wrestleedit-v*']
+permissions:
+  contents: write
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch official Electron runtime and checksums
+        run: |
+          mkdir -p outputs/desktop-runtime
+          curl --fail --location --retry 3 https://github.com/electron/electron/releases/download/v44.7.0/electron-v44.7.0-win32-x64.zip -o outputs/desktop-runtime/electron-v44.7.0-win32-x64.zip
+          curl --fail --location --retry 3 https://github.com/electron/electron/releases/download/v44.7.0/SHASUMS256.txt -o outputs/desktop-runtime/SHASUMS256.txt
+      - name: Build and verify portable package
+        run: |
+          python tools/bundle_editor.py
+          python tools/package_desktop.py
+      - name: Publish Windows download
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" outputs/desktop/WrestleEdit-Windows-x64.zip outputs/desktop/WrestleEdit-Windows-x64.zip.sha256 --title "WrestleEdit $GITHUB_REF_NAME" --notes-file desktop/release-notes.md

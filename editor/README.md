@@ -4,7 +4,7 @@
 
 ## Easy download
 
-[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.15.zip)
+[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.16.zip)
 
 1. Click the download link above.
 2. Right-click the downloaded ZIP → **Extract All**.
@@ -18,6 +18,25 @@ This is the browser editor, not an EXE. Once downloaded, it works offline. Use *
 A Windows EXE preview was built, but GitHub release uploads are blocked by the cloud integration. Its local task-output link also failed in the chat client. The ZIP above is committed to the repository so it has a normal public download URL. [Desktop build details](../desktop/README.md).
 
 To edit a sprite image externally, use **Save pose image**, edit that PNG, and import it back. Keep its dimensions, transparent outline and opaque visible pixels. Colors are matched to the wrestler's current palette. Import changes the selected pose's underlying tiles; it does not generate a full set of animations. Shared tiles can change other poses too, so preview them and test in an emulator.
+
+## Add Mr. Perfect from Royal Rumble
+
+1. Load your current Raw ROM. Apply any reference gear packs before importing.
+2. Under **Add wrestler**, load your unmodified USA SNES **WWF Royal Rumble** ROM.
+3. Click **Add Mr. Perfect** and save the downloaded 8 MiB ROM.
+4. The new thirteenth slot is selected in the editor. Edit it as usual and use the imported ROM as your project base.
+5. Open the ROM in Snes9x. Use **R in a front tie-up with a red-health opponent** for the Perfect-Plex.
+
+[See actual emulator playback and verification](../evidence/mr-perfect-import/README.md).
+This first importer supports Mr. Perfect and one extra slot. It retains the
+original twelve profiles, palettes and existing gear. The new worker has
+private editable tiles, a source portrait, monitor image and bio. Compressed
+sprite edits can grow into his reserved free space.
+
+Art conversion remains partial: 289 pieces use Royal artwork and 1,431 use
+adapted Raw artwork. Automatic bridge-to-pin behavior, full AI/match-mode
+coverage and other Royal imports remain open. Importing a source theme is not
+implemented; use the theme controls to assign or import a song separately.
 
 ## Sting conversion
 
