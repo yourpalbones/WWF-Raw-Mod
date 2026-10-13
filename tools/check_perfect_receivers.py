@@ -3,7 +3,8 @@
 Reads only `data/perfect-receivers.json` and the descriptor/profile layout
 written by `tools/build_perfect_receiver_prototype.py`. It cannot judge pixels
 (the ROM is private); it reports geometry, budget, aliasing and profile facts
-that explain or rule out causes of the visible gaps.
+that rule out some causes and suggest others. Suggested causes are provisional
+until a native trace confirms them.
 
     python3 tools/check_perfect_receivers.py [--json]
 """
@@ -97,8 +98,8 @@ def analyse(data):
     detached = [p for p in shadow[1:] if p['id'] == 0x8024 and (p['dx'], p['dy'] + 1) != (body['dx'], body['dy'])]
     add('S4', 'fail' if detached else 'pass',
         f'Receiver shadow: the prototype profile draws the body at ({body["dx"]},{body["dy"]}) but the Raw '
-        f'shadow part 0x8024 at ({detached[0]["dx"]},{detached[0]["dy"]}). The shadow stays at the actor '
-        'origin, visibly detached from the body (gap PP-3). The released v0.16 layout translates every part, '
+        f'shadow part 0x8024 at ({detached[0]["dx"]},{detached[0]["dy"]}). Probable (provisional) cause of the '
+        'detached shadow seen in gameplay (gap PP-3). The released v0.16 layout translates every part, '
         'shadow included.' if detached else 'Receiver shadow moves with the body.',
         {'profile_offsets_in_data': sorted(offsets)})
     add('S5', 'info',
@@ -110,13 +111,14 @@ def analyse(data):
         'Royal receiving art is heavily shared across Royal workers: '
         + ', '.join(f'selector {s}: {v["private_tiles"]}/{v["source_tiles"]} private'
                     for s, v in sorted(per_worker.items()))
-        + '. Raw insertion must give each Raw slot its own private tile IDs; the prototype de-duplicates '
-        'by decoded tile bytes, which would alias slots if extended across receivers.')
+        + '. Raw insertion must give each Raw slot its own private tile IDs. The older Undertaker-only '
+        'prototype de-duplicates by decoded bytes within one receiver (no cross-slot sharing today); '
+        'Codex\'s unpublished per-wrestler builder has not been reviewed.')
     hflips = {c['hflip'] for r in data['components'] for c in r['components']}
     add('S7', 'info',
         f'Facing: Royal component hflip values {sorted(hflips)}; receiver parts keep Royal orientation while '
         'the attacker capture is mirrored about x=145 (import_perfect_plex.build). Both must be expressed in '
-        'the same canonical facing, and the pair spacing sign must follow it (gap PP-1).')
+        'the same canonical facing, and the pair spacing sign must follow it (provisional cause of PP-1).')
     return {'workers': per_worker, 'findings': findings, 'max_objects': max_objects, 'max_tiles': max_tiles}
 
 

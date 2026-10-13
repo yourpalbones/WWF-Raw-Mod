@@ -1,6 +1,9 @@
 # Perfect-Plex: prioritized gap list
 
-Status as of this branch: **audit and diagnosis only.** These are not fixes.
+Status as of this branch: **audit and provisional diagnosis only.** These are
+not fixes, and no ROM hook has been changed. Every "probable cause" below is a
+hypothesis from code reading. It stays provisional until a native trace
+(OAM/VRAM/WRAM capture from an exported ROM) confirms it.
 No ROM, Snes9x core or Codex's untracked receiver builder was available to
 this session. Each finding is backed either by the committed gameplay GIFs or
 by static analysis of committed code and data. Anything that needs a ROM to
@@ -28,7 +31,10 @@ Regenerate the labeled review sheets with `python3 tools/review_perfect_plex_gif
 So the visible problems are **not** caused by budget overflow, mis-sized
 objects or canvas clipping in the stored recipes.
 
-## Confirmed defects, in fix order
+## Observed defects and provisional causes, in suggested fix order
+
+The *symptoms* are visible in committed gameplay GIFs. The *causes* are not yet
+confirmed by native traces.
 
 ### PP-1: the scene plays mirrored after the tie-up (performer and receiver)
 
@@ -39,7 +45,7 @@ and the Undertaker prototype, Perfect starts on the left in Raw's tie-up. On
 the very next frame he is on the receiver's right, and the whole move, bridge
 included, is a mirror image of Royal.
 
-**Cause (code):** `import_perfect_plex.build` mirrors the attacker capture about
+**Probable cause (provisional, from code):** `import_perfect_plex.build` mirrors the attacker capture about
 Royal x=145 (`px = 145 - x + 56`) to fit Raw's canonical facing. The receiver
 recipe in `map_perfect_receivers.py` keeps Royal orientation (`x - 145`, Royal
 `hflip` retained). Neither is reconciled with the actor positions that the init
@@ -57,10 +63,11 @@ the attacker/receiver x offset. Verify both facings and both rope sides.
 **Evidence:** [`frame-review/lift-registration.png`](../evidence/perfect-plex-receivers/frame-review/lift-registration.png).
 In Royal, the receiver stands clear of Perfect, about 25 native px apart. In
 the prototype, Undertaker's body sits almost entirely behind Perfect on raw
-frames #2–#5; only a hand or shoulder shows. This matches the user's report of
-missing pieces between the wrestlers.
+frames #2–#5; only a hand or shoulder shows. This is consistent with the
+user's report of missing pieces between the wrestlers, but the link is not yet
+traced.
 
-**Cause:** the prototype uses one constant receiver offset, `(+32, 0)` plus the
+**Probable cause (provisional):** the prototype uses one constant receiver offset, `(+32, 0)` plus the
 +9 canvas shift, for all 20 steps (static check S5). It also inherits PP-1's
 mirroring. The released layout needed per-frame translates of 55–61 px. Royal's
 pair spacing changes across the lift, drop and bridge, while the anchors in
@@ -77,7 +84,7 @@ negated under flip. Do not use a constant. **Needs native capture.**
 A grey dithered shadow stays at Undertaker's tie-up position through the
 whole lift and bridge, well to the right of both wrestlers.
 
-**Cause (code, static check S4 fails):**
+**Probable cause (provisional; static check S4 flags the profile bytes):**
 `build_perfect_receiver_prototype.py` writes each receiver profile as body
 `(dx=32, dy=0)` followed by the Raw shadow part `0x8024` at `(0, -1)`. The
 body moves and the shadow does not. The released layout translates every part,
@@ -91,9 +98,10 @@ in a Codex-owned file (see [agent-coordination.md](agent-coordination.md)).
 
 **Evidence:** [`frame-review/exit.png`](../evidence/perfect-plex-receivers/frame-review/exit.png).
 After the bridge (raw #18–#19), raw #21 onward shows Undertaker standing,
-overlapping Perfect, with no get-up. The receiver stream ends after 20 entries
-(`0x735000 + 20*7 = FF`) and returns to the receiver's native standing action
-at its actor position. That position is now under the attacker.
+overlapping Perfect, with no get-up. Probable cause (provisional): the receiver
+stream ends after 20 entries (`0x735000 + 20*7 = FF`) and returns to the
+receiver's native standing action at its actor position, which is now under the
+attacker.
 
 **Fix direction:** end the receiver stream on a native downed/knockdown action
 for that slot, not standing. Reposition the actor to where the body lies
@@ -120,10 +128,17 @@ comparison of the inserted tiles against the Royal source per palette index.**
 
 - **Aliasing (static check S6):** Royal shares most receiving tiles across
   workers. For example, Lex (selector 10) has 10 private tiles out of 315, and
-  Razor (8) has 26 out of 316. The prototype de-duplicates inserted tiles by
-  decoded bytes. Extended to several receivers, that would make two Raw slots
-  point at one private tile, which breaks acceptance check 3. De-duplication
-  must stay **per slot**.
+  Razor (8) has 26 out of 316. Two implementations need to be kept apart:
+  - **Older tracked prototype** (`tools/build_perfect_receiver_prototype.py`,
+    Undertaker only): it de-duplicates inserted tiles by decoded bytes within
+    its single run. With one receiver this creates no cross-slot sharing. The
+    risk applies only if that script were extended to several receivers
+    unchanged.
+  - **Codex's per-wrestler implementation** (`tools/build_perfect_receivers.py`
+    and related files; unpublished, not in this checkout): **not reviewed
+    here.** Nothing in this audit says whether it shares or privatizes tiles.
+    Acceptance check 3 (one wrestler's edit changes only that wrestler) must be
+    run against it once it is pushed.
 - **Direct counterparts** (Raw→Royal `1→3, 2→2, 3→9, 5→8, 6→10, 8→7, 12→1`):
   recipes are decoded only. Bret (1) and Scott Hall (5) carry user-edited gear
   that the Royal drawings lack, so they need re-authored gear on the Royal
@@ -135,9 +150,10 @@ comparison of the inserted tiles against the Royal source per palette index.**
   heads and gear (`evidence/sting-native-heads`, `evidence/syxx-head-revision`,
   `evidence/nwo-art-revision`).
 
-## Suggested order
+## Suggested order (for Codex to review; no hooks changed here)
 
-1. PP-3 (shadow) and PP-1 (canonical facing): small, mechanical, prerequisites for judging anything else.
+0. Confirm or reject each provisional cause with a native trace before editing hooks.
+1. PP-3 (shadow) and PP-1 (canonical facing): likely small, and prerequisites for judging anything else.
 2. PP-2 per-frame registration, proven on Undertaker in both facings and near both ropes.
 3. PP-4 exit transition, then PP-6 palette review.
 4. Extend to the other direct counterparts with per-slot private tiles, then authored art for Raw-only slots.

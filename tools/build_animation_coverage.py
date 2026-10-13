@@ -159,7 +159,7 @@ def perfect_plex_rows(receivers):
                               'docs/perfect-plex-gaps.md'],
                     aliases='private (tile IDs C000+ written per pose, no sharing with stock slots)',
                     defects=['Scene plays mirrored relative to the entry tie-up: attacker crosses to the far side '
-                             'of the receiver on the first lift frame (PP-1)',
+                             'of the receiver on the first lift frame (PP-1; cause provisional)',
                              'No bridge-to-pin; attacker stands straight up after bridge (PP-5)']))
     for slot in range(13):
         royal = RAW_TO_ROYAL.get(slot)
@@ -187,8 +187,8 @@ def perfect_plex_rows(receivers):
         if slot == 2:
             art, gameplay = 'prototype_private', 'defective'
             defects += ['Receiver drawn ~15 native px off the Royal registration; hidden behind the attacker '
-                        'on lift frames (PP-2)',
-                        'Receiver shadow left at actor origin while body is offset +32 px (PP-3)',
+                        'on lift frames (PP-2; cause provisional)',
+                        'Receiver shadow left at its tie-up position while the body moves (PP-3; cause provisional)',
                         'Receiver snaps to standing at the attacker position after the bridge (PP-4)',
                         'Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)']
             evidence = ['tools/build_perfect_receiver_prototype.py',

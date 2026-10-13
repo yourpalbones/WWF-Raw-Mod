@@ -38,6 +38,6 @@ receiving-animation prototype. ROM files and extracted pixel data are private.
 The [labeled frame review](frame-review/README.md) compares these GIFs at
 native resolution. It identifies a mirrored scene after the tie-up, receiver
 misregistration behind the attacker, a detached receiver shadow and a missing
-exit transition. Causes and fix order are in
+exit transition. Provisional causes (not yet trace-confirmed) are in
 [docs/perfect-plex-gaps.md](../../docs/perfect-plex-gaps.md). Roster status is in
 [docs/animation-coverage.md](../../docs/animation-coverage.md).

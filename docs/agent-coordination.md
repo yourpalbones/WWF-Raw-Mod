@@ -27,8 +27,12 @@ commit as any ownership change.
 2. **Fixes for PP-1 and PP-3:** take them, or hand those two files to Claude by
    changing the owner column above. Claude will not edit them while they are
    claimed.
-3. **Keep de-duplication per slot** when the prototype is extended beyond
-   Undertaker (static check S6).
+3. **Confirm per-slot tile privacy** in the per-wrestler builder. The older
+   tracked Undertaker prototype de-duplicates only within one receiver. Claude
+   has not seen the unpublished builder, so its sharing behaviour is unknown.
+4. **Review the provisional causes** in `docs/perfect-plex-gaps.md` against
+   native traces before any hook change. Claude will not modify ROM hooks
+   until Codex assigns the next implementation task.
 
 ## Prerequisites missing in the Claude cloud session
 

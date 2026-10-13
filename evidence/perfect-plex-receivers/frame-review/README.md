@@ -14,7 +14,7 @@ Regenerate with `python3 tools/review_perfect_plex_gifs.py`.
 | [bridge](bridge.png) | Final bridge, mirrored in Raw; the receiver body and colours differ. | PP-1, PP-6 |
 | [exit](exit.png) | The receiver snaps to standing inside the attacker after the bridge. | PP-4 |
 
-Diagnosis and fix order: [docs/perfect-plex-gaps.md](../../../docs/perfect-plex-gaps.md).
+Causes are provisional until confirmed by native traces. Diagnosis and suggested order: [docs/perfect-plex-gaps.md](../../../docs/perfect-plex-gaps.md).
 
 ![Entry](entry-side-swap.png)
 ![Lift](lift-registration.png)
