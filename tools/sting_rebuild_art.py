@@ -25,14 +25,15 @@ def author(frame):
     masks={}
     changes={ref['field']:ref['pixels'].copy() for part in frame['parts']for ref in part['refs']}
     points,mapping=raster(frame)
-    coverage={}
+    coverage={};covering={}
     for part in reversed(frame['parts']):
         size=part['size']
         for y in range(size):
             for x in range(size):
                 sx=size-1-x if part['hflip']else x;sy=size-1-y if part['vflip']else y
                 ref=part['refs'][(sy//8)*(size//8)+sx//8]
-                coverage[part['x']+x,part['y']+y]=(ref,sy%8*8+sx%8)
+                q=(part['x']+x,part['y']+y);cell=(ref,sy%8*8+sx%8)
+                coverage[q]=cell;covering.setdefault(q,[]).append(cell)
     def put(q,v,add=False):
         cell=mapping.get(q) or (coverage.get(q)if add else None)
         if cell:
@@ -71,27 +72,46 @@ def author(frame):
     if entry:
         seed=atlas()['templates'][entry['template']]
         sx,sy,dx,dy=entry['transform'];world=lambda x,y:(sx*x+dx,sy*y+dy)
-        l,t,r,b=seed['box']
-        for y in range(t,b+1):
-            for x in range(l,r+1):
-                q=world(x,y)
-                colors={1,9,10,12}if seed.get('hair_only')else SKIN|{1}
-                if q in points and points[q] in colors:
-                    put(q,1 if points[q]in {1,9,10}else 14)
-        for key,value in [('face',5),('face_shadow',13),('eyes',1),('cheeks',1),('mouth',1),('nose',13)]:
-            for x,y in seed.get(key,[]):
-                q=world(x,y)
-                if points.get(q)in SKIN|{1}:put(q,value)
-        for x,y,value in seed.get('hair',[]):put(world(x,y),value,True)
+        replacement=seed.get('replace_head',False)
+        if not replacement:
+            l,t,r,b=seed['box']
+            for y in range(t,b+1):
+                for x in range(l,r+1):
+                    q=world(x,y)
+                    colors={1,9,10,12}if seed.get('hair_only')else SKIN|{1}
+                    if q in points and points[q] in colors:
+                        put(q,1 if points[q]in {1,9,10}else 14)
+            for key,value in [('face',5),('face_shadow',13),('eyes',1),('cheeks',1),('mouth',1),('nose',13)]:
+                for x,y in seed.get(key,[]):
+                    q=world(x,y)
+                    if points.get(q)in SKIN|{1}:put(q,value)
+            for x,y,value in seed.get('hair',[]):put(world(x,y),value,True)
         # Authored revision heads replace the complete face plane, including
         # native hair/shirt colors inside the reviewed head silhouette. Gating
         # the eye sockets on skin shades dropped features in the previous pass.
-        for x,y,value in seed.get('paint',[]):put(world(x,y),value,True)
+        if replacement:
+            # A transparent authored cell must erase every overlapping OBJ.
+            # Clearing only the originally visible tile would expose another
+            # donor head pixel underneath it. Nonzero paint belongs to the
+            # foremost covering OBJ, even where that OBJ was transparent.
+            for x,y,value in seed.get('paint',[]):
+                if value==0:
+                    for ref,k in covering.get(world(x,y),[]):changes[ref['field']][k]=0
+            for x,y,value in seed.get('paint',[]):
+                if value and (cell:=coverage.get(world(x,y))):
+                    ref,k=cell;changes[ref['field']][k]=value
+        else:
+            for x,y,value in seed.get('paint',[]):put(world(x,y),value,True)
         # A raised hand must keep its foreground pixels. Known occluded head
         # drawings receive a dedicated mask instead of an entire frontal face.
         for x,y in seed.get('occlusion',[]):
             q=world(x,y)
-            if q in mapping:
+            if replacement:
+                # Restore native transparency above a foreground hand too;
+                # restoring only its visible tile could leave new face paint
+                # on a higher OBJ that originally contained no opaque pixel.
+                for ref,k in covering.get(q,[]):changes[ref['field']][k]=ref['pixels'][k]
+            elif q in mapping:
                 ref,k=mapping[q];changes[ref['field']][k]=points[q]
     # These native drawings have a reviewed front torso. Anchor the scorpion
     # to its actual shirt island, independently of head translation/tilt.

@@ -34,5 +34,5 @@ if __name__=='__main__':
                 if l-3<=qx<=r+3 and t-1<=qy<=b+6:
                     im.putpixel((qx-l+3,qy-t+1),tuple((colors[v]>>shift&31)*255//31 for shift in [0,5,10]))
             im=im.resize((im.width*8,im.height*8),Image.Resampling.NEAREST)
-            page.paste(im,(x+8,y+45+row*240));draw.text((x+8,y+25+row*240),'v0.13'if row==0 else'Magazine reference revision',fill='white')
+            page.paste(im,(x+8,y+45+row*240));draw.text((x+8,y+25+row*240),'Previous native head'if row==0 else'Revised native head',fill='white')
     a.output.parent.mkdir(parents=True,exist_ok=True);page.save(a.output)

@@ -18,18 +18,23 @@ def register(rom,wram,seeds):
     tile_masks={}
     for key,seed in seeds.items():
         frame=by_id[seed.get('kind','primary'),seed['piece']];points,mapping=raster(frame);paint={}
-        l,t,r,b=seed['box']
-        for q,v in points.items():
-            colors={1,9,10,12}if seed.get('hair_only')else SKIN|{1}
-            if l<=q[0]<=r and t<=q[1]<=b and v in colors:paint[q]=1 if v in {1,9,10}else 14
-        for field,value in [('face',5),('face_shadow',13),('eyes',1),('cheeks',1),('mouth',1),('nose',13)]:
-            for q in seed.get(field,[]):
-                if tuple(q)in points:paint[tuple(q)]=value
+        if not seed.get('replace_head',False):
+            l,t,r,b=seed['box']
+            for q,v in points.items():
+                colors={1,9,10,12}if seed.get('hair_only')else SKIN|{1}
+                if l<=q[0]<=r and t<=q[1]<=b and v in colors:paint[q]=1 if v in {1,9,10}else 14
+            for field,value in [('face',5),('face_shadow',13),('eyes',1),('cheeks',1),('mouth',1),('nose',13)]:
+                for q in seed.get(field,[]):
+                    if tuple(q)in points:paint[tuple(q)]=value
         for x,y,value in seed.get('paint',[]):
             # A transferred jaw can overlap the donor neckline. Registered
             # heads may author that plane, but garment tiles must never carry
             # face paint into unrelated trousers sharing the same tile hash.
-            if points.get((x,y))in SKIN|{1}:paint[x,y]=value
+            if value==0:
+                # Silhouette erasure belongs only to the complete registered
+                # head. A matching tile can occur in an unrelated body piece.
+                paint.pop((x,y),None)
+            elif points.get((x,y))in SKIN|{1}:paint[x,y]=value
         for q,value in paint.items():
             ref,k=mapping[q];digest=hashlib.sha256(planar(ref['pixels'])).hexdigest()
             mask=tile_masks.setdefault(digest,{})

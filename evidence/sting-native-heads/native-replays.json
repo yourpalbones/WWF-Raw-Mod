@@ -1,0 +1,181 @@
+{
+  "rom_sha256": "520ba54c96155d5e64b57fb5fcaed13193707aa6faeaf39f93c14f47892e7ac0",
+  "method": "Pinned Snes9x; cold boot plus controller inputs only. No state-memory writes.",
+  "cases": [
+    {
+      "case": "walk",
+      "controller_recipe": "walk",
+      "observed_action_words": [
+        0,
+        2,
+        4
+      ],
+      "expected_action_seen": null,
+      "native_frame_interval": 6
+    },
+    {
+      "case": "run-ropes",
+      "controller_recipe": "run-ropes",
+      "observed_action_words": [
+        0,
+        2,
+        4,
+        100
+      ],
+      "expected_action_seen": null,
+      "native_frame_interval": 6
+    },
+    {
+      "case": "punch",
+      "controller_recipe": "punch",
+      "observed_action_words": [
+        0,
+        120
+      ],
+      "expected_action_seen": null,
+      "native_frame_interval": 6
+    },
+    {
+      "case": "kick",
+      "controller_recipe": "kick",
+      "observed_action_words": [
+        0,
+        126
+      ],
+      "expected_action_seen": null,
+      "native_frame_interval": 6
+    },
+    {
+      "case": "scorpion-deathlock",
+      "controller_recipe": "finisher",
+      "observed_action_words": [
+        0,
+        6,
+        8,
+        592
+      ],
+      "expected_action_seen": 592,
+      "native_frame_interval": 6
+    },
+    {
+      "case": "give-atomic-drop",
+      "controller_recipe": "give-atomic",
+      "observed_action_words": [
+        0,
+        150,
+        206
+      ],
+      "expected_action_seen": 206,
+      "native_frame_interval": 18
+    },
+    {
+      "case": "give-back-suplex",
+      "controller_recipe": "give-back-suplex",
+      "observed_action_words": [
+        0,
+        76,
+        150,
+        210
+      ],
+      "expected_action_seen": 210,
+      "native_frame_interval": 18
+    },
+    {
+      "case": "give-samoan-drop",
+      "controller_recipe": "give-fallaway",
+      "observed_action_words": [
+        0,
+        76,
+        150,
+        234
+      ],
+      "expected_action_seen": 234,
+      "native_frame_interval": 18
+    },
+    {
+      "case": "give-faceplant",
+      "controller_recipe": "give-slam",
+      "observed_action_words": [
+        0,
+        150,
+        246
+      ],
+      "expected_action_seen": 246,
+      "native_frame_interval": 18
+    },
+    {
+      "case": "give-vertical-suplex",
+      "controller_recipe": "give-suplex",
+      "observed_action_words": [
+        0,
+        70,
+        72,
+        150,
+        174
+      ],
+      "expected_action_seen": 174,
+      "native_frame_interval": 18
+    },
+    {
+      "case": "take-atomic-drop",
+      "controller_recipe": "take-atomic",
+      "observed_action_words": [
+        0,
+        156,
+        208
+      ],
+      "expected_action_seen": 208,
+      "native_frame_interval": 18
+    },
+    {
+      "case": "take-back-suplex",
+      "controller_recipe": "take-back-suplex",
+      "observed_action_words": [
+        0,
+        70,
+        156,
+        212
+      ],
+      "expected_action_seen": 212,
+      "native_frame_interval": 18
+    },
+    {
+      "case": "take-faceplant",
+      "controller_recipe": "take-faceplant",
+      "observed_action_words": [
+        0,
+        70,
+        156,
+        248,
+        478
+      ],
+      "expected_action_seen": 248,
+      "native_frame_interval": 18
+    },
+    {
+      "case": "take-fallaway-slam",
+      "controller_recipe": "take-fallaway",
+      "observed_action_words": [
+        0,
+        70,
+        156,
+        240
+      ],
+      "expected_action_seen": 240,
+      "native_frame_interval": 18
+    },
+    {
+      "case": "take-vertical-suplex",
+      "controller_recipe": "take-piledriver",
+      "observed_action_words": [
+        0,
+        70,
+        156,
+        176
+      ],
+      "expected_action_seen": 176,
+      "native_frame_interval": 18
+    }
+  ],
+  "complete_live_coverage": false
+}

@@ -4,7 +4,7 @@
 
 ## Easy download
 
-[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.14.zip)
+[**Download WrestleEdit ZIP**](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.15.zip)
 
 1. Click the download link above.
 2. Right-click the downloaded ZIP → **Extract All**.
@@ -36,13 +36,13 @@ was compared with native PPU snapshots. This remains an art pass: individual
 poses still need refinement, the main/monitor portraits remain independent, and
 the Mega Move has not been verified on this edited base.
 
-[View the current head, gear review and complete Deathlock GIF](../evidence/sting-head-revision/README.md).
-All tiles are privately replaced, including shared heads in the lower-body
-directory and the finisher's entry poses. v0.14 replaces the flat face draft with native facial shading and Kid/Syxx
-eye, nose and lip placement for the front head. It also fills the Deathlock shirt
-to the waist and removes stray white pixels on shared leg tiles. This remains
-a visual candidate. Older v0.12/v0.13 Sting mods keep their
-previous preview layouts until you choose to rebuild.
+[View the current face, hair and movement proof](../evidence/sting-native-heads/README.md).
+All tiles are privately replaced, including shared finisher heads. v0.15 authors
+the face with native grayscale relief, separate black Crow sockets, thin cheek
+trails, a lit nose and low black lips. Swept dark hair lowers the forehead.
+Oriented and occluded masks keep facial features on the actual head through
+walking and the Deathlock. The black scorpion outfit and imported themes remain.
+This remains a visual candidate; full live interaction coverage needs review.
 
 ## Scott, Nash and Syxx reference gear
 

@@ -2,7 +2,7 @@
 
 ## Wrestler editor prototype
 
-[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.14.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
+[Download WrestleEdit ZIP](https://github.com/yourpalbones/WWF-Raw-Mod/raw/refs/heads/main/downloads/WrestleEdit-v0.15.zip) · [WrestleEdit instructions](editor/README.md) · [View the app](evidence/app-interface/sprites.png)
 
 Paint all 12 wrestlers’ original sprites, preview captured poses,
 change selection portraits, monitor photos, bios, in-match names and existing
@@ -14,12 +14,14 @@ theme assignments, save projects and export playable ROMs or IPS patches. Full a
 [Ready Sting and Luger themes](evidence/sting-luger-themes/README.md) ·
 [Thirteenth-slot research](evidence/roster-expansion/README.md)
 
-[Current Sting head and gear proof](evidence/sting-head-revision/README.md):
-v0.14 uses native facial shading and Kid/Syxx eye, nose and lip landmarks for
-the front face, with thin paint trails and dark tapered hair. Gear review fixes
-the Deathlock's exposed waist and stray white pixels on shared leg tiles. Load
-your current mod, select Doink / Sting, and click **Sprites → Rebuild Sting sprites**.
-The 101 editor captures match native PPU pixels. This remains a visual candidate.
+[Current Sting face, hair and movement proof](evidence/sting-native-heads/README.md):
+v0.15 redraws the head with native facial relief, separate Crow eye sockets,
+thin cheek trails, a defined nose and low black lips. The lower, swept hairline
+and fuller dark locks follow the reference. Oriented masks preserve the face
+through walking, grapples and the Scorpion Deathlock, including partly hidden
+heads. Load your current mod, select Doink / Sting, and click
+**Sprites → Rebuild Sting sprites**. Older edited ROMs retain their previews
+before upgrading. Full live animation coverage remains unverified.
 
 [Rebuilt Sting and Scorpion Deathlock gameplay proof](evidence/sting-rebuild/README.md):
 v0.13 replaces Doink's graphics using Undertaker's native body and flowing hair

@@ -1,0 +1,876 @@
+{
+  "all_1720_descriptors_fully_private": true,
+  "native_sting_tile_requests": 11735,
+  "stock_graphics_fallbacks": 0,
+  "makeup_in_every_visible_deathlock_head": {
+    "primary:623": 40,
+    "primary:729": 34,
+    "primary:730": 12,
+    "primary:731": 34,
+    "primary:732": 34,
+    "primary:737": 41,
+    "primary:738": 45,
+    "secondary:617": 38,
+    "secondary:618": 38,
+    "secondary:619": 34,
+    "secondary:620": 34,
+    "secondary:621": 34,
+    "secondary:622": 41,
+    "secondary:628": 34
+  },
+  "native_deathlock_head_landmarks": {
+    "primary:623": {
+      "template": "deathlock-entry-stand",
+      "visible_face_gray_pixels": 40,
+      "face_gray_palette_indices": [
+        4,
+        5,
+        13
+      ],
+      "landmarks_checked": 6,
+      "landmarks": {
+        "eyes": [
+          {
+            "point": [
+              0,
+              -36
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              3,
+              -36
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ],
+        "nose": [
+          {
+            "point": [
+              2,
+              -34
+            ],
+            "palette_index": 5,
+            "verified": true
+          }
+        ],
+        "mouth": [
+          {
+            "point": [
+              0,
+              -32
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              1,
+              -32
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              2,
+              -32
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ]
+      }
+    },
+    "primary:729": {
+      "template": "deathlock-entry-bend",
+      "visible_face_gray_pixels": 34,
+      "face_gray_palette_indices": [
+        4,
+        5,
+        13
+      ],
+      "landmarks_checked": 5,
+      "landmarks": {
+        "eyes": [
+          {
+            "point": [
+              11,
+              -58
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ],
+        "eye_pupils": [
+          {
+            "point": [
+              11,
+              -57
+            ],
+            "palette_index": 4,
+            "verified": true
+          }
+        ],
+        "nose": [
+          {
+            "point": [
+              13,
+              -56
+            ],
+            "palette_index": 5,
+            "verified": true
+          }
+        ],
+        "mouth": [
+          {
+            "point": [
+              9,
+              -54
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              10,
+              -54
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ]
+      }
+    },
+    "primary:730": {
+      "template": "deathlock-entry-crouch",
+      "visible_face_gray_pixels": 12,
+      "face_gray_palette_indices": [
+        4,
+        5,
+        13
+      ],
+      "landmarks_checked": 5,
+      "landmarks": {
+        "eyes": [
+          {
+            "point": [
+              15,
+              -37
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              16,
+              -37
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ],
+        "nose": [
+          {
+            "point": [
+              17,
+              -35
+            ],
+            "palette_index": 5,
+            "verified": true
+          }
+        ],
+        "mouth": [
+          {
+            "point": [
+              15,
+              -34
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              16,
+              -34
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ]
+      }
+    },
+    "primary:731": {
+      "template": "deathlock-reach",
+      "visible_face_gray_pixels": 34,
+      "face_gray_palette_indices": [
+        4,
+        5,
+        13
+      ],
+      "landmarks_checked": 5,
+      "landmarks": {
+        "eyes": [
+          {
+            "point": [
+              14,
+              -52
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ],
+        "eye_pupils": [
+          {
+            "point": [
+              14,
+              -51
+            ],
+            "palette_index": 4,
+            "verified": true
+          }
+        ],
+        "nose": [
+          {
+            "point": [
+              16,
+              -50
+            ],
+            "palette_index": 5,
+            "verified": true
+          }
+        ],
+        "mouth": [
+          {
+            "point": [
+              12,
+              -48
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              13,
+              -48
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ]
+      }
+    },
+    "primary:732": {
+      "template": "deathlock-bend",
+      "visible_face_gray_pixels": 34,
+      "face_gray_palette_indices": [
+        4,
+        5,
+        13
+      ],
+      "landmarks_checked": 5,
+      "landmarks": {
+        "eyes": [
+          {
+            "point": [
+              11,
+              -63
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ],
+        "eye_pupils": [
+          {
+            "point": [
+              11,
+              -62
+            ],
+            "palette_index": 4,
+            "verified": true
+          }
+        ],
+        "nose": [
+          {
+            "point": [
+              13,
+              -61
+            ],
+            "palette_index": 5,
+            "verified": true
+          }
+        ],
+        "mouth": [
+          {
+            "point": [
+              9,
+              -59
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              10,
+              -59
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ]
+      }
+    },
+    "primary:737": {
+      "template": "deathlock-turn",
+      "visible_face_gray_pixels": 41,
+      "face_gray_palette_indices": [
+        4,
+        5,
+        13
+      ],
+      "landmarks_checked": 6,
+      "landmarks": {
+        "eyes": [
+          {
+            "point": [
+              -14,
+              -45
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              -11,
+              -45
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ],
+        "nose": [
+          {
+            "point": [
+              -12,
+              -43
+            ],
+            "palette_index": 13,
+            "verified": true
+          }
+        ],
+        "mouth": [
+          {
+            "point": [
+              -14,
+              -42
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              -13,
+              -42
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              -12,
+              -42
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ]
+      }
+    },
+    "primary:738": {
+      "template": "deathlock-hold",
+      "visible_face_gray_pixels": 45,
+      "face_gray_palette_indices": [
+        4,
+        5,
+        13
+      ],
+      "landmarks_checked": 5,
+      "landmarks": {
+        "eyes": [
+          {
+            "point": [
+              -5,
+              -29
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              -4,
+              -29
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ],
+        "nose": [
+          {
+            "point": [
+              -7,
+              -27
+            ],
+            "palette_index": 5,
+            "verified": true
+          }
+        ],
+        "mouth": [
+          {
+            "point": [
+              -6,
+              -25
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              -5,
+              -25
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ]
+      }
+    },
+    "secondary:617": {
+      "template": "submission-grab",
+      "visible_face_gray_pixels": 38,
+      "face_gray_palette_indices": [
+        4,
+        5,
+        13
+      ],
+      "landmarks_checked": 5,
+      "landmarks": {
+        "eyes": [
+          {
+            "point": [
+              6,
+              -74
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              7,
+              -74
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ],
+        "nose": [
+          {
+            "point": [
+              9,
+              -72
+            ],
+            "palette_index": 5,
+            "verified": true
+          }
+        ],
+        "mouth": [
+          {
+            "point": [
+              7,
+              -70
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              8,
+              -70
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ]
+      }
+    },
+    "secondary:618": {
+      "template": "submission-grab",
+      "visible_face_gray_pixels": 38,
+      "face_gray_palette_indices": [
+        4,
+        5,
+        13
+      ],
+      "landmarks_checked": 5,
+      "landmarks": {
+        "eyes": [
+          {
+            "point": [
+              6,
+              -74
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              7,
+              -74
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ],
+        "nose": [
+          {
+            "point": [
+              9,
+              -72
+            ],
+            "palette_index": 5,
+            "verified": true
+          }
+        ],
+        "mouth": [
+          {
+            "point": [
+              7,
+              -70
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              8,
+              -70
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ]
+      }
+    },
+    "secondary:619": {
+      "template": "submission-cross-legs",
+      "visible_face_gray_pixels": 34,
+      "face_gray_palette_indices": [
+        4,
+        5,
+        13
+      ],
+      "landmarks_checked": 5,
+      "landmarks": {
+        "eyes": [
+          {
+            "point": [
+              7,
+              -57
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ],
+        "eye_pupils": [
+          {
+            "point": [
+              7,
+              -56
+            ],
+            "palette_index": 4,
+            "verified": true
+          }
+        ],
+        "nose": [
+          {
+            "point": [
+              9,
+              -55
+            ],
+            "palette_index": 5,
+            "verified": true
+          }
+        ],
+        "mouth": [
+          {
+            "point": [
+              5,
+              -53
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              6,
+              -53
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ]
+      }
+    },
+    "secondary:620": {
+      "template": "submission-lower",
+      "visible_face_gray_pixels": 34,
+      "face_gray_palette_indices": [
+        4,
+        5,
+        13
+      ],
+      "landmarks_checked": 5,
+      "landmarks": {
+        "eyes": [
+          {
+            "point": [
+              12,
+              -55
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ],
+        "eye_pupils": [
+          {
+            "point": [
+              12,
+              -54
+            ],
+            "palette_index": 4,
+            "verified": true
+          }
+        ],
+        "nose": [
+          {
+            "point": [
+              14,
+              -53
+            ],
+            "palette_index": 5,
+            "verified": true
+          }
+        ],
+        "mouth": [
+          {
+            "point": [
+              10,
+              -51
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              11,
+              -51
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ]
+      }
+    },
+    "secondary:621": {
+      "template": "submission-sit",
+      "visible_face_gray_pixels": 34,
+      "face_gray_palette_indices": [
+        4,
+        5,
+        13
+      ],
+      "landmarks_checked": 5,
+      "landmarks": {
+        "eyes": [
+          {
+            "point": [
+              12,
+              -47
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ],
+        "eye_pupils": [
+          {
+            "point": [
+              12,
+              -46
+            ],
+            "palette_index": 4,
+            "verified": true
+          }
+        ],
+        "nose": [
+          {
+            "point": [
+              14,
+              -45
+            ],
+            "palette_index": 5,
+            "verified": true
+          }
+        ],
+        "mouth": [
+          {
+            "point": [
+              10,
+              -43
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              11,
+              -43
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ]
+      }
+    },
+    "secondary:622": {
+      "template": "submission-turn-full",
+      "visible_face_gray_pixels": 41,
+      "face_gray_palette_indices": [
+        4,
+        5,
+        13
+      ],
+      "landmarks_checked": 6,
+      "landmarks": {
+        "eyes": [
+          {
+            "point": [
+              6,
+              -59
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              3,
+              -59
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ],
+        "nose": [
+          {
+            "point": [
+              4,
+              -57
+            ],
+            "palette_index": 13,
+            "verified": true
+          }
+        ],
+        "mouth": [
+          {
+            "point": [
+              6,
+              -56
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              5,
+              -56
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              4,
+              -56
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ]
+      }
+    },
+    "secondary:628": {
+      "template": "submission-sit-late",
+      "visible_face_gray_pixels": 34,
+      "face_gray_palette_indices": [
+        4,
+        5,
+        13
+      ],
+      "landmarks_checked": 5,
+      "landmarks": {
+        "eyes": [
+          {
+            "point": [
+              12,
+              -47
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ],
+        "eye_pupils": [
+          {
+            "point": [
+              12,
+              -46
+            ],
+            "palette_index": 4,
+            "verified": true
+          }
+        ],
+        "nose": [
+          {
+            "point": [
+              14,
+              -45
+            ],
+            "palette_index": 5,
+            "verified": true
+          }
+        ],
+        "mouth": [
+          {
+            "point": [
+              10,
+              -43
+            ],
+            "palette_index": 1,
+            "verified": true
+          },
+          {
+            "point": [
+              11,
+              -43
+            ],
+            "palette_index": 1,
+            "verified": true
+          }
+        ]
+      }
+    }
+  },
+  "makeup_count_scope": "Dedicated face gray pixels inside reviewed head masks; excludes chest scorpion colors. Partial native faces are allowed.",
+  "visual_likeness_verified": false,
+  "complete_live_animation_coverage": false
+}

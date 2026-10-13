@@ -1,0 +1,26 @@
+test_all_command_classes (test_decoder.OriginalCodeTests.test_all_command_classes) ... ok
+test_mode1_real_blocks (test_decoder.OriginalCodeTests.test_mode1_real_blocks) ... ok
+test_random_literals_and_runs_even_and_odd_lengths (test_decoder.OriginalCodeTests.test_random_literals_and_runs_even_and_odd_lengths) ... ok
+test_real_graphics_blocks (test_decoder.OriginalCodeTests.test_real_graphics_blocks) ... ok
+test_literal_and_descending_run (test_decoder.SafetyTests.test_literal_and_descending_run) ... ok
+test_mode1_overlapping_reference (test_decoder.SafetyTests.test_mode1_overlapping_reference) ... ok
+test_mode1_single_byte_reference (test_decoder.SafetyTests.test_mode1_single_byte_reference) ... ok
+test_overlapping_backreference (test_decoder.SafetyTests.test_overlapping_backreference) ... ok
+test_rejects_incomplete_output (test_decoder.SafetyTests.test_rejects_incomplete_output) ... ok
+test_rejects_truncated_literal (test_decoder.SafetyTests.test_rejects_truncated_literal) ... ok
+test_rejects_uninitialized_backreference (test_decoder.SafetyTests.test_rejects_uninitialized_backreference) ... ok
+test_rejects_unsupported_mode (test_decoder.SafetyTests.test_rejects_unsupported_mode) ... ok
+test_matches_live_game_memory_and_original_encoding (test_sprite_tools.LiveTileTests.test_matches_live_game_memory_and_original_encoding) ... ok
+test_flips_apply_to_entire_object (test_sprite_tools.OAMTests.test_flips_apply_to_entire_object) ... ok
+test_multitile_object_placement_and_palette (test_sprite_tools.OAMTests.test_multitile_object_placement_and_palette) ... ok
+test_object_name_bit_selects_second_tile_page (test_sprite_tools.OAMTests.test_object_name_bit_selects_second_tile_page) ... ok
+test_rejects_bad_snapshot_sizes (test_sprite_tools.OAMTests.test_rejects_bad_snapshot_sizes) ... ok
+test_blank_and_full_tiles (test_sprite_tools.SpriteCodecTests.test_blank_and_full_tiles) ... ok
+test_mask_order_and_output_byte_order (test_sprite_tools.SpriteCodecTests.test_mask_order_and_output_byte_order) ... ok
+test_rejects_invalid_input (test_sprite_tools.SpriteCodecTests.test_rejects_invalid_input) ... ok
+test_roundtrip_sparse_tiles (test_sprite_tools.SpriteCodecTests.test_roundtrip_sparse_tiles) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.826s
+
+OK

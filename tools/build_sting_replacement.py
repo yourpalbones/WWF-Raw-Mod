@@ -56,11 +56,11 @@ def build(base,wram):
     for table in [0x2dd36f,0x2dd387,0x2dd39f,0x2dd3b7,0x2dd3cf,0x2dd3e7]:
         data=base[table+2:table+4];out[table+14:table+16]=data;extra.append({'offset':table+14,'code':list(data)})
     checksum(out)
-    recipe={**c,'version':3,'selector':'7','donor_selector':2,'replacement':True,
+    recipe={**c,'version':4,'selector':'7','donor_selector':2,'replacement':True,
             'materialize_all_tiles':True,'allow_outline_changes':True,'namespace_by_kind':True,
             'private_compressed':False,'source_fingerprint':fingerprint.hexdigest(),
             'palette_offset':offset,'palette':palette,'frames':rows,'programs':programs(),'extra_records':extra,
-            'legacy_signatures':[{'offset':0x6ff000,'signature':'STING-NATIVE-GEAR2'},{'offset':0x6cf000,'signature':'STING-NATIVE-GEAR1'}]}
+            'legacy_signatures':[{'offset':0x6ff000,'signature':'STING-NATIVE-GEAR3'},{'offset':0x6ff000,'signature':'STING-NATIVE-GEAR2'},{'offset':0x6cf000,'signature':'STING-NATIVE-GEAR1'}]}
     report={'selector':7,'donor_selector':2,'known_entries':len(frames),
             'private_tiles_by_kind':{k:len(v)for k,v in tile_maps.items()},'private_tiles':sum(map(len,tile_maps.values())),
             'every_tile_materialized':True,'tile_sources':metadata,'source_fingerprint':fingerprint.hexdigest(),

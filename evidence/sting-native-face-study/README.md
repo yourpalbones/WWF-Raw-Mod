@@ -11,3 +11,5 @@ Actual Snes9x gameplay screenshot, enlarged without smoothing:
 ![Candidate running in-game](candidate-in-game.png)
 
 The approved black scorpion outfit remains. The private test ROM also retains the newly imported Sting and Luger themes. No ROM is distributed here.
+
+The face direction was approved. [The revised hair and final movement proof are here](../sting-native-heads/README.md).

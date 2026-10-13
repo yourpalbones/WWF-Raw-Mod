@@ -1,0 +1,115 @@
+{
+  "before_sha256": "9869d435f30c81acaba8edc3d6cdc34d384cd1ef06962e3eeb075d8435f33c73",
+  "after_sha256": "520ba54c96155d5e64b57fb5fcaed13193707aa6faeaf39f93c14f47892e7ac0",
+  "all_1720_descriptors_private_with_native_obj_topology": true,
+  "all_426_wrestler_specific_lower_drawings_byte_exact": true,
+  "protected_tile_cells_checked": 1749122,
+  "protected_cell_categories": {
+    "other": 840600,
+    "black_gear": 634345,
+    "warm_skin": 272984,
+    "scorpion_grays": 1193
+  },
+  "changed_tile_cells_inside_reviewed_head_masks": 17965,
+  "head_mask_union_may_include_shoulder_hair_overlap": true,
+  "palette_indices_changed": [
+    4,
+    5,
+    13
+  ],
+  "body_skin_glove_and_scorpion_palette_unchanged": true,
+  "native_frontal_landmarks": {
+    "eyes": [
+      [
+        -2,
+        -36
+      ],
+      [
+        1,
+        -36
+      ]
+    ],
+    "nose": [
+      [
+        0,
+        -34
+      ]
+    ],
+    "mouth": [
+      [
+        -2,
+        -32
+      ],
+      [
+        -1,
+        -32
+      ],
+      [
+        0,
+        -32
+      ]
+    ],
+    "gray_planes_in_face_crop": [
+      [
+        106,
+        106,
+        106
+      ],
+      [
+        131,
+        139,
+        148
+      ],
+      [
+        172,
+        172,
+        172
+      ],
+      [
+        213,
+        213,
+        213
+      ]
+    ],
+    "separate_eye_sockets_and_lower_nose_lips": true,
+    "visual_likeness_verified": false
+  },
+  "deathlock_private_heads_grayscale_pixels": {
+    "623": 40,
+    "729": 34,
+    "730": 12,
+    "731": 34,
+    "732": 34,
+    "737": 41,
+    "738": 45,
+    "secondary:617": 38,
+    "secondary:618": 38,
+    "secondary:619": 34,
+    "secondary:620": 34,
+    "secondary:621": 34,
+    "secondary:622": 41,
+    "secondary:628": 34
+  },
+  "replacement_mechanics": {
+    "all_overlapping_objs_erased": true,
+    "flipped_foremost_obj_painted": true,
+    "foreground_pixels_and_transparency_restored": true,
+    "erasure_not_transferred_by_tile_hash": true
+  },
+  "audio_preservation": {
+    "custom_midi_allocation_sha256": "ba0f651dab5e6848ddc0103c5f271bc045f31411afb8fe2c4f4bc388df336768",
+    "custom_midi_allocations_unchanged": true,
+    "theme_bank_directory_and_assignments_unchanged": true,
+    "stock_sample_instrument_driver_uploads_checked": 94,
+    "stock_audio_upload_bytes_unchanged": true
+  },
+  "rom_byte_scope": {
+    "changed_bytes": 350758,
+    "outside_reserved_sting_regions_unchanged": true,
+    "dispatchers_workers_and_hooks_unchanged": true,
+    "six_deathlock_assignments_preserved": true
+  },
+  "visual_likeness_verified": false,
+  "complete_live_animation_coverage_verified": false,
+  "limitations": "Checks emitted ROM pixels and declared head scope. Visual likeness and movement need separate native captures and user review."
+}

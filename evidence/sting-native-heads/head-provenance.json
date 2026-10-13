@@ -1,0 +1,7 @@
+{
+  "approved_face_rom_sha256": "f54cdd6d1151269dd461380df996cd7067cd134468eb497206f89cb51098e219",
+  "current_rom_sha256": "520ba54c96155d5e64b57fb5fcaed13193707aa6faeaf39f93c14f47892e7ac0",
+  "approved_face_pixels_below_hairline_unchanged": true,
+  "method": "Native4bpp tiles decoded through actual private descriptors; nearest-neighbor enlargement",
+  "user_feedback": "Face direction approved; lower forehead and different long dark hair requested"
+}
