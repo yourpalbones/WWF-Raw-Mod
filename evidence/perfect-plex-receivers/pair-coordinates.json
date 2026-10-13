@@ -1,0 +1,1568 @@
+{
+ "generated_by": "tools/derive_perfect_pair_coordinates.py",
+ "status": "PREDICTION from code and recorded actor positions; renderer assumptions unconfirmed by native trace",
+ "observed_actor_positions": {
+  "attacker_x": 314,
+  "receiver_x": 354,
+  "attacker_y": 232,
+  "receiver_y": 232,
+  "spacing": 40,
+  "rom_sha256": "deea58c019af8bcb6e15879d44f98ffbf7e1ce92e4dff0c6b832b10c15ebb84c",
+  "receiver_selector_word": 0
+ },
+ "observed_source": "evidence/mr-perfect-import/verification.json native.active (v0.16 release build, Luna receiving, one facing only). The init hook shifts both actors by the same clamp delta, so it preserves the tie-up spacing; spacing for other receivers, facings and rope positions is not recorded.",
+ "cases": [
+  {
+   "assumptions": {
+    "attacker_flipped_when_receiver_on_right": false,
+    "reflection": "edge",
+    "profile_offset_mirrored": true
+   },
+   "scene_vs_royal": "mirrored",
+   "rigid": true,
+   "required_receiver_minus_attacker_x": 42,
+   "observed_receiver_minus_attacker_x": 40,
+   "predicted_horizontal_error_px": -2,
+   "frames": [
+    {
+     "source_frame": 56,
+     "receiver_body_x_from_attacker_origin": [
+      -31,
+      -6
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -29,
+      -4
+     ],
+     "horizontal_error_px": -2,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 46,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 64,
+     "receiver_body_x_from_attacker_origin": [
+      -39,
+      -4
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -37,
+      -2
+     ],
+     "horizontal_error_px": -2,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 44,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 72,
+     "receiver_body_x_from_attacker_origin": [
+      -32,
+      -3
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -30,
+      -1
+     ],
+     "horizontal_error_px": -2,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 43,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 80,
+     "receiver_body_x_from_attacker_origin": [
+      -33,
+      3
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -31,
+      5
+     ],
+     "horizontal_error_px": -2,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 37,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 88,
+     "receiver_body_x_from_attacker_origin": [
+      -32,
+      1
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -30,
+      3
+     ],
+     "horizontal_error_px": -2,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 39,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 96,
+     "receiver_body_x_from_attacker_origin": [
+      -25,
+      0
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -23,
+      2
+     ],
+     "horizontal_error_px": -2,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 40,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 104,
+     "receiver_body_x_from_attacker_origin": [
+      -26,
+      2
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -24,
+      4
+     ],
+     "horizontal_error_px": -2,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 38,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 112,
+     "receiver_body_x_from_attacker_origin": [
+      -29,
+      -3
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -27,
+      -1
+     ],
+     "horizontal_error_px": -2,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 43,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 120,
+     "receiver_body_x_from_attacker_origin": [
+      -38,
+      0
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -36,
+      2
+     ],
+     "horizontal_error_px": -2,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 40,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 128,
+     "receiver_body_x_from_attacker_origin": [
+      -61,
+      11
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -59,
+      13
+     ],
+     "horizontal_error_px": -2,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 29,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 136,
+     "receiver_body_x_from_attacker_origin": [
+      -18,
+      21
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -16,
+      23
+     ],
+     "horizontal_error_px": -2,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 19,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 144,
+     "receiver_body_x_from_attacker_origin": [
+      13,
+      50
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      15,
+      52
+     ],
+     "horizontal_error_px": -2,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    }
+   ]
+  },
+  {
+   "assumptions": {
+    "attacker_flipped_when_receiver_on_right": false,
+    "reflection": "edge",
+    "profile_offset_mirrored": false
+   },
+   "scene_vs_royal": "mirrored",
+   "rigid": true,
+   "required_receiver_minus_attacker_x": -22,
+   "observed_receiver_minus_attacker_x": 40,
+   "predicted_horizontal_error_px": 62,
+   "frames": [
+    {
+     "source_frame": 56,
+     "receiver_body_x_from_attacker_origin": [
+      33,
+      58
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -29,
+      -4
+     ],
+     "horizontal_error_px": 62,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 64,
+     "receiver_body_x_from_attacker_origin": [
+      25,
+      60
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -37,
+      -2
+     ],
+     "horizontal_error_px": 62,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 72,
+     "receiver_body_x_from_attacker_origin": [
+      32,
+      61
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -30,
+      -1
+     ],
+     "horizontal_error_px": 62,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 80,
+     "receiver_body_x_from_attacker_origin": [
+      31,
+      67
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -31,
+      5
+     ],
+     "horizontal_error_px": 62,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 88,
+     "receiver_body_x_from_attacker_origin": [
+      32,
+      65
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -30,
+      3
+     ],
+     "horizontal_error_px": 62,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 96,
+     "receiver_body_x_from_attacker_origin": [
+      39,
+      64
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -23,
+      2
+     ],
+     "horizontal_error_px": 62,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 104,
+     "receiver_body_x_from_attacker_origin": [
+      38,
+      66
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -24,
+      4
+     ],
+     "horizontal_error_px": 62,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 112,
+     "receiver_body_x_from_attacker_origin": [
+      35,
+      61
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -27,
+      -1
+     ],
+     "horizontal_error_px": 62,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 120,
+     "receiver_body_x_from_attacker_origin": [
+      26,
+      64
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -36,
+      2
+     ],
+     "horizontal_error_px": 62,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 128,
+     "receiver_body_x_from_attacker_origin": [
+      3,
+      75
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -59,
+      13
+     ],
+     "horizontal_error_px": 62,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 136,
+     "receiver_body_x_from_attacker_origin": [
+      46,
+      85
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -16,
+      23
+     ],
+     "horizontal_error_px": 62,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 6,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 144,
+     "receiver_body_x_from_attacker_origin": [
+      77,
+      114
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      15,
+      52
+     ],
+     "horizontal_error_px": 62,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 37,
+     "vertical_error_px": 0
+    }
+   ]
+  },
+  {
+   "assumptions": {
+    "attacker_flipped_when_receiver_on_right": false,
+    "reflection": "centre",
+    "profile_offset_mirrored": true
+   },
+   "scene_vs_royal": "mirrored",
+   "rigid": true,
+   "required_receiver_minus_attacker_x": 41,
+   "observed_receiver_minus_attacker_x": 40,
+   "predicted_horizontal_error_px": -1,
+   "frames": [
+    {
+     "source_frame": 56,
+     "receiver_body_x_from_attacker_origin": [
+      -30,
+      -5
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -29,
+      -4
+     ],
+     "horizontal_error_px": -1,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 45,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 64,
+     "receiver_body_x_from_attacker_origin": [
+      -38,
+      -3
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -37,
+      -2
+     ],
+     "horizontal_error_px": -1,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 43,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 72,
+     "receiver_body_x_from_attacker_origin": [
+      -31,
+      -2
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -30,
+      -1
+     ],
+     "horizontal_error_px": -1,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 42,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 80,
+     "receiver_body_x_from_attacker_origin": [
+      -32,
+      4
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -31,
+      5
+     ],
+     "horizontal_error_px": -1,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 36,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 88,
+     "receiver_body_x_from_attacker_origin": [
+      -31,
+      2
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -30,
+      3
+     ],
+     "horizontal_error_px": -1,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 38,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 96,
+     "receiver_body_x_from_attacker_origin": [
+      -24,
+      1
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -23,
+      2
+     ],
+     "horizontal_error_px": -1,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 39,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 104,
+     "receiver_body_x_from_attacker_origin": [
+      -25,
+      3
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -24,
+      4
+     ],
+     "horizontal_error_px": -1,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 37,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 112,
+     "receiver_body_x_from_attacker_origin": [
+      -28,
+      -2
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -27,
+      -1
+     ],
+     "horizontal_error_px": -1,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 42,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 120,
+     "receiver_body_x_from_attacker_origin": [
+      -37,
+      1
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -36,
+      2
+     ],
+     "horizontal_error_px": -1,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 39,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 128,
+     "receiver_body_x_from_attacker_origin": [
+      -60,
+      12
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -59,
+      13
+     ],
+     "horizontal_error_px": -1,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 28,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 136,
+     "receiver_body_x_from_attacker_origin": [
+      -17,
+      22
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -16,
+      23
+     ],
+     "horizontal_error_px": -1,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 18,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 144,
+     "receiver_body_x_from_attacker_origin": [
+      14,
+      51
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      15,
+      52
+     ],
+     "horizontal_error_px": -1,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    }
+   ]
+  },
+  {
+   "assumptions": {
+    "attacker_flipped_when_receiver_on_right": false,
+    "reflection": "centre",
+    "profile_offset_mirrored": false
+   },
+   "scene_vs_royal": "mirrored",
+   "rigid": true,
+   "required_receiver_minus_attacker_x": -23,
+   "observed_receiver_minus_attacker_x": 40,
+   "predicted_horizontal_error_px": 63,
+   "frames": [
+    {
+     "source_frame": 56,
+     "receiver_body_x_from_attacker_origin": [
+      34,
+      59
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -29,
+      -4
+     ],
+     "horizontal_error_px": 63,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 64,
+     "receiver_body_x_from_attacker_origin": [
+      26,
+      61
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -37,
+      -2
+     ],
+     "horizontal_error_px": 63,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 72,
+     "receiver_body_x_from_attacker_origin": [
+      33,
+      62
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -30,
+      -1
+     ],
+     "horizontal_error_px": 63,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 80,
+     "receiver_body_x_from_attacker_origin": [
+      32,
+      68
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -31,
+      5
+     ],
+     "horizontal_error_px": 63,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 88,
+     "receiver_body_x_from_attacker_origin": [
+      33,
+      66
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -30,
+      3
+     ],
+     "horizontal_error_px": 63,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 96,
+     "receiver_body_x_from_attacker_origin": [
+      40,
+      65
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -23,
+      2
+     ],
+     "horizontal_error_px": 63,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 104,
+     "receiver_body_x_from_attacker_origin": [
+      39,
+      67
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -24,
+      4
+     ],
+     "horizontal_error_px": 63,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 112,
+     "receiver_body_x_from_attacker_origin": [
+      36,
+      62
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -27,
+      -1
+     ],
+     "horizontal_error_px": 63,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 120,
+     "receiver_body_x_from_attacker_origin": [
+      27,
+      65
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -36,
+      2
+     ],
+     "horizontal_error_px": 63,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 128,
+     "receiver_body_x_from_attacker_origin": [
+      4,
+      76
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -59,
+      13
+     ],
+     "horizontal_error_px": 63,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 136,
+     "receiver_body_x_from_attacker_origin": [
+      47,
+      86
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -16,
+      23
+     ],
+     "horizontal_error_px": 63,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 7,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 144,
+     "receiver_body_x_from_attacker_origin": [
+      78,
+      115
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      15,
+      52
+     ],
+     "horizontal_error_px": 63,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 38,
+     "vertical_error_px": 0
+    }
+   ]
+  },
+  {
+   "assumptions": {
+    "attacker_flipped_when_receiver_on_right": true,
+    "reflection": "edge",
+    "profile_offset_mirrored": true
+   },
+   "scene_vs_royal": "same orientation",
+   "rigid": true,
+   "required_receiver_minus_attacker_x": -42,
+   "observed_receiver_minus_attacker_x": 40,
+   "predicted_horizontal_error_px": 82,
+   "frames": [
+    {
+     "source_frame": 56,
+     "receiver_body_x_from_attacker_origin": [
+      85,
+      110
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      3,
+      28
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 45,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 64,
+     "receiver_body_x_from_attacker_origin": [
+      83,
+      118
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      1,
+      36
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 43,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 72,
+     "receiver_body_x_from_attacker_origin": [
+      82,
+      111
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      0,
+      29
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 42,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 80,
+     "receiver_body_x_from_attacker_origin": [
+      76,
+      112
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -6,
+      30
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 36,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 88,
+     "receiver_body_x_from_attacker_origin": [
+      78,
+      111
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -4,
+      29
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 38,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 96,
+     "receiver_body_x_from_attacker_origin": [
+      79,
+      104
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -3,
+      22
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 39,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 104,
+     "receiver_body_x_from_attacker_origin": [
+      77,
+      105
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -5,
+      23
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 37,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 112,
+     "receiver_body_x_from_attacker_origin": [
+      82,
+      108
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      0,
+      26
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 42,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 120,
+     "receiver_body_x_from_attacker_origin": [
+      79,
+      117
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -3,
+      35
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 39,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 128,
+     "receiver_body_x_from_attacker_origin": [
+      68,
+      140
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -14,
+      58
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 28,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 136,
+     "receiver_body_x_from_attacker_origin": [
+      58,
+      97
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -24,
+      15
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 18,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 144,
+     "receiver_body_x_from_attacker_origin": [
+      29,
+      66
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -53,
+      -16
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    }
+   ]
+  },
+  {
+   "assumptions": {
+    "attacker_flipped_when_receiver_on_right": true,
+    "reflection": "edge",
+    "profile_offset_mirrored": false
+   },
+   "scene_vs_royal": "same orientation",
+   "rigid": true,
+   "required_receiver_minus_attacker_x": -42,
+   "observed_receiver_minus_attacker_x": 40,
+   "predicted_horizontal_error_px": 82,
+   "frames": [
+    {
+     "source_frame": 56,
+     "receiver_body_x_from_attacker_origin": [
+      85,
+      110
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      3,
+      28
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 45,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 64,
+     "receiver_body_x_from_attacker_origin": [
+      83,
+      118
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      1,
+      36
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 43,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 72,
+     "receiver_body_x_from_attacker_origin": [
+      82,
+      111
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      0,
+      29
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 42,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 80,
+     "receiver_body_x_from_attacker_origin": [
+      76,
+      112
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -6,
+      30
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 36,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 88,
+     "receiver_body_x_from_attacker_origin": [
+      78,
+      111
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -4,
+      29
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 38,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 96,
+     "receiver_body_x_from_attacker_origin": [
+      79,
+      104
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -3,
+      22
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 39,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 104,
+     "receiver_body_x_from_attacker_origin": [
+      77,
+      105
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -5,
+      23
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 37,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 112,
+     "receiver_body_x_from_attacker_origin": [
+      82,
+      108
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      0,
+      26
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 42,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 120,
+     "receiver_body_x_from_attacker_origin": [
+      79,
+      117
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -3,
+      35
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 39,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 128,
+     "receiver_body_x_from_attacker_origin": [
+      68,
+      140
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -14,
+      58
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 28,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 136,
+     "receiver_body_x_from_attacker_origin": [
+      58,
+      97
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -24,
+      15
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 18,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 144,
+     "receiver_body_x_from_attacker_origin": [
+      29,
+      66
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -53,
+      -16
+     ],
+     "horizontal_error_px": 82,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    }
+   ]
+  },
+  {
+   "assumptions": {
+    "attacker_flipped_when_receiver_on_right": true,
+    "reflection": "centre",
+    "profile_offset_mirrored": true
+   },
+   "scene_vs_royal": "same orientation",
+   "rigid": true,
+   "required_receiver_minus_attacker_x": -41,
+   "observed_receiver_minus_attacker_x": 40,
+   "predicted_horizontal_error_px": 81,
+   "frames": [
+    {
+     "source_frame": 56,
+     "receiver_body_x_from_attacker_origin": [
+      85,
+      110
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      4,
+      29
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 45,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 64,
+     "receiver_body_x_from_attacker_origin": [
+      83,
+      118
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      2,
+      37
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 43,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 72,
+     "receiver_body_x_from_attacker_origin": [
+      82,
+      111
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      1,
+      30
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 42,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 80,
+     "receiver_body_x_from_attacker_origin": [
+      76,
+      112
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -5,
+      31
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 36,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 88,
+     "receiver_body_x_from_attacker_origin": [
+      78,
+      111
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -3,
+      30
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 38,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 96,
+     "receiver_body_x_from_attacker_origin": [
+      79,
+      104
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -2,
+      23
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 39,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 104,
+     "receiver_body_x_from_attacker_origin": [
+      77,
+      105
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -4,
+      24
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 37,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 112,
+     "receiver_body_x_from_attacker_origin": [
+      82,
+      108
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      1,
+      27
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 42,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 120,
+     "receiver_body_x_from_attacker_origin": [
+      79,
+      117
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -2,
+      36
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 39,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 128,
+     "receiver_body_x_from_attacker_origin": [
+      68,
+      140
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -13,
+      59
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 28,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 136,
+     "receiver_body_x_from_attacker_origin": [
+      58,
+      97
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -23,
+      16
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 18,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 144,
+     "receiver_body_x_from_attacker_origin": [
+      29,
+      66
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -52,
+      -15
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    }
+   ]
+  },
+  {
+   "assumptions": {
+    "attacker_flipped_when_receiver_on_right": true,
+    "reflection": "centre",
+    "profile_offset_mirrored": false
+   },
+   "scene_vs_royal": "same orientation",
+   "rigid": true,
+   "required_receiver_minus_attacker_x": -41,
+   "observed_receiver_minus_attacker_x": 40,
+   "predicted_horizontal_error_px": 81,
+   "frames": [
+    {
+     "source_frame": 56,
+     "receiver_body_x_from_attacker_origin": [
+      85,
+      110
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      4,
+      29
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 45,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 64,
+     "receiver_body_x_from_attacker_origin": [
+      83,
+      118
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      2,
+      37
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 43,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 72,
+     "receiver_body_x_from_attacker_origin": [
+      82,
+      111
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      1,
+      30
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 42,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 80,
+     "receiver_body_x_from_attacker_origin": [
+      76,
+      112
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -5,
+      31
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 36,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 88,
+     "receiver_body_x_from_attacker_origin": [
+      78,
+      111
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -3,
+      30
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 38,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 96,
+     "receiver_body_x_from_attacker_origin": [
+      79,
+      104
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -2,
+      23
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 39,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 104,
+     "receiver_body_x_from_attacker_origin": [
+      77,
+      105
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -4,
+      24
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 37,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 112,
+     "receiver_body_x_from_attacker_origin": [
+      82,
+      108
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      1,
+      27
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 42,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 120,
+     "receiver_body_x_from_attacker_origin": [
+      79,
+      117
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -2,
+      36
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 39,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 128,
+     "receiver_body_x_from_attacker_origin": [
+      68,
+      140
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -13,
+      59
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 28,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 136,
+     "receiver_body_x_from_attacker_origin": [
+      58,
+      97
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -23,
+      16
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 18,
+     "vertical_error_px": 0
+    },
+    {
+     "source_frame": 144,
+     "receiver_body_x_from_attacker_origin": [
+      29,
+      66
+     ],
+     "royal_registered_x_from_attacker_origin": [
+      -52,
+      -15
+     ],
+     "horizontal_error_px": 81,
+     "receiver_shadow_x_from_attacker_origin": 40,
+     "shadow_to_nearest_body_edge_px": 0,
+     "vertical_error_px": 0
+    }
+   ]
+  }
+ ]
+}

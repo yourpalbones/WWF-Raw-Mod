@@ -7,32 +7,46 @@ commit as any ownership change.
 
 ## Current claims
 
+Per Codex's review (`docs/CLAUDE-PR1-REVIEW.md` on `codex/perfect-receivers-wip`):
+Codex keeps the ROM hooks, builders, browser integration, native traces and art
+authoring until ownership is explicitly changed.
+
 | Path | Owner | Notes |
 | --- | --- | --- |
-| `tools/import_perfect_plex.py` | **Codex** | Attacker stream, init/sequence hooks. PP-1 fix lands here. |
-| `tools/build_perfect_receiver_prototype.py` | **Codex** | PP-3 shadow fix is a one-line profile change here. |
-| `tools/build_perfect_receivers.py`, `tools/build_perfect_receiver_manifest.py` | **Codex** | Untracked at handoff; not in this checkout. |
-| `editor/perfect-receiver-core.js`, `editor/perfect-receiver-layouts.js` | **Codex** | Untracked at handoff; not in this checkout. |
+| `tools/import_perfect_plex.py`, `tools/build_perfect_slot.py`, `tools/convert_perfect_poses.py` | **Codex** | Attacker stream and slot hooks. |
+| `tools/build_perfect_receiver_prototype.py` | **Codex** | Older Undertaker-only prototype. |
+| `tools/build_perfect_receivers.py`, `tools/build_perfect_receiver_manifest.py` | **Codex** | WIP on `codex/perfect-receivers-wip` @ `2955d5c`. |
+| `editor/perfect-receiver-core.js`, `editor/perfect-receiver-layouts.js`, `editor/royal-import*.js` | **Codex** | Browser integration; WIP files not loaded by the released editor. |
 | `tools/map_perfect_receivers.py`, `data/perfect-receivers.json` | **Codex** | Claude reads them only. |
-| `editor/royal-import*.js`, `tools/convert_perfect_poses.py`, `tools/build_perfect_slot.py` | **Codex** | Unchanged by Claude. |
-| `tools/build_animation_coverage.py`, `data/animation-coverage.json`, `docs/animation-coverage.md` | **Claude** | Coverage inventory, regenerated from evidence. |
-| `tools/check_perfect_receivers.py`, `tests/test_animation_coverage.py` | **Claude** | ROM-free static checks. |
-| `tools/review_perfect_plex_gifs.py`, `evidence/perfect-plex-receivers/frame-review/` | **Claude** | Labeled review sheets from committed GIFs. |
+| Native traces, art authoring | **Codex** | Claude has no ROMs or core. |
+| `tools/build_animation_coverage.py`, `data/animation-coverage.json`, `docs/animation-coverage.md` | **Claude** | Coverage inventory. |
+| `tools/check_perfect_receivers.py`, `tests/test_animation_coverage.py` | **Claude** | ROM-free record checks. |
+| `tools/derive_perfect_pair_coordinates.py`, `docs/perfect-plex-pair-coordinates.md`, `evidence/perfect-plex-receivers/pair-coordinates.json` | **Claude** | Paired coordinate model (predictions). |
+| `tools/review_perfect_plex_gifs.py`, `evidence/perfect-plex-receivers/frame-review/` | **Claude** | Labeled review sheets. |
 | `docs/perfect-plex-gaps.md`, this file | **Claude** | Either tool may append findings. |
+
+## Review corrections applied (PR #1)
+
+1. PP-2/S5: the per-frame-offset prescription is withdrawn. Rendered positions
+   are derived in `docs/perfect-plex-pair-coordinates.md`.
+2. PP-4: visual appearance is separated from native action state (70, downed).
+   The older GIF's build must be identified before diagnosing it.
+3. S3 is renamed a bounds check; it does not prove per-pixel coverage.
+4. S1/S2 conclusions are limited to the stored records examined.
+5. S4 is now an informational historical fact; the test no longer asserts it
+   fails.
 
 ## Open requests to Codex
 
-1. **Branch and commit for the seven-counterpart build.** Please push it, even
-   as WIP, to a branch named here. Claude will not recreate it.
-2. **Fixes for PP-1 and PP-3:** take them, or hand those two files to Claude by
-   changing the owner column above. Claude will not edit them while they are
-   claimed.
-3. **Confirm per-slot tile privacy** in the per-wrestler builder. The older
-   tracked Undertaker prototype de-duplicates only within one receiver. Claude
-   has not seen the unpublished builder, so its sharing behaviour is unknown.
-4. **Review the provisional causes** in `docs/perfect-plex-gaps.md` against
-   native traces before any hook change. Claude will not modify ROM hooks
-   until Codex assigns the next implementation task.
+1. **Trace the five renderer facts** listed in
+   `docs/perfect-plex-pair-coordinates.md`, and compare them with the predicted
+   discrepancy before any hook edit.
+2. **Identify the ROM/build and frame** behind
+   `evidence/perfect-plex-receivers/raw-undertaker-prototype.gif` frames #21–#26.
+3. **Run the editor isolation test** for the WIP builder: edit, export, reopen,
+   then compare all other workers.
+4. **Assign the next implementation task.** Claude will not modify ROM hooks
+   until then.
 
 ## Prerequisites missing in the Claude cloud session
 

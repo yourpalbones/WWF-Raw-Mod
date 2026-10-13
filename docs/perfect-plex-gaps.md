@@ -2,162 +2,179 @@
 
 Status as of this branch: **audit and provisional diagnosis only.** These are
 not fixes, and no ROM hook has been changed. Every "probable cause" below is a
-hypothesis from code reading. It stays provisional until a native trace
-(OAM/VRAM/WRAM capture from an exported ROM) confirms it.
-No ROM, Snes9x core or Codex's untracked receiver builder was available to
-this session. Each finding is backed either by the committed gameplay GIFs or
-by static analysis of committed code and data. Anything that needs a ROM to
-confirm is marked **needs native capture**.
+hypothesis from code reading and ROM-free modelling. It stays provisional until
+a native trace (OAM/VRAM/WRAM capture from an exported ROM) confirms it.
+This revision applies Codex's review in
+[`docs/CLAUDE-PR1-REVIEW.md` on `codex/perfect-receivers-wip`](https://github.com/yourpalbones/WWF-Raw-Mod/blob/codex/perfect-receivers-wip/docs/CLAUDE-PR1-REVIEW.md).
+
+The user's report of **visible gaps between sprite pieces** stays open. Nothing
+here establishes its cause.
 
 Inputs reviewed:
 
 - `evidence/perfect-plex-receivers/royal-native-reference.gif`: Royal native, 12 frames.
-- `evidence/perfect-plex-receivers/raw-undertaker-prototype.gif`: private Raw prototype, 27 frames.
-- `evidence/mr-perfect-import/perfect-plex.gif`: released v0.16 with Luna, 27 frames.
+- `evidence/perfect-plex-receivers/raw-undertaker-prototype.gif`: older Undertaker-only private
+  prototype (`tools/build_perfect_receiver_prototype.py`), 27 frames. The exact ROM/build of this
+  GIF is not recorded in the repository.
+- `evidence/mr-perfect-import/perfect-plex.gif` and `verification.json`: released v0.16 with Luna.
 - `tools/import_perfect_plex.py`, `tools/build_perfect_receiver_prototype.py`, `data/perfect-receivers.json`.
+- `codex/perfect-receivers-wip` @ `2955d5c`: `tools/build_perfect_receivers.py` and the browser core.
 
-Regenerate the labeled review sheets with `python3 tools/review_perfect_plex_gifs.py`
-(crops at native resolution, nearest-neighbour 2×). Static checks:
-`python3 tools/check_perfect_receivers.py`.
+Commands (all ROM-free):
 
-## Ruled out (static, all 12 Royal workers × 12 frames)
+- `python3 tools/review_perfect_plex_gifs.py`: labeled review sheets.
+- `python3 tools/check_perfect_receivers.py`: static record checks.
+- `python3 tools/derive_perfect_pair_coordinates.py`: paired coordinate model; see
+  [perfect-plex-pair-coordinates.md](perfect-plex-pair-coordinates.md).
 
-| Check | Result |
-| --- | --- |
-| S1 object/tile budget | Worst pose 17/17 objects, 52/64 tiles including shadow. Legal, but **zero object headroom** on the worst frame. |
-| S2 descriptor chunk order | Every pose lists 16×16 before 8×8, consistent with the header's large-object count. |
-| S3 chunk coverage | The prototype paints at x+73 and samples at x+64. With that 9 px shift, chunks span every pose's opaque bbox, so pieces are not clipped at the canvas edges. |
+## Static record checks (scope-limited)
 
-So the visible problems are **not** caused by budget overflow, mis-sized
-objects or canvas clipping in the stored recipes.
+These examine only the stored recipe records in `data/perfect-receivers.json`:
+all 12 Royal workers × 12 frames. They say nothing about runtime upload,
+scanline limits, descriptor routing, VRAM staleness or OAM order.
 
-## Observed defects and provisional causes, in suggested fix order
+| Check | What was examined | Result |
+| --- | --- | --- |
+| S1 budget | Chunk counts plus the 2-object/4-tile shadow | Worst record 17/17 objects and 52/64 tiles. Within the per-actor recipe limit, with zero object headroom. Does not rule out runtime/scanline defects. |
+| S2 order | Chunk size order | 16×16 chunks precede 8×8 chunks in every record, consistent with the header count. Does not rule out routing defects. |
+| S3 bounds | Union of chunk extents vs the opaque bbox, with the +9 px canvas shift | Chunk extents reach every bbox edge. This is a **bounds check only**. A union rectangle can contain interior holes, so it does not prove every opaque pixel is covered. Exact per-pixel coverage needs the private decoded source tiles. |
 
-The *symptoms* are visible in committed gameplay GIFs. The *causes* are not yet
+## Paired coordinates (ROM-free model)
+
+[perfect-plex-pair-coordinates.md](perfect-plex-pair-coordinates.md) derives
+both actors' screen columns from the actor origins, profile offsets, descriptor
+transforms and facing. It uses the actor positions recorded in the v0.16 Luna
+replay (attacker x=314, receiver x=354, both y=232). Results:
+
+- The two bodies form a rigid copy of Royal only when exactly one actor is
+  mirrored. In that case the required receiver − attacker spacing is ±41/±42 px,
+  depending on the reflection rule, or −22/−23 if the profile dx is not mirrored.
+- The recorded spacing is +40. That is within 1–2 px of the required spacing
+  only if all three of these hold:
+  - the attacker is **unflipped** while the receiver stands on its right;
+  - the profile dx is negated with facing;
+  - the scene renders as a **mirror** of Royal.
+
+  Every other assumption set predicts horizontal errors of 62–82 px.
+- Under the 1–2 px assumption set, the model predicts the receiver body is drawn
+  44–46 px left of its own actor origin on the first frames. The shadow (profile
+  entry `0x8024` at (0, −1)) stays at the origin. Both the entry side swap (PP-1)
+  and the detached shadow (PP-3) would then follow from one cause: mirrored
+  artwork with unswapped actor origins.
+
+Each assumption is listed for trace confirmation in the derivation. No offsets
+are proposed from it.
+
+## Observed symptoms and provisional causes
+
+The *symptoms* are visible in committed gameplay GIFs. The *causes* are not
 confirmed by native traces.
 
-### PP-1: the scene plays mirrored after the tie-up (performer and receiver)
+### PP-1: the scene plays mirrored after the tie-up
 
 **Evidence:** [`frame-review/entry-side-swap.png`](../evidence/perfect-plex-receivers/frame-review/entry-side-swap.png).
-In Royal, Perfect stays on the left of the receiver from the tie-up through the
-lift, and bridges with his head to the left. In both the released v0.16 (Luna)
-and the Undertaker prototype, Perfect starts on the left in Raw's tie-up. On
-the very next frame he is on the receiver's right, and the whole move, bridge
-included, is a mirror image of Royal.
+Royal keeps Perfect on the receiver's left through the lift and bridge. Both
+Raw captures (v0.16 Luna and the older Undertaker prototype) start with Perfect
+on the left in the tie-up. From the first lift frame he is on the right, and the
+move is a mirror image of Royal.
 
-**Probable cause (provisional, from code):** `import_perfect_plex.build` mirrors the attacker capture about
-Royal x=145 (`px = 145 - x + 56`) to fit Raw's canonical facing. The receiver
-recipe in `map_perfect_receivers.py` keeps Royal orientation (`x - 145`, Royal
-`hflip` retained). Neither is reconciled with the actor positions that the init
-hook (`70:F300`) sets after the tie-up. The attacker is therefore drawn on the
-far side of its own actor origin.
+**Probable cause (provisional):** `import_perfect_plex.build` mirrors the
+attacker capture (`145 - x`). The receiver recipes keep Royal orientation, and
+the actor origins keep the tie-up arrangement. The coordinate model reproduces
+this side swap under the assumption set closest to the recorded spacing.
 
-**Fix direction:** choose one canonical facing for both streams. Then either
-(a) mirror both the attacker and receiver recipes and negate the pair spacing,
-or (b) keep both in Royal orientation and swap the sign the init hook uses for
-the attacker/receiver x offset. Verify both facings and both rope sides.
-**Needs native capture.**
+### PP-2: visible overlap; the receiver is largely hidden behind the attacker on lift frames
 
-### PP-2: receiver registration is wrong; the receiver is hidden behind the attacker on lift frames
+**Evidence:** [`frame-review/lift-registration.png`](../evidence/perfect-plex-receivers/frame-review/lift-registration.png),
+older Undertaker prototype frames #2–#5. This may relate to the user's
+visible-gap report, but the link is not traced.
 
-**Evidence:** [`frame-review/lift-registration.png`](../evidence/perfect-plex-receivers/frame-review/lift-registration.png).
-In Royal, the receiver stands clear of Perfect, about 25 native px apart. In
-the prototype, Undertaker's body sits almost entirely behind Perfect on raw
-frames #2–#5; only a hand or shoulder shows. This is consistent with the
-user's report of missing pieces between the wrestlers, but the link is not yet
-traced.
+**Status:** cause **open**. An earlier version of this audit prescribed
+per-frame profile offsets. That prescription is withdrawn: each Royal drawing's
+descriptor already carries its source-relative position, so one constant profile
+offset can reproduce changing body positions. Under the closest assumption set,
+the coordinate model predicts only a 1–2 px horizontal error between the bodies.
+If traces confirm that, the overlap needs another explanation. Candidates are
+OAM draw order between the two actors, a different spacing for Undertaker than
+for Luna, or a descriptor-routing or upload difference. Confirm with a trace
+before choosing a fix.
 
-**Probable cause (provisional):** the prototype uses one constant receiver offset, `(+32, 0)` plus the
-+9 canvas shift, for all 20 steps (static check S5). It also inherits PP-1's
-mirroring. The released layout needed per-frame translates of 55–61 px. Royal's
-pair spacing changes across the lift, drop and bridge, while the anchors in
-`data/perfect-receivers.json` already encode it relative to the attacker
-(x=145, y=162).
-
-**Fix direction:** after fixing PP-1, write a per-frame receiver offset:
-Royal anchor delta, plus the Raw actor spacing that the init hook establishes,
-negated under flip. Do not use a constant. **Needs native capture.**
-
-### PP-3: the receiver shadow is detached from the body
+### PP-3: the receiver shadow appears detached from the body
 
 **Evidence:** [`frame-review/detached-shadow.png`](../evidence/perfect-plex-receivers/frame-review/detached-shadow.png).
-A grey dithered shadow stays at Undertaker's tie-up position through the
-whole lift and bridge, well to the right of both wrestlers.
 
-**Probable cause (provisional; static check S4 flags the profile bytes):**
-`build_perfect_receiver_prototype.py` writes each receiver profile as body
-`(dx=32, dy=0)` followed by the Raw shadow part `0x8024` at `(0, -1)`. The
-body moves and the shadow does not. The released layout translates every part,
-shadow included.
+**Historical prototype fact (S4):** the older prototype source writes the
+receiver body at profile (+32, 0) and the shadow `0x8024` at (0, −1). By
+source inspection, the WIP builder writes the same bytes. S4 parses a copy of
+those bytes, not a built ROM, so it cannot detect a later implementation
+change. A regression test must inspect a constructed or exported record. The
+coordinate model offers a provisional explanation: the body lands 44–46 px
+from the origin, the shadow does not move, and the shadow ends up up to 46 px
+from the body.
 
-**Fix direction:** offset the shadow entry with the body, or drop it during
-airborne frames to match Royal. This is a one-line profile change, but it is
-in a Codex-owned file (see [agent-coordination.md](agent-coordination.md)).
+### PP-4: apparent standing overlap after the bridge (older Undertaker prototype GIF)
 
-### PP-4: no exit transition; the receiver snaps to standing inside the attacker
+**Evidence:** [`frame-review/exit.png`](../evidence/perfect-plex-receivers/frame-review/exit.png),
+frames #21–#26 of the older Undertaker-only prototype GIF.
 
-**Evidence:** [`frame-review/exit.png`](../evidence/perfect-plex-receivers/frame-review/exit.png).
-After the bridge (raw #18–#19), raw #21 onward shows Undertaker standing,
-overlapping Perfect, with no get-up. Probable cause (provisional): the receiver
-stream ends after 20 entries (`0x735000 + 20*7 = FF`) and returns to the
-receiver's native standing action at its actor position, which is now under the
-attacker.
+**Visual appearance and native action state are different things:**
 
-**Fix direction:** end the receiver stream on a native downed/knockdown action
-for that slot, not standing. Reposition the actor to where the body lies
-(the bridge pose's Royal anchor). Then hand over to Raw's normal get-up or pin
-logic.
+- The committed v0.16 replay records the receiver in action **70 (downed)**
+  after the move: health 58, x=340.
+- Codex reports that its private seven-counterpart captures at frames 400–650
+  show attacker action 0 and Undertaker receiver action 70 (downed), health 58.
+
+The earlier claim that the implementation returns the receiver to standing is
+withdrawn. The standing-overlap appearance in this one GIF still needs
+inspection. First identify the exact ROM/build and frame it was captured from,
+then diagnose. Do not diagnose an exit defect from the GIF alone.
 
 ### PP-5: no bridge-to-pin
 
 The Royal move holds the bridge as a pin. Raw repeats the bridge pose for
-steps 12–19 and then releases both wrestlers. This is a behaviour difference,
-not an art defect. It needs Raw's pin-state entry from the sequence hook and
-is tracked separately from the visual fixes.
+steps 12–19 and then releases. This is a behaviour difference, tracked
+separately from the visual fixes.
 
-### PP-6: palette remap is unreviewed (Undertaker prototype)
+### PP-6: palette remap is unreviewed
 
-The prototype maps each Royal colour to the nearest Raw palette entry by RGB
-distance. That can merge outline and shade colours, or map gear onto skin. In
-[`frame-review/bridge.png`](../evidence/perfect-plex-receivers/frame-review/bridge.png),
-the receiver's lower body reads as a black mass, with a separate raised leg
-and light patches where Royal shows grey boots. **Needs a native-pixel
-comparison of the inserted tiles against the Royal source per palette index.**
+Both the older prototype and the WIP builder map each Royal colour to the
+nearest Raw palette entry by RGB distance. That can merge outline and shade
+colours. **Needs a native-pixel comparison of the inserted tiles per palette
+index.**
 
-## Identity and independence gaps (all receivers)
+## Identity and independence
 
-- **Aliasing (static check S6):** Royal shares most receiving tiles across
-  workers. For example, Lex (selector 10) has 10 private tiles out of 315, and
-  Razor (8) has 26 out of 316. Two implementations need to be kept apart:
-  - **Older tracked prototype** (`tools/build_perfect_receiver_prototype.py`,
-    Undertaker only): it de-duplicates inserted tiles by decoded bytes within
-    its single run. With one receiver this creates no cross-slot sharing. The
-    risk applies only if that script were extended to several receivers
-    unchanged.
-  - **Codex's per-wrestler implementation** (`tools/build_perfect_receivers.py`
-    and related files; unpublished, not in this checkout): **not reviewed
-    here.** Nothing in this audit says whether it shares or privatizes tiles.
-    Acceptance check 3 (one wrestler's edit changes only that wrestler) must be
-    run against it once it is pushed.
-- **Direct counterparts** (Raw→Royal `1→3, 2→2, 3→9, 5→8, 6→10, 8→7, 12→1`):
-  recipes are decoded only. Bret (1) and Scott Hall (5) carry user-edited gear
-  that the Royal drawings lack, so they need re-authored gear on the Royal
-  bodies.
-- **Mr. Perfect receiving the Perfect-Plex** (mirror match) needs slot-12
-  receiver art routed through the receiver stream, not the attacker stream.
+- **Royal source sharing (S6):** Royal shares most receiving tiles across its
+  workers. For example, Lex (selector 10) has 10 private source tiles out of 315.
+- **Older tracked prototype** (`tools/build_perfect_receiver_prototype.py`,
+  Undertaker only): de-duplicates by decoded bytes within one receiver. That
+  creates no cross-slot sharing today.
+- **WIP per-wrestler builder** (`codex/perfect-receivers-wip`
+  `tools/build_perfect_receivers.py` and `editor/perfect-receiver-core.js`):
+  - **By code inspection**, `private = {}` (JS: `privateTiles = new Map()`) is
+    created inside the per-slot loop. The tile-ID counter and packet cursor
+    advance globally.
+  - The decoded **source** cache is shared. The inserted editable tile IDs and
+    packets are **not** de-duplicated across slots.
+  - This establishes allocation intent only. The editor isolation acceptance
+    test (edit, export, reopen, compare all other workers) has **not** been run.
+- **Direct counterparts** (Raw→Royal `1→3, 2→2, 3→9, 5→8, 6→10, 8→7, 12→1`)
+  are built by the WIP builder privately. They are not released and have no
+  committed gameplay evidence. Bret (1) and Scott Hall (5) need re-authored
+  gear on the Royal bodies.
 - **Missing, needing authored art:** Luna (0), Bam Bam (4), Sting (7), Syxx (9),
-  Nash (10) and Owen (11). Sting, Syxx and Nash must keep the approved edited
-  heads and gear (`evidence/sting-native-heads`, `evidence/syxx-head-revision`,
-  `evidence/nwo-art-revision`).
+  Nash (10) and Owen (11). These must keep the approved edited heads and gear.
 
-## Suggested order (for Codex to review; no hooks changed here)
+## Suggested order (for Codex; no hooks changed here)
 
-0. Confirm or reject each provisional cause with a native trace before editing hooks.
-1. PP-3 (shadow) and PP-1 (canonical facing): likely small, and prerequisites for judging anything else.
-2. PP-2 per-frame registration, proven on Undertaker in both facings and near both ropes.
-3. PP-4 exit transition, then PP-6 palette review.
-4. Extend to the other direct counterparts with per-slot private tiles, then authored art for Raw-only slots.
-5. PP-5 pin behaviour.
+1. Trace the five renderer facts listed in
+   [perfect-plex-pair-coordinates.md](perfect-plex-pair-coordinates.md):
+   facing and flip, reflection rule, profile-dx mirroring, actor spacing per
+   receiver, and OAM order.
+2. Report the measured versus predicted discrepancy. Only then choose between
+   swapping the actor origins and re-mirroring the recipes for PP-1 and PP-3.
+3. Revisit PP-2 with the traced draw order and spacing.
+4. Identify the build behind the PP-4 GIF, then PP-6 palette review, then PP-5.
 
-Every step needs a native capture from an exported ROM. The status in
-`data/animation-coverage.json` changes only when that capture is committed.
+The status in `data/animation-coverage.json` changes only when a native capture
+is committed.

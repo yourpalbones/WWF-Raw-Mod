@@ -48,8 +48,26 @@ class ReceiverTests(unittest.TestCase):
         result = analyse(json.loads((ROOT / 'data/perfect-receivers.json').read_text()))
         status = {f['id']: f['severity'] for f in result['findings']}
         self.assertEqual([status[k] for k in ('S1', 'S2', 'S3')], ['pass'] * 3)
-        # Known prototype defect PP-3; flip this assertion when the profile is fixed.
-        self.assertEqual(status['S4'], 'fail')
+        # S4 is a historical fact about copied bytes, not a regression check on a build.
+        self.assertEqual(status['S4'], 'info')
+
+
+class PairCoordinateTests(unittest.TestCase):
+    def test_outputs_current_and_cases_complete(self):
+        import derive_perfect_pair_coordinates as pair
+        observed, source = pair.observed_positions()
+        data = pair.report(observed, source)
+        committed = json.loads((ROOT / 'evidence/perfect-plex-receivers/pair-coordinates.json').read_text())
+        self.assertEqual(committed, json.loads(json.dumps(data)))
+        self.assertEqual(len(data['cases']), 8)
+        self.assertIn('PREDICTION', data['status'])
+
+    def test_reflection_rules(self):
+        import derive_perfect_pair_coordinates as pair
+        self.assertEqual(pair.screen(100, 5, 0, True, 'edge', True), 94)
+        self.assertEqual(pair.screen(100, 5, 0, True, 'centre', True), 95)
+        self.assertEqual(pair.screen(100, 5, 32, True, 'edge', True), 62)
+        self.assertEqual(pair.screen(100, 5, 32, False, 'edge', True), 137)
 
 
 if __name__ == '__main__':

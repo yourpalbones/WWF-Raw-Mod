@@ -1311,8 +1311,8 @@
    ],
    "aliases": "private (tile IDs C000+ written per pose, no sharing with stock slots)",
    "defects": [
-    "Scene plays mirrored relative to the entry tie-up: attacker crosses to the far side of the receiver on the first lift frame (PP-1; cause provisional)",
-    "No bridge-to-pin; attacker stands straight up after bridge (PP-5)"
+    "Scene plays mirrored relative to the entry tie-up: attacker crosses to the far side of the receiver on the first lift frame (PP-1; cause provisional, see docs/perfect-plex-pair-coordinates.md)",
+    "No bridge-to-pin (PP-5)"
    ]
   },
   {
@@ -1385,9 +1385,14 @@
    "display_name": "Bret Hart",
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
-   "art_status": "decoded_only",
+   "art_status": "prototype_private",
    "gameplay_status": "untested",
-   "variant": "target (own receiving art)",
+   "variant": "target (own receiving art): WIP seven-counterpart build",
+   "implementation": {
+    "branch": "codex/perfect-receivers-wip",
+    "commit": "2955d5c",
+    "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
+   },
    "source_ids": {
     "royal_selector": 3,
     "royal_name": "Bret Hart",
@@ -1449,7 +1454,8 @@
     "docs/perfect-plex-gaps.md"
    ],
    "defects": [
-    "Royal counterpart art does not carry the user-edited gear; needs re-authoring"
+    "WIP build on codex/perfect-receivers-wip (tools/build_perfect_receivers.py); not released; no committed gameplay capture; editor isolation test not run",
+    "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
    ],
    "source_game": "Royal Rumble",
    "palette_owner": "slot 1",
@@ -1485,7 +1491,38 @@
    "role": "receiver",
    "art_status": "prototype_private",
    "gameplay_status": "defective",
-   "variant": "target (own receiving art)",
+   "variant": "older Undertaker-only prototype (tools/build_perfect_receiver_prototype.py)",
+   "evidence": [
+    "tools/build_perfect_receiver_prototype.py",
+    "evidence/perfect-plex-receivers/raw-undertaker-prototype.gif",
+    "evidence/perfect-plex-receivers/frame-review/README.md",
+    "docs/perfect-plex-gaps.md",
+    "docs/perfect-plex-pair-coordinates.md"
+   ],
+   "aliases": "de-duplicates inserted tiles within this single receiver only",
+   "defects": [
+    "Receiver largely hidden behind the attacker on lift frames (PP-2; cause open)",
+    "Shadow appears detached from the body (PP-3; cause provisional)",
+    "Apparent standing overlap after the bridge in this GIF (PP-4); native action state elsewhere is 70 (downed); build of this GIF not recorded",
+    "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
+   ],
+   "source_game": "Royal Rumble",
+   "palette_owner": "slot 2",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate"
+  },
+  {
+   "slot": 2,
+   "display_name": "Undertaker",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
+   "art_status": "prototype_private",
+   "gameplay_status": "untested",
+   "variant": "target (own receiving art): WIP seven-counterpart build",
+   "implementation": {
+    "branch": "codex/perfect-receivers-wip",
+    "commit": "2955d5c",
+    "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
+   },
    "source_ids": {
     "royal_selector": 2,
     "royal_name": "Undertaker",
@@ -1543,15 +1580,11 @@
     "note": "Royal ROM addresses; Raw insertion must give each slot private copies"
    },
    "evidence": [
-    "tools/build_perfect_receiver_prototype.py",
-    "evidence/perfect-plex-receivers/raw-undertaker-prototype.gif",
-    "evidence/perfect-plex-receivers/frame-review/README.md",
+    "data/perfect-receivers.json",
     "docs/perfect-plex-gaps.md"
    ],
    "defects": [
-    "Receiver drawn ~15 native px off the Royal registration; hidden behind the attacker on lift frames (PP-2; cause provisional)",
-    "Receiver shadow left at its tie-up position while the body moves (PP-3; cause provisional)",
-    "Receiver snaps to standing at the attacker position after the bridge (PP-4)",
+    "WIP build on codex/perfect-receivers-wip (tools/build_perfect_receivers.py); not released; no committed gameplay capture; editor isolation test not run",
     "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
    ],
    "source_game": "Royal Rumble",
@@ -1586,9 +1619,14 @@
    "display_name": "Yokozuna",
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
-   "art_status": "decoded_only",
+   "art_status": "prototype_private",
    "gameplay_status": "untested",
-   "variant": "target (own receiving art)",
+   "variant": "target (own receiving art): WIP seven-counterpart build",
+   "implementation": {
+    "branch": "codex/perfect-receivers-wip",
+    "commit": "2955d5c",
+    "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
+   },
    "source_ids": {
     "royal_selector": 9,
     "royal_name": "Yokozuna",
@@ -1649,7 +1687,10 @@
     "data/perfect-receivers.json",
     "docs/perfect-plex-gaps.md"
    ],
-   "defects": [],
+   "defects": [
+    "WIP build on codex/perfect-receivers-wip (tools/build_perfect_receivers.py); not released; no committed gameplay capture; editor isolation test not run",
+    "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
+   ],
    "source_game": "Royal Rumble",
    "palette_owner": "slot 3",
    "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate"
@@ -1724,9 +1765,14 @@
    "display_name": "Scott Hall",
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
-   "art_status": "decoded_only",
+   "art_status": "prototype_private",
    "gameplay_status": "untested",
-   "variant": "target (own receiving art)",
+   "variant": "target (own receiving art): WIP seven-counterpart build",
+   "implementation": {
+    "branch": "codex/perfect-receivers-wip",
+    "commit": "2955d5c",
+    "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
+   },
    "source_ids": {
     "royal_selector": 8,
     "royal_name": "Razor Ramon",
@@ -1788,7 +1834,8 @@
     "docs/perfect-plex-gaps.md"
    ],
    "defects": [
-    "Royal counterpart art does not carry the user-edited gear; needs re-authoring"
+    "WIP build on codex/perfect-receivers-wip (tools/build_perfect_receivers.py); not released; no committed gameplay capture; editor isolation test not run",
+    "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
    ],
    "source_game": "Royal Rumble",
    "palette_owner": "slot 5",
@@ -1822,9 +1869,14 @@
    "display_name": "Lex Luger",
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
-   "art_status": "decoded_only",
+   "art_status": "prototype_private",
    "gameplay_status": "untested",
-   "variant": "target (own receiving art)",
+   "variant": "target (own receiving art): WIP seven-counterpart build",
+   "implementation": {
+    "branch": "codex/perfect-receivers-wip",
+    "commit": "2955d5c",
+    "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
+   },
    "source_ids": {
     "royal_selector": 10,
     "royal_name": "Lex Luger",
@@ -1885,7 +1937,10 @@
     "data/perfect-receivers.json",
     "docs/perfect-plex-gaps.md"
    ],
-   "defects": [],
+   "defects": [
+    "WIP build on codex/perfect-receivers-wip (tools/build_perfect_receivers.py); not released; no committed gameplay capture; editor isolation test not run",
+    "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
+   ],
    "source_game": "Royal Rumble",
    "palette_owner": "slot 6",
    "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate"
@@ -1960,9 +2015,14 @@
    "display_name": "Shawn Michaels",
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
-   "art_status": "decoded_only",
+   "art_status": "prototype_private",
    "gameplay_status": "untested",
-   "variant": "target (own receiving art)",
+   "variant": "target (own receiving art): WIP seven-counterpart build",
+   "implementation": {
+    "branch": "codex/perfect-receivers-wip",
+    "commit": "2955d5c",
+    "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
+   },
    "source_ids": {
     "royal_selector": 7,
     "royal_name": "Shawn Michaels",
@@ -2023,7 +2083,10 @@
     "data/perfect-receivers.json",
     "docs/perfect-plex-gaps.md"
    ],
-   "defects": [],
+   "defects": [
+    "WIP build on codex/perfect-receivers-wip (tools/build_perfect_receivers.py); not released; no committed gameplay capture; editor isolation test not run",
+    "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
+   ],
    "source_game": "Royal Rumble",
    "palette_owner": "slot 8",
    "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate"
@@ -2182,9 +2245,14 @@
    "display_name": "Mr. Perfect",
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
-   "art_status": "decoded_only",
+   "art_status": "prototype_private",
    "gameplay_status": "untested",
-   "variant": "target (own receiving art)",
+   "variant": "target (own receiving art): WIP seven-counterpart build",
+   "implementation": {
+    "branch": "codex/perfect-receivers-wip",
+    "commit": "2955d5c",
+    "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
+   },
    "source_ids": {
     "royal_selector": 1,
     "royal_name": "Mr. Perfect",
@@ -2246,7 +2314,8 @@
     "docs/perfect-plex-gaps.md"
    ],
    "defects": [
-    "Mirror match: receiving Perfect must use slot-12 private art, not attacker stream"
+    "WIP build on codex/perfect-receivers-wip (tools/build_perfect_receivers.py); not released; no committed gameplay capture; editor isolation test not run",
+    "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
    ],
    "source_game": "Royal Rumble",
    "palette_owner": "slot 12",
@@ -4682,26 +4751,27 @@
   {
    "id": "S1",
    "severity": "pass",
-   "summary": "Object/tile budget: worst pose uses 17/17 objects and 52/64 tiles including the shadow.",
+   "summary": "Recipe budget: worst stored record uses 17/17 objects and 52/64 tiles including the shadow (stored recipe records only; says nothing about runtime upload, scanline, routing or OAM order).",
    "detail": null
   },
   {
    "id": "S2",
    "severity": "pass",
-   "summary": "Descriptor chunk order: every pose lists 16x16 objects before 8x8 objects, matching the header count of large objects.",
+   "summary": "Recipe chunk order: every stored record lists 16x16 chunks before 8x8 chunks (stored recipe records only; says nothing about runtime upload, scanline, routing or OAM order).",
    "detail": null
   },
   {
    "id": "S3",
    "severity": "pass",
-   "summary": "Chunk coverage: with the prototype canvas shift (+9 px x) every pose's chunks span its opaque bounding box, so pieces are not clipped at the canvas edges.",
+   "summary": "Bounds check: with the prototype canvas shift (+9 px x) the union of chunk extents reaches every edge of each pose's opaque bbox. This does not prove every opaque pixel is covered; a union can have interior holes. Exact coverage needs the private decoded source tiles.",
    "detail": null
   },
   {
    "id": "S4",
-   "severity": "fail",
-   "summary": "Receiver shadow: the prototype profile draws the body at (32,0) but the Raw shadow part 0x8024 at (0,-1). Probable (provisional) cause of the detached shadow seen in gameplay (gap PP-3). The released v0.16 layout translates every part, shadow included.",
+   "severity": "info",
+   "summary": "Historical prototype fact: the older prototype source (and, by source inspection, the WIP builder) writes the receiver body at profile (32,0) and shadow 0x8024 at (0,-1). This check parses a copy of those bytes, not a built ROM, so it cannot detect an implementation change; a regression test must read a constructed/exported record.",
    "detail": {
+    "shadow_offset_differs_from_body": true,
     "profile_offsets_in_data": [
      [
       32,
@@ -4713,7 +4783,7 @@
   {
    "id": "S5",
    "severity": "info",
-   "summary": "Constant receiver offset: all 144 poses use one profile offset; the released layout needed a per-frame translate (55-61 px). A single constant cannot reproduce Royal's changing pair spacing unless the attacker/receiver actor spacing is itself held constant by the init hook.",
+   "summary": "One profile offset for all poses: each drawing's descriptor already carries its source-relative position, so a constant profile offset can reproduce changing body positions. Rendered positions must be derived from actor origins, profile offsets, descriptors and facing (tools/derive_perfect_pair_coordinates.py) before choosing any fix.",
    "detail": {
     "profile_offsets": [
      [
@@ -4726,13 +4796,13 @@
   {
    "id": "S6",
    "severity": "info",
-   "summary": "Royal receiving art is heavily shared across Royal workers: selector 0: 142/323 private, selector 1: 68/322 private, selector 2: 214/321 private, selector 3: 58/320 private, selector 4: 184/344 private, selector 5: 27/323 private, selector 6: 9/318 private, selector 7: 177/324 private, selector 8: 26/316 private, selector 9: 250/332 private, selector 10: 10/315 private, selector 11: 15/315 private. Raw insertion must give each Raw slot its own private tile IDs. The older Undertaker-only prototype de-duplicates by decoded bytes within one receiver (no cross-slot sharing today); Codex's unpublished per-wrestler builder has not been reviewed.",
+   "summary": "Royal source sharing across Royal workers: selector 0: 142/323 private, selector 1: 68/322 private, selector 2: 214/321 private, selector 3: 58/320 private, selector 4: 184/344 private, selector 5: 27/323 private, selector 6: 9/318 private, selector 7: 177/324 private, selector 8: 26/316 private, selector 9: 250/332 private, selector 10: 10/315 private, selector 11: 15/315 private. Each Raw slot needs its own inserted tile IDs. Older Undertaker-only prototype: de-duplicates within one receiver. WIP builder (codex/perfect-receivers-wip): per-slot private map by code inspection; editor isolation test not yet run.",
    "detail": null
   },
   {
    "id": "S7",
    "severity": "info",
-   "summary": "Facing: Royal component hflip values [True]; receiver parts keep Royal orientation while the attacker capture is mirrored about x=145 (import_perfect_plex.build). Both must be expressed in the same canonical facing, and the pair spacing sign must follow it (provisional cause of PP-1).",
+   "summary": "Facing: Royal component hflip values [True]; receiver parts keep Royal orientation while the attacker capture is mirrored about x=145 (import_perfect_plex.build). See the paired coordinate derivation for the predicted consequence under each renderer assumption (provisional).",
    "detail": null
   }
  ],
@@ -4745,9 +4815,6 @@
    "untested": 71,
    "verified_visual": 19
   },
-  "decoded_only": {
-   "untested": 6
-  },
   "missing": {
    "untested": 6
   },
@@ -4759,6 +4826,7 @@
    "untested": 67
   },
   "prototype_private": {
+   "untested": 7,
    "defective": 1
   }
  }

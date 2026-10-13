@@ -159,8 +159,9 @@ def perfect_plex_rows(receivers):
                               'docs/perfect-plex-gaps.md'],
                     aliases='private (tile IDs C000+ written per pose, no sharing with stock slots)',
                     defects=['Scene plays mirrored relative to the entry tie-up: attacker crosses to the far side '
-                             'of the receiver on the first lift frame (PP-1; cause provisional)',
-                             'No bridge-to-pin; attacker stands straight up after bridge (PP-5)']))
+                             'of the receiver on the first lift frame (PP-1; cause provisional, see '
+                             'docs/perfect-plex-pair-coordinates.md)',
+                             'No bridge-to-pin (PP-5)']))
     for slot in range(13):
         royal = RAW_TO_ROYAL.get(slot)
         common = dict(source_game='Royal Rumble' if royal is not None else None,
@@ -183,26 +184,30 @@ def perfect_plex_rows(receivers):
             continue
         worker = workers[royal]
         analysis = receivers_analysis['workers'][royal]
-        defects = []
         if slot == 2:
-            art, gameplay = 'prototype_private', 'defective'
-            defects += ['Receiver drawn ~15 native px off the Royal registration; hidden behind the attacker '
-                        'on lift frames (PP-2; cause provisional)',
-                        'Receiver shadow left at its tie-up position while the body moves (PP-3; cause provisional)',
-                        'Receiver snaps to standing at the attacker position after the bridge (PP-4)',
-                        'Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)']
-            evidence = ['tools/build_perfect_receiver_prototype.py',
-                        'evidence/perfect-plex-receivers/raw-undertaker-prototype.gif',
-                        'evidence/perfect-plex-receivers/frame-review/README.md', 'docs/perfect-plex-gaps.md']
-        else:
-            art, gameplay = 'decoded_only', 'untested'
-            evidence = ['data/perfect-receivers.json', 'docs/perfect-plex-gaps.md']
-        if slot in GEAR_EDITED:
-            defects.append('Royal counterpart art does not carry the user-edited gear; needs re-authoring')
-        if slot == 12:
-            defects.append('Mirror match: receiving Perfect must use slot-12 private art, not attacker stream')
+            rows.append(row(slot, 'finisher:Perfect-Plex', 'receiver', 'prototype_private', 'defective',
+                            variant='older Undertaker-only prototype (tools/build_perfect_receiver_prototype.py)',
+                            evidence=['tools/build_perfect_receiver_prototype.py',
+                                      'evidence/perfect-plex-receivers/raw-undertaker-prototype.gif',
+                                      'evidence/perfect-plex-receivers/frame-review/README.md',
+                                      'docs/perfect-plex-gaps.md', 'docs/perfect-plex-pair-coordinates.md'],
+                            aliases='de-duplicates inserted tiles within this single receiver only',
+                            defects=['Receiver largely hidden behind the attacker on lift frames (PP-2; cause open)',
+                                     'Shadow appears detached from the body (PP-3; cause provisional)',
+                                     'Apparent standing overlap after the bridge in this GIF (PP-4); native action '
+                                     'state elsewhere is 70 (downed); build of this GIF not recorded',
+                                     'Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)'],
+                            **common))
+        defects = ['WIP build on codex/perfect-receivers-wip (tools/build_perfect_receivers.py); not released; '
+                   'no committed gameplay capture; editor isolation test not run',
+                   'Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)']
+        art, gameplay = 'prototype_private', 'untested'
+        evidence = ['data/perfect-receivers.json', 'docs/perfect-plex-gaps.md']
         rows.append(row(slot, 'finisher:Perfect-Plex', 'receiver', art, gameplay,
-                        variant='target (own receiving art)',
+                        variant='target (own receiving art): WIP seven-counterpart build',
+                        implementation={'branch': 'codex/perfect-receivers-wip', 'commit': '2955d5c',
+                                        'tile_allocation': 'per-slot private map, global ID counter and packet '
+                                                           'cursor (code inspection only)'},
                         source_ids={'royal_selector': royal, 'royal_name': ROYAL_ROSTER[royal],
                                     'royal_component_poses': sorted({c['pose'] for r in receivers['components']
                                                                      for c in r['components']}),

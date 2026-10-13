@@ -3,7 +3,7 @@
 Reads only `data/perfect-receivers.json` and the descriptor/profile layout
 written by `tools/build_perfect_receiver_prototype.py`. It cannot judge pixels
 (the ROM is private); it reports geometry, budget, aliasing and profile facts
-that rule out some causes and suggest others. Suggested causes are provisional
+that bound some causes and suggest others. Suggested causes are provisional
 until a native trace confirms them.
 
     python3 tools/check_perfect_receivers.py [--json]
@@ -79,46 +79,47 @@ def analyse(data):
     def add(ident, severity, summary, detail=None):
         findings.append({'id': ident, 'severity': severity, 'summary': summary, 'detail': detail})
 
+    scope = ' (stored recipe records only; says nothing about runtime upload, scanline, routing or OAM order)'
     add('S1', 'pass' if not budget_failures else 'fail',
-        f'Object/tile budget: worst pose uses {max_objects}/{OBJECT_LIMIT} objects and {max_tiles}/{TILE_LIMIT} '
-        'tiles including the shadow.', budget_failures or None)
+        f'Recipe budget: worst stored record uses {max_objects}/{OBJECT_LIMIT} objects and {max_tiles}/{TILE_LIMIT} '
+        'tiles including the shadow' + scope + '.', budget_failures or None)
     add('S2', 'pass' if not order_failures else 'fail',
-        'Descriptor chunk order: every pose lists 16x16 objects before 8x8 objects, matching the '
-        'header count of large objects.' if not order_failures else
-        'Some poses list 8x8 chunks before 16x16 ones; the header large-object count would mis-size them.',
+        ('Recipe chunk order: every stored record lists 16x16 chunks before 8x8 chunks' if not order_failures else
+         'Some stored records list 8x8 chunks before 16x16 ones') + scope + '.',
         order_failures or None)
     add('S3', 'pass' if not extent_failures else 'fail',
-        f'Chunk coverage: with the prototype canvas shift (+{shift} px x) every pose\'s chunks span its '
-        'opaque bounding box, so pieces are not clipped at the canvas edges.' if not extent_failures else
-        'Chunks fail to span the opaque bbox for some poses: art would be clipped (missing pieces).',
+        (f'Bounds check: with the prototype canvas shift (+{shift} px x) the union of chunk extents reaches every '
+         'edge of each pose\'s opaque bbox. This does not prove every opaque pixel is covered; a union can have '
+         'interior holes. Exact coverage needs the private decoded source tiles.') if not extent_failures else
+        'Bounds check failed: chunk extents do not reach the opaque bbox for some poses.',
         extent_failures or None)
     offsets = {tuple(p.get('profile_offset', ())) for w in data['workers'] for p in w['poses']}
     shadow = profile_parts(PROTOTYPE_PROFILE)
     body = shadow[0]
     detached = [p for p in shadow[1:] if p['id'] == 0x8024 and (p['dx'], p['dy'] + 1) != (body['dx'], body['dy'])]
-    add('S4', 'fail' if detached else 'pass',
-        f'Receiver shadow: the prototype profile draws the body at ({body["dx"]},{body["dy"]}) but the Raw '
-        f'shadow part 0x8024 at ({detached[0]["dx"]},{detached[0]["dy"]}). Probable (provisional) cause of the '
-        'detached shadow seen in gameplay (gap PP-3). The released v0.16 layout translates every part, '
-        'shadow included.' if detached else 'Receiver shadow moves with the body.',
-        {'profile_offsets_in_data': sorted(offsets)})
+    add('S4', 'info',
+        f'Historical prototype fact: the older prototype source (and, by source inspection, the WIP builder) writes '
+        f'the receiver body at profile ({body["dx"]},{body["dy"]}) and shadow 0x8024 at '
+        f'({shadow[1]["dx"]},{shadow[1]["dy"]}). This check parses a copy of those bytes, not a built ROM, so it '
+        'cannot detect an implementation change; a regression test must read a constructed/exported record.',
+        {'shadow_offset_differs_from_body': bool(detached), 'profile_offsets_in_data': sorted(offsets)})
     add('S5', 'info',
-        'Constant receiver offset: all 144 poses use one profile offset; the released layout needed a '
-        'per-frame translate (55-61 px). A single constant cannot reproduce Royal\'s changing pair spacing '
-        'unless the attacker/receiver actor spacing is itself held constant by the init hook.',
-        {'profile_offsets': sorted(offsets)})
+        'One profile offset for all poses: each drawing\'s descriptor already carries its source-relative position, '
+        'so a constant profile offset can reproduce changing body positions. Rendered positions must be derived from '
+        'actor origins, profile offsets, descriptors and facing (tools/derive_perfect_pair_coordinates.py) before '
+        'choosing any fix.', {'profile_offsets': sorted(offsets)})
     add('S6', 'info',
-        'Royal receiving art is heavily shared across Royal workers: '
+        'Royal source sharing across Royal workers: '
         + ', '.join(f'selector {s}: {v["private_tiles"]}/{v["source_tiles"]} private'
                     for s, v in sorted(per_worker.items()))
-        + '. Raw insertion must give each Raw slot its own private tile IDs. The older Undertaker-only '
-        'prototype de-duplicates by decoded bytes within one receiver (no cross-slot sharing today); '
-        'Codex\'s unpublished per-wrestler builder has not been reviewed.')
+        + '. Each Raw slot needs its own inserted tile IDs. Older Undertaker-only prototype: de-duplicates within one '
+        'receiver. WIP builder (codex/perfect-receivers-wip): per-slot private map by code inspection; editor '
+        'isolation test not yet run.')
     hflips = {c['hflip'] for r in data['components'] for c in r['components']}
     add('S7', 'info',
         f'Facing: Royal component hflip values {sorted(hflips)}; receiver parts keep Royal orientation while '
-        'the attacker capture is mirrored about x=145 (import_perfect_plex.build). Both must be expressed in '
-        'the same canonical facing, and the pair spacing sign must follow it (provisional cause of PP-1).')
+        'the attacker capture is mirrored about x=145 (import_perfect_plex.build). See the paired coordinate '
+        'derivation for the predicted consequence under each renderer assumption (provisional).')
     return {'workers': per_worker, 'findings': findings, 'max_objects': max_objects, 'max_tiles': max_tiles}
 
 
