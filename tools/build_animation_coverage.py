@@ -156,12 +156,15 @@ def perfect_plex_rows(receivers):
                     evidence=['evidence/mr-perfect-import/README.md', 'evidence/mr-perfect-import/perfect-plex.gif',
                               'evidence/mr-perfect-import/verification.json',
                               'evidence/perfect-plex-receivers/raw-undertaker-prototype.gif',
-                              'docs/perfect-plex-gaps.md'],
+                              'evidence/perfect-plex-receivers/native-wip/undertaker-wip-native.gif',
+                              'docs/perfect-plex-native-trace.md', 'docs/perfect-plex-gaps.md'],
                     aliases='private (tile IDs C000+ written per pose, no sharing with stock slots)',
                     defects=['Scene plays mirrored relative to the entry tie-up: attacker crosses to the far side '
                              'of the receiver on the first lift frame (PP-1; cause provisional, see '
                              'docs/perfect-plex-pair-coordinates.md)',
-                             'No bridge-to-pin (PP-5)']))
+                             'No bridge-to-pin (PP-5)',
+                             'Imports from the unmodified 3 MiB Raw ROM stall before every match: '
+                             '$F0-$FF mirror missing in the 8 MiB expansion (PP-0, native)']))
     for slot in range(13):
         royal = RAW_TO_ROYAL.get(slot)
         common = dict(source_game='Royal Rumble' if royal is not None else None,
@@ -203,6 +206,21 @@ def perfect_plex_rows(receivers):
                    'Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)']
         art, gameplay = 'prototype_private', 'untested'
         evidence = ['data/perfect-receivers.json', 'docs/perfect-plex-gaps.md']
+        if slot == 2:
+            gameplay = 'defective'
+            evidence += ['docs/perfect-plex-native-trace.md',
+                         'evidence/perfect-plex-receivers/native-wip/undertaker-wip-native.gif',
+                         'evidence/perfect-plex-receivers/native-wip/measurement.json',
+                         'evidence/perfect-plex-receivers/native-wip/controller-replay-undertaker.json']
+            defects = ['WIP build on codex/perfect-receivers-wip @ 2955d5c; not released; native capture in one '
+                       'facing only (attacker on the left); editor isolation test not run',
+                       'Native: scene mirrored and receiver body crosses the attacker at entry (PP-1)',
+                       'Native: receiver drawn 6 px toward the attacker vs Royal; attacker drawn on top (PP-2)',
+                       'Native: receiver shadow stays at its actor origin, 38-63 px from the body (PP-3)',
+                       'Native: drawn standing, overlapping the attacker, after the move (action 70) (PP-4)',
+                       'Native: stray palette-6 fragment beside the shadow from frame 25 (PP-7)',
+                       'Native: every rendered receiver pixel matches the builder (no stale tiles), 139/139 frames',
+                       'Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)']
         rows.append(row(slot, 'finisher:Perfect-Plex', 'receiver', art, gameplay,
                         variant='target (own receiving art): WIP seven-counterpart build',
                         implementation={'branch': 'codex/perfect-receivers-wip', 'commit': '2955d5c',

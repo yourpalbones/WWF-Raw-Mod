@@ -1,7 +1,10 @@
 # Perfect-Plex: prioritized gap list
 
-Status as of this branch: **audit and provisional diagnosis only.** These are
-not fixes, and no ROM hook has been changed. Every "probable cause" below is a
+Status as of this branch: **audit, provisional diagnosis and a first native
+measurement.** These are not fixes, and no ROM hook has been changed. Native
+results for the WIP build with Undertaker receiving, in one facing, are in
+[perfect-plex-native-trace.md](perfect-plex-native-trace.md). Statements marked
+**native** below come from it. Everything else stays provisional. Every "probable cause" below is a
 hypothesis from code reading and ROM-free modelling. It stays provisional until
 a native trace (OAM/VRAM/WRAM capture from an exported ROM) confirms it.
 This revision applies Codex's review in
@@ -37,7 +40,8 @@ scanline limits, descriptor routing, VRAM staleness or OAM order.
 | --- | --- | --- |
 | S1 budget | Chunk counts plus the 2-object/4-tile shadow | Worst record 17/17 objects and 52/64 tiles. Within the per-actor recipe limit, with zero object headroom. Does not rule out runtime/scanline defects. |
 | S2 order | Chunk size order | 16×16 chunks precede 8×8 chunks in every record, consistent with the header count. Does not rule out routing defects. |
-| S3 bounds | Union of chunk extents vs the opaque bbox, with the +9 px canvas shift | Chunk extents reach every bbox edge. This is a **bounds check only**. A union rectangle can contain interior holes, so it does not prove every opaque pixel is covered. Exact per-pixel coverage needs the private decoded source tiles. |
+| S3 bounds | Union of chunk extents vs the opaque bbox, with the +9 px canvas shift | Chunk extents reach every bbox edge (bounds only). |
+| S3 exact (Royal ROM) | Every opaque pixel of all 144 decoded drawings vs the descriptor chunks (`tools/check_perfect_receiver_pixels.py`) | **0 uncovered pixels**; all decoded bboxes equal the recipe bboxes; 145 chunk tiles are empty. Builder canvas only. [`pixel-coverage.json`](../evidence/perfect-plex-receivers/pixel-coverage.json) |
 
 ## Paired coordinates (ROM-free model)
 
@@ -62,8 +66,22 @@ replay (attacker x=314, receiver x=354, both y=232). Results:
   and the detached shadow (PP-3) would then follow from one cause: mirrored
   artwork with unswapped actor origins.
 
-Each assumption is listed for trace confirmation in the derivation. No offsets
+**Native update:** the trace confirmed the attacker is unflipped, the profile dx
+is negated, and the scene is mirrored. It showed the reflection rule is
+`+8` (`c → −c + 7`), which none of the original assumption sets had. With that
+rule the model predicts **+6 px**, which matches the measurement. The 1–2 px
+prediction above is superseded. The model and the measurement are in
+[perfect-plex-pair-coordinates.md](perfect-plex-pair-coordinates.md). No offsets
 are proposed from it.
+
+## PP-0: imports from the unmodified Raw ROM never reach a match (native, blocking)
+
+Every matchup tried stalls on the pre-match announcer screen. The cause is
+traced: the 8 MiB expansion leaves file `0x300000–0x3FFFFF` empty, while the
+stock game reads an announcer graphic through the cartridge mirror at
+`$FF:2F37`. Restoring the mirror in a scratch copy removes the stall. Details
+are in [perfect-plex-native-trace.md](perfect-plex-native-trace.md). This sits in
+the importer (Codex-owned).
 
 ## Observed symptoms and provisional causes
 
@@ -78,10 +96,11 @@ Raw captures (v0.16 Luna and the older Undertaker prototype) start with Perfect
 on the left in the tie-up. From the first lift frame he is on the right, and the
 move is a mirror image of Royal.
 
-**Probable cause (provisional):** `import_perfect_plex.build` mirrors the
-attacker capture (`145 - x`). The receiver recipes keep Royal orientation, and
-the actor origins keep the tie-up arrangement. The coordinate model reproduces
-this side swap under the assumption set closest to the recorded spacing.
+**Native (WIP build, one facing):** the attacker draws unflipped, and the
+receiver is flipped and stays on the attacker's right as an actor. At frame 25
+the receiver body moves about 40 px left, past the attacker, in one frame. The
+mechanism is confirmed for this facing: Royal art mirrored for the attacker,
+with actor origins unchanged. The other facing is untested.
 
 ### PP-2: visible overlap; the receiver is largely hidden behind the attacker on lift frames
 
@@ -89,7 +108,14 @@ this side swap under the assumption set closest to the recorded spacing.
 older Undertaker prototype frames #2–#5. This may relate to the user's
 visible-gap report, but the link is not traced.
 
-**Status:** cause **open**. An earlier version of this audit prescribed
+**Native (WIP build, one facing):**
+- The receiver is drawn **6 px toward the attacker** relative to Royal
+  registration, in every matched frame.
+- The attacker's objects precede the receiver's in OAM, so the attacker covers it.
+- The renderer places flipped objects at `origin − dx − size + 8`.
+- The coordinate model with that rule predicts the measured +6 px exactly.
+
+Earlier status note, kept for history: cause **open**. An earlier version of this audit prescribed
 per-frame profile offsets. That prescription is withdrawn: each Royal drawing's
 descriptor already carries its source-relative position, so one constant profile
 offset can reproduce changing body positions. Under the closest assumption set,
@@ -103,6 +129,9 @@ before choosing a fix.
 
 **Evidence:** [`frame-review/detached-shadow.png`](../evidence/perfect-plex-receivers/frame-review/detached-shadow.png).
 
+**Native (WIP build):** the receiver's stock shadow stays at its actor origin
+(screen x 148–179) while the body is drawn 38–63 px to its left.
+
 **Historical prototype fact (S4):** the older prototype source writes the
 receiver body at profile (+32, 0) and the shadow `0x8024` at (0, −1). By
 source inspection, the WIP builder writes the same bytes. S4 parses a copy of
@@ -112,7 +141,15 @@ coordinate model offers a provisional explanation: the body lands 44–46 px
 from the origin, the shadow does not move, and the shadow ends up up to 46 px
 from the body.
 
-### PP-4: apparent standing overlap after the bridge (older Undertaker prototype GIF)
+### PP-4: standing overlap after the bridge
+
+**Native (WIP build):** from frame 166 the receiver is drawn standing,
+overlapping the attacker, while WRAM reports action 70. Its x changes from 348
+to 334 at frame 164. So action 70 does not mean a lying-down pose here, and the
+appearance in the older GIF is reproduced natively in the WIP build. The exit
+behaviour is real; its fix is undecided.
+
+Earlier text, kept for history:
 
 **Evidence:** [`frame-review/exit.png`](../evidence/perfect-plex-receivers/frame-review/exit.png),
 frames #21–#26 of the older Undertaker-only prototype GIF.
@@ -128,6 +165,13 @@ The earlier claim that the implementation returns the receiver to standing is
 withdrawn. The standing-overlap appearance in this one GIF still needs
 inspection. First identify the exact ROM/build and frame it was captured from,
 then diagnose. Do not diagnose an exit defect from the GIF alone.
+
+### PP-7: stray fragment beside the receiver shadow (native, new)
+
+From frame 25, four palette-6 8×8 objects reuse receiver VRAM tiles 98–101 and
+show a pink fragment beside the shadow. They are absent before the move and
+persist after it. Source not traced.
+See [fragment.png](../evidence/perfect-plex-receivers/native-wip/fragment.png).
 
 ### PP-5: no bridge-to-pin
 
@@ -167,14 +211,14 @@ index.**
 
 ## Suggested order (for Codex; no hooks changed here)
 
-1. Trace the five renderer facts listed in
-   [perfect-plex-pair-coordinates.md](perfect-plex-pair-coordinates.md):
-   facing and flip, reflection rule, profile-dx mirroring, actor spacing per
-   receiver, and OAM order.
-2. Report the measured versus predicted discrepancy. Only then choose between
-   swapping the actor origins and re-mirroring the recipes for PP-1 and PP-3.
-3. Revisit PP-2 with the traced draw order and spacing.
-4. Identify the build behind the PP-4 GIF, then PP-6 palette review, then PP-5.
+1. **PP-0:** restore the `$F0–$FF` mirror (`0x300000–0x3FFFFF`) in imports from
+   3 MiB ROMs. Without it no match starts.
+2. Decide the PP-1/PP-3 approach using the measured renderer facts: swap the
+   actor origins, or re-mirror the recipes. Then repeat the measurement in the
+   **other facing** and near both ropes.
+3. PP-2: the +6 px registration and the draw order.
+4. PP-7 stray fragment source; PP-4 exit pose; then PP-6 palette review and PP-5.
+5. Repeat for the other six direct counterparts. Then run the editor isolation test.
 
 The status in `data/animation-coverage.json` changes only when a native capture
 is committed.

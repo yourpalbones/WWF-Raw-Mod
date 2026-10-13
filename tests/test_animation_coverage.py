@@ -59,7 +59,7 @@ class PairCoordinateTests(unittest.TestCase):
         data = pair.report(observed, source)
         committed = json.loads((ROOT / 'evidence/perfect-plex-receivers/pair-coordinates.json').read_text())
         self.assertEqual(committed, json.loads(json.dumps(data)))
-        self.assertEqual(len(data['cases']), 8)
+        self.assertEqual(len(data['cases']), 12)
         self.assertIn('PREDICTION', data['status'])
 
     def test_reflection_rules(self):
@@ -68,6 +68,7 @@ class PairCoordinateTests(unittest.TestCase):
         self.assertEqual(pair.screen(100, 5, 0, True, 'centre', True), 95)
         self.assertEqual(pair.screen(100, 5, 32, True, 'edge', True), 62)
         self.assertEqual(pair.screen(100, 5, 32, False, 'edge', True), 137)
+        self.assertEqual(pair.screen(100, 5, 0, True, 'native+8', True), 102)
 
 
 if __name__ == '__main__':

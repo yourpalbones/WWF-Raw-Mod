@@ -1,0 +1,6748 @@
+{
+ "generated_by": "tools/measure_perfect_pair.py",
+ "rom_sha256": "4ca2856994fdebba62205a186feb5058c8b3a30760ad95423354012a4a128085",
+ "receiver_slot": 2,
+ "frames_measured": 142,
+ "frames_fully_matched": 139,
+ "flip_pairs": {
+  "(False, True)": 139
+ },
+ "receiver_body_terms": {
+  "-24": 139
+ },
+ "registration_errors": {
+  "6": 139
+ },
+ "attacker_oam_first": {
+  "False": 3,
+  "True": 139
+ },
+ "rows": [
+  {
+   "frame": 22,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": false,
+   "attacker_pose": null,
+   "receiver_pose": null
+  },
+  {
+   "frame": 23,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": false,
+   "attacker_pose": null,
+   "receiver_pose": null
+  },
+  {
+   "frame": 24,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": false,
+   "attacker_pose": null,
+   "receiver_pose": null
+  },
+  {
+   "frame": 25,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 0,
+   "receiver_pose": 0,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1081,
+   "receiver_pixels_matching_recipe_after_shift": 1081,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 26,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 0,
+   "receiver_pose": 0,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1081,
+   "receiver_pixels_matching_recipe_after_shift": 1081,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 27,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 0,
+   "receiver_pose": 0,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1081,
+   "receiver_pixels_matching_recipe_after_shift": 1081,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 28,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 0,
+   "receiver_pose": 0,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1081,
+   "receiver_pixels_matching_recipe_after_shift": 1081,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 29,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 0,
+   "receiver_pose": 0,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1081,
+   "receiver_pixels_matching_recipe_after_shift": 1081,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 30,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 0,
+   "receiver_pose": 0,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1081,
+   "receiver_pixels_matching_recipe_after_shift": 1081,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 31,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 0,
+   "receiver_pose": 0,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1081,
+   "receiver_pixels_matching_recipe_after_shift": 1081,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 32,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 0,
+   "receiver_pose": 0,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1081,
+   "receiver_pixels_matching_recipe_after_shift": 1081,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 33,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 1,
+   "receiver_pose": 1,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1301,
+   "receiver_pixels_matching_recipe_after_shift": 1301,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 34,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 1,
+   "receiver_pose": 1,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1301,
+   "receiver_pixels_matching_recipe_after_shift": 1301,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 35,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 1,
+   "receiver_pose": 1,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1301,
+   "receiver_pixels_matching_recipe_after_shift": 1301,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 36,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 1,
+   "receiver_pose": 1,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1301,
+   "receiver_pixels_matching_recipe_after_shift": 1301,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 37,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 1,
+   "receiver_pose": 1,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1301,
+   "receiver_pixels_matching_recipe_after_shift": 1301,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 38,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 1,
+   "receiver_pose": 1,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1301,
+   "receiver_pixels_matching_recipe_after_shift": 1301,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 39,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 1,
+   "receiver_pose": 1,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1301,
+   "receiver_pixels_matching_recipe_after_shift": 1301,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 40,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 2,
+   "receiver_pose": 2,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1216,
+   "receiver_pixels_matching_recipe_after_shift": 1216,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 41,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 2,
+   "receiver_pose": 2,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1216,
+   "receiver_pixels_matching_recipe_after_shift": 1216,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 42,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 2,
+   "receiver_pose": 2,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1216,
+   "receiver_pixels_matching_recipe_after_shift": 1216,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 43,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 2,
+   "receiver_pose": 2,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1216,
+   "receiver_pixels_matching_recipe_after_shift": 1216,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 44,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 2,
+   "receiver_pose": 2,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1216,
+   "receiver_pixels_matching_recipe_after_shift": 1216,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 45,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 2,
+   "receiver_pose": 2,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 1216,
+   "receiver_pixels_matching_recipe_after_shift": 1216,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 46,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 3,
+   "receiver_pose": 3,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 824,
+   "receiver_pixels_matching_recipe_after_shift": 824,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    156,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 47,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 3,
+   "receiver_pose": 3,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 824,
+   "receiver_pixels_matching_recipe_after_shift": 824,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    156,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 48,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 3,
+   "receiver_pose": 3,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 824,
+   "receiver_pixels_matching_recipe_after_shift": 824,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    156,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 49,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 3,
+   "receiver_pose": 3,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 824,
+   "receiver_pixels_matching_recipe_after_shift": 824,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    156,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 50,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 3,
+   "receiver_pose": 3,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 824,
+   "receiver_pixels_matching_recipe_after_shift": 824,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    156,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 51,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 3,
+   "receiver_pose": 3,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 824,
+   "receiver_pixels_matching_recipe_after_shift": 824,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    156,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 52,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 3,
+   "receiver_pose": 3,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 824,
+   "receiver_pixels_matching_recipe_after_shift": 824,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    156,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 53,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 4,
+   "receiver_pose": 4,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 873,
+   "receiver_pixels_matching_recipe_after_shift": 873,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    156,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 54,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 4,
+   "receiver_pose": 4,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 873,
+   "receiver_pixels_matching_recipe_after_shift": 873,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    156,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 55,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 4,
+   "receiver_pose": 4,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 873,
+   "receiver_pixels_matching_recipe_after_shift": 873,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    156,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 56,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 4,
+   "receiver_pose": 4,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 873,
+   "receiver_pixels_matching_recipe_after_shift": 873,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    156,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 57,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 4,
+   "receiver_pose": 4,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 873,
+   "receiver_pixels_matching_recipe_after_shift": 873,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    156,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 58,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 4,
+   "receiver_pose": 4,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 873,
+   "receiver_pixels_matching_recipe_after_shift": 873,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    156,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 59,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 4,
+   "receiver_pose": 4,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 873,
+   "receiver_pixels_matching_recipe_after_shift": 873,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    156,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 60,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 5,
+   "receiver_pose": 5,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 723,
+   "receiver_pixels_matching_recipe_after_shift": 723,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 61,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 5,
+   "receiver_pose": 5,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 723,
+   "receiver_pixels_matching_recipe_after_shift": 723,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 62,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 5,
+   "receiver_pose": 5,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 723,
+   "receiver_pixels_matching_recipe_after_shift": 723,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 63,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 5,
+   "receiver_pose": 5,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 723,
+   "receiver_pixels_matching_recipe_after_shift": 723,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 64,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 5,
+   "receiver_pose": 5,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 723,
+   "receiver_pixels_matching_recipe_after_shift": 723,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 65,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 5,
+   "receiver_pose": 5,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 723,
+   "receiver_pixels_matching_recipe_after_shift": 723,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 66,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 5,
+   "receiver_pose": 5,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 723,
+   "receiver_pixels_matching_recipe_after_shift": 723,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 67,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 5,
+   "receiver_pose": 5,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 723,
+   "receiver_pixels_matching_recipe_after_shift": 723,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 68,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 6,
+   "receiver_pose": 6,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 897,
+   "receiver_pixels_matching_recipe_after_shift": 897,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 69,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 6,
+   "receiver_pose": 6,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 897,
+   "receiver_pixels_matching_recipe_after_shift": 897,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 70,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 6,
+   "receiver_pose": 6,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 897,
+   "receiver_pixels_matching_recipe_after_shift": 897,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 71,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 6,
+   "receiver_pose": 6,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 897,
+   "receiver_pixels_matching_recipe_after_shift": 897,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 72,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 6,
+   "receiver_pose": 6,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 897,
+   "receiver_pixels_matching_recipe_after_shift": 897,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 73,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 6,
+   "receiver_pose": 6,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 897,
+   "receiver_pixels_matching_recipe_after_shift": 897,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 74,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 6,
+   "receiver_pose": 6,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 897,
+   "receiver_pixels_matching_recipe_after_shift": 897,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    146,
+    148,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 75,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 7,
+   "receiver_pose": 7,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 735,
+   "receiver_pixels_matching_recipe_after_shift": 735,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 76,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 7,
+   "receiver_pose": 7,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 735,
+   "receiver_pixels_matching_recipe_after_shift": 735,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 77,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 7,
+   "receiver_pose": 7,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 735,
+   "receiver_pixels_matching_recipe_after_shift": 735,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 78,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 7,
+   "receiver_pose": 7,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 735,
+   "receiver_pixels_matching_recipe_after_shift": 735,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 79,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 7,
+   "receiver_pose": 7,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 735,
+   "receiver_pixels_matching_recipe_after_shift": 735,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 80,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 7,
+   "receiver_pose": 7,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 735,
+   "receiver_pixels_matching_recipe_after_shift": 735,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 81,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 7,
+   "receiver_pose": 7,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 735,
+   "receiver_pixels_matching_recipe_after_shift": 735,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 82,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 8,
+   "receiver_pose": 8,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 778,
+   "receiver_pixels_matching_recipe_after_shift": 778,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 83,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 8,
+   "receiver_pose": 8,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 778,
+   "receiver_pixels_matching_recipe_after_shift": 778,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 84,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 8,
+   "receiver_pose": 8,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 778,
+   "receiver_pixels_matching_recipe_after_shift": 778,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 85,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20561
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 8,
+   "receiver_pose": 8,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 778,
+   "receiver_pixels_matching_recipe_after_shift": 778,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 86,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 8,
+   "receiver_pose": 8,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 778,
+   "receiver_pixels_matching_recipe_after_shift": 778,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 87,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 8,
+   "receiver_pose": 8,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 778,
+   "receiver_pixels_matching_recipe_after_shift": 778,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 88,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 8,
+   "receiver_pose": 8,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 778,
+   "receiver_pixels_matching_recipe_after_shift": 778,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    148,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 89,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 9,
+   "receiver_pose": 9,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 962,
+   "receiver_pixels_matching_recipe_after_shift": 962,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 90,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 9,
+   "receiver_pose": 9,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 962,
+   "receiver_pixels_matching_recipe_after_shift": 962,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 91,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 9,
+   "receiver_pose": 9,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 962,
+   "receiver_pixels_matching_recipe_after_shift": 962,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 92,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 9,
+   "receiver_pose": 9,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 962,
+   "receiver_pixels_matching_recipe_after_shift": 962,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 93,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 9,
+   "receiver_pose": 9,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 145,
+    "receiver_origin_y": 145
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 962,
+   "receiver_pixels_matching_recipe_after_shift": 962,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 94,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 9,
+   "receiver_pose": 9,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 145,
+    "receiver_origin_y": 145
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 962,
+   "receiver_pixels_matching_recipe_after_shift": 962,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 95,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 9,
+   "receiver_pose": 9,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 145,
+    "receiver_origin_y": 145
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 962,
+   "receiver_pixels_matching_recipe_after_shift": 962,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 96,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 10,
+   "receiver_pose": 10,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 145,
+    "receiver_origin_y": 145
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 826,
+   "receiver_pixels_matching_recipe_after_shift": 826,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 97,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 10,
+   "receiver_pose": 10,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 826,
+   "receiver_pixels_matching_recipe_after_shift": 826,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 98,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 10,
+   "receiver_pose": 10,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 826,
+   "receiver_pixels_matching_recipe_after_shift": 826,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 99,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 10,
+   "receiver_pose": 10,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 826,
+   "receiver_pixels_matching_recipe_after_shift": 826,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 100,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 10,
+   "receiver_pose": 10,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 826,
+   "receiver_pixels_matching_recipe_after_shift": 826,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 101,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 10,
+   "receiver_pose": 10,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 826,
+   "receiver_pixels_matching_recipe_after_shift": 826,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    145,
+    145,
+    146,
+    148,
+    153,
+    156,
+    164,
+    172
+   ]
+  },
+  {
+   "frame": 102,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 103,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 104,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 105,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 141,
+    "receiver_origin_y": 141
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 106,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 141,
+    "receiver_origin_y": 141
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 107,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 141,
+    "receiver_origin_y": 141
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 108,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 141,
+    "receiver_origin_y": 141
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 109,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 110,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 111,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 112,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 113,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 138,
+    "receiver_origin_y": 138
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 114,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 138,
+    "receiver_origin_y": 138
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 115,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 138,
+    "receiver_origin_y": 138
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 116,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 138,
+    "receiver_origin_y": 138
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 117,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 118,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 119,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 120,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 121,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 122,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 123,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 124,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 125,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 126,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 127,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 128,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 129,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 130,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 131,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 132,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 133,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 134,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 135,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 136,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 137,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 138,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 139,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 140,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 141,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 142,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 143,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 144,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 145,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 146,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 147,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 148,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 149,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 150,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 151,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 152,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 153,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 154,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 155,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 156,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 157,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 158,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 159,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 160,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 161,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 162,
+   "attacker": {
+    "action": 600,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  },
+  {
+   "frame": 163,
+   "attacker": {
+    "action": 0,
+    "x": 308,
+    "y": 210,
+    "state": 20560
+   },
+   "receiver": {
+    "action": 540,
+    "x": 348,
+    "y": 210,
+    "state": 20562
+   },
+   "attacker_oam_first": true,
+   "attacker_pose": 11,
+   "receiver_pose": 11,
+   "attacker_flipped": false,
+   "receiver_flipped": true,
+   "camera_x": 190,
+   "attacker_origin_screen": 118,
+   "receiver_actor_screen_x": 158,
+   "receiver_body_term": -24,
+   "vertical": {
+    "attacker_origin_y": 137,
+    "receiver_origin_y": 137
+   },
+   "receiver_registration_error_px": 6,
+   "receiver_pixels": 770,
+   "receiver_pixels_matching_recipe_after_shift": 770,
+   "shadow_objects_x": [
+    104,
+    111,
+    112,
+    119,
+    120,
+    127,
+    128,
+    148,
+    148,
+    156,
+    156,
+    164,
+    164,
+    172,
+    172
+   ]
+  }
+ ]
+}

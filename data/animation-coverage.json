@@ -1307,12 +1307,15 @@
     "evidence/mr-perfect-import/perfect-plex.gif",
     "evidence/mr-perfect-import/verification.json",
     "evidence/perfect-plex-receivers/raw-undertaker-prototype.gif",
+    "evidence/perfect-plex-receivers/native-wip/undertaker-wip-native.gif",
+    "docs/perfect-plex-native-trace.md",
     "docs/perfect-plex-gaps.md"
    ],
    "aliases": "private (tile IDs C000+ written per pose, no sharing with stock slots)",
    "defects": [
     "Scene plays mirrored relative to the entry tie-up: attacker crosses to the far side of the receiver on the first lift frame (PP-1; cause provisional, see docs/perfect-plex-pair-coordinates.md)",
-    "No bridge-to-pin (PP-5)"
+    "No bridge-to-pin (PP-5)",
+    "Imports from the unmodified 3 MiB Raw ROM stall before every match: $F0-$FF mirror missing in the 8 MiB expansion (PP-0, native)"
    ]
   },
   {
@@ -1516,7 +1519,7 @@
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
    "art_status": "prototype_private",
-   "gameplay_status": "untested",
+   "gameplay_status": "defective",
    "variant": "target (own receiving art): WIP seven-counterpart build",
    "implementation": {
     "branch": "codex/perfect-receivers-wip",
@@ -1581,10 +1584,20 @@
    },
    "evidence": [
     "data/perfect-receivers.json",
-    "docs/perfect-plex-gaps.md"
+    "docs/perfect-plex-gaps.md",
+    "docs/perfect-plex-native-trace.md",
+    "evidence/perfect-plex-receivers/native-wip/undertaker-wip-native.gif",
+    "evidence/perfect-plex-receivers/native-wip/measurement.json",
+    "evidence/perfect-plex-receivers/native-wip/controller-replay-undertaker.json"
    ],
    "defects": [
-    "WIP build on codex/perfect-receivers-wip (tools/build_perfect_receivers.py); not released; no committed gameplay capture; editor isolation test not run",
+    "WIP build on codex/perfect-receivers-wip @ 2955d5c; not released; native capture in one facing only (attacker on the left); editor isolation test not run",
+    "Native: scene mirrored and receiver body crosses the attacker at entry (PP-1)",
+    "Native: receiver drawn 6 px toward the attacker vs Royal; attacker drawn on top (PP-2)",
+    "Native: receiver shadow stays at its actor origin, 38-63 px from the body (PP-3)",
+    "Native: drawn standing, overlapping the attacker, after the move (action 70) (PP-4)",
+    "Native: stray palette-6 fragment beside the shadow from frame 25 (PP-7)",
+    "Native: every rendered receiver pixel matches the builder (no stale tiles), 139/139 frames",
     "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
    ],
    "source_game": "Royal Rumble",
@@ -4763,7 +4776,7 @@
   {
    "id": "S3",
    "severity": "pass",
-   "summary": "Bounds check: with the prototype canvas shift (+9 px x) the union of chunk extents reaches every edge of each pose's opaque bbox. This does not prove every opaque pixel is covered; a union can have interior holes. Exact coverage needs the private decoded source tiles.",
+   "summary": "Bounds check: with the prototype canvas shift (+9 px x) the union of chunk extents reaches every edge of each pose's opaque bbox. This does not prove every opaque pixel is covered; a union can have interior holes. The exact per-pixel check is tools/check_perfect_receiver_pixels.py (needs the Royal ROM).",
    "detail": null
   },
   {
@@ -4826,8 +4839,8 @@
    "untested": 67
   },
   "prototype_private": {
-   "untested": 7,
-   "defective": 1
+   "untested": 6,
+   "defective": 2
   }
  }
 }

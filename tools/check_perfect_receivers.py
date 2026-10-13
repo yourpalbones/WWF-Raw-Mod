@@ -90,7 +90,7 @@ def analyse(data):
     add('S3', 'pass' if not extent_failures else 'fail',
         (f'Bounds check: with the prototype canvas shift (+{shift} px x) the union of chunk extents reaches every '
          'edge of each pose\'s opaque bbox. This does not prove every opaque pixel is covered; a union can have '
-         'interior holes. Exact coverage needs the private decoded source tiles.') if not extent_failures else
+         'interior holes. The exact per-pixel check is tools/check_perfect_receiver_pixels.py (needs the Royal ROM).') if not extent_failures else
         'Bounds check failed: chunk extents do not reach the opaque bbox for some poses.',
         extent_failures or None)
     offsets = {tuple(p.get('profile_offset', ())) for w in data['workers'] for p in w['poses']}

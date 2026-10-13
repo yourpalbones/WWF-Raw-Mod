@@ -30,7 +30,9 @@ Assumptions varied (all unconfirmed):
   A1 attacker_flipped: whether the attacker's descriptors are mirrored at runtime
      when the receiver is on its right (the observed tie-up arrangement).
   A2 reflection: 'edge' maps relative column c to -c-1 (exact pixel reflection);
-     'centre' maps c to -c.
+     'centre' maps c to -c; 'native+8' maps c to -c+7, which is the object rule
+     oam_x = origin - dx - size + 8 MEASURED on the WIP build (one facing; see
+     docs/perfect-plex-native-trace.md).
   A3 profile_offset_mirrored: whether the profile dx is negated with facing.
   Fixed: the receiver faces opposite the attacker; descriptor dy and profile dy
   are not affected by horizontal facing; both actors share the same y origin.
@@ -59,7 +61,7 @@ def screen(origin, relative, profile_dx, flipped, reflection, profile_mirrored):
     """Screen column of a descriptor-relative column under the given assumptions."""
     if not flipped:
         return origin + profile_dx + relative
-    mirrored = -relative - 1 if reflection == 'edge' else -relative
+    mirrored = {'edge': -relative - 1, 'centre': -relative, 'native+8': -relative + 7}[reflection]
     return origin + (-profile_dx if profile_mirrored else profile_dx) + mirrored
 
 
@@ -75,7 +77,7 @@ def derive(observed_spacing):
     poses = receivers['workers'][2]['poses']   # Royal Undertaker; bbox geometry is per worker
     cases = []
     for attacker_flipped, reflection, profile_mirrored in itertools.product(
-            (False, True), ('edge', 'centre'), (True, False)):
+            (False, True), ('edge', 'centre', 'native+8'), (True, False)):
         sa, ta = linear(0, 0, lambda x: relative_columns(x)[0], attacker_flipped, reflection, profile_mirrored)
         # Receiver origin R is unknown: screen = s * x + (tr0 + R).
         sr, tr0 = linear(0, RECEIVER_PROFILE[0], lambda x: relative_columns(x)[1] + 0,
@@ -181,9 +183,28 @@ def markdown(data):
                 'to Raw\'s own art.',
                 '- The other assumption sets predict errors of 62–82 px. GIF appearance is not used here to choose '
                 'between assumption sets.']
+    measured = ROOT / 'evidence/perfect-plex-receivers/native-wip/measurement.json'
+    if measured.exists():
+        m = json.loads(measured.read_text())
+        native = next(c for c in data['cases'] if c['assumptions'] == {
+            'attacker_flipped_when_receiver_on_right': False, 'reflection': 'native+8', 'profile_offset_mirrored': True})
+        spacings = sorted({r['receiver']['x'] - r['attacker']['x'] for r in m['rows'] if 'camera_x' in r})
+        out += ['', '## Native measurement', '',
+                f'From `evidence/perfect-plex-receivers/native-wip/measurement.json` (WIP build, receiver slot '
+                f'{m["receiver_slot"]}, one facing, {m["frames_fully_matched"]} of {m["frames_measured"]} move frames '
+                'matched to their descriptors):', '',
+                f'- Flip pairs (attacker, receiver): {m["flip_pairs"]}. The attacker is unflipped with the receiver on its right.',
+                f'- Receiver body term (flipped object origin minus actor screen x): {m["receiver_body_terms"]}. '
+                'That is -32 (profile dx negated) + 8, so the flipped object rule is oam_x = origin - dx - size + 8 '
+                '(`native+8` above), not edge or centre reflection.',
+                f'- Measured receiver registration error versus Royal: {m["registration_errors"]} px, at actor spacing '
+                f'{spacings}. The model row for the measured rule predicts '
+                f'{native["predicted_horizontal_error_px"]:+d} px at the recorded spacing.',
+                f'- Attacker objects precede receiver objects in OAM (attacker drawn on top): {m["attacker_oam_first"]}.']
     out += ['', '## What a native trace must confirm before any hook edit', '',
             '1. Facing word and runtime flip for attacker and receiver on the Perfect-Plex frames, in both facings.',
-            '2. The renderer\'s reflection rule (edge vs centre) from OAM x for one known object.',
+            '2. The renderer\'s reflection rule from OAM x for one known object. Measured for one facing: '
+            'native+8 (see perfect-plex-native-trace.md).',
             '3. Whether profile dx is negated with facing.',
             '4. Actor x/y for each receiver, both facings and near both ropes. Only the Luna run is recorded here.',
             '5. OAM draw order between the two actors on lift frames.', '',
