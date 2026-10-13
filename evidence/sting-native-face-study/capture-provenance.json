@@ -1,0 +1,7 @@
+{
+  "candidate_rom_sha256": "f54cdd6d1151269dd461380df996cd7067cd134468eb497206f89cb51098e219",
+  "base_rom_sha256": "9869d435f30c81acaba8edc3d6cdc34d384cd1ef06962e3eeb075d8435f33c73",
+  "capture": "Cold boot and actual controller replay; walk frame24",
+  "comparison": "4bpp pixels decoded from original Doink and both private Sting ROM builds",
+  "art_likeness_requires_visual_review": true
+}
