@@ -56,6 +56,7 @@ def main():
     p.add_argument('--side', choices=['left', 'right'], default='left', help='P1 (Perfect) side of the receiver')
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--max-frames', type=int, default=40000)
+    p.add_argument('--mash', type=int, default=8, help='B strikes between finisher attempts (fewer keeps the receiver above zero health)')
     p.add_argument('--debug', action='store_true')
     a = p.parse_args()
     rights = 2 * a.slot + 1
@@ -131,7 +132,7 @@ def main():
                     if tries % 2:
                         plan += [(20, {0: {R}, 1: set()}), (10, {0: set(), 1: set()})] * 9
                     else:
-                        plan += [(20, {0: {B}, 1: set()}), (10, {0: set(), 1: set()})] * 8
+                        plan += [(20, {0: {B}, 1: set()}), (10, {0: set(), 1: set()})] * a.mash
                     plan += [(120, {0: set(), 1: set()})]
                     tries += 1
                 else:
@@ -144,7 +145,7 @@ def main():
         raise SystemExit(f'No Perfect-Plex within {a.max_frames} frames (tries {tries})')
     recipe = {'scenario': a.output.stem, 'receiver_slot': a.slot, 'composed_by': 'tools/recipe_bot.py',
               'note': f'Bot-played: P2 selects slot {a.slot}; P1 grapples from the {a.side} until the Perfect-Plex starts.',
-              'parameters': {'rights': rights, 'side': a.side, 'final_side': side, 'setup_end': setup_end},
+              'parameters': {'rights': rights, 'side': a.side, 'final_side': side, 'setup_end': setup_end, 'mash': a.mash},
               'controller_only': True, 'frames': move_start + 600, 'move_start': move_start,
               'capture_from': move_start - 150, 'capture_frames': 400, 'inputs': inputs}
     a.output.write_text(json.dumps(recipe, indent=1) + '\n')
