@@ -23,6 +23,10 @@ LAYOUT={'marker':'ROYAL-RX3','tables':[0x71d000,0x720000],'descriptors':[0x71190
 #   uses 'fallback' instead.
 # - 'own_native': private copies of the slot's own native receiving sequence (Raw's receiving-suplex drawings
 #   in the slot's own art and gear), for workers with no Royal counterpart of the same identity.
+# Own native drawings per Perfect-Plex step: [victim row (Raw receiving-suplex drawing), extra dx, extra dy].
+# Raw's suplex lifts at its third drawing, the Perfect-Plex only at step 10, so the held drawing carries
+# steps 2-9, the lift drawings steps 10-11 and the landed drawing the bridge (reviewed in the paired preview).
+OWN_NATIVE_STEPS=[[0,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[3,0,0],[6,0,8],[10,0,0]]
 SLOTS={0:{'source':'own_native'},1:{'source':'royal','selector':3},2:{'source':'royal','selector':2},
        3:{'source':'royal','selector':9},4:{'source':'own_native'},
        5:{'source':'royal','selector':8,'stock_identity_only':True,'fallback':'own_native'},

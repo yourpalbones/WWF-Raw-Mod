@@ -77,11 +77,14 @@ window.RAW_RECEIVING_ART=(()=>{
  // the generic path places them: stock profile entries + the importer's per-step translate), copied into
  // private drawings. Identity, gear and user edits come from the loaded ROM; nothing is borrowed from
  // another worker. Choreography is Raw's lift-and-fall, not Royal's exact Perfect-Plex frames.
- function ownNative(base,slot){
+ // steps: for each Perfect-Plex step, [native drawing (victim row), extra dx, extra dy]. Raw's own sequence lifts
+ // much earlier than the Perfect-Plex, so its drawings are re-timed to follow the attacker (held through step 9,
+ // lifted over in 10-11, on the back for the bridge in 12). See recipes.own_native_steps.
+ function ownNative(base,slot,steps){
   const P=window.RAW_PARTS,victim=window.RAW_ROYAL_IMPORT_MANIFEST.victim;
-  return victim.map(row=>{
-   const points=new Map();
-   for(const [id,dx,dy]of P.profileParts(base,row.profile)){if(id===0x8024)continue;P.raster(P.resolvePart(base,slot,id).parts,dx+row.translate[0],dy+row.translate[1],false,points);}
+  return (steps||victim.map((_,i)=>[i,0,0])).map(([index,ex,ey])=>{
+   const row=victim[index],points=new Map();
+   for(const [id,dx,dy]of P.profileParts(base,row.profile)){if(id===0x8024)continue;P.raster(P.resolvePart(base,slot,id).parts,dx+row.translate[0]+ex,dy+row.translate[1]+ey,false,points);}
    let left=Infinity,right=-Infinity;for(const k of points.keys()){const x=Number(k.split(',')[0]);left=Math.min(left,x);right=Math.max(right,x);}
    const body=Math.round((left+right+1)/2),image=new Uint8Array(SIZE*SIZE);
    for(const [k,v]of points){const [x,y]=k.split(',').map(Number),X=OX+x-body,Y=OY+y;if(X<0||Y<0||X>=SIZE||Y>=SIZE)throw Error('Receiving drawing exceeds its canvas.');image[Y*SIZE+X]=v;}

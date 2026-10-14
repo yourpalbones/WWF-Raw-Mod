@@ -49,7 +49,7 @@ window.RAW_PERFECT_RECEIVER_CORE=(()=>{
    const mapping=nearestMapping(colors,target);
    return recipes.workers[spec.selector].poses.map((_,i)=>royalDrawing(source,recipes,spec.selector,i,mapping,cache,shift));
   }
-  if(spec.source==='own_native'&&window.RAW_RECEIVING_ART)return window.RAW_RECEIVING_ART.ownNative(base,slot);
+  if(spec.source==='own_native'&&window.RAW_RECEIVING_ART)return window.RAW_RECEIVING_ART.ownNative(base,slot,recipes.own_native_steps);
   if(spec.source==='authored'&&window.RAW_RECEIVING_ART)return window.RAW_RECEIVING_ART.render(base,source,recipes,slot,spec);
   throw Error(`No receiving art source for slot ${slot}.`);
  }
