@@ -3,7 +3,10 @@ import argparse,json
 from pathlib import Path
 from PIL import Image
 import royal_rumble_sprites as royal
-from convert_perfect_poses import convert
+from convert_perfect_poses import convert, hair_changes
+from raw_parts import resolve_index, raster as raw_raster
+
+ADAPTED_COLOURS=[0,1,4,8,4,8,13,2,14,7,6,3,2,15,14,11]   # editor/royal-import-core.js
 from extract_oam import objects
 from build_bret_gear import planar
 from import_perfect_plex import actor_pixels,init_hook,sequence_hook
@@ -27,14 +30,26 @@ def frame_rows(frames):
     return rows
 
 
+def mark_hair(rows,raw_rom,matches):
+    """Adapted rows whose Bret hair the importer recolours blond: 'hair' and 'replaces' (the v0.16 piece hash)."""
+    hashes={(m['kind'],m['index']):m['adapted_hash'] for m in matches}
+    for r in rows:
+        if r['royal']:continue
+        points={k:ADAPTED_COLOURS[v] for k,v in raw_raster(resolve_index(raw_rom,1,r['kind'],r['index'])['parts']).items()}
+        if hair_changes(points):r['hair']=1;r['replaces']=hashes[(r['kind'],r['index'])]
+    return rows
+
+
 def coverage(rows):
     return {'royal_poses':sum(r['royal']for r in rows),'adapted_raw_poses':sum(not r['royal']for r in rows),
-            'matched_royal_poses':sum('replaces' in r for r in rows)}
+            'matched_royal_poses':sum(r['royal'] and 'replaces' in r for r in rows),
+            'hair_recoloured_poses':sum(bool(r.get('hair'))for r in rows)}
 
 
 def build(raw_rom,raw_wram,royal_rom,royal_wram,captures,matches=None):
     frames=convert(raw_rom,raw_wram,royal_rom,royal_wram,matches)
     rows=frame_rows(frames)
+    if matches:mark_hair(rows,raw_rom,matches)
     atlas={bytes(32):None}
     for frame in royal.catalog(royal_rom,royal_wram,1):
         for part in frame['parts']:

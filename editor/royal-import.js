@@ -144,9 +144,9 @@ function refreshRoyalImport(){
  const loaded=Boolean(rom),added=loaded&&hasImportedWorker(rom);$('royal-rom').disabled=!loaded;$('royal-add').disabled=!loaded||!royalSource||added;
  $('royal-update').disabled=!added||!royalSource||!plexNeedsUpdate(rom);
  $('royal-worker').disabled=!loaded||!royalSource||added;
- if(added)$('royal-status').textContent='Mr. Perfect occupies slot 13, including the Perfect-Plex.'+(posesNeedUpdate(rom)?'':` ${RM.coverage.royal_poses.toLocaleString()} pieces use Royal artwork; ${RM.coverage.adapted_raw_poses.toLocaleString()} still use adapted Raw artwork.`)+' Save this ROM to keep editing it later. One extra slot is supported.';
+ if(added)$('royal-status').textContent='Mr. Perfect occupies slot 13, including the Perfect-Plex.'+(posesNeedUpdate(rom)?'':` ${RM.coverage.royal_poses.toLocaleString()} pieces use Royal artwork; ${RM.coverage.adapted_raw_poses.toLocaleString()} still use adapted Raw artwork (${RM.coverage.hair_recoloured_poses.toLocaleString()} of them with his hair colour).`)+' Save this ROM to keep editing it later. One extra slot is supported.';
  if(added&&RI.word(rom,0x2cf212)===0x8400)$('royal-status').textContent+=' Save playable ROM to restore the referee and announcer palettes in this older import.';
- if(added&&posesNeedUpdate(rom))$('royal-status').textContent+=` This ROM has an earlier Mr. Perfect: up to ${RM.coverage.matched_royal_poses.toLocaleString()} more pieces can use his Royal artwork. Load Royal Rumble and choose Update Perfect-Plex; pieces you edited are kept.`;
+ if(added&&posesNeedUpdate(rom))$('royal-status').textContent+=` This ROM has an earlier Mr. Perfect: up to ${RM.coverage.matched_royal_poses.toLocaleString()} more pieces can use his Royal artwork and ${RM.coverage.hair_recoloured_poses.toLocaleString()} adapted pieces can show his blond hair. Load Royal Rumble and choose Update Perfect-Plex; pieces you edited are kept.`;
  if(added&&plexNeedsUpdate(rom)&&!posesNeedUpdate(rom))$('royal-status').textContent+=' This ROM has an earlier Perfect-Plex. Load Royal Rumble and choose Update Perfect-Plex to fix its facing, positions, shadows and exit.';
  if(added&&importedAnnouncerRecords(rom).length)$('royal-status').textContent+=' Save playable ROM to repair the announcer tables in this older import; without that, matches stall before they start.';
 }
@@ -173,7 +173,7 @@ $('royal-update').onclick=async()=>{let message='';try{
  if(!rom||!royalSource||!hasImportedWorker(rom))throw Error('Load the imported ROM and Royal Rumble first.');$('royal-update').disabled=true;$('royal-status').textContent='Updating the Perfect-Plex…';await new Promise(r=>setTimeout(r,0));
  let data=RC.uninstall(playableROM());if(!RI.plexCurrent(data))data=RI.updatePlex(data,royalSource,RM);
  let poses='';if(posesNeedUpdate(data)){const upgraded=RI.upgradePoses(data,royalSource,RM);data=upgraded.bytes;
-  poses=` ${upgraded.report.replaced.toLocaleString()} pieces now use Mr. Perfect's Royal artwork`+(upgraded.report.kept_edited?`; ${upgraded.report.kept_edited.toLocaleString()} pieces you edited were kept as they are.`:'.');}
+  poses=` ${upgraded.report.replaced.toLocaleString()} pieces now use Mr. Perfect's Royal artwork and ${upgraded.report.recoloured.toLocaleString()} adapted pieces show his blond hair`+(upgraded.report.kept_edited?`; ${upgraded.report.kept_edited.toLocaleString()} pieces you edited were kept as they are.`:'.');}
  let note='';try{data=RC.install(data,royalSource,RX).bytes;}catch(e){note=' Receiving drawings were not added: '+e.message;}
  const file=new File([data],'WWF-Raw-Mr-Perfect.sfc',{type:'application/octet-stream'});
  await $('rom').onchange({target:{files:[file]}});if(!rom||!hasImportedWorker(rom))throw Error('The updated ROM could not be reopened: '+$('status').textContent);

@@ -19,6 +19,48 @@ def minimum(points):
     return (min(x for x, y in points), min(y for x, y in points)) if points else (0, 0)
 
 
+SKIN = {2, 3, 11, 6}          # Perfect palette indices of skin in adapted pieces
+N8 = [(dx, dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1) if dx or dy]
+N4 = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+
+
+def hair_changes(points):
+    """Adapted pieces show Bret's dark hair: brown (Perfect index 7, from Bret's index 9) dithered with black.
+    8-connected brown regions whose neighbours are mostly dark (not skin) and that are dithered with black are hair: brown -> pale blond 13, black
+    inside the dither (>= 2 hair 4-neighbours) -> beige 9, black on its edge -> dark brown 12, as Royal draws
+    Perfect's hair. Brown skin shading is left alone. Returns {(x, y): new index}. editor/royal-import-core.js
+    hairChanges is the same rule."""
+    seen, hair = set(), set()
+    for p, v in points.items():
+        if v != 7 or p in seen:
+            continue
+        comp, k = [p], 0
+        seen.add(p)
+        while k < len(comp):
+            x, y = comp[k]; k += 1
+            for dx, dy in N8:
+                q = (x + dx, y + dy)
+                if points.get(q) == 7 and q not in seen:
+                    seen.add(q); comp.append(q)
+        dark = sum(points.get((x + dx, y + dy)) in (1, 7) for x, y in comp for dx, dy in N8)
+        skin = sum(points.get((x + dx, y + dy)) in SKIN for x, y in comp for dx, dy in N8)
+        # Hair is dithered: black pixels with >= 2 brown 4-neighbours. Solid brown patches (armpit shadow) are not hair.
+        members = set(comp)
+        black = {(x + dx, y + dy) for x, y in comp for dx, dy in N4 if points.get((x + dx, y + dy)) == 1}
+        dither = sum(sum((x + dx, y + dy) in members for dx, dy in N4) >= 2 for x, y in black)
+        if dark >= 1.5 * skin and (len(comp) <= 2 or dither >= 0.3 * len(comp)):
+            hair.update(comp)
+    out = {}
+    for (x, y), v in points.items():
+        if (x, y) in hair:
+            out[(x, y)] = 13
+        elif v == 1:
+            n = sum((x + dx, y + dy) in hair for dx, dy in N4)
+            if n:
+                out[(x, y)] = 9 if n >= 2 else 12
+    return out
+
+
 def placed_parts(target, match):
     """Royal Perfect's frame placed on a Raw piece by a measured match (tools/match_perfect_poses.py).
     Returns None when the result cannot be stored as a Raw descriptor without changing pixels."""

@@ -5,7 +5,7 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
  const putWord=(b,p,v)=>{b[p]=v&255;b[p+1]=v>>>8&255;};
  const putLong=(b,p,v)=>{putWord(b,p,v);b[p+2]=v>>>16&255;};
  const equal=(b,p,a)=>a.every((v,i)=>b[p+i]===v);
- const PLEX_MARKER='PLEX-CANON1',POSES_MARKER='POSES-ROYAL2';
+ const PLEX_MARKER='PLEX-CANON1',POSES_MARKER='POSES-ROYAL3';
  const bytes=s=>Uint8Array.from(s.trim().split(/\s+/),v=>parseInt(v,16));
  const search=(b,pattern,start=0,end=b.length)=>{outer:for(let p=start;p+pattern.length<=end;p++){for(let i=0;i<pattern.length;i++)if(b[p+i]!==pattern[i])continue outer;return p;}return -1;};
  function tile(data,ref){
@@ -46,6 +46,35 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
    if(color>=96)throw Error('Royal photo color outside its palette.');const value=word(data,palette+color*2),at=((Math.floor(i/16)*8+y)*128+(i%16)*8+x)*4;
    rgba.set([0,5,10].map(s=>Math.floor((value>>>s&31)*255/31)).concat(255),at);
   }return rgba;
+ }
+ // Adapted pieces show Bret's dark hair (Perfect index 7 dithered with black). Brown regions whose neighbours are
+ // mostly dark and dithered with black are hair: 7 -> pale blond 13, black inside the dither -> beige 9, black on its edge -> dark brown 12.
+ // Brown skin shading stays. points: Map 'x,y' -> index. Same rule as tools/convert_perfect_poses.hair_changes.
+ const SKIN=new Set([2,3,11,6]),N8=[[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]],N4=[[1,0],[-1,0],[0,1],[0,-1]];
+ function hairChanges(points){
+  const at=(x,y)=>points.get(x+','+y),seen=new Set(),hair=new Set(),out=new Map();
+  for(const [key,v]of points){
+   if(v!==7||seen.has(key))continue;const comp=[key];seen.add(key);
+   for(let i=0;i<comp.length;i++){const [x,y]=comp[i].split(',').map(Number);for(const [dx,dy]of N8){const q=(x+dx)+','+(y+dy);if(points.get(q)===7&&!seen.has(q)){seen.add(q);comp.push(q);}}}
+   let dark=0,skin=0;const members=new Set(comp),black=new Set();
+   for(const c of comp){const [x,y]=c.split(',').map(Number);for(const [dx,dy]of N8){const n=at(x+dx,y+dy);if(n===1||n===7)dark++;else if(SKIN.has(n))skin++;}
+    for(const [dx,dy]of N4)if(at(x+dx,y+dy)===1)black.add((x+dx)+','+(y+dy));}
+   // Hair is dithered (black pixels with >= 2 brown 4-neighbours); solid brown patches such as armpit shadow are not.
+   let dither=0;for(const b of black){const [x,y]=b.split(',').map(Number);let n=0;for(const [dx,dy]of N4)if(members.has((x+dx)+','+(y+dy)))n++;if(n>=2)dither++;}
+   if(dark>=1.5*skin&&(comp.length<=2||dither>=0.3*comp.length))for(const c of comp)hair.add(c);
+  }
+  for(const [key,v]of points){
+   if(hair.has(key)){out.set(key,13);continue;}if(v!==1)continue;
+   const [x,y]=key.split(',').map(Number);let n=0;for(const [dx,dy]of N4)if(hair.has((x+dx)+','+(y+dy)))n++;
+   if(n)out.set(key,n>=2?9:12);
+  }
+  return out;
+ }
+ // Apply index changes (Map 'x,y' -> index, piece coordinates) to parts with per-tile pixel arrays.
+ function recolourParts(parts,changes){
+  return parts.map(p=>({...p,pixels:p.pixels.map((tilePixels,t)=>tilePixels.map((v,i)=>{
+   if(!v)return v;const sx=(t%(p.size/8))*8+i%8,sy=Math.floor(t/(p.size/8))*8+Math.floor(i/8);
+   const x=p.x+(p.hflip?p.size-1-sx:sx),y=p.y+(p.vflip?p.size-1-sy:sy),c=changes.get(x+','+y);return c===undefined?v:c;}))}));
  }
  function checksum(out){
   out[0xffd5]=0x25;out[0xffd7]=13;out.set(out.slice(0,65536),0x400000);
@@ -111,6 +140,10 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
   const pixels=(data,ref,royal)=>{const key=(royal?'r':'w')+(ref?ref.join(':'):'blank');if(!cache.has(key))cache.set(key,tile(data,ref));return cache.get(key);};
   for(const f of manifest.frames){
    const kind=f.kind,parts=[...f.parts].sort((a,b)=>b.size-a.size),record=[parts.length,parts.filter(p=>p.size===16).length];
+   let changes=null;
+   if(f.hair){const points=new Map();for(const p of [...f.parts].reverse())for(let y=0;y<p.size;y++)for(let x=0;x<p.size;x++){
+     const sx=p.hflip?p.size-1-x:x,sy=p.vflip?p.size-1-y:y,v=colors[pixels(base,p.refs[Math.floor(sy/8)*(p.size/8)+Math.floor(sx/8)],false)[sy%8*8+sx%8]];if(v)points.set((p.x+x)+','+(p.y+y),v);}
+    changes=hairChanges(points);}
    if(!parts.length){record[0]=1;record.push(0,0,105);const id=store(new Uint8Array(32),kind);record.push((0xc000|id)&255,(0xc000|id)>>>8);}
    for(const p of parts){
     if(p.x< -64||p.x>=64||p.y< -105||p.y>=23)throw Error('Imported sprite position is outside Raw’s format.');
@@ -118,7 +151,8 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
     for(let ty=0;ty<p.size/8;ty++)for(let tx=0;tx<p.size/8;tx++){
      const image=[];for(let y=0;y<8;y++)for(let x=0;x<8;x++){
       let sx=tx*8+x,sy=ty*8+y;if(p.hflip)sx=p.size-1-sx;if(p.vflip)sy=p.size-1-sy;
-      const ref=p.refs[Math.floor(sy/8)*(p.size/8)+Math.floor(sx/8)],value=pixels(f.royal?source:base,ref,f.royal)[sy%8*8+sx%8];image.push(f.royal?value:colors[value]);
+      const ref=p.refs[Math.floor(sy/8)*(p.size/8)+Math.floor(sx/8)],value=pixels(f.royal?source:base,ref,f.royal)[sy%8*8+sx%8];
+     let out=f.royal?value:colors[value];if(changes&&out){const c=changes.get((p.x+tx*8+x)+','+(p.y+ty*8+y));if(c!==undefined)out=c;}image.push(out);
      }const id=0xc000|store(planar(image),kind);record.push(id&255,id>>>8);
     }
    }
@@ -195,12 +229,14 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
   for(const r of Object.values(window.RAW_NWO_GEAR_PATTERNS||{}))for(const [a,b]of [[r.pointers,r.pointer_end],[r.secondary_pointers,r.secondary_pointer_end]]){
    if(a===undefined||b===undefined)continue;for(let p=a;p+3<=b;p+=3){const v=long(data,p);if(v>=0x750000&&v<0x7d0000)throw Error('Another wrestler’s edited tile is stored in Mr. Perfect’s space; the poses were not updated.');}
   }
-  const frames=[],report={replaced:0,kept_edited:0,kept:0};
+  const frames=[],report={replaced:0,recoloured:0,kept_edited:0,kept:0};
   for(const [kind,indices]of [['primary',[...Array(998).keys(),...Array.from({length:12},(_,i)=>1000+i)]],['secondary',[...Array(722).keys()]]])for(const index of indices){
    let current;try{current=P.resolveIndex(data,12,kind,index);}catch(e){throw Error(`Mr. Perfect's ${kind} piece ${index} cannot be read (${e.message}); the poses were not updated.`);}
    const row=rows.get(kind+':'+index);let parts=current.parts;
    if(row&&row.replaces!==undefined){
-    if(pieceHash(P.raster(current.parts))===row.replaces){parts=row.parts.map(p=>({...p,pixels:p.refs.map(royalPixels)}));report.replaced++;}
+    const points=P.raster(current.parts);
+    if(pieceHash(points)===row.replaces){parts=row.royal?row.parts.map(p=>({...p,pixels:p.refs.map(royalPixels)})):recolourParts(current.parts,hairChanges(points));
+     report[row.royal?'replaced':'recoloured']=(report[row.royal?'replaced':'recoloured']||0)+1;}
     else report.kept_edited++;
    }else report.kept++;
    frames.push({kind,index,parts,descriptor:index>=1000?current.descriptor:null});
@@ -241,5 +277,5 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
   putLong(out,0x70fdf0,packet);out.set(Array.from(POSES_MARKER,c=>c.charCodeAt(0)),0x70fe60);checksum(out);
   return {bytes:out,report:{...report,primary_tiles:tiles.primary.size,secondary_tiles:tiles.secondary.size,packet_end:packet}};
  }
- return {build,updatePlex,plexCurrent,posesCurrent,upgradePoses,pieceHash,tile,planar,packed,royalBlock,royalPortrait,checksum,word,long,putWord,putLong,search};
+ return {build,updatePlex,plexCurrent,posesCurrent,upgradePoses,pieceHash,hairChanges,tile,planar,packed,royalBlock,royalPortrait,checksum,word,long,putWord,putLong,search};
 })();

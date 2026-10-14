@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 
 from convert_perfect_poses import convert
-from build_royal_import_manifest import frame_rows, coverage
+from build_royal_import_manifest import frame_rows, coverage, mark_hair
 
 PREFIX = 'window.RAW_ROYAL_IMPORT_MANIFEST='
 
@@ -29,8 +29,10 @@ def main():
     before = {(r['kind'], r['index']): r for r in manifest['frames']}
     for r in rows:
         old = before[(r['kind'], r['index'])]
-        if 'replaces' not in r and {k: v for k, v in r.items()} != old:
+        if 'replaces' not in r and {k: v for k, v in r.items() if k not in ('hair', 'replaces')} != \
+                {k: v for k, v in old.items() if k not in ('hair', 'replaces')}:
             raise ValueError(f"Unmatched row changed: {r['kind']}/{r['index']}")
+    mark_hair(rows, a.raw_rom.read_bytes(), matches)
     manifest['frames'] = rows
     manifest['coverage'] = coverage(rows)
     a.manifest.write_text(PREFIX + json.dumps(manifest, separators=(',', ':')) + ';\n')
