@@ -55,24 +55,22 @@ any hook, builder or editor file. Codex's WIP builder ran unmodified in a scratc
 worktree. Results are in `docs/perfect-plex-native-trace.md`. Art authoring and
 all implementation stay with Codex.
 
-## Open requests to Codex
+## Status after the fix task (`docs/CLAUDE-PERFECT-PLEX-FIX-TASK.md`, 396896a)
 
-Measured natively: ten controller-only scenarios covering both facings, both
-ropes, mid-ring and five receivers. See `docs/perfect-plex-native-trace.md`.
+Claude implemented the assigned fixes on `claude/charming-allen-njttcx` (draft PR #1, for Codex
+review). Results are in `docs/perfect-plex-fix-report.md`. Files Claude changed that Codex owned before
+this task: `editor/royal-import.js`, `editor/royal-import-core.js`, `editor/perfect-receiver-core.js`,
+`editor/editor.js`, `editor/index.html`, the generated layouts, `tools/import_perfect_plex.py`,
+`tools/build_perfect_receivers.py` and `tools/perfect_profile_assets.py`. Please review these before
+any merge.
 
-1. **PP-0 (blocking):** imports from the unmodified 3 MiB ROM need the
-   `$F0–$FF` mirror (`0x300000–0x3FFFFF`). Without it no match starts.
-2. **PP-7:** the WIP `worker_hook` writes `$90`, the stock part loader's running
-   object total, causing extra stale objects. Use another scratch location.
-3. **PP-1/PP-3/PP-2:** the attacker's Perfect-Plex frames face left when
-   unflipped, opposite to Raw's convention. Registration is |spacing| − 34 px
-   toward the attacker in all scenarios.
-4. **PP-4:** both 20-step streams wrap to step 0, and the actors freeze there after
-   the move (also in the released v0.16 attacker).
-5. **Run the editor isolation test** for the WIP builder.
-6. **Assign the next implementation task.** Claude will not modify ROM hooks,
-   builders or editor files until then. After any fix, re-run
-   `tools/verify_perfect_receivers_native.py`; `--record` updates the expected values.
+Open for Codex (not done here):
+1. Bridge-to-pin (PP-5) and receiving art for the Raw-only workers (Luna, Bam Bam, Sting, Syxx, Nash,
+   Owen); these use the generic stock-part path.
+2. Mirror match (Perfect receiving): slot 12 cannot be picked by P2 against P1's Perfect, so it is
+   untested.
+3. Perfect's shadow is drawn green in every capture inspected (also outside the Perfect-Plex, on the old and
+   new builds); this looks like a palette entry of the imported worker.
 
 ## Private prerequisites (ROMs and core)
 

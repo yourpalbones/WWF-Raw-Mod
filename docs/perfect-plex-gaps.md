@@ -1,5 +1,11 @@
 # Perfect-Plex: prioritized gap list
 
+> **Update (fix branch).** PP-0, PP-1/2/3, PP-4 and PP-7 are fixed and natively verified; see
+> [perfect-plex-fix-report.md](perfect-plex-fix-report.md). The PP-0 cause below was **wrong**: the
+> stall came from the importer copying the announcer bank tables with a 1-byte stride, which left
+> entries 6–12 at bank `$FF`. The `$F0–$FF` mirror is not needed. The rest of this page is the
+> pre-fix audit, kept for the record.
+
 Status as of this branch: **audit, provisional diagnosis and a first native
 measurement.** These are not fixes, and no ROM hook has been changed. Native
 results for the WIP build with Undertaker receiving, in one facing, are in
@@ -76,8 +82,9 @@ are proposed from it.
 
 ## PP-0: imports from the unmodified Raw ROM never reach a match (native, blocking)
 
-Every matchup tried stalls on the pre-match announcer screen. The cause is
-traced: the 8 MiB expansion leaves file `0x300000–0x3FFFFF` empty, while the
+Every matchup tried stalls on the pre-match announcer screen. **Superseded:** the real cause is
+the announcer bank-table stride (see [perfect-plex-fix-report.md](perfect-plex-fix-report.md#pp-0)).
+The original, incorrect explanation follows: the 8 MiB expansion leaves file `0x300000–0x3FFFFF` empty, while the
 stock game reads an announcer graphic through the cartridge mirror at
 `$FF:2F37`. Restoring the mirror in a scratch copy removes the stall. Details
 are in [perfect-plex-native-trace.md](perfect-plex-native-trace.md). This sits in
@@ -219,8 +226,8 @@ index.**
 
 ## Suggested order (for Codex; no hooks changed here)
 
-1. **PP-0:** restore the `$F0–$FF` mirror (`0x300000–0x3FFFFF`) in imports from
-   3 MiB ROMs.
+1. **PP-0:** ~~restore the `$F0–$FF` mirror~~ copy the announcer bank tables with their 2-byte
+   stride (done; see the fix report).
 2. **PP-7:** stop the WIP receiver hook from writing `$90`; keep the scratch on
    the stack or in an unused location.
 3. **PP-1/PP-3:** store the attacker's Perfect-Plex frames in Raw's facing

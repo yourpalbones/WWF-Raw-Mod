@@ -51,6 +51,13 @@ Cause, traced:
 - Restoring that 1 MiB mirror (step 2 above) lets the screen complete and the
   match start.
 
+> **Correction (fix branch).** The bank `$FF` was itself the bug. The importer copied the two
+> announcer bank tables (`0x2EE927`, `0x2EE957`, one 16-bit entry per slot) as 12 single bytes, so
+> slots 6–12 read bank `$FF` from erased space. The word half of the pointer (`$2F37`) was correct.
+> Restoring the mirror only made `$FF:2F37` land on a copy of the correct data. The importer now
+> rebuilds all four tables from the profile records, and older imports are repaired on save; no
+> mirror is needed. See [perfect-plex-fix-report.md](perfect-plex-fix-report.md#pp-0).
+
 The committed v0.16 replay (`deea58c0…`) was presumably made on a base that
 already had this mirror. Fixing it belongs to the importer (Codex-owned).
 Imports into an 8 MiB base that already carries the mirror would not show the
