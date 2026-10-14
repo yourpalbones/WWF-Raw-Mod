@@ -1570,7 +1570,7 @@
    ]
   }
  },
- "expected_build": "f2a81a9118bb302f3572ddd767ff1c0279ec9b3918ad684b3e65061f266a70c6",
+ "expected_build": "15c1d9b5aa67a09d8a560fad281b1887eac5871b7273256d4c436d060db6efc8",
  "expected": {
   "frames_measured": 141,
   "frames_fully_matched": 138,
@@ -1603,6 +1603,8 @@
     152
    ]
   ],
+  "receiver_source": "royal",
+  "preview_match": null,
   "after_move": {
    "actions": {
     "[0, 70]": 110
