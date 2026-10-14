@@ -215,6 +215,10 @@ def measure(capture, rom, royal, slot):
         am = [(i, m) for i, d in enumerate(attacker_desc) if (m := match(att, d))]
         rm = [(i, m) for i, d in enumerate(receiver_desc) if (m := match(rcv, d))]
         row['attacker_pose'] = am[0][0] if len(am) == 1 else None
+        # Several steps can share one receiving drawing (own-art receivers hold one drawing for steps 2-9);
+        # the receiver stream advances with the attacker's, so take the attacker's step when it is among them.
+        if len(rm) > 1 and len(am) == 1 and any(i == am[0][0] for i, _ in rm):
+            rm = [(i, m) for i, m in rm if i == am[0][0]]
         row['receiver_pose'] = rm[0][0] if len(rm) == 1 else None
         if len(am) == 1 and len(rm) == 1:
             a, r = am[0][1], rm[0][1]
