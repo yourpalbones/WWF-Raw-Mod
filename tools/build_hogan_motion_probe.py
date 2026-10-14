@@ -68,9 +68,14 @@ def root_hook():
 
 def compile_motion(out,genesis):
     out=bytearray(out);tiles={};packet=0x550000;desc=0x540000;reports=[]
+    from decode_graphics import decode_block
+    hud_pointer=int.from_bytes(out[0x19ee4c:0x19ee4e],'little')|out[0x19ee49]<<16
+    _,hud=decode_block(out,hud_pointer)
+    if hud_pointer!=0x558000 or hud_pointer+hud['compressed_size']>0x55b000:
+        raise ValueError('HUD atlas exceeds the protected graphics gap')
     out[0x540000:0x550000]=b'\xff'*65536
     out[0x550000:0x558000]=b'\xff'*32768
-    out[0x55a000:0x560000]=b'\xff'*24576
+    out[0x55b000:0x560000]=b'\xff'*20480
     for i,(root,pose)in enumerate(ROOTS.items()):
         image,_=render_pose(genesis,6,pose,color_lookup(genesis));chunks=pack_objects(image)
         record=bytearray([len(chunks),sum(s==16 for x,y,s in chunks)])
@@ -84,7 +89,7 @@ def compile_motion(out,genesis):
                     raw=planar(pixels)
                     if raw not in tiles:
                         tiles[raw]=len(tiles);encoded=encode_sprite_tile(raw)
-                        if packet<0x558000 and packet+len(encoded)>0x558000:packet=0x55a000
+                        if packet<0x558000 and packet+len(encoded)>0x558000:packet=0x55b000
                         if packet+len(encoded)>0x560000:raise ValueError('Private packet pools exhausted')
                         at=0x548000+tiles[raw]*3
                         if at+3>0x550000:raise ValueError('Tile pointer table overflow')

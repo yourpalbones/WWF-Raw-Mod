@@ -1,0 +1,15 @@
+{
+  "claude_base_commit": "7b06f6e",
+  "base_sha256": "d279915d3d3f6a45aca6feac02f58bb4a48bb4a9baa2046a1c7632fc0fdb997a",
+  "test_sha256": "528a23a26f1b27548b66b7f8548170e055482290512e285fdab5b5e3e8d5a79f",
+  "slots": 15,
+  "original_13_profile_records_preserved": true,
+  "original_populated_gear_bytes_changed": 0,
+  "original_HUD_tiles_0_to_236_preserved": true,
+  "hud_decoded_size": 8192,
+  "hud_compressed_size": 8324,
+  "hogan_frame_12_independent_source_pixel_match": 0,
+  "claude_editor_files_modified": false,
+  "editor_compatible": false,
+  "full_move_coverage_verified": false
+}

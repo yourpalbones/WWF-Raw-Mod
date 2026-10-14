@@ -5,10 +5,13 @@ import bisect
 import argparse,json
 T=C=b''
 starts=offs=[]
-def load_source(chr_path,tab_path):
- global T,C,starts,offs
+component_base=component_directory=0
+pose_base=10
+def load_source(chr_path,tab_path,strict=True):
+ global T,C,starts,offs,component_base,component_directory,pose_base
  T=Path(tab_path).read_bytes();C=Path(chr_path).read_bytes()
- if len(T)!=47370 or len(C)!=212480:raise ValueError('Unexpected Boss Man source file sizes')
+ if strict and (len(T)!=47370 or len(C)!=212480):raise ValueError('Unexpected Boss Man source file sizes')
+ pose_base=int.from_bytes(T[:2],'big');component_base=int.from_bytes(T[2:4],'big');component_directory=int.from_bytes(T[4:6],'big')
  starts=[int.from_bytes(C[i*4:i*4+4],'big') for i in range(28)]
  offs=[int.from_bytes(C[128+i*4:132+i*4],'big') for i in range(28)]
 def word(b,a):return int.from_bytes(b[a:a+2],'big')
@@ -24,7 +27,7 @@ def tile(n):
  return out
 
 def component(n):
- p=0x1946+word(T,0x988a+n*2);mask=word(T,p);p+=2;shape=-1;im=Image.new('P',(128,128))
+ p=component_base+word(T,component_directory+n*2);mask=word(T,p);p+=2;shape=-1;im=Image.new('P',(128,128))
  for _ in range(30):
   coord=word(T,p);p+=2
   if coord&0x8000:
@@ -43,7 +46,7 @@ def component(n):
       if v and px<128 and py<128:im.putpixel((px,py),v)
  raise ValueError('long')
 def pose(n):
- p=10+word(T,10+n*2);im=Image.new('P',(192,192));parts=[]
+ p=pose_base+word(T,pose_base+n*2);im=Image.new('P',(192,192));parts=[]
  for _ in range(20):
   ident=word(T,p);p+=2
   if ident==65535:break

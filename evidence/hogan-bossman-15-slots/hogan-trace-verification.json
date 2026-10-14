@@ -1,0 +1,467 @@
+{
+  "frames_checked": 49,
+  "frames_exact": 48,
+  "palettes_exact": 49,
+  "source_poses_verified": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    99,
+    101,
+    102,
+    106,
+    107,
+    108,
+    109
+  ],
+  "full_character_complete": false,
+  "finisher_verified": false,
+  "rows": [
+    {
+      "frame": 12,
+      "match": null,
+      "palette_exact": true
+    },
+    {
+      "frame": 18,
+      "match": {
+        "pose": 6,
+        "root": 17912,
+        "pixels": 1259
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 24,
+      "match": {
+        "pose": 4,
+        "root": 17884,
+        "pixels": 1250
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 30,
+      "match": {
+        "pose": 3,
+        "root": 17870,
+        "pixels": 1244
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 36,
+      "match": {
+        "pose": 2,
+        "root": 17856,
+        "pixels": 1314
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 42,
+      "match": {
+        "pose": 1,
+        "root": 17842,
+        "pixels": 1158
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 48,
+      "match": {
+        "pose": 0,
+        "root": 17814,
+        "pixels": 1370
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 54,
+      "match": {
+        "pose": 0,
+        "root": 17814,
+        "pixels": 1370
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 60,
+      "match": {
+        "pose": 4,
+        "root": 17884,
+        "pixels": 1250
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 66,
+      "match": {
+        "pose": 5,
+        "root": 17898,
+        "pixels": 1231
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 72,
+      "match": {
+        "pose": 6,
+        "root": 17912,
+        "pixels": 1259
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 78,
+      "match": {
+        "pose": 1,
+        "root": 17842,
+        "pixels": 1158
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 84,
+      "match": {
+        "pose": 2,
+        "root": 17856,
+        "pixels": 1314
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 90,
+      "match": {
+        "pose": 3,
+        "root": 17870,
+        "pixels": 1244
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 96,
+      "match": {
+        "pose": 0,
+        "root": 17814,
+        "pixels": 1370
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 102,
+      "match": {
+        "pose": 0,
+        "root": 17814,
+        "pixels": 1370
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 108,
+      "match": {
+        "pose": 99,
+        "root": 18914,
+        "pixels": 1298
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 114,
+      "match": {
+        "pose": 101,
+        "root": 18942,
+        "pixels": 1256
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 120,
+      "match": {
+        "pose": 102,
+        "root": 18956,
+        "pixels": 1120
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 126,
+      "match": {
+        "pose": 0,
+        "root": 17814,
+        "pixels": 1370
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 132,
+      "match": {
+        "pose": 0,
+        "root": 17814,
+        "pixels": 1370
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 138,
+      "match": {
+        "pose": 0,
+        "root": 17814,
+        "pixels": 1370
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 144,
+      "match": {
+        "pose": 0,
+        "root": 17814,
+        "pixels": 1370
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 150,
+      "match": {
+        "pose": 106,
+        "root": 18998,
+        "pixels": 1064
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 156,
+      "match": {
+        "pose": 107,
+        "root": 19012,
+        "pixels": 1089
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 162,
+      "match": {
+        "pose": 108,
+        "root": 19026,
+        "pixels": 1207
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 168,
+      "match": {
+        "pose": 109,
+        "root": 19040,
+        "pixels": 1359
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 174,
+      "match": {
+        "pose": 0,
+        "root": 17814,
+        "pixels": 1370
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 180,
+      "match": {
+        "pose": 0,
+        "root": 17814,
+        "pixels": 1370
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 186,
+      "match": {
+        "pose": 0,
+        "root": 17814,
+        "pixels": 1370
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 192,
+      "match": {
+        "pose": 0,
+        "root": 17814,
+        "pixels": 1370
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 198,
+      "match": {
+        "pose": 4,
+        "root": 17884,
+        "pixels": 1250
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 204,
+      "match": {
+        "pose": 11,
+        "root": 17982,
+        "pixels": 1190
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 210,
+      "match": {
+        "pose": 7,
+        "root": 17926,
+        "pixels": 1256
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 216,
+      "match": {
+        "pose": 8,
+        "root": 17940,
+        "pixels": 1264
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 222,
+      "match": {
+        "pose": 9,
+        "root": 17954,
+        "pixels": 1308
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 228,
+      "match": {
+        "pose": 0,
+        "root": 17814,
+        "pixels": 1370
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 234,
+      "match": {
+        "pose": 0,
+        "root": 17814,
+        "pixels": 1370
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 240,
+      "match": {
+        "pose": 0,
+        "root": 17814,
+        "pixels": 1370
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 246,
+      "match": {
+        "pose": 11,
+        "root": 17982,
+        "pixels": 1190
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 252,
+      "match": {
+        "pose": 10,
+        "root": 17968,
+        "pixels": 1094
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 258,
+      "match": {
+        "pose": 4,
+        "root": 17884,
+        "pixels": 1250
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 264,
+      "match": {
+        "pose": 9,
+        "root": 17954,
+        "pixels": 1308
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 270,
+      "match": {
+        "pose": 8,
+        "root": 17940,
+        "pixels": 1264
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 276,
+      "match": {
+        "pose": 7,
+        "root": 17926,
+        "pixels": 1256
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 282,
+      "match": {
+        "pose": 0,
+        "root": 17814,
+        "pixels": 1370
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 288,
+      "match": {
+        "pose": 0,
+        "root": 17814,
+        "pixels": 1370
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 294,
+      "match": {
+        "pose": 0,
+        "root": 17814,
+        "pixels": 1370
+      },
+      "palette_exact": true
+    },
+    {
+      "frame": 300,
+      "match": {
+        "pose": 0,
+        "root": 17814,
+        "pixels": 1370
+      },
+      "palette_exact": true
+    }
+  ]
+}

@@ -1,0 +1,378 @@
+{
+  "frames": 50,
+  "exact_frames": 50,
+  "exact_palettes": 50,
+  "poses_verified": [
+    0,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    100,
+    102,
+    103,
+    112,
+    113,
+    115
+  ],
+  "complete_character_verified": false,
+  "rows": [
+    {
+      "frame": "frame-000006",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000012",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000018",
+      "matched_poses": [
+        23
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000024",
+      "matched_poses": [
+        21
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000030",
+      "matched_poses": [
+        20
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000036",
+      "matched_poses": [
+        19
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000042",
+      "matched_poses": [
+        18
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000048",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000054",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000060",
+      "matched_poses": [
+        21
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000066",
+      "matched_poses": [
+        22
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000072",
+      "matched_poses": [
+        23
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000078",
+      "matched_poses": [
+        18
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000084",
+      "matched_poses": [
+        20
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000090",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000096",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000102",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000108",
+      "matched_poses": [
+        100
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000114",
+      "matched_poses": [
+        102
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000120",
+      "matched_poses": [
+        103
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000126",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000132",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000138",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000144",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000150",
+      "matched_poses": [
+        112
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000156",
+      "matched_poses": [
+        113
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000162",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000168",
+      "matched_poses": [
+        115
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000174",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000180",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000186",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000192",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000198",
+      "matched_poses": [
+        25
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000204",
+      "matched_poses": [
+        18
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000210",
+      "matched_poses": [
+        28
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000216",
+      "matched_poses": [
+        27
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000222",
+      "matched_poses": [
+        26
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000228",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000234",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000240",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000246",
+      "matched_poses": [
+        18
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000252",
+      "matched_poses": [
+        24
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000258",
+      "matched_poses": [
+        25
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000264",
+      "matched_poses": [
+        26
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000270",
+      "matched_poses": [
+        28
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000276",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000282",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000288",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000294",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    },
+    {
+      "frame": "frame-000300",
+      "matched_poses": [
+        0
+      ],
+      "palette_exact": true
+    }
+  ]
+}

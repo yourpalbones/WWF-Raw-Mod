@@ -1,0 +1,214 @@
+{
+  "base_sha256": "44fd383c1ae2c72afe00bd10a81ce8a3d12c1406ab4b4628f25d181eb63efd56",
+  "source_chr_sha256": "e4200344497d57b12db67040e39b70494922b931bb40825691b27df79f05498a",
+  "source_tab_sha256": "77b14bc801e66fdf3ef32d3acf6404df4c613f552aa4ffa10e655f7ef8af181d",
+  "development_only": true,
+  "slot": 14,
+  "selector": 28,
+  "poses": [
+    {
+      "raw_root": 17814,
+      "source_pose": 0,
+      "objects": 12,
+      "tiles": 42
+    },
+    {
+      "raw_root": 17842,
+      "source_pose": 1,
+      "objects": 10,
+      "tiles": 40
+    },
+    {
+      "raw_root": 17856,
+      "source_pose": 2,
+      "objects": 12,
+      "tiles": 42
+    },
+    {
+      "raw_root": 17870,
+      "source_pose": 3,
+      "objects": 12,
+      "tiles": 39
+    },
+    {
+      "raw_root": 17884,
+      "source_pose": 4,
+      "objects": 11,
+      "tiles": 41
+    },
+    {
+      "raw_root": 17898,
+      "source_pose": 5,
+      "objects": 12,
+      "tiles": 42
+    },
+    {
+      "raw_root": 17912,
+      "source_pose": 6,
+      "objects": 12,
+      "tiles": 39
+    },
+    {
+      "raw_root": 18642,
+      "source_pose": 68,
+      "objects": 10,
+      "tiles": 37
+    },
+    {
+      "raw_root": 18656,
+      "source_pose": 69,
+      "objects": 15,
+      "tiles": 51
+    },
+    {
+      "raw_root": 18670,
+      "source_pose": 70,
+      "objects": 11,
+      "tiles": 41
+    },
+    {
+      "raw_root": 18914,
+      "source_pose": 100,
+      "objects": 11,
+      "tiles": 41
+    },
+    {
+      "raw_root": 18942,
+      "source_pose": 102,
+      "objects": 14,
+      "tiles": 50
+    },
+    {
+      "raw_root": 18956,
+      "source_pose": 103,
+      "objects": 11,
+      "tiles": 35
+    },
+    {
+      "raw_root": 18998,
+      "source_pose": 112,
+      "objects": 11,
+      "tiles": 35
+    },
+    {
+      "raw_root": 19012,
+      "source_pose": 113,
+      "objects": 11,
+      "tiles": 38
+    },
+    {
+      "raw_root": 19040,
+      "source_pose": 115,
+      "objects": 14,
+      "tiles": 44
+    },
+    {
+      "raw_root": 17926,
+      "source_pose": 7,
+      "objects": 11,
+      "tiles": 38
+    },
+    {
+      "raw_root": 17940,
+      "source_pose": 8,
+      "objects": 10,
+      "tiles": 37
+    },
+    {
+      "raw_root": 17954,
+      "source_pose": 9,
+      "objects": 12,
+      "tiles": 39
+    },
+    {
+      "raw_root": 17968,
+      "source_pose": 10,
+      "objects": 9,
+      "tiles": 30
+    },
+    {
+      "raw_root": 17982,
+      "source_pose": 11,
+      "objects": 11,
+      "tiles": 38
+    },
+    {
+      "raw_root": 18066,
+      "source_pose": 0,
+      "objects": 12,
+      "tiles": 42
+    },
+    {
+      "raw_root": 18094,
+      "source_pose": 18,
+      "objects": 10,
+      "tiles": 40
+    },
+    {
+      "raw_root": 18108,
+      "source_pose": 19,
+      "objects": 11,
+      "tiles": 44
+    },
+    {
+      "raw_root": 18122,
+      "source_pose": 20,
+      "objects": 11,
+      "tiles": 41
+    },
+    {
+      "raw_root": 18136,
+      "source_pose": 21,
+      "objects": 10,
+      "tiles": 31
+    },
+    {
+      "raw_root": 18150,
+      "source_pose": 22,
+      "objects": 10,
+      "tiles": 40
+    },
+    {
+      "raw_root": 18164,
+      "source_pose": 23,
+      "objects": 10,
+      "tiles": 37
+    },
+    {
+      "raw_root": 18178,
+      "source_pose": 24,
+      "objects": 10,
+      "tiles": 37
+    },
+    {
+      "raw_root": 18192,
+      "source_pose": 25,
+      "objects": 11,
+      "tiles": 44
+    },
+    {
+      "raw_root": 18206,
+      "source_pose": 26,
+      "objects": 11,
+      "tiles": 38
+    },
+    {
+      "raw_root": 18220,
+      "source_pose": 27,
+      "objects": 10,
+      "tiles": 37
+    },
+    {
+      "raw_root": 18234,
+      "source_pose": 28,
+      "objects": 10,
+      "tiles": 40
+    }
+  ],
+  "private_tiles": 1006,
+  "packet_end": 7168902,
+  "finisher_implemented": false,
+  "editor_compatible": false,
+  "existing_14_profiles_preserved": true,
+  "warning": "Immutable native test only; gear reservations must be relocated/coordinated before editor integration."
+}
