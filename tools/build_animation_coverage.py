@@ -320,14 +320,17 @@ def ordinary_rows(manifest):
     for frame in manifest['frames']:
         counts[(frame['kind'], frame['royal'], frame['common'])] += 1
     pieces = {f'{k}_{"royal" if r else "raw"}{"_common" if c else ""}': n for (k, r, c), n in sorted(counts.items())}
+    cov = manifest['coverage']
+    pieces['royal_by_pose_match'] = cov.get('matched_royal_poses', 0)
     for cat in ORDINARY_CATEGORIES:
         rows.append(row(12, cat, 'performer_and_receiver', 'adapted_placeholder', 'untested',
                         source_game='Royal Rumble + adapted WWF Raw',
                         runtime_routing=PERFECT_ROUTING['primary_worker'], palette_owner='slot 12',
                         aliases='private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit',
                         piece_provenance=pieces,
-                        evidence=['evidence/mr-perfect-import/README.md', 'editor/royal-import-layouts.js'],
-                        defects=['Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall',
+                        evidence=['evidence/mr-perfect-import/README.md', 'editor/royal-import-layouts.js',
+                                  'data/perfect-pose-matches.json'],
+                        defects=[f"Per-action provenance not mapped; {cov['royal_poses']:,} Royal vs {cov['adapted_raw_poses']:,} adapted pieces overall",
                                  'Royal has no counterpart for several Raw-only actions (needs authored art)']))
     return rows
 

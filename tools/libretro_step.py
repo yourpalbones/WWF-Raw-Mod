@@ -121,3 +121,8 @@ class Emulator:
         buf = ct.create_string_buffer(data)
         if not self.core.retro_unserialize(buf, len(data)):
             raise RuntimeError('unserialize failed')
+
+    def memory(self, ident):
+        """2 WRAM, 3 VRAM, 0x10010 CGRAM, 0x10011 OAM, 0x10012 PPU registers (as tools/run_headless.py)."""
+        size = self.core.retro_get_memory_size(ident)
+        return ct.string_at(self.core.retro_get_memory_data(ident), size)

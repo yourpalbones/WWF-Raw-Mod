@@ -4763,19 +4763,23 @@
    "palette_owner": "slot 12",
    "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
    "piece_provenance": {
-    "primary_raw": 358,
-    "primary_raw_common": 471,
-    "primary_royal": 169,
-    "secondary_raw": 306,
-    "secondary_raw_common": 296,
-    "secondary_royal": 120
+    "primary_raw": 272,
+    "primary_raw_common": 425,
+    "primary_royal": 255,
+    "primary_royal_common": 46,
+    "secondary_raw": 189,
+    "secondary_raw_common": 216,
+    "secondary_royal": 237,
+    "secondary_royal_common": 80,
+    "royal_by_pose_match": 329
    },
    "evidence": [
     "evidence/mr-perfect-import/README.md",
-    "editor/royal-import-layouts.js"
+    "editor/royal-import-layouts.js",
+    "data/perfect-pose-matches.json"
    ],
    "defects": [
-    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Per-action provenance not mapped; 618 Royal vs 1,102 adapted pieces overall",
     "Royal has no counterpart for several Raw-only actions (needs authored art)"
    ]
   },
@@ -4791,19 +4795,23 @@
    "palette_owner": "slot 12",
    "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
    "piece_provenance": {
-    "primary_raw": 358,
-    "primary_raw_common": 471,
-    "primary_royal": 169,
-    "secondary_raw": 306,
-    "secondary_raw_common": 296,
-    "secondary_royal": 120
+    "primary_raw": 272,
+    "primary_raw_common": 425,
+    "primary_royal": 255,
+    "primary_royal_common": 46,
+    "secondary_raw": 189,
+    "secondary_raw_common": 216,
+    "secondary_royal": 237,
+    "secondary_royal_common": 80,
+    "royal_by_pose_match": 329
    },
    "evidence": [
     "evidence/mr-perfect-import/README.md",
-    "editor/royal-import-layouts.js"
+    "editor/royal-import-layouts.js",
+    "data/perfect-pose-matches.json"
    ],
    "defects": [
-    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Per-action provenance not mapped; 618 Royal vs 1,102 adapted pieces overall",
     "Royal has no counterpart for several Raw-only actions (needs authored art)"
    ]
   },
@@ -4819,19 +4827,23 @@
    "palette_owner": "slot 12",
    "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
    "piece_provenance": {
-    "primary_raw": 358,
-    "primary_raw_common": 471,
-    "primary_royal": 169,
-    "secondary_raw": 306,
-    "secondary_raw_common": 296,
-    "secondary_royal": 120
+    "primary_raw": 272,
+    "primary_raw_common": 425,
+    "primary_royal": 255,
+    "primary_royal_common": 46,
+    "secondary_raw": 189,
+    "secondary_raw_common": 216,
+    "secondary_royal": 237,
+    "secondary_royal_common": 80,
+    "royal_by_pose_match": 329
    },
    "evidence": [
     "evidence/mr-perfect-import/README.md",
-    "editor/royal-import-layouts.js"
+    "editor/royal-import-layouts.js",
+    "data/perfect-pose-matches.json"
    ],
    "defects": [
-    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Per-action provenance not mapped; 618 Royal vs 1,102 adapted pieces overall",
     "Royal has no counterpart for several Raw-only actions (needs authored art)"
    ]
   },
@@ -4847,19 +4859,23 @@
    "palette_owner": "slot 12",
    "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
    "piece_provenance": {
-    "primary_raw": 358,
-    "primary_raw_common": 471,
-    "primary_royal": 169,
-    "secondary_raw": 306,
-    "secondary_raw_common": 296,
-    "secondary_royal": 120
+    "primary_raw": 272,
+    "primary_raw_common": 425,
+    "primary_royal": 255,
+    "primary_royal_common": 46,
+    "secondary_raw": 189,
+    "secondary_raw_common": 216,
+    "secondary_royal": 237,
+    "secondary_royal_common": 80,
+    "royal_by_pose_match": 329
    },
    "evidence": [
     "evidence/mr-perfect-import/README.md",
-    "editor/royal-import-layouts.js"
+    "editor/royal-import-layouts.js",
+    "data/perfect-pose-matches.json"
    ],
    "defects": [
-    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Per-action provenance not mapped; 618 Royal vs 1,102 adapted pieces overall",
     "Royal has no counterpart for several Raw-only actions (needs authored art)"
    ]
   },
@@ -4875,19 +4891,23 @@
    "palette_owner": "slot 12",
    "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
    "piece_provenance": {
-    "primary_raw": 358,
-    "primary_raw_common": 471,
-    "primary_royal": 169,
-    "secondary_raw": 306,
-    "secondary_raw_common": 296,
-    "secondary_royal": 120
+    "primary_raw": 272,
+    "primary_raw_common": 425,
+    "primary_royal": 255,
+    "primary_royal_common": 46,
+    "secondary_raw": 189,
+    "secondary_raw_common": 216,
+    "secondary_royal": 237,
+    "secondary_royal_common": 80,
+    "royal_by_pose_match": 329
    },
    "evidence": [
     "evidence/mr-perfect-import/README.md",
-    "editor/royal-import-layouts.js"
+    "editor/royal-import-layouts.js",
+    "data/perfect-pose-matches.json"
    ],
    "defects": [
-    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Per-action provenance not mapped; 618 Royal vs 1,102 adapted pieces overall",
     "Royal has no counterpart for several Raw-only actions (needs authored art)"
    ]
   },
@@ -4903,19 +4923,23 @@
    "palette_owner": "slot 12",
    "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
    "piece_provenance": {
-    "primary_raw": 358,
-    "primary_raw_common": 471,
-    "primary_royal": 169,
-    "secondary_raw": 306,
-    "secondary_raw_common": 296,
-    "secondary_royal": 120
+    "primary_raw": 272,
+    "primary_raw_common": 425,
+    "primary_royal": 255,
+    "primary_royal_common": 46,
+    "secondary_raw": 189,
+    "secondary_raw_common": 216,
+    "secondary_royal": 237,
+    "secondary_royal_common": 80,
+    "royal_by_pose_match": 329
    },
    "evidence": [
     "evidence/mr-perfect-import/README.md",
-    "editor/royal-import-layouts.js"
+    "editor/royal-import-layouts.js",
+    "data/perfect-pose-matches.json"
    ],
    "defects": [
-    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Per-action provenance not mapped; 618 Royal vs 1,102 adapted pieces overall",
     "Royal has no counterpart for several Raw-only actions (needs authored art)"
    ]
   },
@@ -4931,19 +4955,23 @@
    "palette_owner": "slot 12",
    "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
    "piece_provenance": {
-    "primary_raw": 358,
-    "primary_raw_common": 471,
-    "primary_royal": 169,
-    "secondary_raw": 306,
-    "secondary_raw_common": 296,
-    "secondary_royal": 120
+    "primary_raw": 272,
+    "primary_raw_common": 425,
+    "primary_royal": 255,
+    "primary_royal_common": 46,
+    "secondary_raw": 189,
+    "secondary_raw_common": 216,
+    "secondary_royal": 237,
+    "secondary_royal_common": 80,
+    "royal_by_pose_match": 329
    },
    "evidence": [
     "evidence/mr-perfect-import/README.md",
-    "editor/royal-import-layouts.js"
+    "editor/royal-import-layouts.js",
+    "data/perfect-pose-matches.json"
    ],
    "defects": [
-    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Per-action provenance not mapped; 618 Royal vs 1,102 adapted pieces overall",
     "Royal has no counterpart for several Raw-only actions (needs authored art)"
    ]
   },
@@ -4959,19 +4987,23 @@
    "palette_owner": "slot 12",
    "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
    "piece_provenance": {
-    "primary_raw": 358,
-    "primary_raw_common": 471,
-    "primary_royal": 169,
-    "secondary_raw": 306,
-    "secondary_raw_common": 296,
-    "secondary_royal": 120
+    "primary_raw": 272,
+    "primary_raw_common": 425,
+    "primary_royal": 255,
+    "primary_royal_common": 46,
+    "secondary_raw": 189,
+    "secondary_raw_common": 216,
+    "secondary_royal": 237,
+    "secondary_royal_common": 80,
+    "royal_by_pose_match": 329
    },
    "evidence": [
     "evidence/mr-perfect-import/README.md",
-    "editor/royal-import-layouts.js"
+    "editor/royal-import-layouts.js",
+    "data/perfect-pose-matches.json"
    ],
    "defects": [
-    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Per-action provenance not mapped; 618 Royal vs 1,102 adapted pieces overall",
     "Royal has no counterpart for several Raw-only actions (needs authored art)"
    ]
   },
@@ -4987,19 +5019,23 @@
    "palette_owner": "slot 12",
    "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
    "piece_provenance": {
-    "primary_raw": 358,
-    "primary_raw_common": 471,
-    "primary_royal": 169,
-    "secondary_raw": 306,
-    "secondary_raw_common": 296,
-    "secondary_royal": 120
+    "primary_raw": 272,
+    "primary_raw_common": 425,
+    "primary_royal": 255,
+    "primary_royal_common": 46,
+    "secondary_raw": 189,
+    "secondary_raw_common": 216,
+    "secondary_royal": 237,
+    "secondary_royal_common": 80,
+    "royal_by_pose_match": 329
    },
    "evidence": [
     "evidence/mr-perfect-import/README.md",
-    "editor/royal-import-layouts.js"
+    "editor/royal-import-layouts.js",
+    "data/perfect-pose-matches.json"
    ],
    "defects": [
-    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Per-action provenance not mapped; 618 Royal vs 1,102 adapted pieces overall",
     "Royal has no counterpart for several Raw-only actions (needs authored art)"
    ]
   },
@@ -5015,19 +5051,23 @@
    "palette_owner": "slot 12",
    "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
    "piece_provenance": {
-    "primary_raw": 358,
-    "primary_raw_common": 471,
-    "primary_royal": 169,
-    "secondary_raw": 306,
-    "secondary_raw_common": 296,
-    "secondary_royal": 120
+    "primary_raw": 272,
+    "primary_raw_common": 425,
+    "primary_royal": 255,
+    "primary_royal_common": 46,
+    "secondary_raw": 189,
+    "secondary_raw_common": 216,
+    "secondary_royal": 237,
+    "secondary_royal_common": 80,
+    "royal_by_pose_match": 329
    },
    "evidence": [
     "evidence/mr-perfect-import/README.md",
-    "editor/royal-import-layouts.js"
+    "editor/royal-import-layouts.js",
+    "data/perfect-pose-matches.json"
    ],
    "defects": [
-    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Per-action provenance not mapped; 618 Royal vs 1,102 adapted pieces overall",
     "Royal has no counterpart for several Raw-only actions (needs authored art)"
    ]
   },
@@ -5043,19 +5083,23 @@
    "palette_owner": "slot 12",
    "aliases": "private copies (slot-12 tables 71:0000/71:1000); common-range pieces need audit",
    "piece_provenance": {
-    "primary_raw": 358,
-    "primary_raw_common": 471,
-    "primary_royal": 169,
-    "secondary_raw": 306,
-    "secondary_raw_common": 296,
-    "secondary_royal": 120
+    "primary_raw": 272,
+    "primary_raw_common": 425,
+    "primary_royal": 255,
+    "primary_royal_common": 46,
+    "secondary_raw": 189,
+    "secondary_raw_common": 216,
+    "secondary_royal": 237,
+    "secondary_royal_common": 80,
+    "royal_by_pose_match": 329
    },
    "evidence": [
     "evidence/mr-perfect-import/README.md",
-    "editor/royal-import-layouts.js"
+    "editor/royal-import-layouts.js",
+    "data/perfect-pose-matches.json"
    ],
    "defects": [
-    "Per-action provenance not mapped; 289 Royal vs 1,431 adapted pieces overall",
+    "Per-action provenance not mapped; 618 Royal vs 1,102 adapted pieces overall",
     "Royal has no counterpart for several Raw-only actions (needs authored art)"
    ]
   }

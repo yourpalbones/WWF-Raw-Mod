@@ -11,14 +11,30 @@ from build_perfect_slot import hook_worker,hook_lookup
 from build_shawn_superkick_animation import pack
 
 
-def build(raw_rom,raw_wram,royal_rom,royal_wram,captures):
-    frames=convert(raw_rom,raw_wram,royal_rom,royal_wram)
+def reference(ref):return [ref['source'],int(ref['compressed']),ref['length']]
+
+
+def frame_rows(frames):
+    """Manifest rows. 'royal' rows read Royal Perfect tiles; 'replaces' is the hash of the adapted piece a
+    matched row supersedes (an upgrade only replaces a piece that still has exactly that content)."""
     rows=[]
-    def reference(ref):return [ref['source'],int(ref['compressed']),ref['length']]
     for f in frames:
-        rows.append({'kind':f['kind'],'index':f['index'],'royal':f['royal_index'] is not None,
-                     'common':f['common'],'parts':[{'x':p['x'],'y':p['y'],'size':p['size'],
-                     'hflip':p['hflip'],'vflip':p['vflip'],'refs':[reference(r)for r in p['refs']]}for p in f['parts']]})
+        row={'kind':f['kind'],'index':f['index'],'royal':f['royal_index'] is not None,
+             'common':f['common'],'parts':[{'x':p['x'],'y':p['y'],'size':p['size'],
+             'hflip':p['hflip'],'vflip':p['vflip'],'refs':[reference(r)for r in p['refs']]}for p in f['parts']]}
+        if f.get('source')=='matched':row['replaces']=f['replaces_hash']
+        rows.append(row)
+    return rows
+
+
+def coverage(rows):
+    return {'royal_poses':sum(r['royal']for r in rows),'adapted_raw_poses':sum(not r['royal']for r in rows),
+            'matched_royal_poses':sum('replaces' in r for r in rows)}
+
+
+def build(raw_rom,raw_wram,royal_rom,royal_wram,captures,matches=None):
+    frames=convert(raw_rom,raw_wram,royal_rom,royal_wram,matches)
+    rows=frame_rows(frames)
     atlas={bytes(32):None}
     for frame in royal.catalog(royal_rom,royal_wram,1):
         for part in frame['parts']:
@@ -62,13 +78,15 @@ def build(raw_rom,raw_wram,royal_rom,royal_wram,captures):
             'roster':['Randy Savage','Mr. Perfect','Undertaker','Bret Hart','Tatanka','Crush','Ric Flair','Shawn Michaels','Razor Ramon','Yokozuna','Lex Luger','Ted DiBiase'],
             'frames':rows,'finisher':finisher,'programs':programs,
             'victim':json.loads((Path(__file__).resolve().parents[1]/'data/perfect-victim-layouts.json').read_text())['rows'],
-            'palette':{'offset':0x17c46,'length':32},'coverage':{'royal_poses':sum(r['royal']for r in rows),'adapted_raw_poses':sum(not r['royal']for r in rows)}}
+            'palette':{'offset':0x17c46,'length':32},'coverage':coverage(rows)}
 
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     for name in('raw_rom','raw_wram','royal_rom','royal_wram','captures'):p.add_argument(name,type=Path)
+    p.add_argument('--matches',type=Path,help='data/perfect-pose-matches.json')
     p.add_argument('--output',type=Path,required=True);a=p.parse_args()
-    result=build(*(getattr(a,n).read_bytes()for n in('raw_rom','raw_wram','royal_rom','royal_wram')),a.captures)
+    matches=json.loads(a.matches.read_text())['rows'] if a.matches else None
+    result=build(*(getattr(a,n).read_bytes()for n in('raw_rom','raw_wram','royal_rom','royal_wram')),a.captures,matches)
     a.output.write_text('window.RAW_ROYAL_IMPORT_MANIFEST='+json.dumps(result,separators=(',',':'))+';\n')
     print('Wrote address-only import recipe:',a.output.stat().st_size,'bytes')

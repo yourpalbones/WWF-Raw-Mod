@@ -19,7 +19,23 @@ def minimum(points):
     return (min(x for x, y in points), min(y for x, y in points)) if points else (0, 0)
 
 
-def convert(raw_rom, raw_wram, royal_rom, royal_wram):
+def placed_parts(target, match):
+    """Royal Perfect's frame placed on a Raw piece by a measured match (tools/match_perfect_poses.py).
+    Returns None when the result cannot be stored as a Raw descriptor without changing pixels."""
+    flip, dx, dy = match['flip'], match['dx'], match['dy']
+    parts = [{**p, 'x': (dx - p['x'] - p['size'] + 1) if flip else p['x'] + dx, 'y': p['y'] + dy,
+              'hflip': p['hflip'] != flip} for p in target['parts']]
+    if not parts or any(not (-64 <= p['x'] < 64 and -105 <= p['y'] < 23) for p in parts):
+        return None
+    ordered = sorted(parts, key=lambda p: -p['size'])
+    if raw.raster({'parts': parts})[0] != raw.raster({'parts': ordered})[0]:
+        return None
+    return parts
+
+
+def convert(raw_rom, raw_wram, royal_rom, royal_wram, matches=None):
+    """matches: rows of data/perfect-pose-matches.json; accepted rows replace adapted pieces."""
+    accepted = {(m['kind'], m['index']): m for m in (matches or []) if m.get('accepted')}
     source = royal.catalog(royal_rom, royal_wram, 1)
     bret = royal.catalog(royal_rom, royal_wram, 3)
     shapes = {}
@@ -32,7 +48,11 @@ def convert(raw_rom, raw_wram, royal_rom, royal_wram):
         candidates = shapes.get(silhouette(points), []) if points else []
         # Ambiguous shapes are not automatically treated as semantic matches.
         donor = candidates[0] if len(candidates) == 1 and not frame['common'] else None
-        if donor:
+        match = accepted.get((frame['kind'], frame['index'])) if not donor else None
+        placed = placed_parts(source[match['royal_index']], match) if match else None
+        if placed:
+            parts = placed
+        elif donor:
             target = source[donor['index']]
             left, top = minimum(points)
             dl, dt = minimum(royal.raster(donor))
@@ -48,7 +68,9 @@ def convert(raw_rom, raw_wram, royal_rom, royal_wram):
                 refs = [{**ref, 'pixels': [colors[v] for v in ref['pixels']]} for ref in part['refs']]
                 parts.append({**part, 'refs': refs})
         result.append({'kind': frame['kind'], 'index': frame['index'], 'parts': parts,
-                       'royal_index': donor['index'] if donor else None,
+                       'royal_index': donor['index'] if donor else (match['royal_index'] if placed else None),
+                       'source': 'exact' if donor else ('matched' if placed else 'adapted'),
+                       'replaces_hash': match['adapted_hash'] if placed else None,
                        'common': frame['common']})
     return result
 

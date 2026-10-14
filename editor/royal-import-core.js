@@ -5,7 +5,7 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
  const putWord=(b,p,v)=>{b[p]=v&255;b[p+1]=v>>>8&255;};
  const putLong=(b,p,v)=>{putWord(b,p,v);b[p+2]=v>>>16&255;};
  const equal=(b,p,a)=>a.every((v,i)=>b[p+i]===v);
- const PLEX_MARKER='PLEX-CANON1';
+ const PLEX_MARKER='PLEX-CANON1',POSES_MARKER='POSES-ROYAL2';
  const bytes=s=>Uint8Array.from(s.trim().split(/\s+/),v=>parseInt(v,16));
  const search=(b,pattern,start=0,end=b.length)=>{outer:for(let p=start;p+pattern.length<=end;p++){for(let i=0;i<pattern.length;i++)if(b[p+i]!==pattern[i])continue outer;return p;}return -1;};
  function tile(data,ref){
@@ -149,6 +149,7 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
   });
   for(const [address,code,hook]of manifest.programs[native?'native':'stock']){out.set(code,address);out[hook]=92;putLong(out,hook+1,address);}
   out.set(Array.from('PERFECT-SLOT-PROTO1',c=>c.charCodeAt(0)),0x70fe00);
+  if(manifest.coverage.matched_royal_poses)out.set(Array.from(POSES_MARKER,c=>c.charCodeAt(0)),0x70fe60);
   return {bytes:out,report:{...manifest.coverage,slot:12,primary_tiles:counts.primary,secondary_tiles:counts.secondary,packet_end:packet}};
  }
  // Older imports (v0.16) hold mirrored attacker drawings and the previous hooks. Rewrite the Perfect-Plex in
@@ -176,5 +177,69 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
   for(const [address,code,hook]of manifest.programs[variant]){out.fill(255,address,address+256);out.set(code,address);out[hook]=92;putLong(out,hook+1,address);}
   checksum(out);return out;
  }
- return {build,updatePlex,plexCurrent,tile,planar,packed,royalBlock,royalPortrait,checksum,word,long,putWord,putLong,search};
+ // Older imports hold adapted Raw Bret art in pieces where Royal Perfect has the pose (manifest rows with
+ // 'replaces'). Rebuild the slot's pieces: a piece is replaced only while its pixels still hash to the adapted
+ // art it supersedes; every other piece, including the user's edits and the Perfect-Plex frames, is decoded
+ // and stored again pixel for pixel. The slot's tile space is repacked, so the new art fits.
+ function posesCurrent(data){return data.length===0x800000&&String.fromCharCode(...data.slice(0x70fe60,0x70fe60+POSES_MARKER.length))===POSES_MARKER;}
+ function pieceHash(points){
+  const list=[...points].map(([k,v])=>{const [x,y]=k.split(',').map(Number);return [x,y,v];}).sort((a,b)=>a[1]-b[1]||a[0]-b[0]);
+  let h=0x811c9dc5;for(const [x,y,v]of list)for(const c of `${x},${y},${v};`){h^=c.charCodeAt(0);h=Math.imul(h,0x01000193)>>>0;}return h;
+ }
+ function upgradePoses(data,source,manifest){
+  if(data.length!==0x800000||String.fromCharCode(...data.slice(0x70fe00,0x70fe13))!=='PERFECT-SLOT-PROTO1')throw Error('Add Mr. Perfect first.');
+  if(String.fromCharCode(...data.slice(0x70fe40,0x70fe49)).startsWith('ROYAL-RX'))throw Error('Remove the receiving sprites before updating the poses.');
+  const P=window.RAW_PARTS,out=data.slice(),cache=new Map(),rows=new Map(manifest.frames.map(f=>[f.kind+':'+f.index,f]));
+  const royalPixels=ref=>{const key=ref?ref.join(':'):'blank';if(!cache.has(key))cache.set(key,tile(source,ref));return cache.get(key);};
+  // Packets of other identities' edits relocated into this space would be lost; refuse instead.
+  for(const r of Object.values(window.RAW_NWO_GEAR_PATTERNS||{}))for(const [a,b]of [[r.pointers,r.pointer_end],[r.secondary_pointers,r.secondary_pointer_end]]){
+   if(a===undefined||b===undefined)continue;for(let p=a;p+3<=b;p+=3){const v=long(data,p);if(v>=0x750000&&v<0x7d0000)throw Error('Another wrestler’s edited tile is stored in Mr. Perfect’s space; the poses were not updated.');}
+  }
+  const frames=[],report={replaced:0,kept_edited:0,kept:0};
+  for(const [kind,indices]of [['primary',[...Array(998).keys(),...Array.from({length:12},(_,i)=>1000+i)]],['secondary',[...Array(722).keys()]]])for(const index of indices){
+   let current;try{current=P.resolveIndex(data,12,kind,index);}catch(e){throw Error(`Mr. Perfect's ${kind} piece ${index} cannot be read (${e.message}); the poses were not updated.`);}
+   const row=rows.get(kind+':'+index);let parts=current.parts;
+   if(row&&row.replaces!==undefined){
+    if(pieceHash(P.raster(current.parts))===row.replaces){parts=row.parts.map(p=>({...p,pixels:p.refs.map(royalPixels)}));report.replaced++;}
+    else report.kept_edited++;
+   }else report.kept++;
+   frames.push({kind,index,parts,descriptor:index>=1000?current.descriptor:null});
+  }
+  let count={primary:0,secondary:0};while(count.primary<16384&&!equal(data,0x7d0000+count.primary*3,[255,255,255]))count.primary++;
+  out.fill(255,0x7d0000,Math.min(0x7da000,0x7d0000+count.primary*3));out.fill(255,0x749800,0x750000);out.fill(255,0x750000,0x7d0000);
+  out.fill(255,0x720100,0x730000);out.fill(255,0x740100,0x749800);
+  const tiles={primary:new Map(),secondary:new Map()},pointers={primary:0x7d0000,secondary:0x749800};let packet=0x750000;
+  const store=(raw,kind)=>{
+   const key=String.fromCharCode(...raw);if(tiles[kind].has(key))return tiles[kind].get(key);
+   const index=count[kind]=tiles[kind].size,encoded=packed(raw);
+   if(pointers[kind]+index*3+3>(kind==='primary'?0x7da000:0x750000))throw Error('Mr. Perfect’s poses exceed the tile pointer space; the poses were not updated.');
+   if((packet&65535)+encoded.length>65536)packet=(packet+65535)&~65535;
+   if(packet+encoded.length>0x7d0000)throw Error('Mr. Perfect’s poses exceed the sprite space; the poses were not updated.');
+   out.set(encoded,packet);putLong(out,pointers[kind]+index*3,packet);packet+=encoded.length;tiles[kind].set(key,index);return index;
+  };
+  const cursor={primary:0x720100,secondary:0x740100},descriptors={primary:new Map(),secondary:new Map()};
+  for(const f of frames){
+   const parts=[...f.parts].sort((a,b)=>b.size-a.size),record=[parts.length,parts.filter(p=>p.size===16).length];
+   if(!parts.length){record[0]=1;record.push(0,0,105);const id=0xc000|store(new Uint8Array(32),f.kind);record.push(id&255,id>>>8);}
+   for(const p of parts){
+    if(p.x< -64||p.x>=64||p.y< -105||p.y>=23)throw Error('A sprite position is outside Raw’s format.');
+    record.push(0,p.x&127,(p.y+105)&127);
+    for(let ty=0;ty<p.size/8;ty++)for(let tx=0;tx<p.size/8;tx++){
+     const image=[];for(let y=0;y<8;y++)for(let x=0;x<8;x++){let sx=tx*8+x,sy=ty*8+y;if(p.hflip)sx=p.size-1-sx;if(p.vflip)sy=p.size-1-sy;image.push(p.pixels[Math.floor(sy/8)*(p.size/8)+Math.floor(sx/8)][sy%8*8+sx%8]);}
+     const id=0xc000|store(planar(image),f.kind);record.push(id&255,id>>>8);
+    }
+   }
+   let address;
+   if(f.descriptor!==null){address=f.descriptor;out.set(record,address);}
+   else{const key=String.fromCharCode(...record);address=descriptors[f.kind].get(key);
+    if(address===undefined){address=cursor[f.kind];const end=f.kind==='primary'?0x730000:0x749800;
+     if((address&65535)+record.length>65536)address=(address+65535)&~65535;
+     if(address+record.length>end)throw Error('Mr. Perfect’s pose descriptions exceed their space; the poses were not updated.');
+     out.set(record,address);cursor[f.kind]=address+record.length;descriptors[f.kind].set(key,address);}}
+   putLong(out,(f.kind==='primary'?0x710000:0x711000)+f.index*3,address);
+  }
+  putLong(out,0x70fdf0,packet);out.set(Array.from(POSES_MARKER,c=>c.charCodeAt(0)),0x70fe60);checksum(out);
+  return {bytes:out,report:{...report,primary_tiles:tiles.primary.size,secondary_tiles:tiles.secondary.size,packet_end:packet}};
+ }
+ return {build,updatePlex,plexCurrent,posesCurrent,upgradePoses,pieceHash,tile,planar,packed,royalBlock,royalPortrait,checksum,word,long,putWord,putLong,search};
 })();
