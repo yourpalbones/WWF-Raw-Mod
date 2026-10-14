@@ -129,5 +129,30 @@ window.RAW_RECEIVING_ART=(()=>{
    return {image,chunks:pack(image),body_dx:row.body_dx,shadow_dx:row.shadow_dx};
   });
  }
- return {pack,render,donorImage,roleMaps,ownNative,ownProfiles,attackerMask};
+ // Royal's receiving drawing rebuilt from the wrestler's own pixels (tools/plan_receiver_reskin.py, recipes.reskin).
+ // Every pixel Royal's donor draws (in drawing order: rows, then columns) copies the wrestler's piece and offset the
+ // plan names, read from the loaded ROM, so the pose and placement are Royal's and the art is the wrestler's own
+ // (gear and edits come through). Pixels behind Mr. Perfect are left out; anchors are the donor's.
+ function reskin(base,source,recipes,slot,plan){
+  const P=window.RAW_PARTS,RI=window.RAW_ROYAL_IMPORT_CORE,shift=recipes.canonical.mirror_shift,cache=new Map(),pieces=new Map();
+  const piece=(kind,index)=>{const key=kind+index;if(!pieces.has(key))pieces.set(key,P.raster(P.resolveIndex(base,slot,kind,index).parts));return pieces.get(key);};
+  return plan.steps.map((step,i)=>{
+   const row=recipes.workers[plan.donor].poses[i],drawn=new Uint8Array(SIZE*SIZE);
+   for(const part of row.parts)for(let y=0;y<part.size;y++)for(let x=0;x<part.size;x++){
+    const sx=part.hflip?part.size-1-x:x,sy=part.vflip?part.size-1-y:y,ref=part.refs[Math.floor(sy/8)*(part.size/8)+Math.floor(sx/8)];if(!ref)continue;
+    const key=ref.join(':');if(!cache.has(key))cache.set(key,RI.tile(source,ref));if(!cache.get(key)[sy%8*8+sx%8])continue;
+    const X=OX+shift-(part.x+x),Y=OY+part.y+y;if(X<0||Y<0||X>=SIZE||Y>=SIZE)throw Error('Receiving drawing exceeds its canvas.');drawn[Y*SIZE+X]=1;
+   }
+   const bytes=Uint8Array.from(atob(step.pixels),c=>c.charCodeAt(0)),hidden=attackerMask(source,recipes,i),image=new Uint8Array(SIZE*SIZE);let n=0;
+   for(let Y=0;Y<SIZE;Y++)for(let X=0;X<SIZE;X++){
+    if(!drawn[Y*SIZE+X])continue;if(2*n+1>=bytes.length)throw Error('Receiving plan does not match the Royal drawing.');
+    const [e,dx,dy]=step.sources[bytes[2*n]|bytes[2*n+1]<<8],[kind,index,mirror]=plan.examples[e];n++;
+    const qx=X-OX+dx,qy=Y-OY+dy,v=piece(kind,index).get((mirror?-qx-1:qx)+','+qy);
+    if(v&&!hidden[Y*SIZE+X])image[Y*SIZE+X]=v;
+   }
+   if(2*n!==bytes.length)throw Error('Receiving plan does not match the Royal drawing.');
+   return {image,chunks:pack(image),body_dx:row.body_dx,shadow_dx:row.shadow_dx};
+  });
+ }
+ return {pack,render,donorImage,roleMaps,ownNative,ownProfiles,attackerMask,reskin};
 })();

@@ -71,7 +71,57 @@ finished move to look nothing like the Royal Rumble product."
 - The suplex drawings stood beside him, went straight up next to him and dropped beside him. Royal's receiver
   bounding boxes (`data/perfect-victim-layouts.json`) differ from the suplex drawings by up to 55 px at the lift.
 
-**Now** (`tools/plan_receiver_profiles.py`, `data/receiver-profile-plan.json`, source `own_profiles`):
+### Second review: Royal's drawings in each wrestler's own pixels (source `reskin`)
+
+**Review feedback** on the own-pose version below: "Does the Royal geometry Bret and the new look the same to
+you?" They did not. At step 11, the frame the move ends on, Royal's receiver lies across Perfect with one leg
+straight up; the closest Raw pose lay curled with its legs low. Raw has no drawing of that landing, or of most of
+the lift, for anyone. "We have perfect examples of taking moves and just need to rebuild it using the animation
+style and graphics."
+
+**Now** (`tools/plan_receiver_reskin.py`, `data/receiver-reskin-plan.json`):
+- **Shape and placement are Royal's.** Every step keeps the Royal donor's receiving drawing pixel for pixel in
+  shape and position, with Royal's anchors. The donors are the same as before (closest build).
+- **Every pixel is the wrestler's own.**
+  - Examples: Raw draws every wrestler's piece *i* in the same pose, Raw Bret's piece *i* was matched to Royal
+    Bret's frame *k* (`data/perfect-pose-matches.json`), and Royal draws every worker's frame *k* in the same pose.
+    So the donor's frame *k* and the wrestler's piece *i* show one pose twice: as the donor and as the wrestler.
+    Pairs are aligned by silhouette (overlap ≥ 0.5) and used in both facings.
+  - For each pixel of Royal's drawing, its 11×11 neighbourhood (centre-weighted) is compared with the donor's
+    pixels in all pairs, and the pixel copies the wrestler's pixel at the best match. Neighbouring pixels keep
+    copying from the same pair while that stays nearly as good, so legs, arms and heads come across as whole
+    stretches of the wrestler's drawing. That is how Owen's legs come out as his trunks, knee pads and boots,
+    where Royal Bret wears long tights.
+  - A mode filter within each of Royal's colour regions removes isolated pixels; a changed pixel copies the
+    neighbour that has the colour.
+- **Install** (`editor/receiving-art.js` `reskin`): the plan names, per pixel, a piece and offset; the pixels are
+  read from the user's ROM, so gear identities and edits come through. Gear identities have their own plans,
+  made from their gear art. Pixels behind Mr. Perfect are removed, as before.
+- **Checks:**
+  - The browser/Node importer draws exactly the planner's reference rendering: 12/12 steps for all ten plans
+    (six stock wrestlers, four gear identities).
+  - Every drawing fits the actor's object budget (at most 15 objects).
+  - Builds through the editor (Add Mr. Perfect): stock `55e331ba…`, gear reference mod `a2dd91b0…`.
+  - Native gameplay re-verification on these builds: **in progress** (the recipes must be re-recorded, because
+    art changes move the game's timing).
+- **Review GIFs** (editor preview at the move's timing; Royal, previous own poses, new):
+  [Luna](../evidence/complete-wrestler-art/receiver-review/luna.gif) ·
+  [Bam Bam](../evidence/complete-wrestler-art/receiver-review/bam-bam.gif) ·
+  [Doink](../evidence/complete-wrestler-art/receiver-review/doink.gif) ·
+  [Kid](../evidence/complete-wrestler-art/receiver-review/kid.gif) ·
+  [Diesel](../evidence/complete-wrestler-art/receiver-review/diesel.gif) ·
+  [Owen](../evidence/complete-wrestler-art/receiver-review/owen.gif) ·
+  [Scott Hall](../evidence/complete-wrestler-art/receiver-review/scott-hall-gear.gif) ·
+  [Sting](../evidence/complete-wrestler-art/receiver-review/sting-gear.gif) ·
+  [Syxx](../evidence/complete-wrestler-art/receiver-review/syxx-gear.gif) ·
+  [Kevin Nash](../evidence/complete-wrestler-art/receiver-review/kevin-nash-gear.gif)
+- **Limits.** This is an automatic rebuild, not hand-drawn art. Where the wrestler's build or costume differs
+  most from the donor's, regions can come out blotchy, for example magenta trunk colour on Owen's raised legs.
+  Each drawing stays editable in the sprite editor ("Receiving Perfect-Plex · 1–12").
+
+### First review: the wrestler's own Raw poses (source `own_profiles`, superseded)
+
+**Method** (`tools/plan_receiver_profiles.py`, `data/receiver-profile-plan.json`):
 - **Target.** For each step, the target is Royal's composite: the Royal donor's receiving drawing (closest
   build) with Mr. Perfect's own drawing in front, both from the native Royal capture.
   - Royal draws only what shows, so receiver pixels behind Perfect are free.
@@ -89,17 +139,17 @@ finished move to look nothing like the Royal Rumble product."
   - Each step's pose is drawn from the user's ROM, so identity, gear and edits carry over.
   - Pixels behind Perfect are removed, as in Royal's drawings, so sprite priority cannot change what shows.
   - Royal's anchors are used (`body_dx`, `shadow_dx`).
-- **Review GIFs** (editor preview, which equals native; Royal geometry, previous, new, at the move's timing):
-  [Luna](../evidence/complete-wrestler-art/receiver-review/luna.gif) ·
-  [Bam Bam](../evidence/complete-wrestler-art/receiver-review/bam-bam.gif) ·
-  [Doink](../evidence/complete-wrestler-art/receiver-review/doink.gif) ·
-  [Kid](../evidence/complete-wrestler-art/receiver-review/kid.gif) ·
-  [Diesel](../evidence/complete-wrestler-art/receiver-review/diesel.gif) ·
-  [Owen](../evidence/complete-wrestler-art/receiver-review/owen.gif) ·
-  [Scott Hall](../evidence/complete-wrestler-art/receiver-review/scott-hall-gear.gif) ·
-  [Sting](../evidence/complete-wrestler-art/receiver-review/sting-gear.gif) ·
-  [Syxx](../evidence/complete-wrestler-art/receiver-review/syxx-gear.gif) ·
-  [Kevin Nash](../evidence/complete-wrestler-art/receiver-review/kevin-nash-gear.gif)
+- **Review GIFs of that round** (editor preview, which equals native; Royal geometry, re-timed suplex, own poses):
+  [Luna](../evidence/complete-wrestler-art/receiver-review/previous-builds/luna.gif) ·
+  [Bam Bam](../evidence/complete-wrestler-art/receiver-review/previous-builds/bam-bam.gif) ·
+  [Doink](../evidence/complete-wrestler-art/receiver-review/previous-builds/doink.gif) ·
+  [Kid](../evidence/complete-wrestler-art/receiver-review/previous-builds/kid.gif) ·
+  [Diesel](../evidence/complete-wrestler-art/receiver-review/previous-builds/diesel.gif) ·
+  [Owen](../evidence/complete-wrestler-art/receiver-review/previous-builds/owen.gif) ·
+  [Scott Hall](../evidence/complete-wrestler-art/receiver-review/previous-builds/scott-hall-gear.gif) ·
+  [Sting](../evidence/complete-wrestler-art/receiver-review/previous-builds/sting-gear.gif) ·
+  [Syxx](../evidence/complete-wrestler-art/receiver-review/previous-builds/syxx-gear.gif) ·
+  [Kevin Nash](../evidence/complete-wrestler-art/receiver-review/previous-builds/kevin-nash-gear.gif)
 - **Limits.** These are Raw drawings of the receiver, not Royal's frames.
   - Step 2: the raised arm is lower than Royal's.
   - Step 11: Royal's legs point straight up; Raw's closest drawings have them bent.

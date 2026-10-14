@@ -55,6 +55,12 @@ window.RAW_PERFECT_RECEIVER_CORE=(()=>{
    const plan=recipes.own_profiles[slot];if(!plan)throw Error(`No receiving plan for slot ${slot}.`);
    return window.RAW_RECEIVING_ART.ownProfiles(base,source,recipes,slot,gearIdentity(base,slot)&&plan.gear?plan.gear:plan);
   }
+  if(spec.source==='reskin'&&window.RAW_RECEIVING_ART){
+   // Royal's drawing in the wrestler's own pixels; a gear identity has its own plan (its pieces differ).
+   const plan=recipes.reskin[slot];if(!plan)throw Error(`No receiving plan for slot ${slot}.`);
+   const use=gearIdentity(base,slot)&&plan.gear?plan.gear:plan;if(!use.steps)throw Error(`No receiving plan for slot ${slot} with this identity.`);
+   return window.RAW_RECEIVING_ART.reskin(base,source,recipes,slot,use);
+  }
   if(spec.source==='authored'&&window.RAW_RECEIVING_ART)return window.RAW_RECEIVING_ART.render(base,source,recipes,slot,spec);
   throw Error(`No receiving art source for slot ${slot}.`);
  }

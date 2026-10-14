@@ -21,17 +21,22 @@ LAYOUT={'marker':'ROYAL-RX3','tables':[0x71d000,0x720000],'descriptors':[0x71190
 # - 'royal': Royal Rumble's drawings of the same person (Bret, Undertaker, Yokozuna, Razor, Lex, Shawn, Perfect).
 #   'stock_identity_only' skips it when a gear identity replaces the character (Scott Hall over Razor) and
 #   uses 'fallback' instead.
-# - 'own_profiles': the wrestler's own Raw poses chosen to follow Royal's Perfect-Plex step by step
+# - 'reskin': Royal's receiving drawing of the closest-built donor, pixel for pixel in shape and placement, with
+#   every pixel copied from the wrestler's own art at the matching place on their body (tools/plan_receiver_reskin.py,
+#   data/receiver-reskin-plan.json); a gear identity has its own plan. For workers with no Royal counterpart of the
+#   same identity.
+# - 'own_profiles' (superseded after review, kept for comparison): the wrestler's own Raw poses chosen to follow
+#   Royal's Perfect-Plex step by step
 #   (tools/plan_receiver_profiles.py, data/receiver-profile-plan.json), drawn from the user's ROM, with Royal's
 #   anchors; a gear identity has its own plan. For workers with no Royal counterpart of the same identity.
 # - 'own_native' (superseded, kept for comparison): Raw's own receiving-suplex sequence re-timed. Its drawings
 #   lifted and dropped the receiver beside Mr. Perfect instead of over him.
 OWN_NATIVE_STEPS=[[0,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[3,0,0],[6,0,8],[10,0,0]]
-SLOTS={0:{'source':'own_profiles'},1:{'source':'royal','selector':3},2:{'source':'royal','selector':2},
-       3:{'source':'royal','selector':9},4:{'source':'own_profiles'},
-       5:{'source':'royal','selector':8,'stock_identity_only':True,'fallback':'own_profiles'},
-       6:{'source':'royal','selector':10},7:{'source':'own_profiles'},8:{'source':'royal','selector':7},
-       9:{'source':'own_profiles'},10:{'source':'own_profiles'},11:{'source':'own_profiles'},
+SLOTS={0:{'source':'reskin'},1:{'source':'royal','selector':3},2:{'source':'royal','selector':2},
+       3:{'source':'royal','selector':9},4:{'source':'reskin'},
+       5:{'source':'royal','selector':8,'stock_identity_only':True,'fallback':'reskin'},
+       6:{'source':'royal','selector':10},7:{'source':'reskin'},8:{'source':'royal','selector':7},
+       9:{'source':'reskin'},10:{'source':'reskin'},11:{'source':'reskin'},
        12:{'source':'royal','selector':1}}
 
 
