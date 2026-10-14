@@ -1,5 +1,5 @@
 /* Import a verified source ROM locally, append slot 13, and keep it editable. */
-const RI=window.RAW_ROYAL_IMPORT_CORE,RM=window.RAW_ROYAL_IMPORT_MANIFEST;
+const RI=window.RAW_ROYAL_IMPORT_CORE,RM=window.RAW_ROYAL_IMPORT_MANIFEST,RC=window.RAW_PERFECT_RECEIVER_CORE,RX=window.RAW_PERFECT_RECEIVERS;
 const originalSelectionManifest=structuredClone(S);
 let royalSource=null;
 function hasImportedWorker(data){return data.length===0x800000&&String.fromCharCode(...data.slice(0x70fe00,0x70fe00+'PERFECT-SLOT-PROTO1'.length))==='PERFECT-SLOT-PROTO1';}
@@ -104,12 +104,44 @@ function activateImportedWorker(data){
  for(const [key,p]of pointerUsers)sources[key].pointer_offsets=[...new Set(p)];
  Object.assign(C.sources,sources);C.characters.push({id:'12',character:'Mr. Perfect',palette_offset:paletteBase+0x1c0,sources,poses,
   scope:`${RM.coverage.royal_poses} Royal source pieces; ${RM.coverage.adapted_raw_poses} adapted Raw pieces; native Perfect-Plex. Remaining art conversion is listed in the import coverage.`});
+ activateReceivingPoses(data);
 }
+// Receiving drawings are private to each receiving wrestler: their own descriptors (71:D000 + slot*3 tables),
+// tile IDs (pointer table 5E:0000) and packets. They appear as an extra pose group on that wrestler, and
+// edits relocate through the same pointer mechanism as the added slot.
+function activateReceivingPoses(data){
+ for(const c of C.characters)c.poses=c.poses.filter(p=>p.category!=='Perfect-Plex receiving');
+ if(!RC.installed(data))return;
+ const packetOK=o=>(o>=0x5d0000&&o<0x5e0000)||(o>=0x5ec000&&o<0x5f0000)||(o>=0x6d8000&&o<0x6e0000)||(o>=0x750000&&o<0x7d0000);
+ for(const slotText of Object.keys(RX.raw_royal_map)){
+  const slot=Number(slotText),character=C.characters.find(c=>c.id===String(slot)),table=RI.long(data,0x71d000+slot*3);
+  if(!character||table<0x71d100||table>=0x71d400)continue;const users=new Map();
+  for(let i=0;i<12;i++){
+   const address=RI.long(data,table+i*3);if(address<0x6d0000||address>=0x6d8000)throw Error('Receiving sprite description outside its bank.');
+   const count=data[address],large=data[address+1];let cursor=address+2;const parts=[];
+   for(let n=0;n<count;n++){
+    if(data[cursor++]!==0)throw Error('Unsupported receiving sprite position encoding.');const px=data[cursor++]&127,py=data[cursor++]&127,size=n<large?16:8,tiles=[];
+    for(let k=0;k<(size===16?4:1);k++){
+     const id=RI.word(data,cursor);cursor+=2;if(id<0xc000)throw Error('Receiving tile is not private.');
+     const pointer=0x5e0000+(id&16383)*3,offset=RI.long(data,pointer);if(!packetOK(offset))throw Error('Receiving tile packet is outside its allocation.');
+     let length=4;for(let b=0;b<4;b++)for(let bit=0;bit<8;bit++)length+=(data[offset+b]>>bit)&1;
+     const key=String(offset);C.sources[key]=character.sources[key]={offset,length,compressed:true};(users.get(key)||users.set(key,[]).get(key)).push(pointer);tiles.push(key);
+    }parts.push({x:px&64?px-128:px,y:py-105,size,hflip:false,vflip:false,tiles});
+   }
+   const left=Math.min(...parts.map(p=>p.x)),top=Math.min(...parts.map(p=>p.y)),right=Math.max(...parts.map(p=>p.x+p.size)),bottom=Math.max(...parts.map(p=>p.y+p.size));
+   character.poses.push({label:'Receiving Perfect-Plex · '+(i+1),category:'Perfect-Plex receiving',width:right-left,height:bottom-top,parts:parts.map(p=>({...p,x:p.x-left,y:p.y-top}))});
+  }
+  for(const [key,p]of users)C.sources[key].pointer_offsets=[...new Set(p)];
+ }
+}
+function plexNeedsUpdate(data){return hasImportedWorker(data)&&(!RI.plexCurrent(data)||!RC.installed(data)||RC.outdated(data));}
 function refreshRoyalImport(){
  const loaded=Boolean(rom),added=loaded&&hasImportedWorker(rom);$('royal-rom').disabled=!loaded;$('royal-add').disabled=!loaded||!royalSource||added;
+ $('royal-update').disabled=!added||!royalSource||!plexNeedsUpdate(rom);
  $('royal-worker').disabled=!loaded||!royalSource||added;
  if(added)$('royal-status').textContent='Mr. Perfect occupies slot 13, including the Perfect-Plex. 289 pieces use Royal artwork; 1,431 use adapted Raw artwork. Save this ROM to keep editing it later. One extra slot is supported.';
  if(added&&RI.word(rom,0x2cf212)===0x8400)$('royal-status').textContent+=' Save playable ROM to restore the referee and announcer palettes in this older import.';
+ if(added&&plexNeedsUpdate(rom))$('royal-status').textContent+=' This ROM has an earlier Perfect-Plex. Load Royal Rumble and choose Update Perfect-Plex to fix its facing, positions, shadows and exit.';
  if(added&&importedAnnouncerRecords(rom).length)$('royal-status').textContent+=' Save playable ROM to repair the announcer tables in this older import; without that, matches stall before they start.';
 }
 $('royal-rom').onchange=async event=>{try{
@@ -123,9 +155,20 @@ $('royal-rom').onchange=async event=>{try{
 $('royal-add').onclick=async()=>{try{
  if(!rom||!royalSource)throw Error('Load Raw and Royal Rumble first.');$('royal-add').disabled=true;$('royal-status').textContent='Building the new slot…';await new Promise(r=>setTimeout(r,0));
  const base=playableROM(),result=RI.build(base,royalSource,RM);importedProfileAssets(base,result);
+ try{const installed=RC.install(result.bytes,royalSource,RX);result.bytes=installed.bytes;result.receivers=installed.report;}
+ catch(e){result.receiverError=e.message;}
  const file=new File([result.bytes],'WWF-Raw-Mr-Perfect.sfc',{type:'application/octet-stream'});
  await $('rom').onchange({target:{files:[file]}});if(!rom||!hasImportedWorker(rom))throw Error('The imported ROM could not be reopened: '+$('status').textContent);
  download('WWF-Raw-Mr-Perfect.sfc',result.bytes,'application/octet-stream');$('wrestler').value='12';loadCharacter('12');
- $('royal-status').textContent=`Mr. Perfect added to slot 13 with the Perfect-Plex. ${result.report.royal_poses} pieces come from Royal; ${result.report.adapted_raw_poses} use adapted Raw art. Save this imported ROM as the base for your project.`;
+ $('royal-status').textContent=`Mr. Perfect added to slot 13 with the Perfect-Plex. ${result.report.royal_poses} pieces come from Royal; ${result.report.adapted_raw_poses} use adapted Raw art. `+(result.receivers?`Receiving drawings were added for ${result.receivers.receivers.length} wrestlers with Royal counterparts; the others use generic Raw receiving poses. `:`Receiving drawings were not added: ${result.receiverError} `)+'Save this imported ROM as the base for your project.';
  status('New slot added. The imported ROM was saved; it can be reopened and edited.');
  }catch(e){$('royal-status').textContent=e.message;}finally{refreshRoyalImport();}};
+$('royal-update').onclick=async()=>{let message='';try{
+ if(!rom||!royalSource||!hasImportedWorker(rom))throw Error('Load the imported ROM and Royal Rumble first.');$('royal-update').disabled=true;$('royal-status').textContent='Updating the Perfect-Plex…';await new Promise(r=>setTimeout(r,0));
+ let data=RC.uninstall(playableROM());if(!RI.plexCurrent(data))data=RI.updatePlex(data,royalSource,RM);
+ let note='';try{data=RC.install(data,royalSource,RX).bytes;}catch(e){note=' Receiving drawings were not added: '+e.message;}
+ const file=new File([data],'WWF-Raw-Mr-Perfect.sfc',{type:'application/octet-stream'});
+ await $('rom').onchange({target:{files:[file]}});if(!rom||!hasImportedWorker(rom))throw Error('The updated ROM could not be reopened: '+$('status').textContent);
+ download('WWF-Raw-Mr-Perfect.sfc',data,'application/octet-stream');
+ message='Perfect-Plex updated; your other edits were kept. Save this ROM as the base for your project.'+note;
+ }catch(e){message=e.message;}finally{refreshRoyalImport();if(message)$('royal-status').textContent=message;}};

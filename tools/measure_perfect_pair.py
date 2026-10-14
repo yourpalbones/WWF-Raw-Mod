@@ -106,6 +106,20 @@ def oam_indices(vram, oam, rec, obsel):
     return out
 
 
+def summary_range(values):
+    values = [v for v in values if v is not None]
+    return {'min': min(values), 'max': max(values), 'frames': len(values)} if values else None
+
+
+def health_changes(context):
+    """Each change of the receiver's health across the capture: [frame, before, after]."""
+    out = []
+    for previous, current in zip(context, context[1:]):
+        if current['health'][1] != previous['health'][1]:
+            out.append([current['frame'], previous['health'][1], current['health'][1]])
+    return out
+
+
 def after_move(context):
     """What each actor displays once both have left the Perfect-Plex actions."""
     moved = [i for i, c in enumerate(context) if c['actions'] == [600, 540]]
@@ -173,7 +187,15 @@ def measure(capture, rom, royal, slot):
             return grid, mirrored
         reference = {g for rec in trailing(att) for g in pixels(rec)}
         foreign = [rec for rec in trailing(rcv) if pixels(rec)[0] not in reference] if reference else []
+        # Shadow placement: centre of the receiver's trailing palette-6 objects vs its body's opaque centre.
+        def centre(recs_):
+            xs = [rec['x'] + x for rec in recs_ for (x, y) in oam_indices(vram, oam, rec, regs[0x2101])]
+            return (min(xs) + max(xs)) / 2 if xs else None
+        body_centre, shadow_centre = centre(rcv), centre(trailing(rcv)[:4])
         context.append({'frame': frame, 'actions': [actors[0]['action'], actors[1]['action']],
+                        'health': [w(0xa78), w(0xa7a)],
+                        'receiver_shadow_offset': None if body_centre is None or shadow_centre is None
+                        else round(shadow_centre - body_centre, 1),
                         'receiver_palette6_foreign': len(foreign),
                         'receiver_shadow_like_objects': len(trailing(rcv)) - len(foreign),
                         'receiver_palette6_foreign_objects': [[rec['index'], rec['x'], rec['y'], rec['tile']] for rec in foreign],
@@ -252,6 +274,9 @@ def measure(capture, rom, royal, slot):
                                                                  if c['actions'] == [600, 540])),
         'frames_with_foreign_palette6_during_move': sum(1 for c in context
                                                         if c['actions'] == [600, 540] and c['receiver_palette6_foreign']),
+        'receiver_shadow_offset_during_move': summary_range([c['receiver_shadow_offset'] for c in context
+                                                             if c['actions'] == [600, 540]]),
+        'receiver_health_changes': health_changes(context),
         'after_move': after_move(context),
         'rows': rows,
         'all_frames': context,

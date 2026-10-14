@@ -48,7 +48,10 @@ with sync_playwright() as playwright:
     assert len(imported.read_bytes()) == 0x800000
     assert page.evaluate(snapshot) == original
     assert page.evaluate("selectionState('12').bio.name") == 'MR PERFECT'
-    assert page.evaluate('M.poses.length') == 1732
+    # 1,732 imported pieces plus 12 "Receiving Perfect-Plex" drawings (slot 12 receives in a mirror match).
+    assert page.evaluate('M.poses.length') == 1744
+    receiving = page.evaluate("Object.fromEntries(C.characters.map(c=>[c.id,c.poses.filter(p=>p.category==='Perfect-Plex receiving').length]))")
+    assert receiving == {str(i): 12 if i in (1, 2, 3, 5, 6, 8, 12) else 0 for i in range(13)}, receiving
     assert page.locator('#royal-add').is_disabled()
     page.screenshot(path=str(args.output/'editor-import.png'), full_page=True)
 
@@ -116,7 +119,7 @@ with sync_playwright() as playwright:
     assert page.evaluate("profileState('12').theme") == int(theme)
     assert page.evaluate('(key)=>originals[key]', str(pointer)) == growth['pixels']
     assert not errors, errors
-    report = {'slot_count':13,'piece_count':1732,'original_twelve_preserved':True,
+    report = {'slot_count':13,'piece_count':1732,'receiving_drawings':84,'original_twelve_preserved':True,
               'wrong_donor_rejected':True,'project_roundtrip':True,'edited_rom_reopened':True,
               'sprite_packet_relocated':True,'portrait_and_monitor_roundtrip':True,
               'theme_reassigned':True,'offline_file':args.offline,'page_errors':errors}

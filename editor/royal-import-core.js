@@ -5,6 +5,7 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
  const putWord=(b,p,v)=>{b[p]=v&255;b[p+1]=v>>>8&255;};
  const putLong=(b,p,v)=>{putWord(b,p,v);b[p+2]=v>>>16&255;};
  const equal=(b,p,a)=>a.every((v,i)=>b[p+i]===v);
+ const PLEX_MARKER='PLEX-CANON1';
  const bytes=s=>Uint8Array.from(s.trim().split(/\s+/),v=>parseInt(v,16));
  const search=(b,pattern,start=0,end=b.length)=>{outer:for(let p=start;p+pattern.length<=end;p++){for(let i=0;i<pattern.length;i++)if(b[p+i]!==pattern[i])continue outer;return p;}return -1;};
  function tile(data,ref){
@@ -52,6 +53,41 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
   let sum=0;for(const v of out)sum=(sum+v)&65535;
   for(const at of [0xffdc,0x40ffdc]){putWord(out,at,sum^65535);putWord(out,at+2,sum);}
  }
+
+ // Perfect-Plex attacker drawings (canonical facing), their profiles and 20-step stream, and the generic
+ // receiving stream for receivers without Royal art. Shared by build() and updatePlex().
+ function writePlex(out,base,source,manifest,store,pixel){
+  let descriptor=0x730100;
+  if(!manifest.orientation)throw Error('Perfect-Plex recipes are not in canonical facing.');
+  for(let i=0;i<manifest.finisher.length;i++){
+   const f=manifest.finisher[i],image=new Uint8Array(112*112);
+   for(const p of [...f.parts].reverse())for(let y=0;y<p.size;y++)for(let x=0;x<p.size;x++){
+    const sx=p.hflip?p.size-1-x:x,sy=p.vflip?p.size-1-y:y,value=pixel(p.refs[Math.floor(sy/8)*(p.size/8)+Math.floor(sx/8)])[sy%8*8+sx%8];
+    if(!value)continue;/* canonical facing: Royal's Perfect faces right, as Raw art does unflipped */const px=56+p.x+x,py=100+p.y+y;if(px<0||px>=112||py<0||py>=112)throw Error('Finisher image exceeds its canvas.');image[py*112+px]=value;
+   }
+   const record=[f.chunks.length,f.chunks.filter(c=>c[2]===16).length];
+   if(f.chunks.length+2>17)throw Error('Finisher exceeds the wrestler object limit.');
+   for(const [x,y,size]of f.chunks){record.push(0,x&127,(y+105)&127);
+    for(let ty=0;ty<size/8;ty++)for(let tx=0;tx<size/8;tx++){
+     const tilePixels=[];for(let yy=0;yy<8;yy++)for(let xx=0;xx<8;xx++){const px=x+56+tx*8+xx,py=y+100+ty*8+yy;tilePixels.push(px<0||py<0||px>=112||py>=112?0:image[py*112+px]);}
+     const id=0xc000|store(planar(tilePixels),'primary',false);record.push(id&255,id>>>8);
+    }
+   }
+   if(descriptor+record.length>0x734000)throw Error('Finisher descriptions exceed their space.');out.set(record,descriptor);putLong(out,0x710000+(1000+i)*3,descriptor);descriptor+=record.length;
+   const profile=0x734000+i*14;putWord(out,profile,(1000+i)*3);putWord(out,profile+2,0);out.set([36,128,0,255,255,255],profile+4);
+   out.set([115,profile&255,profile>>>8&255,0,0,0,0],0x730000+i*7);
+  }
+  for(let i=12;i<20;i++)out.set(out.slice(0x73004d,0x730054),0x730000+i*7);out[0x73008c]=255;
+  for(let i=0;i<20;i++){
+   const row=manifest.victim[Math.min(i,11)],profile=0x735100+i*32;let n=0;
+   for(;n<8;n++){
+    const at=row.profile+n*4,id=word(base,at);putWord(out,profile+n*4,id);if(id===65535)break;
+    const dx=(base[at+2]<<24>>24)+row.translate[0],dy=(base[at+3]<<24>>24)+row.translate[1];
+    if(dx< -128||dx>127||dy< -128||dy>127)throw Error('Opponent animation position overflow.');out[profile+n*4+2]=dx&255;out[profile+n*4+3]=dy&255;
+   }if(n===8)throw Error('Invalid opponent profile.');out.set([115,profile&255,profile>>>8&255,0,0,0,0],0x735000+i*7);
+  }out[0x73508c]=255;
+ out.set(Array.from(PLEX_MARKER,c=>c.charCodeAt(0)),0x70fe20);
+ }
  function build(base,source,manifest){
   if(![0x300000,0x400000,0x600000,0x800000].includes(base.length))throw Error('Unsupported WWF Raw size.');
   if(source.length!==0x200000)throw Error('Use the USA SNES Royal Rumble ROM.');
@@ -93,35 +129,7 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
     out.set(record,address);cursor[kind]=address+record.length;descriptors[kind].set(key,address);
    }putLong(out,tables[kind]+f.index*3,address);
   }
-  let descriptor=0x730100;
-  if(!manifest.orientation)throw Error('Perfect-Plex recipes are not in canonical facing.');
-  for(let i=0;i<manifest.finisher.length;i++){
-   const f=manifest.finisher[i],image=new Uint8Array(112*112);
-   for(const p of [...f.parts].reverse())for(let y=0;y<p.size;y++)for(let x=0;x<p.size;x++){
-    const sx=p.hflip?p.size-1-x:x,sy=p.vflip?p.size-1-y:y,value=pixels(source,p.refs[Math.floor(sy/8)*(p.size/8)+Math.floor(sx/8)],true)[sy%8*8+sx%8];
-    if(!value)continue;/* canonical facing: Royal's Perfect faces right, as Raw art does unflipped */const px=56+p.x+x,py=100+p.y+y;if(px<0||px>=112||py<0||py>=112)throw Error('Finisher image exceeds its canvas.');image[py*112+px]=value;
-   }
-   const record=[f.chunks.length,f.chunks.filter(c=>c[2]===16).length];
-   if(f.chunks.length+2>17)throw Error('Finisher exceeds the wrestler object limit.');
-   for(const [x,y,size]of f.chunks){record.push(0,x&127,(y+105)&127);
-    for(let ty=0;ty<size/8;ty++)for(let tx=0;tx<size/8;tx++){
-     const tilePixels=[];for(let yy=0;yy<8;yy++)for(let xx=0;xx<8;xx++){const px=x+56+tx*8+xx,py=y+100+ty*8+yy;tilePixels.push(px<0||py<0||px>=112||py>=112?0:image[py*112+px]);}
-     const id=0xc000|store(planar(tilePixels),'primary',false);record.push(id&255,id>>>8);
-    }
-   }
-   if(descriptor+record.length>0x734000)throw Error('Finisher descriptions exceed their space.');out.set(record,descriptor);putLong(out,0x710000+(1000+i)*3,descriptor);descriptor+=record.length;
-   const profile=0x734000+i*14;putWord(out,profile,(1000+i)*3);putWord(out,profile+2,0);out.set([36,128,0,255,255,255],profile+4);
-   out.set([115,profile&255,profile>>>8&255,0,0,0,0],0x730000+i*7);
-  }
-  for(let i=12;i<20;i++)out.set(out.slice(0x73004d,0x730054),0x730000+i*7);out[0x73008c]=255;
-  for(let i=0;i<20;i++){
-   const row=manifest.victim[Math.min(i,11)],profile=0x735100+i*32;let n=0;
-   for(;n<8;n++){
-    const at=row.profile+n*4,id=word(base,at);putWord(out,profile+n*4,id);if(id===65535)break;
-    const dx=(base[at+2]<<24>>24)+row.translate[0],dy=(base[at+3]<<24>>24)+row.translate[1];
-    if(dx< -128||dx>127||dy< -128||dy>127)throw Error('Opponent animation position overflow.');out[profile+n*4+2]=dx&255;out[profile+n*4+3]=dy&255;
-   }if(n===8)throw Error('Invalid opponent profile.');out.set([115,profile&255,profile>>>8&255,0,0,0,0],0x735000+i*7);
-  }out[0x73508c]=255;
+  writePlex(out,base,source,manifest,store,ref=>pixels(source,ref,true));
   // Copy profiles, palettes and signature tables instead of overwriting another worker.
   out.set(base.slice(0x2efaf5,0x2efd11),0x708000);out.set(base.slice(0x2efaf5+45,0x2efaf5+90),0x708000+12*45);
   const helper=bytes('a2 2d 00 22 5f ff ad 18 69 f5 fa aa f4 fa ae ab ab 60'),at=search(base,helper);
@@ -143,5 +151,30 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
   out.set(Array.from('PERFECT-SLOT-PROTO1',c=>c.charCodeAt(0)),0x70fe00);
   return {bytes:out,report:{...manifest.coverage,slot:12,primary_tiles:counts.primary,secondary_tiles:counts.secondary,packet_end:packet}};
  }
- return {build,tile,planar,packed,royalBlock,royalPortrait,checksum,word,long,putWord,putLong,search};
+ // Older imports (v0.16) hold mirrored attacker drawings and the previous hooks. Rewrite the Perfect-Plex in
+ // place: new attacker tiles are appended to the slot's private space (the old ones become unused), and the
+ // hook programs and streams are replaced. Everything else in the ROM is kept.
+ function plexCurrent(data){return data.length===0x800000&&String.fromCharCode(...data.slice(0x70fe20,0x70fe20+PLEX_MARKER.length))===PLEX_MARKER;}
+ function updatePlex(data,source,manifest){
+  if(data.length!==0x800000||String.fromCharCode(...data.slice(0x70fe00,0x70fe13))!=='PERFECT-SLOT-PROTO1')throw Error('Add Mr. Perfect first.');
+  if(source.length!==0x200000)throw Error('Use the USA SNES Royal Rumble ROM.');
+  const out=data.slice(),cache=new Map();let count=0;
+  while(count<16384&&!(out[0x7d0000+count*3]===255&&out[0x7d0001+count*3]===255&&out[0x7d0002+count*3]===255))count++;
+  let packet=long(out,0x70fdf0);
+  const store=raw=>{
+   const encoded=packed(raw);if(count>=16384)throw Error('The added wrestler has no free tile entries.');
+   if((packet&65535)+encoded.length>65536)packet=(packet+65535)&~65535;
+   if(packet<0x750000||packet+encoded.length>0x7d0000)throw Error('The added wrestler has no more sprite space.');
+   out.set(encoded,packet);putLong(out,0x7d0000+count*3,packet);packet+=encoded.length;return count++;
+  };
+  const pixel=(d,ref)=>{const key=ref?ref.join(':'):'blank';if(!cache.has(key))cache.set(key,tile(d,ref));return cache.get(key);};
+  // The generic receiving stream reads stock profiles; those addresses are unchanged in an imported ROM.
+  writePlex(out,data,source,manifest,store,ref=>pixel(source,ref));putLong(out,0x70fdf0,packet);
+  // The slot worker chains to the gear dispatcher (JML $4BE100) only in the 'native' variant.
+  const variant=search(data,[92,0,225,75],0x70f000,0x70f100)>=0?'native':'stock';
+  if(String.fromCharCode(...data.slice(0x70fe40,0x70fe49)).startsWith('ROYAL-RX'))throw Error('Remove the receiving sprites before updating the Perfect-Plex.');
+  for(const [address,code,hook]of manifest.programs[variant]){out.fill(255,address,address+256);out.set(code,address);out[hook]=92;putLong(out,hook+1,address);}
+  checksum(out);return out;
+ }
+ return {build,updatePlex,plexCurrent,tile,planar,packed,royalBlock,royalPortrait,checksum,word,long,putWord,putLong,search};
 })();

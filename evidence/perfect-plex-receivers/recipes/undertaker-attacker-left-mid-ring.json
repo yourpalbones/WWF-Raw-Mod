@@ -2061,42 +2061,45 @@
    20
   ]
  ],
- "expected": {
-  "frames_measured": 143,
-  "frames_fully_matched": 140,
-  "flip_pairs": {
-   "(False, True)": 140
-  },
-  "receiver_body_terms": {
-   "-32": 140
-  },
-  "actor_spacing": {
-   "41": 140
-  },
-  "registration_errors": {
-   "7": 140
-  },
-  "receiver_trailing_palette6_during_move": {
-   "2": 3,
-   "8": 139
-  },
-  "frames_with_foreign_palette6_during_move": 72,
-  "after_move": {
-   "actions": {
-    "[0, 70]": 112
+ "defect_baseline": {
+  "build_sha256": "4ca2856994fdebba62205a186feb5058c8b3a30760ad95423354012a4a128085",
+  "summary": {
+   "frames_measured": 143,
+   "frames_fully_matched": 140,
+   "flip_pairs": {
+    "(False, True)": 140
    },
-   "attacker_pose_shown": {
-    "11": 1,
-    "0": 111
+   "receiver_body_terms": {
+    "-32": 140
    },
-   "receiver_pose_shown": {
-    "11": 1,
-    "0": 111
-   }
-  },
-  "receiver_pixel_match_min": 1.0,
-  "vertical_offsets": [
-   0
-  ]
+   "actor_spacing": {
+    "41": 140
+   },
+   "registration_errors": {
+    "7": 140
+   },
+   "receiver_trailing_palette6_during_move": {
+    "2": 3,
+    "8": 139
+   },
+   "frames_with_foreign_palette6_during_move": 72,
+   "after_move": {
+    "actions": {
+     "[0, 70]": 112
+    },
+    "attacker_pose_shown": {
+     "11": 1,
+     "0": 111
+    },
+    "receiver_pose_shown": {
+     "11": 1,
+     "0": 111
+    }
+   },
+   "receiver_pixel_match_min": 1.0,
+   "vertical_offsets": [
+    0
+   ]
+  }
  }
 }

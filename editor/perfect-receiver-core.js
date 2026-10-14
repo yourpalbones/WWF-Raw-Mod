@@ -25,7 +25,7 @@ window.RAW_PERFECT_RECEIVER_CORE=(()=>{
    for(let i=0;i<worker.poses.length;i++){
     const row=worker.poses[i],image=new Uint8Array(144*144);
     for(const part of [...row.parts].reverse())for(let y=0;y<part.size;y++)for(let x=0;x<part.size;x++){
-     const sx=part.hflip?part.size-1-x:x,sy=part.vflip?part.size-1-y:y,ref=part.refs[Math.floor(sy/8)*(part.size/8)+Math.floor(sx/8)],key=ref.join(':');
+     const sx=part.hflip?part.size-1-x:x,sy=part.vflip?part.size-1-y:y,ref=part.refs[Math.floor(sy/8)*(part.size/8)+Math.floor(sx/8)],key=ref?ref.join(':'):'blank';
      if(!cache.has(key))cache.set(key,RI.tile(source,ref));const value=cache.get(key)[sy%8*8+sx%8];
      if(value)image[(part.y+y+105)*144+ORIGIN_X+shift-(part.x+x)]=mapping[value];
     }
@@ -51,5 +51,14 @@ window.RAW_PERFECT_RECEIVER_CORE=(()=>{
   out.set(Array.from('ROYAL-RX2',c=>c.charCodeAt(0)),0x70fe40);RI.checksum(out);
   return {bytes:out,report:{receivers:report,tile_namespace_count:count,descriptor_end:descriptor,last_packet:packet,raw_only_receiving_art_complete:false,custom_gear_receiving_art_complete:false}};
  }
- return {installed,outdated,install};
+ // Remove an installed receiving build: restore the three chained hooks from their saved copies and free
+ // the receiving allocations, leaving the ROM exactly as install() found those regions.
+ function uninstall(data){
+  if(!installed(data))return data;
+  const out=data.slice();
+  for(const [original,copy]of [[0x70f000,0x71e800],[0x70f200,0x71e900],[0x70f400,0x71ea00]])out.set(data.slice(copy,copy+256),original);
+  for(const [start,end]of [[0x5d0000,0x5f0000],[0x6d0000,0x6e0000],[0x71d000,0x720000]])out.fill(255,start,end);
+  out.fill(255,0x70fe40,0x70fe49);RI.checksum(out);return out;
+ }
+ return {installed,outdated,install,uninstall};
 })();
