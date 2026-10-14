@@ -44,7 +44,7 @@ changing them. Adding Hogan must preserve Mr. Perfect and the original twelve.
 
 ## Current status
 
-Input and source graphics verified; no Raw slot has been verified yet.
+Source graphics verified. A controller-only fourteenth-slot Raw probe and twenty-three basic animation poses now pass native checks; full import remains unfinished.
 Building a Genesis Plus GX observation core at pinned commit
 `393f70cd64c7334564c19a424c383f53986c13f4`, with read-only VRAM/CRAM/SAT/register
 exposure, to obtain native source evidence. Maintain findings here as work proceeds.
@@ -68,3 +68,24 @@ piece candidates among 1,720 Raw entries (203 have any exact candidate).
 These are geometry candidates, not validated action assignments. Other Raw-only
 poses will require further mapping or authored Hogan art. Source details and
 gameplay proof: [Hogan source evidence](../evidence/hogan-genesis-source/README.md).
+
+## Native Raw basic-motion milestone
+
+The corrected thirteen-slot browser export can be extended without replacing the
+referee: selector 26 is gated by actor role. High-WRAM stats, extended selection,
+profile/monitor/HUD tables and an independent palette are tested by cold boot.
+The build refuses occupied banks 4A/54/55. It is not yet a general editor export.
+
+`build_hogan_motion_probe.py` converts twenty-three source poses and retains Raw
+timing and controls for standing/walking, punch, kick and run. Native verification
+matches 199/199 captured bodies and 199/199 converted palettes. See
+[Raw motion proof](../evidence/hogan-slot14-probe/README.md). Source pixels stay
+unchanged; varying the packing-grid origin fits every basic pose into the
+17-object/64-tile native limit, including a two-object native shadow.
+
+`build_hogan_legdrop_probe.py` is a separate contextual-R animation experiment.
+Its landing/recovery experiment passes a 13,764-frame controller-only cold run:
+176/176 checked gameplay bodies/palettes match source pixels; 160 damage occurs
+once against Luna, paired state clears and controls resume. It does not implement
+the source automatic rope run or establish all-receiver coverage. Unmapped actions still show standing artwork; all-animation coverage,
+custom-user-mod preservation, match/AI limits and editor integration remain open.

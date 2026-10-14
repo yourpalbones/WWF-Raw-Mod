@@ -1,0 +1,3367 @@
+{
+  "development_only": true,
+  "cold_boot": true,
+  "save_states_used": false,
+  "controller_frames": 13764,
+  "contextual_R_activation_verified": true,
+  "source_animation_pixels_verified": true,
+  "health_before": 293,
+  "health_after_landing": 133,
+  "damage_events": 1,
+  "damage_amount": 160,
+  "receiver_identity": "Luna Vachon",
+  "referee_selector_role_preserved": true,
+  "post_move_walk_verified": true,
+  "punch_and_kick_after_opponent_stands_verified": true,
+  "automatic_rope_run_implemented": false,
+  "all_receivers_verified": false,
+  "full_character_complete": false,
+  "editor_compatible": false,
+  "rom_sha256": "823f1d4c500e2ff0a1f4522f288b9efdb8a0ef43969e9aa5ef2fcbfad703772a",
+  "frames": [
+    {
+      "frame": 12068,
+      "hogan_health": 928,
+      "opponent_health": 293,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12072,
+      "hogan_health": 928,
+      "opponent_health": 293,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12076,
+      "hogan_health": 928,
+      "opponent_health": 293,
+      "hogan_action": 140,
+      "opponent_action": 70,
+      "hogan_marker": 4,
+      "hogan_pair_link": 32770,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12080,
+      "hogan_health": 928,
+      "opponent_health": 293,
+      "hogan_action": 140,
+      "opponent_action": 70,
+      "hogan_marker": 4,
+      "hogan_pair_link": 32770,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12084,
+      "hogan_health": 928,
+      "opponent_health": 293,
+      "hogan_action": 140,
+      "opponent_action": 70,
+      "hogan_marker": 4,
+      "hogan_pair_link": 32770,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12088,
+      "hogan_health": 928,
+      "opponent_health": 293,
+      "hogan_action": 140,
+      "opponent_action": 70,
+      "hogan_marker": 4,
+      "hogan_pair_link": 32770,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12092,
+      "hogan_health": 928,
+      "opponent_health": 293,
+      "hogan_action": 140,
+      "opponent_action": 70,
+      "hogan_marker": 4,
+      "hogan_pair_link": 32770,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12096,
+      "hogan_health": 928,
+      "opponent_health": 293,
+      "hogan_action": 140,
+      "opponent_action": 70,
+      "hogan_marker": 4,
+      "hogan_pair_link": 32770,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12100,
+      "hogan_health": 928,
+      "opponent_health": 293,
+      "hogan_action": 140,
+      "opponent_action": 70,
+      "hogan_marker": 4,
+      "hogan_pair_link": 32770,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12104,
+      "hogan_health": 928,
+      "opponent_health": 293,
+      "hogan_action": 140,
+      "opponent_action": 70,
+      "hogan_marker": 4,
+      "hogan_pair_link": 32770,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12108,
+      "hogan_health": 928,
+      "opponent_health": 293,
+      "hogan_action": 140,
+      "opponent_action": 70,
+      "hogan_marker": 4,
+      "hogan_pair_link": 32770,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12112,
+      "hogan_health": 928,
+      "opponent_health": 293,
+      "hogan_action": 140,
+      "opponent_action": 70,
+      "hogan_marker": 4,
+      "hogan_pair_link": 32770,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12116,
+      "hogan_health": 928,
+      "opponent_health": 293,
+      "hogan_action": 140,
+      "opponent_action": 70,
+      "hogan_marker": 4,
+      "hogan_pair_link": 32770,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12120,
+      "hogan_health": 928,
+      "opponent_health": 293,
+      "hogan_action": 140,
+      "opponent_action": 70,
+      "hogan_marker": 4,
+      "hogan_pair_link": 32770,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12124,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 140,
+      "opponent_action": 86,
+      "hogan_marker": 4,
+      "hogan_pair_link": 32770,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12128,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 140,
+      "opponent_action": 86,
+      "hogan_marker": 4,
+      "hogan_pair_link": 32770,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12132,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 140,
+      "opponent_action": 86,
+      "hogan_marker": 4,
+      "hogan_pair_link": 32770,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12136,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 140,
+      "opponent_action": 86,
+      "hogan_marker": 4,
+      "hogan_pair_link": 32770,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12140,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 86,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12144,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 86,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12148,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 86,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12152,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 86,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12156,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12160,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12164,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12168,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12172,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12176,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12180,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12184,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12188,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12192,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12196,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12200,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12204,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12208,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12212,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12216,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12220,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12224,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 8,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12228,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 8,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12232,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 8,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12236,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 8,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12240,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 8,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12244,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12248,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12252,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12256,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12260,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12264,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12268,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12272,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12276,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12280,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12284,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12288,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12292,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12296,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12300,
+      "hogan_health": 928,
+      "opponent_health": 133,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12304,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12308,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12312,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12316,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12320,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12324,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12328,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12332,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12336,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12340,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12344,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12348,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12352,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12356,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12360,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12364,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12368,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12372,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 14,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12376,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 14,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12380,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 14,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12384,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 14,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12388,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 16,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12392,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 16,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12396,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 16,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12400,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 16,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12404,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 14,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12408,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 14,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12412,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 14,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12416,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 14,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12420,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12424,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12428,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12432,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12436,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12440,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12444,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12448,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12452,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12456,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12460,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12464,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12468,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12472,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12476,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12480,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12484,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12488,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12492,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12496,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12500,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12504,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12508,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12512,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12516,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12520,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12524,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12528,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12532,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12536,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12540,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12544,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12548,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12552,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12556,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12560,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12564,
+      "hogan_health": 928,
+      "opponent_health": 149,
+      "hogan_action": 0,
+      "opponent_action": 70,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13564,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 120,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13568,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 120,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13572,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 120,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13576,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 120,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13580,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13584,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13588,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13592,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13596,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13600,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13604,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 120,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13608,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 120,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13612,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 120,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13616,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 120,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13620,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 120,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13624,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 120,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13628,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13632,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13636,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13640,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13644,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13648,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13652,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13656,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13660,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13664,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13668,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13672,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13676,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13680,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13684,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 126,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13688,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 126,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13692,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 126,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13696,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 126,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13700,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 126,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13704,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 126,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13708,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13712,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13716,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13720,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13724,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13728,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13732,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13736,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13740,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13744,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13748,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13752,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13756,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13760,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13764,
+      "hogan_health": 928,
+      "opponent_health": 165,
+      "hogan_action": 0,
+      "opponent_action": 0,
+      "hogan_marker": 0,
+      "hogan_pair_link": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+--- a/cpuexec.cpp
++++ b/cpuexec.cpp
+@@ -138,6 +138,11 @@
+     const char *dir = std::getenv("WWF_TRACE_DIR");
+     if (!dir) return;
+     unsigned pc = Registers.PBPC & 0xffffff;
++    if(std::getenv("WWF_HOGAN_PROBE") && (pc==0x4af300 || pc==0x4afa00 || pc==0x4af200)) {
++      auto w=[](unsigned a){return unsigned(Memory.RAM[a&0x1ffff])|(unsigned(Memory.RAM[(a+1)&0x1ffff])<<8);};
++      unsigned actor=w(0x36);char path[1024];std::snprintf(path,sizeof(path),"%s/hogan-roots.jsonl",dir);
++      FILE*f=std::fopen(path,"a");if(f){std::fprintf(f,"{\"frame\":%u,\"pc\":%u,\"a\":%u,\"x\":%u,\"y\":%u,\"db\":%u,\"actor\":%u,\"selector\":%u,\"role\":%u,\"action\":%u,\"b9\":%u,\"cursor\":%u}\n",WWFFrame,pc,Registers.A.W,Registers.X.W,Registers.Y.W,unsigned(Registers.DB),actor,actor<12?w(0xb74+actor):0,actor<12?w(0x526+actor):0,actor<12?w(0x6b4+actor):0,w(0xb9),w(0x48));std::fclose(f);}
++    }
+     if(std::getenv("WWF_ROYAL_PROBE")){WWFRoyalTraceCPU(pc,dir);return;}
+     if(std::getenv("WWF_PERFECT_PROBE")){WWFPerfectGateTrace(pc,dir);return;}
+     WWFTraceTile(pc, dir);

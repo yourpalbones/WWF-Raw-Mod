@@ -1,0 +1,35 @@
+{
+  "frames_checked": 199,
+  "frames_exact": 199,
+  "palettes_exact": 199,
+  "source_poses_verified": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    66,
+    67,
+    68,
+    99,
+    100,
+    101,
+    102,
+    106,
+    107,
+    108,
+    109
+  ],
+  "full_character_complete": false,
+  "runs": [
+    "native-motion-horizontal.json",
+    "native-motion-directions.json"
+  ]
+}

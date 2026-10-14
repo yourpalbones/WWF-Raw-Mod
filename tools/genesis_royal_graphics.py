@@ -12,6 +12,22 @@ from pathlib import Path
 SOURCE_SHA256 = 'fa8d80b0646fe463bea669c14590ddbfe0a55142ae924098503185b864cc66a4'
 
 
+def color_lookup(rom,worker=6):
+    """Default gear-byte translation initialized by native $00DED6/$008E1A."""
+    colors=rom[0xde4+worker*16:0xdf4+worker*16]
+    return bytes(colors[b>>4]<<4|colors[b&15] for b in range(256))
+
+
+def snes_palette(rom):
+    """Genesis gameplay palette 3, expanded to SNES RGB5 (no indexed art changes)."""
+    colors=[]
+    for i in range(16):
+        bus=u16(rom,0x3a4+i*2)
+        r,g,b=[round((bus>>shift&7)*31/7) for shift in (1,5,9)]
+        colors.append(r|g<<5|b<<10)
+    return b''.join(c.to_bytes(2,'little')for c in colors)
+
+
 def u16(data, at):
     return int.from_bytes(data[at:at+2], 'big')
 
