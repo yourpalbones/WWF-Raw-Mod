@@ -1612,5 +1612,70 @@
    1
   ]
  ],
- "build": "stock import v2 (Mr. Perfect with Royal pose pieces)"
+ "build": "stock import v2 (Mr. Perfect with Royal pose pieces)",
+ "expected_build": "d15106fcb30455c112b50844bc423c78a58127fcdf04654c1b9897f8b1052458",
+ "expected": {
+  "frames_measured": 142,
+  "frames_fully_matched": 139,
+  "flip_pairs": {
+   "(False, True)": 139
+  },
+  "receiver_body_terms": {
+   "-34": 13,
+   "-27": 56,
+   "-38": 8,
+   "-52": 62
+  },
+  "actor_spacing": {
+   "40": 139
+  },
+  "registration_errors": {},
+  "receiver_trailing_palette6_during_move": {
+   "2": 3,
+   "4": 139
+  },
+  "frames_with_foreign_palette6_during_move": 0,
+  "receiver_shadow_offset_during_move": {
+   "min": 1.0,
+   "max": 2.0,
+   "frames": 142
+  },
+  "receiver_health_changes": [
+   [
+    213,
+    314,
+    154
+   ]
+  ],
+  "receiver_source": "own_native",
+  "preview_match": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "after_move": {
+   "actions": {
+    "[0, 70]": 109
+   },
+   "attacker_pose_shown": {
+    "11": 2,
+    "None": 107
+   },
+   "receiver_pose_shown": {
+    "11": 2,
+    "None": 107
+   }
+  },
+  "receiver_pixel_match_min": null,
+  "vertical_offsets": []
+ }
 }
