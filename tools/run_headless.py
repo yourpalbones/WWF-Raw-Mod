@@ -65,6 +65,7 @@ def main():
     )
     ap.add_argument("--load-state", type=Path)
     ap.add_argument("--images-only", action="store_true", help="Capture PNG frames without memory dumps or save states")
+    ap.add_argument("--controller-device", type=int, help="Explicit libretro controller device for both ports (Genesis capture)")
     ap.add_argument("--audio", action="store_true", help="Capture local stereo PCM audio for sound research")
     ap.add_argument(
         "--press-p2",
@@ -206,6 +207,11 @@ def main():
         sb = ct.create_string_buffer(state)
         if not core.retro_unserialize(sb, len(state)):
             raise RuntimeError("Core rejected save state")
+
+    if args.controller_device is not None:
+        core.retro_set_controller_port_device.argtypes = [ct.c_uint, ct.c_uint]
+        for port in (0, 1):
+            core.retro_set_controller_port_device(port, args.controller_device)
 
     def snapshot():
         prefix = args.output / f"frame-{frame:06d}"

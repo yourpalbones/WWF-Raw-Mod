@@ -1,0 +1,635 @@
+{
+  "source_worker": 6,
+  "native_selector": 12,
+  "actor": 2,
+  "frames_checked": 63,
+  "frames_exact": 62,
+  "rows": [
+    {
+      "frame": 12,
+      "tick": 12063,
+      "match": null
+    },
+    {
+      "frame": 16,
+      "tick": 12067,
+      "match": {
+        "pose": 63,
+        "source_request_tick": 12063,
+        "opaque_pixels": 1060,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 20,
+      "tick": 12071,
+      "match": {
+        "pose": 64,
+        "source_request_tick": 12069,
+        "opaque_pixels": 1393,
+        "body_objects": 9
+      }
+    },
+    {
+      "frame": 24,
+      "tick": 12075,
+      "match": {
+        "pose": 64,
+        "source_request_tick": 12069,
+        "opaque_pixels": 1393,
+        "body_objects": 9
+      }
+    },
+    {
+      "frame": 28,
+      "tick": 12079,
+      "match": {
+        "pose": 89,
+        "source_request_tick": 12075,
+        "opaque_pixels": 1314,
+        "body_objects": 8
+      }
+    },
+    {
+      "frame": 32,
+      "tick": 12083,
+      "match": {
+        "pose": 90,
+        "source_request_tick": 12082,
+        "opaque_pixels": 1536,
+        "body_objects": 14
+      }
+    },
+    {
+      "frame": 36,
+      "tick": 12087,
+      "match": {
+        "pose": 90,
+        "source_request_tick": 12082,
+        "opaque_pixels": 1536,
+        "body_objects": 14
+      }
+    },
+    {
+      "frame": 40,
+      "tick": 12091,
+      "match": {
+        "pose": 91,
+        "source_request_tick": 12089,
+        "opaque_pixels": 1320,
+        "body_objects": 7
+      }
+    },
+    {
+      "frame": 44,
+      "tick": 12095,
+      "match": {
+        "pose": 91,
+        "source_request_tick": 12089,
+        "opaque_pixels": 1320,
+        "body_objects": 7
+      }
+    },
+    {
+      "frame": 48,
+      "tick": 12099,
+      "match": {
+        "pose": 92,
+        "source_request_tick": 12096,
+        "opaque_pixels": 1244,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 52,
+      "tick": 12103,
+      "match": {
+        "pose": 92,
+        "source_request_tick": 12096,
+        "opaque_pixels": 1244,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 56,
+      "tick": 12107,
+      "match": {
+        "pose": 97,
+        "source_request_tick": 12103,
+        "opaque_pixels": 1174,
+        "body_objects": 9
+      }
+    },
+    {
+      "frame": 60,
+      "tick": 12111,
+      "match": {
+        "pose": 98,
+        "source_request_tick": 12110,
+        "opaque_pixels": 1139,
+        "body_objects": 8
+      }
+    },
+    {
+      "frame": 64,
+      "tick": 12115,
+      "match": {
+        "pose": 98,
+        "source_request_tick": 12110,
+        "opaque_pixels": 1139,
+        "body_objects": 8
+      }
+    },
+    {
+      "frame": 68,
+      "tick": 12119,
+      "match": {
+        "pose": 63,
+        "source_request_tick": 12117,
+        "opaque_pixels": 1060,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 72,
+      "tick": 12123,
+      "match": {
+        "pose": 63,
+        "source_request_tick": 12117,
+        "opaque_pixels": 1060,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 76,
+      "tick": 12127,
+      "match": {
+        "pose": 64,
+        "source_request_tick": 12123,
+        "opaque_pixels": 1393,
+        "body_objects": 9
+      }
+    },
+    {
+      "frame": 80,
+      "tick": 12131,
+      "match": {
+        "pose": 65,
+        "source_request_tick": 12129,
+        "opaque_pixels": 1174,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 84,
+      "tick": 12135,
+      "match": {
+        "pose": 65,
+        "source_request_tick": 12129,
+        "opaque_pixels": 1174,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 88,
+      "tick": 12139,
+      "match": {
+        "pose": 115,
+        "source_request_tick": 12135,
+        "opaque_pixels": 960,
+        "body_objects": 7
+      }
+    },
+    {
+      "frame": 92,
+      "tick": 12143,
+      "match": {
+        "pose": 57,
+        "source_request_tick": 12141,
+        "opaque_pixels": 1274,
+        "body_objects": 8
+      }
+    },
+    {
+      "frame": 96,
+      "tick": 12147,
+      "match": {
+        "pose": 57,
+        "source_request_tick": 12141,
+        "opaque_pixels": 1274,
+        "body_objects": 8
+      }
+    },
+    {
+      "frame": 100,
+      "tick": 12151,
+      "match": {
+        "pose": 58,
+        "source_request_tick": 12147,
+        "opaque_pixels": 1283,
+        "body_objects": 9
+      }
+    },
+    {
+      "frame": 104,
+      "tick": 12155,
+      "match": {
+        "pose": 475,
+        "source_request_tick": 12153,
+        "opaque_pixels": 1221,
+        "body_objects": 5
+      }
+    },
+    {
+      "frame": 108,
+      "tick": 12159,
+      "match": {
+        "pose": 475,
+        "source_request_tick": 12153,
+        "opaque_pixels": 1221,
+        "body_objects": 5
+      }
+    },
+    {
+      "frame": 112,
+      "tick": 12163,
+      "match": {
+        "pose": 476,
+        "source_request_tick": 12159,
+        "opaque_pixels": 1143,
+        "body_objects": 4
+      }
+    },
+    {
+      "frame": 116,
+      "tick": 12167,
+      "match": {
+        "pose": 477,
+        "source_request_tick": 12165,
+        "opaque_pixels": 1071,
+        "body_objects": 4
+      }
+    },
+    {
+      "frame": 120,
+      "tick": 12171,
+      "match": {
+        "pose": 477,
+        "source_request_tick": 12165,
+        "opaque_pixels": 1071,
+        "body_objects": 4
+      }
+    },
+    {
+      "frame": 124,
+      "tick": 12175,
+      "match": {
+        "pose": 478,
+        "source_request_tick": 12171,
+        "opaque_pixels": 1357,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 128,
+      "tick": 12179,
+      "match": {
+        "pose": 479,
+        "source_request_tick": 12177,
+        "opaque_pixels": 1320,
+        "body_objects": 4
+      }
+    },
+    {
+      "frame": 132,
+      "tick": 12183,
+      "match": {
+        "pose": 479,
+        "source_request_tick": 12183,
+        "opaque_pixels": 1320,
+        "body_objects": 4
+      }
+    },
+    {
+      "frame": 136,
+      "tick": 12187,
+      "match": {
+        "pose": 479,
+        "source_request_tick": 12183,
+        "opaque_pixels": 1320,
+        "body_objects": 4
+      }
+    },
+    {
+      "frame": 140,
+      "tick": 12191,
+      "match": {
+        "pose": 41,
+        "source_request_tick": 12189,
+        "opaque_pixels": 1119,
+        "body_objects": 9
+      }
+    },
+    {
+      "frame": 144,
+      "tick": 12195,
+      "match": {
+        "pose": 41,
+        "source_request_tick": 12189,
+        "opaque_pixels": 1119,
+        "body_objects": 9
+      }
+    },
+    {
+      "frame": 148,
+      "tick": 12199,
+      "match": {
+        "pose": 42,
+        "source_request_tick": 12195,
+        "opaque_pixels": 1186,
+        "body_objects": 7
+      }
+    },
+    {
+      "frame": 152,
+      "tick": 12203,
+      "match": {
+        "pose": 43,
+        "source_request_tick": 12201,
+        "opaque_pixels": 1201,
+        "body_objects": 9
+      }
+    },
+    {
+      "frame": 156,
+      "tick": 12207,
+      "match": {
+        "pose": 43,
+        "source_request_tick": 12201,
+        "opaque_pixels": 1201,
+        "body_objects": 9
+      }
+    },
+    {
+      "frame": 160,
+      "tick": 12211,
+      "match": {
+        "pose": 44,
+        "source_request_tick": 12207,
+        "opaque_pixels": 1315,
+        "body_objects": 10
+      }
+    },
+    {
+      "frame": 164,
+      "tick": 12215,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 168,
+      "tick": 12219,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 172,
+      "tick": 12223,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 176,
+      "tick": 12227,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 180,
+      "tick": 12231,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 184,
+      "tick": 12235,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 188,
+      "tick": 12239,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 192,
+      "tick": 12243,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 196,
+      "tick": 12247,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 200,
+      "tick": 12251,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 204,
+      "tick": 12255,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 208,
+      "tick": 12259,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 212,
+      "tick": 12263,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 216,
+      "tick": 12267,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 220,
+      "tick": 12271,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 224,
+      "tick": 12275,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 228,
+      "tick": 12279,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 232,
+      "tick": 12283,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 236,
+      "tick": 12287,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 240,
+      "tick": 12291,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 244,
+      "tick": 12295,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 248,
+      "tick": 12299,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 252,
+      "tick": 12303,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 256,
+      "tick": 12307,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    },
+    {
+      "frame": 260,
+      "tick": 12311,
+      "match": {
+        "pose": 17,
+        "source_request_tick": 12213,
+        "opaque_pixels": 1339,
+        "body_objects": 6
+      }
+    }
+  ],
+  "raw_import_verified": false
+}

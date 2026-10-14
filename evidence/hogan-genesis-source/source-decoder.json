@@ -1,0 +1,10 @@
+{
+  "native_last_tiles_checked": 573,
+  "families": {
+    "byte-mask": 401,
+    "solid": 43,
+    "row-mask": 103,
+    "raw": 26
+  },
+  "native_bytes_match": true
+}

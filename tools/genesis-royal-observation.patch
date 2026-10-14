@@ -1,0 +1,123 @@
+diff --git a/core/m68k/m68kcpu.c b/core/m68k/m68kcpu.c
+index 07d2514..bbdc457 100644
+--- a/core/m68k/m68kcpu.c
++++ b/core/m68k/m68kcpu.c
+@@ -18,6 +18,10 @@ extern int vdp_68k_irq_ack(int int_level);
+ #include "m68kconf.h"
+ #include "m68kcpu.h"
+ #include "m68kops.h"
++#include <stdio.h>
++#include <stdlib.h>
++extern unsigned char work_ram[65536];
++
+ 
+ /* ======================================================================== */
+ /* ================================= DATA ================================= */
+@@ -296,6 +300,24 @@ void m68k_run(unsigned int cycles)
+       cpu_hook(HOOK_M68K_E, 0, REG_PC, 0);
+ #endif
+ 
++    if (REG_PC == 0x8996 || REG_PC == 0x88dc || REG_PC == 0x8bc4 || REG_PC == 0x87ee || REG_PC == 0x6cbc || REG_PC == 0x7040 || REG_PC == 0xdc22 || REG_PC == 0xdc38 || REG_PC == 0xdc50 || REG_PC == 0xdcaa) {
++      static FILE *wwf_trace;
++      const char *wwf_path = getenv("WWF_GENESIS_CPU_TRACE");
++      if (wwf_path && !wwf_trace) wwf_trace = fopen(wwf_path,"wb");
++      if (wwf_trace) {
++        int wwf_i;
++        fprintf(wwf_trace,"{\"pc\":%u,\"tick\":%u,\"selector\":%u,\"a\":[",REG_PC,work_ram[0xd3ee]|(work_ram[0xd3ef]<<8),work_ram[0xd452]|(work_ram[0xd453]<<8));
++        for (wwf_i=0; wwf_i<8;wwf_i++) fprintf(wwf_trace,"%s%u",wwf_i ? "," : "",m68k_get_reg(M68K_REG_A0+wwf_i));
++        fprintf(wwf_trace,"],\"d\":[");
++        for (wwf_i=0; wwf_i<8;wwf_i++) fprintf(wwf_trace,"%s%u",wwf_i ? "," : "",m68k_get_reg(M68K_REG_D0+wwf_i));
++        fprintf(wwf_trace,"],\"lookup\":\"");
++        for (wwf_i=0;wwf_i<256;wwf_i++) fprintf(wwf_trace,"%02x",work_ram[((0xc532+(m68k_get_reg(M68K_REG_A5)&65535)*128+wwf_i)&65535)^1]);
++        fprintf(wwf_trace,"\",\"last_tile\":\"");
++        if (REG_PC==0x8bc4) for (wwf_i=0;wwf_i<32;wwf_i++) fprintf(wwf_trace,"%02x",work_ram[((m68k_get_reg(M68K_REG_A2)-32+wwf_i)&65535)^1]);
++        fprintf(wwf_trace,"\"}\n");fflush(wwf_trace);
++      }
++    }
++
+     /* Decode next instruction */
+     REG_IR = m68ki_read_imm_16();
+ 
+diff --git a/core/vdp_ctrl.c b/core/vdp_ctrl.c
+index bd454f6..5cea6ef 100644
+--- a/core/vdp_ctrl.c
++++ b/core/vdp_ctrl.c
+@@ -2469,8 +2469,10 @@ static void vdp_68k_data_w_m4(unsigned int data)
+   addr += (reg[15] + 1);
+ }
+ 
++static void wwf_genesis_dma_trace(unsigned int source, unsigned int length);
+ static void vdp_68k_data_w_m5(unsigned int data)
+ {
++  if (addr < 0x4000) wwf_genesis_dma_trace(data,1);
+   /* Clear pending flag */
+   pending = 0;
+ 
+@@ -3082,12 +3084,25 @@ static void vdp_z80_data_w_sg(unsigned int data)
+ /*--------------------------------------------------------------------------*/
+ 
+ /* DMA from 68K bus: $000000-$7FFFFF (external area) */
++static void wwf_genesis_dma_trace(unsigned int source, unsigned int length)
++{
++  static FILE *trace;
++  const char *path = getenv("WWF_GENESIS_DMA_TRACE");
++  if (!path) return;
++  if (!trace) trace = fopen(path,"wb");
++  if (trace) {
++    fprintf(trace,"{\"pc\":%u,\"source\":%u,\"destination\":%u,\"words\":%u,\"a0\":%u,\"a1\":%u,\"a2\":%u,\"a3\":%u}\n", m68k_get_reg(M68K_REG_PC),source,addr,length,m68k_get_reg(M68K_REG_A0),m68k_get_reg(M68K_REG_A1),m68k_get_reg(M68K_REG_A2),m68k_get_reg(M68K_REG_A3));
++    filestream_flush(trace);
++  }
++}
++
+ static void vdp_dma_68k_ext(unsigned int length)
+ {
+   uint16 data;
+ 
+   /* 68k bus source address */
+   uint32 source = (reg[23] << 17) | (dma_src << 1);
++  wwf_genesis_dma_trace(source,length);
+ 
+   do
+   {
+@@ -3123,6 +3138,7 @@ static void vdp_dma_68k_ram(unsigned int length)
+ 
+   /* 68k bus source address */
+   uint32 source = (reg[23] << 17) | (dma_src << 1);
++  wwf_genesis_dma_trace(source,length);
+ 
+   do
+   {
+@@ -3151,6 +3167,7 @@ static void vdp_dma_68k_io(unsigned int length)
+ 
+   /* 68k bus source address */
+   uint32 source = (reg[23] << 17) | (dma_src << 1);
++  wwf_genesis_dma_trace(source,length);
+ 
+   do
+   {
+diff --git a/libretro/libretro.c b/libretro/libretro.c
+index 798c6cc..badc4ca 100644
+--- a/libretro/libretro.c
++++ b/libretro/libretro.c
+@@ -3751,6 +3751,10 @@ void *retro_get_memory_data(unsigned id)
+          return sram.on ? sram.sram : NULL;
+       case RETRO_MEMORY_SYSTEM_RAM:
+          return work_ram;
++      case 3: return vram;
++      case 0x10010: return cram;
++      case 0x10011: return sat;
++      case 0x10012: return reg;
+       default:
+          return NULL;
+    }
+@@ -3802,6 +3806,10 @@ size_t retro_get_memory_size(unsigned id)
+             return 0x2000; /* 8KB internal RAM */
+       }
+ 
++      case 3: return sizeof(vram);
++      case 0x10010: return sizeof(cram);
++      case 0x10011: return sizeof(sat);
++      case 0x10012: return sizeof(reg);
+       default:
+         return 0;
+    }
