@@ -1,0 +1,1032 @@
+{
+ "build_sha256": "15c1d9b5aa67a09d8a560fad281b1887eac5871b7273256d4c436d060db6efc8",
+ "controller_only": true,
+ "results": {
+  "bambam-attacker-left": {
+   "summary": {
+    "frames_measured": 141,
+    "frames_fully_matched": 138,
+    "flip_pairs": {
+     "(False, True)": 138
+    },
+    "receiver_body_terms": {
+     "-31": 7,
+     "-27": 56,
+     "-34": 6,
+     "-38": 8,
+     "-52": 61
+    },
+    "actor_spacing": {
+     "40": 138
+    },
+    "registration_errors": {},
+    "receiver_trailing_palette6_during_move": {
+     "2": 3,
+     "4": 138
+    },
+    "frames_with_foreign_palette6_during_move": 0,
+    "receiver_shadow_offset_during_move": {
+     "min": 1.0,
+     "max": 2.0,
+     "frames": 141
+    },
+    "receiver_health_changes": [
+     [
+      213,
+      232,
+      72
+     ]
+    ],
+    "receiver_source": "own_native",
+    "preview_match": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "after_move": {
+     "actions": {
+      "[0, 70]": 110
+     },
+     "attacker_pose_shown": {
+      "11": 2,
+      "None": 108
+     },
+     "receiver_pose_shown": {
+      "11": 2,
+      "None": 108
+     }
+    },
+    "receiver_pixel_match_min": null,
+    "vertical_offsets": []
+   },
+   "defects": []
+  },
+  "bret-attacker-left-right-rope": {
+   "summary": {
+    "frames_measured": 141,
+    "frames_fully_matched": 138,
+    "flip_pairs": {
+     "(False, True)": 138
+    },
+    "receiver_body_terms": {
+     "-45": 138
+    },
+    "actor_spacing": {
+     "40": 138
+    },
+    "registration_errors": {
+     "0": 138
+    },
+    "receiver_trailing_palette6_during_move": {
+     "2": 3,
+     "4": 138
+    },
+    "frames_with_foreign_palette6_during_move": 0,
+    "receiver_shadow_offset_during_move": {
+     "min": 1.0,
+     "max": 10.0,
+     "frames": 141
+    },
+    "receiver_health_changes": [
+     [
+      213,
+      156,
+      0
+     ]
+    ],
+    "receiver_source": "royal",
+    "preview_match": null,
+    "after_move": {
+     "actions": {
+      "[0, 70]": 110
+     },
+     "attacker_pose_shown": {
+      "11": 2,
+      "None": 108
+     },
+     "receiver_pose_shown": {
+      "11": 2,
+      "None": 108
+     }
+    },
+    "receiver_pixel_match_min": 1.0,
+    "vertical_offsets": [
+     0
+    ]
+   },
+   "defects": []
+  },
+  "diesel-attacker-left": {
+   "summary": {
+    "frames_measured": 142,
+    "frames_fully_matched": 139,
+    "flip_pairs": {
+     "(False, True)": 139
+    },
+    "receiver_body_terms": {
+     "-34": 13,
+     "-27": 56,
+     "-38": 8,
+     "-52": 62
+    },
+    "actor_spacing": {
+     "40": 139
+    },
+    "registration_errors": {},
+    "receiver_trailing_palette6_during_move": {
+     "2": 3,
+     "4": 139
+    },
+    "frames_with_foreign_palette6_during_move": 0,
+    "receiver_shadow_offset_during_move": {
+     "min": 1.0,
+     "max": 2.0,
+     "frames": 142
+    },
+    "receiver_health_changes": [
+     [
+      213,
+      314,
+      154
+     ]
+    ],
+    "receiver_source": "own_native",
+    "preview_match": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "after_move": {
+     "actions": {
+      "[0, 70]": 109
+     },
+     "attacker_pose_shown": {
+      "11": 2,
+      "None": 107
+     },
+     "receiver_pose_shown": {
+      "11": 2,
+      "None": 107
+     }
+    },
+    "receiver_pixel_match_min": null,
+    "vertical_offsets": []
+   },
+   "defects": []
+  },
+  "doink-attacker-left": {
+   "summary": {
+    "frames_measured": 143,
+    "frames_fully_matched": 140,
+    "flip_pairs": {
+     "(False, True)": 140
+    },
+    "receiver_body_terms": {
+     "-33": 7,
+     "-29": 56,
+     "-34": 6,
+     "-38": 9,
+     "-50": 62
+    },
+    "actor_spacing": {
+     "40": 140
+    },
+    "registration_errors": {},
+    "receiver_trailing_palette6_during_move": {
+     "2": 3,
+     "4": 140
+    },
+    "frames_with_foreign_palette6_during_move": 0,
+    "receiver_shadow_offset_during_move": {
+     "min": 1.0,
+     "max": 2.0,
+     "frames": 143
+    },
+    "receiver_health_changes": [
+     [
+      213,
+      250,
+      90
+     ]
+    ],
+    "receiver_source": "own_native",
+    "preview_match": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "after_move": {
+     "actions": {
+      "[0, 70]": 108
+     },
+     "attacker_pose_shown": {
+      "11": 2,
+      "None": 106
+     },
+     "receiver_pose_shown": {
+      "11": 2,
+      "None": 106
+     }
+    },
+    "receiver_pixel_match_min": null,
+    "vertical_offsets": []
+   },
+   "defects": []
+  },
+  "kid-attacker-right": {
+   "summary": {
+    "frames_measured": 141,
+    "frames_fully_matched": 138,
+    "flip_pairs": {
+     "(True, False)": 138
+    },
+    "receiver_body_terms": {
+     "33": 7,
+     "27": 56,
+     "34": 6,
+     "38": 8,
+     "52": 61
+    },
+    "actor_spacing": {
+     "-40": 138
+    },
+    "registration_errors": {},
+    "receiver_trailing_palette6_during_move": {
+     "2": 3,
+     "4": 138
+    },
+    "frames_with_foreign_palette6_during_move": 0,
+    "receiver_shadow_offset_during_move": {
+     "min": -2.0,
+     "max": -1.0,
+     "frames": 141
+    },
+    "receiver_health_changes": [
+     [
+      213,
+      156,
+      0
+     ]
+    ],
+    "receiver_source": "own_native",
+    "preview_match": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "after_move": {
+     "actions": {
+      "[0, 70]": 110
+     },
+     "attacker_pose_shown": {
+      "11": 2,
+      "None": 108
+     },
+     "receiver_pose_shown": {
+      "11": 2,
+      "None": 108
+     }
+    },
+    "receiver_pixel_match_min": null,
+    "vertical_offsets": []
+   },
+   "defects": []
+  },
+  "lex-attacker-left-right-rope": {
+   "summary": {
+    "frames_measured": 141,
+    "frames_fully_matched": 138,
+    "flip_pairs": {
+     "(False, True)": 138
+    },
+    "receiver_body_terms": {
+     "-45": 138
+    },
+    "actor_spacing": {
+     "40": 138
+    },
+    "registration_errors": {
+     "0": 138
+    },
+    "receiver_trailing_palette6_during_move": {
+     "2": 3,
+     "4": 138
+    },
+    "frames_with_foreign_palette6_during_move": 0,
+    "receiver_shadow_offset_during_move": {
+     "min": 1.0,
+     "max": 10.0,
+     "frames": 141
+    },
+    "receiver_health_changes": [
+     [
+      213,
+      298,
+      138
+     ]
+    ],
+    "receiver_source": "royal",
+    "preview_match": null,
+    "after_move": {
+     "actions": {
+      "[0, 70]": 110
+     },
+     "attacker_pose_shown": {
+      "11": 2,
+      "None": 108
+     },
+     "receiver_pose_shown": {
+      "11": 2,
+      "None": 108
+     }
+    },
+    "receiver_pixel_match_min": 1.0,
+    "vertical_offsets": [
+     0
+    ]
+   },
+   "defects": []
+  },
+  "luna-attacker-left-2": {
+   "summary": {
+    "frames_measured": 141,
+    "frames_fully_matched": 138,
+    "flip_pairs": {
+     "(False, True)": 138
+    },
+    "receiver_body_terms": {
+     "-33": 7,
+     "-27": 56,
+     "-34": 6,
+     "-38": 8,
+     "-51": 61
+    },
+    "actor_spacing": {
+     "40": 138
+    },
+    "registration_errors": {},
+    "receiver_trailing_palette6_during_move": {
+     "2": 3,
+     "4": 138
+    },
+    "frames_with_foreign_palette6_during_move": 0,
+    "receiver_shadow_offset_during_move": {
+     "min": 1.0,
+     "max": 2.0,
+     "frames": 141
+    },
+    "receiver_health_changes": [
+     [
+      213,
+      122,
+      0
+     ]
+    ],
+    "receiver_source": "own_native",
+    "preview_match": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "after_move": {
+     "actions": {
+      "[0, 70]": 110
+     },
+     "attacker_pose_shown": {
+      "11": 2,
+      "None": 108
+     },
+     "receiver_pose_shown": {
+      "11": 2,
+      "None": 108
+     }
+    },
+    "receiver_pixel_match_min": null,
+    "vertical_offsets": []
+   },
+   "defects": []
+  },
+  "luna-attacker-left": {
+   "summary": {
+    "frames_measured": 142,
+    "frames_fully_matched": 139,
+    "flip_pairs": {
+     "(False, True)": 139
+    },
+    "receiver_body_terms": {
+     "-33": 7,
+     "-27": 56,
+     "-34": 6,
+     "-38": 8,
+     "-51": 62
+    },
+    "actor_spacing": {
+     "40": 139
+    },
+    "registration_errors": {},
+    "receiver_trailing_palette6_during_move": {
+     "2": 3,
+     "4": 139
+    },
+    "frames_with_foreign_palette6_during_move": 0,
+    "receiver_shadow_offset_during_move": {
+     "min": 1.0,
+     "max": 2.0,
+     "frames": 142
+    },
+    "receiver_health_changes": [
+     [
+      213,
+      170,
+      10
+     ]
+    ],
+    "receiver_source": "own_native",
+    "preview_match": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "after_move": {
+     "actions": {
+      "[0, 70]": 109
+     },
+     "attacker_pose_shown": {
+      "11": 2,
+      "None": 107
+     },
+     "receiver_pose_shown": {
+      "11": 2,
+      "None": 107
+     }
+    },
+    "receiver_pixel_match_min": null,
+    "vertical_offsets": []
+   },
+   "defects": []
+  },
+  "owen-attacker-right": {
+   "summary": {
+    "frames_measured": 141,
+    "frames_fully_matched": 138,
+    "flip_pairs": {
+     "(True, False)": 138
+    },
+    "receiver_body_terms": {
+     "32": 7,
+     "28": 56,
+     "34": 6,
+     "38": 8,
+     "51": 61
+    },
+    "actor_spacing": {
+     "-40": 138
+    },
+    "registration_errors": {},
+    "receiver_trailing_palette6_during_move": {
+     "2": 3,
+     "4": 138
+    },
+    "frames_with_foreign_palette6_during_move": 0,
+    "receiver_shadow_offset_during_move": {
+     "min": -2.0,
+     "max": -1.0,
+     "frames": 141
+    },
+    "receiver_health_changes": [
+     [
+      213,
+      108,
+      0
+     ]
+    ],
+    "receiver_source": "own_native",
+    "preview_match": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "after_move": {
+     "actions": {
+      "[0, 70]": 110
+     },
+     "attacker_pose_shown": {
+      "11": 2,
+      "None": 108
+     },
+     "receiver_pose_shown": {
+      "11": 2,
+      "None": 108
+     }
+    },
+    "receiver_pixel_match_min": null,
+    "vertical_offsets": []
+   },
+   "defects": []
+  },
+  "razor-attacker-left-right-rope": {
+   "summary": {
+    "frames_measured": 141,
+    "frames_fully_matched": 138,
+    "flip_pairs": {
+     "(False, True)": 138
+    },
+    "receiver_body_terms": {
+     "-45": 138
+    },
+    "actor_spacing": {
+     "40": 138
+    },
+    "registration_errors": {
+     "0": 138
+    },
+    "receiver_trailing_palette6_during_move": {
+     "2": 3,
+     "4": 138
+    },
+    "frames_with_foreign_palette6_during_move": 0,
+    "receiver_shadow_offset_during_move": {
+     "min": 1.0,
+     "max": 10.0,
+     "frames": 141
+    },
+    "receiver_health_changes": [
+     [
+      213,
+      250,
+      90
+     ]
+    ],
+    "receiver_source": "royal",
+    "preview_match": null,
+    "after_move": {
+     "actions": {
+      "[0, 70]": 110
+     },
+     "attacker_pose_shown": {
+      "11": 2,
+      "None": 108
+     },
+     "receiver_pose_shown": {
+      "11": 2,
+      "None": 108
+     }
+    },
+    "receiver_pixel_match_min": 1.0,
+    "vertical_offsets": [
+     0
+    ]
+   },
+   "defects": []
+  },
+  "shawn-attacker-left-right-rope": {
+   "summary": {
+    "frames_measured": 141,
+    "frames_fully_matched": 138,
+    "flip_pairs": {
+     "(False, True)": 138
+    },
+    "receiver_body_terms": {
+     "-45": 138
+    },
+    "actor_spacing": {
+     "40": 138
+    },
+    "registration_errors": {
+     "0": 138
+    },
+    "receiver_trailing_palette6_during_move": {
+     "2": 3,
+     "4": 138
+    },
+    "frames_with_foreign_palette6_during_move": 0,
+    "receiver_shadow_offset_during_move": {
+     "min": 1.0,
+     "max": 10.0,
+     "frames": 141
+    },
+    "receiver_health_changes": [
+     [
+      213,
+      312,
+      152
+     ]
+    ],
+    "receiver_source": "royal",
+    "preview_match": null,
+    "after_move": {
+     "actions": {
+      "[0, 70]": 110
+     },
+     "attacker_pose_shown": {
+      "11": 2,
+      "None": 108
+     },
+     "receiver_pose_shown": {
+      "11": 2,
+      "None": 108
+     }
+    },
+    "receiver_pixel_match_min": 1.0,
+    "vertical_offsets": [
+     0
+    ]
+   },
+   "defects": []
+  },
+  "undertaker-attacker-left-left-rope": {
+   "summary": {
+    "frames_measured": 141,
+    "frames_fully_matched": 138,
+    "flip_pairs": {
+     "(False, True)": 138
+    },
+    "receiver_body_terms": {
+     "-45": 138
+    },
+    "actor_spacing": {
+     "40": 138
+    },
+    "registration_errors": {
+     "0": 138
+    },
+    "receiver_trailing_palette6_during_move": {
+     "2": 3,
+     "4": 138
+    },
+    "frames_with_foreign_palette6_during_move": 0,
+    "receiver_shadow_offset_during_move": {
+     "min": 1.0,
+     "max": 10.0,
+     "frames": 141
+    },
+    "receiver_health_changes": [
+     [
+      209,
+      220,
+      60
+     ]
+    ],
+    "receiver_source": "royal",
+    "preview_match": null,
+    "after_move": {
+     "actions": {
+      "[0, 70]": 114
+     },
+     "attacker_pose_shown": {
+      "11": 2,
+      "None": 112
+     },
+     "receiver_pose_shown": {
+      "11": 2,
+      "None": 112
+     }
+    },
+    "receiver_pixel_match_min": 1.0,
+    "vertical_offsets": [
+     0
+    ]
+   },
+   "defects": []
+  },
+  "undertaker-attacker-left-mid-ring": {
+   "summary": {
+    "frames_measured": 143,
+    "frames_fully_matched": 140,
+    "flip_pairs": {
+     "(False, True)": 140
+    },
+    "receiver_body_terms": {
+     "-45": 140
+    },
+    "actor_spacing": {
+     "40": 140
+    },
+    "registration_errors": {
+     "0": 140
+    },
+    "receiver_trailing_palette6_during_move": {
+     "2": 3,
+     "4": 140
+    },
+    "frames_with_foreign_palette6_during_move": 0,
+    "receiver_shadow_offset_during_move": {
+     "min": 1.0,
+     "max": 10.0,
+     "frames": 143
+    },
+    "receiver_health_changes": [
+     [
+      211,
+      236,
+      76
+     ]
+    ],
+    "receiver_source": "royal",
+    "preview_match": null,
+    "after_move": {
+     "actions": {
+      "[0, 70]": 112
+     },
+     "attacker_pose_shown": {
+      "11": 2,
+      "None": 110
+     },
+     "receiver_pose_shown": {
+      "11": 2,
+      "None": 110
+     }
+    },
+    "receiver_pixel_match_min": 1.0,
+    "vertical_offsets": [
+     0
+    ]
+   },
+   "defects": []
+  },
+  "undertaker-attacker-left-right-rope": {
+   "summary": {
+    "frames_measured": 142,
+    "frames_fully_matched": 139,
+    "flip_pairs": {
+     "(False, True)": 139
+    },
+    "receiver_body_terms": {
+     "-45": 139
+    },
+    "actor_spacing": {
+     "40": 139
+    },
+    "registration_errors": {
+     "0": 139
+    },
+    "receiver_trailing_palette6_during_move": {
+     "2": 3,
+     "4": 139
+    },
+    "frames_with_foreign_palette6_during_move": 0,
+    "receiver_shadow_offset_during_move": {
+     "min": 1.0,
+     "max": 10.0,
+     "frames": 142
+    },
+    "receiver_health_changes": [
+     [
+      215,
+      220,
+      60
+     ]
+    ],
+    "receiver_source": "royal",
+    "preview_match": null,
+    "after_move": {
+     "actions": {
+      "[0, 70]": 108
+     },
+     "attacker_pose_shown": {
+      "11": 2,
+      "None": 106
+     },
+     "receiver_pose_shown": {
+      "11": 2,
+      "None": 106
+     }
+    },
+    "receiver_pixel_match_min": 1.0,
+    "vertical_offsets": [
+     0
+    ]
+   },
+   "defects": []
+  },
+  "undertaker-attacker-right-left-rope": {
+   "summary": {
+    "frames_measured": 141,
+    "frames_fully_matched": 138,
+    "flip_pairs": {
+     "(True, False)": 138
+    },
+    "receiver_body_terms": {
+     "45": 138
+    },
+    "actor_spacing": {
+     "-40": 138
+    },
+    "registration_errors": {
+     "0": 138
+    },
+    "receiver_trailing_palette6_during_move": {
+     "2": 3,
+     "4": 138
+    },
+    "frames_with_foreign_palette6_during_move": 0,
+    "receiver_shadow_offset_during_move": {
+     "min": -10.0,
+     "max": -1.0,
+     "frames": 141
+    },
+    "receiver_health_changes": [
+     [
+      209,
+      220,
+      60
+     ]
+    ],
+    "receiver_source": "royal",
+    "preview_match": null,
+    "after_move": {
+     "actions": {
+      "[0, 70]": 114
+     },
+     "attacker_pose_shown": {
+      "11": 2,
+      "None": 112
+     },
+     "receiver_pose_shown": {
+      "11": 2,
+      "None": 112
+     }
+    },
+    "receiver_pixel_match_min": 1.0,
+    "vertical_offsets": [
+     0
+    ]
+   },
+   "defects": []
+  },
+  "undertaker-attacker-right-right-rope": {
+   "summary": {
+    "frames_measured": 141,
+    "frames_fully_matched": 138,
+    "flip_pairs": {
+     "(True, False)": 138
+    },
+    "receiver_body_terms": {
+     "45": 138
+    },
+    "actor_spacing": {
+     "-40": 138
+    },
+    "registration_errors": {
+     "0": 138
+    },
+    "receiver_trailing_palette6_during_move": {
+     "2": 3,
+     "4": 138
+    },
+    "frames_with_foreign_palette6_during_move": 0,
+    "receiver_shadow_offset_during_move": {
+     "min": -2.0,
+     "max": -1.0,
+     "frames": 141
+    },
+    "receiver_health_changes": [
+     [
+      213,
+      220,
+      60
+     ]
+    ],
+    "receiver_source": "royal",
+    "preview_match": null,
+    "after_move": {
+     "actions": {
+      "[0, 70]": 110
+     },
+     "attacker_pose_shown": {
+      "11": 2,
+      "None": 108
+     },
+     "receiver_pose_shown": {
+      "11": 2,
+      "None": 108
+     }
+    },
+    "receiver_pixel_match_min": 1.0,
+    "vertical_offsets": [
+     0
+    ]
+   },
+   "defects": []
+  },
+  "yokozuna-attacker-left-right-rope": {
+   "summary": {
+    "frames_measured": 141,
+    "frames_fully_matched": 138,
+    "flip_pairs": {
+     "(False, True)": 138
+    },
+    "receiver_body_terms": {
+     "-45": 138
+    },
+    "actor_spacing": {
+     "40": 138
+    },
+    "registration_errors": {
+     "0": 138
+    },
+    "receiver_trailing_palette6_during_move": {
+     "2": 3,
+     "4": 138
+    },
+    "frames_with_foreign_palette6_during_move": 0,
+    "receiver_shadow_offset_during_move": {
+     "min": 1.0,
+     "max": 10.0,
+     "frames": 141
+    },
+    "receiver_health_changes": [
+     [
+      214,
+      154,
+      0
+     ]
+    ],
+    "receiver_source": "royal",
+    "preview_match": null,
+    "after_move": {
+     "actions": {
+      "[0, 70]": 110
+     },
+     "attacker_pose_shown": {
+      "11": 2,
+      "None": 108
+     },
+     "receiver_pose_shown": {
+      "11": 2,
+      "None": 108
+     }
+    },
+    "receiver_pixel_match_min": 1.0,
+    "vertical_offsets": [
+     0
+    ]
+   },
+   "defects": []
+  }
+ },
+ "failures": []
+}

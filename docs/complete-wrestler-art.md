@@ -64,23 +64,57 @@ names its evidence. **Nothing here is complete until native gameplay and a visua
 
 ## Perfect-Plex receiving matrix (all 13 current slots)
 
-Source plans: `data/receiving-art.json` (part IDs and offsets only).
+Builds:
+- **Stock import:** `15c1d9b5…`, the browser export of stock Raw with Mr. Perfect.
+- **Gear reference mod:** `a870f3fe…`, with Scott, Syxx, Nash and Sting applied, then Mr. Perfect.
 
-| Slot | Identity (reference mod) | Receiving source | Status | Evidence |
+Every scenario below is a controller-only cold-boot replay (`tools/verify_perfect_receivers_native.py`).
+Each passes every defect assertion:
+- spacing ±40;
+- no foreign objects;
+- damage exactly once;
+- no Perfect-Plex pose after the move.
+
+Royal-drawn receivers also register within 1 px. Own-art receivers must equal the editor preview on every
+step, and they do: 100% of actor pixels, rebuilt from OAM. Data:
+[`verification-stock.json`](../evidence/complete-wrestler-art/verification-stock.json) and
+[`verification-gear-mod.json`](../evidence/complete-wrestler-art/verification-gear-mod.json).
+
+| Slot | Identity | Receiving drawings | Native scenarios (all pass) | Status |
 |---|---|---|---|---|
-| 0 | Luna Vachon | own-art plan, donor Shawn (in progress) | generic | v0.16 replay, `luna-generic-before-after.gif` |
-| 1 | Bret Hart (stock; user gear unknown) | royal (Bret) | royal, native-verified | `fixed/verification.json` |
-| 2 | Undertaker | royal | royal, native-verified (both facings, both ropes, mid-ring) | `fixed/verification.json` |
-| 3 | Yokozuna | royal | royal, native-verified | `fixed/verification.json` |
-| 4 | Bam Bam Bigelow | own-art plan, donor Lex (in progress) | generic | — |
-| 5 | Scott Hall (Razor in a stock ROM) | stock: royal (Razor). Scott gear: own-art plan, donor Razor (in progress) | royal on stock, native-verified; generic with Scott gear | `fixed/verification.json` |
-| 6 | Lex Luger | royal | royal, native-verified | `fixed/verification.json` |
-| 7 | Sting | own-art plan, donor Undertaker (in progress) | generic | — |
-| 8 | Shawn Michaels | royal | royal, native-verified | `fixed/verification.json` |
-| 9 | Syxx | own-art plan, donor Bret (in progress) | generic | — |
-| 10 | Kevin Nash | own-art plan, donor Undertaker (in progress) | generic | — |
-| 11 | Owen Hart | own-art plan, donor Bret (in progress) | generic | — |
-| 12 | Mr. Perfect (mirror match) | royal (Perfect) | royal; **mirror match untested**: P2 cannot pick slot 12 against P1's Perfect | — |
+| 0 | Luna Vachon | own native (re-timed) | `luna-attacker-left`, `luna-attacker-left-2` | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/luna-attacker-left.gif)) |
+| 1 | Bret Hart (stock; user gear unknown) | Royal Bret | `bret-attacker-left-right-rope` | royal, native-verified |
+| 2 | Undertaker | Royal Undertaker | 5 scenarios: both facings, both ropes, mid-ring | royal, native-verified |
+| 3 | Yokozuna | Royal Yokozuna | `yokozuna-attacker-left-right-rope` | royal, native-verified |
+| 4 | Bam Bam Bigelow | own native (re-timed) | `bambam-attacker-left` | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/bambam-attacker-left.gif)) |
+| 5 | Razor Ramon (stock) / Scott Hall (gear) | Royal Razor on stock; own native with Scott's gear | `razor-attacker-left-right-rope` (stock), `scott-gear-attacker-left` (gear) | royal + own-art, native-verified ([GIF](../evidence/complete-wrestler-art/scott-gear-attacker-left.gif)) |
+| 6 | Lex Luger | Royal Lex | `lex-attacker-left-right-rope` | royal, native-verified |
+| 7 | Doink (stock) / Sting (gear) | own native (re-timed) | `doink-attacker-left` (stock), `sting-gear-attacker-left`, `sting-gear-attacker-left-2` (gear) | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/sting-gear-attacker-left.gif)) |
+| 8 | Shawn Michaels | Royal Shawn | `shawn-attacker-left-right-rope` | royal, native-verified |
+| 9 | 1-2-3 Kid (stock) / Syxx (gear) | own native (re-timed) | `kid-attacker-right` (stock, opposite facing), `syxx-gear-attacker-left` (gear) | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/syxx-gear-attacker-left.gif)) |
+| 10 | Diesel (stock) / Kevin Nash (gear) | own native (re-timed) | `diesel-attacker-left` (stock), `nash-gear-attacker-left` (gear) | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/nash-gear-attacker-left.gif)) |
+| 11 | Owen Hart | own native (re-timed) | `owen-attacker-right` (opposite facing) | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/owen-attacker-right.gif)) |
+| 12 | Mr. Perfect (mirror match) | Royal Perfect (installed, previewable) | none: **unreachable in one-on-one** | royal, **not natively tested** |
+
+Notes on the matrix:
+- **Re-timing.** Raw's own receiving-suplex sequence lifts at its third drawing; the Perfect-Plex lifts
+  at step 10. Played in order, the receiver lay at Perfect's feet during steps 5–9, which was caught in
+  visual review. The held drawing now carries steps 2–9, the lift drawings steps 10–11 and the landed
+  drawing the bridge (`OWN_NATIVE_STEPS`). This is still Raw's lift-and-fall art, not Royal's exact
+  frames, and it needs your visual review.
+- **Mirror match.**
+  - Two-player selection skips the wrestler P1 chose.
+  - One-player "player chooses opponents" does not accept the same wrestler (A has no effect).
+  - A bot attempt never reached a match.
+  - Other modes (tag team, Survivor Series, Royal Rumble, Bedlam, Raw Endurance) are untested.
+- **Recipes.** `tools/recipe_bot.py` played the own-art recipes. It reads memory to choose controller
+  presses and writes nothing, and the result is a fixed input list.
+- **Private editing on RX3.**
+  - A mouse stroke on Sting's receiving pose (gear mod) changed only Sting's tiles, including 40
+    relocated packet bytes. The other 12 receivers decode identically.
+  - Reopening and saving gives an identical file.
+- **Editor.** Every slot lists its 12 "Receiving Perfect-Plex · n" composite poses. The paired preview
+  plays any receiver in both facings ([screenshot](../evidence/complete-wrestler-art/editor-paired-preview-sting.png)).
 
 ## Findings that shape the art
 
@@ -99,8 +133,14 @@ Source plans: `data/receiving-art.json` (part IDs and offsets only).
 
 ## Open items
 
-- Visual review of own-art plans for each slot (contact sheets to be published), then native runs for
-  every slot on the reference mod.
-- Authored gear detail for poses with no own-art coverage.
-- Mirror match route (another game mode, or an unreachable case documented as such).
-- All other action families (see the main coverage matrix, `docs/animation-coverage.md`).
+- **Your visual review** of the own-art Perfect-Plex receivers (GIFs above). Royal-pose rebuilds from own
+  parts (`tools/plan_receiving_art.py`, `editor/receiving-art.js` `render`) remain unshipped. Donor colour
+  roles did not keep gear consistent across adjacent frames.
+- **Mirror match** in other game modes.
+- **Next family: Mr. Perfect's ordinary poses.**
+  - 1,431 of his 1,720 pieces are Raw Bret drawings recoloured into Perfect's palette, so his body and
+    hair are Bret's. That breaks the identity rule and is the next batch.
+  - With a Royal WRAM dump, the Royal catalogue is reproduced exactly (144/144 receiving drawings).
+  - 682 Raw Bret pieces match a Royal Bret frame at an IoU of at least 0.95 (289 are converted today).
+    Royal Perfect's same frame can replace them once colour and semantics are checked.
+- **All other action families** (see `docs/animation-coverage.md`).

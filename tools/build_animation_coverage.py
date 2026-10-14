@@ -26,6 +26,7 @@ ART_STATUSES = {
     'customized': 'Stock Raw body/animation with user-edited gear, head or palette',
     'native_port': 'Donor-game drawing reproduced from native source tiles and anchors',
     'authored_replacement': 'Newly drawn native-resolution artwork',
+    'own_art_adapted': "The worker's own native drawings (identity, gear, user edits) privately copied and re-timed for a move they were not drawn for",
     'adapted_placeholder': 'Existing Raw artwork standing in for a pose it was not drawn for',
     'decoded_only': 'Source recipe decoded/mapped; not inserted into any shipped Raw build',
     'prototype_private': 'Inserted only in a private test build; not released',
@@ -182,13 +183,33 @@ def perfect_plex_rows(receivers):
                        variant='released v0.16.1', **{k: v for k, v in common.items() if k != 'source_game'},
                        source_game='WWF Raw')
         rows.append(released)
-        if royal is None:
-            rows.append(row(slot, 'finisher:Perfect-Plex', 'receiver', 'missing', 'untested',
-                            variant='target (own receiving art)',
-                            defects=['No Royal counterpart; needs authored receiving art that keeps this '
-                                     "slot's identity and edited gear (palette remap is insufficient)"],
-                            evidence=['docs/perfect-plex-gaps.md'], **common))
-            continue
+        recipes_all = [json.loads(r.read_text()) for r in sorted((ROOT / 'evidence/perfect-plex-receivers/recipes').glob('*.json'))]
+        if royal is None or slot == 5:
+            # Own native receiving drawings (Raw's receiving-suplex art in the slot's own art and gear), re-timed
+            # to follow the Perfect-Plex. Slot 5 uses them when Scott Hall's gear replaces Razor.
+            own = [r for r in recipes_all if r['receiver_slot'] == slot and 'expected_build' in r
+                   and (slot != 5 or 'gear' in r['scenario'])]
+            gifs = [f"evidence/complete-wrestler-art/{r['scenario']}.gif" for r in own]
+            rows.append(row(slot, 'finisher:Perfect-Plex', 'receiver', 'own_art_adapted',
+                            'verified_visual' if own else 'untested',
+                            variant='target (own native receiving drawings' + (', Scott Hall gear applied)' if slot == 5 else ')'),
+                            implementation={'branch': 'claude/charming-allen-njttcx', 'marker': 'ROYAL-RX3',
+                                            'source': "editor/receiving-art.js ownNative + recipes.own_native_steps"},
+                            source_ids={'raw_profiles': 'data/perfect-victim-layouts.json rows, re-timed by '
+                                                        'tools/build_perfect_receivers.OWN_NATIVE_STEPS'},
+                            native={'scenarios': [r['scenario'] for r in own],
+                                    'builds': sorted({r['expected_build'][:16] for r in own}),
+                                    'preview_equals_native': 'every step, 100% of actor pixels'} if own else None,
+                            aliases='private tiles per worker (RX3); editing one worker changes no other worker '
+                                    '(tools/check_receiver_isolation.py)',
+                            evidence=['docs/complete-wrestler-art.md', 'tools/verify_perfect_receivers_native.py']
+                                     + [f"evidence/perfect-plex-receivers/recipes/{r['scenario']}.json" for r in own] + gifs,
+                            defects=["Choreography is Raw's own lift-and-fall drawings re-timed to the Perfect-Plex, "
+                                     "not Royal's exact Perfect-Plex frames (awaiting visual review)",
+                                     'No bridge-to-pin (PP-5)', 'Not released; draft PR #1 for review'],
+                            **common))
+            if royal is None:
+                continue
         worker = workers[royal]
         analysis = receivers_analysis['workers'][royal]
         if slot == 2:
@@ -212,11 +233,12 @@ def perfect_plex_rows(receivers):
         evidence = ['data/perfect-receivers.json', 'docs/perfect-plex-gaps.md']
         recipes = sorted((ROOT / 'evidence/perfect-plex-receivers/recipes').glob('*.json'))
         measured = [json.loads(r.read_text()) for r in recipes]
-        measured = [r for r in measured if r['receiver_slot'] == slot and 'expected_build' in r]
+        measured = [r for r in measured if r['receiver_slot'] == slot and 'expected_build' in r and 'gear' not in r['scenario']]
         native = None
         if measured:
             gameplay = 'verified_visual'
             evidence = ['data/perfect-receivers.json', 'docs/perfect-plex-fix-report.md',
+                        'evidence/complete-wrestler-art/verification-stock.json',
                         'evidence/perfect-plex-receivers/fixed/verification.json',
                         'tools/verify_perfect_receivers_native.py']
             evidence += [f"evidence/perfect-plex-receivers/recipes/{r['scenario']}.json" for r in measured]
@@ -233,14 +255,18 @@ def perfect_plex_rows(receivers):
             defects = ['Not released; draft PR #1 for Codex review',
                        'No bridge-to-pin (PP-5)',
                        'Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)']
-        elif slot == 12:
-            defects.append('Unreachable natively in one-on-one two-player selection: P2 cannot pick the '
-                           'wrestler P1 chose; other match modes untested')
+        if slot == 12:
+            gameplay = 'untested'
+            defects.append('Mirror match unreachable in one-on-one: P2 cannot pick the wrestler P1 chose (2P) and '
+                           'the 1P "player chooses opponent" screen refuses the same wrestler; other modes untested')
+        if slot == 5:
+            defects.append('Royal Razor drawings are used only while slot 5 keeps its stock identity; with Scott '
+                           "Hall's gear the slot uses its own native drawings (row above)")
         rows.append(row(slot, 'finisher:Perfect-Plex', 'receiver', art, gameplay,
                         variant='target (own receiving art): seven-counterpart build',
                         native=native,
                         implementation={'branch': 'claude/charming-allen-njttcx (from codex/perfect-receivers-wip '
-                                                  '@ 2955d5c)', 'marker': 'ROYAL-RX2',
+                                                  '@ 2955d5c)', 'marker': 'ROYAL-RX3',
                                         'tile_allocation': 'per-slot private map, global ID counter and packet '
                                                            'cursor (code inspection only)'},
                         source_ids={'royal_selector': royal, 'royal_name': ROYAL_ROSTER[royal],

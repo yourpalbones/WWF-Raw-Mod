@@ -8,6 +8,7 @@
   "customized": "Stock Raw body/animation with user-edited gear, head or palette",
   "native_port": "Donor-game drawing reproduced from native source tiles and anchors",
   "authored_replacement": "Newly drawn native-resolution artwork",
+  "own_art_adapted": "The worker's own native drawings (identity, gear, user edits) privately copied and re-timed for a move they were not drawn for",
   "adapted_placeholder": "Existing Raw artwork standing in for a pose it was not drawn for",
   "decoded_only": "Source recipe decoded/mapped; not inserted into any shipped Raw build",
   "prototype_private": "Inserted only in a private test build; not released",
@@ -1356,19 +1357,43 @@
    "display_name": "Luna Vachon",
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
-   "art_status": "missing",
-   "gameplay_status": "untested",
-   "variant": "target (own receiving art)",
-   "defects": [
-    "No Royal counterpart; needs authored receiving art that keeps this slot's identity and edited gear (palette remap is insufficient)"
-   ],
+   "art_status": "own_art_adapted",
+   "gameplay_status": "verified_visual",
+   "variant": "target (own native receiving drawings)",
+   "implementation": {
+    "branch": "claude/charming-allen-njttcx",
+    "marker": "ROYAL-RX3",
+    "source": "editor/receiving-art.js ownNative + recipes.own_native_steps"
+   },
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows, re-timed by tools/build_perfect_receivers.OWN_NATIVE_STEPS"
+   },
+   "native": {
+    "scenarios": [
+     "luna-attacker-left-2",
+     "luna-attacker-left"
+    ],
+    "builds": [
+     "15c1d9b5aa67a09d"
+    ],
+    "preview_equals_native": "every step, 100% of actor pixels"
+   },
+   "aliases": "private tiles per worker (RX3); editing one worker changes no other worker (tools/check_receiver_isolation.py)",
    "evidence": [
-    "docs/perfect-plex-gaps.md"
+    "docs/complete-wrestler-art.md",
+    "tools/verify_perfect_receivers_native.py",
+    "evidence/perfect-plex-receivers/recipes/luna-attacker-left-2.json",
+    "evidence/perfect-plex-receivers/recipes/luna-attacker-left.json",
+    "evidence/complete-wrestler-art/luna-attacker-left.gif"
+   ],
+   "defects": [
+    "Choreography is Raw's own lift-and-fall drawings re-timed to the Perfect-Plex, not Royal's exact Perfect-Plex frames (awaiting visual review)",
+    "No bridge-to-pin (PP-5)",
+    "Not released; draft PR #1 for review"
    ],
    "source_game": null,
    "palette_owner": "slot 0",
-   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
-   "aliases": "not_audited"
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate"
   },
   {
    "slot": 1,
@@ -1405,7 +1430,7 @@
     "scenarios": [
      "bret-attacker-left-right-rope"
     ],
-    "build_sha256": "f2a81a9118bb302f3572ddd767ff1c0279ec9b3918ad684b3e65061f266a70c6",
+    "build_sha256": "15c1d9b5aa67a09d8a560fad281b1887eac5871b7273256d4c436d060db6efc8",
     "registration_error_px": [
      0
     ],
@@ -1414,7 +1439,7 @@
    },
    "implementation": {
     "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
-    "marker": "ROYAL-RX2",
+    "marker": "ROYAL-RX3",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -1476,6 +1501,7 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
+    "evidence/complete-wrestler-art/verification-stock.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
     "evidence/perfect-plex-receivers/recipes/bret-attacker-left-right-rope.json"
@@ -1554,7 +1580,7 @@
      "undertaker-attacker-right-left-rope",
      "undertaker-attacker-right-right-rope"
     ],
-    "build_sha256": "f2a81a9118bb302f3572ddd767ff1c0279ec9b3918ad684b3e65061f266a70c6",
+    "build_sha256": "15c1d9b5aa67a09d8a560fad281b1887eac5871b7273256d4c436d060db6efc8",
     "registration_error_px": [
      0
     ],
@@ -1563,7 +1589,7 @@
    },
    "implementation": {
     "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
-    "marker": "ROYAL-RX2",
+    "marker": "ROYAL-RX3",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -1625,6 +1651,7 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
+    "evidence/complete-wrestler-art/verification-stock.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
     "evidence/perfect-plex-receivers/recipes/undertaker-attacker-left-left-rope.json",
@@ -1680,7 +1707,7 @@
     "scenarios": [
      "yokozuna-attacker-left-right-rope"
     ],
-    "build_sha256": "f2a81a9118bb302f3572ddd767ff1c0279ec9b3918ad684b3e65061f266a70c6",
+    "build_sha256": "15c1d9b5aa67a09d8a560fad281b1887eac5871b7273256d4c436d060db6efc8",
     "registration_error_px": [
      0
     ],
@@ -1689,7 +1716,7 @@
    },
    "implementation": {
     "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
-    "marker": "ROYAL-RX2",
+    "marker": "ROYAL-RX3",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -1751,6 +1778,7 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
+    "evidence/complete-wrestler-art/verification-stock.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
     "evidence/perfect-plex-receivers/recipes/yokozuna-attacker-left-right-rope.json"
@@ -1792,19 +1820,41 @@
    "display_name": "Bam Bam Bigelow",
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
-   "art_status": "missing",
-   "gameplay_status": "untested",
-   "variant": "target (own receiving art)",
-   "defects": [
-    "No Royal counterpart; needs authored receiving art that keeps this slot's identity and edited gear (palette remap is insufficient)"
-   ],
+   "art_status": "own_art_adapted",
+   "gameplay_status": "verified_visual",
+   "variant": "target (own native receiving drawings)",
+   "implementation": {
+    "branch": "claude/charming-allen-njttcx",
+    "marker": "ROYAL-RX3",
+    "source": "editor/receiving-art.js ownNative + recipes.own_native_steps"
+   },
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows, re-timed by tools/build_perfect_receivers.OWN_NATIVE_STEPS"
+   },
+   "native": {
+    "scenarios": [
+     "bambam-attacker-left"
+    ],
+    "builds": [
+     "15c1d9b5aa67a09d"
+    ],
+    "preview_equals_native": "every step, 100% of actor pixels"
+   },
+   "aliases": "private tiles per worker (RX3); editing one worker changes no other worker (tools/check_receiver_isolation.py)",
    "evidence": [
-    "docs/perfect-plex-gaps.md"
+    "docs/complete-wrestler-art.md",
+    "tools/verify_perfect_receivers_native.py",
+    "evidence/perfect-plex-receivers/recipes/bambam-attacker-left.json",
+    "evidence/complete-wrestler-art/bambam-attacker-left.gif"
+   ],
+   "defects": [
+    "Choreography is Raw's own lift-and-fall drawings re-timed to the Perfect-Plex, not Royal's exact Perfect-Plex frames (awaiting visual review)",
+    "No bridge-to-pin (PP-5)",
+    "Not released; draft PR #1 for review"
    ],
    "source_game": null,
    "palette_owner": "slot 4",
-   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
-   "aliases": "not_audited"
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate"
   },
   {
    "slot": 5,
@@ -1834,6 +1884,47 @@
    "display_name": "Scott Hall",
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
+   "art_status": "own_art_adapted",
+   "gameplay_status": "verified_visual",
+   "variant": "target (own native receiving drawings, Scott Hall gear applied)",
+   "implementation": {
+    "branch": "claude/charming-allen-njttcx",
+    "marker": "ROYAL-RX3",
+    "source": "editor/receiving-art.js ownNative + recipes.own_native_steps"
+   },
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows, re-timed by tools/build_perfect_receivers.OWN_NATIVE_STEPS"
+   },
+   "native": {
+    "scenarios": [
+     "scott-gear-attacker-left"
+    ],
+    "builds": [
+     "a870f3fec8bcac6e"
+    ],
+    "preview_equals_native": "every step, 100% of actor pixels"
+   },
+   "aliases": "private tiles per worker (RX3); editing one worker changes no other worker (tools/check_receiver_isolation.py)",
+   "evidence": [
+    "docs/complete-wrestler-art.md",
+    "tools/verify_perfect_receivers_native.py",
+    "evidence/perfect-plex-receivers/recipes/scott-gear-attacker-left.json",
+    "evidence/complete-wrestler-art/scott-gear-attacker-left.gif"
+   ],
+   "defects": [
+    "Choreography is Raw's own lift-and-fall drawings re-timed to the Perfect-Plex, not Royal's exact Perfect-Plex frames (awaiting visual review)",
+    "No bridge-to-pin (PP-5)",
+    "Not released; draft PR #1 for review"
+   ],
+   "source_game": "Royal Rumble",
+   "palette_owner": "slot 5",
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate"
+  },
+  {
+   "slot": 5,
+   "display_name": "Scott Hall",
+   "action": "finisher:Perfect-Plex",
+   "role": "receiver",
    "art_status": "prototype_private",
    "gameplay_status": "verified_visual",
    "variant": "target (own receiving art): seven-counterpart build",
@@ -1841,7 +1932,7 @@
     "scenarios": [
      "razor-attacker-left-right-rope"
     ],
-    "build_sha256": "f2a81a9118bb302f3572ddd767ff1c0279ec9b3918ad684b3e65061f266a70c6",
+    "build_sha256": "15c1d9b5aa67a09d8a560fad281b1887eac5871b7273256d4c436d060db6efc8",
     "registration_error_px": [
      0
     ],
@@ -1850,7 +1941,7 @@
    },
    "implementation": {
     "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
-    "marker": "ROYAL-RX2",
+    "marker": "ROYAL-RX3",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -1912,6 +2003,7 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
+    "evidence/complete-wrestler-art/verification-stock.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
     "evidence/perfect-plex-receivers/recipes/razor-attacker-left-right-rope.json"
@@ -1919,7 +2011,8 @@
    "defects": [
     "Not released; draft PR #1 for Codex review",
     "No bridge-to-pin (PP-5)",
-    "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
+    "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)",
+    "Royal Razor drawings are used only while slot 5 keeps its stock identity; with Scott Hall's gear the slot uses its own native drawings (row above)"
    ],
    "source_game": "Royal Rumble",
    "palette_owner": "slot 5",
@@ -1960,7 +2053,7 @@
     "scenarios": [
      "lex-attacker-left-right-rope"
     ],
-    "build_sha256": "f2a81a9118bb302f3572ddd767ff1c0279ec9b3918ad684b3e65061f266a70c6",
+    "build_sha256": "15c1d9b5aa67a09d8a560fad281b1887eac5871b7273256d4c436d060db6efc8",
     "registration_error_px": [
      0
     ],
@@ -1969,7 +2062,7 @@
    },
    "implementation": {
     "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
-    "marker": "ROYAL-RX2",
+    "marker": "ROYAL-RX3",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -2031,6 +2124,7 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
+    "evidence/complete-wrestler-art/verification-stock.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
     "evidence/perfect-plex-receivers/recipes/lex-attacker-left-right-rope.json"
@@ -2072,19 +2166,47 @@
    "display_name": "Sting",
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
-   "art_status": "missing",
-   "gameplay_status": "untested",
-   "variant": "target (own receiving art)",
-   "defects": [
-    "No Royal counterpart; needs authored receiving art that keeps this slot's identity and edited gear (palette remap is insufficient)"
-   ],
+   "art_status": "own_art_adapted",
+   "gameplay_status": "verified_visual",
+   "variant": "target (own native receiving drawings)",
+   "implementation": {
+    "branch": "claude/charming-allen-njttcx",
+    "marker": "ROYAL-RX3",
+    "source": "editor/receiving-art.js ownNative + recipes.own_native_steps"
+   },
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows, re-timed by tools/build_perfect_receivers.OWN_NATIVE_STEPS"
+   },
+   "native": {
+    "scenarios": [
+     "doink-attacker-left",
+     "sting-gear-attacker-left-2",
+     "sting-gear-attacker-left"
+    ],
+    "builds": [
+     "15c1d9b5aa67a09d",
+     "a870f3fec8bcac6e"
+    ],
+    "preview_equals_native": "every step, 100% of actor pixels"
+   },
+   "aliases": "private tiles per worker (RX3); editing one worker changes no other worker (tools/check_receiver_isolation.py)",
    "evidence": [
-    "docs/perfect-plex-gaps.md"
+    "docs/complete-wrestler-art.md",
+    "tools/verify_perfect_receivers_native.py",
+    "evidence/perfect-plex-receivers/recipes/doink-attacker-left.json",
+    "evidence/perfect-plex-receivers/recipes/sting-gear-attacker-left-2.json",
+    "evidence/perfect-plex-receivers/recipes/sting-gear-attacker-left.json",
+    "evidence/complete-wrestler-art/doink-attacker-left.gif",
+    "evidence/complete-wrestler-art/sting-gear-attacker-left.gif"
+   ],
+   "defects": [
+    "Choreography is Raw's own lift-and-fall drawings re-timed to the Perfect-Plex, not Royal's exact Perfect-Plex frames (awaiting visual review)",
+    "No bridge-to-pin (PP-5)",
+    "Not released; draft PR #1 for review"
    ],
    "source_game": null,
    "palette_owner": "slot 7",
-   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
-   "aliases": "not_audited"
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate"
   },
   {
    "slot": 8,
@@ -2121,7 +2243,7 @@
     "scenarios": [
      "shawn-attacker-left-right-rope"
     ],
-    "build_sha256": "f2a81a9118bb302f3572ddd767ff1c0279ec9b3918ad684b3e65061f266a70c6",
+    "build_sha256": "15c1d9b5aa67a09d8a560fad281b1887eac5871b7273256d4c436d060db6efc8",
     "registration_error_px": [
      0
     ],
@@ -2130,7 +2252,7 @@
    },
    "implementation": {
     "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
-    "marker": "ROYAL-RX2",
+    "marker": "ROYAL-RX3",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -2192,6 +2314,7 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
+    "evidence/complete-wrestler-art/verification-stock.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
     "evidence/perfect-plex-receivers/recipes/shawn-attacker-left-right-rope.json"
@@ -2233,19 +2356,45 @@
    "display_name": "Syxx",
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
-   "art_status": "missing",
-   "gameplay_status": "untested",
-   "variant": "target (own receiving art)",
-   "defects": [
-    "No Royal counterpart; needs authored receiving art that keeps this slot's identity and edited gear (palette remap is insufficient)"
-   ],
+   "art_status": "own_art_adapted",
+   "gameplay_status": "verified_visual",
+   "variant": "target (own native receiving drawings)",
+   "implementation": {
+    "branch": "claude/charming-allen-njttcx",
+    "marker": "ROYAL-RX3",
+    "source": "editor/receiving-art.js ownNative + recipes.own_native_steps"
+   },
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows, re-timed by tools/build_perfect_receivers.OWN_NATIVE_STEPS"
+   },
+   "native": {
+    "scenarios": [
+     "kid-attacker-right",
+     "syxx-gear-attacker-left"
+    ],
+    "builds": [
+     "15c1d9b5aa67a09d",
+     "a870f3fec8bcac6e"
+    ],
+    "preview_equals_native": "every step, 100% of actor pixels"
+   },
+   "aliases": "private tiles per worker (RX3); editing one worker changes no other worker (tools/check_receiver_isolation.py)",
    "evidence": [
-    "docs/perfect-plex-gaps.md"
+    "docs/complete-wrestler-art.md",
+    "tools/verify_perfect_receivers_native.py",
+    "evidence/perfect-plex-receivers/recipes/kid-attacker-right.json",
+    "evidence/perfect-plex-receivers/recipes/syxx-gear-attacker-left.json",
+    "evidence/complete-wrestler-art/kid-attacker-right.gif",
+    "evidence/complete-wrestler-art/syxx-gear-attacker-left.gif"
+   ],
+   "defects": [
+    "Choreography is Raw's own lift-and-fall drawings re-timed to the Perfect-Plex, not Royal's exact Perfect-Plex frames (awaiting visual review)",
+    "No bridge-to-pin (PP-5)",
+    "Not released; draft PR #1 for review"
    ],
    "source_game": null,
    "palette_owner": "slot 9",
-   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
-   "aliases": "not_audited"
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate"
   },
   {
    "slot": 10,
@@ -2275,19 +2424,45 @@
    "display_name": "Kevin Nash",
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
-   "art_status": "missing",
-   "gameplay_status": "untested",
-   "variant": "target (own receiving art)",
-   "defects": [
-    "No Royal counterpart; needs authored receiving art that keeps this slot's identity and edited gear (palette remap is insufficient)"
-   ],
+   "art_status": "own_art_adapted",
+   "gameplay_status": "verified_visual",
+   "variant": "target (own native receiving drawings)",
+   "implementation": {
+    "branch": "claude/charming-allen-njttcx",
+    "marker": "ROYAL-RX3",
+    "source": "editor/receiving-art.js ownNative + recipes.own_native_steps"
+   },
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows, re-timed by tools/build_perfect_receivers.OWN_NATIVE_STEPS"
+   },
+   "native": {
+    "scenarios": [
+     "diesel-attacker-left",
+     "nash-gear-attacker-left"
+    ],
+    "builds": [
+     "15c1d9b5aa67a09d",
+     "a870f3fec8bcac6e"
+    ],
+    "preview_equals_native": "every step, 100% of actor pixels"
+   },
+   "aliases": "private tiles per worker (RX3); editing one worker changes no other worker (tools/check_receiver_isolation.py)",
    "evidence": [
-    "docs/perfect-plex-gaps.md"
+    "docs/complete-wrestler-art.md",
+    "tools/verify_perfect_receivers_native.py",
+    "evidence/perfect-plex-receivers/recipes/diesel-attacker-left.json",
+    "evidence/perfect-plex-receivers/recipes/nash-gear-attacker-left.json",
+    "evidence/complete-wrestler-art/diesel-attacker-left.gif",
+    "evidence/complete-wrestler-art/nash-gear-attacker-left.gif"
+   ],
+   "defects": [
+    "Choreography is Raw's own lift-and-fall drawings re-timed to the Perfect-Plex, not Royal's exact Perfect-Plex frames (awaiting visual review)",
+    "No bridge-to-pin (PP-5)",
+    "Not released; draft PR #1 for review"
    ],
    "source_game": null,
    "palette_owner": "slot 10",
-   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
-   "aliases": "not_audited"
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate"
   },
   {
    "slot": 11,
@@ -2317,19 +2492,41 @@
    "display_name": "Owen Hart",
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
-   "art_status": "missing",
-   "gameplay_status": "untested",
-   "variant": "target (own receiving art)",
-   "defects": [
-    "No Royal counterpart; needs authored receiving art that keeps this slot's identity and edited gear (palette remap is insufficient)"
-   ],
+   "art_status": "own_art_adapted",
+   "gameplay_status": "verified_visual",
+   "variant": "target (own native receiving drawings)",
+   "implementation": {
+    "branch": "claude/charming-allen-njttcx",
+    "marker": "ROYAL-RX3",
+    "source": "editor/receiving-art.js ownNative + recipes.own_native_steps"
+   },
+   "source_ids": {
+    "raw_profiles": "data/perfect-victim-layouts.json rows, re-timed by tools/build_perfect_receivers.OWN_NATIVE_STEPS"
+   },
+   "native": {
+    "scenarios": [
+     "owen-attacker-right"
+    ],
+    "builds": [
+     "15c1d9b5aa67a09d"
+    ],
+    "preview_equals_native": "every step, 100% of actor pixels"
+   },
+   "aliases": "private tiles per worker (RX3); editing one worker changes no other worker (tools/check_receiver_isolation.py)",
    "evidence": [
-    "docs/perfect-plex-gaps.md"
+    "docs/complete-wrestler-art.md",
+    "tools/verify_perfect_receivers_native.py",
+    "evidence/perfect-plex-receivers/recipes/owen-attacker-right.json",
+    "evidence/complete-wrestler-art/owen-attacker-right.gif"
+   ],
+   "defects": [
+    "Choreography is Raw's own lift-and-fall drawings re-timed to the Perfect-Plex, not Royal's exact Perfect-Plex frames (awaiting visual review)",
+    "No bridge-to-pin (PP-5)",
+    "Not released; draft PR #1 for review"
    ],
    "source_game": null,
    "palette_owner": "slot 11",
-   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate",
-   "aliases": "not_audited"
+   "runtime_routing": "stream 73:5000 / profiles 73:5100: stock receiving-suplex profiles + per-frame translate"
   },
   {
    "slot": 12,
@@ -2365,7 +2562,7 @@
    "native": null,
    "implementation": {
     "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
-    "marker": "ROYAL-RX2",
+    "marker": "ROYAL-RX3",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -2431,7 +2628,7 @@
    "defects": [
     "WIP build on codex/perfect-receivers-wip (tools/build_perfect_receivers.py); not released; no committed gameplay capture; editor isolation test not run",
     "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)",
-    "Unreachable natively in one-on-one two-player selection: P2 cannot pick the wrestler P1 chose; other match modes untested"
+    "Mirror match unreachable in one-on-one: P2 cannot pick the wrestler P1 chose (2P) and the 1P \"player chooses opponent\" screen refuses the same wrestler; other modes untested"
    ],
    "source_game": "Royal Rumble",
    "palette_owner": "slot 12",
@@ -4931,15 +5128,15 @@
    "untested": 71,
    "verified_visual": 19
   },
-  "missing": {
-   "untested": 6
-  },
   "native_port": {
    "verified_visual": 1
   },
   "original": {
    "verified_visual": 23,
    "untested": 67
+  },
+  "own_art_adapted": {
+   "verified_visual": 7
   },
   "prototype_private": {
    "verified_visual": 6,
