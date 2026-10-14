@@ -1984,5 +1984,71 @@
    1
   ]
  ],
- "build": "stock import"
+ "build": "stock import",
+ "expected_build": "15c1d9b5aa67a09d8a560fad281b1887eac5871b7273256d4c436d060db6efc8",
+ "expected": {
+  "frames_measured": 141,
+  "frames_fully_matched": 138,
+  "flip_pairs": {
+   "(True, False)": 138
+  },
+  "receiver_body_terms": {
+   "33": 7,
+   "27": 56,
+   "34": 6,
+   "38": 8,
+   "52": 61
+  },
+  "actor_spacing": {
+   "-40": 138
+  },
+  "registration_errors": {},
+  "receiver_trailing_palette6_during_move": {
+   "2": 3,
+   "4": 138
+  },
+  "frames_with_foreign_palette6_during_move": 0,
+  "receiver_shadow_offset_during_move": {
+   "min": -2.0,
+   "max": -1.0,
+   "frames": 141
+  },
+  "receiver_health_changes": [
+   [
+    213,
+    156,
+    0
+   ]
+  ],
+  "receiver_source": "own_native",
+  "preview_match": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "after_move": {
+   "actions": {
+    "[0, 70]": 110
+   },
+   "attacker_pose_shown": {
+    "11": 2,
+    "None": 108
+   },
+   "receiver_pose_shown": {
+    "11": 2,
+    "None": 108
+   }
+  },
+  "receiver_pixel_match_min": null,
+  "vertical_offsets": []
+ }
 }
