@@ -62,6 +62,49 @@ names its evidence. **Nothing here is complete until native gameplay and a visua
     scenario to 83–99%.
   - Entry (tie-up) and exit (downed) drawings come from other actions and are not yet in the preview.
 
+## Perfect-Plex receivers: following Royal's move (revised after review)
+
+**Review feedback.** "The new Perfect-Plex receiver animations are close but look misaligned, causing the
+finished move to look nothing like the Royal Rumble product."
+- Cause: the own‑art receivers used Raw's own vertical‑suplex drawings, re‑timed. Royal lifts the receiver
+  **over** Perfect: across his shoulders, then inverted above him, then onto his back in the bridge.
+- The suplex drawings stood beside him, went straight up next to him and dropped beside him. Royal's receiver
+  bounding boxes (`data/perfect-victim-layouts.json`) differ from the suplex drawings by up to 55 px at the lift.
+
+**Now** (`tools/plan_receiver_profiles.py`, `data/receiver-profile-plan.json`, source `own_profiles`):
+- **Target.** For each step, the target is Royal's composite: the Royal donor's receiving drawing (closest
+  build) with Mr. Perfect's own drawing in front, both from the native Royal capture.
+  - Royal draws only what shows, so receiver pixels behind Perfect are free.
+  - Donors: Shawn for Luna, Kid and Syxx; Crush for Bam Bam; Flair for Doink; Undertaker for Diesel and Nash;
+    Bret for Owen; Razor for Scott Hall; Lex for Sting.
+- **Candidates.** Every Raw pose profile (1,036, `tools/raw_profiles.py`), drawn with the receiver's **own**
+  parts, in four facings (180° rotations included), placed at the best offset.
+  - Only own‑range parts: the shared range would draw someone else's art.
+  - Only drawings the importer can store.
+- **Score.** Overlap of what stays visible, by colour class: skin and hair against gear. An upside‑down body
+  cannot stand in for an upright one.
+  - Doink's skin indices hold clown greys, so he is classed by Raw's palette roles.
+- **Gear.** Gear identities (Scott, Sting, Syxx, Nash) have their own plans from their gear art.
+- **Install** (`editor/receiving-art.js` `ownProfiles`):
+  - Each step's pose is drawn from the user's ROM, so identity, gear and edits carry over.
+  - Pixels behind Perfect are removed, as in Royal's drawings, so sprite priority cannot change what shows.
+  - Royal's anchors are used (`body_dx`, `shadow_dx`).
+- **Review GIFs** (editor preview, which equals native; Royal geometry, previous, new, at the move's timing):
+  [Luna](../evidence/complete-wrestler-art/receiver-review/luna.gif) ·
+  [Bam Bam](../evidence/complete-wrestler-art/receiver-review/bam-bam.gif) ·
+  [Doink](../evidence/complete-wrestler-art/receiver-review/doink.gif) ·
+  [Kid](../evidence/complete-wrestler-art/receiver-review/kid.gif) ·
+  [Diesel](../evidence/complete-wrestler-art/receiver-review/diesel.gif) ·
+  [Owen](../evidence/complete-wrestler-art/receiver-review/owen.gif) ·
+  [Scott Hall](../evidence/complete-wrestler-art/receiver-review/scott-hall-gear.gif) ·
+  [Sting](../evidence/complete-wrestler-art/receiver-review/sting-gear.gif) ·
+  [Syxx](../evidence/complete-wrestler-art/receiver-review/syxx-gear.gif) ·
+  [Kevin Nash](../evidence/complete-wrestler-art/receiver-review/kevin-nash-gear.gif)
+- **Limits.** These are Raw drawings of the receiver, not Royal's frames.
+  - Step 2: the raised arm is lower than Royal's.
+  - Step 11: Royal's legs point straight up; Raw's closest drawings have them bent.
+  - Exact matches would need authored drawings.
+
 ## Perfect-Plex receiving matrix (all 13 current slots)
 
 Builds (this batch; Mr. Perfect with his Royal pose pieces and hair colour):
@@ -125,19 +168,56 @@ Notes on the matrix:
 - **Editor.** Every slot lists its 12 "Receiving Perfect-Plex · n" composite poses. The paired preview
   plays any receiver in both facings ([screenshot](../evidence/complete-wrestler-art/editor-paired-preview-sting.png)).
 
-## Mr. Perfect's ordinary poses (batch 2)
+## Mr. Perfect's ordinary poses (batch 2, revised after review)
 
 Mr. Perfect's slot reuses Raw Bret's 1,720 frame pieces. In v0.16, 289 of them used Royal Perfect art and
-1,431 were Raw Bret drawings recoloured into Perfect's palette, with Bret's dark hair and build. This batch
-replaces every adapted piece that Royal Rumble draws for Perfect.
+1,431 were Raw Bret drawings recoloured into Perfect's palette, with Bret's dark hair, face and build.
 
-| | v0.16 | now |
-|---|---|---|
-| Royal Perfect art (exact silhouette match, earlier) | 289 | 289 |
-| Royal Perfect art (pose match, this batch) | — | **329** |
-| Adapted Raw Bret art | 1,431 | **1,102** |
-| … of which recoloured with Perfect's blond hair (this batch) | — | **377** |
-| … of which not recoloured (the rule found no hair region; mostly bodies, legs and common-range art, not individually reviewed) | — | 725 |
+**Review feedback.** "We have the Mr. Perfect Royal Rumble images; why are the redone animations and sprites
+looking nothing like him?" The first pass only replaced pieces with an exact Royal silhouette. Gameplay traces
+showed why that was not enough: Raw **redrew** many of Bret's poses, the idle stance among them, and those had
+no silhouette match.
+- In a traced match (`luna-attacker-left`), Perfect spent 52% of his screen time in one Bret‑drawn standing pose
+  (profile `$C8:4596`).
+- Only 20% of his screen time showed nothing but Royal art (12% in the Owen match).
+
+| | v0.16 | first pass | now |
+|---|---|---|---|
+| Royal Perfect art: exact silhouette match | 289 | 289 | 289 |
+| Royal Perfect art: pose match | — | 329 | 329 |
+| Royal Perfect art: by frame order (semantic pass, reviewed) | — | — | **136** |
+| Adapted Raw Bret art | 1,431 | 1,102 | **966** |
+| … of which with Perfect's blond hair | — | 377 | 291 |
+| Perfect's screen time showing only Royal art, Luna match | 20% | — | **98%** |
+| Perfect's screen time showing only Royal art, Owen match | 12% | — | **97%** |
+
+**Semantic pass** (`tools/match_perfect_poses.py --semantic`, decisions in `data/perfect-pose-review.json`):
+- Raw's piece tables follow Royal's frame order. Matched pairs run in step: Raw's upper pieces with Royal's
+  upper‑body frames, its lower pieces with Royal's lower‑body frames, with Raw insertions in between.
+- A remaining piece takes one of two candidates:
+  - the Royal Perfect frame of its nearest matched neighbour, placed with that neighbour's measured transform
+    (Raw draws a wrestler's pieces about one body origin);
+  - an unused Royal frame between the neighbours, placed at its best overlap.
+- Filters:
+  - Kind: a torso frame for a torso piece, legs for legs.
+  - Area: within 0.6–1.6× of the original.
+  - Head position: for torsos, the hair centroid within 0.35 of the bounding box. This stops rolled or
+    inverted drawings from getting an upright torso.
+- Review: every candidate was checked as a piece and in a composite that uses it.
+  - Threshold 0.58: below it, about a third were wrong.
+  - 17 rejections: torsos detached from legs, and Raw's own strike drawings, where Royal's hands‑up frame
+    would erase the punch.
+- The traced standing, walking, back‑view, hunched, knocked‑down, lying and getting‑up poses all show Royal
+  Rumble's Perfect: his face, swept‑back hair, singlet, kneepad bands and boots.
+- Still Bret‑drawn (blond hair), awaiting authored art: Raw‑only strikes (`p446`–`p476`), poses below the
+  threshold (for example `p328`, bent forward) and the shared common range.
+- Upgrades:
+  - **Update Perfect-Plex** now accepts v0.16 pieces and pieces already recoloured by an earlier branch
+    upgrade, and leaves pieces that already hold the new art (marker `POSES-ROYAL4`).
+  - v0.16, earlier‑branch and already‑current ROMs all converge on the fresh build (1,732/1,732 pieces).
+  - An edited tile is kept.
+
+### First pass (silhouette matches and hair)
 
 **How a piece qualifies** (`tools/match_perfect_poses.py`, table `data/perfect-pose-matches.json`; indices
 and metrics only, no pixels):
