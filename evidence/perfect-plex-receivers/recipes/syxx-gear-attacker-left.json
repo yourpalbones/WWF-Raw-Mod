@@ -2,16 +2,17 @@
  "scenario": "syxx-gear-attacker-left",
  "receiver_slot": 9,
  "composed_by": "tools/recipe_bot.py",
- "note": "Bot-played: P2 selects slot 9; P1 grapples from the left until the Perfect-Plex starts.",
+ "note": "Bot-played: P2 selects slot 9; P1 grapples starting from the left (ends on the left) until the Perfect-Plex starts.",
  "parameters": {
   "rights": 19,
   "side": "left",
+  "final_side": "left",
   "setup_end": 15271
  },
  "controller_only": true,
- "frames": 17073,
- "move_start": 16473,
- "capture_from": 16323,
+ "frames": 16890,
+ "move_start": 16290,
+ "capture_from": 16140,
  "capture_frames": 400,
  "inputs": [
   [
@@ -1323,347 +1324,179 @@
    5
   ],
   [
-   1,
+   0,
    15334,
-   8,
-   5
-  ],
-  [
-   1,
-   15343,
-   1,
-   5
-  ],
-  [
-   1,
-   15352,
-   1,
-   5
-  ],
-  [
-   1,
-   15361,
-   0,
-   5
-  ],
-  [
-   1,
-   15370,
-   8,
-   5
-  ],
-  [
-   1,
-   15379,
-   1,
-   5
-  ],
-  [
-   1,
-   15388,
-   1,
-   5
-  ],
-  [
-   1,
-   15397,
-   0,
-   5
-  ],
-  [
-   1,
-   15406,
-   8,
-   5
-  ],
-  [
-   1,
-   15415,
-   1,
-   5
-  ],
-  [
-   1,
-   15424,
-   1,
-   5
-  ],
-  [
-   1,
-   15433,
-   0,
-   5
-  ],
-  [
-   1,
-   15442,
-   8,
-   5
-  ],
-  [
-   1,
-   15451,
-   1,
-   5
-  ],
-  [
-   1,
-   15460,
-   1,
-   5
-  ],
-  [
-   1,
-   15469,
-   0,
-   5
-  ],
-  [
-   1,
-   15478,
-   8,
-   5
-  ],
-  [
-   1,
-   15487,
-   1,
-   5
-  ],
-  [
-   1,
-   15496,
-   1,
-   5
-  ],
-  [
-   1,
-   15505,
-   0,
-   5
-  ],
-  [
-   0,
-   15523,
    6,
-   70
+   25
   ],
   [
    0,
-   15593,
+   15359,
    7,
    2
   ],
   [
    0,
-   15620,
+   15386,
    9,
    8
   ],
   [
    0,
-   15710,
+   15476,
    0,
    20
   ],
   [
    0,
-   15740,
+   15506,
    0,
    20
   ],
   [
    0,
-   15770,
+   15536,
    0,
    20
   ],
   [
    0,
-   15800,
+   15566,
    0,
    20
   ],
   [
    0,
-   15830,
+   15596,
    0,
    20
   ],
   [
    0,
-   15860,
+   15626,
    0,
    20
   ],
   [
    0,
+   15656,
+   0,
+   20
+  ],
+  [
+   0,
+   15686,
+   0,
+   20
+  ],
+  [
+   1,
+   15836,
+   8,
+   5
+  ],
+  [
+   1,
+   15845,
+   1,
+   5
+  ],
+  [
+   1,
+   15854,
+   0,
+   5
+  ],
+  [
+   1,
+   15863,
+   8,
+   5
+  ],
+  [
+   1,
+   15872,
+   8,
+   5
+  ],
+  [
+   1,
+   15881,
+   1,
+   5
+  ],
+  [
+   1,
    15890,
    0,
-   20
-  ],
-  [
-   0,
-   15920,
-   0,
-   20
-  ],
-  [
-   1,
-   16070,
-   0,
-   5
-  ],
-  [
-   1,
-   16079,
-   8,
-   5
-  ],
-  [
-   1,
-   16088,
-   8,
-   5
-  ],
-  [
-   1,
-   16097,
-   1,
    5
   ],
   [
    0,
-   16106,
+   15908,
+   6,
+   55
+  ],
+  [
+   0,
+   15963,
    7,
-   12
+   2
   ],
   [
    0,
-   16143,
+   15990,
    9,
    8
   ],
   [
    0,
-   16233,
+   16080,
    11,
    20
   ],
   [
    0,
-   16263,
+   16110,
    11,
    20
   ],
   [
    0,
-   16293,
+   16140,
    11,
    20
   ],
   [
    0,
-   16323,
+   16170,
    11,
    20
   ],
   [
    0,
-   16353,
+   16200,
    11,
    20
   ],
   [
    0,
-   16383,
+   16230,
    11,
    20
   ],
   [
    0,
-   16413,
+   16260,
    11,
    20
   ],
   [
    0,
-   16443,
-   11,
-   20
-  ],
-  [
-   0,
-   16473,
+   16290,
    11,
    1
   ]
  ],
- "build": "gear reference mod (Scott, Syxx, Nash, Sting applied)",
- "expected_build": "a870f3fec8bcac6e7386edba459b12d96f612cc353c499efa22b323d53ef147c",
- "expected": {
-  "frames_measured": 141,
-  "frames_fully_matched": 138,
-  "flip_pairs": {
-   "(False, True)": 138
-  },
-  "receiver_body_terms": {
-   "-33": 7,
-   "-27": 56,
-   "-34": 6,
-   "-38": 8,
-   "-52": 61
-  },
-  "actor_spacing": {
-   "40": 138
-  },
-  "registration_errors": {},
-  "receiver_trailing_palette6_during_move": {
-   "2": 3,
-   "4": 138
-  },
-  "frames_with_foreign_palette6_during_move": 0,
-  "receiver_shadow_offset_during_move": {
-   "min": 1.0,
-   "max": 2.0,
-   "frames": 141
-  },
-  "receiver_health_changes": [
-   [
-    213,
-    232,
-    72
-   ]
-  ],
-  "receiver_source": "own_native",
-  "preview_match": [
-   1.0,
-   1.0,
-   1.0,
-   1.0,
-   1.0,
-   1.0,
-   1.0,
-   1.0,
-   1.0,
-   1.0,
-   1.0,
-   1.0
-  ],
-  "after_move": {
-   "actions": {
-    "[0, 70]": 110
-   },
-   "attacker_pose_shown": {
-    "11": 2,
-    "None": 108
-   },
-   "receiver_pose_shown": {
-    "11": 2,
-    "None": 108
-   }
-  },
-  "receiver_pixel_match_min": null,
-  "vertical_offsets": []
- }
+ "build": "gear reference mod v2 (Scott, Syxx, Nash, Sting gear; then Mr. Perfect with Royal pose pieces)"
 }

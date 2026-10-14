@@ -2,16 +2,17 @@
  "scenario": "sting-gear-attacker-left",
  "receiver_slot": 7,
  "composed_by": "tools/recipe_bot.py",
- "note": "Bot-played: P2 selects slot 7; P1 grapples from the left until the Perfect-Plex starts.",
+ "note": "Bot-played: P2 selects slot 7; P1 grapples starting from the left (ends on the left) until the Perfect-Plex starts.",
  "parameters": {
   "rights": 15,
   "side": "left",
+  "final_side": "left",
   "setup_end": 14871
  },
  "controller_only": true,
- "frames": 16474,
- "move_start": 15874,
- "capture_from": 15724,
+ "frames": 16487,
+ "move_start": 15887,
+ "capture_from": 15737,
  "capture_frames": 400,
  "inputs": [
   [
@@ -1287,287 +1288,185 @@
    5
   ],
   [
-   1,
-   14916,
    0,
-   5
-  ],
-  [
-   1,
    14925,
-   8,
-   5
-  ],
-  [
-   1,
-   14934,
-   1,
-   5
-  ],
-  [
-   1,
-   14943,
-   0,
-   5
-  ],
-  [
-   1,
-   14952,
-   0,
-   5
-  ],
-  [
-   1,
-   14961,
-   8,
-   5
-  ],
-  [
-   1,
-   14970,
-   1,
-   5
-  ],
-  [
-   1,
-   14979,
-   0,
-   5
-  ],
-  [
-   1,
-   14988,
-   0,
-   5
-  ],
-  [
-   1,
-   14997,
-   8,
-   5
-  ],
-  [
-   1,
-   15006,
-   1,
-   5
-  ],
-  [
-   0,
-   15024,
    6,
-   5
+   10
   ],
   [
    0,
-   15029,
+   14935,
    7,
    2
   ],
   [
    0,
-   15056,
+   14962,
    9,
    8
   ],
   [
    0,
-   15146,
+   15052,
    0,
    20
   ],
   [
    0,
-   15176,
+   15082,
    0,
    20
   ],
   [
    0,
-   15206,
+   15112,
    0,
    20
   ],
   [
    0,
-   15236,
+   15142,
    0,
    20
   ],
   [
    0,
-   15266,
+   15172,
    0,
    20
   ],
   [
    0,
-   15296,
+   15202,
    0,
    20
   ],
   [
    0,
-   15326,
+   15232,
    0,
    20
   ],
   [
    0,
-   15356,
+   15262,
    0,
    20
   ],
   [
    1,
-   15506,
+   15412,
+   1,
+   5
+  ],
+  [
+   1,
+   15421,
    0,
    5
   ],
   [
    1,
-   15515,
+   15430,
    8,
    5
   ],
   [
    1,
-   15524,
+   15439,
+   1,
+   5
+  ],
+  [
+   1,
+   15448,
+   1,
+   5
+  ],
+  [
+   1,
+   15457,
+   0,
+   5
+  ],
+  [
+   1,
+   15466,
    8,
    5
   ],
   [
-   1,
-   15533,
-   1,
-   5
+   0,
+   15475,
+   6,
+   55
   ],
   [
    0,
-   15542,
+   15530,
    7,
-   7
+   2
   ],
   [
    0,
-   15574,
+   15557,
    9,
    8
   ],
   [
    0,
-   15664,
+   15647,
    11,
    20
   ],
   [
    0,
-   15694,
+   15677,
    11,
    20
   ],
   [
    0,
-   15724,
+   15707,
    11,
    20
   ],
   [
    0,
-   15754,
+   15737,
    11,
    20
   ],
   [
    0,
-   15784,
+   15767,
    11,
    20
   ],
   [
    0,
-   15814,
+   15797,
    11,
    20
   ],
   [
    0,
-   15844,
+   15827,
    11,
    20
   ],
   [
    0,
-   15874,
+   15857,
+   11,
+   20
+  ],
+  [
+   0,
+   15887,
    11,
    1
   ]
  ],
- "build": "gear reference mod (Scott, Syxx, Nash, Sting applied)",
- "expected_build": "a870f3fec8bcac6e7386edba459b12d96f612cc353c499efa22b323d53ef147c",
- "expected": {
-  "frames_measured": 141,
-  "frames_fully_matched": 138,
-  "flip_pairs": {
-   "(False, True)": 138
-  },
-  "receiver_body_terms": {
-   "-31": 7,
-   "-27": 56,
-   "-34": 6,
-   "-38": 7,
-   "-51": 62
-  },
-  "actor_spacing": {
-   "40": 138
-  },
-  "registration_errors": {},
-  "receiver_trailing_palette6_during_move": {
-   "2": 3,
-   "4": 138
-  },
-  "frames_with_foreign_palette6_during_move": 0,
-  "receiver_shadow_offset_during_move": {
-   "min": 1.0,
-   "max": 2.0,
-   "frames": 141
-  },
-  "receiver_health_changes": [
-   [
-    213,
-    248,
-    88
-   ]
-  ],
-  "receiver_source": "own_native",
-  "preview_match": [
-   1.0,
-   1.0,
-   1.0,
-   1.0,
-   1.0,
-   1.0,
-   1.0,
-   1.0,
-   1.0,
-   1.0,
-   1.0,
-   1.0
-  ],
-  "after_move": {
-   "actions": {
-    "[0, 70]": 110
-   },
-   "attacker_pose_shown": {
-    "11": 2,
-    "None": 108
-   },
-   "receiver_pose_shown": {
-    "11": 2,
-    "None": 108
-   }
-  },
-  "receiver_pixel_match_min": null,
-  "vertical_offsets": []
- }
+ "build": "gear reference mod v2 (Scott, Syxx, Nash, Sting gear; then Mr. Perfect with Royal pose pieces)"
 }
