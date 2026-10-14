@@ -1824,6 +1824,7 @@
   "preview_match": null,
   "exit": {
    "hold_frames": 56,
+   "hold_game_frames": 56,
    "exit_preview_match": [
     1.0,
     1.0,
