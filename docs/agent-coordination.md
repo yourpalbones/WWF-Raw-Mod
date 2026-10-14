@@ -1,5 +1,23 @@
 # Agent coordination: Claude Code ↔ Codex
 
+> **Ownership update (complete wrestler art task, `docs/CLAUDE-COMPLETE-WRESTLER-ART-TASK.md` @ `bd31a0b`).**
+> Claude owns, for this task and until handing it back:
+> - **Art generation:** receiving and ordinary pose composites, authored pixels, and the recipes that build them
+>   (`tools/build_perfect_receivers.py`, `tools/build_perfect_receiver_manifest.py`, new `tools/*receiv*`,
+>   `tools/*own_art*`, `data/perfect-receivers.json`, new `data/*-receiving*.json`).
+> - **Private sprite routing:** `tools/import_perfect_plex.py`, `tools/build_perfect_slot.py`, the receiver hooks,
+>   the new part resolver (`tools/raw_parts.py`, `editor/raw-parts.js`, `data/raw-tile-directory.json`).
+> - **Pose manifests:** `editor/*-layouts.js` for receiving and pose catalogues, and `tools/canonical_perfect_geometry.py`.
+> - **Editor sprite editing and animation preview:** `editor/perfect-receiver-core.js`, `editor/royal-import*.js`,
+>   the new `editor/animation-preview.js`, and the sprite and preview parts of `editor/index.html`, `editor/editor.js`
+>   and `editor/app.js`.
+> - **Coverage:** `tools/build_animation_coverage.py`, `data/animation-coverage.json`, `docs/animation-coverage.md`.
+>
+> Codex should avoid concurrent edits to these. **Possible overlap:** `editor/index.html`, `editor/editor.js`,
+> `editor/app.js` and `tools/bundle_editor.py` also hold non-sprite features (profiles, music, names). If Codex
+> needs them, record the parts here first. Gear builders for Scott, Nash, Syxx and Sting (`tools/build_nwo_gear.py`,
+> `tools/build_sting_replacement.py`, `editor/scott-sprites.js`) are read, not changed, unless noted here.
+
 > **Active ownership update:** The user has assigned the Perfect-Plex fixes to
 > Claude. [Implementation task](CLAUDE-PERFECT-PLEX-FIX-TASK.md) supersedes the
 > earlier Codex ownership/read-only restrictions below for its listed scope.
