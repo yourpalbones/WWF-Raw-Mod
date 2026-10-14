@@ -210,6 +210,9 @@ Perfect ends on the right in seven scenarios (Kid, Lex, Luna from the right, Raz
 Undertaker one) and on the left in the other thirteen. The bot plays wherever the match takes it.
 
 Notes on the matrix:
+- **Exit (this round).** All 20 scenarios pass the PP-5 assertions, and the GIFs above are remade on the v5
+  builds: they now run through the pin, the release and the get-up. What the first pass taught the checks
+  (Raw's step jitter, the camera's one-frame lag, the ring edge) is in [`perfect-plex-exit.md`](perfect-plex-exit.md).
 - **Replay fix.** Every recipe's last R press starts on the frame where the verifier saves state and begins
   capturing (150 frames before the move). Replaying from that state dropped presses still held, so that R lasted
   one frame instead of twenty. Most moves still started; Luna's from the left did not.
@@ -266,8 +269,14 @@ review; not marked done.**
   - Neither wrestler's depth changes.
   - `tools/plan_perfect_plex_exit.py` plans this from Royal's capture into
     [`data/perfect-plex-exit.json`](../data/perfect-plex-exit.json).
+- **Verified natively in all 20 scenarios** (below):
+  - the pin lasts 56–59 frames;
+  - every exit step equals the editor preview;
+  - the receiver ends on Perfect's far side.
 - **Differences that remain:**
   - Raw's 7-frame step makes the get-up 42 frames (Royal: 35).
+  - Near the ropes the ring edge can stop the receiver short, and Raw then moves Perfect 7 px in depth
+    (`doink-attacker-left`).
   - The receiver lies 41 px away instead of 33. At 33 px, Raw's collision rule pushes one wrestler 7 px in depth.
   - Raw's camera pans 13 px during the get-up.
   - Raw's own standing stance and recovery rules apply afterwards.

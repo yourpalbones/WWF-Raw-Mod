@@ -40,7 +40,7 @@ Perfect's 12 steps matching the imported drawings. This time it took the Underta
 
 | | Before (v4) | Now (v5) |
 |---|---|---|
-| Pin | Bridge held for 63 frames. | Bridge held for **56 frames**, as in Royal (the same landing bounce, which in Raw is a camera shake). |
+| Pin | Bridge held for 63 frames. | Bridge held for **56 frames** (8 stream entries), as in Royal. Raw's steps vary by a frame, so 56–59 were measured. It has the same landing bounce, which in Raw is a camera shake. |
 | Mr. Perfect | Pops straight from the bridge to standing. | Gets up through **Royal's six drawings**, each placed exactly where Royal draws it relative to the bridge. Raw shows each for 7 frames (its step rate), so he stands at +42 instead of +35. Raw's standing action then turns him to face the receiver, as in Royal. |
 | Receiver | Raw's downed pose on the side he started from. | Rolls off with Raw's own roll-off drawing, then lies on **Perfect's far side**, 41 px away, using Raw's own lying drawing in his own art. |
 | Depth | Unchanged. | Unchanged for both wrestlers (no 7 px push; see below). |
@@ -104,16 +104,31 @@ Two Raw rules shaped this:
 - The receiver ends on Perfect's far side at the planned 41 px.
 - Neither wrestler's depth changed.
 
-**In progress:** all 20 scenarios are being re-recorded on the v5 builds with these assertions. The results
-table will replace this note.
-- An earlier pass (before the checks below were added) passed 15 of 20.
-- It found three problems in the checks themselves:
-  - the camera's one-frame lag during pans;
-  - frames the game drops under load, which made the pin look longer on screen (it is now counted in game
-    time, WRAM `$0F70`);
-  - a rope edge case. In `doink-attacker-left`, Perfect starts near the left ropes, so the ring edge stops the
-    Undertaker 6 px short (35 px instead of 41). Raw's collision rule then moves Perfect 7 px in depth. The
-    check now reports this as `ring_stop`/`depth_push` instead of failing on it.
+All 20 scenarios pass on both v5 builds: stock import `281bcd36…` and gear reference mod `a3316c5a…`.
+Data: [`verification-stock-v5.json`](../evidence/complete-wrestler-art/verification-stock-v5.json) and
+[`verification-gear-mod-v5.json`](../evidence/complete-wrestler-art/verification-gear-mod-v5.json); the
+recorded values are in each recipe's `expected.exit`.
+
+| | Result |
+|---|---|
+| Pin (step 11 on screen) | 56 frames in 15 scenarios; 57 (Luna, left), 58 (Luna, right; Undertaker, right) and 59 (Syxx). The match clock agrees each time. |
+| Exit steps vs editor preview | 100% of actor pixels at every step, in all 20 (14 steps each: 7 held, 6 release, standing). |
+| Receiver's side and spacing | Perfect's far side in all 20; 41 px in 19. |
+| Depth | Unchanged in 19. |
+| Ring edge | `doink-attacker-left`: Perfect starts near the left ropes. The ring edge stops the Undertaker 6 px short (35 px), and Raw's collision rule moves Perfect 7 px in depth. Reported as `ring_stop: 6`. |
+
+What the first pass taught the checks:
+- **Pin length.** Raw's stream steps last 6 to 8 frames each, in the move itself too. So the pin is 8 entries
+  of 55–59 frames, measured by the match clock (WRAM `$0F70`) when it runs. In six matches the clock stands
+  still, and the screen count is used instead.
+- **Camera.** A frame's OAM is built with the previous frame's camera. While the camera pans, the sprites'
+  scroll can trail WRAM by a pixel; one frame in `sting-gear-attacker-left-2` needed that pixel.
+- **Release drawings.** These are found where Perfect's drawing changes on screen, not at fixed offsets, so
+  frames the game drops do not shift them.
+- **Perfect standing.** Checked on the first frames of standing: after a collision push Raw switches to its
+  idle drawing at once.
+- **Ring edge.** Each wrestler is compared at his actual position. A ring stop and the push it causes are
+  reported, not hidden.
 
 ### Both wrestlers regaining control
 
@@ -171,10 +186,12 @@ native screens:
 
 ## Where Raw still differs from Royal
 
-- **Timing.** Raw steps a stream every 7 frames. Perfect's get-up takes 42 frames (Royal: 35), and the
-  receiver's roll-off 14 (Royal: 12).
+- **Timing.** Raw steps a stream about every 7 frames (6 to 8). Perfect's get-up takes 42 frames (Royal: 35),
+  the receiver's roll-off 14 (Royal: 12), and the pin 56 to 59 (Royal: 56).
 - **Spacing.** The receiver lies 41 px from Perfect (Royal: 33), so Raw's collision rule does not push anyone
   (above).
+- **Near the ropes** the ring edge can stop the receiver short. In `doink-attacker-left` he stops 6 px short,
+  and Raw's collision rule then moves Perfect 7 px in depth. A fixed stream cannot adapt to where the ropes are.
 - **Camera.** Raw's camera pans 13 px while Perfect gets up; Royal's stays put.
 - **Roll-off.** One Raw drawing stands in for Royal's two.
 - **Standing stance.** Raw's standing action shows its own stance drawing (Royal art in Perfect's slot, but not

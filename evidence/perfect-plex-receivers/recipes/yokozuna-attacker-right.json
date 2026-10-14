@@ -2927,7 +2927,7 @@
    2
   ]
  ],
- "build": "stock import v4 (Mr. Perfect with Royal pose pieces and Royal heads; receivers rebuilt from Royal)",
+ "build": "stock import v5 (Mr. Perfect with Royal pose pieces, Royal heads and the Perfect-Plex exit; receivers rebuilt from Royal)",
  "expected_build": "281bcd361265a48d0074ebc277c6312523df54bd1e3694b5a93545a3e9ca22be",
  "expected": {
   "frames_measured": 179,
