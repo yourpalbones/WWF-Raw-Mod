@@ -147,24 +147,28 @@ def perfect_plex_rows(receivers):
     rows = []
     workers = {w['selector']: w for w in receivers['workers']}
     # Performer
-    rows.append(row(12, 'finisher:Perfect-Plex', 'performer', 'native_port', 'defective',
+    rows.append(row(12, 'finisher:Perfect-Plex', 'performer', 'native_port', 'verified_visual',
                     source_game='Royal Rumble', source_ids={'royal_poses': '783-806 (12 captured attacker drawings)',
                                                             'raw_primary_indices': '1000-1011'},
                     descriptor_locations={'stream': '0x730000', 'descriptors': '0x730100+', 'profiles': '0x734000+'},
                     runtime_routing=PERFECT_ROUTING['perfect_plex_attacker'], palette_owner='slot 12',
-                    facing='attacker capture mirrored about Royal x=145 (import_perfect_plex.build)',
-                    evidence=['evidence/mr-perfect-import/README.md', 'evidence/mr-perfect-import/perfect-plex.gif',
-                              'evidence/mr-perfect-import/verification.json',
-                              'evidence/perfect-plex-receivers/raw-undertaker-prototype.gif',
-                              'evidence/perfect-plex-receivers/native-wip/undertaker-wip-native.gif',
+                    facing='canonical: attacker drawings unmirrored (Raw art faces right unflipped); '
+                           'tools/canonical_perfect_geometry.py',
+                    implementation={'branch': 'claude/charming-allen-njttcx', 'marker': 'PLEX-CANON1'},
+                    evidence=['docs/perfect-plex-fix-report.md',
+                              'evidence/perfect-plex-receivers/fixed/verification.json',
+                              'evidence/perfect-plex-receivers/fixed/undertaker-left-right-rope-before-after.gif',
+                              'evidence/perfect-plex-receivers/fixed/undertaker-right-right-rope-before-after.gif',
+                              'evidence/perfect-plex-receivers/fixed/undertaker-recovery-before-after.gif',
+                              'evidence/perfect-plex-receivers/fixed/luna-generic-before-after.gif',
+                              'evidence/mr-perfect-import/README.md',
                               'docs/perfect-plex-native-trace.md', 'docs/perfect-plex-gaps.md'],
                     aliases='private (tile IDs C000+ written per pose, no sharing with stock slots)',
-                    defects=['Scene plays mirrored relative to the entry tie-up: attacker crosses to the far side '
-                             'of the receiver on the first lift frame (PP-1; cause provisional, see '
-                             'docs/perfect-plex-pair-coordinates.md)',
-                             'No bridge-to-pin (PP-5)',
-                             'Imports from the unmodified 3 MiB Raw ROM stall before every match: '
-                             '$F0-$FF mirror missing in the 8 MiB expansion (PP-0, native)']))
+                    defects=['No bridge-to-pin (PP-5)',
+                             "Perfect's shadow is drawn green in every capture inspected, also outside the "
+                             'Perfect-Plex (palette entry of the imported worker; not changed)'],
+                    fixed=['PP-0 announcer bank-table stride (stock 3 MiB imports reach a match)',
+                           'PP-1 side swap', 'PP-4 frozen Perfect-Plex pose after the move']))
     for slot in range(13):
         royal = RAW_TO_ROYAL.get(slot)
         common = dict(source_game='Royal Rumble' if royal is not None else None,
@@ -208,33 +212,35 @@ def perfect_plex_rows(receivers):
         evidence = ['data/perfect-receivers.json', 'docs/perfect-plex-gaps.md']
         recipes = sorted((ROOT / 'evidence/perfect-plex-receivers/recipes').glob('*.json'))
         measured = [json.loads(r.read_text()) for r in recipes]
-        measured = [r for r in measured if r['receiver_slot'] == slot and 'expected' in r]
+        measured = [r for r in measured if r['receiver_slot'] == slot and 'expected_build' in r]
+        native = None
         if measured:
-            gameplay = 'defective'
-            evidence += ['docs/perfect-plex-native-trace.md', 'tools/verify_perfect_receivers_native.py']
-            for r in measured:
-                evidence += [f"evidence/perfect-plex-receivers/recipes/{r['scenario']}.json",
-                             f"evidence/perfect-plex-receivers/native-wip/scenarios/{r['scenario']}.png"]
+            gameplay = 'verified_visual'
+            evidence = ['data/perfect-receivers.json', 'docs/perfect-plex-fix-report.md',
+                        'evidence/perfect-plex-receivers/fixed/verification.json',
+                        'tools/verify_perfect_receivers_native.py']
+            evidence += [f"evidence/perfect-plex-receivers/recipes/{r['scenario']}.json" for r in measured]
             if slot == 2:
-                evidence += ['evidence/perfect-plex-receivers/native-wip/undertaker-wip-native.gif']
+                evidence += ['evidence/perfect-plex-receivers/fixed/undertaker-left-right-rope-before-after.gif',
+                             'evidence/perfect-plex-receivers/fixed/undertaker-right-right-rope-before-after.gif',
+                             'evidence/perfect-plex-receivers/fixed/undertaker-recovery-before-after.gif']
             errors = sorted({int(k) for r in measured for k in r['expected']['registration_errors']})
-            defects = [f'WIP build on codex/perfect-receivers-wip @ 2955d5c; not released; native scenarios: '
-                       f'{", ".join(r["scenario"] for r in measured)}; editor isolation test not run',
-                       'Native: imported attacker frames face left when unflipped, so the scene swaps sides '
-                       'when the attacker starts on the left (PP-1)',
-                       f'Native: receiver drawn {errors} px vs Royal (|spacing| - 34 toward the attacker); '
-                       'attacker drawn on top (PP-2)',
-                       'Native: receiver shadow stays at its actor origin, away from the body (PP-3)',
-                       'Native: both actors frozen on Perfect-Plex pose 0 after the move (stream wraps) (PP-4)',
-                       'Native: hook writes $90 (part-loader object total): extra stale palette-6 objects (PP-7)',
-                       'Native: every rendered receiver pixel matches the builder (no stale body tiles)',
+            native = {'scenarios': [r['scenario'] for r in measured], 'build_sha256': measured[0]['expected_build'],
+                      'registration_error_px': errors,
+                      'foreign_palette6_frames': sum(r['expected']['frames_with_foreign_palette6_during_move']
+                                                     for r in measured),
+                      'defect_baseline': 'recipes[].defect_baseline (WIP 2955d5c: PP-1/2/3/4/7)'}
+            defects = ['Not released; draft PR #1 for Codex review',
+                       'No bridge-to-pin (PP-5)',
                        'Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)']
         elif slot == 12:
             defects.append('Unreachable natively in one-on-one two-player selection: P2 cannot pick the '
                            'wrestler P1 chose; other match modes untested')
         rows.append(row(slot, 'finisher:Perfect-Plex', 'receiver', art, gameplay,
-                        variant='target (own receiving art): WIP seven-counterpart build',
-                        implementation={'branch': 'codex/perfect-receivers-wip', 'commit': '2955d5c',
+                        variant='target (own receiving art): seven-counterpart build',
+                        native=native,
+                        implementation={'branch': 'claude/charming-allen-njttcx (from codex/perfect-receivers-wip '
+                                                  '@ 2955d5c)', 'marker': 'ROYAL-RX2',
                                         'tile_allocation': 'per-slot private map, global ID counter and packet '
                                                            'cursor (code inspection only)'},
                         source_ids={'royal_selector': royal, 'royal_name': ROYAL_ROSTER[royal],
@@ -242,7 +248,7 @@ def perfect_plex_rows(receivers):
                                                                      for c in r['components']}),
                                     'source_frames': [p['source_frame'] for p in worker['poses']]},
                         anchors='data/perfect-receivers.json components[] (Royal OAM anchors, relative to x=145,y=162)',
-                        facing='component hflip=true in every Royal frame; parts stored unmirrored',
+                        facing='canonical: receiver drawings mirrored (MIRROR_SHIFT 2, body_dx 45, per-pose shadow_dx)',
                         budget={'max_objects_incl_shadow': analysis['max_objects'],
                                 'max_tiles_incl_shadow': analysis['max_tiles']},
                         aliases={'royal_source_tiles': analysis['source_tiles'],

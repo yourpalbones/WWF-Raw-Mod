@@ -76,7 +76,8 @@ class RecipeTests(unittest.TestCase):
         import compose_perfect_recipes as compose
         for name, recipe in compose.recipes().items():
             committed = json.loads((compose.OUT / f'{name}.json').read_text())
-            committed.pop('expected', None)
+            for key in compose.RECORDED:
+                committed.pop(key, None)
             self.assertEqual(committed, json.loads(json.dumps(recipe)), name)
 
     def test_recipes_are_controller_only(self):

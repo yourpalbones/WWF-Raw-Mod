@@ -1288,7 +1288,7 @@
    "action": "finisher:Perfect-Plex",
    "role": "performer",
    "art_status": "native_port",
-   "gameplay_status": "defective",
+   "gameplay_status": "verified_visual",
    "source_game": "Royal Rumble",
    "source_ids": {
     "royal_poses": "783-806 (12 captured attacker drawings)",
@@ -1301,21 +1301,31 @@
    },
    "runtime_routing": "init hook AC:ECB0 -> 70:F300, sequence hook 80:F073 -> 70:F400; stream 73:0000, descriptors 73:0100",
    "palette_owner": "slot 12",
-   "facing": "attacker capture mirrored about Royal x=145 (import_perfect_plex.build)",
+   "facing": "canonical: attacker drawings unmirrored (Raw art faces right unflipped); tools/canonical_perfect_geometry.py",
+   "implementation": {
+    "branch": "claude/charming-allen-njttcx",
+    "marker": "PLEX-CANON1"
+   },
    "evidence": [
+    "docs/perfect-plex-fix-report.md",
+    "evidence/perfect-plex-receivers/fixed/verification.json",
+    "evidence/perfect-plex-receivers/fixed/undertaker-left-right-rope-before-after.gif",
+    "evidence/perfect-plex-receivers/fixed/undertaker-right-right-rope-before-after.gif",
+    "evidence/perfect-plex-receivers/fixed/undertaker-recovery-before-after.gif",
+    "evidence/perfect-plex-receivers/fixed/luna-generic-before-after.gif",
     "evidence/mr-perfect-import/README.md",
-    "evidence/mr-perfect-import/perfect-plex.gif",
-    "evidence/mr-perfect-import/verification.json",
-    "evidence/perfect-plex-receivers/raw-undertaker-prototype.gif",
-    "evidence/perfect-plex-receivers/native-wip/undertaker-wip-native.gif",
     "docs/perfect-plex-native-trace.md",
     "docs/perfect-plex-gaps.md"
    ],
    "aliases": "private (tile IDs C000+ written per pose, no sharing with stock slots)",
    "defects": [
-    "Scene plays mirrored relative to the entry tie-up: attacker crosses to the far side of the receiver on the first lift frame (PP-1; cause provisional, see docs/perfect-plex-pair-coordinates.md)",
     "No bridge-to-pin (PP-5)",
-    "Imports from the unmodified 3 MiB Raw ROM stall before every match: $F0-$FF mirror missing in the 8 MiB expansion (PP-0, native)"
+    "Perfect's shadow is drawn green in every capture inspected, also outside the Perfect-Plex (palette entry of the imported worker; not changed)"
+   ],
+   "fixed": [
+    "PP-0 announcer bank-table stride (stock 3 MiB imports reach a match)",
+    "PP-1 side swap",
+    "PP-4 frozen Perfect-Plex pose after the move"
    ]
   },
   {
@@ -1389,11 +1399,22 @@
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
    "art_status": "prototype_private",
-   "gameplay_status": "defective",
-   "variant": "target (own receiving art): WIP seven-counterpart build",
+   "gameplay_status": "verified_visual",
+   "variant": "target (own receiving art): seven-counterpart build",
+   "native": {
+    "scenarios": [
+     "bret-attacker-left-right-rope"
+    ],
+    "build_sha256": "f2a81a9118bb302f3572ddd767ff1c0279ec9b3918ad684b3e65061f266a70c6",
+    "registration_error_px": [
+     0
+    ],
+    "foreign_palette6_frames": 0,
+    "defect_baseline": "recipes[].defect_baseline (WIP 2955d5c: PP-1/2/3/4/7)"
+   },
    "implementation": {
-    "branch": "codex/perfect-receivers-wip",
-    "commit": "2955d5c",
+    "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
+    "marker": "ROYAL-RX2",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -1440,7 +1461,7 @@
     ]
    },
    "anchors": "data/perfect-receivers.json components[] (Royal OAM anchors, relative to x=145,y=162)",
-   "facing": "component hflip=true in every Royal frame; parts stored unmirrored",
+   "facing": "canonical: receiver drawings mirrored (MIRROR_SHIFT 2, body_dx 45, per-pose shadow_dx)",
    "budget": {
     "max_objects_incl_shadow": 17,
     "max_tiles_incl_shadow": 46
@@ -1454,20 +1475,14 @@
    },
    "evidence": [
     "data/perfect-receivers.json",
-    "docs/perfect-plex-gaps.md",
-    "docs/perfect-plex-native-trace.md",
+    "docs/perfect-plex-fix-report.md",
+    "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/perfect-plex-receivers/recipes/bret-attacker-left-right-rope.json",
-    "evidence/perfect-plex-receivers/native-wip/scenarios/bret-attacker-left-right-rope.png"
+    "evidence/perfect-plex-receivers/recipes/bret-attacker-left-right-rope.json"
    ],
    "defects": [
-    "WIP build on codex/perfect-receivers-wip @ 2955d5c; not released; native scenarios: bret-attacker-left-right-rope; editor isolation test not run",
-    "Native: imported attacker frames face left when unflipped, so the scene swaps sides when the attacker starts on the left (PP-1)",
-    "Native: receiver drawn [6] px vs Royal (|spacing| - 34 toward the attacker); attacker drawn on top (PP-2)",
-    "Native: receiver shadow stays at its actor origin, away from the body (PP-3)",
-    "Native: both actors frozen on Perfect-Plex pose 0 after the move (stream wraps) (PP-4)",
-    "Native: hook writes $90 (part-loader object total): extra stale palette-6 objects (PP-7)",
-    "Native: every rendered receiver pixel matches the builder (no stale body tiles)",
+    "Not released; draft PR #1 for Codex review",
+    "No bridge-to-pin (PP-5)",
     "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
    ],
    "source_game": "Royal Rumble",
@@ -1529,11 +1544,26 @@
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
    "art_status": "prototype_private",
-   "gameplay_status": "defective",
-   "variant": "target (own receiving art): WIP seven-counterpart build",
+   "gameplay_status": "verified_visual",
+   "variant": "target (own receiving art): seven-counterpart build",
+   "native": {
+    "scenarios": [
+     "undertaker-attacker-left-left-rope",
+     "undertaker-attacker-left-mid-ring",
+     "undertaker-attacker-left-right-rope",
+     "undertaker-attacker-right-left-rope",
+     "undertaker-attacker-right-right-rope"
+    ],
+    "build_sha256": "f2a81a9118bb302f3572ddd767ff1c0279ec9b3918ad684b3e65061f266a70c6",
+    "registration_error_px": [
+     0
+    ],
+    "foreign_palette6_frames": 0,
+    "defect_baseline": "recipes[].defect_baseline (WIP 2955d5c: PP-1/2/3/4/7)"
+   },
    "implementation": {
-    "branch": "codex/perfect-receivers-wip",
-    "commit": "2955d5c",
+    "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
+    "marker": "ROYAL-RX2",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -1580,7 +1610,7 @@
     ]
    },
    "anchors": "data/perfect-receivers.json components[] (Royal OAM anchors, relative to x=145,y=162)",
-   "facing": "component hflip=true in every Royal frame; parts stored unmirrored",
+   "facing": "canonical: receiver drawings mirrored (MIRROR_SHIFT 2, body_dx 45, per-pose shadow_dx)",
    "budget": {
     "max_objects_incl_shadow": 17,
     "max_tiles_incl_shadow": 46
@@ -1594,29 +1624,21 @@
    },
    "evidence": [
     "data/perfect-receivers.json",
-    "docs/perfect-plex-gaps.md",
-    "docs/perfect-plex-native-trace.md",
+    "docs/perfect-plex-fix-report.md",
+    "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
     "evidence/perfect-plex-receivers/recipes/undertaker-attacker-left-left-rope.json",
-    "evidence/perfect-plex-receivers/native-wip/scenarios/undertaker-attacker-left-left-rope.png",
     "evidence/perfect-plex-receivers/recipes/undertaker-attacker-left-mid-ring.json",
-    "evidence/perfect-plex-receivers/native-wip/scenarios/undertaker-attacker-left-mid-ring.png",
     "evidence/perfect-plex-receivers/recipes/undertaker-attacker-left-right-rope.json",
-    "evidence/perfect-plex-receivers/native-wip/scenarios/undertaker-attacker-left-right-rope.png",
     "evidence/perfect-plex-receivers/recipes/undertaker-attacker-right-left-rope.json",
-    "evidence/perfect-plex-receivers/native-wip/scenarios/undertaker-attacker-right-left-rope.png",
     "evidence/perfect-plex-receivers/recipes/undertaker-attacker-right-right-rope.json",
-    "evidence/perfect-plex-receivers/native-wip/scenarios/undertaker-attacker-right-right-rope.png",
-    "evidence/perfect-plex-receivers/native-wip/undertaker-wip-native.gif"
+    "evidence/perfect-plex-receivers/fixed/undertaker-left-right-rope-before-after.gif",
+    "evidence/perfect-plex-receivers/fixed/undertaker-right-right-rope-before-after.gif",
+    "evidence/perfect-plex-receivers/fixed/undertaker-recovery-before-after.gif"
    ],
    "defects": [
-    "WIP build on codex/perfect-receivers-wip @ 2955d5c; not released; native scenarios: undertaker-attacker-left-left-rope, undertaker-attacker-left-mid-ring, undertaker-attacker-left-right-rope, undertaker-attacker-right-left-rope, undertaker-attacker-right-right-rope; editor isolation test not run",
-    "Native: imported attacker frames face left when unflipped, so the scene swaps sides when the attacker starts on the left (PP-1)",
-    "Native: receiver drawn [-7, -6, 6, 7] px vs Royal (|spacing| - 34 toward the attacker); attacker drawn on top (PP-2)",
-    "Native: receiver shadow stays at its actor origin, away from the body (PP-3)",
-    "Native: both actors frozen on Perfect-Plex pose 0 after the move (stream wraps) (PP-4)",
-    "Native: hook writes $90 (part-loader object total): extra stale palette-6 objects (PP-7)",
-    "Native: every rendered receiver pixel matches the builder (no stale body tiles)",
+    "Not released; draft PR #1 for Codex review",
+    "No bridge-to-pin (PP-5)",
     "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
    ],
    "source_game": "Royal Rumble",
@@ -1652,11 +1674,22 @@
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
    "art_status": "prototype_private",
-   "gameplay_status": "defective",
-   "variant": "target (own receiving art): WIP seven-counterpart build",
+   "gameplay_status": "verified_visual",
+   "variant": "target (own receiving art): seven-counterpart build",
+   "native": {
+    "scenarios": [
+     "yokozuna-attacker-left-right-rope"
+    ],
+    "build_sha256": "f2a81a9118bb302f3572ddd767ff1c0279ec9b3918ad684b3e65061f266a70c6",
+    "registration_error_px": [
+     0
+    ],
+    "foreign_palette6_frames": 0,
+    "defect_baseline": "recipes[].defect_baseline (WIP 2955d5c: PP-1/2/3/4/7)"
+   },
    "implementation": {
-    "branch": "codex/perfect-receivers-wip",
-    "commit": "2955d5c",
+    "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
+    "marker": "ROYAL-RX2",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -1703,7 +1736,7 @@
     ]
    },
    "anchors": "data/perfect-receivers.json components[] (Royal OAM anchors, relative to x=145,y=162)",
-   "facing": "component hflip=true in every Royal frame; parts stored unmirrored",
+   "facing": "canonical: receiver drawings mirrored (MIRROR_SHIFT 2, body_dx 45, per-pose shadow_dx)",
    "budget": {
     "max_objects_incl_shadow": 17,
     "max_tiles_incl_shadow": 49
@@ -1717,20 +1750,14 @@
    },
    "evidence": [
     "data/perfect-receivers.json",
-    "docs/perfect-plex-gaps.md",
-    "docs/perfect-plex-native-trace.md",
+    "docs/perfect-plex-fix-report.md",
+    "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/perfect-plex-receivers/recipes/yokozuna-attacker-left-right-rope.json",
-    "evidence/perfect-plex-receivers/native-wip/scenarios/yokozuna-attacker-left-right-rope.png"
+    "evidence/perfect-plex-receivers/recipes/yokozuna-attacker-left-right-rope.json"
    ],
    "defects": [
-    "WIP build on codex/perfect-receivers-wip @ 2955d5c; not released; native scenarios: yokozuna-attacker-left-right-rope; editor isolation test not run",
-    "Native: imported attacker frames face left when unflipped, so the scene swaps sides when the attacker starts on the left (PP-1)",
-    "Native: receiver drawn [6] px vs Royal (|spacing| - 34 toward the attacker); attacker drawn on top (PP-2)",
-    "Native: receiver shadow stays at its actor origin, away from the body (PP-3)",
-    "Native: both actors frozen on Perfect-Plex pose 0 after the move (stream wraps) (PP-4)",
-    "Native: hook writes $90 (part-loader object total): extra stale palette-6 objects (PP-7)",
-    "Native: every rendered receiver pixel matches the builder (no stale body tiles)",
+    "Not released; draft PR #1 for Codex review",
+    "No bridge-to-pin (PP-5)",
     "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
    ],
    "source_game": "Royal Rumble",
@@ -1808,11 +1835,22 @@
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
    "art_status": "prototype_private",
-   "gameplay_status": "defective",
-   "variant": "target (own receiving art): WIP seven-counterpart build",
+   "gameplay_status": "verified_visual",
+   "variant": "target (own receiving art): seven-counterpart build",
+   "native": {
+    "scenarios": [
+     "razor-attacker-left-right-rope"
+    ],
+    "build_sha256": "f2a81a9118bb302f3572ddd767ff1c0279ec9b3918ad684b3e65061f266a70c6",
+    "registration_error_px": [
+     0
+    ],
+    "foreign_palette6_frames": 0,
+    "defect_baseline": "recipes[].defect_baseline (WIP 2955d5c: PP-1/2/3/4/7)"
+   },
    "implementation": {
-    "branch": "codex/perfect-receivers-wip",
-    "commit": "2955d5c",
+    "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
+    "marker": "ROYAL-RX2",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -1859,7 +1897,7 @@
     ]
    },
    "anchors": "data/perfect-receivers.json components[] (Royal OAM anchors, relative to x=145,y=162)",
-   "facing": "component hflip=true in every Royal frame; parts stored unmirrored",
+   "facing": "canonical: receiver drawings mirrored (MIRROR_SHIFT 2, body_dx 45, per-pose shadow_dx)",
    "budget": {
     "max_objects_incl_shadow": 17,
     "max_tiles_incl_shadow": 46
@@ -1873,20 +1911,14 @@
    },
    "evidence": [
     "data/perfect-receivers.json",
-    "docs/perfect-plex-gaps.md",
-    "docs/perfect-plex-native-trace.md",
+    "docs/perfect-plex-fix-report.md",
+    "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/perfect-plex-receivers/recipes/razor-attacker-left-right-rope.json",
-    "evidence/perfect-plex-receivers/native-wip/scenarios/razor-attacker-left-right-rope.png"
+    "evidence/perfect-plex-receivers/recipes/razor-attacker-left-right-rope.json"
    ],
    "defects": [
-    "WIP build on codex/perfect-receivers-wip @ 2955d5c; not released; native scenarios: razor-attacker-left-right-rope; editor isolation test not run",
-    "Native: imported attacker frames face left when unflipped, so the scene swaps sides when the attacker starts on the left (PP-1)",
-    "Native: receiver drawn [6] px vs Royal (|spacing| - 34 toward the attacker); attacker drawn on top (PP-2)",
-    "Native: receiver shadow stays at its actor origin, away from the body (PP-3)",
-    "Native: both actors frozen on Perfect-Plex pose 0 after the move (stream wraps) (PP-4)",
-    "Native: hook writes $90 (part-loader object total): extra stale palette-6 objects (PP-7)",
-    "Native: every rendered receiver pixel matches the builder (no stale body tiles)",
+    "Not released; draft PR #1 for Codex review",
+    "No bridge-to-pin (PP-5)",
     "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
    ],
    "source_game": "Royal Rumble",
@@ -1922,11 +1954,22 @@
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
    "art_status": "prototype_private",
-   "gameplay_status": "defective",
-   "variant": "target (own receiving art): WIP seven-counterpart build",
+   "gameplay_status": "verified_visual",
+   "variant": "target (own receiving art): seven-counterpart build",
+   "native": {
+    "scenarios": [
+     "lex-attacker-left-right-rope"
+    ],
+    "build_sha256": "f2a81a9118bb302f3572ddd767ff1c0279ec9b3918ad684b3e65061f266a70c6",
+    "registration_error_px": [
+     0
+    ],
+    "foreign_palette6_frames": 0,
+    "defect_baseline": "recipes[].defect_baseline (WIP 2955d5c: PP-1/2/3/4/7)"
+   },
    "implementation": {
-    "branch": "codex/perfect-receivers-wip",
-    "commit": "2955d5c",
+    "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
+    "marker": "ROYAL-RX2",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -1973,7 +2016,7 @@
     ]
    },
    "anchors": "data/perfect-receivers.json components[] (Royal OAM anchors, relative to x=145,y=162)",
-   "facing": "component hflip=true in every Royal frame; parts stored unmirrored",
+   "facing": "canonical: receiver drawings mirrored (MIRROR_SHIFT 2, body_dx 45, per-pose shadow_dx)",
    "budget": {
     "max_objects_incl_shadow": 17,
     "max_tiles_incl_shadow": 46
@@ -1987,20 +2030,14 @@
    },
    "evidence": [
     "data/perfect-receivers.json",
-    "docs/perfect-plex-gaps.md",
-    "docs/perfect-plex-native-trace.md",
+    "docs/perfect-plex-fix-report.md",
+    "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/perfect-plex-receivers/recipes/lex-attacker-left-right-rope.json",
-    "evidence/perfect-plex-receivers/native-wip/scenarios/lex-attacker-left-right-rope.png"
+    "evidence/perfect-plex-receivers/recipes/lex-attacker-left-right-rope.json"
    ],
    "defects": [
-    "WIP build on codex/perfect-receivers-wip @ 2955d5c; not released; native scenarios: lex-attacker-left-right-rope; editor isolation test not run",
-    "Native: imported attacker frames face left when unflipped, so the scene swaps sides when the attacker starts on the left (PP-1)",
-    "Native: receiver drawn [6] px vs Royal (|spacing| - 34 toward the attacker); attacker drawn on top (PP-2)",
-    "Native: receiver shadow stays at its actor origin, away from the body (PP-3)",
-    "Native: both actors frozen on Perfect-Plex pose 0 after the move (stream wraps) (PP-4)",
-    "Native: hook writes $90 (part-loader object total): extra stale palette-6 objects (PP-7)",
-    "Native: every rendered receiver pixel matches the builder (no stale body tiles)",
+    "Not released; draft PR #1 for Codex review",
+    "No bridge-to-pin (PP-5)",
     "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
    ],
    "source_game": "Royal Rumble",
@@ -2078,11 +2115,22 @@
    "action": "finisher:Perfect-Plex",
    "role": "receiver",
    "art_status": "prototype_private",
-   "gameplay_status": "defective",
-   "variant": "target (own receiving art): WIP seven-counterpart build",
+   "gameplay_status": "verified_visual",
+   "variant": "target (own receiving art): seven-counterpart build",
+   "native": {
+    "scenarios": [
+     "shawn-attacker-left-right-rope"
+    ],
+    "build_sha256": "f2a81a9118bb302f3572ddd767ff1c0279ec9b3918ad684b3e65061f266a70c6",
+    "registration_error_px": [
+     0
+    ],
+    "foreign_palette6_frames": 0,
+    "defect_baseline": "recipes[].defect_baseline (WIP 2955d5c: PP-1/2/3/4/7)"
+   },
    "implementation": {
-    "branch": "codex/perfect-receivers-wip",
-    "commit": "2955d5c",
+    "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
+    "marker": "ROYAL-RX2",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -2129,7 +2177,7 @@
     ]
    },
    "anchors": "data/perfect-receivers.json components[] (Royal OAM anchors, relative to x=145,y=162)",
-   "facing": "component hflip=true in every Royal frame; parts stored unmirrored",
+   "facing": "canonical: receiver drawings mirrored (MIRROR_SHIFT 2, body_dx 45, per-pose shadow_dx)",
    "budget": {
     "max_objects_incl_shadow": 17,
     "max_tiles_incl_shadow": 46
@@ -2143,20 +2191,14 @@
    },
    "evidence": [
     "data/perfect-receivers.json",
-    "docs/perfect-plex-gaps.md",
-    "docs/perfect-plex-native-trace.md",
+    "docs/perfect-plex-fix-report.md",
+    "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/perfect-plex-receivers/recipes/shawn-attacker-left-right-rope.json",
-    "evidence/perfect-plex-receivers/native-wip/scenarios/shawn-attacker-left-right-rope.png"
+    "evidence/perfect-plex-receivers/recipes/shawn-attacker-left-right-rope.json"
    ],
    "defects": [
-    "WIP build on codex/perfect-receivers-wip @ 2955d5c; not released; native scenarios: shawn-attacker-left-right-rope; editor isolation test not run",
-    "Native: imported attacker frames face left when unflipped, so the scene swaps sides when the attacker starts on the left (PP-1)",
-    "Native: receiver drawn [6] px vs Royal (|spacing| - 34 toward the attacker); attacker drawn on top (PP-2)",
-    "Native: receiver shadow stays at its actor origin, away from the body (PP-3)",
-    "Native: both actors frozen on Perfect-Plex pose 0 after the move (stream wraps) (PP-4)",
-    "Native: hook writes $90 (part-loader object total): extra stale palette-6 objects (PP-7)",
-    "Native: every rendered receiver pixel matches the builder (no stale body tiles)",
+    "Not released; draft PR #1 for Codex review",
+    "No bridge-to-pin (PP-5)",
     "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
    ],
    "source_game": "Royal Rumble",
@@ -2319,10 +2361,11 @@
    "role": "receiver",
    "art_status": "prototype_private",
    "gameplay_status": "untested",
-   "variant": "target (own receiving art): WIP seven-counterpart build",
+   "variant": "target (own receiving art): seven-counterpart build",
+   "native": null,
    "implementation": {
-    "branch": "codex/perfect-receivers-wip",
-    "commit": "2955d5c",
+    "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
+    "marker": "ROYAL-RX2",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -2369,7 +2412,7 @@
     ]
    },
    "anchors": "data/perfect-receivers.json components[] (Royal OAM anchors, relative to x=145,y=162)",
-   "facing": "component hflip=true in every Royal frame; parts stored unmirrored",
+   "facing": "canonical: receiver drawings mirrored (MIRROR_SHIFT 2, body_dx 45, per-pose shadow_dx)",
    "budget": {
     "max_objects_incl_shadow": 17,
     "max_tiles_incl_shadow": 46
@@ -4892,14 +4935,15 @@
    "untested": 6
   },
   "native_port": {
-   "defective": 1
+   "verified_visual": 1
   },
   "original": {
    "verified_visual": 23,
    "untested": 67
   },
   "prototype_private": {
-   "defective": 7,
+   "verified_visual": 6,
+   "defective": 1,
    "untested": 1
   }
  }

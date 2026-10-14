@@ -29,6 +29,7 @@ OUT = ROOT / 'evidence/perfect-plex-receivers/recipes'
 CYCLE = (13571, 14951)          # last full damage cycle in the base replay
 SELECTION_RIGHTS = (5451, 5551)
 SELECTION_A = 5750
+RECORDED = ('defect_baseline', 'expected_build', 'expected')
 
 
 def r_block(start):
@@ -120,8 +121,10 @@ if __name__ == '__main__':
     stale = []
     for name, recipe in recipes().items():
         path = OUT / f'{name}.json'
-        if path.exists() and 'expected' in (old := json.loads(path.read_text())):
-            recipe['expected'] = old['expected']   # recorded by tools/verify_perfect_receivers_native.py --record
+        old = json.loads(path.read_text()) if path.exists() else {}
+        for key in RECORDED:   # written by tools/verify_perfect_receivers_native.py (--record keeps the old baseline)
+            if key in old:
+                recipe[key] = old[key]
         text = json.dumps(recipe, indent=1) + '\n'
         if args.check:
             if not path.exists() or path.read_text() != text:
