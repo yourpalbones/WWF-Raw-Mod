@@ -116,6 +116,74 @@ Notes on the matrix:
 - **Editor.** Every slot lists its 12 "Receiving Perfect-Plex · n" composite poses. The paired preview
   plays any receiver in both facings ([screenshot](../evidence/complete-wrestler-art/editor-paired-preview-sting.png)).
 
+## Mr. Perfect's ordinary poses (batch 2)
+
+Mr. Perfect's slot reuses Raw Bret's 1,720 frame pieces. In v0.16, 289 of them used Royal Perfect art and
+1,431 were Raw Bret drawings recoloured into Perfect's palette, with Bret's dark hair and build. This batch
+replaces every adapted piece that Royal Rumble draws for Perfect.
+
+| | v0.16 | now |
+|---|---|---|
+| Royal Perfect art (exact silhouette match, earlier) | 289 | 289 |
+| Royal Perfect art (pose match, this batch) | — | **329** |
+| Adapted Raw Bret art (identity not preserved) | 1,431 | **1,102** |
+
+**How a piece qualifies** (`tools/match_perfect_poses.py`, table `data/perfect-pose-matches.json`; indices
+and metrics only, no pixels):
+- Royal draws Bret and Perfect on the same frame indices and coordinates (812 of 828 frames share their
+  origin). So a Raw Bret piece that matches a Royal Bret frame takes Royal Perfect's frame at the same index,
+  placed by the measured transform (flip, dx, dy). Every placement is re-checked against the measured IoU.
+- Accepted: IoU ≥ 0.95, or IoU ≥ 0.88 with colour-role agreement ≥ 0.6.
+- Excluded:
+  - Royal indices below 16 (shadows).
+  - Royal frames drawn **only** from tiles that Bret's frame also uses (227 generic frames). Royal recolours
+    these by palette, which gave Perfect brown hair in review (`p801`, `p802`, `p805`); `s617` and `s681`
+    were wrong in shape or gear.
+- Visual review: all 329 replacements, before and after, in Perfect's palette, ordered riskiest first. All
+  show the same pose with Perfect's blond hair, singlet, kneepads and boots. (The sheets contain game art and
+  stay private.)
+
+**Older imports, edits and space**
+- `RAW_ROYAL_IMPORT_CORE.upgradePoses` (the editor's **Update Perfect-Plex**) repacks slot 12.
+  - A piece is replaced only while its pixels still hash to the adapted art it supersedes (`replaces`).
+  - Every other piece is decoded and stored again pixel for pixel, including your edits and the Perfect-Plex
+    frames.
+  - It refuses to run if another identity's edited tile was relocated into Perfect's space.
+- Results:
+  - A synthetic one-byte edit in a shared tile kept both affected pieces and replaced the other 327.
+  - Repack with nothing to replace: 1,732/1,732 pieces identical.
+  - The repacked slot uses fewer tiles (12,110 primary / 7,853 secondary, against 12,655 / 8,667).
+- Browser and Node agree:
+  - Browser update of the RX3 stock build equals Node (uninstall, upgrade, reinstall) byte for byte
+    (`1fa0424c…`).
+  - Fresh browser import and upgrade carry the same 1,732 pieces.
+  - v0.16 and pre-`569240b` imports update. All 13 receivers reinstall afterwards. Reopen and resave are
+    byte-identical.
+
+**Native gameplay** (`tools/check_perfect_poses_native.py`)
+- Cold boot, controller only. Every second frame after character select, each 8×8 tile of Perfect's
+  objects is looked up in his slot's pieces.
+
+| Recipe on new build | Frames inspected | Perfect's tiles | Foreign tiles | Replaced Bret tiles | Replaced pieces seen |
+|---|---|---|---|---|---|
+| `luna-attacker-left` | 1,443 | 49,301 | 0 | 0 | 10 |
+| `owen-attacker-right` | 2,903 | 95,094 | 0 | 0 | 5 |
+
+"Pieces seen" counts only pieces with a tile no other piece uses, so it undercounts.
+
+**Timing changes with the art.** The same inputs replay a different match on the new build: game state first
+differs at frame 6,618, and Owen's recipe no longer reaches the Perfect-Plex. Tile decode time feeds the game's
+timing, so controller recipes are build-specific. The Perfect-Plex receiver scenarios are being re-recorded
+and re-verified on the new builds (stock `349d462e…`, gear mod `51bdfdb7…`). Until that finishes, the matrix
+above reflects the previous builds.
+
+**Still open for Perfect**
+- 1,102 adapted pieces have no Royal counterpart (Raw-only actions or generic frames). They need **authored**
+  Perfect art.
+- 24 of the 289 earlier exact matches use generic Royal frames and need the same review.
+- Per-action mapping of pieces (which moves show which pieces) is not built yet. That is part of the
+  action-family matrix.
+
 ## Findings that shape the art
 
 - Raw draws every worker on one shared base body. The same part index shows the same body position in

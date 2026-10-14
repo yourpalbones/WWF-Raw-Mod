@@ -4,6 +4,9 @@ The window defaults to the WINDOW frames after the recipe setup in which Mr. Per
 newer build replaced with Royal art (unique tiles of 'replaces' rows, as tools/check_perfect_poses_native.py).
 
     python3 tools/make_compare_gif.py CORE OLD.sfc NEW.sfc RECIPE --output OUT.gif [--labels old new] [--window 480]
+
+Pass '-' as OLD for a single panel. Builds whose art differs can desync (decode time changes the game's timing),
+so a side-by-side view is only meaningful while both runs still agree.
 """
 import argparse
 import json
@@ -42,7 +45,7 @@ def schedule(recipe):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument('core'); p.add_argument('old', type=Path); p.add_argument('new', type=Path); p.add_argument('recipe', type=Path)
+    p.add_argument('core'); p.add_argument('old'); p.add_argument('new', type=Path); p.add_argument('recipe', type=Path)
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--labels', nargs=2, default=['before', 'after'])
     p.add_argument('--window', type=int, default=480); p.add_argument('--step', type=int, default=3)
@@ -64,7 +67,7 @@ def main():
         best = max(keys, key=lambda s: sum(counts.get(s + i, 0) for i in range(0, a.window, 2)))
         start = max(setup, best - 30)
     panels = []
-    for rom in (a.old, a.new):
+    for rom in ([a.old] if a.old != '-' else []) + [a.new]:
         emu, frames = Emulator(a.core, rom), []
         for k in range(1, start + a.window + 1):
             emu.step(held.get(k, {0: set(), 1: set()}))
@@ -72,13 +75,14 @@ def main():
                 frames.append(image(emu.last_video))
         panels.append(frames)
     out = []
-    for n, (left, right) in enumerate(zip(*panels)):
-        w, h = left.size
-        canvas = Image.new('RGB', (w * 2 + 4, h + 14), (20, 20, 28))
-        canvas.paste(left, (0, 14)); canvas.paste(right, (w + 4, 14))
+    labels = a.labels if len(panels) == 2 else a.labels[1:]
+    for n, views in enumerate(zip(*panels)):
+        w, h = views[0].size
+        canvas = Image.new('RGB', ((w + 4) * len(views) - 4, h + 14), (20, 20, 28))
         d = ImageDraw.Draw(canvas)
-        d.text((2, 1), f'{a.labels[0]}  frame {start + n * a.step}', fill=(255, 230, 0))
-        d.text((w + 6, 1), a.labels[1], fill=(255, 230, 0))
+        for i, (view, label) in enumerate(zip(views, labels)):
+            canvas.paste(view, (i * (w + 4), 14))
+            d.text((i * (w + 4) + 2, 1), f'{label}  frame {start + n * a.step}' if i == 0 else label, fill=(255, 230, 0))
         out.append(canvas.convert('P', palette=Image.ADAPTIVE, colors=128))
     out[0].save(a.output, save_all=True, append_images=out[1:], duration=a.step * 1000 // 60, loop=0, optimize=True)
     print(json.dumps({'start': start, 'frames': len(out), 'bytes': a.output.stat().st_size}))
