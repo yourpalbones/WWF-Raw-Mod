@@ -1,0 +1,899 @@
+{
+  "snapshots": 80,
+  "exact_source_matched_snapshots": 75,
+  "fully_visible_screen_matched_snapshots": 0,
+  "poses_observed": [
+    4,
+    10,
+    11,
+    17,
+    18,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    34,
+    35,
+    36,
+    37,
+    65,
+    66,
+    67,
+    68,
+    69,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    110,
+    111,
+    161,
+    162,
+    213,
+    214,
+    215
+  ],
+  "full_animation_coverage_verified": false,
+  "records": [
+    {
+      "frame": "frame-000006",
+      "exact_source_matches": [
+        {
+          "pose": 17,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1331,
+      "native_screen_matching_pixels": 1285
+    },
+    {
+      "frame": "frame-000012",
+      "exact_source_matches": [
+        {
+          "pose": 17,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1331,
+      "native_screen_matching_pixels": 1285
+    },
+    {
+      "frame": "frame-000018",
+      "exact_source_matches": [
+        {
+          "pose": 23,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1123,
+      "native_screen_matching_pixels": 1085
+    },
+    {
+      "frame": "frame-000024",
+      "exact_source_matches": [
+        {
+          "pose": 22,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1270,
+      "native_screen_matching_pixels": 1219
+    },
+    {
+      "frame": "frame-000030",
+      "exact_source_matches": [
+        {
+          "pose": 110,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 960,
+      "native_screen_matching_pixels": 899
+    },
+    {
+      "frame": "frame-000036",
+      "exact_source_matches": [
+        {
+          "pose": 34,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1109,
+      "native_screen_matching_pixels": 1051
+    },
+    {
+      "frame": "frame-000042",
+      "exact_source_matches": [
+        {
+          "pose": 111,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1116,
+      "native_screen_matching_pixels": 1038
+    },
+    {
+      "frame": "frame-000048",
+      "exact_source_matches": [
+        {
+          "pose": 17,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1331,
+      "native_screen_matching_pixels": 1285
+    },
+    {
+      "frame": "frame-000054",
+      "exact_source_matches": [
+        {
+          "pose": 161,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1337,
+      "native_screen_matching_pixels": 1280
+    },
+    {
+      "frame": "frame-000060",
+      "exact_source_matches": [
+        {
+          "pose": 162,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1260,
+      "native_screen_matching_pixels": 1174
+    },
+    {
+      "frame": "frame-000066",
+      "exact_source_matches": [
+        {
+          "pose": 162,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1260,
+      "native_screen_matching_pixels": 1174
+    },
+    {
+      "frame": "frame-000072",
+      "exact_source_matches": [
+        {
+          "pose": 162,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1260,
+      "native_screen_matching_pixels": 1174
+    },
+    {
+      "frame": "frame-000078",
+      "exact_source_matches": [
+        {
+          "pose": 162,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1260,
+      "native_screen_matching_pixels": 1174
+    },
+    {
+      "frame": "frame-000084",
+      "exact_source_matches": [
+        {
+          "pose": 162,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1260,
+      "native_screen_matching_pixels": 1174
+    },
+    {
+      "frame": "frame-000090",
+      "exact_source_matches": [
+        {
+          "pose": 213,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 728,
+      "native_screen_matching_pixels": 669
+    },
+    {
+      "frame": "frame-000096",
+      "exact_source_matches": [
+        {
+          "pose": 214,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 870,
+      "native_screen_matching_pixels": 834
+    },
+    {
+      "frame": "frame-000102",
+      "exact_source_matches": [
+        {
+          "pose": 215,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1406,
+      "native_screen_matching_pixels": 757
+    },
+    {
+      "frame": "frame-000108",
+      "exact_source_matches": [
+        {
+          "pose": 67,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1182,
+      "native_screen_matching_pixels": 427
+    },
+    {
+      "frame": "frame-000114",
+      "exact_source_matches": [
+        {
+          "pose": 65,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1038,
+      "native_screen_matching_pixels": 952
+    },
+    {
+      "frame": "frame-000120",
+      "exact_source_matches": [
+        {
+          "pose": 66,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1383,
+      "native_screen_matching_pixels": 1347
+    },
+    {
+      "frame": "frame-000126",
+      "exact_source_matches": [
+        {
+          "pose": 67,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1182,
+      "native_screen_matching_pixels": 1158
+    },
+    {
+      "frame": "frame-000132",
+      "exact_source_matches": [
+        {
+          "pose": 68,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1091,
+      "native_screen_matching_pixels": 1054
+    },
+    {
+      "frame": "frame-000138",
+      "exact_source_matches": [
+        {
+          "pose": 69,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1287,
+      "native_screen_matching_pixels": 1231
+    },
+    {
+      "frame": "frame-000144",
+      "exact_source_matches": [
+        {
+          "pose": 94,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1304,
+      "native_screen_matching_pixels": 1264
+    },
+    {
+      "frame": "frame-000150",
+      "exact_source_matches": [],
+      "opaque_pixels": 1542,
+      "native_screen_matching_pixels": 1500
+    },
+    {
+      "frame": "frame-000156",
+      "exact_source_matches": [],
+      "opaque_pixels": 1204,
+      "native_screen_matching_pixels": 1162
+    },
+    {
+      "frame": "frame-000162",
+      "exact_source_matches": [],
+      "opaque_pixels": 780,
+      "native_screen_matching_pixels": 762
+    },
+    {
+      "frame": "frame-000168",
+      "exact_source_matches": [],
+      "opaque_pixels": 554,
+      "native_screen_matching_pixels": 511
+    },
+    {
+      "frame": "frame-000174",
+      "exact_source_matches": [],
+      "opaque_pixels": 798,
+      "native_screen_matching_pixels": 745
+    },
+    {
+      "frame": "frame-000180",
+      "exact_source_matches": [
+        {
+          "pose": 99,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1133,
+      "native_screen_matching_pixels": 1080
+    },
+    {
+      "frame": "frame-000186",
+      "exact_source_matches": [
+        {
+          "pose": 65,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1038,
+      "native_screen_matching_pixels": 1003
+    },
+    {
+      "frame": "frame-000192",
+      "exact_source_matches": [
+        {
+          "pose": 66,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1383,
+      "native_screen_matching_pixels": 1351
+    },
+    {
+      "frame": "frame-000198",
+      "exact_source_matches": [
+        {
+          "pose": 67,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1182,
+      "native_screen_matching_pixels": 1158
+    },
+    {
+      "frame": "frame-000204",
+      "exact_source_matches": [
+        {
+          "pose": 65,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1038,
+      "native_screen_matching_pixels": 1003
+    },
+    {
+      "frame": "frame-000210",
+      "exact_source_matches": [
+        {
+          "pose": 66,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1383,
+      "native_screen_matching_pixels": 1351
+    },
+    {
+      "frame": "frame-000216",
+      "exact_source_matches": [
+        {
+          "pose": 67,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1182,
+      "native_screen_matching_pixels": 1098
+    },
+    {
+      "frame": "frame-000222",
+      "exact_source_matches": [
+        {
+          "pose": 4,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1226,
+      "native_screen_matching_pixels": 916
+    },
+    {
+      "frame": "frame-000228",
+      "exact_source_matches": [
+        {
+          "pose": 10,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1070,
+      "native_screen_matching_pixels": 1031
+    },
+    {
+      "frame": "frame-000234",
+      "exact_source_matches": [
+        {
+          "pose": 11,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1159,
+      "native_screen_matching_pixels": 1098
+    },
+    {
+      "frame": "frame-000240",
+      "exact_source_matches": [
+        {
+          "pose": 25,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1200,
+      "native_screen_matching_pixels": 1113
+    },
+    {
+      "frame": "frame-000246",
+      "exact_source_matches": [
+        {
+          "pose": 24,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1165,
+      "native_screen_matching_pixels": 1067
+    },
+    {
+      "frame": "frame-000252",
+      "exact_source_matches": [
+        {
+          "pose": 18,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1246,
+      "native_screen_matching_pixels": 1125
+    },
+    {
+      "frame": "frame-000258",
+      "exact_source_matches": [
+        {
+          "pose": 17,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1331,
+      "native_screen_matching_pixels": 1201
+    },
+    {
+      "frame": "frame-000264",
+      "exact_source_matches": [
+        {
+          "pose": 17,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1331,
+      "native_screen_matching_pixels": 1201
+    },
+    {
+      "frame": "frame-000270",
+      "exact_source_matches": [
+        {
+          "pose": 17,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1331,
+      "native_screen_matching_pixels": 1201
+    },
+    {
+      "frame": "frame-000276",
+      "exact_source_matches": [
+        {
+          "pose": 26,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1162,
+      "native_screen_matching_pixels": 1057
+    },
+    {
+      "frame": "frame-000282",
+      "exact_source_matches": [
+        {
+          "pose": 27,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1140,
+      "native_screen_matching_pixels": 1064
+    },
+    {
+      "frame": "frame-000288",
+      "exact_source_matches": [
+        {
+          "pose": 28,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1193,
+      "native_screen_matching_pixels": 1114
+    },
+    {
+      "frame": "frame-000294",
+      "exact_source_matches": [
+        {
+          "pose": 18,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1246,
+      "native_screen_matching_pixels": 1150
+    },
+    {
+      "frame": "frame-000300",
+      "exact_source_matches": [
+        {
+          "pose": 161,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1337,
+      "native_screen_matching_pixels": 1242
+    },
+    {
+      "frame": "frame-000306",
+      "exact_source_matches": [
+        {
+          "pose": 161,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1337,
+      "native_screen_matching_pixels": 1242
+    },
+    {
+      "frame": "frame-000312",
+      "exact_source_matches": [
+        {
+          "pose": 162,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1260,
+      "native_screen_matching_pixels": 1173
+    },
+    {
+      "frame": "frame-000318",
+      "exact_source_matches": [
+        {
+          "pose": 162,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1260,
+      "native_screen_matching_pixels": 1173
+    },
+    {
+      "frame": "frame-000324",
+      "exact_source_matches": [
+        {
+          "pose": 162,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1260,
+      "native_screen_matching_pixels": 1173
+    },
+    {
+      "frame": "frame-000330",
+      "exact_source_matches": [
+        {
+          "pose": 162,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1260,
+      "native_screen_matching_pixels": 1173
+    },
+    {
+      "frame": "frame-000336",
+      "exact_source_matches": [
+        {
+          "pose": 162,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1260,
+      "native_screen_matching_pixels": 1173
+    },
+    {
+      "frame": "frame-000342",
+      "exact_source_matches": [
+        {
+          "pose": 162,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1260,
+      "native_screen_matching_pixels": 1173
+    },
+    {
+      "frame": "frame-000348",
+      "exact_source_matches": [
+        {
+          "pose": 162,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1260,
+      "native_screen_matching_pixels": 1173
+    },
+    {
+      "frame": "frame-000354",
+      "exact_source_matches": [
+        {
+          "pose": 162,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1260,
+      "native_screen_matching_pixels": 1173
+    },
+    {
+      "frame": "frame-000360",
+      "exact_source_matches": [
+        {
+          "pose": 162,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1260,
+      "native_screen_matching_pixels": 1173
+    },
+    {
+      "frame": "frame-000366",
+      "exact_source_matches": [
+        {
+          "pose": 162,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1260,
+      "native_screen_matching_pixels": 1173
+    },
+    {
+      "frame": "frame-000372",
+      "exact_source_matches": [
+        {
+          "pose": 162,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1260,
+      "native_screen_matching_pixels": 1173
+    },
+    {
+      "frame": "frame-000378",
+      "exact_source_matches": [
+        {
+          "pose": 213,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 728,
+      "native_screen_matching_pixels": 652
+    },
+    {
+      "frame": "frame-000384",
+      "exact_source_matches": [
+        {
+          "pose": 214,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 870,
+      "native_screen_matching_pixels": 795
+    },
+    {
+      "frame": "frame-000390",
+      "exact_source_matches": [
+        {
+          "pose": 215,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1406,
+      "native_screen_matching_pixels": 707
+    },
+    {
+      "frame": "frame-000396",
+      "exact_source_matches": [
+        {
+          "pose": 67,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1182,
+      "native_screen_matching_pixels": 385
+    },
+    {
+      "frame": "frame-000402",
+      "exact_source_matches": [
+        {
+          "pose": 94,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1304,
+      "native_screen_matching_pixels": 1216
+    },
+    {
+      "frame": "frame-000408",
+      "exact_source_matches": [
+        {
+          "pose": 95,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1563,
+      "native_screen_matching_pixels": 1460
+    },
+    {
+      "frame": "frame-000414",
+      "exact_source_matches": [
+        {
+          "pose": 96,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1313,
+      "native_screen_matching_pixels": 1223
+    },
+    {
+      "frame": "frame-000420",
+      "exact_source_matches": [
+        {
+          "pose": 97,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1227,
+      "native_screen_matching_pixels": 1072
+    },
+    {
+      "frame": "frame-000426",
+      "exact_source_matches": [
+        {
+          "pose": 97,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1227,
+      "native_screen_matching_pixels": 1072
+    },
+    {
+      "frame": "frame-000432",
+      "exact_source_matches": [
+        {
+          "pose": 98,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1167,
+      "native_screen_matching_pixels": 942
+    },
+    {
+      "frame": "frame-000438",
+      "exact_source_matches": [
+        {
+          "pose": 99,
+          "hflip": true
+        }
+      ],
+      "opaque_pixels": 1133,
+      "native_screen_matching_pixels": 882
+    },
+    {
+      "frame": "frame-000444",
+      "exact_source_matches": [
+        {
+          "pose": 65,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1038,
+      "native_screen_matching_pixels": 969
+    },
+    {
+      "frame": "frame-000450",
+      "exact_source_matches": [
+        {
+          "pose": 66,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1383,
+      "native_screen_matching_pixels": 1273
+    },
+    {
+      "frame": "frame-000456",
+      "exact_source_matches": [
+        {
+          "pose": 67,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1182,
+      "native_screen_matching_pixels": 1070
+    },
+    {
+      "frame": "frame-000462",
+      "exact_source_matches": [
+        {
+          "pose": 34,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1109,
+      "native_screen_matching_pixels": 1042
+    },
+    {
+      "frame": "frame-000468",
+      "exact_source_matches": [
+        {
+          "pose": 35,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1191,
+      "native_screen_matching_pixels": 1098
+    },
+    {
+      "frame": "frame-000474",
+      "exact_source_matches": [
+        {
+          "pose": 36,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1162,
+      "native_screen_matching_pixels": 1107
+    },
+    {
+      "frame": "frame-000480",
+      "exact_source_matches": [
+        {
+          "pose": 37,
+          "hflip": false
+        }
+      ],
+      "opaque_pixels": 1044,
+      "native_screen_matching_pixels": 850
+    }
+  ]
+}

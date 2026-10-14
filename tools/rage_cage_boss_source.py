@@ -3,13 +3,15 @@ from pathlib import Path
 from PIL import Image,ImageDraw
 import bisect
 import argparse,json
-ap=argparse.ArgumentParser(description='Provisional Rage in the Cage Boss Man static artwork decoder; not a native animation verifier.')
-ap.add_argument('chr',type=Path);ap.add_argument('tab',type=Path);ap.add_argument('--output',type=Path,required=True)
-args=ap.parse_args();args.output.mkdir(parents=True,exist_ok=True)
-T=args.tab.read_bytes();C=args.chr.read_bytes()
-if len(T)!=47370 or len(C)!=212480:raise ValueError('Unexpected Boss Man source file sizes')
+T=C=b''
+starts=offs=[]
+def load_source(chr_path,tab_path):
+ global T,C,starts,offs
+ T=Path(tab_path).read_bytes();C=Path(chr_path).read_bytes()
+ if len(T)!=47370 or len(C)!=212480:raise ValueError('Unexpected Boss Man source file sizes')
+ starts=[int.from_bytes(C[i*4:i*4+4],'big') for i in range(28)]
+ offs=[int.from_bytes(C[128+i*4:132+i*4],'big') for i in range(28)]
 def word(b,a):return int.from_bytes(b[a:a+2],'big')
-starts=[int.from_bytes(C[i*4:i*4+4],'big') for i in range(28)];offs=[int.from_bytes(C[128+i*4:132+i*4],'big') for i in range(28)]
 def tile(n):
  k=bisect.bisect_right(starts,n)-1
  if k==27:
@@ -52,21 +54,33 @@ def pose(n):
   c=component(n);mask=Image.frombytes('L',c.size,bytes(255 if x else 0 for x in c.get_flattened_data()));im.paste(c,(96+dx,128+dy),mask)
  return im
 
-pal=sum(([i*17]*3 for i in range(16)),[])+[0]*720
-records=[];images=[]
-for i in range(415):
- im=pose(i);im.putpalette(pal);images.append(im.convert('RGB'));records.append({'pose':i,'bbox':im.getbbox()})
-for page in range(7):
- sheet=Image.new('RGB',(8*160,8*200),(40,40,45));d=ImageDraw.Draw(sheet)
- for cell in range(64):
-  i=page*64+cell
-  if i>=len(images):break
-  im=images[i];box=Image.frombytes('L',(192,192),bytes(255 if v else 0 for v in pose(i).get_flattened_data())).getbbox()
-  if box:
-   crop=im.crop(box);crop=crop.resize((crop.width*2,crop.height*2),Image.Resampling.NEAREST);sheet.paste(crop,(cell%8*160,cell//8*200+20))
-  d.text((cell%8*160,cell//8*200),str(i),fill='white')
- sheet.save(args.output/f'poses-{page+1}.png')
-frames=[images[i].resize((576,576),Image.Resampling.NEAREST) for i in range(12,18)]
-frames[0].save(args.output/'walk-pose-study.gif',save_all=True,append_images=frames[1:],duration=120,loop=0)
-(args.output/'inventory.json').write_text(json.dumps({'composite_entries':len(records),'native_verified':False,'palette':'temporary grayscale','animation_timing':'illustration only','poses':records},indent=2))
-print(f'Decoded {len(records)} composite entries; native verification pending.')
+def main():
+ ap=argparse.ArgumentParser(description='Rage in the Cage Boss Man artwork decoder.')
+ ap.add_argument('chr',type=Path);ap.add_argument('tab',type=Path);ap.add_argument('--output',type=Path,required=True)
+ ap.add_argument('--native-prefix',type=Path,help='Private Boss Man gameplay snapshot prefix for palette 2')
+ args=ap.parse_args();args.output.mkdir(parents=True,exist_ok=True);load_source(args.chr,args.tab)
+ pal=sum(([i*17]*3 for i in range(16)),[])+[0]*720
+ if args.native_prefix:
+  from genesis_sprite_capture import word as native_word,native_color
+  c=Path(str(args.native_prefix)+'-cgram.bin').read_bytes()
+  if len(c)!=128:raise ValueError('Not a Genesis CRAM snapshot')
+  pal=sum((list(native_color(native_word(c,64+i*2))) for i in range(16)),[])+[0]*720
+ records=[];images=[]
+ for i in range(415):
+  im=pose(i);im.putpalette(pal);images.append(im.convert('RGB'));records.append({'pose':i,'bbox':im.getbbox()})
+ for page in range(7):
+  sheet=Image.new('RGB',(8*160,8*200),(40,40,45));d=ImageDraw.Draw(sheet)
+  for cell in range(64):
+   i=page*64+cell
+   if i>=len(images):break
+   im=images[i];box=Image.frombytes('L',(192,192),bytes(255 if v else 0 for v in pose(i).get_flattened_data())).getbbox()
+   if box:
+    crop=im.crop(box);crop=crop.resize((crop.width*2,crop.height*2),Image.Resampling.NEAREST);sheet.paste(crop,(cell%8*160,cell//8*200+20))
+   d.text((cell%8*160,cell//8*200),str(i),fill='white')
+  sheet.save(args.output/f'poses-{page+1}.png')
+ frames=[images[i].resize((576,576),Image.Resampling.NEAREST) for i in range(12,18)]
+ frames[0].save(args.output/'walk-pose-study.gif',save_all=True,append_images=frames[1:],duration=120,loop=0)
+ (args.output/'inventory.json').write_text(json.dumps({'composite_entries':len(records),'native_verified':False,'palette':'native palette 2' if args.native_prefix else 'temporary grayscale','animation_timing':'illustration only','poses':records},indent=2))
+ print(f'Decoded {len(records)} composite entries; native verification pending.')
+
+if __name__=='__main__':main()
