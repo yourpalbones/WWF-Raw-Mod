@@ -66,7 +66,7 @@ def main():
     move_start = None
     plan = []          # queued (frames, held) actions
     phase, tries, after = 'approach', 0, 0
-    side, stuck, recoveries, last_x = a.side, 0, 0, None
+    side, stuck, recoveries, last_x, p1_busy = a.side, 0, 0, None, 0
     for k in range(1, a.max_frames + 1):
         if k < setup_end:
             held = {0: {b for port, s, b, d in setup if port == 0 and s <= k < s + d},
@@ -95,7 +95,11 @@ def main():
                 last_x = x1
                 walking = (0, 2, 4, 6, 8)
                 idle = st['action'][0] in walking and st['action'][1] in walking
-                if st['action'][1] not in walking:
+                p1_busy = 0 if st['action'][0] in walking else p1_busy + 1
+                if p1_busy > 15:
+                    # P1 has been down for about two seconds (each step is ~8 frames): mash to get up, as P2 does.
+                    plan = [(4, {0: {(B, 1, 8)[(k // 4) % 3]}, 1: set()}), (4, {0: set(), 1: set()})]
+                elif st['action'][1] not in walking:
                     # The receiver is down or busy: P1 waits; P2 mashes to get up (controller input only).
                     plan = [(4, {0: set(), 1: {(B, 1, 8)[(k // 4) % 3]}}), (4, {0: set(), 1: set()})]
                 elif st['action'][0] not in walking:
