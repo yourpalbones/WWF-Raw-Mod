@@ -4488,29 +4488,34 @@
   ]
  ],
  "build": "stock import v4 (Mr. Perfect with Royal pose pieces and Royal heads; receivers rebuilt from Royal)",
- "expected_build": "55e331ba086f01a4e8c6319a8baaff27bc7a56ca7ac69526af348574768532d0",
+ "expected_build": "281bcd361265a48d0074ebc277c6312523df54bd1e3694b5a93545a3e9ca22be",
  "expected": {
-  "frames_measured": 142,
-  "frames_fully_matched": 139,
+  "frames_measured": 178,
+  "frames_fully_matched": 133,
   "flip_pairs": {
-   "(False, True)": 139
+   "(False, True)": 133
   },
   "receiver_body_terms": {
-   "-45": 139
+   "-45": 131,
+   "-44": 1,
+   "36": 1
   },
   "actor_spacing": {
-   "40": 139
+   "40": 131,
+   "39": 1,
+   "-41": 1
   },
   "registration_errors": {},
   "receiver_trailing_palette6_during_move": {
    "2": 3,
-   "4": 139
+   "4": 133,
+   "0": 41
   },
   "frames_with_foreign_palette6_during_move": 0,
   "receiver_shadow_offset_during_move": {
    "min": -4.0,
    "max": 10.0,
-   "frames": 142
+   "frames": 136
   },
   "receiver_health_changes": [
    [
@@ -4534,17 +4539,48 @@
    1.0,
    1.0
   ],
+  "exit": {
+   "hold_frames": 56,
+   "exit_preview_match": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "start_spacing": 40,
+   "final_spacing": -41,
+   "start_y": [
+    208,
+    208
+   ],
+   "final_y": [
+    208,
+    208
+   ],
+   "final_actions": [
+    0,
+    70
+   ]
+  },
   "after_move": {
    "actions": {
-    "[0, 70]": 109
+    "[0, 70]": 73
    },
    "attacker_pose_shown": {
-    "11": 2,
-    "None": 107
+    "None": 73
    },
    "receiver_pose_shown": {
-    "11": 2,
-    "None": 107
+    "None": 73
    }
   },
   "receiver_pixel_match_min": null,

@@ -144,19 +144,30 @@ def special_rows(moves):
     return rows
 
 
+# The Perfect-Plex exit works natively; these are its remaining differences from Royal (docs/perfect-plex-exit.md).
+EXIT_DIFFERENCES = ("Exit (pin, release, recovery) native-verified, awaiting review; differs from Royal: Raw's 7-frame "
+                    "step (get-up 42 frames, Royal 35), receiver lies 41 px away (Royal 33; Raw's downed-collision "
+                    "rule), Raw's camera pans 13 px during the get-up")
+RECEIVER_EXIT = ("Exit (roll-off, lying on Perfect's far side) uses Raw's own drawings in this slot's art, 41 px from "
+                 "Perfect (Royal 33); native-verified, awaiting review (docs/perfect-plex-exit.md)")
+
+
 def perfect_plex_rows(receivers):
     rows = []
     workers = {w['selector']: w for w in receivers['workers']}
     # Performer
     rows.append(row(12, 'finisher:Perfect-Plex', 'performer', 'native_port', 'verified_visual',
-                    source_game='Royal Rumble', source_ids={'royal_poses': '783-806 (12 captured attacker drawings)',
-                                                            'raw_primary_indices': '1000-1011'},
+                    source_game='Royal Rumble', source_ids={'royal_poses': '783-806 (12 captured attacker drawings); exit '
+                                                                           'get-up frames 76/77 and 80/81',
+                                                            'raw_primary_indices': '1000-1011, exit 1012-1013',
+                                                            'exit_plan': 'data/perfect-plex-exit.json'},
                     descriptor_locations={'stream': '0x730000', 'descriptors': '0x730100+', 'profiles': '0x734000+'},
                     runtime_routing=PERFECT_ROUTING['perfect_plex_attacker'], palette_owner='slot 12',
                     facing='canonical: attacker drawings unmirrored (Raw art faces right unflipped); '
                            'tools/canonical_perfect_geometry.py',
-                    implementation={'branch': 'claude/charming-allen-njttcx', 'marker': 'PLEX-CANON1'},
-                    evidence=['docs/perfect-plex-fix-report.md',
+                    implementation={'branch': 'claude/charming-allen-njttcx', 'marker': 'PLEX-CANON2'},
+                    evidence=['docs/perfect-plex-fix-report.md', 'docs/perfect-plex-exit.md', 'data/perfect-plex-exit.json',
+                              'evidence/perfect-plex-exit/README.md',
                               'evidence/perfect-plex-receivers/fixed/verification.json',
                               'evidence/perfect-plex-receivers/fixed/undertaker-left-right-rope-before-after.gif',
                               'evidence/perfect-plex-receivers/fixed/undertaker-right-right-rope-before-after.gif',
@@ -165,11 +176,12 @@ def perfect_plex_rows(receivers):
                               'evidence/mr-perfect-import/README.md',
                               'docs/perfect-plex-native-trace.md', 'docs/perfect-plex-gaps.md'],
                     aliases='private (tile IDs C000+ written per pose, no sharing with stock slots)',
-                    defects=['No bridge-to-pin (PP-5)',
+                    defects=[EXIT_DIFFERENCES,
                              "Perfect's shadow is drawn green in every capture inspected, also outside the "
                              'Perfect-Plex (palette entry of the imported worker; not changed)'],
                     fixed=['PP-0 announcer bank-table stride (stock 3 MiB imports reach a match)',
-                           'PP-1 side swap', 'PP-4 frozen Perfect-Plex pose after the move']))
+                           'PP-1 side swap', 'PP-4 frozen Perfect-Plex pose after the move',
+                           'PP-5 pin hold, release and both wrestlers\' recovery after the bridge (docs/perfect-plex-exit.md)']))
     for slot in range(13):
         royal = RAW_TO_ROYAL.get(slot)
         common = dict(source_game='Royal Rumble' if royal is not None else None,
@@ -194,7 +206,7 @@ def perfect_plex_rows(receivers):
             rows.append(row(slot, 'finisher:Perfect-Plex', 'receiver', 'own_art_adapted',
                             'verified_visual' if own else 'untested',
                             variant='target (Royal drawings in own pixels' + (', Scott Hall gear applied)' if slot == 5 else ')'),
-                            implementation={'branch': 'claude/charming-allen-njttcx', 'marker': 'ROYAL-RX3',
+                            implementation={'branch': 'claude/charming-allen-njttcx', 'marker': 'ROYAL-RX4',
                                             'source': 'editor/receiving-art.js reskin + recipes.reskin'},
                             source_ids={'plan': 'data/receiver-reskin-plan.json (tools/plan_receiver_reskin.py): '
                                                 'per pixel of the Royal donor drawing, an own piece and offset'},
@@ -204,13 +216,13 @@ def perfect_plex_rows(receivers):
                             aliases='private tiles per worker (RX3); editing one worker changes no other worker '
                                     '(tools/check_receiver_isolation.py)',
                             evidence=['docs/complete-wrestler-art.md', 'tools/verify_perfect_receivers_native.py']
-                                     + ([] if slot == 5 else ['evidence/complete-wrestler-art/verification-stock-v4.json'])
-                                     + (['evidence/complete-wrestler-art/verification-gear-mod-v4.json']
+                                     + ([] if slot == 5 else ['evidence/complete-wrestler-art/verification-stock-v5.json'])
+                                     + (['evidence/complete-wrestler-art/verification-gear-mod-v5.json']
                                         if any('gear' in r['scenario'] for r in own) else [])
                                      + [f"evidence/perfect-plex-receivers/recipes/{r['scenario']}.json" for r in own] + gifs,
                             defects=["Automatic rebuild of Royal's drawings from the wrestler's own pixels; some regions "
                                      "are blotchy where the costume differs most from the donor's (awaiting visual review)",
-                                     'No bridge-to-pin (PP-5)', 'Not released; draft PR #1 for review'],
+                                     RECEIVER_EXIT, 'Not released; draft PR #1 for review'],
                             **common))
             if royal is None:
                 continue
@@ -242,7 +254,7 @@ def perfect_plex_rows(receivers):
         if measured:
             gameplay = 'verified_visual'
             evidence = ['data/perfect-receivers.json', 'docs/perfect-plex-fix-report.md',
-                        'evidence/complete-wrestler-art/verification-stock-v4.json',
+                        'evidence/complete-wrestler-art/verification-stock-v5.json',
                         'evidence/perfect-plex-receivers/fixed/verification.json',
                         'tools/verify_perfect_receivers_native.py']
             evidence += [f"evidence/perfect-plex-receivers/recipes/{r['scenario']}.json" for r in measured]
@@ -257,7 +269,7 @@ def perfect_plex_rows(receivers):
                                                      for r in measured),
                       'defect_baseline': 'recipes[].defect_baseline (WIP 2955d5c: PP-1/2/3/4/7)'}
             defects = ['Not released; draft PR #1 for Codex review',
-                       'No bridge-to-pin (PP-5)',
+                       RECEIVER_EXIT,
                        'Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)']
         if slot == 12:
             gameplay = 'untested'
@@ -270,7 +282,7 @@ def perfect_plex_rows(receivers):
                         variant='target (own receiving art): seven-counterpart build',
                         native=native,
                         implementation={'branch': 'claude/charming-allen-njttcx (from codex/perfect-receivers-wip '
-                                                  '@ 2955d5c)', 'marker': 'ROYAL-RX3',
+                                                  '@ 2955d5c)', 'marker': 'ROYAL-RX4',
                                         'tile_allocation': 'per-slot private map, global ID counter and packet '
                                                            'cursor (code inspection only)'},
                         source_ids={'royal_selector': royal, 'royal_name': ROYAL_ROSTER[royal],

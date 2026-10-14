@@ -1292,8 +1292,9 @@
    "gameplay_status": "verified_visual",
    "source_game": "Royal Rumble",
    "source_ids": {
-    "royal_poses": "783-806 (12 captured attacker drawings)",
-    "raw_primary_indices": "1000-1011"
+    "royal_poses": "783-806 (12 captured attacker drawings); exit get-up frames 76/77 and 80/81",
+    "raw_primary_indices": "1000-1011, exit 1012-1013",
+    "exit_plan": "data/perfect-plex-exit.json"
    },
    "descriptor_locations": {
     "stream": "0x730000",
@@ -1305,10 +1306,13 @@
    "facing": "canonical: attacker drawings unmirrored (Raw art faces right unflipped); tools/canonical_perfect_geometry.py",
    "implementation": {
     "branch": "claude/charming-allen-njttcx",
-    "marker": "PLEX-CANON1"
+    "marker": "PLEX-CANON2"
    },
    "evidence": [
     "docs/perfect-plex-fix-report.md",
+    "docs/perfect-plex-exit.md",
+    "data/perfect-plex-exit.json",
+    "evidence/perfect-plex-exit/README.md",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "evidence/perfect-plex-receivers/fixed/undertaker-left-right-rope-before-after.gif",
     "evidence/perfect-plex-receivers/fixed/undertaker-right-right-rope-before-after.gif",
@@ -1320,13 +1324,14 @@
    ],
    "aliases": "private (tile IDs C000+ written per pose, no sharing with stock slots)",
    "defects": [
-    "No bridge-to-pin (PP-5)",
+    "Exit (pin, release, recovery) native-verified, awaiting review; differs from Royal: Raw's 7-frame step (get-up 42 frames, Royal 35), receiver lies 41 px away (Royal 33; Raw's downed-collision rule), Raw's camera pans 13 px during the get-up",
     "Perfect's shadow is drawn green in every capture inspected, also outside the Perfect-Plex (palette entry of the imported worker; not changed)"
    ],
    "fixed": [
     "PP-0 announcer bank-table stride (stock 3 MiB imports reach a match)",
     "PP-1 side swap",
-    "PP-4 frozen Perfect-Plex pose after the move"
+    "PP-4 frozen Perfect-Plex pose after the move",
+    "PP-5 pin hold, release and both wrestlers' recovery after the bridge (docs/perfect-plex-exit.md)"
    ]
   },
   {
@@ -1362,7 +1367,7 @@
    "variant": "target (Royal drawings in own pixels)",
    "implementation": {
     "branch": "claude/charming-allen-njttcx",
-    "marker": "ROYAL-RX3",
+    "marker": "ROYAL-RX4",
     "source": "editor/receiving-art.js reskin + recipes.reskin"
    },
    "source_ids": {
@@ -1374,6 +1379,7 @@
      "luna-attacker-right"
     ],
     "builds": [
+     "281bcd361265a48d",
      "55e331ba086f01a4"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
@@ -1382,7 +1388,6 @@
    "evidence": [
     "docs/complete-wrestler-art.md",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/complete-wrestler-art/verification-stock-v4.json",
     "evidence/perfect-plex-receivers/recipes/luna-attacker-left.json",
     "evidence/perfect-plex-receivers/recipes/luna-attacker-right.json",
     "evidence/complete-wrestler-art/luna-attacker-left.gif",
@@ -1390,7 +1395,7 @@
    ],
    "defects": [
     "Automatic rebuild of Royal's drawings from the wrestler's own pixels; some regions are blotchy where the costume differs most from the donor's (awaiting visual review)",
-    "No bridge-to-pin (PP-5)",
+    "Exit (roll-off, lying on Perfect's far side) uses Raw's own drawings in this slot's art, 41 px from Perfect (Royal 33); native-verified, awaiting review (docs/perfect-plex-exit.md)",
     "Not released; draft PR #1 for review"
    ],
    "source_game": null,
@@ -1432,7 +1437,7 @@
     "scenarios": [
      "bret-attacker-left"
     ],
-    "build_sha256": "55e331ba086f01a4e8c6319a8baaff27bc7a56ca7ac69526af348574768532d0",
+    "build_sha256": "281bcd361265a48d0074ebc277c6312523df54bd1e3694b5a93545a3e9ca22be",
     "registration_error_px": [
      0
     ],
@@ -1441,7 +1446,7 @@
    },
    "implementation": {
     "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
-    "marker": "ROYAL-RX3",
+    "marker": "ROYAL-RX4",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -1503,14 +1508,13 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
-    "evidence/complete-wrestler-art/verification-stock-v4.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
     "evidence/perfect-plex-receivers/recipes/bret-attacker-left.json"
    ],
    "defects": [
     "Not released; draft PR #1 for Codex review",
-    "No bridge-to-pin (PP-5)",
+    "Exit (roll-off, lying on Perfect's far side) uses Raw's own drawings in this slot's art, 41 px from Perfect (Royal 33); native-verified, awaiting review (docs/perfect-plex-exit.md)",
     "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
    ],
    "source_game": "Royal Rumble",
@@ -1579,7 +1583,7 @@
      "undertaker-attacker-left-2",
      "undertaker-attacker-left"
     ],
-    "build_sha256": "55e331ba086f01a4e8c6319a8baaff27bc7a56ca7ac69526af348574768532d0",
+    "build_sha256": "281bcd361265a48d0074ebc277c6312523df54bd1e3694b5a93545a3e9ca22be",
     "registration_error_px": [
      0
     ],
@@ -1588,7 +1592,7 @@
    },
    "implementation": {
     "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
-    "marker": "ROYAL-RX3",
+    "marker": "ROYAL-RX4",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -1650,7 +1654,6 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
-    "evidence/complete-wrestler-art/verification-stock-v4.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
     "evidence/perfect-plex-receivers/recipes/undertaker-attacker-left-2.json",
@@ -1661,7 +1664,7 @@
    ],
    "defects": [
     "Not released; draft PR #1 for Codex review",
-    "No bridge-to-pin (PP-5)",
+    "Exit (roll-off, lying on Perfect's far side) uses Raw's own drawings in this slot's art, 41 px from Perfect (Royal 33); native-verified, awaiting review (docs/perfect-plex-exit.md)",
     "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
    ],
    "source_game": "Royal Rumble",
@@ -1703,7 +1706,7 @@
     "scenarios": [
      "yokozuna-attacker-right"
     ],
-    "build_sha256": "55e331ba086f01a4e8c6319a8baaff27bc7a56ca7ac69526af348574768532d0",
+    "build_sha256": "281bcd361265a48d0074ebc277c6312523df54bd1e3694b5a93545a3e9ca22be",
     "registration_error_px": [
      0
     ],
@@ -1712,7 +1715,7 @@
    },
    "implementation": {
     "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
-    "marker": "ROYAL-RX3",
+    "marker": "ROYAL-RX4",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -1774,14 +1777,13 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
-    "evidence/complete-wrestler-art/verification-stock-v4.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
     "evidence/perfect-plex-receivers/recipes/yokozuna-attacker-right.json"
    ],
    "defects": [
     "Not released; draft PR #1 for Codex review",
-    "No bridge-to-pin (PP-5)",
+    "Exit (roll-off, lying on Perfect's far side) uses Raw's own drawings in this slot's art, 41 px from Perfect (Royal 33); native-verified, awaiting review (docs/perfect-plex-exit.md)",
     "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
    ],
    "source_game": "Royal Rumble",
@@ -1821,7 +1823,7 @@
    "variant": "target (Royal drawings in own pixels)",
    "implementation": {
     "branch": "claude/charming-allen-njttcx",
-    "marker": "ROYAL-RX3",
+    "marker": "ROYAL-RX4",
     "source": "editor/receiving-art.js reskin + recipes.reskin"
    },
    "source_ids": {
@@ -1832,7 +1834,7 @@
      "bambam-attacker-left"
     ],
     "builds": [
-     "55e331ba086f01a4"
+     "281bcd361265a48d"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -1840,13 +1842,12 @@
    "evidence": [
     "docs/complete-wrestler-art.md",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/complete-wrestler-art/verification-stock-v4.json",
     "evidence/perfect-plex-receivers/recipes/bambam-attacker-left.json",
     "evidence/complete-wrestler-art/bambam-attacker-left.gif"
    ],
    "defects": [
     "Automatic rebuild of Royal's drawings from the wrestler's own pixels; some regions are blotchy where the costume differs most from the donor's (awaiting visual review)",
-    "No bridge-to-pin (PP-5)",
+    "Exit (roll-off, lying on Perfect's far side) uses Raw's own drawings in this slot's art, 41 px from Perfect (Royal 33); native-verified, awaiting review (docs/perfect-plex-exit.md)",
     "Not released; draft PR #1 for review"
    ],
    "source_game": null,
@@ -1886,7 +1887,7 @@
    "variant": "target (Royal drawings in own pixels, Scott Hall gear applied)",
    "implementation": {
     "branch": "claude/charming-allen-njttcx",
-    "marker": "ROYAL-RX3",
+    "marker": "ROYAL-RX4",
     "source": "editor/receiving-art.js reskin + recipes.reskin"
    },
    "source_ids": {
@@ -1897,7 +1898,7 @@
      "scott-gear-attacker-left"
     ],
     "builds": [
-     "a2dd91b0ff8cb627"
+     "a3316c5a8295e67e"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -1905,13 +1906,12 @@
    "evidence": [
     "docs/complete-wrestler-art.md",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/complete-wrestler-art/verification-gear-mod-v4.json",
     "evidence/perfect-plex-receivers/recipes/scott-gear-attacker-left.json",
     "evidence/complete-wrestler-art/scott-gear-attacker-left.gif"
    ],
    "defects": [
     "Automatic rebuild of Royal's drawings from the wrestler's own pixels; some regions are blotchy where the costume differs most from the donor's (awaiting visual review)",
-    "No bridge-to-pin (PP-5)",
+    "Exit (roll-off, lying on Perfect's far side) uses Raw's own drawings in this slot's art, 41 px from Perfect (Royal 33); native-verified, awaiting review (docs/perfect-plex-exit.md)",
     "Not released; draft PR #1 for review"
    ],
    "source_game": "Royal Rumble",
@@ -1930,7 +1930,7 @@
     "scenarios": [
      "razor-attacker-right"
     ],
-    "build_sha256": "55e331ba086f01a4e8c6319a8baaff27bc7a56ca7ac69526af348574768532d0",
+    "build_sha256": "281bcd361265a48d0074ebc277c6312523df54bd1e3694b5a93545a3e9ca22be",
     "registration_error_px": [
      0
     ],
@@ -1939,7 +1939,7 @@
    },
    "implementation": {
     "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
-    "marker": "ROYAL-RX3",
+    "marker": "ROYAL-RX4",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -2001,14 +2001,13 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
-    "evidence/complete-wrestler-art/verification-stock-v4.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
     "evidence/perfect-plex-receivers/recipes/razor-attacker-right.json"
    ],
    "defects": [
     "Not released; draft PR #1 for Codex review",
-    "No bridge-to-pin (PP-5)",
+    "Exit (roll-off, lying on Perfect's far side) uses Raw's own drawings in this slot's art, 41 px from Perfect (Royal 33); native-verified, awaiting review (docs/perfect-plex-exit.md)",
     "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)",
     "Royal Razor drawings are used only while slot 5 keeps its stock identity; with Scott Hall's gear the slot uses its own native drawings (row above)"
    ],
@@ -2051,7 +2050,7 @@
     "scenarios": [
      "lex-attacker-right"
     ],
-    "build_sha256": "55e331ba086f01a4e8c6319a8baaff27bc7a56ca7ac69526af348574768532d0",
+    "build_sha256": "281bcd361265a48d0074ebc277c6312523df54bd1e3694b5a93545a3e9ca22be",
     "registration_error_px": [
      0
     ],
@@ -2060,7 +2059,7 @@
    },
    "implementation": {
     "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
-    "marker": "ROYAL-RX3",
+    "marker": "ROYAL-RX4",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -2122,14 +2121,13 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
-    "evidence/complete-wrestler-art/verification-stock-v4.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
     "evidence/perfect-plex-receivers/recipes/lex-attacker-right.json"
    ],
    "defects": [
     "Not released; draft PR #1 for Codex review",
-    "No bridge-to-pin (PP-5)",
+    "Exit (roll-off, lying on Perfect's far side) uses Raw's own drawings in this slot's art, 41 px from Perfect (Royal 33); native-verified, awaiting review (docs/perfect-plex-exit.md)",
     "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
    ],
    "source_game": "Royal Rumble",
@@ -2169,7 +2167,7 @@
    "variant": "target (Royal drawings in own pixels)",
    "implementation": {
     "branch": "claude/charming-allen-njttcx",
-    "marker": "ROYAL-RX3",
+    "marker": "ROYAL-RX4",
     "source": "editor/receiving-art.js reskin + recipes.reskin"
    },
    "source_ids": {
@@ -2183,7 +2181,8 @@
     ],
     "builds": [
      "55e331ba086f01a4",
-     "a2dd91b0ff8cb627"
+     "a2dd91b0ff8cb627",
+     "a3316c5a8295e67e"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -2191,8 +2190,6 @@
    "evidence": [
     "docs/complete-wrestler-art.md",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/complete-wrestler-art/verification-stock-v4.json",
-    "evidence/complete-wrestler-art/verification-gear-mod-v4.json",
     "evidence/perfect-plex-receivers/recipes/doink-attacker-left.json",
     "evidence/perfect-plex-receivers/recipes/sting-gear-attacker-left-2.json",
     "evidence/perfect-plex-receivers/recipes/sting-gear-attacker-left.json",
@@ -2202,7 +2199,7 @@
    ],
    "defects": [
     "Automatic rebuild of Royal's drawings from the wrestler's own pixels; some regions are blotchy where the costume differs most from the donor's (awaiting visual review)",
-    "No bridge-to-pin (PP-5)",
+    "Exit (roll-off, lying on Perfect's far side) uses Raw's own drawings in this slot's art, 41 px from Perfect (Royal 33); native-verified, awaiting review (docs/perfect-plex-exit.md)",
     "Not released; draft PR #1 for review"
    ],
    "source_game": null,
@@ -2244,7 +2241,7 @@
     "scenarios": [
      "shawn-attacker-left"
     ],
-    "build_sha256": "55e331ba086f01a4e8c6319a8baaff27bc7a56ca7ac69526af348574768532d0",
+    "build_sha256": "281bcd361265a48d0074ebc277c6312523df54bd1e3694b5a93545a3e9ca22be",
     "registration_error_px": [
      0
     ],
@@ -2253,7 +2250,7 @@
    },
    "implementation": {
     "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
-    "marker": "ROYAL-RX3",
+    "marker": "ROYAL-RX4",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {
@@ -2315,14 +2312,13 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
-    "evidence/complete-wrestler-art/verification-stock-v4.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
     "evidence/perfect-plex-receivers/recipes/shawn-attacker-left.json"
    ],
    "defects": [
     "Not released; draft PR #1 for Codex review",
-    "No bridge-to-pin (PP-5)",
+    "Exit (roll-off, lying on Perfect's far side) uses Raw's own drawings in this slot's art, 41 px from Perfect (Royal 33); native-verified, awaiting review (docs/perfect-plex-exit.md)",
     "Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)"
    ],
    "source_game": "Royal Rumble",
@@ -2362,7 +2358,7 @@
    "variant": "target (Royal drawings in own pixels)",
    "implementation": {
     "branch": "claude/charming-allen-njttcx",
-    "marker": "ROYAL-RX3",
+    "marker": "ROYAL-RX4",
     "source": "editor/receiving-art.js reskin + recipes.reskin"
    },
    "source_ids": {
@@ -2374,7 +2370,7 @@
      "syxx-gear-attacker-left"
     ],
     "builds": [
-     "55e331ba086f01a4",
+     "281bcd361265a48d",
      "a2dd91b0ff8cb627"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
@@ -2383,8 +2379,6 @@
    "evidence": [
     "docs/complete-wrestler-art.md",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/complete-wrestler-art/verification-stock-v4.json",
-    "evidence/complete-wrestler-art/verification-gear-mod-v4.json",
     "evidence/perfect-plex-receivers/recipes/kid-attacker-right.json",
     "evidence/perfect-plex-receivers/recipes/syxx-gear-attacker-left.json",
     "evidence/complete-wrestler-art/kid-attacker-right.gif",
@@ -2392,7 +2386,7 @@
    ],
    "defects": [
     "Automatic rebuild of Royal's drawings from the wrestler's own pixels; some regions are blotchy where the costume differs most from the donor's (awaiting visual review)",
-    "No bridge-to-pin (PP-5)",
+    "Exit (roll-off, lying on Perfect's far side) uses Raw's own drawings in this slot's art, 41 px from Perfect (Royal 33); native-verified, awaiting review (docs/perfect-plex-exit.md)",
     "Not released; draft PR #1 for review"
    ],
    "source_game": null,
@@ -2432,7 +2426,7 @@
    "variant": "target (Royal drawings in own pixels)",
    "implementation": {
     "branch": "claude/charming-allen-njttcx",
-    "marker": "ROYAL-RX3",
+    "marker": "ROYAL-RX4",
     "source": "editor/receiving-art.js reskin + recipes.reskin"
    },
    "source_ids": {
@@ -2444,8 +2438,8 @@
      "nash-gear-attacker-right"
     ],
     "builds": [
-     "55e331ba086f01a4",
-     "a2dd91b0ff8cb627"
+     "281bcd361265a48d",
+     "a3316c5a8295e67e"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -2453,8 +2447,6 @@
    "evidence": [
     "docs/complete-wrestler-art.md",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/complete-wrestler-art/verification-stock-v4.json",
-    "evidence/complete-wrestler-art/verification-gear-mod-v4.json",
     "evidence/perfect-plex-receivers/recipes/diesel-attacker-left.json",
     "evidence/perfect-plex-receivers/recipes/nash-gear-attacker-right.json",
     "evidence/complete-wrestler-art/diesel-attacker-left.gif",
@@ -2462,7 +2454,7 @@
    ],
    "defects": [
     "Automatic rebuild of Royal's drawings from the wrestler's own pixels; some regions are blotchy where the costume differs most from the donor's (awaiting visual review)",
-    "No bridge-to-pin (PP-5)",
+    "Exit (roll-off, lying on Perfect's far side) uses Raw's own drawings in this slot's art, 41 px from Perfect (Royal 33); native-verified, awaiting review (docs/perfect-plex-exit.md)",
     "Not released; draft PR #1 for review"
    ],
    "source_game": null,
@@ -2502,7 +2494,7 @@
    "variant": "target (Royal drawings in own pixels)",
    "implementation": {
     "branch": "claude/charming-allen-njttcx",
-    "marker": "ROYAL-RX3",
+    "marker": "ROYAL-RX4",
     "source": "editor/receiving-art.js reskin + recipes.reskin"
    },
    "source_ids": {
@@ -2513,7 +2505,7 @@
      "owen-attacker-left"
     ],
     "builds": [
-     "55e331ba086f01a4"
+     "281bcd361265a48d"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -2521,13 +2513,12 @@
    "evidence": [
     "docs/complete-wrestler-art.md",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/complete-wrestler-art/verification-stock-v4.json",
     "evidence/perfect-plex-receivers/recipes/owen-attacker-left.json",
     "evidence/complete-wrestler-art/owen-attacker-left.gif"
    ],
    "defects": [
     "Automatic rebuild of Royal's drawings from the wrestler's own pixels; some regions are blotchy where the costume differs most from the donor's (awaiting visual review)",
-    "No bridge-to-pin (PP-5)",
+    "Exit (roll-off, lying on Perfect's far side) uses Raw's own drawings in this slot's art, 41 px from Perfect (Royal 33); native-verified, awaiting review (docs/perfect-plex-exit.md)",
     "Not released; draft PR #1 for review"
    ],
    "source_game": null,
@@ -2568,7 +2559,7 @@
    "native": null,
    "implementation": {
     "branch": "claude/charming-allen-njttcx (from codex/perfect-receivers-wip @ 2955d5c)",
-    "marker": "ROYAL-RX3",
+    "marker": "ROYAL-RX4",
     "tile_allocation": "per-slot private map, global ID counter and packet cursor (code inspection only)"
    },
    "source_ids": {

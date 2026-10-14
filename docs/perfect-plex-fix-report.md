@@ -156,8 +156,10 @@ All GIFs are native, nearest-neighbour enlargements, labelled with the build and
 
 ## Not done or not verified
 
-- **Bridge-to-pin (PP-5): not implemented.** After the move, the actors return to the stock
-  downed/standing flow. There is no pin transition.
+- **Bridge-to-pin (PP-5): implemented later, awaiting review.** Royal holds the bridge for 56 frames without a
+  count, then releases. Mr. Perfect gets up through Royal's six drawings, and the receiver rolls off and lies on
+  his far side. See [`perfect-plex-exit.md`](perfect-plex-exit.md) for how Raw now does this and where it still
+  differs.
 - **Raw-only workers have no receiving art:** Luna (0), Bam Bam (4), Sting (7), Syxx (9), Nash (10)
   and Owen (11). They use the generic stock-part path. Only Luna was checked natively. No slot was
   filled with another wrestler's art.

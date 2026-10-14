@@ -100,6 +100,8 @@ function activateImportedWorker(data){
   poses.push({label,category,width:right-left,height:bottom-top,parts:parts.map(p=>({...p,x:p.x-left,y:p.y-top}))});
  }
  for(let i=0;i<12;i++)pose('Perfect-Plex · '+(i+1),'Perfect-Plex',descriptor(RI.long(data,0x710000+(1000+i)*3),'primary'));
+ // The exit's Royal get-up frames follow (1012 on) in imports with the current Perfect-Plex.
+ if(RI.plexCurrent(data))for(let i=12;i<RI.plexFrames(RM).length;i++)pose('Perfect-Plex get-up · '+(i-11),'Perfect-Plex',descriptor(RI.long(data,0x710000+(1000+i)*3),'primary'));
  for(const f of RM.frames){const address=RI.long(data,(f.kind==='primary'?0x710000:0x711000)+f.index*3);pose((f.common?'Common ':'')+(f.kind==='primary'?'Upper':'Lower')+' piece '+f.index,(f.common?'common-':'')+f.kind,descriptor(address,f.kind));}
  for(const [key,p]of pointerUsers)sources[key].pointer_offsets=[...new Set(p)];
  Object.assign(C.sources,sources);C.characters.push({id:'12',character:'Mr. Perfect',palette_offset:paletteBase+0x1c0,sources,poses,
@@ -139,7 +141,7 @@ function activateReceivingPoses(data){
  }
 }
 function posesNeedUpdate(data){return hasImportedWorker(data)&&Boolean(RM.coverage.matched_royal_poses)&&!RI.posesCurrent(data);}
-function plexNeedsUpdate(data){return hasImportedWorker(data)&&(!RI.plexCurrent(data)||!RC.installed(data)||RC.outdated(data)||posesNeedUpdate(data));}
+function plexNeedsUpdate(data){return hasImportedWorker(data)&&(!RI.plexCurrent(data)||!RC.installed(data)||!RC.current(data)||posesNeedUpdate(data));}
 function refreshRoyalImport(){
  const loaded=Boolean(rom),added=loaded&&hasImportedWorker(rom);$('royal-rom').disabled=!loaded;$('royal-add').disabled=!loaded||!royalSource||added;
  $('royal-update').disabled=!added||!royalSource||!plexNeedsUpdate(rom);
@@ -147,7 +149,7 @@ function refreshRoyalImport(){
  if(added)$('royal-status').textContent='Mr. Perfect occupies slot 13, including the Perfect-Plex.'+(posesNeedUpdate(rom)?'':` ${RM.coverage.royal_poses.toLocaleString()} pieces use Royal artwork; ${RM.coverage.adapted_raw_poses.toLocaleString()} still use adapted Raw artwork (${(RM.coverage.royal_head_poses||0).toLocaleString()} of them with his Royal head, ${RM.coverage.hair_recoloured_poses.toLocaleString()} with his hair colour).`)+' Save this ROM to keep editing it later. One extra slot is supported.';
  if(added&&RI.word(rom,0x2cf212)===0x8400)$('royal-status').textContent+=' Save playable ROM to restore the referee and announcer palettes in this older import.';
  if(added&&posesNeedUpdate(rom))$('royal-status').textContent+=` This ROM has an earlier Mr. Perfect: up to ${RM.coverage.matched_royal_poses.toLocaleString()} more pieces can use his Royal artwork and ${((RM.coverage.royal_head_poses||0)+RM.coverage.hair_recoloured_poses).toLocaleString()} adapted pieces can show his Royal head or blond hair. Load Royal Rumble and choose Update Perfect-Plex; pieces you edited are kept.`;
- if(added&&plexNeedsUpdate(rom)&&!posesNeedUpdate(rom))$('royal-status').textContent+=' This ROM has an earlier Perfect-Plex. Load Royal Rumble and choose Update Perfect-Plex to fix its facing, positions, shadows and exit.';
+ if(added&&plexNeedsUpdate(rom)&&!posesNeedUpdate(rom))$('royal-status').textContent+=' This ROM has an earlier Perfect-Plex. Load Royal Rumble and choose Update Perfect-Plex to bring its facing, positions, shadows, and the pin, release and recovery after the bridge up to date.';
  if(added&&importedAnnouncerRecords(rom).length)$('royal-status').textContent+=' Save playable ROM to repair the announcer tables in this older import; without that, matches stall before they start.';
 }
 $('royal-rom').onchange=async event=>{try{

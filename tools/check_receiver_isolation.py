@@ -19,7 +19,7 @@ LEGACY_DIRECTORY = 0x5e0000   # RX1/RX2
 
 
 def directory(data):
-    return 0x7da000 if bytes(data[0x70fe40:0x70fe49]) == b'ROYAL-RX3' else LEGACY_DIRECTORY
+    return 0x7da000 if bytes(data[0x70fe40:0x70fe49]) in (b'ROYAL-RX3', b'ROYAL-RX4') else LEGACY_DIRECTORY
 
 
 def file_offset(address):

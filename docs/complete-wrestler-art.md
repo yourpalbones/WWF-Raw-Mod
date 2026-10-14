@@ -161,29 +161,40 @@ style and graphics."
 
 ## Perfect-Plex receiving matrix (all 13 current slots)
 
-Builds (this round; Mr. Perfect with his Royal pose pieces and Royal heads, own-art receivers rebuilt from Royal),
-both made through the editor's **Add Mr. Perfect** (`tools/editor_driver.py import`):
-- **Stock import v4:** `55e331ba…`, stock Raw.
-- **Gear reference mod v4:** `a2dd91b0…`, with Scott, Syxx, Nash and Sting applied, then Mr. Perfect.
+Builds (this round: the Perfect-Plex exit added; Mr. Perfect with his Royal pose pieces and Royal heads; own-art
+receivers rebuilt from Royal), both made through the editor's **Add Mr. Perfect** (`tools/editor_driver.py import`):
+- **Stock import v5:** `281bcd36…`, stock Raw.
+- **Gear reference mod v5:** `a3316c5a…`, with Scott, Syxx, Nash and Sting applied, then Mr. Perfect.
+
+The browser's **Update Perfect-Plex** on the v4 stock build gives exactly the bytes of the command-line update
+(`node tools/receivers_cli.js update`). It agrees with the fresh v5 import on all 1,734 of Mr. Perfect's pieces
+and on every stream.
 
 Every scenario below is a controller-only cold-boot replay (`tools/verify_perfect_receivers_native.py`).
 Each passes every defect assertion:
 - spacing ±40;
 - no foreign objects;
 - damage exactly once (one loss of health);
-- no Perfect-Plex pose after the move.
+- no Perfect-Plex pose after the move;
+- PP-5, the exit ([`perfect-plex-exit.md`](perfect-plex-exit.md)):
+  - the pin lasts Royal's 56 frames of game time;
+  - every exit step equals the editor preview;
+  - the receiver ends on Perfect's far side at 41 px, unless the ring edge stops him short;
+  - neither wrestler's depth changes, unless such a stop brings the pair within Raw's collision distance.
 
 Royal-drawn receivers also register within 1 px. Own-art receivers must equal the editor preview on every
 step, and they do: 100% of actor pixels, rebuilt from OAM. A clean re-run reproduces every recorded value.
-Data: [`verification-stock-v4.json`](../evidence/complete-wrestler-art/verification-stock-v4.json) and
-[`verification-gear-mod-v4.json`](../evidence/complete-wrestler-art/verification-gear-mod-v4.json).
-The earlier builds' recipes, reports and GIFs are kept under `previous-builds/`.
+Data: [`verification-stock-v5.json`](../evidence/complete-wrestler-art/verification-stock-v5.json) and
+[`verification-gear-mod-v5.json`](../evidence/complete-wrestler-art/verification-gear-mod-v5.json); the v4 reports
+are kept beside them.
+The earlier builds' recipes, reports and GIFs are kept under `previous-builds/` (`previous-builds/v4/` for the v4
+GIFs, which still show the old exit).
 
 | Slot | Identity | Receiving drawings | Native scenarios (all pass) | Status |
 |---|---|---|---|---|
 | 0 | Luna Vachon | Royal Shawn's, in Luna's own pixels | `luna-attacker-left`, `luna-attacker-right` | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/luna-attacker-left.gif)) |
 | 1 | Bret Hart (stock; user gear unknown) | Royal Bret | `bret-attacker-left` | royal, native-verified |
-| 2 | Undertaker | Royal Undertaker | `undertaker-attacker-left`, `undertaker-attacker-left-2` | royal, native-verified |
+| 2 | Undertaker | Royal Undertaker | `undertaker-attacker-left`, `undertaker-attacker-left-2`, `undertaker-attacker-right` (new: Perfect on the right, as in Royal's capture) | royal, native-verified ([side by side with Royal](../evidence/perfect-plex-exit/royal-vs-raw-undertaker.gif)) |
 | 3 | Yokozuna | Royal Yokozuna | `yokozuna-attacker-right` | royal, native-verified |
 | 4 | Bam Bam Bigelow | Royal Crush's, in Bam Bam's own pixels | `bambam-attacker-left` | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/bambam-attacker-left.gif)) |
 | 5 | Razor Ramon (stock) / Scott Hall (gear) | Royal Razor on stock; Royal Razor's in Scott's own pixels with his gear | `razor-attacker-right` (stock), `scott-gear-attacker-left` (gear) | royal + own-art, native-verified ([GIF](../evidence/complete-wrestler-art/scott-gear-attacker-left.gif)) |
@@ -195,8 +206,8 @@ The earlier builds' recipes, reports and GIFs are kept under `previous-builds/`.
 | 11 | Owen Hart | Royal Bret's, in Owen's own pixels | `owen-attacker-left` | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/owen-attacker-left.gif)) |
 | 12 | Mr. Perfect (mirror match) | Royal Perfect (installed, previewable) | none: **unreachable in one-on-one** | royal, **not natively tested** |
 
-Perfect ends on the right in six scenarios (Kid, Lex, Luna from the right, Razor, Yokozuna, Nash) and on the left
-in the other thirteen. The bot plays wherever the match takes it.
+Perfect ends on the right in seven scenarios (Kid, Lex, Luna from the right, Razor, Yokozuna, Nash, and the new
+Undertaker one) and on the left in the other thirteen. The bot plays wherever the match takes it.
 
 Notes on the matrix:
 - **Replay fix.** Every recipe's last R press starts on the frame where the verifier saves state and begins
@@ -234,6 +245,34 @@ Notes from the previous round (v2 builds):
   - Reopening and saving gives an identical file.
 - **Editor.** Every slot lists its 12 "Receiving Perfect-Plex · n" composite poses. The paired preview
   plays any receiver in both facings ([screenshot](../evidence/complete-wrestler-art/editor-paired-preview-sting.png)).
+
+## Perfect-Plex exit: pin, release and recovery (this round)
+
+Your note: after the bridge, the opponent went back toward the starting side and Mr. Perfect popped upright.
+Full write-up: [`perfect-plex-exit.md`](perfect-plex-exit.md). **Status: native-verified, awaiting your
+review; not marked done.**
+
+- **Royal**, captured from cold boot:
+  - The bridge is held for 56 frames and released, with no referee count. This holds even when the move ends
+    the opponent's health.
+  - Perfect gets up through six drawings and stands at +35 frames, facing the receiver.
+  - The receiver rolls off over Perfect's head and lies on his far side.
+- **Raw now:**
+  - The same 56-frame hold.
+  - Perfect gets up through Royal's six drawings, each where Royal draws it:
+    - four are Raw's own get-up profiles, whose pieces are Royal art in his slot;
+    - two are new Royal frames, 1012–1013, editable as "Perfect-Plex get-up".
+  - The receiver rolls off and lies on Perfect's far side, using Raw's own drawings in his own art.
+  - Neither wrestler's depth changes.
+  - `tools/plan_perfect_plex_exit.py` plans this from Royal's capture into
+    [`data/perfect-plex-exit.json`](../data/perfect-plex-exit.json).
+- **Differences that remain:**
+  - Raw's 7-frame step makes the get-up 42 frames (Royal: 35).
+  - The receiver lies 41 px away instead of 33. At 33 px, Raw's collision rule pushes one wrestler 7 px in depth.
+  - Raw's camera pans 13 px during the get-up.
+  - Raw's own standing stance and recovery rules apply afterwards.
+- **Side by side:** [`royal-vs-raw-undertaker.gif`](../evidence/perfect-plex-exit/royal-vs-raw-undertaker.gif)
+  runs until both wrestlers have walked under control.
 
 ## Mr. Perfect's ordinary poses (batch 2, revised after review)
 
@@ -431,5 +470,7 @@ above).
   Perfect's head, 119 with only his hair colour). For most of these poses Royal has no matching drawing, so
   there is no complete example to rebuild them from.
 - **Mirror match** in other game modes.
-- **Not done:** bridge-to-pin (PP-5), Perfect's green shadow, and all other action families
-  (see `docs/animation-coverage.md`).
+- **Your review of the Perfect-Plex exit** (pin, release, recovery): see the side-by-side GIF and the
+  differences listed in [`perfect-plex-exit.md`](perfect-plex-exit.md). It is native-verified but not marked
+  done.
+- **Not done:** Perfect's green shadow, and all other action families (see `docs/animation-coverage.md`).

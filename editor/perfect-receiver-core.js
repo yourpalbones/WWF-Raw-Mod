@@ -8,7 +8,9 @@ window.RAW_PERFECT_RECEIVER_CORE=(()=>{
  // the Perfect import and these drawings use (docs/complete-wrestler-art.md, "Receiving storage").
  const OLD_REGIONS=[[0x5d0000,0x5f0000],[0x6d0000,0x6e0000],[0x71d000,0x720000]];
  const HOOKS=[[0x70f000,0x71e800],[0x70f200,0x71e900],[0x70f400,0x71ea00]];
- function installed(data){return data.length===0x800000&&['ROYAL-RX1','ROYAL-RX2','ROYAL-RX3'].includes(marker(data));}
+ function installed(data){return data.length===0x800000&&['ROYAL-RX1','ROYAL-RX2','ROYAL-RX3','ROYAL-RX4'].includes(marker(data));}
+ // RX4 adds Royal's held pin, release and recovery after the bridge; RX3 keeps the same layout for the drawings themselves.
+ function current(data,recipes=window.RAW_PERFECT_RECEIVERS){return installed(data)&&marker(data)===recipes.layout.marker;}
  function outdated(data){return data.length===0x800000&&['ROYAL-RX1','ROYAL-RX2'].includes(marker(data));}
  function regions(layout){return [layout.descriptors,[layout.pointer_table,layout.pointer_end],...layout.pools,layout.tables];}
  // CPU address of a file offset: banks $40-$7D map directly; 7E8000-7EFFFF / 7F8000-7FFFFF are $3E/$3F:8000+.
@@ -82,7 +84,7 @@ window.RAW_PERFECT_RECEIVER_CORE=(()=>{
     use={source:spec.fallback};
    }
    const privateTiles=new Map(),poses=drawings(base,source,recipes,slot,use);
-   const table=0x71d100+slot*36,profiles=0x71d400+slot*168,sequence=0x71e000+slot*141;
+   const X=recipes.exit,table=0x71d100+slot*36,profiles=0x71d400+slot*168,sequence=X.sequences+slot*X.sequence_stride;
    RI.putLong(out,0x71d000+slot*3,table);RI.putLong(out,0x71d040+slot*3,sequence);
    poses.forEach((pose,i)=>{
     const record=[pose.chunks.length,pose.chunks.filter(c=>c[2]===16).length];
@@ -103,7 +105,19 @@ window.RAW_PERFECT_RECEIVER_CORE=(()=>{
     out.set(record,descriptor);RI.putLong(out,table+i*3,descriptor);descriptor+=record.length;
     const profile=profiles+i*14;RI.putWord(out,profile,(1200+i)*3);out.set([pose.body_dx&255,0,36,128,pose.shadow_dx&255,255,255,255],profile+2);
    });
-   for(let i=0;i<20;i++){const profile=profiles+Math.min(i,11)*14;out.set([113,profile&255,profile>>>8&255,0,0,0,0],sequence+i*7);}out[sequence+140]=255;
+   // Steps 0-11, then Royal's held pin and release (docs/perfect-plex-exit.md). An entry is [bank, profile, x move,
+   // y move, draw x, draw y]; x moves and draw x count along the facing. The bridge is held for X.hold entries; the
+   // first release entry moves the receiver's actor X.forward px past Mr. Perfect, then Raw's own roll-off and lying
+   // profiles (the receiver's own art) draw at the offsets planned from Royal (tools/plan_perfect_plex_exit.py);
+   // lying keeps Raw's downed-action offsets, so the downed action continues the drawing.
+   const entries=[];for(let i=0;i<12;i++)entries.push([113,profiles+i*14,0,0,0]);
+   for(let i=0;i<X.hold;i++)entries.push([113,profiles+11*14,0,0,0]);
+   for(const step of X.steps){
+    if(RI.word(base,step.profile&0xffff|0x080000)!==step.first_part)throw Error('Unsupported Raw receiving animation.');
+    for(let n=0;n<step.entries;n++)entries.push([200,step.profile,entries.length===12+X.hold?X.forward:0,...step.draw]);
+   }
+   if(entries.length*7+1>X.sequence_stride)throw Error('Receiving sequence exceeds its space.');
+   entries.forEach(([bank,address,move,dx,dy],i)=>out.set([bank,address&255,address>>>8&255,move&255,0,dx&255,dy&255],sequence+i*7));out[sequence+entries.length*7]=255;
    report.push({raw_slot:slot,source:use.source,royal_selector:use.selector??null,receiving_drawings:poses.length,private_tiles:privateTiles.size});
   }
   for(const [original,copy]of HOOKS)out.set(base.slice(original,original+256),copy);
@@ -122,5 +136,5 @@ window.RAW_PERFECT_RECEIVER_CORE=(()=>{
   for(const [start,end]of old?OLD_REGIONS:regions(recipes.layout))for(let p=start;p<end;p++)if(!keep.some(([a,b])=>p>=a&&p<b))out[p]=255;
   out.fill(255,0x70fe40,0x70fe49);RI.checksum(out);return out;
  }
- return {installed,outdated,install,uninstall,cpu};
+ return {installed,outdated,current,install,uninstall,cpu};
 })();

@@ -3,6 +3,7 @@
 //   node tools/receivers_cli.js uninstall ROM.sfc OUT.sfc
 //   node tools/receivers_cli.js build RAW.sfc ROYAL.sfc OUT.sfc   -> the importer's slot build only (no editor extras)
 //   node tools/receivers_cli.js upgrade-poses ROM.sfc ROYAL.sfc OUT.sfc   -> Mr. Perfect's Royal pose upgrade (no receivers)
+//   node tools/receivers_cli.js update ROM.sfc ROYAL.sfc OUT.sfc   -> the editor's Update Perfect-Plex on an unedited import
 const fs=require('fs'),path=require('path'),crypto=require('crypto');
 global.window=global;
 const editor=path.join(__dirname,'..','editor');
@@ -27,4 +28,11 @@ if(command==='install'){
  fs.writeFileSync(out,result.bytes);
  result.report.sha256=crypto.createHash('sha256').update(result.bytes).digest('hex');
  console.log(JSON.stringify(result.report));
-}else{console.error('usage: install BASE ROYAL OUT | uninstall ROM OUT | upgrade-poses ROM ROYAL OUT');process.exit(2);}
+}else if(command==='update'){
+ // Same steps as the editor's Update Perfect-Plex button (editor/royal-import.js), without the editor's pending edits.
+ const [rom,royal,out]=args,RI=window.RAW_ROYAL_IMPORT_CORE,RC=window.RAW_PERFECT_RECEIVER_CORE,source=read(royal);
+ let data=RC.uninstall(read(rom));if(!RI.plexCurrent(data))data=RI.updatePlex(data,source,window.RAW_ROYAL_IMPORT_MANIFEST);
+ if(!RI.posesCurrent(data))data=RI.upgradePoses(data,source,window.RAW_ROYAL_IMPORT_MANIFEST).bytes;
+ data=RC.install(data,source,window.RAW_PERFECT_RECEIVERS).bytes;fs.writeFileSync(out,data);
+ console.log(crypto.createHash('sha256').update(data).digest('hex'));
+}else{console.error('usage: install BASE ROYAL OUT | uninstall ROM OUT | upgrade-poses ROM ROYAL OUT | update ROM ROYAL OUT');process.exit(2);}

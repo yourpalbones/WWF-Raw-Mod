@@ -12,7 +12,7 @@ window.RAW_PARTS=(()=>{
  function activeGear(rom,slot){const g=GEAR[slot];return g&&rom.length>=0x600000&&text(rom,g.sig[0],g.sig[1].length)===g.sig[1]?g:null;}
  const hasPerfect=rom=>rom.length>=0x800000&&text(rom,0x70fe00,12)==='PERFECT-SLOT';
  function descriptorAddress(rom,slot,kind,index){
-  const [table,banks,own,count]=TABLES[kind],total=slot===12&&kind==='primary'?1012:count;if(index<0||index>=total)throw Error(kind+' index out of range');
+  const [table,banks,own,count]=TABLES[kind],total=slot===12&&kind==='primary'?1014:count;/* slot 12: Perfect-Plex frames 1000-1011, exit frames 1012-1013 */if(index<0||index>=total)throw Error(kind+' index out of range');
   if(slot===12){if(!hasPerfect(rom))throw Error('ROM has no imported slot 12');return long(rom,(kind==='secondary'?0x711000:0x710000)+index*3);}
   const gear=activeGear(rom,slot);if(gear){const e=long(rom,gear.tables[kind==='secondary'?1:0]+index*3);if(e&0xffff)return e;}
   const selector=index<own?slot:8,dir=fileOffset(rom[banks+selector*2]<<16|rom[table+selector*2]|rom[table+selector*2+1]<<8,rom.length),entry=dir+index*3;

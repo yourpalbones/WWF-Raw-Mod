@@ -37,7 +37,7 @@ GEAR = {
     7: {'signature': (0x6FF000, b'STING-NATIVE-GEAR4'), 'tables': (0x6FC000, 0x6FD000), 'banks': (0x60, 0x61),
         'pointers': (0x6E0000, 0x6F0000)},
 }
-PERFECT_PRIMARY = 1012
+PERFECT_PRIMARY = 1014   # 998 pieces, 2 unused, Perfect-Plex frames 1000-1011, exit frames 1012-1013
 PERFECT = {'signature': (0x70FE00, b'PERFECT-SLOT'), 'tables': (0x710000, 0x711000)}
 
 
@@ -70,7 +70,7 @@ def has_perfect(rom):
 def descriptor_address(rom, slot, kind, index):
     table, banks, own_count, total = TABLES[kind]
     if slot == 12 and kind == 'primary':
-        total = PERFECT_PRIMARY   # the slot-12 worker hook also serves the Perfect-Plex frames 1000-1011
+        total = PERFECT_PRIMARY   # the slot-12 worker hook also serves the Perfect-Plex and exit frames
     if not 0 <= index < total:
         raise ValueError(f'{kind} index {index} out of range')
     if slot == 12:

@@ -16,6 +16,16 @@ Defect assertions (each fails on the pre-fix build 4ca2856..., kept in each reci
 - PP-7  no receiver palette-6 object shows foreign VRAM, and no more than 4 trail the receiver body;
 - PP-4  after the move neither actor shows a Perfect-Plex pose except the final pose for at most
         2 frames (OAM is one frame behind), and the receiver loses health exactly once.
+- PP-5  the exit (docs/perfect-plex-exit.md):
+        - the bridge (step 11) is held for Royal's 56 frames of game time (the game's frame timer at WRAM
+          $0F70; frames the game drops under load are not counted, as the screen-frame count is also recorded);
+        - every later step (held pin, release, Mr. Perfect's get-up, the receiver rolling off and lying, then
+          Perfect standing) equals the editor preview on >= 97% of pixels, for every receiver, each wrestler at
+          his actual position (tools/check_preview_native.py);
+        - the receiver ends on Perfect's far side at the planned spacing (data/perfect-plex-exit.json), unless
+          the ring edge stopped him short ('ring_stop', px);
+        - neither wrestler's depth (y) changed, except Raw's 7 px collision push after a ring stop brought the
+          pair within 40 px ('depth_push').
 
 --record writes `expected` only after every assertion passes. Controller input only; no emulator memory is
 written. Bulky captures are deleted unless --keep is given. Only the JSON summaries are kept.
@@ -35,7 +45,9 @@ RECIPES = ROOT / 'evidence/perfect-plex-receivers/recipes'
 DEFECT_BUILD = '4ca2856994fdebba62205a186feb5058c8b3a30760ad95423354012a4a128085'
 SUMMARY_KEYS = ('frames_measured', 'frames_fully_matched', 'flip_pairs', 'receiver_body_terms', 'actor_spacing',
                 'registration_errors', 'receiver_trailing_palette6_during_move', 'frames_with_foreign_palette6_during_move',
-                'receiver_shadow_offset_during_move', 'receiver_health_changes', 'receiver_source', 'preview_match')
+                'receiver_shadow_offset_during_move', 'receiver_health_changes', 'receiver_source', 'preview_match', 'exit')
+EXIT = json.loads((ROOT / 'data/perfect-plex-exit.json').read_text())
+HOLD_FRAMES = 56   # Royal Rumble shows the bridge for 56 frames before the release (data/perfect-plex-exit.json)
 
 
 def run(core, rom, recipe_path, output, extra):
@@ -74,7 +86,12 @@ def defects(m, rom):
         failed.append('PP-0 move not reached')
         return failed
     own = m.get('receiver_source') == 'own_art'
-    if not m['frames_fully_matched'] or any(abs(int(k)) != 40 for k in m['actor_spacing']) or \
+    # Spacing while both actors are still where the move put them; at the release the actors move and OAM shows
+    # step 11 for one more frame (one row per actor).
+    rows = [r for r in m['rows'] if 'camera_x' in r]
+    start = rows and (rows[0]['attacker']['x'], rows[0]['receiver']['x'])
+    moved = [r for r in rows if (r['attacker']['x'], r['receiver']['x']) != start]
+    if not rows or len(moved) > 2 or any(abs(r['receiver']['x'] - r['attacker']['x']) != 40 for r in rows if r not in moved) or \
             (not own and any(abs(int(e)) > 1 for e in m['registration_errors'])):
         failed.append('PP-1/2 registration')
     # Own-native receivers: the drawn pair must equal the editor preview (tools/check_preview_native.py).
@@ -95,6 +112,18 @@ def defects(m, rom):
     # capture (+16 for Owen and Kid); a rise is not damage, two losses would be.
     if len([c for c in m.get('receiver_health_changes', []) if c[2] < c[1]]) != 1:
         failed.append('PP-4 damage count')
+    x = m.get('exit') or {}
+    if abs((x.get('hold_game_frames') or 0) - HOLD_FRAMES) > 1:
+        failed.append('PP-5 pin length')
+    if not x.get('exit_preview_match') or min(x['exit_preview_match']) < 0.97:
+        failed.append('PP-5 exit drawings')
+    planned = EXIT['receiver']['spacing']
+    far = x.get('start_spacing') and x['final_spacing'] * x['start_spacing'] < 0
+    if not far or abs(x['final_spacing']) != planned - x.get('ring_stop', 0):
+        failed.append('PP-5 receiver side')
+    push = [b - a for a, b in zip(x.get('start_y', []), x.get('final_y', []))]
+    if any(push) and not (x.get('ring_stop') and abs(x['final_spacing']) <= 40 and sorted(map(abs, push)) == [0, 7]):
+        failed.append('PP-5 depth')
     return failed
 
 
@@ -130,14 +159,30 @@ def main():
                                                  '--base', str(start), '--frames', str(recipe['capture_frames']),
                                                  '--interval', '1'])
         m = measure(capture, rom, args.royal.read_bytes(), recipe['receiver_slot'])
-        if m.get('receiver_source') == 'own_art' and m['frames_fully_matched']:
+        if m['frames_fully_matched']:
             measurement = args.output / f'{name}-measurement.json'
             measurement.write_text(json.dumps(m) + '\n')
             facing = 'left' if '(False, True)' in m['flip_pairs'] else 'right'
-            check = subprocess.run([sys.executable, str(ROOT / 'tools/check_preview_native.py'), str(args.rom),
-                                    str(recipe['receiver_slot']), str(measurement), str(capture), facing],
-                                   check=True, capture_output=True, text=True)
-            m['preview_match'] = json.loads(check.stdout)['match_ratio']
+            check = json.loads(subprocess.run([sys.executable, str(ROOT / 'tools/check_preview_native.py'), str(args.rom),
+                                               str(recipe['receiver_slot']), str(measurement), str(capture), facing],
+                                              check=True, capture_output=True, text=True).stdout)
+            # The move's steps are compared for receivers drawn from their own art (Royal-drawn ones are registered
+            # against Royal instead); the exit's steps for every receiver.
+            m['preview_match'] = check['match_ratio'] if m.get('receiver_source') == 'own_art' else None
+            last = max(capture.glob('frame-*-wram.bin'))
+            final = last.read_bytes()
+            word = lambda a: int.from_bytes(final[a:a + 2], 'little')
+            timer = lambda f: int.from_bytes((capture / f'frame-{f:06d}-wram.bin').read_bytes()[0xF70:0xF72], 'little')
+            first = m['rows'][0]
+            bridge = [r['frame'] for r in m['rows'] if r.get('attacker_pose') == 11]
+            # The receiver's deviation from its planned spot at the end (Raw's ring edge stops him short).
+            stop = abs((check['deviations'].get(str(len(check['steps']))) or {}).get('receiver', [0])[0])
+            m['exit'] = {'hold_frames': len(bridge), 'hold_game_frames': timer(bridge[0]) - timer(bridge[-1] + 1),
+                         'exit_preview_match': check['exit_match_ratio'],
+                         'start_spacing': first['receiver']['x'] - first['attacker']['x'],
+                         'final_spacing': word(0x5f2) - word(0x5f0),
+                         'start_y': [first['attacker']['y'], first['receiver']['y']], 'final_y': [word(0x600), word(0x602)],
+                         'final_actions': [word(0x6b4), word(0x6b6)], **({'ring_stop': stop} if stop else {})}
         (args.output / f'{name}-measurement.json').write_text(json.dumps(m, indent=1) + '\n')
         got = json.loads(json.dumps(summary(m)))
         failed = defects(m, rom)

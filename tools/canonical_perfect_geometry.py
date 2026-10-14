@@ -78,6 +78,29 @@ def chunks_for(image, size, origin):
     return result
 
 
+def programs(frames):
+    """Slot-12 hook programs; the primary worker serves IDs up to 1000 + frames (Perfect-Plex and exit frames)."""
+    import import_perfect_plex as plex
+    from build_perfect_slot import hook_worker, hook_lookup
+    limit = ((1000 + frames) * 3).to_bytes(2, 'little')
+
+    def worker(secondary, native):
+        code = hook_worker(secondary, native)
+        return code.replace(bytes.fromhex('c9 76 08'), bytes.fromhex('c9 7f 08')) if secondary else \
+            code.replace(bytes.fromhex('c9 b2 0b'), b'\xc9' + limit)
+
+    def lookup(native):
+        code = hook_lookup(native)
+        for before, after in [(0x7dc000, 0x749800), (0x7dc002, 0x749802)]:
+            code = code.replace(before.to_bytes(3, 'little'), after.to_bytes(3, 'little'))
+        return code
+    return {variant: [[at, list(code), hook] for at, code, hook in
+                      [(0x70f000, worker(False, native), 0xecc1), (0x70f100, worker(True, native), 0xed19),
+                       (0x70f200, lookup(native), 0x2cf6e4), (0x70f300, plex.init_hook(), 0x2cecb0),
+                       (0x70f400, plex.sequence_hook(), 0xf073)]]
+            for variant, native in [('stock', False), ('native', True)]}
+
+
 def load_layouts():
     text = LAYOUTS.read_text()
     return json.loads(text[text.index('=') + 1:].strip().rstrip(';'))
@@ -91,7 +114,6 @@ def main():
     if hashlib.sha256(rom).hexdigest() != ROYAL_SHA256:
         raise SystemExit('Expected the unmodified Royal Rumble USA ROM')
     import import_perfect_plex as plex
-    from build_perfect_slot import hook_worker, hook_lookup
     spacing = plex.PAIR_SPACING
     cache = {}
 
@@ -110,21 +132,7 @@ def main():
         royal_centre = (row['royal_relative_bbox'][0] + row['royal_relative_bbox'][2]) / 2
         row['translate'] = [round(spacing + FLIP_PIVOT - 1 - native_centre - royal_centre), row['translate'][1]]
 
-    def worker(secondary, native):
-        code = hook_worker(secondary, native)
-        return code.replace(bytes.fromhex('c9 76 08'), bytes.fromhex('c9 7f 08')) if secondary else \
-            code.replace(bytes.fromhex('c9 b2 0b'), bytes.fromhex('c9 dc 0b'))
-
-    def lookup(native):
-        code = hook_lookup(native)
-        for before, after in [(0x7dc000, 0x749800), (0x7dc002, 0x749802)]:
-            code = code.replace(before.to_bytes(3, 'little'), after.to_bytes(3, 'little'))
-        return code
-    manifest['programs'] = {variant: [[at, list(code), hook] for at, code, hook in
-                                      [(0x70f000, worker(False, native), 0xecc1), (0x70f100, worker(True, native), 0xed19),
-                                       (0x70f200, lookup(native), 0x2cf6e4), (0x70f300, plex.init_hook(), 0x2cecb0),
-                                       (0x70f400, plex.sequence_hook(), 0xf073)]]
-                            for variant, native in [('stock', False), ('native', True)]}
+    manifest['programs'] = programs(len(manifest['finisher']) + len(manifest.get('exit', {}).get('attacker', {}).get('frames', [])))
     LAYOUTS.write_text('window.RAW_ROYAL_IMPORT_MANIFEST=' + json.dumps(manifest, separators=(',', ':')) + ';\n')
 
     # Receivers: mirrored on a 144-pixel canvas (origin 72,105).

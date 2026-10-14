@@ -23,7 +23,7 @@ def _valid(part):
     if part & 0x8000:
         j = part & 0x7FFF
         return j % 3 == 0 and j // 3 < 722
-    return part % 3 == 0 and part // 3 < 1012
+    return part % 3 == 0 and part // 3 < 1014
 
 
 def entries(rom, address, limit=8):

@@ -14,7 +14,7 @@ ORIGIN_X=72   # receiver canvas origin (data/perfect-receivers.json "canonical")
 DESCRIPTOR_BANK=0x71
 # RX3 storage: only the Perfect import and these drawings use these ranges (all verified free in fresh, v0.16
 # and gear-modded imports). 7E8000-7EFFFF and 7F8000-7FFFFF are reached as $3E:8000 / $3F:8000.
-LAYOUT={'marker':'ROYAL-RX3','tables':[0x71d000,0x720000],'descriptors':[0x711900,0x716800],
+LAYOUT={'marker':'ROYAL-RX4','tables':[0x71d000,0x720000],'descriptors':[0x711900,0x716800],
         'pointer_table':0x7da000,'pointer_end':0x7de000,
         'pools':[[0x700000,0x708000],[0x7e8000,0x7f0000],[0x7f8000,0x800000],[0x716800,0x71d000],[0x7de000,0x7e0000]]}
 # Receiving art source per Raw slot.
@@ -31,6 +31,15 @@ LAYOUT={'marker':'ROYAL-RX3','tables':[0x71d000,0x720000],'descriptors':[0x71190
 #   anchors; a gear identity has its own plan. For workers with no Royal counterpart of the same identity.
 # - 'own_native' (superseded, kept for comparison): Raw's own receiving-suplex sequence re-timed. Its drawings
 #   lifted and dropped the receiver beside Mr. Perfect instead of over him.
+# Royal's held pin, release and recovery after the bridge (docs/perfect-plex-exit.md): planned from Royal Rumble's own
+# capture by tools/plan_perfect_plex_exit.py (data/perfect-plex-exit.json): the held entries, how far the receiver's
+# actor moves past Mr. Perfect, and Raw's own roll-off and lying profiles with their draw offsets. The sequences
+# live in the receiving tables region.
+def exit_recipe():
+    plan=json.loads((ROOT/'data/perfect-plex-exit.json').read_text())['receiver']
+    return {'hold':plan['hold'],'forward':plan['forward'],
+            'steps':[{k:s[k] for k in ('profile','first_part','entries','draw')} for s in plan['steps']],
+            'sequences':0x71ee00,'sequence_stride':176}
 OWN_NATIVE_STEPS=[[0,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[3,0,0],[6,0,8],[10,0,0]]
 SLOTS={0:{'source':'reskin'},1:{'source':'royal','selector':3},2:{'source':'royal','selector':2},
        3:{'source':'royal','selector':9},4:{'source':'reskin'},

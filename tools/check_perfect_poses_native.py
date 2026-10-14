@@ -33,7 +33,7 @@ def planar(pixels):
 def piece_tiles(rom):
     """{tile bytes: {(kind, index)}} for every slot-12 piece."""
     owners = {}
-    indices = [('primary', i) for i in list(range(998)) + list(range(1000, 1012))] + [('secondary', i) for i in range(722)]
+    indices = [('primary', i) for i in list(range(998)) + list(range(1000, 1014))] + [('secondary', i) for i in range(722)]
     for kind, i in indices:
         for part in resolve_index(rom, 12, kind, i)['parts']:
             for pixels in part['pixels']:

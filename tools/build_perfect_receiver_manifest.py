@@ -1,12 +1,13 @@
 """Bundle receiving geometry, source addresses and authored hooks, never pixels."""
 import json
 from pathlib import Path
-from build_perfect_receivers import SLOTS,LAYOUT,OWN_NATIVE_STEPS,worker_hook,lookup_hook,sequence_hook
+from build_perfect_receivers import SLOTS,LAYOUT,exit_recipe,OWN_NATIVE_STEPS,worker_hook,lookup_hook,sequence_hook
 
 root=Path(__file__).resolve().parents[1]
 recipes=json.loads((root/'data/perfect-receivers.json').read_text())
 recipes['slots']={str(k):v for k,v in SLOTS.items()}
 recipes['layout']=LAYOUT
+recipes['exit']=exit_recipe()
 recipes['own_native_steps']=OWN_NATIVE_STEPS
 # Each step's chosen pose (the first storable candidate); alternatives stay in the plan file for review.
 plan=json.loads((root/'data/receiver-profile-plan.json').read_text())['slots']

@@ -4314,29 +4314,34 @@
   ]
  ],
  "build": "gear reference mod v4 (Scott, Syxx, Nash, Sting gear; then Mr. Perfect with Royal pose pieces and Royal heads; receivers rebuilt from Royal)",
- "expected_build": "a2dd91b0ff8cb627f32e1baef48df33868592b25cd4224197896eff6add594e7",
+ "expected_build": "a3316c5a8295e67e9e5108bbcbb1c296e1ed355383248b5c44a2e1607f2f36c3",
  "expected": {
-  "frames_measured": 141,
-  "frames_fully_matched": 138,
+  "frames_measured": 177,
+  "frames_fully_matched": 132,
   "flip_pairs": {
-   "(True, False)": 138
+   "(True, False)": 132
   },
   "receiver_body_terms": {
-   "45": 138
+   "45": 130,
+   "44": 1,
+   "-36": 1
   },
   "actor_spacing": {
-   "-40": 138
+   "-40": 130,
+   "-39": 1,
+   "41": 1
   },
   "registration_errors": {},
   "receiver_trailing_palette6_during_move": {
    "2": 3,
-   "4": 138
+   "4": 132,
+   "0": 41
   },
   "frames_with_foreign_palette6_during_move": 0,
   "receiver_shadow_offset_during_move": {
    "min": -10.0,
    "max": 4.0,
-   "frames": 141
+   "frames": 135
   },
   "receiver_health_changes": [
    [
@@ -4360,17 +4365,48 @@
    1.0,
    1.0
   ],
+  "exit": {
+   "hold_frames": 56,
+   "exit_preview_match": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "start_spacing": -40,
+   "final_spacing": 41,
+   "start_y": [
+    208,
+    208
+   ],
+   "final_y": [
+    208,
+    208
+   ],
+   "final_actions": [
+    0,
+    70
+   ]
+  },
   "after_move": {
    "actions": {
-    "[0, 70]": 110
+    "[0, 70]": 74
    },
    "attacker_pose_shown": {
-    "11": 1,
-    "None": 109
+    "None": 74
    },
    "receiver_pose_shown": {
-    "11": 1,
-    "None": 109
+    "None": 74
    }
   },
   "receiver_pixel_match_min": null,
