@@ -187,7 +187,8 @@ no silhouette match.
 | Royal Perfect art: pose match | — | 329 | 329 |
 | Royal Perfect art: by frame order (semantic pass, reviewed) | — | — | **136** |
 | Adapted Raw Bret art | 1,431 | 1,102 | **966** |
-| … of which with Perfect's blond hair | — | 377 | 291 |
+| … of which with Royal Perfect's own head (second review) | — | — | **172** |
+| … of which with Perfect's hair colour only | — | 377 | 119 |
 | Perfect's screen time showing only Royal art, Luna match | 20% | — | **98%** |
 | Perfect's screen time showing only Royal art, Owen match | 12% | — | **97%** |
 
@@ -213,9 +214,45 @@ no silhouette match.
   threshold (for example `p328`, bent forward) and the shared common range.
 - Upgrades:
   - **Update Perfect-Plex** now accepts v0.16 pieces and pieces already recoloured by an earlier branch
-    upgrade, and leaves pieces that already hold the new art (marker `POSES-ROYAL4`).
+    upgrade, and leaves pieces that already hold the new art (marker `POSES-ROYAL4`; `POSES-ROYAL5` after the head rebuild below).
   - v0.16, earlier‑branch and already‑current ROMs all converge on the fresh build (1,732/1,732 pieces).
   - An edited tile is kept.
+
+### Second review: Royal Perfect's head instead of tinted hair
+
+**Review feedback.** "Sloppily throwing yellow dots on Bret isn't exactly making the Perfect graphic … we
+need to use these as a baseline to rebuild the graphics." The hair recolour kept Bret's hair shape and its black
+dither, so it read as Bret with yellow dots.
+
+Royal Rumble draws Bret and Perfect on the same frame indices, in the same pose and at the same coordinates. It
+is a book of paired examples: Bret's head in a pose, and Perfect's head in that pose. `tools/rebuild_perfect_heads.py`
+uses it for every adapted upper-body piece with Bret's hair:
+1. Head window: Bret's hair (the hair rule finds it) plus 4 pixels.
+2. Source: the Royal Bret frame, in either facing, whose pixels in that window agree best with the piece (Royal
+   Bret's colours mapped as the importer adapts Raw Bret's), within 6 pixels of the hair centres' alignment.
+   Generic Perfect frames (Bret's own tiles, recoloured, with brown hair) and frames without Perfect's blond hair
+   are never sources.
+3. Inside the window, where the piece agrees with Royal Bret it takes Royal Perfect's pixel there (or none);
+   Bret's hair takes Perfect's pixel (or none); where Perfect's fuller hair reaches past Bret's and the piece is
+   empty, Perfect's pixel is added. Everything else, including an arm across the face, stays as Raw draws it.
+
+- `data/perfect-head-sources.json` holds the Royal frame, facing, offset, window and score per piece (no pixels).
+  The importer applies the same rule to your ROMs (`editor/royal-import-core.js` `headRebuild`).
+- Review (`data/perfect-head-review.json`): every piece was compared with its hair-recoloured version.
+  - 17 rejected: 11 are other people from the common table (a masked wrestler with stars, a man in a white
+    shirt) with no Bret hair; 6 came out with darker, less blond hair than the recolour.
+  - **172 pieces** now show Royal Perfect's own hair and face.
+  - 119 keep the hair recolour: the 17 rejections, pieces with no usable source and lower-body pieces where the
+    hair rule only touched dark dither.
+- Checks:
+  - The browser, Node and Python give the same 172 pieces; the built ROM holds exactly those pixels.
+  - **Update Perfect-Plex** (marker `POSES-ROYAL5`) rebuilds these pieces from v0.16, from the hair recolour and
+    from the previous branch build. All converge on a fresh import (1,732/1,732 pieces). Running it twice
+    changes nothing.
+  - A one-byte edit in a shared tile keeps the 6 pieces that use it.
+- Still not Perfect's own drawing: the body below the head on these 172 pieces is Raw's Bret‑drawn body in
+  Perfect's colours (the same singlet and build), and the 119 above. Poses Royal never drew have no example to
+  rebuild from and need hand-drawn art.
 
 ### First pass (silhouette matches and hair)
 

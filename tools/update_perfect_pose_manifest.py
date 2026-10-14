@@ -3,14 +3,15 @@
 The finisher, programs and other recipe fields are kept as published. Rows are addresses and geometry only.
 
     python3 tools/update_perfect_pose_manifest.py RAW.sfc RAW_WRAM.bin ROYAL.sfc ROYAL_WRAM.bin \\
-        --matches data/perfect-pose-matches.json --manifest editor/royal-import-layouts.js
+        --matches data/perfect-pose-matches.json --manifest editor/royal-import-layouts.js \\
+        --heads data/perfect-head-sources.json
 """
 import argparse
 import json
 from pathlib import Path
 
 from convert_perfect_poses import convert
-from build_royal_import_manifest import frame_rows, coverage, mark_hair
+from build_royal_import_manifest import frame_rows, coverage, mark_hair, mark_heads
 from match_perfect_poses import effective
 
 PREFIX = 'window.RAW_ROYAL_IMPORT_MANIFEST='
@@ -22,6 +23,8 @@ def main():
         p.add_argument(name, type=Path)
     p.add_argument('--matches', type=Path, required=True)
     p.add_argument('--manifest', type=Path, required=True)
+    p.add_argument('--heads', type=Path, help='Royal Perfect head sources (tools/rebuild_perfect_heads.py)')
+    p.add_argument('--head-review', type=Path, default=Path(__file__).resolve().parents[1] / 'data/perfect-head-review.json')
     a = p.parse_args()
     text = a.manifest.read_text()
     manifest = json.loads(text[len(PREFIX):text.rindex(';')])
@@ -31,10 +34,14 @@ def main():
     before = {(r['kind'], r['index']): r for r in manifest['frames']}
     for r in rows:
         old = before[(r['kind'], r['index'])]
-        if 'replaces' not in r and {k: v for k, v in r.items() if k not in ('hair', 'replaces')} != \
-                {k: v for k, v in old.items() if k not in ('hair', 'replaces')}:
+        if 'replaces' not in r and {k: v for k, v in r.items() if k not in ('hair', 'replaces', 'head')} != \
+                {k: v for k, v in old.items() if k not in ('hair', 'replaces', 'head')}:
             raise ValueError(f"Unmatched row changed: {r['kind']}/{r['index']}")
     mark_hair(rows, a.raw_rom.read_bytes(), all_rows)
+    if a.heads:
+        review = json.loads(a.head_review.read_text()) if a.head_review.exists() else {}
+        manifest['heads'] = mark_heads(rows, json.loads(a.heads.read_text()), a.royal_rom.read_bytes(),
+                                       a.royal_wram.read_bytes(), review)
     manifest['frames'] = rows
     manifest['coverage'] = coverage(rows)
     a.manifest.write_text(PREFIX + json.dumps(manifest, separators=(',', ':')) + ';\n')

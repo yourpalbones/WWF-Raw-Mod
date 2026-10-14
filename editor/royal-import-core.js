@@ -5,7 +5,7 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
  const putWord=(b,p,v)=>{b[p]=v&255;b[p+1]=v>>>8&255;};
  const putLong=(b,p,v)=>{putWord(b,p,v);b[p+2]=v>>>16&255;};
  const equal=(b,p,a)=>a.every((v,i)=>b[p+i]===v);
- const PLEX_MARKER='PLEX-CANON1',POSES_MARKER='POSES-ROYAL4';
+ const PLEX_MARKER='PLEX-CANON1',POSES_MARKER='POSES-ROYAL5';
  const bytes=s=>Uint8Array.from(s.trim().split(/\s+/),v=>parseInt(v,16));
  const search=(b,pattern,start=0,end=b.length)=>{outer:for(let p=start;p+pattern.length<=end;p++){for(let i=0;i<pattern.length;i++)if(b[p+i]!==pattern[i])continue outer;return p;}return -1;};
  function tile(data,ref){
@@ -76,6 +76,56 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
    if(!v)return v;const sx=(t%(p.size/8))*8+i%8,sy=Math.floor(t/(p.size/8))*8+Math.floor(i/8);
    const x=p.x+(p.hflip?p.size-1-sx:sx),y=p.y+(p.vflip?p.size-1-sy:sy),c=changes.get(x+','+y);return c===undefined?v:c;}))}));
  }
+ // Royal frame parts -> Map 'x,y' -> index (first listed part on top), optionally mirrored and recoloured.
+ function royalPoints(source,parts,flip,mapping,cache){
+  const out=new Map();
+  for(const p of [...parts].reverse())for(let y=0;y<p.size;y++)for(let x=0;x<p.size;x++){
+   const ref=p.refs[Math.floor(y/8)*(p.size/8)+Math.floor(x/8)],key=ref?ref.join(':'):'blank';
+   if(!cache.has(key))cache.set(key,tile(source,ref));const v=cache.get(key)[y%8*8+x%8];
+   if(v)out.set((flip?-(p.x+x):p.x+x)+','+(p.y+y),mapping?mapping[v]:v);
+  }
+  return out;
+ }
+ // Royal Perfect's head on a Raw-only pose (tools/rebuild_perfect_heads.py). Royal draws Bret and Perfect on the same
+ // frame indices in the same pose, so inside the piece's head window a pixel that agrees with Royal Bret takes Royal
+ // Perfect's pixel there (or none), Bret's hair takes Perfect's pixel (or none), and Perfect's fuller hair is added
+ // where the piece is empty. head: [Royal frame, flip, dx, dy, x0, y0, x1, y1]; points: the adapted piece.
+ function headRebuild(points,head,heads,source,cache){
+  const [k,flip,dx,dy,x0,y0,x1,y1]=head,frame=heads.frames[k];
+  const bret=royalPoints(source,frame.bret,flip,heads.colours,cache),perfect=royalPoints(source,frame.perfect,flip,null,cache);
+  const hair=new Set([...hairChanges(points)].filter(([,v])=>v===13).map(([key])=>key)),out=new Map(points);
+  for(let y=y0;y<=y1;y++)for(let x=x0;x<=x1;x++){
+   const p=x+','+y,q=(x+dx)+','+(y+dy),b=points.get(p),r=bret.get(q),v=perfect.get(q);
+   if(b&&(r===b||hair.has(p))){if(v)out.set(p,v);else out.delete(p);}
+   else if(!b&&v&&!r)out.set(p,v);
+  }
+  return out;
+ }
+ // Objects for a drawing (Map 'x,y' -> index): the piece's own objects that still draw something, plus 8x8 objects
+ // on the 8-pixel grid for pixels outside them. Parts carry per-tile pixel arrays, unflipped.
+ function imageParts(parts,image){
+  const inside=(p,x,y)=>x>=p.x&&x<p.x+p.size&&y>=p.y&&y<p.y+p.size,keys=[...image.keys()].map(k=>k.split(',').map(Number));
+  const out=parts.filter(p=>keys.some(([x,y])=>inside(p,x,y))).map(p=>({x:p.x,y:p.y,size:p.size,hflip:false,vflip:false}));
+  const extra=new Set();for(const [x,y]of keys)if(!out.some(p=>inside(p,x,y)))extra.add((Math.floor(x/8)*8)+','+(Math.floor(y/8)*8));
+  for(const k of [...extra].sort()){const [x,y]=k.split(',').map(Number);out.push({x,y,size:8,hflip:false,vflip:false});}
+  for(const p of out)p.pixels=Array.from({length:(p.size/8)**2},(_,t)=>Array.from({length:64},(_,i)=>
+   image.get((p.x+(t%(p.size/8))*8+i%8)+','+(p.y+Math.floor(t/(p.size/8))*8+Math.floor(i/8)))||0));
+  return out;
+ }
+ // A manifest row's adapted piece (Raw Bret's tiles in the given ROM, Perfect's colours) with Royal Perfect's head.
+ const ADAPT=[0,1,4,8,4,8,13,2,14,7,6,3,2,15,14,11];
+ function adaptedPoints(data,row,cache){
+  const points=new Map();
+  for(const p of [...row.parts].reverse())for(let y=0;y<p.size;y++)for(let x=0;x<p.size;x++){
+   const sx=p.hflip?p.size-1-x:x,sy=p.vflip?p.size-1-y:y,ref=p.refs[Math.floor(sy/8)*(p.size/8)+Math.floor(sx/8)],key='w'+(ref?ref.join(':'):'blank');
+   if(!cache.has(key))cache.set(key,tile(data,ref));const v=ADAPT[cache.get(key)[sy%8*8+sx%8]];if(v)points.set((p.x+x)+','+(p.y+y),v);
+  }
+  return points;
+ }
+ function rebuiltPiece(data,source,row,manifest,cache){
+  const adapted=adaptedPoints(data,row,cache),image=headRebuild(adapted,row.head,manifest.heads,source,cache);
+  return {adapted,image,parts:imageParts(row.parts,image)};
+ }
  function checksum(out){
   out[0xffd5]=0x25;out[0xffd7]=13;out.set(out.slice(0,65536),0x400000);
   for(const at of [0xffdc,0x40ffdc])out.set([255,255,0,0],at);
@@ -138,10 +188,12 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
   }
   const colors=[0,1,4,8,4,8,13,2,14,7,6,3,2,15,14,11],descriptors={primary:new Map(),secondary:new Map()},cache=new Map();
   const pixels=(data,ref,royal)=>{const key=(royal?'r':'w')+(ref?ref.join(':'):'blank');if(!cache.has(key))cache.set(key,tile(data,ref));return cache.get(key);};
+  const headCache=new Map();
   for(const f of manifest.frames){
-   const kind=f.kind,parts=[...f.parts].sort((a,b)=>b.size-a.size),record=[parts.length,parts.filter(p=>p.size===16).length];
+   const rebuilt=f.head&&manifest.heads?rebuiltPiece(base,source,f,manifest,headCache):null;
+   const kind=f.kind,parts=[...(rebuilt?rebuilt.parts:f.parts)].sort((a,b)=>b.size-a.size),record=[parts.length,parts.filter(p=>p.size===16).length];
    let changes=null;
-   if(f.hair){const points=new Map();for(const p of [...f.parts].reverse())for(let y=0;y<p.size;y++)for(let x=0;x<p.size;x++){
+   if(f.hair&&!rebuilt){const points=new Map();for(const p of [...f.parts].reverse())for(let y=0;y<p.size;y++)for(let x=0;x<p.size;x++){
      const sx=p.hflip?p.size-1-x:x,sy=p.vflip?p.size-1-y:y,v=colors[pixels(base,p.refs[Math.floor(sy/8)*(p.size/8)+Math.floor(sx/8)],false)[sy%8*8+sx%8]];if(v)points.set((p.x+x)+','+(p.y+y),v);}
     changes=hairChanges(points);}
    if(!parts.length){record[0]=1;record.push(0,0,105);const id=store(new Uint8Array(32),kind);record.push((0xc000|id)&255,(0xc000|id)>>>8);}
@@ -151,6 +203,7 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
     for(let ty=0;ty<p.size/8;ty++)for(let tx=0;tx<p.size/8;tx++){
      const image=[];for(let y=0;y<8;y++)for(let x=0;x<8;x++){
       let sx=tx*8+x,sy=ty*8+y;if(p.hflip)sx=p.size-1-sx;if(p.vflip)sy=p.size-1-sy;
+      if(p.pixels){image.push(p.pixels[Math.floor(sy/8)*(p.size/8)+Math.floor(sx/8)][sy%8*8+sx%8]);continue;}
       const ref=p.refs[Math.floor(sy/8)*(p.size/8)+Math.floor(sx/8)],value=pixels(f.royal?source:base,ref,f.royal)[sy%8*8+sx%8];
      let out=f.royal?value:colors[value];if(changes&&out){const c=changes.get((p.x+tx*8+x)+','+(p.y+ty*8+y));if(c!==undefined)out=c;}image.push(out);
      }const id=0xc000|store(planar(image),kind);record.push(id&255,id>>>8);
@@ -230,7 +283,7 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
   for(const r of Object.values(window.RAW_NWO_GEAR_PATTERNS||{}))for(const [a,b]of [[r.pointers,r.pointer_end],[r.secondary_pointers,r.secondary_pointer_end]]){
    if(a===undefined||b===undefined)continue;for(let p=a;p+3<=b;p+=3){const v=long(data,p);if(v>=0x750000&&v<0x7d0000)throw Error('Another wrestler’s edited tile is stored in Mr. Perfect’s space; the poses were not updated.');}
   }
-  const frames=[],report={replaced:0,recoloured:0,already_current:0,kept_edited:0,kept:0};
+  const frames=[],report={replaced:0,rebuilt:0,recoloured:0,already_current:0,kept_edited:0,kept:0},headCache=new Map();
   for(const [kind,indices]of [['primary',[...Array(998).keys(),...Array.from({length:12},(_,i)=>1000+i)]],['secondary',[...Array(722).keys()]]])for(const index of indices){
    let current;try{current=P.resolveIndex(data,12,kind,index);}catch(e){throw Error(`Mr. Perfect's ${kind} piece ${index} cannot be read (${e.message}); the poses were not updated.`);}
    const row=rows.get(kind+':'+index);let parts=current.parts;
@@ -240,6 +293,13 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
      const target=row.parts.map(p=>({...p,pixels:p.refs.map(royalPixels)}));
      if(h===row.replaces||h===row.replaces_hair){parts=target;report.replaced++;}
      else if(h===pieceHash(P.raster(target)))report.already_current++;
+     else report.kept_edited++;
+    }else if(row.head&&manifest.heads){
+     // Rebuilt from the Raw Bret tiles this ROM still holds; only while they are the art the row was planned on.
+     const rebuilt=rebuiltPiece(data,source,row,manifest,headCache);
+     if(pieceHash(rebuilt.adapted)!==row.replaces)report.kept_edited++;
+     else if(h===row.replaces||h===row.replaces_hair){parts=rebuilt.parts;report.rebuilt++;}
+     else if(h===pieceHash(rebuilt.image))report.already_current++;
      else report.kept_edited++;
     }else if(h===row.replaces){parts=recolourParts(current.parts,hairChanges(points));report.recoloured++;}
     else if(h===row.replaces_hair)report.already_current++;
@@ -283,5 +343,5 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
   putLong(out,0x70fdf0,packet);out.set(Array.from(POSES_MARKER,c=>c.charCodeAt(0)),0x70fe60);checksum(out);
   return {bytes:out,report:{...report,primary_tiles:tiles.primary.size,secondary_tiles:tiles.secondary.size,packet_end:packet}};
  }
- return {build,updatePlex,plexCurrent,posesCurrent,upgradePoses,pieceHash,hairChanges,tile,planar,packed,royalBlock,royalPortrait,checksum,word,long,putWord,putLong,search};
+ return {build,updatePlex,plexCurrent,posesCurrent,upgradePoses,pieceHash,hairChanges,headRebuild,rebuiltPiece,royalPoints,tile,planar,packed,royalBlock,royalPortrait,checksum,word,long,putWord,putLong,search};
 })();

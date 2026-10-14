@@ -13,6 +13,6 @@ const out={same:0,changed:0,changed_replaceable:0,changed_other:[]};
 for(const [kind,list]of [['primary',[...Array(998).keys(),...Array.from({length:12},(_,i)=>1000+i)]],['secondary',[...Array(722).keys()]]])for(const i of list){
  const x=RI.pieceHash(P.raster(P.resolveIndex(a,12,kind,i).parts)),y=RI.pieceHash(P.raster(P.resolveIndex(b,12,kind,i).parts));
  if(x===y){out.same++;continue;}out.changed++;
- const row=rows.get(kind+':'+i);if(row&&row.replaces===x)out.changed_replaceable++;else out.changed_other.push(kind+'/'+i);
+ const row=rows.get(kind+':'+i);if(row&&(row.replaces===x||row.replaces_hair===x))out.changed_replaceable++;else out.changed_other.push(kind+'/'+i);
 }
 console.log(JSON.stringify(out));

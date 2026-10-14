@@ -46,10 +46,29 @@ def mark_hair(rows,raw_rom,matches):
     return rows
 
 
+def mark_heads(rows,sources,royal_rom,royal_wram,review=None):
+    """Adapted rows with Bret's hair whose head the importer rebuilds from Royal Perfect (tools/rebuild_perfect_heads.py)
+    get 'head': [Royal frame, flip, dx, dy, x0, y0, x1, y1]. Returns the manifest's 'heads' table: the colour map and
+    the Royal Bret and Royal Perfect frames' parts (tile addresses) by frame index. Reviewed rejections keep the
+    hair recolour."""
+    review=review or {}
+    rejected,threshold=set(review.get('rejected',[])),review.get('threshold',0)
+    used=set()
+    for r in rows:
+        name=f"{r['kind'][0]}{r['index']}";s=sources['rows'].get(name)
+        if r['royal'] or not r.get('hair') or not s or name in rejected or s['score']<threshold:continue
+        r['head']=[s['royal_index'],int(s['flip']),s['dx'],s['dy'],*s['window']];used.add(s['royal_index'])
+    perfect={f['index']:f for f in royal.catalog(royal_rom,royal_wram,1)}
+    bret={f['index']:f for f in royal.catalog(royal_rom,royal_wram,3)}
+    parts=lambda f:[{'x':p['x'],'y':p['y'],'size':p['size'],'refs':[reference(x)for x in p['refs']]}for p in f['parts']]
+    return {'colours':sources['colours'],'frames':{str(k):{'bret':parts(bret[k]),'perfect':parts(perfect[k])}for k in sorted(used)}}
+
+
 def coverage(rows):
     return {'royal_poses':sum(r['royal']for r in rows),'adapted_raw_poses':sum(not r['royal']for r in rows),
             'matched_royal_poses':sum(r['royal'] and 'replaces' in r for r in rows),
-            'hair_recoloured_poses':sum(bool(r.get('hair'))for r in rows)}
+            'royal_head_poses':sum('head' in r for r in rows),
+            'hair_recoloured_poses':sum(bool(r.get('hair')) and 'head' not in r for r in rows)}
 
 
 def build(raw_rom,raw_wram,royal_rom,royal_wram,captures,matches=None,all_rows=None):
