@@ -10,7 +10,8 @@ For each recipe in evidence/perfect-plex-receivers/recipes/ (recovery recipes ar
 Defect assertions (each fails on the pre-fix build 4ca2856..., kept in each recipe as `defect_baseline`):
 - PP-0  the announcer bank tables match the profile records (an import whose stock-input match stalled
         fails this check), and the replay reaches the move from a cold boot;
-- PP-1/2 every fully matched frame registers the receiver to within 1 px, both actors 40 px apart;
+- PP-1/2 every fully matched frame registers the receiver to within 1 px, both actors 40 px apart (receivers
+        drawn from their own native sequence: every step equals the editor preview on >= 97% of pixels);
 - PP-3  the receiver's shadow centre stays within 12 px of its body's opaque centre;
 - PP-7  no receiver palette-6 object shows foreign VRAM, and no more than 4 trail the receiver body;
 - PP-4  after the move neither actor shows a Perfect-Plex pose except the final pose for at most
@@ -34,7 +35,7 @@ RECIPES = ROOT / 'evidence/perfect-plex-receivers/recipes'
 DEFECT_BUILD = '4ca2856994fdebba62205a186feb5058c8b3a30760ad95423354012a4a128085'
 SUMMARY_KEYS = ('frames_measured', 'frames_fully_matched', 'flip_pairs', 'receiver_body_terms', 'actor_spacing',
                 'registration_errors', 'receiver_trailing_palette6_during_move', 'frames_with_foreign_palette6_during_move',
-                'receiver_shadow_offset_during_move', 'receiver_health_changes')
+                'receiver_shadow_offset_during_move', 'receiver_health_changes', 'receiver_source', 'preview_match')
 
 
 def run(core, rom, recipe_path, output, extra):
@@ -72,9 +73,13 @@ def defects(m, rom):
     if not m['frames_measured']:
         failed.append('PP-0 move not reached')
         return failed
-    if not m['frames_fully_matched'] or any(abs(int(e)) > 1 for e in m['registration_errors']) or \
-            any(abs(int(k)) != 40 for k in m['actor_spacing']):
+    own = m.get('receiver_source') == 'own_native'
+    if not m['frames_fully_matched'] or any(abs(int(k)) != 40 for k in m['actor_spacing']) or \
+            (not own and any(abs(int(e)) > 1 for e in m['registration_errors'])):
         failed.append('PP-1/2 registration')
+    # Own-native receivers: the drawn pair must equal the editor preview (tools/check_preview_native.py).
+    if own and min(m.get('preview_match') or [0]) < 0.97:
+        failed.append('PP-1/2 preview mismatch')
     shadow = m.get('receiver_shadow_offset_during_move')
     if not shadow or max(abs(shadow['min']), abs(shadow['max'])) > 12:
         failed.append('PP-3 shadow')
@@ -123,6 +128,14 @@ def main():
                                                  '--base', str(start), '--frames', str(recipe['capture_frames']),
                                                  '--interval', '1'])
         m = measure(capture, rom, args.royal.read_bytes(), recipe['receiver_slot'])
+        if m.get('receiver_source') == 'own_native' and m['frames_fully_matched']:
+            measurement = args.output / f'{name}-measurement.json'
+            measurement.write_text(json.dumps(m) + '\n')
+            facing = 'left' if '(False, True)' in m['flip_pairs'] else 'right'
+            check = subprocess.run([sys.executable, str(ROOT / 'tools/check_preview_native.py'), str(args.rom),
+                                    str(recipe['receiver_slot']), str(measurement), str(capture), facing],
+                                   check=True, capture_output=True, text=True)
+            m['preview_match'] = json.loads(check.stdout)['match_ratio']
         (args.output / f'{name}-measurement.json').write_text(json.dumps(m, indent=1) + '\n')
         got = json.loads(json.dumps(summary(m)))
         failed = defects(m, rom)

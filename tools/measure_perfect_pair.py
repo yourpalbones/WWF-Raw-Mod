@@ -136,7 +136,11 @@ def after_move(context):
 
 def measure(capture, rom, royal, slot):
     recipes = json.loads((ROOT / 'data/perfect-receivers.json').read_text())
-    worker = recipes['workers'][RECEIVER_SLOT_ROYAL[slot]]
+    # Royal-drawn receivers are registered against their Royal recipe. Receivers drawn from their own native
+    # sequence (no same-identity Royal counterpart, or Scott Hall's gear over Razor) have no Royal reference;
+    # their placement is checked against the editor preview instead (tools/check_preview_native.py).
+    own_native = slot not in RECEIVER_SLOT_ROYAL or (slot == 5 and bytes(rom[0x4bf000:0x4bf00f]) == b'SCOTT-HALL-GEAR')
+    worker = None if own_native else recipes['workers'][RECEIVER_SLOT_ROYAL[slot]]
     canonical = rom[0x70fe40:0x70fe49] in (b'ROYAL-RX2', b'ROYAL-RX3')
     attacker_desc = [descriptor(rom, long(rom, 0x710000 + (1000 + i) * 3)) for i in range(12)]
     table = long(rom, 0x71d000 + slot * 3)
@@ -145,7 +149,7 @@ def measure(capture, rom, royal, slot):
     word = lambda data, at: int.from_bytes(data[at:at + 2], 'little')
     palette_base = 0x700000 + word(rom, 0x2cf212)
     rgb = lambda c: [c >> s & 31 for s in (0, 5, 10)]
-    colors = [word(royal, 0x17c26 + RECEIVER_SLOT_ROYAL[slot] * 32 + i * 2) for i in range(16)]
+    colors = [word(royal, 0x17c26 + RECEIVER_SLOT_ROYAL.get(slot, 2) * 32 + i * 2) for i in range(16)]
     target = [word(rom, palette_base + 64 + slot * 32 + i * 2) for i in range(16)]
     mapping = [0] + [min(range(1, 16), key=lambda j: sum((a - b) ** 2 for a, b in zip(rgb(c), rgb(target[j]))))
                      for c in colors[1:]]
@@ -228,6 +232,9 @@ def measure(capture, rom, royal, slot):
             # Registration vs Royal: the attacker maps Royal column x to descriptor column c = 145 - x,
             # drawn at O + c unflipped or O + FLIP_PIVOT - 1 - c flipped. A receiver part pixel at
             # x' = x - 145 is therefore registered at O - x' or O + FLIP_PIVOT - 1 + x'.
+            if own_native:
+                rows.append(row)
+                continue
             pose = worker['poses'][rm[0][0]]
             o = true(a)
             if canonical:   # attacker drawings unmirrored: descriptor column c = Royal column u
@@ -256,6 +263,7 @@ def measure(capture, rom, royal, slot):
         'generated_by': 'tools/measure_perfect_pair.py',
         'rom_sha256': hashlib.sha256(rom).hexdigest(),
         'receiver_slot': slot,
+        'receiver_source': 'own_native' if own_native else 'royal',
         'build_marker': rom[0x70fe40:0x70fe49].decode('latin-1'),
         'frames_measured': len(rows),
         'frames_fully_matched': sum('camera_x' in r for r in rows),

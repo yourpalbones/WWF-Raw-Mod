@@ -15,7 +15,15 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DIRECTORY = 0x5e0000
+LEGACY_DIRECTORY = 0x5e0000   # RX1/RX2
+
+
+def directory(data):
+    return 0x7da000 if bytes(data[0x70fe40:0x70fe49]) == b'ROYAL-RX3' else LEGACY_DIRECTORY
+
+
+def file_offset(address):
+    return address + 0x400000 if 0x3e0000 <= address < 0x400000 else address
 
 
 def long(data, at):
@@ -41,8 +49,8 @@ def receiving_poses(data, slot):
             for _ in range(4 if n < large else 1):
                 tile_id = data[cursor] | data[cursor + 1] << 8
                 cursor += 2
-                at = DIRECTORY + (tile_id & 0x3fff) * 3
-                tiles.append((tile_id, at, packet(data, long(data, at))))
+                at = directory(data) + (tile_id & 0x3fff) * 3
+                tiles.append((tile_id, at, packet(data, file_offset(long(data, at)))))
         poses.append((i, bytes(data[address:cursor]), tiles))
     return poses
 
@@ -56,15 +64,14 @@ def main():
     before, after = args.before.read_bytes(), args.after.read_bytes()
     if len(before) != len(after):
         raise SystemExit('ROM sizes differ')
-    slots = [int(s) for s in json.loads((ROOT / 'editor/perfect-receiver-layouts.js').read_text()
-                                        .split('=', 1)[1].strip().rstrip(';'))['raw_royal_map']]
+    slots = [s for s in range(13) if 0x71d100 <= long(before, 0x71d000 + s * 3) < 0x71d400]
 
     # Allowed byte set: the edited worker's tiles (packets, directory pointers), relocation space and cursor.
     allowed = set(range(0xffdc, 0xffe0)) | set(range(0x40ffdc, 0x40ffe0)) | set(range(0x70fdf0, 0x70fdf3))
     for _, _, tiles in receiving_poses(before, args.slot):
         for _, at, raw in tiles:
             allowed |= set(range(at, at + 3))
-            offset = long(before, at)
+            offset = file_offset(long(before, at))
             allowed |= set(range(offset, offset + len(raw)))
     old_cursor, new_cursor = long(before, 0x70fdf0), long(after, 0x70fdf0)
     allowed |= set(range(old_cursor, new_cursor))
