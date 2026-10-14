@@ -77,8 +77,8 @@ def sequence_bank_guard():
 def build(base,genesis,stock,portrait):
     if hashlib.sha256(genesis).hexdigest()!=SOURCE_SHA256:
         raise ValueError("Unsupported Genesis source revision; verify directories before importing")
-    if len(base)!=0x800000 or base[0x70fe40:0x70fe49]not in(b'ROYAL-RX2',b'ROYAL-RX3'):
-        raise ValueError('Requires a corrected RX2/RX3 thirteen-slot export, not an older mod')
+    if len(base)!=0x800000 or base[0x70fe40:0x70fe49]not in(b'ROYAL-RX2',b'ROYAL-RX3',b'ROYAL-RX4'):
+        raise ValueError('Requires a corrected RX2/RX3/RX4 thirteen-slot export, not an older mod')
     for a in (0x4a0000,0x540000,0x550000):
         if base[a:a+65536]!=b'\xff'*65536:raise ValueError(f'Probe bank occupied: {a:06x}')
     out=bytearray(base);image,_=render_pose(genesis,6,0,color_lookup(genesis))

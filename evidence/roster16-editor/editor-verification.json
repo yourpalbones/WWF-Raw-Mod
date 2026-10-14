@@ -1,0 +1,101 @@
+{
+  "characters": [
+    {
+      "id": "1",
+      "name": "Bret Hart",
+      "poses": 27
+    },
+    {
+      "id": "2",
+      "name": "Undertaker",
+      "poses": 22
+    },
+    {
+      "id": "3",
+      "name": "Yokozuna",
+      "poses": 19
+    },
+    {
+      "id": "4",
+      "name": "Bam Bam Bigelow",
+      "poses": 16
+    },
+    {
+      "id": "5",
+      "name": "Razor Ramon",
+      "poses": 1862
+    },
+    {
+      "id": "6",
+      "name": "Lex Luger",
+      "poses": 23
+    },
+    {
+      "id": "7",
+      "name": "Doink",
+      "poses": 1833
+    },
+    {
+      "id": "8",
+      "name": "Shawn Michaels",
+      "poses": 22
+    },
+    {
+      "id": "9",
+      "name": "1-2-3 Kid",
+      "poses": 1877
+    },
+    {
+      "id": "10",
+      "name": "Diesel",
+      "poses": 1841
+    },
+    {
+      "id": "11",
+      "name": "Owen Hart",
+      "poses": 20
+    },
+    {
+      "id": "0",
+      "name": "Luna Vachon",
+      "poses": 18
+    },
+    {
+      "id": "12",
+      "name": "Mr. Perfect",
+      "poses": 1746
+    },
+    {
+      "id": "13",
+      "name": "Hulk Hogan",
+      "poses": 53
+    },
+    {
+      "id": "14",
+      "name": "Big Boss Man",
+      "poses": 33
+    },
+    {
+      "id": "15",
+      "name": "Ric Flair",
+      "poses": 35
+    }
+  ],
+  "no_edit_sprite_hashes_preserved": true,
+  "flair_edit_changes_only_flair_among_added_workers": true,
+  "flair_name_saved_and_reopened": true,
+  "flair_palette_saved_and_reopened": true,
+  "monitor_copy_exported": true,
+  "midi_exported_and_reopened": true,
+  "page_errors": [],
+  "before": {
+    "13": "adbe95dea9892b521453f4d5476db72f7d6065862843bb7f80c1da24cb67238c",
+    "14": "815efa72c4127f4327b855406d7f6409e40cc3c7ae79a88f5f853be7600ff219",
+    "15": "aae0564959608a7efa5dbae6a4a5c610c4358a11a4d28e11ff205df326367ce3"
+  },
+  "after": {
+    "13": "adbe95dea9892b521453f4d5476db72f7d6065862843bb7f80c1da24cb67238c",
+    "14": "815efa72c4127f4327b855406d7f6409e40cc3c7ae79a88f5f853be7600ff219",
+    "15": "7ad948ce4cafbd3f98f177173539a9860a0a8245cae3b6d53901282eb61eec6d"
+  }
+}

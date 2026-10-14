@@ -1,0 +1,14 @@
+{
+  "claude_source_commit": "c8666bb52f02990193c1cf2eaa70ec8dff7b2945",
+  "slots": 16,
+  "claude_code_and_art_70f000_to_end_preserved_in_build_and_unedited_export": true,
+  "original_13_profile_records_preserved_in_build": true,
+  "figure_four_implemented": false,
+  "full_animation_coverage_verified": false,
+  "expanded_match_modes_verified": false,
+  "native_editor_body_frames_exact": 50,
+  "native_editor_body_frames_checked": 50,
+  "source_standing_pose_exact_pixels": 1349,
+  "source_palette_dimming_verified": true,
+  "game_build_sha256": "ed9fe38492241bbd851d5faf81045d09014781cf277d117bd2a087d25a7b0bef"
+}

@@ -17,16 +17,17 @@ def quantize(image,count,offset=0):
 
 def configure(out,stock,portrait,*,slot=13,asset_bank=0x4a,hud_bank=0x55,
               name='HULK HOGAN',hometown='VENICE BEACH',height='6\'8"',
-              weight='275',special='LEG DROP',previous_rows=None):
+              weight='275',special='LEG DROP',previous_rows=None,text_region=(0x2eff49,0x2f0000)):
     record=0x708000+slot*45
     def asset(address):return asset_bank*65536+(address&65535)
     hud_address=hud_bank*65536+0x8000
     def put(at,data):
         if any(v!=255 for v in out[at:at+len(data)]):raise ValueError(f'Occupied asset region {at:06x}')
         out[at:at+len(data)]=data
-    def pointer(at,value):out[at:at+3]=value.to_bytes(3,'little')
+    def cpu_address(value):return value+0xc00000 if 0x300000<=value<0x400000 else value
+    def pointer(at,value):out[at:at+3]=cpu_address(value).to_bytes(3,'little')
     def text(value):
-        data=value.encode('ascii')+b'\0';at=out.find(b'\xff'*len(data),0x2eff49,0x2f0000)
+        data=value.encode('ascii')+b'\0';at=out.find(b'\xff'*len(data),*text_region)
         if at<0:raise ValueError('No free bio string storage')
         out[at:at+len(data)]=data
         return (at&65535).to_bytes(2,'little')
@@ -82,6 +83,7 @@ def configure(out,stock,portrait,*,slot=13,asset_bank=0x4a,hud_bank=0x55,
             spans.append((start,x))
         if len(spans)==len(label):
             for letter,(l,r)in zip(label,spans):glyphs.setdefault(letter,[row[l:r]for row in pixels])
+    glyphs.setdefault('F',[[False]*5,*[[c=='1' for c in row]for row in ('11111','11000','11000','11110','11000','11000')],[False]*5])
     glyphs.setdefault('S',[[False]*5,*[[c=='1' for c in row]for row in ('01111','11000','11000','01110','00011','11110')],[False]*5])
     glyphs.setdefault('I',[[False]*3,[True]*3,[False,True,False],[False,True,False],[False,True,False],[False,True,False],[True]*3,[False]*3])
     pixels=[0]*512;left=(64-sum(3 if c==' 'else len(glyphs[c][0])+1 for c in name)+1)//2
@@ -93,13 +95,30 @@ def configure(out,stock,portrait,*,slot=13,asset_bank=0x4a,hud_bank=0x55,
                 if value:pixels[y*64+left+x]=9
         left+=len(rows[0])+1
     current=int.from_bytes(out[0x19ee4c:0x19ee4e],'little')|out[0x19ee49]<<16
+    if current>>16>=0xc0:current&=0x3fffff
     atlas=bytearray(decode_block(out,current)[0]);old_rows=bytes(previous_rows) if previous_rows is not None else bytes(out[0x1a4451:0x1a4451+slot*8]);used=set(old_rows)
-    free=[i for i in range(237,256)if i not in used]
-    if len(free)<8:raise ValueError('No independent HUD tiles for new worker')
     label=planar_image(pixels,64,8,4)
-    for i,ident in enumerate(free[:8]):atlas[ident*32:ident*32+32]=label[i*32:i*32+32]
-    put(hud_address,packet(atlas));out[0x19ee49]=hud_bank;out[0x19ee4c:0x19ee4e]=(0x8000).to_bytes(2,'little')
-    rows=old_rows+bytes(free[:8]);put(asset(0x4a9000),rows)
+    if slot>=15:
+        # Blank name tiles are identical to global tile zero. Reuse zero rather
+        # than consume scarce byte-indexed HUD slots; no visible pixels change.
+        if any(atlas[:32]):raise ValueError('HUD blank tile is not empty')
+        old_rows=bytes(i if any(atlas[i*32:i*32+32]) else 0 for i in old_rows)
+        used=set(old_rows)
+        free=[i for i in range(64,256)if i not in used and not any(atlas[i*32:i*32+32])]
+        needed=sum(any(label[i*32:i*32+32])for i in range(8))
+        if len(free)<needed:raise ValueError('No independent HUD tiles for new worker')
+        ids=[]
+        for i in range(8):
+            data=label[i*32:i*32+32]
+            ident=free.pop(0) if any(data) else 0;ids.append(ident)
+            if ident:atlas[ident*32:ident*32+32]=data
+    else:
+        free=[i for i in range(237,256)if i not in used]
+        if len(free)<8:raise ValueError('No independent HUD tiles for new worker')
+        ids=free[:8]
+        for i,ident in enumerate(ids):atlas[ident*32:ident*32+32]=label[i*32:i*32+32]
+    put(hud_address,packet(atlas));out[0x19ee49]=cpu_address(hud_address)>>16;out[0x19ee4c:0x19ee4e]=(0x8000).to_bytes(2,'little')
+    rows=old_rows+bytes(ids);put(asset(0x4a9000),rows)
     put(asset(0x4a9080),b''.join((0x9000+i*8).to_bytes(2,'little')for i in range(slot+1)))
-    if out[0x2fe5de:0x2fe5e1] not in (bytes.fromhex('b9 44 da'),bytes.fromhex('80 90 4a')):raise ValueError('Unsupported HUD lookup')
-    out[0x2fe5de:0x2fe5e1]=(asset(0x4a9080)).to_bytes(3,'little');out[0x2fe5e4]=asset_bank
+    if out[0x2fe5de:0x2fe5e1] not in (bytes.fromhex('b9 44 da'),bytes.fromhex('80 90 4a'),bytes.fromhex('80 90 5d')):raise ValueError('Unsupported HUD lookup')
+    out[0x2fe5de:0x2fe5e1]=cpu_address(asset(0x4a9080)).to_bytes(3,'little');out[0x2fe5e4]=cpu_address(asset(0x4a9080))>>16

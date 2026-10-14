@@ -1,0 +1,355 @@
+{
+  "frames": 50,
+  "exact_editor_pixel_matches": 50,
+  "roots_observed": [
+    17814,
+    17842,
+    17856,
+    17870,
+    17884,
+    17898,
+    17912,
+    17926,
+    17940,
+    17954,
+    17968,
+    17982,
+    18066,
+    18094,
+    18178,
+    18206,
+    18220,
+    18914,
+    18928,
+    18942,
+    18956,
+    18998,
+    19012,
+    19026
+  ],
+  "scope": "Active selected-player body OBJ pixels; includes sprite/palette edits; excludes native standard shadow and background; checks shapes and colors rather than timing",
+  "rows": [
+    {
+      "frame": "frame-000006",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000012",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000018",
+      "matched_editor_roots": [
+        17898
+      ]
+    },
+    {
+      "frame": "frame-000024",
+      "matched_editor_roots": [
+        17884
+      ]
+    },
+    {
+      "frame": "frame-000030",
+      "matched_editor_roots": [
+        17870
+      ]
+    },
+    {
+      "frame": "frame-000036",
+      "matched_editor_roots": [
+        17856
+      ]
+    },
+    {
+      "frame": "frame-000042",
+      "matched_editor_roots": [
+        17842
+      ]
+    },
+    {
+      "frame": "frame-000048",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000054",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000060",
+      "matched_editor_roots": [
+        17884
+      ]
+    },
+    {
+      "frame": "frame-000066",
+      "matched_editor_roots": [
+        17898
+      ]
+    },
+    {
+      "frame": "frame-000072",
+      "matched_editor_roots": [
+        17912
+      ]
+    },
+    {
+      "frame": "frame-000078",
+      "matched_editor_roots": [
+        17842
+      ]
+    },
+    {
+      "frame": "frame-000084",
+      "matched_editor_roots": [
+        17870
+      ]
+    },
+    {
+      "frame": "frame-000090",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000096",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000102",
+      "matched_editor_roots": [
+        18914
+      ]
+    },
+    {
+      "frame": "frame-000108",
+      "matched_editor_roots": [
+        18928
+      ]
+    },
+    {
+      "frame": "frame-000114",
+      "matched_editor_roots": [
+        18942
+      ]
+    },
+    {
+      "frame": "frame-000120",
+      "matched_editor_roots": [
+        18956
+      ]
+    },
+    {
+      "frame": "frame-000126",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000132",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000138",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000144",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000150",
+      "matched_editor_roots": [
+        18998
+      ]
+    },
+    {
+      "frame": "frame-000156",
+      "matched_editor_roots": [
+        19012
+      ]
+    },
+    {
+      "frame": "frame-000162",
+      "matched_editor_roots": [
+        19026
+      ]
+    },
+    {
+      "frame": "frame-000168",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000174",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000180",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000186",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000192",
+      "matched_editor_roots": [
+        17884
+      ]
+    },
+    {
+      "frame": "frame-000198",
+      "matched_editor_roots": [
+        17968
+      ]
+    },
+    {
+      "frame": "frame-000204",
+      "matched_editor_roots": [
+        17982
+      ]
+    },
+    {
+      "frame": "frame-000210",
+      "matched_editor_roots": [
+        17926
+      ]
+    },
+    {
+      "frame": "frame-000216",
+      "matched_editor_roots": [
+        18220
+      ]
+    },
+    {
+      "frame": "frame-000222",
+      "matched_editor_roots": [
+        18206
+      ]
+    },
+    {
+      "frame": "frame-000228",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000234",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000240",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000246",
+      "matched_editor_roots": [
+        18094
+      ]
+    },
+    {
+      "frame": "frame-000252",
+      "matched_editor_roots": [
+        18178
+      ]
+    },
+    {
+      "frame": "frame-000258",
+      "matched_editor_roots": [
+        18206
+      ]
+    },
+    {
+      "frame": "frame-000264",
+      "matched_editor_roots": [
+        17954
+      ]
+    },
+    {
+      "frame": "frame-000270",
+      "matched_editor_roots": [
+        17940
+      ]
+    },
+    {
+      "frame": "frame-000276",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000282",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000288",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000294",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    },
+    {
+      "frame": "frame-000300",
+      "matched_editor_roots": [
+        17814,
+        18066
+      ]
+    }
+  ]
+}
