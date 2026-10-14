@@ -4,6 +4,9 @@ Subcommands:
   import RAW ROYAL --output OUT       Add Mr. Perfect exactly as a user would (Add Mr. Perfect button).
   resave ROM --output OUT             Open an edited ROM and use "Save playable ROM".
   update ROM ROYAL --output OUT       Open an earlier import and use "Update Perfect-Plex".
+  apply-gear ROM --slots 5 9 10 7 --output OUT
+                                      Apply each slot's built-in reference gear (Scott, Syxx, Nash) or the
+                                      Sting rebuild, in order, with the Sprites button, then save the ROM.
   edit-receiver ROM --slot N --pose I --output OUT
                                       Paint a stroke on one worker's "Receiving Perfect-Plex" pose with the
                                       mouse, save, and report the edited tile sources (for isolation checks).
@@ -92,6 +95,24 @@ def run_update(rom, royal, output):
         return {'status_before': before, 'status': page.locator('#royal-status').text_content(), 'errors': errors}
 
 
+def run_apply_gear(rom, slots, output):
+    with editor() as (page, errors):
+        load_rom(page, rom)
+        applied = []
+        for slot in slots:
+            page.locator('#wrestler').select_option(str(slot))
+            page.locator('#tab-sprite').click()
+            if page.locator('#scott-reference-apply').is_disabled():
+                applied.append({'slot': slot, 'status': 'already applied or unavailable'})
+                continue
+            page.locator('#scott-reference-apply').click()
+            page.wait_for_function("!document.querySelector('#status').textContent.startsWith('Applying')", timeout=300000)
+            applied.append({'slot': slot, 'status': page.locator('#status').text_content()})
+        page.locator('#tab-export').click()
+        download(page, '#rom-export', output)
+        return {'applied': applied, 'errors': errors}
+
+
 def run_edit_receiver(rom, slot, pose, output, length=6):
     with editor() as (page, errors):
         load_rom(page, rom)
@@ -130,8 +151,12 @@ if __name__ == '__main__':
     c.add_argument('--output', type=Path, required=True)
     e = sub.add_parser('edit-receiver'); e.add_argument('rom', type=Path); e.add_argument('--slot', type=int, required=True)
     e.add_argument('--pose', type=int, required=True); e.add_argument('--output', type=Path, required=True)
+    g = sub.add_parser('apply-gear'); g.add_argument('rom', type=Path)
+    g.add_argument('--slots', type=int, nargs='+', required=True); g.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
-    if args.command == 'import':
+    if args.command == 'apply-gear':
+        result = run_apply_gear(args.rom, args.slots, args.output)
+    elif args.command == 'import':
         result = run_import(args.raw, args.royal, args.output)
     elif args.command == 'resave':
         result = run_resave(args.rom, args.output)

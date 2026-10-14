@@ -112,24 +112,28 @@ function activateImportedWorker(data){
 function activateReceivingPoses(data){
  for(const c of C.characters)c.poses=c.poses.filter(p=>p.category!=='Perfect-Plex receiving');
  if(!RC.installed(data))return;
- const packetOK=o=>(o>=0x5d0000&&o<0x5e0000)||(o>=0x5ec000&&o<0x5f0000)||(o>=0x6d8000&&o<0x6e0000)||(o>=0x750000&&o<0x7d0000);
- for(const slotText of Object.keys(RX.raw_royal_map)){
-  const slot=Number(slotText),character=C.characters.find(c=>c.id===String(slot)),table=RI.long(data,0x71d000+slot*3);
+ // RX3 keeps drawings in its own layout; RX1/RX2 builds (before relocation) used fixed pools.
+ const v3=!RC.outdated(data),L=RX.layout;
+ const descriptorOK=a=>v3?a>=L.descriptors[0]&&a<L.descriptors[1]:a>=0x6d0000&&a<0x6d8000;
+ const pointerBase=v3?L.pointer_table:0x5e0000,fileOffset=a=>a>=0x3e0000&&a<0x400000?a+0x400000:a;
+ const packetOK=o=>(o>=0x750000&&o<0x7d0000)||(v3?L.pools.some(([a,b])=>o>=a&&o<b):(o>=0x5d0000&&o<0x5e0000)||(o>=0x5ec000&&o<0x5f0000)||(o>=0x6d8000&&o<0x6e0000));
+ for(let slot=0;slot<13;slot++){
+  const character=C.characters.find(c=>c.id===String(slot)),table=RI.long(data,0x71d000+slot*3);
   if(!character||table<0x71d100||table>=0x71d400)continue;const users=new Map();
   for(let i=0;i<12;i++){
-   const address=RI.long(data,table+i*3);if(address<0x6d0000||address>=0x6d8000)throw Error('Receiving sprite description outside its bank.');
+   const address=RI.long(data,table+i*3);if(!descriptorOK(address))throw Error('Receiving sprite description outside its bank.');
    const count=data[address],large=data[address+1];let cursor=address+2;const parts=[];
    for(let n=0;n<count;n++){
     if(data[cursor++]!==0)throw Error('Unsupported receiving sprite position encoding.');const px=data[cursor++]&127,py=data[cursor++]&127,size=n<large?16:8,tiles=[];
     for(let k=0;k<(size===16?4:1);k++){
      const id=RI.word(data,cursor);cursor+=2;if(id<0xc000)throw Error('Receiving tile is not private.');
-     const pointer=0x5e0000+(id&16383)*3,offset=RI.long(data,pointer);if(!packetOK(offset))throw Error('Receiving tile packet is outside its allocation.');
+     const pointer=pointerBase+(id&16383)*3,offset=fileOffset(RI.long(data,pointer));if(!packetOK(offset))throw Error('Receiving tile packet is outside its allocation.');
      let length=4;for(let b=0;b<4;b++)for(let bit=0;bit<8;bit++)length+=(data[offset+b]>>bit)&1;
      const key=String(offset);C.sources[key]=character.sources[key]={offset,length,compressed:true};(users.get(key)||users.set(key,[]).get(key)).push(pointer);tiles.push(key);
     }parts.push({x:px&64?px-128:px,y:py-105,size,hflip:false,vflip:false,tiles});
    }
    const left=Math.min(...parts.map(p=>p.x)),top=Math.min(...parts.map(p=>p.y)),right=Math.max(...parts.map(p=>p.x+p.size)),bottom=Math.max(...parts.map(p=>p.y+p.size));
-   character.poses.push({label:'Receiving Perfect-Plex · '+(i+1),category:'Perfect-Plex receiving',width:right-left,height:bottom-top,parts:parts.map(p=>({...p,x:p.x-left,y:p.y-top}))});
+   character.poses.push({label:'Receiving Perfect-Plex · '+(i+1),category:'Perfect-Plex receiving',width:right-left,height:bottom-top,origin:[-left,-top],parts:parts.map(p=>({...p,x:p.x-left,y:p.y-top}))});
   }
   for(const [key,p]of users)C.sources[key].pointer_offsets=[...new Set(p)];
  }

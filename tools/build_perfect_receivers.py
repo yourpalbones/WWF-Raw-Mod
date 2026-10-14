@@ -1,20 +1,29 @@
-"""Private paired-animation build for Raw workers with direct Royal counterparts.
+"""Private paired-animation build: receiving drawings for every slot with a receiving art source.
 
-Uses an independent receiving tile namespace. Raw-only and customized receiving
-art still needs authoring; this is not an all-wrestler completed release.
+The install itself is editor/perfect-receiver-core.js (one implementation, run here through Node by
+tools/receivers_cli.js), so Python and browser output are identical by construction. This module generates
+the ROM hooks and the storage layout that the manifest (tools/build_perfect_receiver_manifest.py) bundles.
 """
-import argparse,json
+import argparse,json,subprocess
 from pathlib import Path
-from PIL import Image
-from royal_rumble_sprites import decode_tile
-from inspect_rom import tile
-from build_bret_gear import planar
-from decode_sprite_tile import encode_sprite_tile
-from build_nwo_gear import checksum,emit_address
+from build_nwo_gear import emit_address
 from build_shawn_kick_prototype import Program
 
-RAW_ROYAL={1:3,2:2,3:9,5:8,6:10,8:7,12:1}
+ROOT=Path(__file__).resolve().parents[1]
 ORIGIN_X=72   # receiver canvas origin (data/perfect-receivers.json "canonical")
+DESCRIPTOR_BANK=0x71
+# RX3 storage: only the Perfect import and these drawings use these ranges (all verified free in fresh, v0.16
+# and gear-modded imports). 7E8000-7EFFFF and 7F8000-7FFFFF are reached as $3E:8000 / $3F:8000.
+LAYOUT={'marker':'ROYAL-RX3','tables':[0x71d000,0x720000],'descriptors':[0x711900,0x71d000],
+        'pointer_table':0x7da000,'pointer_end':0x7de000,
+        'pools':[[0x700000,0x708000],[0x7e8000,0x7f0000],[0x7f8000,0x800000],[0x7de000,0x7e0000]]}
+# Receiving art source per Raw slot. 'royal': the Royal counterpart's drawings, used where that counterpart is
+# the same identity as the slot's current art. Other slots keep the generic stock-part path until their
+# authored art is accepted (docs/complete-wrestler-art.md).
+# 'stock_identity_only': skip the Royal source when the slot carries a gear identity (Scott Hall replaces Razor).
+SLOTS={1:{'source':'royal','selector':3},2:{'source':'royal','selector':2},3:{'source':'royal','selector':9},
+       5:{'source':'royal','selector':8,'stock_identity_only':True},
+       6:{'source':'royal','selector':10},8:{'source':'royal','selector':7},12:{'source':'royal','selector':1}}
 
 
 def worker_hook():
@@ -33,10 +42,10 @@ def worker_hook():
 
 
 def lookup_hook():
-    p=Program();p.emit('48 a5 82 29 ff 00 c9 6d 00');p.branch('d0','original')
+    p=Program();p.emit(f'48 a5 82 29 ff 00 c9 {DESCRIPTOR_BANK:02x} 00');p.branch('d0','original')
     p.emit('68 c9 00 c0');p.branch('90','stock')
     p.emit('29 ff 3f da 48 0a 18 63 01 aa 68')
-    emit_address(p,'bf',0x5e0000);p.emit('85 db e2 20');emit_address(p,'bf',0x5e0002)
+    emit_address(p,'bf',LAYOUT['pointer_table']);p.emit('85 db e2 20');emit_address(p,'bf',LAYOUT['pointer_table']+2)
     p.emit('85 dd c2 20 fa a9 01 00 6b')
     p.label('original');p.emit('68')
     p.label('stock');emit_address(p,'5c',0x71e900)
@@ -64,84 +73,17 @@ def sequence_hook():
     return p.finish()
 
 
-def build(base,royal,recipes):
-    out=bytearray(base)
-    for start,end in((0x5d0000,0x5f0000),(0x6d0000,0x6e0000),(0x71d000,0x720000)):
-        if any(v!=255 for v in out[start:end]):raise ValueError(f'Receiving allocation occupied at {start:06x}')
-    out[0x71d000:0x71d027]=bytes(39);out[0x71d040:0x71d067]=bytes(39)
-    palette_base=0x700000+int.from_bytes(base[0x2cf212:0x2cf214],'little')
-    word=lambda data,at:int.from_bytes(data[at:at+2],'little')
-    rgb=lambda color:[color>>s&31 for s in(0,5,10)]
-    pools=[(0x5d0000,0x5e0000),(0x5ec000,0x5f0000),(0x6d8000,0x6e0000)]
-    pool=0;packet=pools[0][0];descriptor=0x6d0000;count=0;cache={};report=[]
-    if recipes.get('canonical',{}).get('origin')!=[ORIGIN_X,105]:raise ValueError('Run tools/canonical_perfect_geometry.py first')
-    shift=recipes['canonical']['mirror_shift']
-    for slot,selector in RAW_ROYAL.items():
-        worker=recipes['workers'][selector];private={}
-        colors=[word(royal,0x17c26+selector*32+i*2)for i in range(16)]
-        target=[word(base,palette_base+64+slot*32+i*2)for i in range(16)]
-        mapping=[0]+[min(range(1,16),key=lambda j:sum((a-b)**2 for a,b in zip(rgb(c),rgb(target[j]))))for c in colors[1:]]
-        table=0x71d100+slot*36;profiles=0x71d400+slot*168;sequence=0x71e000+slot*141
-        out[0x71d000+slot*3:0x71d003+slot*3]=table.to_bytes(3,'little')
-        out[0x71d040+slot*3:0x71d043+slot*3]=sequence.to_bytes(3,'little')
-        for i,row in enumerate(worker['poses']):
-            image=Image.new('P',(144,144))
-            for part in reversed(row['parts']):
-                size=part['size']
-                for y in range(size):
-                    for x in range(size):
-                        sx=size-1-x if part['hflip']else x;sy=size-1-y if part['vflip']else y
-                        ref=part['refs'][(sy//8)*(size//8)+sx//8];key=tuple(ref)
-                        if key not in cache:cache[key]=tile(decode_tile(royal,ref[0],bool(ref[1]))[0],0,4)
-                        value=cache[key][sy%8*8+sx%8]
-                        # Canonical facing: Raw art faces right when unflipped, so the receiver (who faces
-                        # left in Royal) is mirrored: descriptor column = MIRROR_SHIFT - Royal column.
-                        if value:image.putpixel((ORIGIN_X+shift-(part['x']+x),part['y']+y+105),mapping[value])
-            chunks=row['canonical_chunks'];record=bytearray([len(chunks),sum(c[2]==16 for c in chunks)])
-            for x,y,size in chunks:
-                record+=bytes([0,x&127,(y+105)&127])
-                for ty in range(size//8):
-                    for tx in range(size//8):
-                        pixels=[image.getpixel((x+ORIGIN_X+tx*8+xx,y+105+ty*8+yy))for yy in range(8)for xx in range(8)]
-                        raw=planar(pixels)
-                        if raw not in private:
-                            encoded=encode_sprite_tile(raw)
-                            if packet+len(encoded)>pools[pool][1]:
-                                pool+=1
-                                if pool>=len(pools):raise ValueError('Receiving packet space exhausted')
-                                packet=pools[pool][0]
-                            if count>=16384:raise ValueError('Receiving tile namespace exhausted')
-                            private[raw]=count;out[packet:packet+len(encoded)]=encoded
-                            out[0x5e0000+count*3:0x5e0003+count*3]=packet.to_bytes(3,'little')
-                            packet+=len(encoded);count+=1
-                        record+=(0xc000|private[raw]).to_bytes(2,'little')
-            if descriptor+len(record)>0x6d8000:raise ValueError('Receiving descriptor space exhausted')
-            out[descriptor:descriptor+len(record)]=record;out[table+i*3:table+i*3+3]=descriptor.to_bytes(3,'little');descriptor+=len(record)
-            profile=profiles+i*14
-            # Body at body_dx and the stock shadow (0x8024) under the body, on the ground (dy -1).
-            out[profile:profile+10]=(((1200+i)*3).to_bytes(2,'little')+bytes([row['body_dx']&255,0,36,128,
-                                     row['shadow_dx']&255,255,255,255]))
-        for i in range(20):
-            profile=profiles+min(i,11)*14
-            out[sequence+i*7:sequence+i*7+7]=bytes([113])+(profile&65535).to_bytes(2,'little')+bytes(4)
-        out[sequence+140]=255
-        report.append({'raw_slot':slot,'royal_selector':selector,'receiving_drawings':12,'private_tiles':len(private)})
-    # Existing dispatcher code stays intact and remains the fallback for all actors.
-    for original,copy in((0x70f000,0x71e800),(0x70f200,0x71e900),(0x70f400,0x71ea00)):
-        out[copy:copy+256]=base[original:original+256]
-    for original,address,code in((0x70f000,0x71eb00,worker_hook()),(0x70f200,0x71ec00,lookup_hook()),(0x70f400,0x71ed00,sequence_hook())):
-        if len(code)>256:raise ValueError('Receiving hook exceeds its allocation')
-        out[address:address+len(code)]=code;out[original:original+4]=b'\x5c'+address.to_bytes(3,'little')
-    out[0x70fe40:0x70fe49]=b'ROYAL-RX2'  # RX2: canonical facing, PP-7/PP-4 hook fixes
-    checksum(out)
-    return out,{'receivers':report,'tile_namespace_count':count,'descriptor_end':descriptor,'last_packet':packet,'raw_only_receiving_art_complete':False,'custom_gear_receiving_art_complete':False}
+def build(base_path,royal_path,output):
+    """Install through the browser core (tools/receivers_cli.js); returns its report."""
+    result=subprocess.run(['node',str(ROOT/'tools/receivers_cli.js'),'install',str(base_path),str(royal_path),str(output)],
+                          check=True,capture_output=True,text=True)
+    return json.loads(result.stdout)
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('raw',type=Path);parser.add_argument('royal',type=Path)
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    root=Path(__file__).resolve().parents[1]
-    result,report=build(args.raw.read_bytes(),args.royal.read_bytes(),json.loads((root/'data/perfect-receivers.json').read_text()))
-    args.output.write_bytes(result);args.output.with_suffix('.json').write_text(json.dumps(report,indent=2)+'\n')
+    report=build(args.raw,args.royal,args.output)
+    args.output.with_suffix('.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps(report,indent=2))

@@ -137,7 +137,7 @@ def after_move(context):
 def measure(capture, rom, royal, slot):
     recipes = json.loads((ROOT / 'data/perfect-receivers.json').read_text())
     worker = recipes['workers'][RECEIVER_SLOT_ROYAL[slot]]
-    canonical = rom[0x70fe40:0x70fe49] == b'ROYAL-RX2'
+    canonical = rom[0x70fe40:0x70fe49] in (b'ROYAL-RX2', b'ROYAL-RX3')
     attacker_desc = [descriptor(rom, long(rom, 0x710000 + (1000 + i) * 3)) for i in range(12)]
     table = long(rom, 0x71d000 + slot * 3)
     receiver_desc = [descriptor(rom, long(rom, table + i * 3)) for i in range(12)]
