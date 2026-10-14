@@ -5,7 +5,7 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
  const putWord=(b,p,v)=>{b[p]=v&255;b[p+1]=v>>>8&255;};
  const putLong=(b,p,v)=>{putWord(b,p,v);b[p+2]=v>>>16&255;};
  const equal=(b,p,a)=>a.every((v,i)=>b[p+i]===v);
- const PLEX_MARKER='PLEX-CANON1',POSES_MARKER='POSES-ROYAL3';
+ const PLEX_MARKER='PLEX-CANON1',POSES_MARKER='POSES-ROYAL4';
  const bytes=s=>Uint8Array.from(s.trim().split(/\s+/),v=>parseInt(v,16));
  const search=(b,pattern,start=0,end=b.length)=>{outer:for(let p=start;p+pattern.length<=end;p++){for(let i=0;i<pattern.length;i++)if(b[p+i]!==pattern[i])continue outer;return p;}return -1;};
  function tile(data,ref){
@@ -212,9 +212,10 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
   checksum(out);return out;
  }
  // Older imports hold adapted Raw Bret art in pieces where Royal Perfect has the pose (manifest rows with
- // 'replaces'). Rebuild the slot's pieces: a piece is replaced only while its pixels still hash to the adapted
- // art it supersedes; every other piece, including the user's edits and the Perfect-Plex frames, is decoded
- // and stored again pixel for pixel. The slot's tile space is repacked, so the new art fits.
+ // 'replaces'). Rebuild the slot's pieces: a piece is replaced only while its pixels still hash to the art it
+ // supersedes (v0.16's adapted piece, or that piece with the blond-hair recolour an earlier upgrade applied);
+ // a piece already holding the new art is left as it is; every other piece, including the user's edits and the
+ // Perfect-Plex frames, is decoded and stored again pixel for pixel. The slot's tile space is repacked.
  function posesCurrent(data){return data.length===0x800000&&String.fromCharCode(...data.slice(0x70fe60,0x70fe60+POSES_MARKER.length))===POSES_MARKER;}
  function pieceHash(points){
   const list=[...points].map(([k,v])=>{const [x,y]=k.split(',').map(Number);return [x,y,v];}).sort((a,b)=>a[1]-b[1]||a[0]-b[0]);
@@ -229,14 +230,19 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
   for(const r of Object.values(window.RAW_NWO_GEAR_PATTERNS||{}))for(const [a,b]of [[r.pointers,r.pointer_end],[r.secondary_pointers,r.secondary_pointer_end]]){
    if(a===undefined||b===undefined)continue;for(let p=a;p+3<=b;p+=3){const v=long(data,p);if(v>=0x750000&&v<0x7d0000)throw Error('Another wrestler’s edited tile is stored in Mr. Perfect’s space; the poses were not updated.');}
   }
-  const frames=[],report={replaced:0,recoloured:0,kept_edited:0,kept:0};
+  const frames=[],report={replaced:0,recoloured:0,already_current:0,kept_edited:0,kept:0};
   for(const [kind,indices]of [['primary',[...Array(998).keys(),...Array.from({length:12},(_,i)=>1000+i)]],['secondary',[...Array(722).keys()]]])for(const index of indices){
    let current;try{current=P.resolveIndex(data,12,kind,index);}catch(e){throw Error(`Mr. Perfect's ${kind} piece ${index} cannot be read (${e.message}); the poses were not updated.`);}
    const row=rows.get(kind+':'+index);let parts=current.parts;
    if(row&&row.replaces!==undefined){
-    const points=P.raster(current.parts);
-    if(pieceHash(points)===row.replaces){parts=row.royal?row.parts.map(p=>({...p,pixels:p.refs.map(royalPixels)})):recolourParts(current.parts,hairChanges(points));
-     report[row.royal?'replaced':'recoloured']=(report[row.royal?'replaced':'recoloured']||0)+1;}
+    const points=P.raster(current.parts),h=pieceHash(points);
+    if(row.royal){
+     const target=row.parts.map(p=>({...p,pixels:p.refs.map(royalPixels)}));
+     if(h===row.replaces||h===row.replaces_hair){parts=target;report.replaced++;}
+     else if(h===pieceHash(P.raster(target)))report.already_current++;
+     else report.kept_edited++;
+    }else if(h===row.replaces){parts=recolourParts(current.parts,hairChanges(points));report.recoloured++;}
+    else if(h===row.replaces_hair)report.already_current++;
     else report.kept_edited++;
    }else report.kept++;
    frames.push({kind,index,parts,descriptor:index>=1000?current.descriptor:null});

@@ -31,12 +31,18 @@ def frame_rows(frames):
 
 
 def mark_hair(rows,raw_rom,matches):
-    """Adapted rows whose Bret hair the importer recolours blond: 'hair' and 'replaces' (the v0.16 piece hash)."""
+    """Adapted rows whose Bret hair the importer recolours blond get 'hair' and 'replaces' (the v0.16 piece hash).
+    Every row that replaces a piece with Bret's hair also gets 'replaces_hair': the hash of that piece after the
+    hair recolour, the state an earlier upgrade on this branch left it in, so a later upgrade still recognises it."""
+    from match_perfect_poses import fnv
     hashes={(m['kind'],m['index']):m['adapted_hash'] for m in matches}
     for r in rows:
-        if r['royal']:continue
+        if r['royal'] and 'replaces' not in r:continue
         points={k:ADAPTED_COLOURS[v] for k,v in raw_raster(resolve_index(raw_rom,1,r['kind'],r['index'])['parts']).items()}
-        if hair_changes(points):r['hair']=1;r['replaces']=hashes[(r['kind'],r['index'])]
+        changes=hair_changes(points)
+        if not changes:continue
+        if not r['royal']:r['hair']=1;r['replaces']=hashes[(r['kind'],r['index'])]
+        r['replaces_hair']=fnv({**points,**changes})
     return rows
 
 
