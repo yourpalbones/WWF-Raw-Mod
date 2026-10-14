@@ -1,9 +1,9 @@
 """Extend a Perfect-Plex controller recipe past the move to show recovery (PP-4).
 
 The base recipe's inputs are kept unchanged up to the move, so the run is frame-identical until then. After
-the receiver is down, player 1 walks away and back and then attacks, so the capture shows the receiver's own
-downed/get-up art and both workers acting again. Controller presses only (libretro ids: B=0, Y=1, LEFT=6,
-RIGHT=7).
+the receiver is down, player 2 mashes buttons to get up while player 1 walks away and back and then
+attacks, so the capture shows the receiver's own downed/get-up art and both workers acting again.
+Controller presses only (libretro ids: B=0, Y=1, LEFT=6, RIGHT=7, A=8).
 
     python3 tools/compose_recovery_recipe.py BASE.json OUT.json
 """
@@ -11,7 +11,7 @@ import argparse
 import json
 from pathlib import Path
 
-B, Y, LEFT, RIGHT = 0, 1, 6, 7
+B, Y, LEFT, RIGHT, A = 0, 1, 6, 7, 8
 
 
 def main():
@@ -26,9 +26,12 @@ def main():
     extra = [[0, start, away, 40], [0, start + 60, back, 50]]
     extra += [[0, start + 130 + i * 40, (Y, B)[i % 2], 6] for i in range(10)]
     extra += [[0, start + 560, back, 60], [0, start + 640, away, 60]]
+    # Player 2 (the receiver) mashes to recover, then walks toward player 1 and attacks.
+    extra += [[1, start + i * 8, (B, Y, A)[i % 3], 4] for i in range(60)]
+    extra += [[1, start + 520, away, 40]] + [[1, start + 570 + i * 30, (Y, B)[i % 2], 6] for i in range(5)]
     recipe.update({
         'scenario': recipe['scenario'] + '-recovery',
-        'note': recipe['note'] + ' Extended after the move: P1 walks away and back, then attacks (PP-4 recovery).',
+        'note': recipe['note'] + ' Extended after the move: P2 mashes to get up; P1 walks away and back, then both attack (PP-4 recovery).',
         'composed_by': 'tools/compose_recovery_recipe.py',
         'base_recipe': args.base.name,
         'frames': start + 760,
