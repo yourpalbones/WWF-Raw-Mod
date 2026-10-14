@@ -39,6 +39,9 @@ ROOT = Path(__file__).resolve().parents[1]
 # with Scott Hall's gear (stock Razor uses Royal Razor).
 DONORS = {0: 7, 4: 5, 7: 6, 9: 7, 10: 2, 11: 3}
 GEAR_DONORS = {5: 8, 7: 10, 9: 7, 10: 2}       # Scott Hall, Sting, Syxx, Kevin Nash
+# Classes come from the receiver's own colours, except where the colours do not say skin: Doink's skin indices hold
+# his clown greys. Raw gives every palette index the same role in every slot, so Doink is classed by Bret's roles.
+ROLES_FROM = {7: 1}
 
 
 def colour_class(rgb):
@@ -182,7 +185,7 @@ def plan(raw, royal, slot, selector, receivers, finisher, keep=5, art=None):
     addresses = profiles(raw)
     shadows = shadow_parts(art, slot, addresses)
     from raw_parts import palette
-    cls = classes(palette(art, slot))
+    cls = classes(palette(raw, ROLES_FROM[slot]) if slot in ROLES_FROM and art is raw else palette(art, slot))
     drawn = {a: candidate(art, slot, a, shadows, cls) for a in addresses}
     drawn = {a: p for a, p in drawn.items() if p and len(p) >= 200}
     steps = []
