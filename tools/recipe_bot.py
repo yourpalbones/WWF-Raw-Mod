@@ -66,6 +66,7 @@ def main():
     move_start = None
     plan = []          # queued (frames, held) actions
     phase, tries, after = 'approach', 0, 0
+    side, stuck, recoveries, last_x = a.side, 0, 0, None
     for k in range(1, a.max_frames + 1):
         if k < setup_end:
             held = {0: {b for port, s, b, d in setup if port == 0 and s <= k < s + d},
@@ -89,7 +90,9 @@ def main():
                     plan.pop(0)
             else:
                 (x1, x2), (y1, y2) = st['x'], st['y']
-                want = x2 - 36 if a.side == 'left' else x2 + 36
+                want = x2 - 36 if side == 'left' else x2 + 36
+                stuck = stuck + 1 if last_x == x1 and abs(x1 - want) > 3 else 0
+                last_x = x1
                 walking = (0, 2, 4, 6, 8)
                 idle = st['action'][0] in walking and st['action'][1] in walking
                 if st['action'][1] not in walking:
@@ -97,6 +100,14 @@ def main():
                     plan = [(4, {0: set(), 1: {(B, 1, 8)[(k // 4) % 3]}}), (4, {0: set(), 1: set()})]
                 elif st['action'][0] not in walking:
                     plan = [(8, {0: set(), 1: set()})]
+                elif stuck > 60:
+                    # P1 cannot reach its spot (ring edge, or the receiver is outside the ropes): bring the
+                    # receiver back toward the ring centre and try the other side if that does not help.
+                    toward = RIGHT if x2 < 320 else LEFT
+                    plan = [(30, {0: set(), 1: {toward}}), (20, {0: set(), 1: set()})]
+                    stuck, recoveries = 0, recoveries + 1
+                    if recoveries % 3 == 0:
+                        side = 'right' if side == 'left' else 'left'
                 elif abs(x1 - want) > 3 or abs(y1 - y2) > 8:
                     dirs = set()
                     if x1 < want - 3:
@@ -110,7 +121,7 @@ def main():
                     plan = [(4, {0: dirs, 1: set()})]
                 elif idle:
                     # Face the opponent, grapple, then either mash moves or try the finisher.
-                    face = RIGHT if a.side == 'left' else LEFT
+                    face = RIGHT if side == 'left' else LEFT
                     plan = [(1, {0: {face}, 1: set()}), (25, {0: set(), 1: set()}), (8, {0: {X}, 1: set()}),
                             (82, {0: set(), 1: set()})]
                     if tries % 2:
@@ -129,7 +140,7 @@ def main():
         raise SystemExit(f'No Perfect-Plex within {a.max_frames} frames (tries {tries})')
     recipe = {'scenario': a.output.stem, 'receiver_slot': a.slot, 'composed_by': 'tools/recipe_bot.py',
               'note': f'Bot-played: P2 selects slot {a.slot}; P1 grapples from the {a.side} until the Perfect-Plex starts.',
-              'parameters': {'rights': rights, 'side': a.side, 'setup_end': setup_end},
+              'parameters': {'rights': rights, 'side': a.side, 'final_side': side, 'setup_end': setup_end},
               'controller_only': True, 'frames': move_start + 600, 'move_start': move_start,
               'capture_from': move_start - 150, 'capture_frames': 400, 'inputs': inputs}
     a.output.write_text(json.dumps(recipe, indent=1) + '\n')
