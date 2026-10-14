@@ -32,6 +32,7 @@ from royal_rumble_sprites import decode_tile
 
 ROOT = Path(__file__).resolve().parents[1]
 ATTACKER_PALETTE, RECEIVER_PALETTE, SHADOW_PALETTE = 0, 1, 6
+FLIP_PIVOT = 8  # measured: flipped object x = origin - dx - size + 8 (docs/perfect-plex-native-trace.md)
 RECEIVER_SLOT_ROYAL = {1: 3, 2: 2, 3: 9, 5: 8, 6: 10, 8: 7, 12: 1}
 
 
@@ -105,6 +106,20 @@ def oam_indices(vram, oam, rec, obsel):
     return out
 
 
+def after_move(context):
+    """What each actor displays once both have left the Perfect-Plex actions."""
+    moved = [i for i, c in enumerate(context) if c['actions'] == [600, 540]]
+    if not moved:
+        return None
+    tail = [c for c in context[moved[-1] + 1:] if c['actions'][0] != 600 and c['actions'][1] != 540]
+    return {'frames': len(tail),
+            'actions': dict(Counter(str(c['actions']) for c in tail)),
+            'attacker_pose_shown': dict(Counter(str(c['attacker_perfect_plex_pose']) for c in tail)),
+            'receiver_pose_shown': dict(Counter(str(c['receiver_perfect_plex_pose']) for c in tail)),
+            'receiver_trailing_palette6': dict(Counter(c['receiver_trailing_palette6'] for c in tail)),
+            'receiver_palette6_foreign': dict(Counter(c['receiver_palette6_foreign'] for c in tail))}
+
+
 def measure(capture, rom, royal, slot):
     recipes = json.loads((ROOT / 'data/perfect-receivers.json').read_text())
     worker = recipes['workers'][RECEIVER_SLOT_ROYAL[slot]]
@@ -119,7 +134,7 @@ def measure(capture, rom, royal, slot):
     target = [word(rom, palette_base + 64 + slot * 32 + i * 2) for i in range(16)]
     mapping = [0] + [min(range(1, 16), key=lambda j: sum((a - b) ** 2 for a, b in zip(rgb(c), rgb(target[j]))))
                      for c in colors[1:]]
-    cache, rows = {}, []
+    cache, rows, context = {}, [], []
     for wram_path in sorted(capture.glob('frame-*-wram.bin')):
         stem = str(wram_path)[:-len('-wram.bin')]
         frame = int(Path(stem).name.split('-')[1])
@@ -127,11 +142,47 @@ def measure(capture, rom, royal, slot):
         wram, vram, oam, cgram, regs = (read(n) for n in ('wram', 'vram', 'oam', 'cgram', 'registers'))
         w = lambda a: int.from_bytes(wram[a:a + 2], 'little')
         actors = [{'action': w(0x6b4 + i), 'x': w(0x5f0 + i), 'y': w(0x600 + i), 'state': w(0xbec + i)} for i in (0, 2)]
-        if actors[0]['action'] != 600 and actors[1]['action'] != 540:
-            continue
         recs = [rec for rec, image in objects(vram, oam, cgram, regs[0x2101]) if image.getbbox() and rec['y'] < 224]
         by_pal = lambda p: [r for r in recs if r['palette'] == p]
         att, rcv = by_pal(ATTACKER_PALETTE), by_pal(RECEIVER_PALETTE)
+        # Palette-6 objects that directly follow each actor's body objects in OAM (shadows and the PP-7 group).
+        def trailing_shadow(body):
+            if not body:
+                return 0
+            last, count = max(r['index'] for r in body), 0
+            indices = {r['index']: r for r in recs}
+            while (rec := indices.get(last + 1 + count)) and rec['palette'] == SHADOW_PALETTE:
+                count += 1
+            return count
+        # PP-7: receiver palette-6 objects whose opaque shape matches none of the attacker's shadow tiles
+        # (the attacker's shadow renders correctly), i.e. objects showing foreign VRAM content.
+        def trailing(body):
+            if not body:
+                return []
+            last, out, indices = max(r['index'] for r in body), [], {r['index']: r for r in recs}
+            while (rec := indices.get(last + 1 + len(out))) and rec['palette'] == SHADOW_PALETTE:
+                out.append(rec)
+            return out
+        def pixels(rec):
+            px = oam_indices(vram, oam, rec, regs[0x2101])
+            # Shadow tiles are recoloured per actor, so compare opaque masks (shapes), not colour indices.
+            grid = tuple(int(bool(px.get((x, y), 0))) for y in range(rec['size']) for x in range(rec['size']))
+            mirrored = tuple(int(bool(px.get((rec['size'] - 1 - x, y), 0)))
+                             for y in range(rec['size']) for x in range(rec['size']))
+            return grid, mirrored
+        reference = {g for rec in trailing(att) for g in pixels(rec)}
+        foreign = [rec for rec in trailing(rcv) if pixels(rec)[0] not in reference] if reference else []
+        context.append({'frame': frame, 'actions': [actors[0]['action'], actors[1]['action']],
+                        'receiver_palette6_foreign': len(foreign),
+                        'receiver_shadow_like_objects': len(trailing(rcv)) - len(foreign),
+                        'receiver_palette6_foreign_objects': [[rec['index'], rec['x'], rec['y'], rec['tile']] for rec in foreign],
+                        'x': [actors[0]['x'], actors[1]['x']],
+                        'attacker_perfect_plex_pose': next((i for i, d in enumerate(attacker_desc) if match(att, d)), None),
+                        'receiver_perfect_plex_pose': next((i for i, d in enumerate(receiver_desc) if match(rcv, d)), None),
+                        'attacker_trailing_palette6': trailing_shadow(att),
+                        'receiver_trailing_palette6': trailing_shadow(rcv)})
+        if actors[0]['action'] != 600 and actors[1]['action'] != 540:
+            continue
         row = {'frame': frame, 'attacker': actors[0], 'receiver': actors[1],
                'attacker_oam_first': min(r['index'] for r in att) < min(r['index'] for r in rcv) if att and rcv else None}
         am = [(i, m) for i, d in enumerate(attacker_desc) if (m := match(att, d))]
@@ -141,17 +192,23 @@ def measure(capture, rom, royal, slot):
         if len(am) == 1 and len(rm) == 1:
             a, r = am[0][1], rm[0][1]
             row['attacker_flipped'], row['receiver_flipped'] = a['flipped'], r['flipped']
-            camera = actors[0]['x'] - a['origin_x']           # attacker unflipped: exact origin
+            # Measured flip rule: a flipped object lands at origin - dx - size + FLIP_PIVOT, so the
+            # match() value (oam_x + dx + size) is origin + FLIP_PIVOT for flipped actors.
+            true = lambda m: m['origin_x'] - (FLIP_PIVOT if m['flipped'] else 0)
+            camera = actors[0]['x'] - true(a)
             row['camera_x'] = camera
-            row['attacker_origin_screen'] = a['origin_x']
+            row['attacker_origin_screen'] = true(a)
             row['receiver_actor_screen_x'] = actors[1]['x'] - camera
-            # Flipped receiver: origin_x = Ox_body - k where body origin = actor + profile term.
-            row['receiver_body_term'] = r['origin_x'] - row['receiver_actor_screen_x']
+            row['receiver_object_term'] = r['origin_x'] - row['receiver_actor_screen_x']
+            row['receiver_body_term'] = true(r) - row['receiver_actor_screen_x']
             row['vertical'] = {'attacker_origin_y': a['origin_y'], 'receiver_origin_y': r['origin_y']}
-            # Registration vs Royal: the attacker maps Royal column x to screen origin + (145 - x), so a
-            # receiver part pixel at x' = x - 145 is registered at attacker origin - x'.
+            # Registration vs Royal: the attacker maps Royal column x to descriptor column c = 145 - x,
+            # drawn at O + c unflipped or O + FLIP_PIVOT - 1 - c flipped. A receiver part pixel at
+            # x' = x - 145 is therefore registered at O - x' or O + FLIP_PIVOT - 1 + x'.
             pose = worker['poses'][rm[0][0]]
-            registered = {(a['origin_x'] - px, a['origin_y'] + py): v
+            o = true(a)
+            place = (lambda px: o + FLIP_PIVOT - 1 + px) if a['flipped'] else (lambda px: o - px)
+            registered = {(place(px), a['origin_y'] + py): v
                           for (px, py), v in recipe_image(royal, pose, mapping, cache).items()}
             actual = {}
             for rec in reversed(rcv):
@@ -176,11 +233,23 @@ def measure(capture, rom, royal, slot):
         'frames_measured': len(rows),
         'frames_fully_matched': sum('camera_x' in r for r in rows),
         'flip_pairs': {f'{k}': v for k, v in flips.items()},
+        'receiver_object_terms': dict(Counter(r['receiver_object_term'] for r in rows if 'receiver_object_term' in r)),
         'receiver_body_terms': dict(Counter(r['receiver_body_term'] for r in rows if 'receiver_body_term' in r)),
+        'actor_spacing': dict(Counter(r['receiver']['x'] - r['attacker']['x'] for r in rows if 'camera_x' in r)),
         'registration_errors': dict(Counter(r['receiver_registration_error_px'] for r in rows
                                             if 'receiver_registration_error_px' in r)),
         'attacker_oam_first': dict(Counter(str(r['attacker_oam_first']) for r in rows)),
+        'receiver_trailing_palette6_during_move': dict(Counter(c['receiver_trailing_palette6'] for c in context
+                                                               if c['actions'] == [600, 540])),
+        'receiver_palette6_foreign_during_move': dict(Counter(c['receiver_palette6_foreign'] for c in context
+                                                              if c['actions'] == [600, 540])),
+        'receiver_shadow_like_objects_during_move': dict(Counter(c['receiver_shadow_like_objects'] for c in context
+                                                                 if c['actions'] == [600, 540])),
+        'frames_with_foreign_palette6_during_move': sum(1 for c in context
+                                                        if c['actions'] == [600, 540] and c['receiver_palette6_foreign']),
+        'after_move': after_move(context),
         'rows': rows,
+        'all_frames': context,
     }
 
 

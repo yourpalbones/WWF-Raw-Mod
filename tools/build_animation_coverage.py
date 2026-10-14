@@ -206,21 +206,32 @@ def perfect_plex_rows(receivers):
                    'Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)']
         art, gameplay = 'prototype_private', 'untested'
         evidence = ['data/perfect-receivers.json', 'docs/perfect-plex-gaps.md']
-        if slot == 2:
+        recipes = sorted((ROOT / 'evidence/perfect-plex-receivers/recipes').glob('*.json'))
+        measured = [json.loads(r.read_text()) for r in recipes]
+        measured = [r for r in measured if r['receiver_slot'] == slot and 'expected' in r]
+        if measured:
             gameplay = 'defective'
-            evidence += ['docs/perfect-plex-native-trace.md',
-                         'evidence/perfect-plex-receivers/native-wip/undertaker-wip-native.gif',
-                         'evidence/perfect-plex-receivers/native-wip/measurement.json',
-                         'evidence/perfect-plex-receivers/native-wip/controller-replay-undertaker.json']
-            defects = ['WIP build on codex/perfect-receivers-wip @ 2955d5c; not released; native capture in one '
-                       'facing only (attacker on the left); editor isolation test not run',
-                       'Native: scene mirrored and receiver body crosses the attacker at entry (PP-1)',
-                       'Native: receiver drawn 6 px toward the attacker vs Royal; attacker drawn on top (PP-2)',
-                       'Native: receiver shadow stays at its actor origin, 38-63 px from the body (PP-3)',
-                       'Native: drawn standing, overlapping the attacker, after the move (action 70) (PP-4)',
-                       'Native: stray palette-6 fragment beside the shadow from frame 25 (PP-7)',
-                       'Native: every rendered receiver pixel matches the builder (no stale tiles), 139/139 frames',
+            evidence += ['docs/perfect-plex-native-trace.md', 'tools/verify_perfect_receivers_native.py']
+            for r in measured:
+                evidence += [f"evidence/perfect-plex-receivers/recipes/{r['scenario']}.json",
+                             f"evidence/perfect-plex-receivers/native-wip/scenarios/{r['scenario']}.png"]
+            if slot == 2:
+                evidence += ['evidence/perfect-plex-receivers/native-wip/undertaker-wip-native.gif']
+            errors = sorted({int(k) for r in measured for k in r['expected']['registration_errors']})
+            defects = [f'WIP build on codex/perfect-receivers-wip @ 2955d5c; not released; native scenarios: '
+                       f'{", ".join(r["scenario"] for r in measured)}; editor isolation test not run',
+                       'Native: imported attacker frames face left when unflipped, so the scene swaps sides '
+                       'when the attacker starts on the left (PP-1)',
+                       f'Native: receiver drawn {errors} px vs Royal (|spacing| - 34 toward the attacker); '
+                       'attacker drawn on top (PP-2)',
+                       'Native: receiver shadow stays at its actor origin, away from the body (PP-3)',
+                       'Native: both actors frozen on Perfect-Plex pose 0 after the move (stream wraps) (PP-4)',
+                       'Native: hook writes $90 (part-loader object total): extra stale palette-6 objects (PP-7)',
+                       'Native: every rendered receiver pixel matches the builder (no stale body tiles)',
                        'Nearest-colour Royal->Raw palette remap not reviewed per region (PP-6)']
+        elif slot == 12:
+            defects.append('Unreachable natively in one-on-one two-player selection: P2 cannot pick the '
+                           'wrestler P1 chose; other match modes untested')
         rows.append(row(slot, 'finisher:Perfect-Plex', 'receiver', art, gameplay,
                         variant='target (own receiving art): WIP seven-counterpart build',
                         implementation={'branch': 'codex/perfect-receivers-wip', 'commit': '2955d5c',

@@ -194,16 +194,18 @@ def markdown(data):
                 f'{m["receiver_slot"]}, one facing, {m["frames_fully_matched"]} of {m["frames_measured"]} move frames '
                 'matched to their descriptors):', '',
                 f'- Flip pairs (attacker, receiver): {m["flip_pairs"]}. The attacker is unflipped with the receiver on its right.',
-                f'- Receiver body term (flipped object origin minus actor screen x): {m["receiver_body_terms"]}. '
-                'That is -32 (profile dx negated) + 8, so the flipped object rule is oam_x = origin - dx - size + 8 '
-                '(`native+8` above), not edge or centre reflection.',
+                f'- Receiver object term (oam_x + dx + size minus actor screen x): {m["receiver_object_terms"]}; '
+                f'body term after removing the flip pivot: {m["receiver_body_terms"]}. That is -32 (profile dx '
+                'negated) + 8, so the flipped object rule is oam_x = origin - dx - size + 8 (`native+8` above), '
+                'not edge or centre reflection. All ten scenarios, both facings, agree '
+                '(evidence/perfect-plex-receivers/recipes/*.json `expected`).',
                 f'- Measured receiver registration error versus Royal: {m["registration_errors"]} px, at actor spacing '
                 f'{spacings}. The model row for the measured rule predicts '
                 f'{native["predicted_horizontal_error_px"]:+d} px at the recorded spacing.',
                 f'- Attacker objects precede receiver objects in OAM (attacker drawn on top): {m["attacker_oam_first"]}.']
     out += ['', '## What a native trace must confirm before any hook edit', '',
             '1. Facing word and runtime flip for attacker and receiver on the Perfect-Plex frames, in both facings.',
-            '2. The renderer\'s reflection rule from OAM x for one known object. Measured for one facing: '
+            '2. The renderer\'s reflection rule from OAM x for one known object. Measured in both facings and at both ropes: '
             'native+8 (see perfect-plex-native-trace.md).',
             '3. Whether profile dx is negated with facing.',
             '4. Actor x/y for each receiver, both facings and near both ropes. Only the Luna run is recorded here.',

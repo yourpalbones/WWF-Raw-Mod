@@ -71,5 +71,32 @@ class PairCoordinateTests(unittest.TestCase):
         self.assertEqual(pair.screen(100, 5, 0, True, 'native+8', True), 102)
 
 
+class RecipeTests(unittest.TestCase):
+    def test_committed_recipes_match_composer(self):
+        import compose_perfect_recipes as compose
+        for name, recipe in compose.recipes().items():
+            committed = json.loads((compose.OUT / f'{name}.json').read_text())
+            committed.pop('expected', None)
+            self.assertEqual(committed, json.loads(json.dumps(recipe)), name)
+
+    def test_recipes_are_controller_only(self):
+        import compose_perfect_recipes as compose
+        for name, recipe in compose.recipes().items():
+            self.assertTrue(recipe['controller_only'])
+            for port, start, button, duration in recipe['inputs']:
+                self.assertIn(port, (0, 1))
+                self.assertIn(button, (0, 3, 4, 5, 6, 7, 8, 9, 11))
+                self.assertGreater(start, 0)
+                self.assertGreater(duration, 0)
+            self.assertLess(recipe['capture_from'], recipe['move_start'])
+
+    def test_base_undertaker_recipe_is_the_measured_one(self):
+        import compose_perfect_recipes as compose
+        measured = json.loads((ROOT / 'evidence/perfect-plex-receivers/native-wip/'
+                               'controller-replay-undertaker.json').read_text())['inputs']
+        composed = compose.recipes()['undertaker-attacker-left-right-rope']['inputs']
+        self.assertEqual(sorted(map(tuple, composed)), sorted(map(tuple, measured)))
+
+
 if __name__ == '__main__':
     unittest.main()

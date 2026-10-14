@@ -42,14 +42,14 @@ Both use `y - 162` vertically, so vertical registration is exact when both actor
 From `evidence/perfect-plex-receivers/native-wip/measurement.json` (WIP build, receiver slot 2, one facing, 139 of 142 move frames matched to their descriptors):
 
 - Flip pairs (attacker, receiver): {'(False, True)': 139}. The attacker is unflipped with the receiver on its right.
-- Receiver body term (flipped object origin minus actor screen x): {'-24': 139}. That is -32 (profile dx negated) + 8, so the flipped object rule is oam_x = origin - dx - size + 8 (`native+8` above), not edge or centre reflection.
+- Receiver object term (oam_x + dx + size minus actor screen x): {'-24': 139}; body term after removing the flip pivot: {'-32': 139}. That is -32 (profile dx negated) + 8, so the flipped object rule is oam_x = origin - dx - size + 8 (`native+8` above), not edge or centre reflection. All ten scenarios, both facings, agree (evidence/perfect-plex-receivers/recipes/*.json `expected`).
 - Measured receiver registration error versus Royal: {'6': 139} px, at actor spacing [40]. The model row for the measured rule predicts +6 px at the recorded spacing.
 - Attacker objects precede receiver objects in OAM (attacker drawn on top): {'False': 3, 'True': 139}.
 
 ## What a native trace must confirm before any hook edit
 
 1. Facing word and runtime flip for attacker and receiver on the Perfect-Plex frames, in both facings.
-2. The renderer's reflection rule from OAM x for one known object. Measured for one facing: native+8 (see perfect-plex-native-trace.md).
+2. The renderer's reflection rule from OAM x for one known object. Measured in both facings and at both ropes: native+8 (see perfect-plex-native-trace.md).
 3. Whether profile dx is negated with facing.
 4. Actor x/y for each receiver, both facings and near both ropes. Only the Luna run is recorded here.
 5. OAM draw order between the two actors on lift frames.

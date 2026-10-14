@@ -96,11 +96,12 @@ Raw captures (v0.16 Luna and the older Undertaker prototype) start with Perfect
 on the left in the tie-up. From the first lift frame he is on the right, and the
 move is a mirror image of Royal.
 
-**Native (WIP build, one facing):** the attacker draws unflipped, and the
-receiver is flipped and stays on the attacker's right as an actor. At frame 25
-the receiver body moves about 40 px left, past the attacker, in one frame. The
-mechanism is confirmed for this facing: Royal art mirrored for the attacker,
-with actor origins unchanged. The other facing is untested.
+**Native (all scenarios):** the swap happens only with the attacker on the left.
+Raw's converted Mr. Perfect art faces right when unflipped, but the imported
+Perfect-Plex frames face **left** when unflipped: they are stored mirrored
+relative to Raw's facing convention. With the attacker on the right (flipped),
+the move faces the receiver and no swap occurs. See
+[perfect-plex-native-trace.md](perfect-plex-native-trace.md).
 
 ### PP-2: visible overlap; the receiver is largely hidden behind the attacker on lift frames
 
@@ -108,9 +109,10 @@ with actor origins unchanged. The other facing is untested.
 older Undertaker prototype frames #2–#5. This may relate to the user's
 visible-gap report, but the link is not traced.
 
-**Native (WIP build, one facing):**
-- The receiver is drawn **6 px toward the attacker** relative to Royal
-  registration, in every matched frame.
+**Native (all ten scenarios):**
+- The receiver is drawn **|spacing| − 34 px toward the attacker** relative to
+  Royal registration: 6–7 px, in both facings, at both ropes, mid-ring, and for
+  all five receivers.
 - The attacker's objects precede the receiver's in OAM, so the attacker covers it.
 - The renderer places flipped objects at `origin − dx − size + 8`.
 - The coordinate model with that rule predicts the measured +6 px exactly.
@@ -141,13 +143,15 @@ coordinate model offers a provisional explanation: the body lands 44–46 px
 from the origin, the shadow does not move, and the shadow ends up up to 46 px
 from the body.
 
-### PP-4: standing overlap after the bridge
+### PP-4: standing overlap after the bridge (traced natively)
 
-**Native (WIP build):** from frame 166 the receiver is drawn standing,
-overlapping the attacker, while WRAM reports action 70. Its x changes from 348
-to 334 at frame 164. So action 70 does not mean a lying-down pose here, and the
-appearance in the older GIF is reproduced natively in the WIP build. The exit
-behaviour is real; its fix is undecided.
+Both 20-step streams wrap to step 0 on the last move frame, both actors request
+pose 0, and then the actions change (to 0 and 70) **without any further part
+request**. Both actors stay frozen on Perfect-Plex pose 0, the Royal lift-start
+drawing, indefinitely. The "standing" receiver is that drawing, not action-70
+art. This happens in every scenario, and also for the attacker in the released
+v0.16 build. When the receiver was at a rope, its x also shifts 14 px toward
+the attacker.
 
 Earlier text, kept for history:
 
@@ -166,11 +170,15 @@ withdrawn. The standing-overlap appearance in this one GIF still needs
 inspection. First identify the exact ROM/build and frame it was captured from,
 then diagnose. Do not diagnose an exit defect from the GIF alone.
 
-### PP-7: stray fragment beside the receiver shadow (native, new)
+### PP-7: stray fragment beside the receiver shadow (traced natively)
 
-From frame 25, four palette-6 8×8 objects reuse receiver VRAM tiles 98–101 and
-show a pink fragment beside the shadow. They are absent before the move and
-persist after it. Source not traced.
+The WIP receiver hook stores the receiver's selector word in direct page `$90`.
+The stock part loader it returns into uses `$90` as the actor's running object
+total (`$80:EC97` `STZ $90`, `$80:ECE4` `ADC $90`). The emitter then draws that
+many extra objects past the real lists (stale entries in the last part's
+palette). Extras equal the selector word (Bret +2, Undertaker +4, Yokozuna +6;
+capped near +8/+9 for Razor, Lex and Shawn). Some of them show body pixels: the
+pink fragment. The older prototype hook and the attacker hook do not touch `$90`.
 See [fragment.png](../evidence/perfect-plex-receivers/native-wip/fragment.png).
 
 ### PP-5: no bridge-to-pin
@@ -212,13 +220,18 @@ index.**
 ## Suggested order (for Codex; no hooks changed here)
 
 1. **PP-0:** restore the `$F0–$FF` mirror (`0x300000–0x3FFFFF`) in imports from
-   3 MiB ROMs. Without it no match starts.
-2. Decide the PP-1/PP-3 approach using the measured renderer facts: swap the
-   actor origins, or re-mirror the recipes. Then repeat the measurement in the
-   **other facing** and near both ropes.
-3. PP-2: the +6 px registration and the draw order.
-4. PP-7 stray fragment source; PP-4 exit pose; then PP-6 palette review and PP-5.
-5. Repeat for the other six direct counterparts. Then run the editor isolation test.
+   3 MiB ROMs.
+2. **PP-7:** stop the WIP receiver hook from writing `$90`; keep the scratch on
+   the stack or in an unused location.
+3. **PP-1/PP-3:** store the attacker's Perfect-Plex frames in Raw's facing
+   convention, and re-mirror the receiver recipes and profile offsets with it.
+   Then re-measure registration (currently |spacing| − 34 px toward the attacker)
+   and the shadow.
+4. **PP-4:** end both streams on a native post-move pose, or force a part
+   request on the action change, instead of wrapping to step 0.
+5. PP-6 palette review; PP-5 pin.
+6. Run the editor isolation test.
 
-The status in `data/animation-coverage.json` changes only when a native capture
-is committed.
+Every recipe in `evidence/perfect-plex-receivers/recipes/` can be re-run with
+`tools/verify_perfect_receivers_native.py` after each change. Update each
+recipe's `expected` with `--record` once a change is accepted.
