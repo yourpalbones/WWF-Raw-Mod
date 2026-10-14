@@ -14,7 +14,7 @@ Routing modelled here (each step was traced in the ROM; see docs/complete-wrestl
 
 Pixels are only returned in memory; nothing is written.
 
-    python3 tools/raw_parts.py ROM --slot N --part 0x177 [--png OUT.png]
+    python3 tools/raw_parts.py ROM --slot N --part 0x177 [--png OUT.png]   (profile ID = frame index * 3)
 """
 import argparse
 import json
@@ -37,6 +37,7 @@ GEAR = {
     7: {'signature': (0x6FF000, b'STING-NATIVE-GEAR4'), 'tables': (0x6FC000, 0x6FD000), 'banks': (0x60, 0x61),
         'pointers': (0x6E0000, 0x6F0000)},
 }
+PERFECT_PRIMARY = 1012
 PERFECT = {'signature': (0x70FE00, b'PERFECT-SLOT'), 'tables': (0x710000, 0x711000)}
 
 
@@ -68,6 +69,8 @@ def has_perfect(rom):
 
 def descriptor_address(rom, slot, kind, index):
     table, banks, own_count, total = TABLES[kind]
+    if slot == 12 and kind == 'primary':
+        total = PERFECT_PRIMARY   # the slot-12 worker hook also serves the Perfect-Plex frames 1000-1011
     if not 0 <= index < total:
         raise ValueError(f'{kind} index {index} out of range')
     if slot == 12:
@@ -167,9 +170,15 @@ def parse_descriptor(rom, kind, address):
 
 
 def resolve_part(rom, slot, part_id):
-    """A profile part ID (bit 15 = secondary) -> objects with tile pixels and their sources."""
-    kind = 'secondary' if part_id & 0x8000 else 'primary'
-    index = part_id & 0x7FFF
+    """A profile part ID -> objects with tile pixels and their sources. Profile IDs are byte offsets into
+    the slot's directory (frame index * 3); bit 15 selects the secondary (lower-body) directory."""
+    if (part_id & 0x7FFF) % 3:
+        raise ValueError(f'Part ID {part_id:#x} is not a directory offset')
+    return resolve_index(rom, slot, 'secondary' if part_id & 0x8000 else 'primary', (part_id & 0x7FFF) // 3)
+
+
+def resolve_index(rom, slot, kind, index):
+    """Frame index in the slot's primary or secondary directory -> objects with pixels and sources."""
     address = descriptor_address(rom, slot, kind, index)
     parts, offset, length = parse_descriptor(rom, kind, address)
     bank = offset >> 16 if len(rom) > 0x400000 and offset >= 0x400000 else None

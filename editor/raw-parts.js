@@ -12,7 +12,7 @@ window.RAW_PARTS=(()=>{
  function activeGear(rom,slot){const g=GEAR[slot];return g&&rom.length>=0x600000&&text(rom,g.sig[0],g.sig[1].length)===g.sig[1]?g:null;}
  const hasPerfect=rom=>rom.length>=0x800000&&text(rom,0x70fe00,12)==='PERFECT-SLOT';
  function descriptorAddress(rom,slot,kind,index){
-  const [table,banks,own,total]=TABLES[kind];if(index<0||index>=total)throw Error(kind+' index out of range');
+  const [table,banks,own,count]=TABLES[kind],total=slot===12&&kind==='primary'?1012:count;if(index<0||index>=total)throw Error(kind+' index out of range');
   if(slot===12){if(!hasPerfect(rom))throw Error('ROM has no imported slot 12');return long(rom,(kind==='secondary'?0x711000:0x710000)+index*3);}
   const gear=activeGear(rom,slot);if(gear){const e=long(rom,gear.tables[kind==='secondary'?1:0]+index*3);if(e&0xffff)return e;}
   const selector=index<own?slot:8,dir=fileOffset(rom[banks+selector*2]<<16|rom[table+selector*2]|rom[table+selector*2+1]<<8,rom.length),entry=dir+index*3;
@@ -41,8 +41,13 @@ window.RAW_PARTS=(()=>{
   }
   return {parts,offset,length:c-offset};
  }
+ // Profile part IDs are byte offsets into the slot's directory (frame index * 3); bit 15 = secondary.
  function resolvePart(rom,slot,partId){
-  const kind=partId&0x8000?'secondary':'primary',index=partId&0x7fff,address=descriptorAddress(rom,slot,kind,index);
+  if((partId&0x7fff)%3)throw Error('Part ID is not a directory offset');
+  return resolveIndex(rom,slot,partId&0x8000?'secondary':'primary',(partId&0x7fff)/3);
+ }
+ function resolveIndex(rom,slot,kind,index){
+  const address=descriptorAddress(rom,slot,kind,index);
   const d=parseDescriptor(rom,kind,address),bank=rom.length>0x400000&&d.offset>=0x400000?d.offset>>16:-1;
   for(const p of d.parts){p.pixels=[];p.sources=[];for(const t of p.tiles){const s=tileSource(rom,kind,t.id,bank);p.sources.push(s);p.pixels.push(planarPixels(s.compressed?decodePacket(rom,s.offset):rom.slice(s.offset,s.offset+32)));}}
   return {kind,index,descriptor:d.offset,length:d.length,parts:d.parts};
@@ -55,5 +60,5 @@ window.RAW_PARTS=(()=>{
  }
  function profileParts(rom,address){const out=[];let a=fileOffset(address,rom.length),id;while((id=rom[a]|rom[a+1]<<8)!==0xffff){const dx=rom[a+2],dy=rom[a+3];out.push([id,dx>127?dx-256:dx,dy>127?dy-256:dy]);a+=4;}return out;}
  function palette(rom,slot){const base=fileOffset(rom[0x2cf218]<<16|rom[0x2cf212]|rom[0x2cf213]<<8,rom.length)+64+slot*32;return Array.from({length:16},(_,i)=>rom[base+i*2]|rom[base+i*2+1]<<8);}
- return {descriptorAddress,parseDescriptor,tileSource,resolvePart,raster,profileParts,palette,fileOffset,activeGear,hasPerfect,packetLength};
+ return {descriptorAddress,parseDescriptor,tileSource,resolvePart,resolveIndex,raster,profileParts,palette,fileOffset,activeGear,hasPerfect,packetLength};
 })();
