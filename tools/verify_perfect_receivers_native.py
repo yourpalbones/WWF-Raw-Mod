@@ -17,9 +17,9 @@ Defect assertions (each fails on the pre-fix build 4ca2856..., kept in each reci
 - PP-4  after the move neither actor shows a Perfect-Plex pose except the final pose for at most
         2 frames (OAM is one frame behind), and the receiver loses health exactly once.
 - PP-5  the exit (docs/perfect-plex-exit.md):
-        - the bridge (step 11) is held for Royal's 56 frames: 56 frames of the match clock (WRAM $0F70, which
-          does not count frames the game drops under load) when the clock runs, otherwise 56 to 59 screen
-          frames (it stands still in some matches; up to 3 dropped frames were seen);
+        - the bridge (step 11) is held for 8 stream entries, Royal's 56 frames: 55 to 59 frames of the match
+          clock (WRAM $0F70) when it runs, else of the screen (the clock stands still in some matches). Raw's
+          stream steps last 6 to 8 frames each, in the move itself too;
         - every later step (held pin, release, Mr. Perfect's get-up, the receiver rolling off and lying, then
           Perfect standing) equals the editor preview on >= 97% of pixels, for every receiver, each wrestler at
           his actual position (tools/check_preview_native.py);
@@ -114,8 +114,8 @@ def defects(m, rom):
     if len([c for c in m.get('receiver_health_changes', []) if c[2] < c[1]]) != 1:
         failed.append('PP-4 damage count')
     x = m.get('exit') or {}
-    clock, screen = x.get('hold_game_frames') or 0, x.get('hold_frames') or 0
-    if not (abs(clock - HOLD_FRAMES) <= 1 if clock else HOLD_FRAMES <= screen <= HOLD_FRAMES + 3):
+    held = x.get('hold_game_frames') or x.get('hold_frames') or 0
+    if not HOLD_FRAMES - 1 <= held <= HOLD_FRAMES + 3:
         failed.append('PP-5 pin length')
     if not x.get('exit_preview_match') or min(x['exit_preview_match']) < 0.97:
         failed.append('PP-5 exit drawings')
