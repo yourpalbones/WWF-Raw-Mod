@@ -2101,5 +2101,56 @@
     0
    ]
   }
+ },
+ "expected_build": "f2a81a9118bb302f3572ddd767ff1c0279ec9b3918ad684b3e65061f266a70c6",
+ "expected": {
+  "frames_measured": 143,
+  "frames_fully_matched": 140,
+  "flip_pairs": {
+   "(False, True)": 140
+  },
+  "receiver_body_terms": {
+   "-45": 140
+  },
+  "actor_spacing": {
+   "40": 140
+  },
+  "registration_errors": {
+   "0": 140
+  },
+  "receiver_trailing_palette6_during_move": {
+   "2": 3,
+   "4": 140
+  },
+  "frames_with_foreign_palette6_during_move": 0,
+  "receiver_shadow_offset_during_move": {
+   "min": 1.0,
+   "max": 10.0,
+   "frames": 143
+  },
+  "receiver_health_changes": [
+   [
+    211,
+    236,
+    76
+   ]
+  ],
+  "after_move": {
+   "actions": {
+    "[0, 70]": 112
+   },
+   "attacker_pose_shown": {
+    "11": 2,
+    "None": 110
+   },
+   "receiver_pose_shown": {
+    "11": 2,
+    "None": 110
+   }
+  },
+  "receiver_pixel_match_min": 1.0,
+  "vertical_offsets": [
+   0
+  ]
  }
 }
