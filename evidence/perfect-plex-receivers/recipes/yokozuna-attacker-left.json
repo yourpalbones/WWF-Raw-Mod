@@ -1882,5 +1882,58 @@
    1
   ]
  ],
- "build": "stock import v2 (Mr. Perfect with Royal pose pieces)"
+ "build": "stock import v2 (Mr. Perfect with Royal pose pieces)",
+ "expected_build": "d15106fcb30455c112b50844bc423c78a58127fcdf04654c1b9897f8b1052458",
+ "expected": {
+  "frames_measured": 143,
+  "frames_fully_matched": 140,
+  "flip_pairs": {
+   "(False, True)": 140
+  },
+  "receiver_body_terms": {
+   "-45": 140
+  },
+  "actor_spacing": {
+   "40": 140
+  },
+  "registration_errors": {
+   "0": 140
+  },
+  "receiver_trailing_palette6_during_move": {
+   "2": 3,
+   "4": 140
+  },
+  "frames_with_foreign_palette6_during_move": 0,
+  "receiver_shadow_offset_during_move": {
+   "min": 1.0,
+   "max": 2.0,
+   "frames": 143
+  },
+  "receiver_health_changes": [
+   [
+    215,
+    27,
+    0
+   ]
+  ],
+  "receiver_source": "royal",
+  "preview_match": null,
+  "after_move": {
+   "actions": {
+    "[0, 70]": 108
+   },
+   "attacker_pose_shown": {
+    "11": 2,
+    "None": 106
+   },
+   "receiver_pose_shown": {
+    "11": 2,
+    "None": 106
+   }
+  },
+  "receiver_pixel_match_min": 1.0,
+  "vertical_offsets": [
+   0
+  ]
+ }
 }
