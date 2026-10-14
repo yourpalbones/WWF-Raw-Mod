@@ -123,6 +123,7 @@ def after_move(context):
 def measure(capture, rom, royal, slot):
     recipes = json.loads((ROOT / 'data/perfect-receivers.json').read_text())
     worker = recipes['workers'][RECEIVER_SLOT_ROYAL[slot]]
+    canonical = rom[0x70fe40:0x70fe49] == b'ROYAL-RX2'
     attacker_desc = [descriptor(rom, long(rom, 0x710000 + (1000 + i) * 3)) for i in range(12)]
     table = long(rom, 0x71d000 + slot * 3)
     receiver_desc = [descriptor(rom, long(rom, table + i * 3)) for i in range(12)]
@@ -207,7 +208,10 @@ def measure(capture, rom, royal, slot):
             # x' = x - 145 is therefore registered at O - x' or O + FLIP_PIVOT - 1 + x'.
             pose = worker['poses'][rm[0][0]]
             o = true(a)
-            place = (lambda px: o + FLIP_PIVOT - 1 + px) if a['flipped'] else (lambda px: o - px)
+            if canonical:   # attacker drawings unmirrored: descriptor column c = Royal column u
+                place = (lambda px: o + FLIP_PIVOT - 1 - px) if a['flipped'] else (lambda px: o + px)
+            else:           # legacy RX1 / v0.16: attacker mirrored, c = 145 - x = -u
+                place = (lambda px: o + FLIP_PIVOT - 1 + px) if a['flipped'] else (lambda px: o - px)
             registered = {(place(px), a['origin_y'] + py): v
                           for (px, py), v in recipe_image(royal, pose, mapping, cache).items()}
             actual = {}
@@ -230,6 +234,7 @@ def measure(capture, rom, royal, slot):
         'generated_by': 'tools/measure_perfect_pair.py',
         'rom_sha256': hashlib.sha256(rom).hexdigest(),
         'receiver_slot': slot,
+        'build_marker': rom[0x70fe40:0x70fe49].decode('latin-1'),
         'frames_measured': len(rows),
         'frames_fully_matched': sum('camera_x' in r for r in rows),
         'flip_pairs': {f'{k}': v for k, v in flips.items()},

@@ -94,11 +94,12 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
    }putLong(out,tables[kind]+f.index*3,address);
   }
   let descriptor=0x730100;
+  if(!manifest.orientation)throw Error('Perfect-Plex recipes are not in canonical facing.');
   for(let i=0;i<manifest.finisher.length;i++){
    const f=manifest.finisher[i],image=new Uint8Array(112*112);
    for(const p of [...f.parts].reverse())for(let y=0;y<p.size;y++)for(let x=0;x<p.size;x++){
     const sx=p.hflip?p.size-1-x:x,sy=p.vflip?p.size-1-y:y,value=pixels(source,p.refs[Math.floor(sy/8)*(p.size/8)+Math.floor(sx/8)],true)[sy%8*8+sx%8];
-    if(!value)continue;const px=56-(p.x+x),py=100+p.y+y;if(px<0||px>=112||py<0||py>=112)throw Error('Finisher image exceeds its canvas.');image[py*112+px]=value;
+    if(!value)continue;/* canonical facing: Royal's Perfect faces right, as Raw art does unflipped */const px=56+p.x+x,py=100+p.y+y;if(px<0||px>=112||py<0||py>=112)throw Error('Finisher image exceeds its canvas.');image[py*112+px]=value;
    }
    const record=[f.chunks.length,f.chunks.filter(c=>c[2]===16).length];
    if(f.chunks.length+2>17)throw Error('Finisher exceeds the wrestler object limit.');

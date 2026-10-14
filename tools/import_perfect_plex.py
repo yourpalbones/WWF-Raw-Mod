@@ -35,9 +35,20 @@ def actor_pixels(prefix,palette):
     return result
 
 
+# Paired spacing (receiver x - attacker x) used by the canonical receiver geometry. Measured native
+# tie-ups give 40 or 41; the init hook makes it exactly this value on the receiver's existing side.
+PAIR_SPACING = 40
+
+
 def init_hook():
     p=Program();p.emit('22 dd ee ac 08 48 da a6 36 bd 74 0b c9 18 00')
     p.branch('d0','done');p.emit('a5 b9 c9 58 02');p.branch('d0','done')
+    # Fix the pair spacing on the receiver's current side, so that one profile offset registers
+    # both facings exactly (measured flip rule: flipped x = origin - dx - size + 8).
+    p.emit('a6 56 bd f0 05 a6 36 38 fd f0 05');p.branch('30','left')
+    p.emit('a9'+PAIR_SPACING.to_bytes(2,'little').hex(' '));p.branch('80','set')
+    p.label('left');p.emit('a9'+((-PAIR_SPACING)&0xffff).to_bytes(2,'little').hex(' '))
+    p.label('set');p.emit('18 7d f0 05 a6 56 9d f0 05')
     # Keep the paired grapple within Raw's native ring bounds before playback.
     p.emit('a6 56 bd f0 05 bc 00 06 22 e1 fd 83 38 fd f0 05 48 18 7d f0 05 9d f0 05 a6 36 68 18 7d f0 05 9d f0 05')
     p.emit('a9 50 50 9d ec 0b a6 56 a9 51 50 9d ec 0b')
@@ -45,13 +56,17 @@ def init_hook():
 
 
 def sequence_hook():
+    # A at the hook (80:F073) is the action being dispatched. Test it, not the stored action at
+    # 06B4,X: when the 20-step stream ends, the game re-dispatches the next action (0 or 70) while
+    # 06B4,X still reads 600/540. Testing 06B4,X redirected that dispatch to step 0 of this stream
+    # and left both actors frozen on Perfect-Plex pose 0 (PP-4).
     p=Program();p.emit('08 48 da a6 36 bd ec 0b c9 51 50')
     p.branch('f0','victim');p.emit('c9 52 50');p.branch('f0','victim')
     p.emit('bd 74 0b c9 18 00');p.branch('d0','fallback')
     p.emit('bd ec 0b c9 50 50');p.branch('d0','fallback')
-    p.emit('bd b4 06 c9 58 02');p.branch('f0','sequence')
+    p.emit('a3 03 c9 58 02');p.branch('f0','sequence')
     p.emit('9e ec 0b');p.branch('80','fallback')
-    p.label('victim');p.emit('bd b4 06 c9 1c 02');p.branch('d0','clear')
+    p.label('victim');p.emit('a3 03 c9 1c 02');p.branch('d0','clear')
     # Trigger Raw's own deferred damage calculation once at the landing.
     p.emit('a5 48 c9 3f 00');p.branch('90','victim_sequence')
     p.emit('bd ec 0b c9 51 50');p.branch('d0','victim_sequence')
@@ -72,7 +87,8 @@ def build(base,conversion,captures):
         pts=actor_pixels(captures/f'frame-{frame:06d}',2)
         image=Image.new('P',(112,112))
         for (x,y),value in pts.items():
-            px,py=145-x+56,y-162+100
+            # Canonical facing: Raw's art faces right when unflipped, as Royal's captured Perfect does.
+            px,py=x-145+56,y-162+100
             if not 0<=px<112 or not 0<=py<112:raise ValueError(f'Capture outside fixed actor canvas: {frame} {x},{y}')
             image.putpixel((px,py),value)
         options=[o for o in pack(image,112) if o[0][0]+2<=17 and o[0][1]+4<=64]

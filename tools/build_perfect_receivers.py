@@ -14,13 +14,16 @@ from build_nwo_gear import checksum,emit_address
 from build_shawn_kick_prototype import Program
 
 RAW_ROYAL={1:3,2:2,3:9,5:8,6:10,8:7,12:1}
+ORIGIN_X=72   # receiver canvas origin (data/perfect-receivers.json "canonical")
 
 
 def worker_hook():
     p=Program();p.emit('08 48 da 5a a6 36 bd ec 0b c9 51 50');p.branch('f0','receiver')
     p.emit('c9 52 50');p.branch('d0','original')
     p.label('receiver');p.emit('bd 74 0b c9 1a 00');p.branch('b0','original')
-    p.emit('85 90 4a 18 65 90 aa');emit_address(p,'bf',0x71d000);p.branch('f0','original')
+    # slot*3 from the selector word without touching direct page: $90 is the stock part loader's
+    # running object total (80:EC97 STZ, 80:ECE4 ADC); writing it caused extra stale objects (PP-7).
+    p.emit('48 4a 18 63 01 aa 68');emit_address(p,'bf',0x71d000);p.branch('f0','original')
     p.emit('85 84 a9 71 00 85 86 a3 05 c9 10 0e');p.branch('90','original')
     p.emit('c9 34 0e');p.branch('b0','original')
     p.emit('38 e9 10 0e a8 b7 84 85 80 c8 c8 b7 84 29 ff 00 85 82')
@@ -43,13 +46,20 @@ def lookup_hook():
 def sequence_hook():
     p=Program();p.emit('08 48 da a6 36 bd ec 0b c9 51 50');p.branch('f0','receiver')
     p.emit('c9 52 50');p.branch('d0','original')
-    p.label('receiver');p.emit('bd b4 06 c9 1c 02');p.branch('d0','original')
+    # A on entry is the action being dispatched; test it rather than 06B4,X (see PP-4).
+    p.label('receiver');p.emit('a3 03 c9 1c 02');p.branch('d0','leaving')
     p.emit('bd 74 0b c9 1a 00');p.branch('b0','original')
-    p.emit('85 90 4a 18 65 90 aa');emit_address(p,'bf',0x71d040);p.branch('f0','original')
-    p.emit('85 92 a6 36 a5 48 c9 3f 00');p.branch('90','ready')
+    p.emit('48 4a 18 63 01 aa 68');emit_address(p,'bf',0x71d040);p.branch('f0','original')
+    # Keep the stream base in $7C: the hooked instruction (80:F073 STA $7C) overwrites it anyway.
+    p.emit('85 7c a6 36 a5 48 c9 3f 00');p.branch('90','ready')
     p.emit('bd ec 0b c9 51 50');p.branch('d0','ready')
     p.emit('a9 01 00 9d d8 0a a9 52 50 9d ec 0b')
-    p.label('ready');p.emit('fa 68 28 a9 71 00 85 7e a5 48 18 65 92 85 7c 5c 80 f0 80')
+    p.label('ready');p.emit('fa 68 28 a9 71 00 85 7e a5 48 18 65 7c 85 7c 5c 80 f0 80')
+    # Leaving the receiving stream (receiver state, next action dispatched): the stock sequence tables
+    # are in bank C4. The chained hook only restores the bank from 73 (attacker stream), so restore it
+    # from this stream's bank 71 here; otherwise action 70 reads its first step from bank 71 and never
+    # requests a frame (PP-4). Other actors keep the original, unchanged path and timing.
+    p.label('leaving');p.emit('a5 7e c9 71 00');p.branch('d0','original');p.emit('a9 c4 00 85 7e')
     p.label('original');p.emit('fa 68 28');emit_address(p,'5c',0x71ea00)
     return p.finish()
 
@@ -64,6 +74,8 @@ def build(base,royal,recipes):
     rgb=lambda color:[color>>s&31 for s in(0,5,10)]
     pools=[(0x5d0000,0x5e0000),(0x5ec000,0x5f0000),(0x6d8000,0x6e0000)]
     pool=0;packet=pools[0][0];descriptor=0x6d0000;count=0;cache={};report=[]
+    if recipes.get('canonical',{}).get('origin')!=[ORIGIN_X,105]:raise ValueError('Run tools/canonical_perfect_geometry.py first')
+    shift=recipes['canonical']['mirror_shift']
     for slot,selector in RAW_ROYAL.items():
         worker=recipes['workers'][selector];private={}
         colors=[word(royal,0x17c26+selector*32+i*2)for i in range(16)]
@@ -82,13 +94,15 @@ def build(base,royal,recipes):
                         ref=part['refs'][(sy//8)*(size//8)+sx//8];key=tuple(ref)
                         if key not in cache:cache[key]=tile(decode_tile(royal,ref[0],bool(ref[1]))[0],0,4)
                         value=cache[key][sy%8*8+sx%8]
-                        if value:image.putpixel((part['x']+x+73,part['y']+y+105),mapping[value])
-            chunks=row['chunks'];record=bytearray([len(chunks),sum(c[2]==16 for c in chunks)])
+                        # Canonical facing: Raw art faces right when unflipped, so the receiver (who faces
+                        # left in Royal) is mirrored: descriptor column = MIRROR_SHIFT - Royal column.
+                        if value:image.putpixel((ORIGIN_X+shift-(part['x']+x),part['y']+y+105),mapping[value])
+            chunks=row['canonical_chunks'];record=bytearray([len(chunks),sum(c[2]==16 for c in chunks)])
             for x,y,size in chunks:
                 record+=bytes([0,x&127,(y+105)&127])
                 for ty in range(size//8):
                     for tx in range(size//8):
-                        pixels=[image.getpixel((x+64+tx*8+xx,y+105+ty*8+yy))for yy in range(8)for xx in range(8)]
+                        pixels=[image.getpixel((x+ORIGIN_X+tx*8+xx,y+105+ty*8+yy))for yy in range(8)for xx in range(8)]
                         raw=planar(pixels)
                         if raw not in private:
                             encoded=encode_sprite_tile(raw)
@@ -104,7 +118,9 @@ def build(base,royal,recipes):
             if descriptor+len(record)>0x6d8000:raise ValueError('Receiving descriptor space exhausted')
             out[descriptor:descriptor+len(record)]=record;out[table+i*3:table+i*3+3]=descriptor.to_bytes(3,'little');descriptor+=len(record)
             profile=profiles+i*14
-            out[profile:profile+10]=((1200+i)*3).to_bytes(2,'little')+bytes([32,0,36,128,0,255,255,255])
+            # Body at body_dx and the stock shadow (0x8024) under the body, on the ground (dy -1).
+            out[profile:profile+10]=(((1200+i)*3).to_bytes(2,'little')+bytes([row['body_dx']&255,0,36,128,
+                                     row['shadow_dx']&255,255,255,255]))
         for i in range(20):
             profile=profiles+min(i,11)*14
             out[sequence+i*7:sequence+i*7+7]=bytes([113])+(profile&65535).to_bytes(2,'little')+bytes(4)
@@ -116,7 +132,7 @@ def build(base,royal,recipes):
     for original,address,code in((0x70f000,0x71eb00,worker_hook()),(0x70f200,0x71ec00,lookup_hook()),(0x70f400,0x71ed00,sequence_hook())):
         if len(code)>256:raise ValueError('Receiving hook exceeds its allocation')
         out[address:address+len(code)]=code;out[original:original+4]=b'\x5c'+address.to_bytes(3,'little')
-    out[0x70fe40:0x70fe49]=b'ROYAL-RX1'
+    out[0x70fe40:0x70fe49]=b'ROYAL-RX2'  # RX2: canonical facing, PP-7/PP-4 hook fixes
     checksum(out)
     return out,{'receivers':report,'tile_namespace_count':count,'descriptor_end':descriptor,'last_packet':packet,'raw_only_receiving_art_complete':False,'custom_gear_receiving_art_complete':False}
 
