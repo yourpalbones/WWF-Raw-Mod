@@ -11,6 +11,7 @@ from pathlib import Path
 
 from convert_perfect_poses import convert
 from build_royal_import_manifest import frame_rows, coverage, mark_hair
+from match_perfect_poses import effective
 
 PREFIX = 'window.RAW_ROYAL_IMPORT_MANIFEST='
 
@@ -24,7 +25,8 @@ def main():
     a = p.parse_args()
     text = a.manifest.read_text()
     manifest = json.loads(text[len(PREFIX):text.rindex(';')])
-    matches = json.loads(a.matches.read_text())['rows']
+    all_rows = json.loads(a.matches.read_text())['rows']
+    matches = effective(all_rows)   # accepted silhouette matches + reviewed semantic counterparts
     rows = frame_rows(convert(*(getattr(a, n).read_bytes() for n in ('raw_rom', 'raw_wram', 'royal_rom', 'royal_wram')), matches))
     before = {(r['kind'], r['index']): r for r in manifest['frames']}
     for r in rows:
@@ -32,7 +34,7 @@ def main():
         if 'replaces' not in r and {k: v for k, v in r.items() if k not in ('hair', 'replaces')} != \
                 {k: v for k, v in old.items() if k not in ('hair', 'replaces')}:
             raise ValueError(f"Unmatched row changed: {r['kind']}/{r['index']}")
-    mark_hair(rows, a.raw_rom.read_bytes(), matches)
+    mark_hair(rows, a.raw_rom.read_bytes(), all_rows)
     manifest['frames'] = rows
     manifest['coverage'] = coverage(rows)
     a.manifest.write_text(PREFIX + json.dumps(manifest, separators=(',', ':')) + ';\n')

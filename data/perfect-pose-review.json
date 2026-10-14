@@ -1,0 +1,12 @@
+{
+ "about": "Visual review of the semantic pass in tools/match_perfect_poses.py (Mr. Perfect). Each candidate was checked as a piece and in a composite that uses it, against the current build. Pieces below the threshold or rejected keep their adapted Raw drawing (blond hair) until authored.",
+ "threshold": 0.58,
+ "rejected": ["p186", "p250", "p253", "p320", "p321", "p322", "p324", "p353", "p422", "p485",
+              "p446", "p449", "p456", "p464", "p465", "p470", "p471"],
+ "reasons": {
+  "p186 p250 p253 p320 p321 p322 p324 p353 p485": "torso separates from or is inverted against the legs in the composite",
+  "p422": "guard stance would become arms raised",
+  "p446 p449 p456 p464 p465 p470 p471": "Raw-only strike drawings; Royal frame 103 (hands-up guard) would erase the punch"
+ },
+ "overrides": {}
+}

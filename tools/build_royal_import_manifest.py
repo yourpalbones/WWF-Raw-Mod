@@ -46,10 +46,10 @@ def coverage(rows):
             'hair_recoloured_poses':sum(bool(r.get('hair'))for r in rows)}
 
 
-def build(raw_rom,raw_wram,royal_rom,royal_wram,captures,matches=None):
+def build(raw_rom,raw_wram,royal_rom,royal_wram,captures,matches=None,all_rows=None):
     frames=convert(raw_rom,raw_wram,royal_rom,royal_wram,matches)
     rows=frame_rows(frames)
-    if matches:mark_hair(rows,raw_rom,matches)
+    if matches:mark_hair(rows,raw_rom,all_rows or matches)
     atlas={bytes(32):None}
     for frame in royal.catalog(royal_rom,royal_wram,1):
         for part in frame['parts']:
@@ -101,7 +101,9 @@ if __name__=='__main__':
     for name in('raw_rom','raw_wram','royal_rom','royal_wram','captures'):p.add_argument(name,type=Path)
     p.add_argument('--matches',type=Path,help='data/perfect-pose-matches.json')
     p.add_argument('--output',type=Path,required=True);a=p.parse_args()
-    matches=json.loads(a.matches.read_text())['rows'] if a.matches else None
-    result=build(*(getattr(a,n).read_bytes()for n in('raw_rom','raw_wram','royal_rom','royal_wram')),a.captures,matches)
+    from match_perfect_poses import effective
+    all_rows=json.loads(a.matches.read_text())['rows'] if a.matches else None
+    matches=effective(all_rows) if a.matches else None
+    result=build(*(getattr(a,n).read_bytes()for n in('raw_rom','raw_wram','royal_rom','royal_wram')),a.captures,matches,all_rows)
     a.output.write_text('window.RAW_ROYAL_IMPORT_MANIFEST='+json.dumps(result,separators=(',',':'))+';\n')
     print('Wrote address-only import recipe:',a.output.stat().st_size,'bytes')
