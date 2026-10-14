@@ -28,11 +28,21 @@ def worker_hook(secondary=False):
     return p.finish()
 
 
+def ordinary_move_hook():
+    # F823 has already masked the variable ID into Y. Preserve that index and
+    # isolate the new move pointer by player role; selector 26 also names the NPC.
+    p=Program();p.emit('08 48 da a6 36 bd 74 0b c9 1a 00');p.branch('d0','old')
+    p.emit('bd 26 05 c9 04 00');p.branch('b0','old')
+    p.emit('fa 68 28 a9 60 8c 85 7c a9 4a 00 85 7e 5c 37 f8 80')
+    p.label('old');p.emit('fa 68 28');emit_address(p,'bf',0xadd859)
+    p.emit('5c 2f f8 80');return p.finish()
+
+
 def palette_hook():
     p=Program();p.emit('08 48 da 29 ff 07 c9 1a 00');p.branch('d0','old')
     p.emit('98 c9 20 16');p.branch('90','old');p.emit('c9 e0 16');p.branch('b0','old')
     p.emit('38 e9 20 16 4a 4a 4a 4a aa bd 26 05 c9 04 00');p.branch('b0','old')
-    p.emit('fa 68 28 a9 22 00');emit_address(p,'5c',0x4af800)
+    p.emit('fa 68 28');emit_address(p,'5c',0x4af280)
     p.label('old');p.emit('fa 68 28');emit_address(p,'5c',0x4af800)
     return p.finish()
 
@@ -67,10 +77,8 @@ def sequence_bank_guard():
 def build(base,genesis,stock,portrait):
     if hashlib.sha256(genesis).hexdigest()!=SOURCE_SHA256:
         raise ValueError("Unsupported Genesis source revision; verify directories before importing")
-    if base[0x70ea60:0x70ea80]!=b"\xff"*32:
-        raise ValueError("Hogan palette allocation is occupied")
-    if len(base)!=0x800000 or base[0x70fe40:0x70fe49]!=b'ROYAL-RX2':
-        raise ValueError('Requires Claude corrected thirteen-slot export, not an older mod')
+    if len(base)!=0x800000 or base[0x70fe40:0x70fe49]not in(b'ROYAL-RX2',b'ROYAL-RX3'):
+        raise ValueError('Requires a corrected RX2/RX3 thirteen-slot export, not an older mod')
     for a in (0x4a0000,0x540000,0x550000):
         if base[a:a+65536]!=b'\xff'*65536:raise ValueError(f'Probe bank occupied: {a:06x}')
     out=bytearray(base);image,_=render_pose(genesis,6,0,color_lookup(genesis))
@@ -98,7 +106,7 @@ def build(base,genesis,stock,portrait):
                 record+=(0xc000|tiles[raw]).to_bytes(2,'little')
     out[0x54d000:0x54d000+len(record)]=record
     out[0x4ac000:0x4ac00a]=(6000).to_bytes(2,'little')+bytes.fromhex('00 00 24 80 00 ff ff ff')
-    out[0x70ea60:0x70ea80]=snes_palette(genesis)
+    out[0x4a6a00:0x4a6a20]=snes_palette(genesis)
     start=0x708000+13*45
     if out[start:start+45]!=b'\xff'*45:raise ValueError('Fourteenth profile space occupied')
     out[start:start+45]=base[0x708000+6*45:0x708000+7*45]
@@ -145,11 +153,26 @@ def build(base,genesis,stock,portrait):
             if at<0:break
             if base[at-1]in(0xbf,0x7f,0xff):out[at:at+3]=new.to_bytes(3,'little')
             at+=3
+    # The existing pointer directory has thirteen entries. Entry fourteen is
+    # attribute data, not a valid pointer. Route Hogan to a separate five-word
+    # move table. The body-slam/suplex ties follow traced Genesis B/C throws. The source
+    # hip toss cannot use Raw's running-counter action directly as a tie-up: its
+    # placement tables expect a different context. Samoan drop is provisional.
+    # Running
+    # hip-toss/boot routes remain provisional until their source/native checks.
+    if base[0xf82b:0xf82f]!=bytes.fromhex('bf 59 d8 ad'):
+        raise ValueError('Unsupported ordinary-move directory hook')
+    if out[0x4a8c60:0x4a8c6a]!=b'\xff'*10:
+        raise ValueError('Hogan ordinary-move allocation occupied')
+    out[0x4a8c60:0x4a8c6a]=b''.join(v.to_bytes(2,'little')for v in (234,242,174,190,226))
     # Layer over existing dispatchers; NPC selector 26 is distinguished by role.
     out[0x4af800:0x4af81d]=base[0x2cf201:0x2cf21e]
+    # RX3 owns more of bank 70; keep the added palette in our own bank.
+    out[0x4af280:0x4af28b]=bytes.fromhex('8b da a2 00 6a 68 54 00 4a ab 6b')
     for address,code,hook in ((0x4af000,worker_hook(),0xecc1),(0x4af100,worker_hook(True),0xed19),
                               (0x4af200,palette_hook(),0x2cf201),(0x4af300,profile_hook(),0xf0e8),
-                              (0x4af400,lookup_hook(),0x2cf6e4),(0x4af500,sequence_bank_guard(),0xf073)):
+                              (0x4af400,lookup_hook(),0x2cf6e4),(0x4af500,sequence_bank_guard(),0xf073),
+                              (0x4af700,ordinary_move_hook(),0xf82b)):
         if len(code)>256:raise ValueError('Probe hook overflow')
         out[address:address+len(code)]=code;out[hook:hook+4]=b'\x5c'+address.to_bytes(3,'little')
     out[0x4aef00:0x4aef0e]=b'HOGAN14-PROBE1'

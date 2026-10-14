@@ -1,0 +1,3198 @@
+{
+  "source_user_mod": "outputs/sting-ultra/final-native/gear.sfc",
+  "user_mod_sha256": "520ba54c96155d5e64b57fb5fcaed13193707aa6faeaf39f93c14f47892e7ac0",
+  "corrected_13_slot_import_sha256": "7414e7fd37b8d0c360d920a5a818d3d0a6918fe9b08af86248c24a8c3322d1ae",
+  "hogan_probe_sha256": "df9dc9a95d46b973ed72a622c9fcc07d9866dbca0f1cacb304dd6885909b28f8",
+  "importer_commit": "ca8e647",
+  "receiving_layout": "ROYAL-RX3",
+  "preserved_ranges": {
+    "Scott descriptors": true,
+    "Scott existing packets": true,
+    "Scott pointers/hooks": true,
+    "Nash descriptors": true,
+    "Nash existing packets": true,
+    "Nash pointers": true,
+    "Syxx descriptors/packets": true,
+    "Syxx pointers": true,
+    "Sting graphics": true,
+    "Existing thirteen profiles": true,
+    "Existing gameplay palettes": true
+  },
+  "controller_only": true,
+  "cold_frames": 13764,
+  "damage_events": 1,
+  "damage_amount": 160,
+  "normal_punch_kick_after_receiver_stands": true,
+  "editor_compatible": false,
+  "full_character_complete": false,
+  "frames": [
+    {
+      "frame": 12068,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 293,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12072,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 293,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12076,
+      "hogan_action": 140,
+      "receiver_action": 70,
+      "receiver_health": 293,
+      "pair_link": 32770,
+      "marker": 4,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12080,
+      "hogan_action": 140,
+      "receiver_action": 70,
+      "receiver_health": 293,
+      "pair_link": 32770,
+      "marker": 4,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12084,
+      "hogan_action": 140,
+      "receiver_action": 70,
+      "receiver_health": 293,
+      "pair_link": 32770,
+      "marker": 4,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12088,
+      "hogan_action": 140,
+      "receiver_action": 70,
+      "receiver_health": 293,
+      "pair_link": 32770,
+      "marker": 4,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12092,
+      "hogan_action": 140,
+      "receiver_action": 70,
+      "receiver_health": 293,
+      "pair_link": 32770,
+      "marker": 4,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12096,
+      "hogan_action": 140,
+      "receiver_action": 70,
+      "receiver_health": 293,
+      "pair_link": 32770,
+      "marker": 4,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12100,
+      "hogan_action": 140,
+      "receiver_action": 70,
+      "receiver_health": 293,
+      "pair_link": 32770,
+      "marker": 4,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12104,
+      "hogan_action": 140,
+      "receiver_action": 70,
+      "receiver_health": 293,
+      "pair_link": 32770,
+      "marker": 4,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12108,
+      "hogan_action": 140,
+      "receiver_action": 70,
+      "receiver_health": 293,
+      "pair_link": 32770,
+      "marker": 4,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12112,
+      "hogan_action": 140,
+      "receiver_action": 70,
+      "receiver_health": 293,
+      "pair_link": 32770,
+      "marker": 4,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12116,
+      "hogan_action": 140,
+      "receiver_action": 70,
+      "receiver_health": 293,
+      "pair_link": 32770,
+      "marker": 4,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12120,
+      "hogan_action": 140,
+      "receiver_action": 70,
+      "receiver_health": 293,
+      "pair_link": 32770,
+      "marker": 4,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12124,
+      "hogan_action": 140,
+      "receiver_action": 86,
+      "receiver_health": 133,
+      "pair_link": 32770,
+      "marker": 4,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12128,
+      "hogan_action": 140,
+      "receiver_action": 86,
+      "receiver_health": 133,
+      "pair_link": 32770,
+      "marker": 4,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12132,
+      "hogan_action": 140,
+      "receiver_action": 86,
+      "receiver_health": 133,
+      "pair_link": 32770,
+      "marker": 4,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12136,
+      "hogan_action": 140,
+      "receiver_action": 86,
+      "receiver_health": 133,
+      "pair_link": 32770,
+      "marker": 4,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12140,
+      "hogan_action": 0,
+      "receiver_action": 86,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12144,
+      "hogan_action": 0,
+      "receiver_action": 86,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12148,
+      "hogan_action": 0,
+      "receiver_action": 86,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12152,
+      "hogan_action": 0,
+      "receiver_action": 86,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12156,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12160,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12164,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12168,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12172,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12176,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12180,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12184,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12188,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12192,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12196,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12200,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12204,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12208,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12212,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12216,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12220,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12224,
+      "hogan_action": 8,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12228,
+      "hogan_action": 8,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12232,
+      "hogan_action": 8,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12236,
+      "hogan_action": 8,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12240,
+      "hogan_action": 8,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12244,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12248,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12252,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12256,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12260,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12264,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12268,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12272,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12276,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12280,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12284,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12288,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12292,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12296,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12300,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 133,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12304,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12308,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12312,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12316,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12320,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12324,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12328,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12332,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12336,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12340,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12344,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12348,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12352,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12356,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12360,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12364,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12368,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12372,
+      "hogan_action": 14,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12376,
+      "hogan_action": 14,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12380,
+      "hogan_action": 14,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12384,
+      "hogan_action": 14,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12388,
+      "hogan_action": 16,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12392,
+      "hogan_action": 16,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12396,
+      "hogan_action": 16,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12400,
+      "hogan_action": 16,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12404,
+      "hogan_action": 14,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12408,
+      "hogan_action": 14,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12412,
+      "hogan_action": 14,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12416,
+      "hogan_action": 14,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12420,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12424,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12428,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12432,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12436,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12440,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12444,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12448,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12452,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12456,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12460,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12464,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12468,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12472,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12476,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12480,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12484,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12488,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12492,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12496,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12500,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12504,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12508,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12512,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12516,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12520,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12524,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12528,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12532,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12536,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12540,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12544,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12548,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12552,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12556,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12560,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 12564,
+      "hogan_action": 0,
+      "receiver_action": 70,
+      "receiver_health": 149,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13564,
+      "hogan_action": 0,
+      "receiver_action": 120,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13568,
+      "hogan_action": 0,
+      "receiver_action": 120,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13572,
+      "hogan_action": 0,
+      "receiver_action": 120,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13576,
+      "hogan_action": 0,
+      "receiver_action": 120,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13580,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13584,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13588,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13592,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13596,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13600,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13604,
+      "hogan_action": 120,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13608,
+      "hogan_action": 120,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13612,
+      "hogan_action": 120,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13616,
+      "hogan_action": 120,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13620,
+      "hogan_action": 120,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13624,
+      "hogan_action": 120,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13628,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13632,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13636,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13640,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13644,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13648,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13652,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13656,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13660,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13664,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13668,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13672,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13676,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13680,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13684,
+      "hogan_action": 126,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13688,
+      "hogan_action": 126,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13692,
+      "hogan_action": 126,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13696,
+      "hogan_action": 126,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13700,
+      "hogan_action": 126,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13704,
+      "hogan_action": 126,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13708,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13712,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13716,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13720,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13724,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13728,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13732,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13736,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13740,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13744,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13748,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13752,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13756,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13760,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "frame": 13764,
+      "hogan_action": 0,
+      "receiver_action": 0,
+      "receiver_health": 165,
+      "pair_link": 0,
+      "marker": 0,
+      "selectors": [
+        26,
+        0,
+        26
+      ],
+      "roles": [
+        0,
+        2,
+        4
+      ]
+    }
+  ]
+}

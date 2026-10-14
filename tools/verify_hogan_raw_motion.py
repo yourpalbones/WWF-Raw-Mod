@@ -12,12 +12,16 @@ from extract_oam import objects
 from verify_hogan_genesis_capture import normalize
 
 
-def check(genesis,trace,directory,legdrop=False,min_frame=0):
+def check(genesis,trace,directory,legdrop=False,min_frame=0,grapples=False):
     requests=[r for r in map(json.loads,trace.read_text().splitlines())
               if r['pc']==0x4af300 and r['actor']==0 and r['selector']==26 and r['x']in((0xc8,0x4a)if legdrop else(0xc8,))]
-    private_poses=list(ROOTS.values())+[115,57,58,475,476,477,478,479]
+    bindings=dict(ROOTS)
+    if grapples:
+        from build_hogan_grapple_probe import BINDINGS
+        bindings.update(BINDINGS)
+    private_poses=list(bindings.values())+[115,57,58,475,476,477,478,479]
     sources={}
-    for pose in set(private_poses if legdrop else ROOTS.values()):
+    for pose in set(private_poses if legdrop else bindings.values()):
         im,_=render_pose(genesis,6,pose,color_lookup(genesis))
         sources[pose]=(im,len(pack_objects(im)))
     rows=[];expected_palette=snes_palette(genesis)
@@ -31,7 +35,7 @@ def check(genesis,trace,directory,legdrop=False,min_frame=0):
         body=[(o,im)for o,im in records if o['palette']==0 and o['tile']<64 and o['y']<224]
         match=None
         for request in reversed(nearby):
-            pose=ROOTS.get(request['a'],0)
+            pose=bindings.get(request['a'],0)
             if request['x']==0x4a:
                 index=(request['a']-0xc000)//10
                 if not 0<=index<len(private_poses):continue
@@ -63,8 +67,9 @@ if __name__=='__main__':
     for n in ('genesis','trace','captures'):p.add_argument(n,type=Path)
     p.add_argument('--output',type=Path,required=True)
     p.add_argument('--min-frame',type=int,default=0,help='First gameplay snapshot; exclude explicitly paused/menu captures')
+    p.add_argument('--grapples',action='store_true',help='Use the separately marked throw-art experiment mappings')
     p.add_argument('--legdrop',action='store_true',help='Include the separate experimental landing sequence')
     a=p.parse_args()
-    result=check(a.genesis.read_bytes(),a.trace,a.captures,a.legdrop,a.min_frame);a.output.write_text(json.dumps(result,indent=2)+'\n')
+    result=check(a.genesis.read_bytes(),a.trace,a.captures,a.legdrop,a.min_frame,a.grapples);a.output.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps({k:v for k,v in result.items()if k!='rows'},indent=2))
     if result['frames_exact']!=result['frames_checked']or not result['frames_checked']:raise SystemExit('Native frames need investigation')

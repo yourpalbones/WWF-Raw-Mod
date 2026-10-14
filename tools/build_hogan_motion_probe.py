@@ -70,6 +70,7 @@ def compile_motion(out,genesis):
     out=bytearray(out);tiles={};packet=0x550000;desc=0x540000;reports=[]
     out[0x540000:0x550000]=b'\xff'*65536
     out[0x550000:0x558000]=b'\xff'*32768
+    out[0x55a000:0x560000]=b'\xff'*24576
     for i,(root,pose)in enumerate(ROOTS.items()):
         image,_=render_pose(genesis,6,pose,color_lookup(genesis));chunks=pack_objects(image)
         record=bytearray([len(chunks),sum(s==16 for x,y,s in chunks)])
@@ -83,7 +84,8 @@ def compile_motion(out,genesis):
                     raw=planar(pixels)
                     if raw not in tiles:
                         tiles[raw]=len(tiles);encoded=encode_sprite_tile(raw)
-                        if packet+len(encoded)>0x558000:raise ValueError('Private packet bank overflow')
+                        if packet<0x558000 and packet+len(encoded)>0x558000:packet=0x55a000
+                        if packet+len(encoded)>0x560000:raise ValueError('Private packet pools exhausted')
                         at=0x548000+tiles[raw]*3
                         if at+3>0x550000:raise ValueError('Tile pointer table overflow')
                         out[at:at+3]=packet.to_bytes(3,'little');out[packet:packet+len(encoded)]=encoded;packet+=len(encoded)

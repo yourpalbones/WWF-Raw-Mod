@@ -69,10 +69,10 @@ def render_component(rom,worker,index,lookup):
     return image,record
 
 
-def render_pose(rom,worker,index,lookup):
+def render_pose(rom,worker,index,lookup,include_shadows=True):
     record=pose(rom,index);image=Image.new('P',(192,192))
     for part in reversed(record['parts']):
-        if part.get('shadow'):continue
+        if part.get('shadow')or(not include_shadows and part['component']<16):continue
         pixels,_=render_component(rom,worker,part['component'],lookup)
         mask=Image.frombytes('L',pixels.size,bytes(255 if v else 0 for v in pixels.getdata()))
         image.paste(pixels,(96+part['dx'],128+part['dy']),mask)

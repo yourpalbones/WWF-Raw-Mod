@@ -7,22 +7,24 @@ import argparse,json
 from pathlib import Path
 import scott_frame_catalog as raw
 import genesis_royal_sprites as genesis
+from genesis_royal_graphics import color_lookup
 from compare_royal_raw_poses import silhouette
 
 
 def candidates(rawrom,wram,segarom):
     frames={(f['kind'],f['index']):raw.raster(f)[0]for f in raw.catalog(rawrom,wram,1)}
     shapes={};genpoints={}
-    # Geometric comparison preserves every nonzero source nibble, independent
-    # of a palette remap that might make a gear color transparent.
+    # Use the native Bret translation: some source nibbles are masked to zero.
+    # Comparing untransformed packets incorrectly counts those as visible pixels.
+    source_lookup=color_lookup(segarom,3)
     for i in range(genesis.POSE_COUNT):
-        im,_=genesis.render_pose(segarom,3,i,bytes(range(256)))
+        im,_=genesis.render_pose(segarom,3,i,source_lookup)
         points={(x-96,y-128):v for y in range(im.height)for x in range(im.width)if(v:=im.getpixel((x,y)))}
         key=silhouette(points)
         if key:shapes.setdefault(key,[]).append(i);genpoints[i]=points
     component_shapes={};component_points={};parents={}
     for i in range(16,genesis.COMPONENT_COUNT):
-        im,_=genesis.render_component(segarom,3,i,bytes(range(256)))
+        im,_=genesis.render_component(segarom,3,i,source_lookup)
         points={(x,y):v for y in range(128)for x in range(128)if(v:=im.getpixel((x,y)))}
         component_points[i]=points
         key=silhouette(points)
@@ -33,10 +35,10 @@ def candidates(rawrom,wram,segarom):
     records=[]
     for at in range(0x80000,0x90000,2):
         cursor=at;parts=[];body={};complete=False
-        for _ in range(8):
+        for _ in range(24):
             ident=int.from_bytes(rawrom[cursor:cursor+2],'little');cursor+=2
             if ident==65535:complete=True;break
-            if ident==65534:break
+            if ident==65534:continue
             kind='secondary'if ident&32768 else'primary';offset=ident&32767
             if offset%3:break
             index=offset//3

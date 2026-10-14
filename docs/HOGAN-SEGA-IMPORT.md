@@ -89,3 +89,18 @@ Its landing/recovery experiment passes a 13,764-frame controller-only cold run:
 once against Luna, paired state clears and controls resume. It does not implement
 the source automatic rope run or establish all-receiver coverage. Unmapped actions still show standing artwork; all-animation coverage,
 custom-user-mod preservation, match/AI limits and editor integration remain open.
+
+## Current user-mod/RX3 check
+
+Claude PR #1 was fetched at `ca8e647`. A fresh browser import into the local
+current gear mod installs RX3 successfully. The updated Hogan probe uses a
+private palette at `4A:6A00` and a player-role-gated ordinary move pointer.
+A 13,764-frame cold landing/recovery replay matches 176/176 checked body/palette
+snapshots. Existing gear/profile/palette byte ranges remain unchanged. See
+[user-mod proof](../evidence/hogan-user-mod-probe/README.md).
+
+This does not validate future gear re-exports: the currently empty test banks
+are inside Scott/Nash maximum reservations. Explicit ownership is required in
+the editor before release. [Grapple/parser findings](HOGAN-GRAPPLE-FINDINGS.md)
+records the ordinary-move table issue, `$FFFE` controls, source shadow handling
+and incomplete throwing-art experiments.
