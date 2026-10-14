@@ -83,7 +83,7 @@ Fixed export SHA-256 `f2a81a91…70c6`. The committed recipes are replayed from 
 | PP-7 | No foreign palette-6 objects, and no more than 4 trailing the receiver |
 | PP-4 | No Perfect-Plex pose after the move beyond 2 frames of the final pose, and damage exactly once |
 
-Expected values were recorded only after every assertion passed (`expected_build`). The old
+Expected values were recorded only after every assertion passed (`expected_build`). A second cold-boot run in check mode reproduced all ten exactly. The old
 expected values are kept as `defect_baseline`. Full data: [`fixed/verification.json`](../evidence/perfect-plex-receivers/fixed/verification.json).
 
 | Scenario | Matched frames | Flips (att, rcv) | Spacing | Reg. error | Trailing pal-6 / foreign | Shadow offset | Damage | After move (receiver) |
@@ -107,7 +107,7 @@ Notes on the table:
 - **Shadow offset** is the receiver's shadow centre minus its body's opaque centre, in px. The
   shadow is centred per pose on the drawing's bounding box, so poses with a reaching limb measure up
   to 10 px off the opaque centre.
-- **Before the fix,** on the old build, the base scenario fails five assertions: PP-0, PP-1/2, PP-3,
+- **Before the fix,** on the old build, the base scenario and its opposite facing each fail five assertions: PP-0, PP-1/2, PP-3,
   PP-7 and PP-4 exit art. The PP-4 damage-count assertion passes on the old build too, because the
   old build also applied the move's damage once. Old values for every scenario are in each recipe's
   `defect_baseline`. For the base scenario they were: registration 6 px, 8 trailing objects, 71
