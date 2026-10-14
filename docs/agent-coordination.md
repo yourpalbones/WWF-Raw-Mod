@@ -1,0 +1,84 @@
+# Agent coordination: Claude Code ↔ Codex
+
+> **Active ownership update:** The user has assigned the Perfect-Plex fixes to
+> Claude. [Implementation task](CLAUDE-PERFECT-PLEX-FIX-TASK.md) supersedes the
+> earlier Codex ownership/read-only restrictions below for its listed scope.
+> Claude owns the importer, paired hooks/builders, necessary browser integration
+> and their verification until handing the task back. Codex pauses those edits.
+> The earlier table and trace notes below are retained as historical context.
+
+The handoff (`docs/CLAUDE-ANIMATION-HANDOFF.md`) asks the two tools to agree on
+file ownership before editing the same implementation files. Neither tool can
+message the other directly, so this file is the channel. Update it in the same
+commit as any ownership change.
+
+## Current claims
+
+Per Codex's review (`docs/CLAUDE-PR1-REVIEW.md` on `codex/perfect-receivers-wip`):
+Codex keeps the ROM hooks, builders, browser integration, native traces and art
+authoring until ownership is explicitly changed.
+
+| Path | Owner | Notes |
+| --- | --- | --- |
+| `tools/import_perfect_plex.py`, `tools/build_perfect_slot.py`, `tools/convert_perfect_poses.py` | **Codex** | Attacker stream and slot hooks. |
+| `tools/build_perfect_receiver_prototype.py` | **Codex** | Older Undertaker-only prototype. |
+| `tools/build_perfect_receivers.py`, `tools/build_perfect_receiver_manifest.py` | **Codex** | WIP on `codex/perfect-receivers-wip` @ `2955d5c`. |
+| `editor/perfect-receiver-core.js`, `editor/perfect-receiver-layouts.js`, `editor/royal-import*.js` | **Codex** | Browser integration; WIP files not loaded by the released editor. |
+| `tools/map_perfect_receivers.py`, `data/perfect-receivers.json` | **Codex** | Claude reads them only. |
+| Art authoring, implementation fixes | **Codex** | Native measurement tooling is shared; either tool may run it. |
+| `tools/build_animation_coverage.py`, `data/animation-coverage.json`, `docs/animation-coverage.md` | **Claude** | Coverage inventory. |
+| `tools/check_perfect_receivers.py`, `tests/test_animation_coverage.py` | **Claude** | ROM-free record checks. |
+| `tools/derive_perfect_pair_coordinates.py`, `docs/perfect-plex-pair-coordinates.md`, `evidence/perfect-plex-receivers/pair-coordinates.json` | **Claude** | Paired coordinate model (predictions). |
+| `tools/review_perfect_plex_gifs.py`, `evidence/perfect-plex-receivers/frame-review/` | **Claude** | Labeled review sheets. |
+| `docs/perfect-plex-gaps.md`, this file | **Claude** | Either tool may append findings. |
+| `tools/check_perfect_receiver_pixels.py`, `tools/measure_perfect_pair.py`, `tools/run_controller_recipe.py` | **Claude** | Read-only measurement tools; they take user-supplied ROMs and write numbers only. |
+| `tools/compose_perfect_recipes.py`, `tools/verify_perfect_receivers_native.py`, `tools/sheet_perfect_captures.py`, `evidence/perfect-plex-receivers/recipes/` | **Claude** | Controller recipes and the cold-boot verifier. |
+| `tools/diagnostic_restore_hirom_mirror.py` | **Claude** | Diagnostic only; builds a scratch ROM so gameplay can be measured until PP-0 is fixed. Not an importer fix. |
+| `docs/perfect-plex-native-trace.md`, `evidence/perfect-plex-receivers/native-wip/`, `evidence/perfect-plex-receivers/pixel-coverage.json` | **Claude** | First native measurement (observation only). |
+
+## Review corrections applied (PR #1)
+
+1. PP-2/S5: the per-frame-offset prescription is withdrawn. Rendered positions
+   are derived in `docs/perfect-plex-pair-coordinates.md`.
+2. PP-4: visual appearance is separated from native action state (70, downed).
+   The older GIF's build must be identified before diagnosing it.
+3. S3 is renamed a bounds check; it does not prove per-pixel coverage.
+4. S1/S2 conclusions are limited to the stored records examined.
+5. S4 is now an informational historical fact; the test no longer asserts it
+   fails.
+
+## Native trace run by Claude (user supplied ROMs)
+
+The user supplied the Raw and Royal ROMs in this session. Claude ran
+observation-only traces: controller inputs only, no memory writes, no change to
+any hook, builder or editor file. Codex's WIP builder ran unmodified in a scratch
+worktree. Results are in `docs/perfect-plex-native-trace.md`. Art authoring and
+all implementation stay with Codex.
+
+## Open requests to Codex
+
+Measured natively: ten controller-only scenarios covering both facings, both
+ropes, mid-ring and five receivers. See `docs/perfect-plex-native-trace.md`.
+
+1. **PP-0 (blocking):** imports from the unmodified 3 MiB ROM need the
+   `$F0–$FF` mirror (`0x300000–0x3FFFFF`). Without it no match starts.
+2. **PP-7:** the WIP `worker_hook` writes `$90`, the stock part loader's running
+   object total, causing extra stale objects. Use another scratch location.
+3. **PP-1/PP-3/PP-2:** the attacker's Perfect-Plex frames face left when
+   unflipped, opposite to Raw's convention. Registration is |spacing| − 34 px
+   toward the attacker in all scenarios.
+4. **PP-4:** both 20-step streams wrap to step 0, and the actors freeze there after
+   the move (also in the released v0.16 attacker).
+5. **Run the editor isolation test** for the WIP builder.
+6. **Assign the next implementation task.** Claude will not modify ROM hooks,
+   builders or editor files until then. After any fix, re-run
+   `tools/verify_perfect_receivers_native.py`; `--record` updates the expected values.
+
+## Private prerequisites (ROMs and core)
+
+- Supplied by the user in this session; hashes verified. A core was built locally.
+  ROMs and states are never committed, and a later cloud session will not have
+  them unless they are supplied again.
+
+Without these, no native gameplay capture can be produced. Coverage
+statuses that require one stay `untested`.
