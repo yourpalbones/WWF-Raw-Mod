@@ -238,7 +238,7 @@ def perfect_plex_rows(receivers):
         if measured:
             gameplay = 'verified_visual'
             evidence = ['data/perfect-receivers.json', 'docs/perfect-plex-fix-report.md',
-                        'evidence/complete-wrestler-art/verification-stock.json',
+                        'evidence/complete-wrestler-art/verification-stock-v2.json',
                         'evidence/perfect-plex-receivers/fixed/verification.json',
                         'tools/verify_perfect_receivers_native.py']
             evidence += [f"evidence/perfect-plex-receivers/recipes/{r['scenario']}.json" for r in measured]

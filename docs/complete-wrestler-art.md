@@ -64,9 +64,9 @@ names its evidence. **Nothing here is complete until native gameplay and a visua
 
 ## Perfect-Plex receiving matrix (all 13 current slots)
 
-Builds:
-- **Stock import:** `15c1d9b5…`, the browser export of stock Raw with Mr. Perfect.
-- **Gear reference mod:** `a870f3fe…`, with Scott, Syxx, Nash and Sting applied, then Mr. Perfect.
+Builds (this batch; Mr. Perfect with his Royal pose pieces and hair colour):
+- **Stock import v2:** `d15106fc…`, the browser export of stock Raw with Mr. Perfect.
+- **Gear reference mod v2:** `6616725d…`, with Scott, Syxx, Nash and Sting applied, then Mr. Perfect.
 
 Every scenario below is a controller-only cold-boot replay (`tools/verify_perfect_receivers_native.py`).
 Each passes every defect assertion:
@@ -76,25 +76,30 @@ Each passes every defect assertion:
 - no Perfect-Plex pose after the move.
 
 Royal-drawn receivers also register within 1 px. Own-art receivers must equal the editor preview on every
-step, and they do: 100% of actor pixels, rebuilt from OAM. Data:
-[`verification-stock.json`](../evidence/complete-wrestler-art/verification-stock.json) and
-[`verification-gear-mod.json`](../evidence/complete-wrestler-art/verification-gear-mod.json).
+step, and they do: 100% of actor pixels, rebuilt from OAM. A clean re-run reproduces every recorded value.
+Data: [`verification-stock-v2.json`](../evidence/complete-wrestler-art/verification-stock-v2.json) and
+[`verification-gear-mod-v2.json`](../evidence/complete-wrestler-art/verification-gear-mod-v2.json).
+The earlier builds' recipes, reports and GIFs are kept under `previous-builds/`.
 
 | Slot | Identity | Receiving drawings | Native scenarios (all pass) | Status |
 |---|---|---|---|---|
 | 0 | Luna Vachon | own native (re-timed) | `luna-attacker-left`, `luna-attacker-left-2` | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/luna-attacker-left.gif)) |
-| 1 | Bret Hart (stock; user gear unknown) | Royal Bret | `bret-attacker-left-right-rope` | royal, native-verified |
-| 2 | Undertaker | Royal Undertaker | 5 scenarios: both facings, both ropes, mid-ring | royal, native-verified |
-| 3 | Yokozuna | Royal Yokozuna | `yokozuna-attacker-left-right-rope` | royal, native-verified |
+| 1 | Bret Hart (stock; user gear unknown) | Royal Bret | `bret-attacker-left` | royal, native-verified |
+| 2 | Undertaker | Royal Undertaker | `undertaker-attacker-right`, `undertaker-attacker-right-2` | royal, native-verified |
+| 3 | Yokozuna | Royal Yokozuna | `yokozuna-attacker-left` | royal, native-verified |
 | 4 | Bam Bam Bigelow | own native (re-timed) | `bambam-attacker-left` | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/bambam-attacker-left.gif)) |
-| 5 | Razor Ramon (stock) / Scott Hall (gear) | Royal Razor on stock; own native with Scott's gear | `razor-attacker-left-right-rope` (stock), `scott-gear-attacker-left` (gear) | royal + own-art, native-verified ([GIF](../evidence/complete-wrestler-art/scott-gear-attacker-left.gif)) |
-| 6 | Lex Luger | Royal Lex | `lex-attacker-left-right-rope` | royal, native-verified |
-| 7 | Doink (stock) / Sting (gear) | own native (re-timed) | `doink-attacker-left` (stock), `sting-gear-attacker-left`, `sting-gear-attacker-left-2` (gear) | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/sting-gear-attacker-left.gif)) |
-| 8 | Shawn Michaels | Royal Shawn | `shawn-attacker-left-right-rope` | royal, native-verified |
-| 9 | 1-2-3 Kid (stock) / Syxx (gear) | own native (re-timed) | `kid-attacker-right` (stock, opposite facing), `syxx-gear-attacker-left` (gear) | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/syxx-gear-attacker-left.gif)) |
-| 10 | Diesel (stock) / Kevin Nash (gear) | own native (re-timed) | `diesel-attacker-left` (stock), `nash-gear-attacker-left` (gear) | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/nash-gear-attacker-left.gif)) |
-| 11 | Owen Hart | own native (re-timed) | `owen-attacker-right` (opposite facing) | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/owen-attacker-right.gif)) |
+| 5 | Razor Ramon (stock) / Scott Hall (gear) | Royal Razor on stock; own native with Scott's gear | `razor-attacker-right` (stock), `scott-gear-attacker-left` (gear) | royal + own-art, native-verified ([GIF](../evidence/complete-wrestler-art/scott-gear-attacker-left.gif)) |
+| 6 | Lex Luger | Royal Lex | `lex-attacker-left` | royal, native-verified |
+| 7 | Doink (stock) / Sting (gear) | own native (re-timed) | `doink-attacker-right` (stock), `sting-gear-attacker-left`, `sting-gear-attacker-left-2` (gear) | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/doink-attacker-right.gif), [GIF](../evidence/complete-wrestler-art/sting-gear-attacker-left.gif)) |
+| 8 | Shawn Michaels | Royal Shawn | `shawn-attacker-left` | royal, native-verified |
+| 9 | 1-2-3 Kid (stock) / Syxx (gear) | own native (re-timed) | `kid-attacker-right` (stock), `syxx-gear-attacker-left` (gear) | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/kid-attacker-right.gif), [GIF](../evidence/complete-wrestler-art/syxx-gear-attacker-left.gif)) |
+| 10 | Diesel (stock) / Kevin Nash (gear) | own native (re-timed) | `diesel-attacker-left` (stock), `nash-gear-attacker-left` (gear) | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/diesel-attacker-left.gif), [GIF](../evidence/complete-wrestler-art/nash-gear-attacker-left.gif)) |
+| 11 | Owen Hart | own native (re-timed) | `owen-attacker-right` | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/owen-attacker-right.gif)) |
 | 12 | Mr. Perfect (mirror match) | Royal Perfect (installed, previewable) | none: **unreachable in one-on-one** | royal, **not natively tested** |
+
+Perfect ends on the right in six scenarios (Doink, Kid, Owen, Razor, Undertaker ×2), on the left in the other
+thirteen. The rope-position variants of the earlier set (left rope, right rope, mid-ring) were composed for the
+old build's timing and are not re-composed; the bot plays wherever the match takes it.
 
 Notes on the matrix:
 - **Re-timing.** Raw's own receiving-suplex sequence lifts at its third drawing; the Perfect-Plex lifts
@@ -107,8 +112,12 @@ Notes on the matrix:
   - One-player "player chooses opponents" does not accept the same wrestler (A has no effect).
   - A bot attempt never reached a match.
   - Other modes (tag team, Survivor Series, Royal Rumble, Bedlam, Raw Endurance) are untested.
-- **Recipes.** `tools/recipe_bot.py` played the own-art recipes. It reads memory to choose controller
-  presses and writes nothing, and the result is a fixed input list.
+- **Recipes.** `tools/recipe_bot.py` played all 19 recipes. It reads memory to choose controller presses
+  and writes nothing; the result is a fixed input list. Two bot changes this batch:
+  - P1 mashes to get up when it stays down (Luna downed Perfect and the bot waited forever).
+  - `--mash 3` for Scott, Lex, Luna (from the right), Owen and Razor. With 8 strikes per round the
+    receiver had zero health before the Perfect-Plex, so PP-4's damage check could not observe the move.
+    The assertion is unchanged. Those recordings failed and were replaced, as each recipe's note says.
 - **Private editing on RX3.**
   - A mouse stroke on Sting's receiving pose (gear mod) changed only Sting's tiles, including 40
     relocated packet bytes. The other 12 receivers decode identically.
@@ -126,7 +135,9 @@ replaces every adapted piece that Royal Rumble draws for Perfect.
 |---|---|---|
 | Royal Perfect art (exact silhouette match, earlier) | 289 | 289 |
 | Royal Perfect art (pose match, this batch) | — | **329** |
-| Adapted Raw Bret art (identity not preserved) | 1,431 | **1,102** |
+| Adapted Raw Bret art | 1,431 | **1,102** |
+| … of which recoloured with Perfect's blond hair (this batch) | — | **377** |
+| … of which not recoloured (the rule found no hair region; mostly bodies, legs and common-range art, not individually reviewed) | — | 725 |
 
 **How a piece qualifies** (`tools/match_perfect_poses.py`, table `data/perfect-pose-matches.json`; indices
 and metrics only, no pixels):
@@ -143,6 +154,26 @@ and metrics only, no pixels):
   show the same pose with Perfect's blond hair, singlet, kneepads and boots. (The sheets contain game art and
   stay private.)
 
+**Hair on the remaining adapted pieces.** Standing and walking, the most visible poses, have no Royal match,
+and gameplay showed Perfect there with Bret's dark hair. Bret's hair is his palette index 9 (Perfect index 7
+after the adapted colour map, which nothing else maps to), dithered with black. The matched pieces confirm it:
+co-located pixels turn Bret 9 into Perfect's hair indices 12/9/13 in ~73% of cases.
+- Rule (`hair_changes` in `tools/convert_perfect_poses.py`, `hairChanges` in `editor/royal-import-core.js`):
+  - Find 8-connected brown regions.
+  - A region is hair when its neighbours are mostly dark rather than skin, and it is dithered with black
+    (regions over 2 px need dither pixels ≥ 0.3 × size).
+  - Hair becomes pale blond (13). Black inside the dither becomes beige (9). Black at its edge becomes dark
+    brown (12), the shades Royal uses for Perfect's hair.
+- Review:
+  - A first version also lit armpit shadows (a solid brown patch next to the singlet). The dither condition
+    removed those (445 → 377 pieces).
+  - All 377 were reviewed before and after: hair now reads blond, and arm shading stays brown.
+- Status: these pieces stay **adapted**. The hair *shape* is still Bret's (long, curly, which is close to
+  Perfect's), and only the colour is Perfect's.
+- Parity: Python and JS agree on all 1,102 adapted pieces, and the fresh build agrees with the upgrade.
+- Upgrade path: an old import is recoloured only where the piece is unedited. The synthetic edit test kept
+  the 5 pieces sharing the edited tile.
+
 **Older imports, edits and space**
 - `RAW_ROYAL_IMPORT_CORE.upgradePoses` (the editor's **Update Perfect-Plex**) repacks slot 12.
   - A piece is replaced only while its pixels still hash to the adapted art it supersedes (`replaces`).
@@ -150,12 +181,12 @@ and metrics only, no pixels):
     frames.
   - It refuses to run if another identity's edited tile was relocated into Perfect's space.
 - Results:
-  - A synthetic one-byte edit in a shared tile kept both affected pieces and replaced the other 327.
+  - A synthetic one-byte edit in a shared tile kept the affected pieces (2 Royal-matched; 5 with the hair
+    rule in place) and replaced the rest.
   - Repack with nothing to replace: 1,732/1,732 pieces identical.
-  - The repacked slot uses fewer tiles (12,110 primary / 7,853 secondary, against 12,655 / 8,667).
+  - The repacked slot uses fewer tiles (12,139 primary / 7,856 secondary, against 12,655 / 8,667).
 - Browser and Node agree:
-  - Browser update of the RX3 stock build equals Node (uninstall, upgrade, reinstall) byte for byte
-    (`1fa0424c…`).
+  - Browser update of the RX3 stock build equals Node (uninstall, upgrade, reinstall) byte for byte.
   - Fresh browser import and upgrade carry the same 1,732 pieces.
   - v0.16 and pre-`569240b` imports update. All 13 receivers reinstall afterwards. Reopen and resave are
     byte-identical.
@@ -164,22 +195,29 @@ and metrics only, no pixels):
 - Cold boot, controller only. Every second frame after character select, each 8×8 tile of Perfect's
   objects is looked up in his slot's pieces.
 
-| Recipe on new build | Frames inspected | Perfect's tiles | Foreign tiles | Replaced Bret tiles | Replaced pieces seen |
+| Recipe on stock import v2 (`d15106fc…`) | Frames inspected | Perfect's tiles | Foreign tiles | Old-only Bret tiles | Changed pieces seen |
 |---|---|---|---|---|---|
-| `luna-attacker-left` | 1,443 | 49,301 | 0 | 0 | 10 |
-| `owen-attacker-right` | 2,903 | 95,094 | 0 | 0 | 5 |
+| `luna-attacker-left` | 987 | 34,622 | 0 | 0 | 17 |
+| `owen-attacker-left` (pre-`--mash` recording) | 1,917 | 66,253 | 0 | 0 | 18 |
 
-"Pieces seen" counts only pieces with a tile no other piece uses, so it undercounts.
+- "Changed pieces seen" counts Royal or recoloured pieces identified by a tile no other piece uses, so it
+  undercounts.
+- Reports: `evidence/perfect-ordinary-poses/*-tiles.json`.
+- Gameplay: [GIF](../evidence/perfect-ordinary-poses/luna-match.gif) of Perfect's standing pose, now blond.
+  Before this batch, that pose showed Bret's dark hair.
 
-**Timing changes with the art.** The same inputs replay a different match on the new build: game state first
-differs at frame 6,618, and Owen's recipe no longer reaches the Perfect-Plex. Tile decode time feeds the game's
-timing, so controller recipes are build-specific. The Perfect-Plex receiver scenarios are being re-recorded
-and re-verified on the new builds (stock `349d462e…`, gear mod `51bdfdb7…`). Until that finishes, the matrix
-above reflects the previous builds.
+**Timing changes with the art.** The same inputs replay a different match on a build with different art:
+game state first differs at frame 6,618, and the old recipes no longer reach the Perfect-Plex (both a composed
+and a bot recipe were tried). Tile decode time feeds the game's timing, so controller recipes are
+build-specific. All Perfect-Plex scenarios were re-recorded and re-verified on this batch's builds (matrix
+above).
 
 **Still open for Perfect**
 - 1,102 adapted pieces have no Royal counterpart (Raw-only actions or generic frames). They need **authored**
-  Perfect art.
+  Perfect art. 377 of them carry his hair colour on Bret's shapes. Your visual review of the blond-hair
+  result is requested: [GIF](../evidence/perfect-ordinary-poses/luna-match.gif).
+- Upgrading a ROM made on this branch before the hair rule (marker `POSES-ROYAL2`, never released) reports
+  its Royal pieces as "kept as edited". That is harmless but miscounted.
 - 24 of the 289 earlier exact matches use generic Royal frames and need the same review.
 - Per-action mapping of pieces (which moves show which pieces) is not built yet. That is part of the
   action-family matrix.

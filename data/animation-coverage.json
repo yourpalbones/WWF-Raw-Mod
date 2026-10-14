@@ -1374,7 +1374,7 @@
      "luna-attacker-left"
     ],
     "builds": [
-     "15c1d9b5aa67a09d"
+     "d15106fcb30455c1"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -1384,6 +1384,7 @@
     "tools/verify_perfect_receivers_native.py",
     "evidence/perfect-plex-receivers/recipes/luna-attacker-left-2.json",
     "evidence/perfect-plex-receivers/recipes/luna-attacker-left.json",
+    "evidence/complete-wrestler-art/luna-attacker-left-2.gif",
     "evidence/complete-wrestler-art/luna-attacker-left.gif"
    ],
    "defects": [
@@ -1428,9 +1429,9 @@
    "variant": "target (own receiving art): seven-counterpart build",
    "native": {
     "scenarios": [
-     "bret-attacker-left-right-rope"
+     "bret-attacker-left"
     ],
-    "build_sha256": "15c1d9b5aa67a09d8a560fad281b1887eac5871b7273256d4c436d060db6efc8",
+    "build_sha256": "d15106fcb30455c112b50844bc423c78a58127fcdf04654c1b9897f8b1052458",
     "registration_error_px": [
      0
     ],
@@ -1501,10 +1502,10 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
-    "evidence/complete-wrestler-art/verification-stock.json",
+    "evidence/complete-wrestler-art/verification-stock-v2.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/perfect-plex-receivers/recipes/bret-attacker-left-right-rope.json"
+    "evidence/perfect-plex-receivers/recipes/bret-attacker-left.json"
    ],
    "defects": [
     "Not released; draft PR #1 for Codex review",
@@ -1574,13 +1575,10 @@
    "variant": "target (own receiving art): seven-counterpart build",
    "native": {
     "scenarios": [
-     "undertaker-attacker-left-left-rope",
-     "undertaker-attacker-left-mid-ring",
-     "undertaker-attacker-left-right-rope",
-     "undertaker-attacker-right-left-rope",
-     "undertaker-attacker-right-right-rope"
+     "undertaker-attacker-right-2",
+     "undertaker-attacker-right"
     ],
-    "build_sha256": "15c1d9b5aa67a09d8a560fad281b1887eac5871b7273256d4c436d060db6efc8",
+    "build_sha256": "d15106fcb30455c112b50844bc423c78a58127fcdf04654c1b9897f8b1052458",
     "registration_error_px": [
      0
     ],
@@ -1651,14 +1649,11 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
-    "evidence/complete-wrestler-art/verification-stock.json",
+    "evidence/complete-wrestler-art/verification-stock-v2.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/perfect-plex-receivers/recipes/undertaker-attacker-left-left-rope.json",
-    "evidence/perfect-plex-receivers/recipes/undertaker-attacker-left-mid-ring.json",
-    "evidence/perfect-plex-receivers/recipes/undertaker-attacker-left-right-rope.json",
-    "evidence/perfect-plex-receivers/recipes/undertaker-attacker-right-left-rope.json",
-    "evidence/perfect-plex-receivers/recipes/undertaker-attacker-right-right-rope.json",
+    "evidence/perfect-plex-receivers/recipes/undertaker-attacker-right-2.json",
+    "evidence/perfect-plex-receivers/recipes/undertaker-attacker-right.json",
     "evidence/perfect-plex-receivers/fixed/undertaker-left-right-rope-before-after.gif",
     "evidence/perfect-plex-receivers/fixed/undertaker-right-right-rope-before-after.gif",
     "evidence/perfect-plex-receivers/fixed/undertaker-recovery-before-after.gif"
@@ -1705,9 +1700,9 @@
    "variant": "target (own receiving art): seven-counterpart build",
    "native": {
     "scenarios": [
-     "yokozuna-attacker-left-right-rope"
+     "yokozuna-attacker-left"
     ],
-    "build_sha256": "15c1d9b5aa67a09d8a560fad281b1887eac5871b7273256d4c436d060db6efc8",
+    "build_sha256": "d15106fcb30455c112b50844bc423c78a58127fcdf04654c1b9897f8b1052458",
     "registration_error_px": [
      0
     ],
@@ -1778,10 +1773,10 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
-    "evidence/complete-wrestler-art/verification-stock.json",
+    "evidence/complete-wrestler-art/verification-stock-v2.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/perfect-plex-receivers/recipes/yokozuna-attacker-left-right-rope.json"
+    "evidence/perfect-plex-receivers/recipes/yokozuna-attacker-left.json"
    ],
    "defects": [
     "Not released; draft PR #1 for Codex review",
@@ -1836,7 +1831,7 @@
      "bambam-attacker-left"
     ],
     "builds": [
-     "15c1d9b5aa67a09d"
+     "d15106fcb30455c1"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -1900,7 +1895,7 @@
      "scott-gear-attacker-left"
     ],
     "builds": [
-     "a870f3fec8bcac6e"
+     "6616725d15502a7a"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -1930,9 +1925,9 @@
    "variant": "target (own receiving art): seven-counterpart build",
    "native": {
     "scenarios": [
-     "razor-attacker-left-right-rope"
+     "razor-attacker-right"
     ],
-    "build_sha256": "15c1d9b5aa67a09d8a560fad281b1887eac5871b7273256d4c436d060db6efc8",
+    "build_sha256": "d15106fcb30455c112b50844bc423c78a58127fcdf04654c1b9897f8b1052458",
     "registration_error_px": [
      0
     ],
@@ -2003,10 +1998,10 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
-    "evidence/complete-wrestler-art/verification-stock.json",
+    "evidence/complete-wrestler-art/verification-stock-v2.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/perfect-plex-receivers/recipes/razor-attacker-left-right-rope.json"
+    "evidence/perfect-plex-receivers/recipes/razor-attacker-right.json"
    ],
    "defects": [
     "Not released; draft PR #1 for Codex review",
@@ -2051,9 +2046,9 @@
    "variant": "target (own receiving art): seven-counterpart build",
    "native": {
     "scenarios": [
-     "lex-attacker-left-right-rope"
+     "lex-attacker-left"
     ],
-    "build_sha256": "15c1d9b5aa67a09d8a560fad281b1887eac5871b7273256d4c436d060db6efc8",
+    "build_sha256": "d15106fcb30455c112b50844bc423c78a58127fcdf04654c1b9897f8b1052458",
     "registration_error_px": [
      0
     ],
@@ -2124,10 +2119,10 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
-    "evidence/complete-wrestler-art/verification-stock.json",
+    "evidence/complete-wrestler-art/verification-stock-v2.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/perfect-plex-receivers/recipes/lex-attacker-left-right-rope.json"
+    "evidence/perfect-plex-receivers/recipes/lex-attacker-left.json"
    ],
    "defects": [
     "Not released; draft PR #1 for Codex review",
@@ -2179,13 +2174,13 @@
    },
    "native": {
     "scenarios": [
-     "doink-attacker-left",
+     "doink-attacker-right",
      "sting-gear-attacker-left-2",
      "sting-gear-attacker-left"
     ],
     "builds": [
-     "15c1d9b5aa67a09d",
-     "a870f3fec8bcac6e"
+     "6616725d15502a7a",
+     "d15106fcb30455c1"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -2193,10 +2188,11 @@
    "evidence": [
     "docs/complete-wrestler-art.md",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/perfect-plex-receivers/recipes/doink-attacker-left.json",
+    "evidence/perfect-plex-receivers/recipes/doink-attacker-right.json",
     "evidence/perfect-plex-receivers/recipes/sting-gear-attacker-left-2.json",
     "evidence/perfect-plex-receivers/recipes/sting-gear-attacker-left.json",
-    "evidence/complete-wrestler-art/doink-attacker-left.gif",
+    "evidence/complete-wrestler-art/doink-attacker-right.gif",
+    "evidence/complete-wrestler-art/sting-gear-attacker-left-2.gif",
     "evidence/complete-wrestler-art/sting-gear-attacker-left.gif"
    ],
    "defects": [
@@ -2241,9 +2237,9 @@
    "variant": "target (own receiving art): seven-counterpart build",
    "native": {
     "scenarios": [
-     "shawn-attacker-left-right-rope"
+     "shawn-attacker-left"
     ],
-    "build_sha256": "15c1d9b5aa67a09d8a560fad281b1887eac5871b7273256d4c436d060db6efc8",
+    "build_sha256": "d15106fcb30455c112b50844bc423c78a58127fcdf04654c1b9897f8b1052458",
     "registration_error_px": [
      0
     ],
@@ -2314,10 +2310,10 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
-    "evidence/complete-wrestler-art/verification-stock.json",
+    "evidence/complete-wrestler-art/verification-stock-v2.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/perfect-plex-receivers/recipes/shawn-attacker-left-right-rope.json"
+    "evidence/perfect-plex-receivers/recipes/shawn-attacker-left.json"
    ],
    "defects": [
     "Not released; draft PR #1 for Codex review",
@@ -2373,8 +2369,8 @@
      "syxx-gear-attacker-left"
     ],
     "builds": [
-     "15c1d9b5aa67a09d",
-     "a870f3fec8bcac6e"
+     "6616725d15502a7a",
+     "d15106fcb30455c1"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -2441,8 +2437,8 @@
      "nash-gear-attacker-left"
     ],
     "builds": [
-     "15c1d9b5aa67a09d",
-     "a870f3fec8bcac6e"
+     "6616725d15502a7a",
+     "d15106fcb30455c1"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -2508,7 +2504,7 @@
      "owen-attacker-right"
     ],
     "builds": [
-     "15c1d9b5aa67a09d"
+     "d15106fcb30455c1"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },

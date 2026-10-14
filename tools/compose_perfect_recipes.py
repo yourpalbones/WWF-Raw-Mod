@@ -25,7 +25,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / 'evidence/mr-perfect-import/controller-replay.json'
-OUT = ROOT / 'evidence/perfect-plex-receivers/recipes'
+OUT = ROOT / 'evidence/perfect-plex-receivers/recipes/previous-builds'   # composed for the earlier builds' timing
 CYCLE = (13571, 14951)          # last full damage cycle in the base replay
 SELECTION_RIGHTS = (5451, 5551)
 SELECTION_A = 5750
