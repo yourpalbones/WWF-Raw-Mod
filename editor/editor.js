@@ -53,6 +53,7 @@ function patch(){if(!rom)throw Error('Load a ROM first');const selection=selecti
  for(const character of C.characters)for(const [index,value] of Object.entries(palettes[character.id]||{})){const offset=character.palette_offset+Number(index)*2,packet=new Uint8Array([value&255,value>>8]);result.set(packet,offset);records.push([offset,packet]);}
  for(const [offset,packet]of selection.records){result.set(packet,offset);records.push([offset,packet]);}
  if(typeof importedPaletteRecords==='function')for(const [offset,packet]of importedPaletteRecords(result)){result.set(packet,offset);records.push([offset,packet]);}
+ if(typeof importedAnnouncerRecords==='function')for(const [offset,packet]of importedAnnouncerRecords(result)){result.set(packet,offset);records.push([offset,packet]);}
  // ExHiROM's reset/interrupt bank mirrors the original first bank.
  if(result.length>=0x600000){for(let i=0;i<0x10000;){if(result[0x400000+i]===result[i]){i++;continue;}const start=i;while(i<0x10000&&result[0x400000+i]!==result[i]&&i-start<65535)i++;const packet=result.slice(start,i);result.set(packet,0x400000+start);records.push([0x400000+start,packet]);}}
  // 3 MiB and 6 MiB layouts mirror their final power-of-two portion.

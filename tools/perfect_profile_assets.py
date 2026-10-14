@@ -81,10 +81,13 @@ def configure(out,original,portrait_path):
     for delta,address in [(8,0x70d400),(12,0x70d800),(16,0x70e200)]:pointer(record+delta,address)
     # Announcer tables index the logical roster directly. Relocate every table
     # with its existing twelve entries unchanged and append this worker's assets.
-    for old,new,stride,address in [(0x2ee90f,0x70e400,2,0x70c800),(0x2ee927,0x70e420,1,0x70c800),
-                                   (0x2ee93f,0x70e440,2,0x70d200),(0x2ee957,0x70e460,1,0x70d200)]:
-        data=bytes(out[old:old+12*stride])+(address&65535).to_bytes(2,'little') if stride==2 else bytes(out[old:old+12])+bytes([address>>16])
-        put(new,data)
+    # Each table holds one 16-bit word per logical slot (X = selector word): an address word, or a
+    # bank in the low byte. The bank tables were once copied with a one-byte stride, which left
+    # slots 6-12 reading bank $FF and stalled every match on the announcer screen.
+    for old,new,kind,address in [(0x2ee90f,0x70e400,'word',0x70c800),(0x2ee927,0x70e420,'bank',0x70c800),
+                                 (0x2ee93f,0x70e440,'word',0x70d200),(0x2ee957,0x70e460,'bank',0x70d200)]:
+        extra=(address&65535) if kind=='word' else address>>16
+        put(new,bytes(out[old:old+24])+extra.to_bytes(2,'little'))
         pattern=(old|0x800000).to_bytes(3,'little');cursor=0;refs=0
         while True:
             cursor=out.find(pattern,cursor,0x300000)

@@ -9,6 +9,22 @@ function importedPaletteRecords(data){
  const palette=new Uint8Array(0x260);palette.set(data.slice(0x708400,0x7085e0));palette.set(data.slice(0x2cc67a,0x2cc6fa),0x1e0);
  return [[0x70e800,palette],[0x2cf212,new Uint8Array([0,232])]];
 }
+// [stock table, relocated table, profile-record pointer field, 'word' or 'bank'].
+const ANNOUNCER_TABLES=[[0x2ee90f,0x70e400,20,'word'],[0x2ee927,0x70e420,20,'bank'],[0x2ee93f,0x70e440,24,'word'],[0x2ee957,0x70e460,24,'bank']];
+function announcerTableRecords(data){
+ // Every entry is a 16-bit word per logical slot: an address word, or a bank in the low byte with a zero high byte.
+ return ANNOUNCER_TABLES.map(([,target,field,kind])=>{
+  const table=new Uint8Array(26);
+  for(let i=0;i<13;i++){const pointer=RI.long(data,0x708000+i*45+field);RI.putWord(table,i*2,kind==='word'?pointer&65535:pointer>>>16);}
+  return [target,table];
+ });
+}
+function importedAnnouncerRecords(data){
+ // Imports made before this fix copied the bank tables with a one-byte stride, so entries 6-12 read
+ // bank $FF and every match stalled on the announcer screen. Rebuild them from the profile records.
+ if(!hasImportedWorker(data))return [];
+ return announcerTableRecords(data).filter(([offset,packet])=>packet.some((v,i)=>data[offset+i]!==v));
+}
 function resetImportedMetadata(){for(const key of Object.keys(S))delete S[key];Object.assign(S,structuredClone(originalSelectionManifest));H.destination=0x3a0000;}
 function importedProfileAssets(base,result){
  const out=result.bytes,record=0x708000+12*45,rgba=RI.royalPortrait(royalSource),photo=quantizePortrait(rgba);
@@ -30,11 +46,13 @@ function importedProfileAssets(base,result){
  const logo=generateNameLogo('MR PERFECT','1'),packedLogo=logoTiles(logo,'1');
  put(0x70d400,nativeBlock(packedLogo.graphics),0x70d800);put(0x70d800,nativeBlock(packedLogo.map),0x70e200);put(0x70e200,palette(logo.colors),0x70e400);
  for(const [field,address]of [[8,0x70d400],[12,0x70d800],[16,0x70e200]])RI.putLong(out,record+field,address);
- for(const [old,target,stride,address]of [[0x2ee90f,0x70e400,2,0x70c800],[0x2ee927,0x70e420,1,0x70c800],[0x2ee93f,0x70e440,2,0x70d200],[0x2ee957,0x70e460,1,0x70d200]]){
-  out.set(base.slice(old,old+12*stride),target);if(stride===2)RI.putWord(out,target+24,address&65535);else out[target+12]=address>>>16;
+ // The announcer reads four word-indexed tables (stride 2, X = selector word). Relocate the references,
+ // then fill all thirteen entries from the profile records, which already hold the same pointers.
+ for(const [old,target]of ANNOUNCER_TABLES){
   const reference=old|0x800000,pattern=[reference&255,reference>>>8&255,reference>>>16&255];let pos=0,refs=0;
   while((pos=RI.search(base,pattern,pos,0x300000))>=0){if(base[pos-1]===191){RI.putLong(out,pos,target);refs++;}pos++;}if(refs!==2)throw Error('Unsupported announcer monitor table.');
  }
+ for(const [offset,packet]of announcerTableRecords(out))out.set(packet,offset);
  // Preserve the twelve loaded HUD names and add a dedicated thirteenth label.
  const atlas=decodePortrait(base,hudSource(base)),font=new Uint8Array(atlas),name=matchNamePixels('MR PERFECT');
  font.set(imageTiles(name,64,8,4),135*32);put(0x738000,nativeBlock(font),0x73b000);
@@ -52,14 +70,14 @@ function activateImportedWorker(data){
  for(const [id,meta]of Object.entries(S.characters)){
   const index=Number(id),record=0x708000+index*45;meta.record=record;meta.theme_offset=record+44;
   meta.fields={name:record+28,from:record+30,weight:record+32,height:record+36,special:record+38};
-  meta.announcer_monitor_word=0x70e400+index*2;meta.announcer_monitor_bank=0x70e420+index;meta.announcer_palette_word=0x70e440+index*2;meta.announcer_palette_bank=0x70e460+index;
+  meta.announcer_monitor_word=0x70e400+index*2;meta.announcer_monitor_bank=0x70e420+index*2;meta.announcer_palette_word=0x70e440+index*2;meta.announcer_palette_bank=0x70e460+index*2;
   C.characters.find(c=>c.id===id).palette_offset=paletteBase+64+index*32;
  }
  const record=0x708000+12*45;
  S.characters['12']={...structuredClone(S.characters['1']),record,portrait_offset:0x708800,palette_offset:0x708740,
   portrait_length:15604,monitor_offset:0x70c800,monitor_palette_offset:0x70d200,
   monitor_directory_offset:0x70e580,monitor_palette_directory_offset:0x70e584,
-  announcer_monitor_word:0x70e418,announcer_monitor_bank:0x70e42c,announcer_palette_word:0x70e458,announcer_palette_bank:0x70e46c,
+  announcer_monitor_word:0x70e418,announcer_monitor_bank:0x70e438,announcer_palette_word:0x70e458,announcer_palette_bank:0x70e478,
   logo_offset:0x70d400,logo_map_offset:0x70d800,logo_palette_offset:0x70e200,logo_tile_limit:146,
   theme_offset:record+44,theme:data[record+44],fields:{name:record+28,from:record+30,weight:record+32,height:record+36,special:record+38}};
  const sources={},poses=[],pointerUsers=new Map();
@@ -92,6 +110,7 @@ function refreshRoyalImport(){
  $('royal-worker').disabled=!loaded||!royalSource||added;
  if(added)$('royal-status').textContent='Mr. Perfect occupies slot 13, including the Perfect-Plex. 289 pieces use Royal artwork; 1,431 use adapted Raw artwork. Save this ROM to keep editing it later. One extra slot is supported.';
  if(added&&RI.word(rom,0x2cf212)===0x8400)$('royal-status').textContent+=' Save playable ROM to restore the referee and announcer palettes in this older import.';
+ if(added&&importedAnnouncerRecords(rom).length)$('royal-status').textContent+=' Save playable ROM to repair the announcer tables in this older import; without that, matches stall before they start.';
 }
 $('royal-rom').onchange=async event=>{try{
  const file=event.target.files[0];if(!file)return;let data=new Uint8Array(await file.arrayBuffer());if(data.length%1024===512)data=data.slice(512);
