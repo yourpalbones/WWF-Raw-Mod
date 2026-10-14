@@ -7,7 +7,8 @@ The exit's steps (held pin, release, recovery: docs/perfect-plex-exit.md):
   with a short bounce).
 - The release entries are found where Mr. Perfect's drawing changes on screen, so frames the game drops do not
   shift them; each is checked in the middle of its run.
-- The preview's last step (Perfect standing, the receiver down) is checked 30 frames into the standing run.
+- The preview's last step (Perfect standing, the receiver down) is checked on the second frame of the
+  standing run: Raw later switches to its idle drawing (at once after a collision push).
 - Raw's camera follows the pair and shakes when the bridge lands (WRAM $2E/$30 hold its x/y); the comparison
   follows it. A frame's OAM was built with the previous frame's camera; while the camera pans, the sprites'
   scroll can trail by a pixel, so then the best of +-1 px is taken and recorded as 'pan_shift'.
@@ -78,14 +79,14 @@ def main():
 
     # Runs of Mr. Perfect's drawing from the release (the frame after the last step-11 frame) on.
     runs, f = [], held[-1]['frame'] + 1
-    while oam_path(f).exists() and len(runs) < 8:
+    while oam_path(f).exists() and len(runs) < 20:
         sig = signature(f)
         if runs and runs[-1][2] == sig:
             runs[-1][1] = f
         else:
             runs.append([f, f, sig])
         f += 1
-    release = [r for r in runs if r[1] - r[0] >= 3]   # skip one-frame transitions
+    release = [r for r in runs if r[1] - r[0] >= 2]   # skip one- and two-frame transitions
     result = []
     for k in range(len(plan)):
         if k < 12:
@@ -100,7 +101,7 @@ def main():
                 frame = first + 7 * (k - 11) + 5
             elif n < len(release):
                 run = release[n]
-                frame = run[0] + (min(30, run[1] - run[0]) if k == len(plan) - 1 else (run[1] - run[0] + 1) // 2)
+                frame = run[0] + (min(1, run[1] - run[0]) if k == len(plan) - 1 else (run[1] - run[0] + 1) // 2)
             else:
                 frame = None
         if frame is None or not oam_path(frame).exists():
