@@ -4,7 +4,7 @@
 const fs=require('fs'),path=require('path'),crypto=require('crypto');
 global.window=global;
 const editor=path.join(__dirname,'..','editor');
-for(const f of ['royal-import-layouts.js','royal-import-core.js','nwo-gear-patterns.js','perfect-receiver-layouts.js','receiving-art.js','perfect-receiver-core.js'])
+for(const f of ['royal-import-layouts.js','royal-import-core.js','nwo-gear-patterns.js','perfect-receiver-layouts.js','raw-tile-directory.js','raw-parts.js','receiving-art.js','perfect-receiver-core.js'])
  if(fs.existsSync(path.join(editor,f)))require(path.join(editor,f));
 const [command,...args]=process.argv.slice(2);
 const read=p=>new Uint8Array(fs.readFileSync(p));

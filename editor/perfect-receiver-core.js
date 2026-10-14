@@ -49,6 +49,7 @@ window.RAW_PERFECT_RECEIVER_CORE=(()=>{
    const mapping=nearestMapping(colors,target);
    return recipes.workers[spec.selector].poses.map((_,i)=>royalDrawing(source,recipes,spec.selector,i,mapping,cache,shift));
   }
+  if(spec.source==='own_native'&&window.RAW_RECEIVING_ART)return window.RAW_RECEIVING_ART.ownNative(base,slot);
   if(spec.source==='authored'&&window.RAW_RECEIVING_ART)return window.RAW_RECEIVING_ART.render(base,source,recipes,slot,spec);
   throw Error(`No receiving art source for slot ${slot}.`);
  }
@@ -64,8 +65,12 @@ window.RAW_PERFECT_RECEIVER_CORE=(()=>{
   for(const [slotText,spec]of Object.entries(recipes.slots)){
    const slot=Number(slotText);
    // A Royal counterpart is the same identity only while the slot keeps its original character.
-   if(spec.stock_identity_only&&gearIdentity(base,slot)){skipped.push({raw_slot:slot,reason:'gear identity applied; Royal '+spec.selector+' art would replace it'});continue;}
-   const privateTiles=new Map(),poses=drawings(base,source,recipes,slot,spec);
+   let use=spec;
+   if(spec.stock_identity_only&&gearIdentity(base,slot)){
+    if(!spec.fallback){skipped.push({raw_slot:slot,reason:'gear identity applied; Royal '+spec.selector+' art would replace it'});continue;}
+    use={source:spec.fallback};
+   }
+   const privateTiles=new Map(),poses=drawings(base,source,recipes,slot,use);
    const table=0x71d100+slot*36,profiles=0x71d400+slot*168,sequence=0x71e000+slot*141;
    RI.putLong(out,0x71d000+slot*3,table);RI.putLong(out,0x71d040+slot*3,sequence);
    poses.forEach((pose,i)=>{
@@ -88,7 +93,7 @@ window.RAW_PERFECT_RECEIVER_CORE=(()=>{
     const profile=profiles+i*14;RI.putWord(out,profile,(1200+i)*3);out.set([pose.body_dx&255,0,36,128,pose.shadow_dx&255,255,255,255],profile+2);
    });
    for(let i=0;i<20;i++){const profile=profiles+Math.min(i,11)*14;out.set([113,profile&255,profile>>>8&255,0,0,0,0],sequence+i*7);}out[sequence+140]=255;
-   report.push({raw_slot:slot,source:spec.source,royal_selector:spec.selector??null,receiving_drawings:poses.length,private_tiles:privateTiles.size});
+   report.push({raw_slot:slot,source:use.source,royal_selector:use.selector??null,receiving_drawings:poses.length,private_tiles:privateTiles.size});
   }
   for(const [original,copy]of HOOKS)out.set(base.slice(original,original+256),copy);
   for(const [original,address,code]of recipes.programs){out.set(code,address);out[original]=92;RI.putLong(out,original+1,address);}

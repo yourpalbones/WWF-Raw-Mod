@@ -14,16 +14,21 @@ ORIGIN_X=72   # receiver canvas origin (data/perfect-receivers.json "canonical")
 DESCRIPTOR_BANK=0x71
 # RX3 storage: only the Perfect import and these drawings use these ranges (all verified free in fresh, v0.16
 # and gear-modded imports). 7E8000-7EFFFF and 7F8000-7FFFFF are reached as $3E:8000 / $3F:8000.
-LAYOUT={'marker':'ROYAL-RX3','tables':[0x71d000,0x720000],'descriptors':[0x711900,0x71d000],
+LAYOUT={'marker':'ROYAL-RX3','tables':[0x71d000,0x720000],'descriptors':[0x711900,0x716800],
         'pointer_table':0x7da000,'pointer_end':0x7de000,
-        'pools':[[0x700000,0x708000],[0x7e8000,0x7f0000],[0x7f8000,0x800000],[0x7de000,0x7e0000]]}
-# Receiving art source per Raw slot. 'royal': the Royal counterpart's drawings, used where that counterpart is
-# the same identity as the slot's current art. Other slots keep the generic stock-part path until their
-# authored art is accepted (docs/complete-wrestler-art.md).
-# 'stock_identity_only': skip the Royal source when the slot carries a gear identity (Scott Hall replaces Razor).
-SLOTS={1:{'source':'royal','selector':3},2:{'source':'royal','selector':2},3:{'source':'royal','selector':9},
-       5:{'source':'royal','selector':8,'stock_identity_only':True},
-       6:{'source':'royal','selector':10},8:{'source':'royal','selector':7},12:{'source':'royal','selector':1}}
+        'pools':[[0x700000,0x708000],[0x7e8000,0x7f0000],[0x7f8000,0x800000],[0x716800,0x71d000],[0x7de000,0x7e0000]]}
+# Receiving art source per Raw slot.
+# - 'royal': Royal Rumble's drawings of the same person (Bret, Undertaker, Yokozuna, Razor, Lex, Shawn, Perfect).
+#   'stock_identity_only' skips it when a gear identity replaces the character (Scott Hall over Razor) and
+#   uses 'fallback' instead.
+# - 'own_native': private copies of the slot's own native receiving sequence (Raw's receiving-suplex drawings
+#   in the slot's own art and gear), for workers with no Royal counterpart of the same identity.
+SLOTS={0:{'source':'own_native'},1:{'source':'royal','selector':3},2:{'source':'royal','selector':2},
+       3:{'source':'royal','selector':9},4:{'source':'own_native'},
+       5:{'source':'royal','selector':8,'stock_identity_only':True,'fallback':'own_native'},
+       6:{'source':'royal','selector':10},7:{'source':'own_native'},8:{'source':'royal','selector':7},
+       9:{'source':'own_native'},10:{'source':'own_native'},11:{'source':'own_native'},
+       12:{'source':'royal','selector':1}}
 
 
 def worker_hook():
