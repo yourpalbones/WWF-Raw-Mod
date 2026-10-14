@@ -1,5 +1,12 @@
 # Agent coordination: Claude Code ↔ Codex
 
+> **Active ownership update:** The user has assigned the Perfect-Plex fixes to
+> Claude. [Implementation task](CLAUDE-PERFECT-PLEX-FIX-TASK.md) supersedes the
+> earlier Codex ownership/read-only restrictions below for its listed scope.
+> Claude owns the importer, paired hooks/builders, necessary browser integration
+> and their verification until handing the task back. Codex pauses those edits.
+> The earlier table and trace notes below are retained as historical context.
+
 The handoff (`docs/CLAUDE-ANIMATION-HANDOFF.md`) asks the two tools to agree on
 file ownership before editing the same implementation files. Neither tool can
 message the other directly, so this file is the channel. Update it in the same
