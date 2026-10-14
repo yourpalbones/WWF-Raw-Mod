@@ -92,5 +92,42 @@ window.RAW_RECEIVING_ART=(()=>{
    return {image,chunks:pack(image),body_dx:body,shadow_dx:body-2};
   });
  }
- return {pack,render,donorImage,roleMaps,ownNative};
+ // Mr. Perfect's drawing for a Perfect-Plex step as a canonical-canvas mask (same anchor and mirror as the
+ // receiving drawings; editor/royal-import-layouts.js finisher, captured natively in Royal Rumble).
+ function attackerMask(source,recipes,step){
+  const RI=window.RAW_ROYAL_IMPORT_CORE,shift=recipes.canonical.mirror_shift,mask=new Uint8Array(SIZE*SIZE),cache=new Map();
+  for(const part of window.RAW_ROYAL_IMPORT_MANIFEST.finisher[step].parts)for(let y=0;y<part.size;y++)for(let x=0;x<part.size;x++){
+   const sx=part.hflip?part.size-1-x:x,sy=part.vflip?part.size-1-y:y,ref=part.refs[Math.floor(sy/8)*(part.size/8)+Math.floor(sx/8)];if(!ref)continue;
+   const key=ref.join(':');if(!cache.has(key))cache.set(key,RI.tile(source,ref));if(!cache.get(key)[sy%8*8+sx%8])continue;
+   const X=OX+shift-(part.x+x),Y=OY+part.y+y;if(X>=0&&Y>=0&&X<SIZE&&Y<SIZE)mask[Y*SIZE+X]=1;
+  }
+  return mask;
+ }
+ // Receiving drawings from the wrestler's own Raw poses, chosen to follow Royal's Perfect-Plex step by step
+ // (tools/plan_receiver_profiles.py, recipes.own_profiles): each step draws one Raw profile with the slot's own
+ // parts (gear and edits from the loaded ROM), in the planned facing, at the planned offset in canonical
+ // coordinates. Pixels behind Mr. Perfect are left out, as Royal's own drawings leave them out, so sprite priority
+ // cannot change what shows. Anchors (body_dx, shadow_dx) are the Royal donor's, so the receiver sits where Royal
+ // puts it. Shadow parts (a single colour) are left out; the receiver's shadow comes from the profile.
+ function ownProfiles(base,source,recipes,slot,plan){
+  const P=window.RAW_PARTS;
+  return plan.steps.map((step,i)=>{
+   const points=new Map();
+   for(const [id,dx,dy]of [...P.profileParts(base,step.profile)].reverse()){
+    if(id===0x8024)continue;const parts=P.resolvePart(base,slot,id).parts,piece=P.raster(parts,dx,dy);
+    if(new Set(piece.values()).size<=1)continue;
+    for(const [k,v]of piece)points.set(k,v);
+   }
+   const hidden=attackerMask(source,recipes,i),image=new Uint8Array(SIZE*SIZE);
+   for(const [k,v]of points){
+    let [x,y]=k.split(',').map(Number);if(step.hflip)x=-x-1;if(step.vflip)y=-y-1;
+    const X=OX+x+step.dx,Y=OY+y+step.dy;
+    if(X<0||Y<0||X>=SIZE||Y>=SIZE)throw Error('Receiving drawing exceeds its canvas.');
+    if(!hidden[Y*SIZE+X])image[Y*SIZE+X]=v;
+   }
+   const row=recipes.workers[plan.donor].poses[i];
+   return {image,chunks:pack(image),body_dx:row.body_dx,shadow_dx:row.shadow_dx};
+  });
+ }
+ return {pack,render,donorImage,roleMaps,ownNative,ownProfiles,attackerMask};
 })();

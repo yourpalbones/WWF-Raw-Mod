@@ -267,7 +267,7 @@ def measure(capture, rom, royal, slot):
         'generated_by': 'tools/measure_perfect_pair.py',
         'rom_sha256': hashlib.sha256(rom).hexdigest(),
         'receiver_slot': slot,
-        'receiver_source': 'own_native' if own_native else 'royal',
+        'receiver_source': 'own_art' if own_native else 'royal',
         'build_marker': rom[0x70fe40:0x70fe49].decode('latin-1'),
         'frames_measured': len(rows),
         'frames_fully_matched': sum('camera_x' in r for r in rows),

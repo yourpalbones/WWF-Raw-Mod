@@ -73,7 +73,7 @@ def defects(m, rom):
     if not m['frames_measured']:
         failed.append('PP-0 move not reached')
         return failed
-    own = m.get('receiver_source') == 'own_native'
+    own = m.get('receiver_source') == 'own_art'
     if not m['frames_fully_matched'] or any(abs(int(k)) != 40 for k in m['actor_spacing']) or \
             (not own and any(abs(int(e)) > 1 for e in m['registration_errors'])):
         failed.append('PP-1/2 registration')
@@ -128,7 +128,7 @@ def main():
                                                  '--base', str(start), '--frames', str(recipe['capture_frames']),
                                                  '--interval', '1'])
         m = measure(capture, rom, args.royal.read_bytes(), recipe['receiver_slot'])
-        if m.get('receiver_source') == 'own_native' and m['frames_fully_matched']:
+        if m.get('receiver_source') == 'own_art' and m['frames_fully_matched']:
             measurement = args.output / f'{name}-measurement.json'
             measurement.write_text(json.dumps(m) + '\n')
             facing = 'left' if '(False, True)' in m['flip_pairs'] else 'right'

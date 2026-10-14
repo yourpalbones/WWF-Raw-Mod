@@ -21,17 +21,17 @@ LAYOUT={'marker':'ROYAL-RX3','tables':[0x71d000,0x720000],'descriptors':[0x71190
 # - 'royal': Royal Rumble's drawings of the same person (Bret, Undertaker, Yokozuna, Razor, Lex, Shawn, Perfect).
 #   'stock_identity_only' skips it when a gear identity replaces the character (Scott Hall over Razor) and
 #   uses 'fallback' instead.
-# - 'own_native': private copies of the slot's own native receiving sequence (Raw's receiving-suplex drawings
-#   in the slot's own art and gear), for workers with no Royal counterpart of the same identity.
-# Own native drawings per Perfect-Plex step: [victim row (Raw receiving-suplex drawing), extra dx, extra dy].
-# Raw's suplex lifts at its third drawing, the Perfect-Plex only at step 10, so the held drawing carries
-# steps 2-9, the lift drawings steps 10-11 and the landed drawing the bridge (reviewed in the paired preview).
+# - 'own_profiles': the wrestler's own Raw poses chosen to follow Royal's Perfect-Plex step by step
+#   (tools/plan_receiver_profiles.py, data/receiver-profile-plan.json), drawn from the user's ROM, with Royal's
+#   anchors; a gear identity has its own plan. For workers with no Royal counterpart of the same identity.
+# - 'own_native' (superseded, kept for comparison): Raw's own receiving-suplex sequence re-timed. Its drawings
+#   lifted and dropped the receiver beside Mr. Perfect instead of over him.
 OWN_NATIVE_STEPS=[[0,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[1,0,0],[3,0,0],[6,0,8],[10,0,0]]
-SLOTS={0:{'source':'own_native'},1:{'source':'royal','selector':3},2:{'source':'royal','selector':2},
-       3:{'source':'royal','selector':9},4:{'source':'own_native'},
-       5:{'source':'royal','selector':8,'stock_identity_only':True,'fallback':'own_native'},
-       6:{'source':'royal','selector':10},7:{'source':'own_native'},8:{'source':'royal','selector':7},
-       9:{'source':'own_native'},10:{'source':'own_native'},11:{'source':'own_native'},
+SLOTS={0:{'source':'own_profiles'},1:{'source':'royal','selector':3},2:{'source':'royal','selector':2},
+       3:{'source':'royal','selector':9},4:{'source':'own_profiles'},
+       5:{'source':'royal','selector':8,'stock_identity_only':True,'fallback':'own_profiles'},
+       6:{'source':'royal','selector':10},7:{'source':'own_profiles'},8:{'source':'royal','selector':7},
+       9:{'source':'own_profiles'},10:{'source':'own_profiles'},11:{'source':'own_profiles'},
        12:{'source':'royal','selector':1}}
 
 

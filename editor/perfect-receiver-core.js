@@ -50,6 +50,11 @@ window.RAW_PERFECT_RECEIVER_CORE=(()=>{
    return recipes.workers[spec.selector].poses.map((_,i)=>royalDrawing(source,recipes,spec.selector,i,mapping,cache,shift));
   }
   if(spec.source==='own_native'&&window.RAW_RECEIVING_ART)return window.RAW_RECEIVING_ART.ownNative(base,slot,recipes.own_native_steps);
+  if(spec.source==='own_profiles'&&window.RAW_RECEIVING_ART){
+   // A gear identity has its own plan (its drawings can differ in shape); otherwise the stock plan.
+   const plan=recipes.own_profiles[slot];if(!plan)throw Error(`No receiving plan for slot ${slot}.`);
+   return window.RAW_RECEIVING_ART.ownProfiles(base,source,recipes,slot,gearIdentity(base,slot)&&plan.gear?plan.gear:plan);
+  }
   if(spec.source==='authored'&&window.RAW_RECEIVING_ART)return window.RAW_RECEIVING_ART.render(base,source,recipes,slot,spec);
   throw Error(`No receiving art source for slot ${slot}.`);
  }

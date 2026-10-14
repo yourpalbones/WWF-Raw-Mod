@@ -8,6 +8,11 @@ recipes=json.loads((root/'data/perfect-receivers.json').read_text())
 recipes['slots']={str(k):v for k,v in SLOTS.items()}
 recipes['layout']=LAYOUT
 recipes['own_native_steps']=OWN_NATIVE_STEPS
+# Each step's chosen pose (the first storable candidate); alternatives stay in the plan file for review.
+plan=json.loads((root/'data/receiver-profile-plan.json').read_text())['slots']
+pick=lambda p:{'donor':p['donor'],'steps':[{k:c[0][k] for k in ('profile','hflip','vflip','dx','dy')} for c in p['steps']]}
+recipes['own_profiles']={slot:{**(pick(p) if 'steps' in p else {}),**({'gear':pick(p['gear'])} if 'gear' in p else {})}
+                         for slot,p in plan.items()}
 recipes.pop('raw_royal_map',None)
 recipes['programs']=[[0x70f000,0x71eb00,list(worker_hook())],
                      [0x70f200,0x71ec00,list(lookup_hook())],
