@@ -107,7 +107,8 @@ Two Raw rules shaped this:
 All 20 scenarios pass on both v5 builds: stock import `281bcd36…` and gear reference mod `a3316c5a…`.
 Data: [`verification-stock-v5.json`](../evidence/complete-wrestler-art/verification-stock-v5.json) and
 [`verification-gear-mod-v5.json`](../evidence/complete-wrestler-art/verification-gear-mod-v5.json); the
-recorded values are in each recipe's `expected.exit`.
+recorded values are in each recipe's `expected.exit`. A clean check-mode re-run of all 20 from cold boot
+reproduces every recorded value exactly.
 
 | | Result |
 |---|---|

@@ -183,7 +183,8 @@ Each passes every defect assertion:
   - neither wrestler's depth changes, unless such a stop brings the pair within Raw's collision distance.
 
 Royal-drawn receivers also register within 1 px. Own-art receivers must equal the editor preview on every
-step, and they do: 100% of actor pixels, rebuilt from OAM. A clean re-run reproduces every recorded value.
+step, and they do: 100% of actor pixels, rebuilt from OAM. A clean check-mode re-run of all 20 on the v5
+builds reproduces every recorded value exactly.
 Data: [`verification-stock-v5.json`](../evidence/complete-wrestler-art/verification-stock-v5.json) and
 [`verification-gear-mod-v5.json`](../evidence/complete-wrestler-art/verification-gear-mod-v5.json); the v4 reports
 are kept beside them.
