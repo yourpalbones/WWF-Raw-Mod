@@ -1427,6 +1427,7 @@
   ],
   "exit": {
    "hold_frames": 57,
+   "hold_game_frames": 57,
    "exit_preview_match": [
     1.0,
     1.0,
