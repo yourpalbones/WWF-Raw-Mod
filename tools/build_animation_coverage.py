@@ -185,27 +185,31 @@ def perfect_plex_rows(receivers):
         rows.append(released)
         recipes_all = [json.loads(r.read_text()) for r in sorted((ROOT / 'evidence/perfect-plex-receivers/recipes').glob('*.json'))]
         if royal is None or slot == 5:
-            # Own native receiving drawings (Raw's receiving-suplex art in the slot's own art and gear), re-timed
-            # to follow the Perfect-Plex. Slot 5 uses them when Scott Hall's gear replaces Razor.
+            # Royal's receiving drawings rebuilt from the slot's own pixels (own art and gear). Slot 5 uses them when
+            # Scott Hall's gear replaces Razor.
             own = [r for r in recipes_all if r['receiver_slot'] == slot and 'expected_build' in r
                    and (slot != 5 or 'gear' in r['scenario'])]
-            gifs = [f"evidence/complete-wrestler-art/{r['scenario']}.gif" for r in own]
+            gifs = [f"evidence/complete-wrestler-art/{r['scenario']}.gif" for r in own
+                    if (ROOT / f"evidence/complete-wrestler-art/{r['scenario']}.gif").exists()]
             rows.append(row(slot, 'finisher:Perfect-Plex', 'receiver', 'own_art_adapted',
                             'verified_visual' if own else 'untested',
-                            variant='target (own native receiving drawings' + (', Scott Hall gear applied)' if slot == 5 else ')'),
+                            variant='target (Royal drawings in own pixels' + (', Scott Hall gear applied)' if slot == 5 else ')'),
                             implementation={'branch': 'claude/charming-allen-njttcx', 'marker': 'ROYAL-RX3',
-                                            'source': "editor/receiving-art.js ownNative + recipes.own_native_steps"},
-                            source_ids={'raw_profiles': 'data/perfect-victim-layouts.json rows, re-timed by '
-                                                        'tools/build_perfect_receivers.OWN_NATIVE_STEPS'},
+                                            'source': 'editor/receiving-art.js reskin + recipes.reskin'},
+                            source_ids={'plan': 'data/receiver-reskin-plan.json (tools/plan_receiver_reskin.py): '
+                                                'per pixel of the Royal donor drawing, an own piece and offset'},
                             native={'scenarios': [r['scenario'] for r in own],
                                     'builds': sorted({r['expected_build'][:16] for r in own}),
                                     'preview_equals_native': 'every step, 100% of actor pixels'} if own else None,
                             aliases='private tiles per worker (RX3); editing one worker changes no other worker '
                                     '(tools/check_receiver_isolation.py)',
                             evidence=['docs/complete-wrestler-art.md', 'tools/verify_perfect_receivers_native.py']
+                                     + ([] if slot == 5 else ['evidence/complete-wrestler-art/verification-stock-v4.json'])
+                                     + (['evidence/complete-wrestler-art/verification-gear-mod-v4.json']
+                                        if any('gear' in r['scenario'] for r in own) else [])
                                      + [f"evidence/perfect-plex-receivers/recipes/{r['scenario']}.json" for r in own] + gifs,
-                            defects=["Choreography is Raw's own lift-and-fall drawings re-timed to the Perfect-Plex, "
-                                     "not Royal's exact Perfect-Plex frames (awaiting visual review)",
+                            defects=["Automatic rebuild of Royal's drawings from the wrestler's own pixels; some regions "
+                                     "are blotchy where the costume differs most from the donor's (awaiting visual review)",
                                      'No bridge-to-pin (PP-5)', 'Not released; draft PR #1 for review'],
                             **common))
             if royal is None:
@@ -238,7 +242,7 @@ def perfect_plex_rows(receivers):
         if measured:
             gameplay = 'verified_visual'
             evidence = ['data/perfect-receivers.json', 'docs/perfect-plex-fix-report.md',
-                        'evidence/complete-wrestler-art/verification-stock-v2.json',
+                        'evidence/complete-wrestler-art/verification-stock-v4.json',
                         'evidence/perfect-plex-receivers/fixed/verification.json',
                         'tools/verify_perfect_receivers_native.py']
             evidence += [f"evidence/perfect-plex-receivers/recipes/{r['scenario']}.json" for r in measured]

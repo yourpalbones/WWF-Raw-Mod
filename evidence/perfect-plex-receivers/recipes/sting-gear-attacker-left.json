@@ -7,12 +7,13 @@
   "rights": 15,
   "side": "left",
   "final_side": "left",
-  "setup_end": 14871
+  "setup_end": 14871,
+  "mash": 3
  },
  "controller_only": true,
- "frames": 16487,
- "move_start": 15887,
- "capture_from": 15737,
+ "frames": 16406,
+ "move_start": 15806,
+ "capture_from": 15656,
  "capture_frames": 400,
  "inputs": [
   [
@@ -1288,223 +1289,261 @@
    5
   ],
   [
+   1,
+   14916,
    0,
+   5
+  ],
+  [
+   1,
    14925,
+   8,
+   5
+  ],
+  [
+   1,
+   14934,
+   1,
+   5
+  ],
+  [
+   1,
+   14943,
+   0,
+   5
+  ],
+  [
+   1,
+   14952,
+   0,
+   5
+  ],
+  [
+   1,
+   14961,
+   8,
+   5
+  ],
+  [
+   1,
+   14970,
+   1,
+   5
+  ],
+  [
+   1,
+   14979,
+   0,
+   5
+  ],
+  [
+   1,
+   14988,
+   0,
+   5
+  ],
+  [
+   1,
+   14997,
+   8,
+   5
+  ],
+  [
+   1,
+   15006,
+   1,
+   5
+  ],
+  [
+   1,
+   15015,
+   0,
+   5
+  ],
+  [
+   1,
+   15024,
+   0,
+   5
+  ],
+  [
+   1,
+   15033,
+   8,
+   5
+  ],
+  [
+   1,
+   15042,
+   1,
+   5
+  ],
+  [
+   1,
+   15051,
+   0,
+   5
+  ],
+  [
+   0,
+   15060,
    6,
    10
   ],
   [
    0,
-   14935,
+   15070,
    7,
    2
   ],
   [
    0,
-   14962,
+   15097,
    9,
    8
   ],
   [
    0,
-   15052,
+   15187,
    0,
    20
   ],
   [
    0,
-   15082,
+   15217,
    0,
    20
   ],
   [
    0,
-   15112,
-   0,
-   20
-  ],
-  [
-   0,
-   15142,
-   0,
-   20
-  ],
-  [
-   0,
-   15172,
-   0,
-   20
-  ],
-  [
-   0,
-   15202,
-   0,
-   20
-  ],
-  [
-   0,
-   15232,
-   0,
-   20
-  ],
-  [
-   0,
-   15262,
+   15247,
    0,
    20
   ],
   [
    1,
-   15412,
-   1,
-   5
-  ],
-  [
-   1,
-   15421,
+   15397,
    0,
    5
   ],
   [
    1,
-   15430,
+   15406,
    8,
    5
   ],
   [
    1,
-   15439,
+   15415,
    1,
    5
   ],
   [
    1,
-   15448,
+   15424,
    1,
    5
   ],
   [
    1,
-   15457,
+   15433,
    0,
    5
   ],
   [
-   1,
-   15466,
-   8,
-   5
-  ],
-  [
    0,
-   15475,
-   6,
-   55
-  ],
-  [
-   0,
-   15530,
+   15469,
    7,
-   2
+   12
   ],
   [
    0,
-   15557,
+   15506,
    9,
    8
   ],
   [
    0,
-   15647,
+   15596,
    11,
    20
   ],
   [
    0,
-   15677,
+   15626,
    11,
    20
   ],
   [
    0,
-   15707,
+   15656,
    11,
    20
   ],
   [
    0,
-   15737,
+   15686,
    11,
    20
   ],
   [
    0,
-   15767,
+   15716,
    11,
    20
   ],
   [
    0,
-   15797,
+   15746,
    11,
    20
   ],
   [
    0,
-   15827,
+   15776,
    11,
    20
   ],
   [
    0,
-   15857,
-   11,
-   20
-  ],
-  [
-   0,
-   15887,
+   15806,
    11,
    1
   ]
  ],
- "build": "gear reference mod v2 (Scott, Syxx, Nash, Sting gear; then Mr. Perfect with Royal pose pieces)",
- "expected_build": "6616725d15502a7a134caaf6ed8633e2203d663466bf50e9dddfa82407ff5aa5",
+ "build": "gear reference mod v4 (Scott, Syxx, Nash, Sting gear; then Mr. Perfect with Royal pose pieces and Royal heads; receivers rebuilt from Royal)",
+ "expected_build": "a2dd91b0ff8cb627f32e1baef48df33868592b25cd4224197896eff6add594e7",
  "expected": {
-  "frames_measured": 143,
-  "frames_fully_matched": 140,
+  "frames_measured": 144,
+  "frames_fully_matched": 141,
   "flip_pairs": {
-   "(False, True)": 140
+   "(False, True)": 141
   },
   "receiver_body_terms": {
-   "-31": 7,
-   "-27": 56,
-   "-34": 6,
-   "-38": 8,
-   "-51": 63
+   "-45": 141
   },
   "actor_spacing": {
-   "40": 140
+   "40": 141
   },
   "registration_errors": {},
   "receiver_trailing_palette6_during_move": {
    "2": 3,
-   "4": 140
+   "4": 141
   },
   "frames_with_foreign_palette6_during_move": 0,
   "receiver_shadow_offset_during_move": {
-   "min": 1.0,
+   "min": -4.0,
    "max": 2.0,
-   "frames": 143
+   "frames": 144
   },
   "receiver_health_changes": [
    [
-    213,
-    250,
-    90
+    216,
+    296,
+    136
    ]
   ],
-  "receiver_source": "own_native",
+  "receiver_source": "own_art",
   "preview_match": [
    1.0,
    1.0,
@@ -1521,15 +1560,15 @@
   ],
   "after_move": {
    "actions": {
-    "[0, 70]": 108
+    "[0, 70]": 107
    },
    "attacker_pose_shown": {
     "11": 2,
-    "None": 106
+    "None": 105
    },
    "receiver_pose_shown": {
     "11": 2,
-    "None": 106
+    "None": 105
    }
   },
   "receiver_pixel_match_min": null,

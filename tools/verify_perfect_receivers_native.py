@@ -91,7 +91,9 @@ def defects(m, rom):
         if any(p not in ('None', '11') for p in shown) or shown.get('11', 0) > 2:
             failed.append('PP-4 exit art')
             break
-    if len(m.get('receiver_health_changes', [])) != 1:
+    # The move's damage: exactly one loss of health. A downed wrestler also regains health a little later in the
+    # capture (+16 for Owen and Kid); a rise is not damage, two losses would be.
+    if len([c for c in m.get('receiver_health_changes', []) if c[2] < c[1]]) != 1:
         failed.append('PP-4 damage count')
     return failed
 

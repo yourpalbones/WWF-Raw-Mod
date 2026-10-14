@@ -2,7 +2,7 @@
  "scenario": "kid-attacker-right",
  "receiver_slot": 9,
  "composed_by": "tools/recipe_bot.py",
- "note": "Bot-played: P2 selects slot 9; P1 grapples from the left until the Perfect-Plex starts. The bot started on the left and finished on the right after stuck recovery.",
+ "note": "Bot-played: P2 selects slot 9; P1 grapples starting from the left (ends on the right) until the Perfect-Plex starts.",
  "parameters": {
   "rights": 19,
   "side": "left",
@@ -1984,8 +1984,8 @@
    1
   ]
  ],
- "build": "stock import",
- "expected_build": "15c1d9b5aa67a09d8a560fad281b1887eac5871b7273256d4c436d060db6efc8",
+ "build": "stock import v2 (Mr. Perfect with Royal pose pieces)",
+ "expected_build": "d15106fcb30455c112b50844bc423c78a58127fcdf04654c1b9897f8b1052458",
  "expected": {
   "frames_measured": 141,
   "frames_fully_matched": 138,

@@ -5,8 +5,8 @@ optional snapshots. No emulator memory is written; inputs are joypad presses onl
 
     python3 tools/run_controller_recipe.py CORE ROM RECIPE --output DIR [--from-state STATE --base FRAME]
 
-With --from-state, inputs at or before --base are skipped and later ones are
-shifted so that frame BASE+1 of the recipe becomes frame 1 of the new run.
+With --from-state, inputs are shifted so that frame BASE+1 of the recipe becomes frame 1 of the new run;
+a press still held at BASE continues for the rest of its duration, and earlier ones are skipped.
 """
 import argparse
 import json
@@ -37,6 +37,9 @@ for frame in recipe.get('snapshots', []):
         command += ['--snapshot-frame', str(frame - args.base)]
 for port, start, button, duration in recipe['inputs']:
     start -= args.base
+    if start < 1 <= start + duration - 1:
+        # Held across the saved state (frames base+1 onward): keep holding it for the rest of its duration.
+        start, duration = 1, start + duration - 1
     if 1 <= start <= frames:
         command += ['--press-p2' if port else '--press', f'{start}:{button}:{duration}']
 subprocess.run(command, check=True)

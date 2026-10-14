@@ -1359,22 +1359,22 @@
    "role": "receiver",
    "art_status": "own_art_adapted",
    "gameplay_status": "verified_visual",
-   "variant": "target (own native receiving drawings)",
+   "variant": "target (Royal drawings in own pixels)",
    "implementation": {
     "branch": "claude/charming-allen-njttcx",
     "marker": "ROYAL-RX3",
-    "source": "editor/receiving-art.js ownNative + recipes.own_native_steps"
+    "source": "editor/receiving-art.js reskin + recipes.reskin"
    },
    "source_ids": {
-    "raw_profiles": "data/perfect-victim-layouts.json rows, re-timed by tools/build_perfect_receivers.OWN_NATIVE_STEPS"
+    "plan": "data/receiver-reskin-plan.json (tools/plan_receiver_reskin.py): per pixel of the Royal donor drawing, an own piece and offset"
    },
    "native": {
     "scenarios": [
-     "luna-attacker-left-2",
-     "luna-attacker-left"
+     "luna-attacker-left",
+     "luna-attacker-right"
     ],
     "builds": [
-     "d15106fcb30455c1"
+     "55e331ba086f01a4"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -1382,13 +1382,14 @@
    "evidence": [
     "docs/complete-wrestler-art.md",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/perfect-plex-receivers/recipes/luna-attacker-left-2.json",
+    "evidence/complete-wrestler-art/verification-stock-v4.json",
     "evidence/perfect-plex-receivers/recipes/luna-attacker-left.json",
-    "evidence/complete-wrestler-art/luna-attacker-left-2.gif",
-    "evidence/complete-wrestler-art/luna-attacker-left.gif"
+    "evidence/perfect-plex-receivers/recipes/luna-attacker-right.json",
+    "evidence/complete-wrestler-art/luna-attacker-left.gif",
+    "evidence/complete-wrestler-art/luna-attacker-right.gif"
    ],
    "defects": [
-    "Choreography is Raw's own lift-and-fall drawings re-timed to the Perfect-Plex, not Royal's exact Perfect-Plex frames (awaiting visual review)",
+    "Automatic rebuild of Royal's drawings from the wrestler's own pixels; some regions are blotchy where the costume differs most from the donor's (awaiting visual review)",
     "No bridge-to-pin (PP-5)",
     "Not released; draft PR #1 for review"
    ],
@@ -1431,7 +1432,7 @@
     "scenarios": [
      "bret-attacker-left"
     ],
-    "build_sha256": "d15106fcb30455c112b50844bc423c78a58127fcdf04654c1b9897f8b1052458",
+    "build_sha256": "55e331ba086f01a4e8c6319a8baaff27bc7a56ca7ac69526af348574768532d0",
     "registration_error_px": [
      0
     ],
@@ -1502,7 +1503,7 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
-    "evidence/complete-wrestler-art/verification-stock-v2.json",
+    "evidence/complete-wrestler-art/verification-stock-v4.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
     "evidence/perfect-plex-receivers/recipes/bret-attacker-left.json"
@@ -1575,10 +1576,10 @@
    "variant": "target (own receiving art): seven-counterpart build",
    "native": {
     "scenarios": [
-     "undertaker-attacker-right-2",
-     "undertaker-attacker-right"
+     "undertaker-attacker-left-2",
+     "undertaker-attacker-left"
     ],
-    "build_sha256": "d15106fcb30455c112b50844bc423c78a58127fcdf04654c1b9897f8b1052458",
+    "build_sha256": "55e331ba086f01a4e8c6319a8baaff27bc7a56ca7ac69526af348574768532d0",
     "registration_error_px": [
      0
     ],
@@ -1649,11 +1650,11 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
-    "evidence/complete-wrestler-art/verification-stock-v2.json",
+    "evidence/complete-wrestler-art/verification-stock-v4.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/perfect-plex-receivers/recipes/undertaker-attacker-right-2.json",
-    "evidence/perfect-plex-receivers/recipes/undertaker-attacker-right.json",
+    "evidence/perfect-plex-receivers/recipes/undertaker-attacker-left-2.json",
+    "evidence/perfect-plex-receivers/recipes/undertaker-attacker-left.json",
     "evidence/perfect-plex-receivers/fixed/undertaker-left-right-rope-before-after.gif",
     "evidence/perfect-plex-receivers/fixed/undertaker-right-right-rope-before-after.gif",
     "evidence/perfect-plex-receivers/fixed/undertaker-recovery-before-after.gif"
@@ -1700,9 +1701,9 @@
    "variant": "target (own receiving art): seven-counterpart build",
    "native": {
     "scenarios": [
-     "yokozuna-attacker-left"
+     "yokozuna-attacker-right"
     ],
-    "build_sha256": "d15106fcb30455c112b50844bc423c78a58127fcdf04654c1b9897f8b1052458",
+    "build_sha256": "55e331ba086f01a4e8c6319a8baaff27bc7a56ca7ac69526af348574768532d0",
     "registration_error_px": [
      0
     ],
@@ -1773,10 +1774,10 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
-    "evidence/complete-wrestler-art/verification-stock-v2.json",
+    "evidence/complete-wrestler-art/verification-stock-v4.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/perfect-plex-receivers/recipes/yokozuna-attacker-left.json"
+    "evidence/perfect-plex-receivers/recipes/yokozuna-attacker-right.json"
    ],
    "defects": [
     "Not released; draft PR #1 for Codex review",
@@ -1817,21 +1818,21 @@
    "role": "receiver",
    "art_status": "own_art_adapted",
    "gameplay_status": "verified_visual",
-   "variant": "target (own native receiving drawings)",
+   "variant": "target (Royal drawings in own pixels)",
    "implementation": {
     "branch": "claude/charming-allen-njttcx",
     "marker": "ROYAL-RX3",
-    "source": "editor/receiving-art.js ownNative + recipes.own_native_steps"
+    "source": "editor/receiving-art.js reskin + recipes.reskin"
    },
    "source_ids": {
-    "raw_profiles": "data/perfect-victim-layouts.json rows, re-timed by tools/build_perfect_receivers.OWN_NATIVE_STEPS"
+    "plan": "data/receiver-reskin-plan.json (tools/plan_receiver_reskin.py): per pixel of the Royal donor drawing, an own piece and offset"
    },
    "native": {
     "scenarios": [
      "bambam-attacker-left"
     ],
     "builds": [
-     "d15106fcb30455c1"
+     "55e331ba086f01a4"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -1839,11 +1840,12 @@
    "evidence": [
     "docs/complete-wrestler-art.md",
     "tools/verify_perfect_receivers_native.py",
+    "evidence/complete-wrestler-art/verification-stock-v4.json",
     "evidence/perfect-plex-receivers/recipes/bambam-attacker-left.json",
     "evidence/complete-wrestler-art/bambam-attacker-left.gif"
    ],
    "defects": [
-    "Choreography is Raw's own lift-and-fall drawings re-timed to the Perfect-Plex, not Royal's exact Perfect-Plex frames (awaiting visual review)",
+    "Automatic rebuild of Royal's drawings from the wrestler's own pixels; some regions are blotchy where the costume differs most from the donor's (awaiting visual review)",
     "No bridge-to-pin (PP-5)",
     "Not released; draft PR #1 for review"
    ],
@@ -1881,21 +1883,21 @@
    "role": "receiver",
    "art_status": "own_art_adapted",
    "gameplay_status": "verified_visual",
-   "variant": "target (own native receiving drawings, Scott Hall gear applied)",
+   "variant": "target (Royal drawings in own pixels, Scott Hall gear applied)",
    "implementation": {
     "branch": "claude/charming-allen-njttcx",
     "marker": "ROYAL-RX3",
-    "source": "editor/receiving-art.js ownNative + recipes.own_native_steps"
+    "source": "editor/receiving-art.js reskin + recipes.reskin"
    },
    "source_ids": {
-    "raw_profiles": "data/perfect-victim-layouts.json rows, re-timed by tools/build_perfect_receivers.OWN_NATIVE_STEPS"
+    "plan": "data/receiver-reskin-plan.json (tools/plan_receiver_reskin.py): per pixel of the Royal donor drawing, an own piece and offset"
    },
    "native": {
     "scenarios": [
      "scott-gear-attacker-left"
     ],
     "builds": [
-     "6616725d15502a7a"
+     "a2dd91b0ff8cb627"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -1903,11 +1905,12 @@
    "evidence": [
     "docs/complete-wrestler-art.md",
     "tools/verify_perfect_receivers_native.py",
+    "evidence/complete-wrestler-art/verification-gear-mod-v4.json",
     "evidence/perfect-plex-receivers/recipes/scott-gear-attacker-left.json",
     "evidence/complete-wrestler-art/scott-gear-attacker-left.gif"
    ],
    "defects": [
-    "Choreography is Raw's own lift-and-fall drawings re-timed to the Perfect-Plex, not Royal's exact Perfect-Plex frames (awaiting visual review)",
+    "Automatic rebuild of Royal's drawings from the wrestler's own pixels; some regions are blotchy where the costume differs most from the donor's (awaiting visual review)",
     "No bridge-to-pin (PP-5)",
     "Not released; draft PR #1 for review"
    ],
@@ -1927,7 +1930,7 @@
     "scenarios": [
      "razor-attacker-right"
     ],
-    "build_sha256": "d15106fcb30455c112b50844bc423c78a58127fcdf04654c1b9897f8b1052458",
+    "build_sha256": "55e331ba086f01a4e8c6319a8baaff27bc7a56ca7ac69526af348574768532d0",
     "registration_error_px": [
      0
     ],
@@ -1998,7 +2001,7 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
-    "evidence/complete-wrestler-art/verification-stock-v2.json",
+    "evidence/complete-wrestler-art/verification-stock-v4.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
     "evidence/perfect-plex-receivers/recipes/razor-attacker-right.json"
@@ -2046,9 +2049,9 @@
    "variant": "target (own receiving art): seven-counterpart build",
    "native": {
     "scenarios": [
-     "lex-attacker-left"
+     "lex-attacker-right"
     ],
-    "build_sha256": "d15106fcb30455c112b50844bc423c78a58127fcdf04654c1b9897f8b1052458",
+    "build_sha256": "55e331ba086f01a4e8c6319a8baaff27bc7a56ca7ac69526af348574768532d0",
     "registration_error_px": [
      0
     ],
@@ -2119,10 +2122,10 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
-    "evidence/complete-wrestler-art/verification-stock-v2.json",
+    "evidence/complete-wrestler-art/verification-stock-v4.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/perfect-plex-receivers/recipes/lex-attacker-left.json"
+    "evidence/perfect-plex-receivers/recipes/lex-attacker-right.json"
    ],
    "defects": [
     "Not released; draft PR #1 for Codex review",
@@ -2163,24 +2166,24 @@
    "role": "receiver",
    "art_status": "own_art_adapted",
    "gameplay_status": "verified_visual",
-   "variant": "target (own native receiving drawings)",
+   "variant": "target (Royal drawings in own pixels)",
    "implementation": {
     "branch": "claude/charming-allen-njttcx",
     "marker": "ROYAL-RX3",
-    "source": "editor/receiving-art.js ownNative + recipes.own_native_steps"
+    "source": "editor/receiving-art.js reskin + recipes.reskin"
    },
    "source_ids": {
-    "raw_profiles": "data/perfect-victim-layouts.json rows, re-timed by tools/build_perfect_receivers.OWN_NATIVE_STEPS"
+    "plan": "data/receiver-reskin-plan.json (tools/plan_receiver_reskin.py): per pixel of the Royal donor drawing, an own piece and offset"
    },
    "native": {
     "scenarios": [
-     "doink-attacker-right",
+     "doink-attacker-left",
      "sting-gear-attacker-left-2",
      "sting-gear-attacker-left"
     ],
     "builds": [
-     "6616725d15502a7a",
-     "d15106fcb30455c1"
+     "55e331ba086f01a4",
+     "a2dd91b0ff8cb627"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -2188,15 +2191,17 @@
    "evidence": [
     "docs/complete-wrestler-art.md",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/perfect-plex-receivers/recipes/doink-attacker-right.json",
+    "evidence/complete-wrestler-art/verification-stock-v4.json",
+    "evidence/complete-wrestler-art/verification-gear-mod-v4.json",
+    "evidence/perfect-plex-receivers/recipes/doink-attacker-left.json",
     "evidence/perfect-plex-receivers/recipes/sting-gear-attacker-left-2.json",
     "evidence/perfect-plex-receivers/recipes/sting-gear-attacker-left.json",
-    "evidence/complete-wrestler-art/doink-attacker-right.gif",
+    "evidence/complete-wrestler-art/doink-attacker-left.gif",
     "evidence/complete-wrestler-art/sting-gear-attacker-left-2.gif",
     "evidence/complete-wrestler-art/sting-gear-attacker-left.gif"
    ],
    "defects": [
-    "Choreography is Raw's own lift-and-fall drawings re-timed to the Perfect-Plex, not Royal's exact Perfect-Plex frames (awaiting visual review)",
+    "Automatic rebuild of Royal's drawings from the wrestler's own pixels; some regions are blotchy where the costume differs most from the donor's (awaiting visual review)",
     "No bridge-to-pin (PP-5)",
     "Not released; draft PR #1 for review"
    ],
@@ -2239,7 +2244,7 @@
     "scenarios": [
      "shawn-attacker-left"
     ],
-    "build_sha256": "d15106fcb30455c112b50844bc423c78a58127fcdf04654c1b9897f8b1052458",
+    "build_sha256": "55e331ba086f01a4e8c6319a8baaff27bc7a56ca7ac69526af348574768532d0",
     "registration_error_px": [
      0
     ],
@@ -2310,7 +2315,7 @@
    "evidence": [
     "data/perfect-receivers.json",
     "docs/perfect-plex-fix-report.md",
-    "evidence/complete-wrestler-art/verification-stock-v2.json",
+    "evidence/complete-wrestler-art/verification-stock-v4.json",
     "evidence/perfect-plex-receivers/fixed/verification.json",
     "tools/verify_perfect_receivers_native.py",
     "evidence/perfect-plex-receivers/recipes/shawn-attacker-left.json"
@@ -2354,14 +2359,14 @@
    "role": "receiver",
    "art_status": "own_art_adapted",
    "gameplay_status": "verified_visual",
-   "variant": "target (own native receiving drawings)",
+   "variant": "target (Royal drawings in own pixels)",
    "implementation": {
     "branch": "claude/charming-allen-njttcx",
     "marker": "ROYAL-RX3",
-    "source": "editor/receiving-art.js ownNative + recipes.own_native_steps"
+    "source": "editor/receiving-art.js reskin + recipes.reskin"
    },
    "source_ids": {
-    "raw_profiles": "data/perfect-victim-layouts.json rows, re-timed by tools/build_perfect_receivers.OWN_NATIVE_STEPS"
+    "plan": "data/receiver-reskin-plan.json (tools/plan_receiver_reskin.py): per pixel of the Royal donor drawing, an own piece and offset"
    },
    "native": {
     "scenarios": [
@@ -2369,8 +2374,8 @@
      "syxx-gear-attacker-left"
     ],
     "builds": [
-     "6616725d15502a7a",
-     "d15106fcb30455c1"
+     "55e331ba086f01a4",
+     "a2dd91b0ff8cb627"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -2378,13 +2383,15 @@
    "evidence": [
     "docs/complete-wrestler-art.md",
     "tools/verify_perfect_receivers_native.py",
+    "evidence/complete-wrestler-art/verification-stock-v4.json",
+    "evidence/complete-wrestler-art/verification-gear-mod-v4.json",
     "evidence/perfect-plex-receivers/recipes/kid-attacker-right.json",
     "evidence/perfect-plex-receivers/recipes/syxx-gear-attacker-left.json",
     "evidence/complete-wrestler-art/kid-attacker-right.gif",
     "evidence/complete-wrestler-art/syxx-gear-attacker-left.gif"
    ],
    "defects": [
-    "Choreography is Raw's own lift-and-fall drawings re-timed to the Perfect-Plex, not Royal's exact Perfect-Plex frames (awaiting visual review)",
+    "Automatic rebuild of Royal's drawings from the wrestler's own pixels; some regions are blotchy where the costume differs most from the donor's (awaiting visual review)",
     "No bridge-to-pin (PP-5)",
     "Not released; draft PR #1 for review"
    ],
@@ -2422,23 +2429,23 @@
    "role": "receiver",
    "art_status": "own_art_adapted",
    "gameplay_status": "verified_visual",
-   "variant": "target (own native receiving drawings)",
+   "variant": "target (Royal drawings in own pixels)",
    "implementation": {
     "branch": "claude/charming-allen-njttcx",
     "marker": "ROYAL-RX3",
-    "source": "editor/receiving-art.js ownNative + recipes.own_native_steps"
+    "source": "editor/receiving-art.js reskin + recipes.reskin"
    },
    "source_ids": {
-    "raw_profiles": "data/perfect-victim-layouts.json rows, re-timed by tools/build_perfect_receivers.OWN_NATIVE_STEPS"
+    "plan": "data/receiver-reskin-plan.json (tools/plan_receiver_reskin.py): per pixel of the Royal donor drawing, an own piece and offset"
    },
    "native": {
     "scenarios": [
      "diesel-attacker-left",
-     "nash-gear-attacker-left"
+     "nash-gear-attacker-right"
     ],
     "builds": [
-     "6616725d15502a7a",
-     "d15106fcb30455c1"
+     "55e331ba086f01a4",
+     "a2dd91b0ff8cb627"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -2446,13 +2453,15 @@
    "evidence": [
     "docs/complete-wrestler-art.md",
     "tools/verify_perfect_receivers_native.py",
+    "evidence/complete-wrestler-art/verification-stock-v4.json",
+    "evidence/complete-wrestler-art/verification-gear-mod-v4.json",
     "evidence/perfect-plex-receivers/recipes/diesel-attacker-left.json",
-    "evidence/perfect-plex-receivers/recipes/nash-gear-attacker-left.json",
+    "evidence/perfect-plex-receivers/recipes/nash-gear-attacker-right.json",
     "evidence/complete-wrestler-art/diesel-attacker-left.gif",
-    "evidence/complete-wrestler-art/nash-gear-attacker-left.gif"
+    "evidence/complete-wrestler-art/nash-gear-attacker-right.gif"
    ],
    "defects": [
-    "Choreography is Raw's own lift-and-fall drawings re-timed to the Perfect-Plex, not Royal's exact Perfect-Plex frames (awaiting visual review)",
+    "Automatic rebuild of Royal's drawings from the wrestler's own pixels; some regions are blotchy where the costume differs most from the donor's (awaiting visual review)",
     "No bridge-to-pin (PP-5)",
     "Not released; draft PR #1 for review"
    ],
@@ -2490,21 +2499,21 @@
    "role": "receiver",
    "art_status": "own_art_adapted",
    "gameplay_status": "verified_visual",
-   "variant": "target (own native receiving drawings)",
+   "variant": "target (Royal drawings in own pixels)",
    "implementation": {
     "branch": "claude/charming-allen-njttcx",
     "marker": "ROYAL-RX3",
-    "source": "editor/receiving-art.js ownNative + recipes.own_native_steps"
+    "source": "editor/receiving-art.js reskin + recipes.reskin"
    },
    "source_ids": {
-    "raw_profiles": "data/perfect-victim-layouts.json rows, re-timed by tools/build_perfect_receivers.OWN_NATIVE_STEPS"
+    "plan": "data/receiver-reskin-plan.json (tools/plan_receiver_reskin.py): per pixel of the Royal donor drawing, an own piece and offset"
    },
    "native": {
     "scenarios": [
-     "owen-attacker-right"
+     "owen-attacker-left"
     ],
     "builds": [
-     "d15106fcb30455c1"
+     "55e331ba086f01a4"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -2512,11 +2521,12 @@
    "evidence": [
     "docs/complete-wrestler-art.md",
     "tools/verify_perfect_receivers_native.py",
-    "evidence/perfect-plex-receivers/recipes/owen-attacker-right.json",
-    "evidence/complete-wrestler-art/owen-attacker-right.gif"
+    "evidence/complete-wrestler-art/verification-stock-v4.json",
+    "evidence/perfect-plex-receivers/recipes/owen-attacker-left.json",
+    "evidence/complete-wrestler-art/owen-attacker-left.gif"
    ],
    "defects": [
-    "Choreography is Raw's own lift-and-fall drawings re-timed to the Perfect-Plex, not Royal's exact Perfect-Plex frames (awaiting visual review)",
+    "Automatic rebuild of Royal's drawings from the wrestler's own pixels; some regions are blotchy where the costume differs most from the donor's (awaiting visual review)",
     "No bridge-to-pin (PP-5)",
     "Not released; draft PR #1 for review"
    ],

@@ -102,8 +102,12 @@ style and graphics."
     (six stock wrestlers, four gear identities).
   - Every drawing fits the actor's object budget (at most 15 objects).
   - Builds through the editor (Add Mr. Perfect): stock `55e331ba…`, gear reference mod `a2dd91b0…`.
-  - Native gameplay re-verification on these builds: **in progress** (the recipes must be re-recorded, because
-    art changes move the game's timing).
+  - Native gameplay on these builds: all 19 controller-only scenarios re-recorded with the bot (art changes
+    move the game's timing) and pass every defect assertion; a clean re-run reproduces every recorded value.
+    Own-art receivers equal the editor preview on every step (see the matrix below). In-game, the receiver now
+    finishes across Mr. Perfect in the bridge with a leg up, as in Royal
+    ([Owen](../evidence/complete-wrestler-art/owen-attacker-left.gif),
+    [Doink](../evidence/complete-wrestler-art/doink-attacker-left.gif)).
 - **Review GIFs** (editor preview at the move's timing; Royal, previous own poses, new):
   [Luna](../evidence/complete-wrestler-art/receiver-review/luna.gif) ·
   [Bam Bam](../evidence/complete-wrestler-art/receiver-review/bam-bam.gif) ·
@@ -157,44 +161,57 @@ style and graphics."
 
 ## Perfect-Plex receiving matrix (all 13 current slots)
 
-Builds (this batch; Mr. Perfect with his Royal pose pieces and hair colour):
-- **Stock import v2:** `d15106fc…`, the browser export of stock Raw with Mr. Perfect.
-- **Gear reference mod v2:** `6616725d…`, with Scott, Syxx, Nash and Sting applied, then Mr. Perfect.
+Builds (this round; Mr. Perfect with his Royal pose pieces and Royal heads, own-art receivers rebuilt from Royal),
+both made through the editor's **Add Mr. Perfect** (`tools/editor_driver.py import`):
+- **Stock import v4:** `55e331ba…`, stock Raw.
+- **Gear reference mod v4:** `a2dd91b0…`, with Scott, Syxx, Nash and Sting applied, then Mr. Perfect.
 
 Every scenario below is a controller-only cold-boot replay (`tools/verify_perfect_receivers_native.py`).
 Each passes every defect assertion:
 - spacing ±40;
 - no foreign objects;
-- damage exactly once;
+- damage exactly once (one loss of health);
 - no Perfect-Plex pose after the move.
 
 Royal-drawn receivers also register within 1 px. Own-art receivers must equal the editor preview on every
 step, and they do: 100% of actor pixels, rebuilt from OAM. A clean re-run reproduces every recorded value.
-Data: [`verification-stock-v2.json`](../evidence/complete-wrestler-art/verification-stock-v2.json) and
-[`verification-gear-mod-v2.json`](../evidence/complete-wrestler-art/verification-gear-mod-v2.json).
+Data: [`verification-stock-v4.json`](../evidence/complete-wrestler-art/verification-stock-v4.json) and
+[`verification-gear-mod-v4.json`](../evidence/complete-wrestler-art/verification-gear-mod-v4.json).
 The earlier builds' recipes, reports and GIFs are kept under `previous-builds/`.
 
 | Slot | Identity | Receiving drawings | Native scenarios (all pass) | Status |
 |---|---|---|---|---|
-| 0 | Luna Vachon | own native (re-timed) | `luna-attacker-left`, `luna-attacker-left-2` | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/luna-attacker-left.gif)) |
+| 0 | Luna Vachon | Royal Shawn's, in Luna's own pixels | `luna-attacker-left`, `luna-attacker-right` | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/luna-attacker-left.gif)) |
 | 1 | Bret Hart (stock; user gear unknown) | Royal Bret | `bret-attacker-left` | royal, native-verified |
-| 2 | Undertaker | Royal Undertaker | `undertaker-attacker-right`, `undertaker-attacker-right-2` | royal, native-verified |
-| 3 | Yokozuna | Royal Yokozuna | `yokozuna-attacker-left` | royal, native-verified |
-| 4 | Bam Bam Bigelow | own native (re-timed) | `bambam-attacker-left` | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/bambam-attacker-left.gif)) |
-| 5 | Razor Ramon (stock) / Scott Hall (gear) | Royal Razor on stock; own native with Scott's gear | `razor-attacker-right` (stock), `scott-gear-attacker-left` (gear) | royal + own-art, native-verified ([GIF](../evidence/complete-wrestler-art/scott-gear-attacker-left.gif)) |
-| 6 | Lex Luger | Royal Lex | `lex-attacker-left` | royal, native-verified |
-| 7 | Doink (stock) / Sting (gear) | own native (re-timed) | `doink-attacker-right` (stock), `sting-gear-attacker-left`, `sting-gear-attacker-left-2` (gear) | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/doink-attacker-right.gif), [GIF](../evidence/complete-wrestler-art/sting-gear-attacker-left.gif)) |
+| 2 | Undertaker | Royal Undertaker | `undertaker-attacker-left`, `undertaker-attacker-left-2` | royal, native-verified |
+| 3 | Yokozuna | Royal Yokozuna | `yokozuna-attacker-right` | royal, native-verified |
+| 4 | Bam Bam Bigelow | Royal Crush's, in Bam Bam's own pixels | `bambam-attacker-left` | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/bambam-attacker-left.gif)) |
+| 5 | Razor Ramon (stock) / Scott Hall (gear) | Royal Razor on stock; Royal Razor's in Scott's own pixels with his gear | `razor-attacker-right` (stock), `scott-gear-attacker-left` (gear) | royal + own-art, native-verified ([GIF](../evidence/complete-wrestler-art/scott-gear-attacker-left.gif)) |
+| 6 | Lex Luger | Royal Lex | `lex-attacker-right` | royal, native-verified |
+| 7 | Doink (stock) / Sting (gear) | Royal Flair's in Doink's own pixels; Royal Lex's in Sting's | `doink-attacker-left` (stock), `sting-gear-attacker-left`, `sting-gear-attacker-left-2` (gear) | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/doink-attacker-left.gif), [GIF](../evidence/complete-wrestler-art/sting-gear-attacker-left.gif)) |
 | 8 | Shawn Michaels | Royal Shawn | `shawn-attacker-left` | royal, native-verified |
-| 9 | 1-2-3 Kid (stock) / Syxx (gear) | own native (re-timed) | `kid-attacker-right` (stock), `syxx-gear-attacker-left` (gear) | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/kid-attacker-right.gif), [GIF](../evidence/complete-wrestler-art/syxx-gear-attacker-left.gif)) |
-| 10 | Diesel (stock) / Kevin Nash (gear) | own native (re-timed) | `diesel-attacker-left` (stock), `nash-gear-attacker-left` (gear) | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/diesel-attacker-left.gif), [GIF](../evidence/complete-wrestler-art/nash-gear-attacker-left.gif)) |
-| 11 | Owen Hart | own native (re-timed) | `owen-attacker-right` | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/owen-attacker-right.gif)) |
+| 9 | 1-2-3 Kid (stock) / Syxx (gear) | Royal Shawn's, in their own pixels | `kid-attacker-right` (stock), `syxx-gear-attacker-left` (gear) | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/kid-attacker-right.gif), [GIF](../evidence/complete-wrestler-art/syxx-gear-attacker-left.gif)) |
+| 10 | Diesel (stock) / Kevin Nash (gear) | Royal Undertaker's, in their own pixels | `diesel-attacker-left` (stock), `nash-gear-attacker-right` (gear) | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/diesel-attacker-left.gif), [GIF](../evidence/complete-wrestler-art/nash-gear-attacker-right.gif)) |
+| 11 | Owen Hart | Royal Bret's, in Owen's own pixels | `owen-attacker-left` | own-art, native-verified ([GIF](../evidence/complete-wrestler-art/owen-attacker-left.gif)) |
 | 12 | Mr. Perfect (mirror match) | Royal Perfect (installed, previewable) | none: **unreachable in one-on-one** | royal, **not natively tested** |
 
-Perfect ends on the right in six scenarios (Doink, Kid, Owen, Razor, Undertaker ×2), on the left in the other
-thirteen. The rope-position variants of the earlier set (left rope, right rope, mid-ring) were composed for the
-old build's timing and are not re-composed; the bot plays wherever the match takes it.
+Perfect ends on the right in six scenarios (Kid, Lex, Luna from the right, Razor, Yokozuna, Nash) and on the left
+in the other thirteen. The bot plays wherever the match takes it.
 
 Notes on the matrix:
+- **Replay fix.** Every recipe's last R press starts on the frame where the verifier saves state and begins
+  capturing (150 frames before the move). Replaying from that state dropped presses still held, so that R lasted
+  one frame instead of twenty. Most moves still started; Luna's from the left did not.
+  `tools/run_controller_recipe.py` now keeps a held press for the rest of its duration, and all 19 scenarios were
+  re-verified with it.
+- **Damage check.** PP-4 is documented as "the receiver loses health exactly once", but the code counted every
+  change of health. With full-length presses, Owen's and Kid's captures show the move's single hit and then, some
+  90 frames later while they lie down, a +16 rise: the game regenerating a downed wrestler's health. The check now
+  counts losses of health, as documented. Two losses (the move applied twice, the defect PP-4 guards against)
+  still fail. Owen was also re-recorded, starting from the right, before the cause was clear; that recording
+  is the one kept.
+
+Notes from the previous round (v2 builds):
 - **Re-timing.** Raw's own receiving-suplex sequence lifts at its third drawing; the Perfect-Plex lifts
   at step 10. Played in order, the receiver lay at Perfect's feet during steps 5–9, which was caught in
   visual review. The held drawing now carries steps 2–9, the lift drawings steps 10–11 and the landed
@@ -406,14 +423,13 @@ above).
 
 ## Open items
 
-- **Your visual review** of the own-art Perfect-Plex receivers (GIFs above). Royal-pose rebuilds from own
-  parts (`tools/plan_receiving_art.py`, `editor/receiving-art.js` `render`) remain unshipped. Donor colour
-  roles did not keep gear consistent across adjacent frames.
+- **Your visual review** of the rebuilt Perfect-Plex receivers (review GIFs above) and of Mr. Perfect's Royal
+  heads. The receivers are an automatic rebuild: where a costume differs most from the donor's (Owen's trunks and
+  bare legs against Bret's tights, Bam Bam's flames, Doink's costume against Flair's), some regions are blotchy.
+  Hand touch-ups can be made in the sprite editor on any "Receiving Perfect-Plex" pose.
+- **Mr. Perfect still needs hand-drawn art** for 966 pieces whose drawing is Raw Bret's (172 now with Royal
+  Perfect's head, 119 with only his hair colour). For most of these poses Royal has no matching drawing, so
+  there is no complete example to rebuild them from.
 - **Mirror match** in other game modes.
-- **Next family: Mr. Perfect's ordinary poses.**
-  - 1,431 of his 1,720 pieces are Raw Bret drawings recoloured into Perfect's palette, so his body and
-    hair are Bret's. That breaks the identity rule and is the next batch.
-  - With a Royal WRAM dump, the Royal catalogue is reproduced exactly (144/144 receiving drawings).
-  - 682 Raw Bret pieces match a Royal Bret frame at an IoU of at least 0.95 (289 are converted today).
-    Royal Perfect's same frame can replace them once colour and semantics are checked.
-- **All other action families** (see `docs/animation-coverage.md`).
+- **Not done:** bridge-to-pin (PP-5), Perfect's green shadow, and all other action families
+  (see `docs/animation-coverage.md`).

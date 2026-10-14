@@ -115,7 +115,7 @@ Notes on the table:
 
 ### Recovery after the move (PP-4)
 
-[`undertaker-attacker-left-right-rope-recovery.json`](../evidence/perfect-plex-receivers/recipes/undertaker-attacker-left-right-rope-recovery.json)
+[`undertaker-attacker-left-right-rope-recovery.json`](../evidence/perfect-plex-receivers/recipes/previous-builds/undertaker-attacker-left-right-rope-recovery.json)
 extends the base recipe. Its inputs are identical up to the move. After the move, P2 mashes buttons
 and P1 walks and attacks. `tools/trace_actor_state.py` on the fixed export shows:
 - Undertaker is down (action 70), gets up (76), walks and attacks (142 and 130). Perfect's health
