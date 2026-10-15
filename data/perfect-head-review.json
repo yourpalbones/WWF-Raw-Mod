@@ -1,0 +1,28 @@
+{
+ "method": "Every piece with a Royal Perfect head source (data/perfect-head-sources.json) was looked at beside its hair-recoloured version. Pieces at or above the threshold get Royal Perfect's head unless rejected here. Every rebuilt piece was also checked for blond hair lost in its head window (more dark pixels or fewer blond ones than the recolour); those that look worse are rejected.",
+ "threshold": 0.15,
+ "rejected": [
+  "p255",
+  "p302",
+  "p314",
+  "p554",
+  "p613",
+  "p642",
+  "p649",
+  "p687",
+  "p774",
+  "p776",
+  "p785",
+  "p786",
+  "p788",
+  "p843",
+  "p939",
+  "p946",
+  "p986"
+ ],
+ "reasons": {
+  "p314 p613 p642 p649 p843": "a masked wrestler with stars from the common table, not Bret: there is no Bret hair to replace",
+  "p687 p774 p776 p939 p946 p986": "a man in a white shirt from the common table, not Bret",
+  "p255 p302 p554 p785 p786 p788": "Bret's head here matches no Royal frame closely: the result shows darker, less blond hair than the recolour"
+ }
+}

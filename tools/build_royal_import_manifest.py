@@ -3,7 +3,10 @@ import argparse,json
 from pathlib import Path
 from PIL import Image
 import royal_rumble_sprites as royal
-from convert_perfect_poses import convert
+from convert_perfect_poses import convert, hair_changes
+from raw_parts import resolve_index, raster as raw_raster
+
+ADAPTED_COLOURS=[0,1,4,8,4,8,13,2,14,7,6,3,2,15,14,11]   # editor/royal-import-core.js
 from extract_oam import objects
 from build_bret_gear import planar
 from import_perfect_plex import actor_pixels,init_hook,sequence_hook
@@ -11,14 +14,67 @@ from build_perfect_slot import hook_worker,hook_lookup
 from build_shawn_superkick_animation import pack
 
 
-def build(raw_rom,raw_wram,royal_rom,royal_wram,captures):
-    frames=convert(raw_rom,raw_wram,royal_rom,royal_wram)
+def reference(ref):return [ref['source'],int(ref['compressed']),ref['length']]
+
+
+def frame_rows(frames):
+    """Manifest rows. 'royal' rows read Royal Perfect tiles; 'replaces' is the hash of the adapted piece a
+    matched row supersedes (an upgrade only replaces a piece that still has exactly that content)."""
     rows=[]
-    def reference(ref):return [ref['source'],int(ref['compressed']),ref['length']]
     for f in frames:
-        rows.append({'kind':f['kind'],'index':f['index'],'royal':f['royal_index'] is not None,
-                     'common':f['common'],'parts':[{'x':p['x'],'y':p['y'],'size':p['size'],
-                     'hflip':p['hflip'],'vflip':p['vflip'],'refs':[reference(r)for r in p['refs']]}for p in f['parts']]})
+        row={'kind':f['kind'],'index':f['index'],'royal':f['royal_index'] is not None,
+             'common':f['common'],'parts':[{'x':p['x'],'y':p['y'],'size':p['size'],
+             'hflip':p['hflip'],'vflip':p['vflip'],'refs':[reference(r)for r in p['refs']]}for p in f['parts']]}
+        if f.get('source')=='matched':row['replaces']=f['replaces_hash']
+        rows.append(row)
+    return rows
+
+
+def mark_hair(rows,raw_rom,matches):
+    """Adapted rows whose Bret hair the importer recolours blond get 'hair' and 'replaces' (the v0.16 piece hash).
+    Every row that replaces a piece with Bret's hair also gets 'replaces_hair': the hash of that piece after the
+    hair recolour, the state an earlier upgrade on this branch left it in, so a later upgrade still recognises it."""
+    from match_perfect_poses import fnv
+    hashes={(m['kind'],m['index']):m['adapted_hash'] for m in matches}
+    for r in rows:
+        if r['royal'] and 'replaces' not in r:continue
+        points={k:ADAPTED_COLOURS[v] for k,v in raw_raster(resolve_index(raw_rom,1,r['kind'],r['index'])['parts']).items()}
+        changes=hair_changes(points)
+        if not changes:continue
+        if not r['royal']:r['hair']=1;r['replaces']=hashes[(r['kind'],r['index'])]
+        r['replaces_hair']=fnv({**points,**changes})
+    return rows
+
+
+def mark_heads(rows,sources,royal_rom,royal_wram,review=None):
+    """Adapted rows with Bret's hair whose head the importer rebuilds from Royal Perfect (tools/rebuild_perfect_heads.py)
+    get 'head': [Royal frame, flip, dx, dy, x0, y0, x1, y1]. Returns the manifest's 'heads' table: the colour map and
+    the Royal Bret and Royal Perfect frames' parts (tile addresses) by frame index. Reviewed rejections keep the
+    hair recolour."""
+    review=review or {}
+    rejected,threshold=set(review.get('rejected',[])),review.get('threshold',0)
+    used=set()
+    for r in rows:
+        name=f"{r['kind'][0]}{r['index']}";s=sources['rows'].get(name)
+        if r['royal'] or not r.get('hair') or not s or name in rejected or s['score']<threshold:continue
+        r['head']=[s['royal_index'],int(s['flip']),s['dx'],s['dy'],*s['window']];used.add(s['royal_index'])
+    perfect={f['index']:f for f in royal.catalog(royal_rom,royal_wram,1)}
+    bret={f['index']:f for f in royal.catalog(royal_rom,royal_wram,3)}
+    parts=lambda f:[{'x':p['x'],'y':p['y'],'size':p['size'],'refs':[reference(x)for x in p['refs']]}for p in f['parts']]
+    return {'colours':sources['colours'],'frames':{str(k):{'bret':parts(bret[k]),'perfect':parts(perfect[k])}for k in sorted(used)}}
+
+
+def coverage(rows):
+    return {'royal_poses':sum(r['royal']for r in rows),'adapted_raw_poses':sum(not r['royal']for r in rows),
+            'matched_royal_poses':sum(r['royal'] and 'replaces' in r for r in rows),
+            'royal_head_poses':sum('head' in r for r in rows),
+            'hair_recoloured_poses':sum(bool(r.get('hair')) and 'head' not in r for r in rows)}
+
+
+def build(raw_rom,raw_wram,royal_rom,royal_wram,captures,matches=None,all_rows=None):
+    frames=convert(raw_rom,raw_wram,royal_rom,royal_wram,matches)
+    rows=frame_rows(frames)
+    if matches:mark_hair(rows,raw_rom,all_rows or matches)
     atlas={bytes(32):None}
     for frame in royal.catalog(royal_rom,royal_wram,1):
         for part in frame['parts']:
@@ -62,13 +118,17 @@ def build(raw_rom,raw_wram,royal_rom,royal_wram,captures):
             'roster':['Randy Savage','Mr. Perfect','Undertaker','Bret Hart','Tatanka','Crush','Ric Flair','Shawn Michaels','Razor Ramon','Yokozuna','Lex Luger','Ted DiBiase'],
             'frames':rows,'finisher':finisher,'programs':programs,
             'victim':json.loads((Path(__file__).resolve().parents[1]/'data/perfect-victim-layouts.json').read_text())['rows'],
-            'palette':{'offset':0x17c46,'length':32},'coverage':{'royal_poses':sum(r['royal']for r in rows),'adapted_raw_poses':sum(not r['royal']for r in rows)}}
+            'palette':{'offset':0x17c46,'length':32},'coverage':coverage(rows)}
 
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     for name in('raw_rom','raw_wram','royal_rom','royal_wram','captures'):p.add_argument(name,type=Path)
+    p.add_argument('--matches',type=Path,help='data/perfect-pose-matches.json')
     p.add_argument('--output',type=Path,required=True);a=p.parse_args()
-    result=build(*(getattr(a,n).read_bytes()for n in('raw_rom','raw_wram','royal_rom','royal_wram')),a.captures)
+    from match_perfect_poses import effective
+    all_rows=json.loads(a.matches.read_text())['rows'] if a.matches else None
+    matches=effective(all_rows) if a.matches else None
+    result=build(*(getattr(a,n).read_bytes()for n in('raw_rom','raw_wram','royal_rom','royal_wram')),a.captures,matches,all_rows)
     a.output.write_text('window.RAW_ROYAL_IMPORT_MANIFEST='+json.dumps(result,separators=(',',':'))+';\n')
     print('Wrote address-only import recipe:',a.output.stat().st_size,'bytes')

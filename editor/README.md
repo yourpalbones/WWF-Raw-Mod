@@ -41,8 +41,10 @@ original twelve profiles, palettes and existing gear. The new worker has
 private editable tiles, a source portrait, monitor image and bio. Compressed
 sprite edits can grow into his reserved free space.
 
-Art conversion remains partial: 289 pieces use Royal artwork and 1,431 use
-adapted Raw artwork. Automatic bridge-to-pin behavior, full AI/match-mode
+Art conversion remains partial: 618 of Mr. Perfect's 1,720 pieces use his Royal
+artwork and 1,102 still use adapted Raw artwork (see docs/complete-wrestler-art.md).
+An earlier import gains the new Royal pieces with **Update Perfect-Plex**; a piece
+you edited keeps your pixels. Automatic bridge-to-pin behavior, full AI/match-mode
 coverage and other Royal imports remain open. Importing a source theme is not
 implemented; use the theme controls to assign or import a song separately.
 

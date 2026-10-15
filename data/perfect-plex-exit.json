@@ -1,0 +1,1029 @@
+{
+ "about": "Plan the Perfect-Plex exit (pin hold, release, both wrestlers' recovery) from Royal Rumble's own capture.",
+ "royal_capture": {
+  "recipe": "evidence/perfect-plex-exit/recipes/royal.json",
+  "first_recipe_frame": 10231,
+  "frames": 400,
+  "move_start": 10246
+ },
+ "transform": {
+  "royal_to_attacker": [
+   118,
+   154
+  ],
+  "note": "attacker actor coordinates = (a - x, y - b)"
+ },
+ "step_frames": 7,
+ "royal": {
+  "bridge_first_shown": 106,
+  "bridge_held": [
+   125,
+   161
+  ],
+  "release": 162,
+  "perfect": [
+   [
+    0,
+    5
+   ],
+   [
+    6,
+    11
+   ],
+   [
+    12,
+    16
+   ],
+   [
+    17,
+    22
+   ],
+   [
+    23,
+    28
+   ],
+   [
+    29,
+    34
+   ],
+   [
+    35,
+    64
+   ]
+  ],
+  "receiver": [
+   [
+    0,
+    5
+   ],
+   [
+    6,
+    11
+   ],
+   [
+    12,
+    41
+   ]
+  ]
+ },
+ "attacker": {
+  "hold": 7,
+  "forward": 1,
+  "steps": [
+   {
+    "royal_frames": [
+     0,
+     5
+    ],
+    "profile": 13125566,
+    "first_part": 60,
+    "draw": [
+     8,
+     8
+    ]
+   },
+   {
+    "royal_frames": [
+     6,
+     11
+    ],
+    "profile": 13125590,
+    "first_part": 66,
+    "draw": [
+     10,
+     2
+    ]
+   },
+   {
+    "royal_frames": [
+     12,
+     16
+    ],
+    "profile": 13125604,
+    "first_part": 69,
+    "draw": [
+     12,
+     6
+    ]
+   },
+   {
+    "royal_frames": [
+     17,
+     22
+    ],
+    "frame": 0,
+    "draw": [
+     -1,
+     0
+    ],
+    "closest_raw": "c847f2",
+    "closest_iou": 0.636
+   },
+   {
+    "royal_frames": [
+     23,
+     28
+    ],
+    "profile": 13125618,
+    "first_part": 72,
+    "draw": [
+     3,
+     2
+    ]
+   },
+   {
+    "royal_frames": [
+     29,
+     34
+    ],
+    "frame": 1,
+    "draw": [
+     -1,
+     0
+    ],
+    "closest_raw": "c847f2",
+    "closest_iou": 0.641
+   }
+  ],
+  "frames": [
+   {
+    "source_frame": 17,
+    "parts": [
+     {
+      "x": -9,
+      "y": -43,
+      "size": 16,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       null,
+       [
+        1133760,
+        0,
+        32
+       ],
+       [
+        1664542,
+        1,
+        26
+       ],
+       [
+        1133792,
+        0,
+        32
+       ]
+      ]
+     },
+     {
+      "x": 7,
+      "y": -43,
+      "size": 16,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1133696,
+        0,
+        32
+       ],
+       [
+        1307829,
+        1,
+        12
+       ],
+       [
+        1133728,
+        0,
+        32
+       ],
+       [
+        829664,
+        0,
+        32
+       ]
+      ]
+     },
+     {
+      "x": -12,
+      "y": -27,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1922149,
+        1,
+        29
+       ]
+      ]
+     },
+     {
+      "x": -4,
+      "y": -27,
+      "size": 16,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        2059888,
+        1,
+        31
+       ],
+       [
+        1551642,
+        1,
+        23
+       ],
+       [
+        1283106,
+        1,
+        7
+       ],
+       null
+      ]
+     },
+     {
+      "x": 12,
+      "y": -27,
+      "size": 16,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1311980,
+        1,
+        12
+       ],
+       [
+        1896834,
+        1,
+        29
+       ],
+       null,
+       [
+        1434956,
+        1,
+        20
+       ]
+      ]
+     },
+     {
+      "x": -12,
+      "y": -19,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        829760,
+        0,
+        32
+       ]
+      ]
+     },
+     {
+      "x": -14,
+      "y": -11,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        2059919,
+        1,
+        31
+       ]
+      ]
+     },
+     {
+      "x": -14,
+      "y": -3,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1496242,
+        1,
+        22
+       ]
+      ]
+     },
+     {
+      "x": -2,
+      "y": -21,
+      "size": 16,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1363209,
+        1,
+        16
+       ],
+       [
+        1451252,
+        1,
+        20
+       ],
+       [
+        1151712,
+        0,
+        32
+       ],
+       [
+        1908345,
+        1,
+        29
+       ]
+      ]
+     },
+     {
+      "x": 14,
+      "y": -21,
+      "size": 16,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1066112,
+        0,
+        32
+       ],
+       [
+        1281857,
+        1,
+        6
+       ],
+       [
+        1151744,
+        0,
+        32
+       ],
+       [
+        1571402,
+        1,
+        24
+       ]
+      ]
+     },
+     {
+      "x": -3,
+      "y": -5,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1835904,
+        1,
+        28
+       ]
+      ]
+     },
+     {
+      "x": 5,
+      "y": -5,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1988700,
+        1,
+        30
+       ]
+      ]
+     },
+     {
+      "x": 13,
+      "y": -5,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1555184,
+        1,
+        23
+       ]
+      ]
+     },
+     {
+      "x": 8,
+      "y": -29,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1288111,
+        1,
+        8
+       ]
+      ]
+     },
+     {
+      "x": 5,
+      "y": -1,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        780512,
+        0,
+        32
+       ]
+      ]
+     },
+     {
+      "x": 13,
+      "y": -1,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        780544,
+        0,
+        32
+       ]
+      ]
+     },
+     {
+      "x": -3,
+      "y": -1,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        780576,
+        0,
+        32
+       ]
+      ]
+     }
+    ],
+    "chunks": [
+     [
+      0,
+      -44,
+      16
+     ],
+     [
+      -16,
+      -28,
+      16
+     ],
+     [
+      0,
+      -28,
+      16
+     ],
+     [
+      16,
+      -28,
+      16
+     ],
+     [
+      -16,
+      -12,
+      16
+     ],
+     [
+      0,
+      -12,
+      16
+     ],
+     [
+      16,
+      -44,
+      8
+     ],
+     [
+      -8,
+      -36,
+      8
+     ],
+     [
+      16,
+      -36,
+      8
+     ],
+     [
+      16,
+      -12,
+      8
+     ],
+     [
+      24,
+      -12,
+      8
+     ],
+     [
+      16,
+      -4,
+      8
+     ],
+     [
+      0,
+      4,
+      8
+     ],
+     [
+      8,
+      4,
+      8
+     ],
+     [
+      16,
+      4,
+      8
+     ]
+    ]
+   },
+   {
+    "source_frame": 29,
+    "parts": [
+     {
+      "x": 1,
+      "y": -70,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1520528,
+        1,
+        22
+       ]
+      ]
+     },
+     {
+      "x": 9,
+      "y": -70,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1907011,
+        1,
+        29
+       ]
+      ]
+     },
+     {
+      "x": 3,
+      "y": -62,
+      "size": 16,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1133920,
+        0,
+        32
+       ],
+       [
+        1133952,
+        0,
+        32
+       ],
+       [
+        1038784,
+        0,
+        32
+       ],
+       [
+        1038816,
+        0,
+        32
+       ]
+      ]
+     },
+     {
+      "x": -5,
+      "y": -62,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1328939,
+        1,
+        14
+       ]
+      ]
+     },
+     {
+      "x": -5,
+      "y": -54,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        830112,
+        0,
+        32
+       ]
+      ]
+     },
+     {
+      "x": -6,
+      "y": -46,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1038880,
+        0,
+        32
+       ]
+      ]
+     },
+     {
+      "x": 2,
+      "y": -46,
+      "size": 16,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1753471,
+        1,
+        27
+       ],
+       [
+        1038848,
+        0,
+        32
+       ],
+       null,
+       [
+        1820972,
+        1,
+        28
+       ]
+      ]
+     },
+     {
+      "x": -6,
+      "y": -38,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1038912,
+        0,
+        32
+       ]
+      ]
+     },
+     {
+      "x": -7,
+      "y": -30,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1434976,
+        1,
+        20
+       ]
+      ]
+     },
+     {
+      "x": 10,
+      "y": -30,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1568954,
+        1,
+        24
+       ]
+      ]
+     },
+     {
+      "x": -15,
+      "y": -24,
+      "size": 16,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       null,
+       [
+        1900227,
+        1,
+        29
+       ],
+       [
+        1908374,
+        1,
+        29
+       ],
+       [
+        1151904,
+        0,
+        32
+       ]
+      ]
+     },
+     {
+      "x": 1,
+      "y": -24,
+      "size": 16,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1066368,
+        0,
+        32
+       ],
+       [
+        1975860,
+        1,
+        30
+       ],
+       [
+        2075978,
+        1,
+        31
+       ],
+       [
+        1151872,
+        0,
+        32
+       ]
+      ]
+     },
+     {
+      "x": -1,
+      "y": -40,
+      "size": 16,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1824248,
+        1,
+        28
+       ],
+       [
+        1515358,
+        1,
+        22
+       ],
+       [
+        1066304,
+        0,
+        32
+       ],
+       [
+        1066336,
+        0,
+        32
+       ]
+      ]
+     },
+     {
+      "x": -13,
+      "y": -8,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1830380,
+        1,
+        28
+       ]
+      ]
+     },
+     {
+      "x": 0,
+      "y": -8,
+      "size": 16,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1518526,
+        1,
+        22
+       ],
+       [
+        1982400,
+        1,
+        30
+       ],
+       [
+        1281141,
+        1,
+        5
+       ],
+       [
+        1304634,
+        1,
+        11
+       ]
+      ]
+     },
+     {
+      "x": -6,
+      "y": -48,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1282133,
+        1,
+        6
+       ]
+      ]
+     },
+     {
+      "x": -9,
+      "y": -32,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        1288119,
+        1,
+        8
+       ]
+      ]
+     },
+     {
+      "x": -3,
+      "y": -3,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        780512,
+        0,
+        32
+       ]
+      ]
+     },
+     {
+      "x": 5,
+      "y": -3,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        780544,
+        0,
+        32
+       ]
+      ]
+     },
+     {
+      "x": -11,
+      "y": -3,
+      "size": 8,
+      "hflip": false,
+      "vflip": false,
+      "refs": [
+       [
+        780576,
+        0,
+        32
+       ]
+      ]
+     }
+    ],
+    "chunks": [
+     [
+      4,
+      -76,
+      16
+     ],
+     [
+      4,
+      -60,
+      16
+     ],
+     [
+      -12,
+      -44,
+      16
+     ],
+     [
+      4,
+      -44,
+      16
+     ],
+     [
+      -12,
+      -28,
+      16
+     ],
+     [
+      4,
+      -28,
+      16
+     ],
+     [
+      -12,
+      -12,
+      16
+     ],
+     [
+      4,
+      -12,
+      16
+     ],
+     [
+      -4,
+      -60,
+      8
+     ],
+     [
+      -12,
+      -52,
+      8
+     ],
+     [
+      -4,
+      -52,
+      8
+     ],
+     [
+      4,
+      4,
+      8
+     ]
+    ]
+   }
+  ],
+  "standing": {
+   "profile": 13125266,
+   "draw": [
+    3,
+    1
+   ],
+   "royal_fit_lower_body": {
+    "iou": 0.914,
+    "x": -2,
+    "y": 4
+   },
+   "vertical_difference": 3
+  }
+ },
+ "receiver": {
+  "hold": 7,
+  "forward": 80,
+  "royal_spacing": 33,
+  "spacing": 41,
+  "clearance_adjustment": 8,
+  "steps": [
+   {
+    "profile": 13125790,
+    "first_part": 117,
+    "entries": 2,
+    "draw": [
+     6,
+     7
+    ],
+    "royal_fit": {
+     "iou": 0.991,
+     "x": -46,
+     "y": 7
+    }
+   },
+   {
+    "profile": 13125500,
+    "first_part": 45,
+    "entries": 4,
+    "draw": [
+     9,
+     8
+    ],
+    "royal_fit": {
+     "iou": 0.998,
+     "x": -41,
+     "y": 9
+    },
+    "vertical_difference": 1
+   }
+  ]
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "game": "raw",
+ "events": {
+  "composed_by": "tools/recovery_bot.py",
+  "game": "raw",
+  "base": 17480,
+  "rule": "once Perfect stands, P2 mashes B until the receiver starts to rise; once he stands and 30 frames pass, P1 walks up and P2 walks down for 24 frames",
+  "both_down": 17514,
+  "perfect_stands": 17606,
+  "receiver_stands": 17687,
+  "walk_end": 17750,
+  "end": 17810
+ },
+ "walk": {
+  "frames": [
+   17726,
+   17750
+  ],
+  "y_before": [
+   219,
+   219
+  ],
+  "y_after": [
+   208,
+   233
+  ],
+  "actions": {
+   "(0, 0)": 1,
+   "(14, 12)": 17,
+   "(16, 12)": 4,
+   "(16, 10)": 2
+  }
+ },
+ "positions_after_move": {
+  "x": [
+   267,
+   308
+  ],
+  "y": [
+   219,
+   219
+  ],
+  "action": [
+   600,
+   540
+  ]
+ },
+ "actions": [
+  [
+   0,
+   [
+    600,
+    540
+   ]
+  ],
+  [
+   99,
+   [
+    0,
+    540
+   ]
+  ],
+  [
+   101,
+   [
+    0,
+    70
+   ]
+  ],
+  [
+   151,
+   [
+    0,
+    76
+   ]
+  ],
+  [
+   179,
+   [
+    0,
+    0
+   ]
+  ],
+  [
+   213,
+   [
+    14,
+    12
+   ]
+  ],
+  [
+   230,
+   [
+    16,
+    12
+   ]
+  ],
+  [
+   234,
+   [
+    16,
+    10
+   ]
+  ],
+  [
+   245,
+   [
+    0,
+    10
+   ]
+  ],
+  [
+   256,
+   [
+    0,
+    0
+   ]
+  ]
+ ],
+ "checks": {
+  "perfect_walks_up": true,
+  "receiver_walks_down": true,
+  "perfect_stands_before_receiver": true,
+  "receiver_down_then_up": true,
+  "perfect_never_down_after_move": true
+ },
+ "pass": true,
+ "build": "stock import v5 281bcd36..."
+}

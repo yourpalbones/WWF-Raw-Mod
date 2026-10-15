@@ -50,7 +50,8 @@ in-match name, selection lettering and theme assignment remain editable.
 - All 28 automated tests pass with the private native fixtures. Existing twelve-character app and profile checks also pass.
 
 **Art conversion is incomplete:** 289 pieces use Royal source artwork; 1,431
-retain adapted Raw artwork. These are frame-piece counts, not animation counts.
+retain adapted Raw artwork. (Release v0.16 counts. The branch `claude/charming-allen-njttcx` raises this to
+618 Royal / 1,102 adapted by pose matching; see `docs/complete-wrestler-art.md`.) These are frame-piece counts, not animation counts.
 The editor exposes 1,732 pieces, including twelve Perfect-Plex drawings. This
 release does not claim a complete Royal sprite port. Automatic bridge-to-pin
 behavior is not implemented; exhaustive AI and match-mode coverage remains

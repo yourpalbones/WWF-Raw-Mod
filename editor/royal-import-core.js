@@ -5,6 +5,10 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
  const putWord=(b,p,v)=>{b[p]=v&255;b[p+1]=v>>>8&255;};
  const putLong=(b,p,v)=>{putWord(b,p,v);b[p+2]=v>>>16&255;};
  const equal=(b,p,a)=>a.every((v,i)=>b[p+i]===v);
+ const PLEX_MARKER='PLEX-CANON2',POSES_MARKER='POSES-ROYAL6';
+ const fileOffsetC8=address=>address&0xffff|0x080000;
+ // Perfect-Plex frames (1000-1011) and the exit's Royal frames (1012 on) in the slot's primary table.
+ const plexFrames=manifest=>[...manifest.finisher,...(manifest.exit?manifest.exit.attacker.frames:[])];
  const bytes=s=>Uint8Array.from(s.trim().split(/\s+/),v=>parseInt(v,16));
  const search=(b,pattern,start=0,end=b.length)=>{outer:for(let p=start;p+pattern.length<=end;p++){for(let i=0;i<pattern.length;i++)if(b[p+i]!==pattern[i])continue outer;return p;}return -1;};
  function tile(data,ref){
@@ -46,11 +50,145 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
    rgba.set([0,5,10].map(s=>Math.floor((value>>>s&31)*255/31)).concat(255),at);
   }return rgba;
  }
+ // Adapted pieces show Bret's dark hair (Perfect index 7 dithered with black). Brown regions whose neighbours are
+ // mostly dark and dithered with black are hair: 7 -> pale blond 13, black inside the dither -> beige 9, black on its edge -> dark brown 12.
+ // Brown skin shading stays. points: Map 'x,y' -> index. Same rule as tools/convert_perfect_poses.hair_changes.
+ const SKIN=new Set([2,3,11,6]),N8=[[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]],N4=[[1,0],[-1,0],[0,1],[0,-1]];
+ function hairChanges(points){
+  const at=(x,y)=>points.get(x+','+y),seen=new Set(),hair=new Set(),out=new Map();
+  for(const [key,v]of points){
+   if(v!==7||seen.has(key))continue;const comp=[key];seen.add(key);
+   for(let i=0;i<comp.length;i++){const [x,y]=comp[i].split(',').map(Number);for(const [dx,dy]of N8){const q=(x+dx)+','+(y+dy);if(points.get(q)===7&&!seen.has(q)){seen.add(q);comp.push(q);}}}
+   let dark=0,skin=0;const members=new Set(comp),black=new Set();
+   for(const c of comp){const [x,y]=c.split(',').map(Number);for(const [dx,dy]of N8){const n=at(x+dx,y+dy);if(n===1||n===7)dark++;else if(SKIN.has(n))skin++;}
+    for(const [dx,dy]of N4)if(at(x+dx,y+dy)===1)black.add((x+dx)+','+(y+dy));}
+   // Hair is dithered (black pixels with >= 2 brown 4-neighbours); solid brown patches such as armpit shadow are not.
+   let dither=0;for(const b of black){const [x,y]=b.split(',').map(Number);let n=0;for(const [dx,dy]of N4)if(members.has((x+dx)+','+(y+dy)))n++;if(n>=2)dither++;}
+   if(dark>=1.5*skin&&(comp.length<=2||dither>=0.3*comp.length))for(const c of comp)hair.add(c);
+  }
+  for(const [key,v]of points){
+   if(hair.has(key)){out.set(key,13);continue;}if(v!==1)continue;
+   const [x,y]=key.split(',').map(Number);let n=0;for(const [dx,dy]of N4)if(hair.has((x+dx)+','+(y+dy)))n++;
+   if(n)out.set(key,n>=2?9:12);
+  }
+  return out;
+ }
+ // Apply index changes (Map 'x,y' -> index, piece coordinates) to parts with per-tile pixel arrays.
+ function recolourParts(parts,changes){
+  return parts.map(p=>({...p,pixels:p.pixels.map((tilePixels,t)=>tilePixels.map((v,i)=>{
+   if(!v)return v;const sx=(t%(p.size/8))*8+i%8,sy=Math.floor(t/(p.size/8))*8+Math.floor(i/8);
+   const x=p.x+(p.hflip?p.size-1-sx:sx),y=p.y+(p.vflip?p.size-1-sy:sy),c=changes.get(x+','+y);return c===undefined?v:c;}))}));
+ }
+ // Royal frame parts -> Map 'x,y' -> index (first listed part on top), optionally mirrored and recoloured.
+ function royalPoints(source,parts,flip,mapping,cache){
+  const out=new Map();
+  for(const p of [...parts].reverse())for(let y=0;y<p.size;y++)for(let x=0;x<p.size;x++){
+   const ref=p.refs[Math.floor(y/8)*(p.size/8)+Math.floor(x/8)],key=ref?ref.join(':'):'blank';
+   if(!cache.has(key))cache.set(key,tile(source,ref));const v=cache.get(key)[y%8*8+x%8];
+   if(v)out.set((flip?-(p.x+x):p.x+x)+','+(p.y+y),mapping?mapping[v]:v);
+  }
+  return out;
+ }
+ // Royal Perfect's head on a Raw-only pose (tools/rebuild_perfect_heads.py). Royal draws Bret and Perfect on the same
+ // frame indices in the same pose, so inside the piece's head window a pixel that agrees with Royal Bret takes Royal
+ // Perfect's pixel there (or none), Bret's hair takes Perfect's pixel (or none), and Perfect's fuller hair is added
+ // where the piece is empty. head: [Royal frame, flip, dx, dy, x0, y0, x1, y1]; points: the adapted piece.
+ function headRebuild(points,head,heads,source,cache){
+  const [k,flip,dx,dy,x0,y0,x1,y1]=head,frame=heads.frames[k];
+  const bret=royalPoints(source,frame.bret,flip,heads.colours,cache),perfect=royalPoints(source,frame.perfect,flip,null,cache);
+  const hair=new Set([...hairChanges(points)].filter(([,v])=>v===13).map(([key])=>key)),out=new Map(points);
+  for(let y=y0;y<=y1;y++)for(let x=x0;x<=x1;x++){
+   const p=x+','+y,q=(x+dx)+','+(y+dy),b=points.get(p),r=bret.get(q),v=perfect.get(q);
+   if(b&&(r===b||hair.has(p))){if(v)out.set(p,v);else out.delete(p);}
+   else if(!b&&v&&!r)out.set(p,v);
+  }
+  return out;
+ }
+ // Objects for a drawing (Map 'x,y' -> index): the piece's own objects that still draw something, plus 8x8 objects
+ // on the 8-pixel grid for pixels outside them. Parts carry per-tile pixel arrays, unflipped.
+ function imageParts(parts,image){
+  const inside=(p,x,y)=>x>=p.x&&x<p.x+p.size&&y>=p.y&&y<p.y+p.size,keys=[...image.keys()].map(k=>k.split(',').map(Number));
+  const out=parts.filter(p=>keys.some(([x,y])=>inside(p,x,y))).map(p=>({x:p.x,y:p.y,size:p.size,hflip:false,vflip:false}));
+  const extra=new Set();for(const [x,y]of keys)if(!out.some(p=>inside(p,x,y)))extra.add((Math.floor(x/8)*8)+','+(Math.floor(y/8)*8));
+  for(const k of [...extra].sort()){const [x,y]=k.split(',').map(Number);out.push({x,y,size:8,hflip:false,vflip:false});}
+  for(const p of out)p.pixels=Array.from({length:(p.size/8)**2},(_,t)=>Array.from({length:64},(_,i)=>
+   image.get((p.x+(t%(p.size/8))*8+i%8)+','+(p.y+Math.floor(t/(p.size/8))*8+Math.floor(i/8)))||0));
+  return out;
+ }
+ // A manifest row's adapted piece (Raw Bret's tiles in the given ROM, Perfect's colours) with Royal Perfect's head.
+ const ADAPT=[0,1,4,8,4,8,13,2,14,7,6,3,2,15,14,11];
+ function adaptedPoints(data,row,cache){
+  const points=new Map();
+  for(const p of [...row.parts].reverse())for(let y=0;y<p.size;y++)for(let x=0;x<p.size;x++){
+   const sx=p.hflip?p.size-1-x:x,sy=p.vflip?p.size-1-y:y,ref=p.refs[Math.floor(sy/8)*(p.size/8)+Math.floor(sx/8)],key='w'+(ref?ref.join(':'):'blank');
+   if(!cache.has(key))cache.set(key,tile(data,ref));const v=ADAPT[cache.get(key)[sy%8*8+sx%8]];if(v)points.set((p.x+x)+','+(p.y+y),v);
+  }
+  return points;
+ }
+ function rebuiltPiece(data,source,row,manifest,cache){
+  const adapted=adaptedPoints(data,row,cache),image=headRebuild(adapted,row.head,manifest.heads,source,cache);
+  return {adapted,image,parts:imageParts(row.parts,image)};
+ }
  function checksum(out){
   out[0xffd5]=0x25;out[0xffd7]=13;out.set(out.slice(0,65536),0x400000);
   for(const at of [0xffdc,0x40ffdc])out.set([255,255,0,0],at);
   let sum=0;for(const v of out)sum=(sum+v)&65535;
   for(const at of [0xffdc,0x40ffdc]){putWord(out,at,sum^65535);putWord(out,at+2,sum);}
+ }
+
+ // Perfect-Plex attacker drawings (canonical facing), their profiles and 20-step stream, and the generic
+ // receiving stream for receivers without Royal art. Shared by build() and updatePlex().
+ function writePlex(out,base,source,manifest,store,pixel){
+  let descriptor=0x730100;
+  if(!manifest.orientation)throw Error('Perfect-Plex recipes are not in canonical facing.');
+  if(!manifest.exit)throw Error('The Perfect-Plex exit recipe is missing.');
+  const frames=plexFrames(manifest);
+  for(let i=0;i<frames.length;i++){
+   const f=frames[i],image=new Uint8Array(112*112);
+   for(const p of [...f.parts].reverse())for(let y=0;y<p.size;y++)for(let x=0;x<p.size;x++){
+    const sx=p.hflip?p.size-1-x:x,sy=p.vflip?p.size-1-y:y,value=pixel(p.refs[Math.floor(sy/8)*(p.size/8)+Math.floor(sx/8)])[sy%8*8+sx%8];
+    if(!value)continue;/* canonical facing: Royal's Perfect faces right, as Raw art does unflipped */const px=56+p.x+x,py=100+p.y+y;if(px<0||px>=112||py<0||py>=112)throw Error('Finisher image exceeds its canvas.');image[py*112+px]=value;
+   }
+   const record=[f.chunks.length,f.chunks.filter(c=>c[2]===16).length];
+   if(f.chunks.length+2>17)throw Error('Finisher exceeds the wrestler object limit.');
+   for(const [x,y,size]of f.chunks){record.push(0,x&127,(y+105)&127);
+    for(let ty=0;ty<size/8;ty++)for(let tx=0;tx<size/8;tx++){
+     const tilePixels=[];for(let yy=0;yy<8;yy++)for(let xx=0;xx<8;xx++){const px=x+56+tx*8+xx,py=y+100+ty*8+yy;tilePixels.push(px<0||py<0||px>=112||py>=112?0:image[py*112+px]);}
+     const id=0xc000|store(planar(tilePixels),'primary',false);record.push(id&255,id>>>8);
+    }
+   }
+   if(descriptor+record.length>0x734000)throw Error('Finisher descriptions exceed their space.');out.set(record,descriptor);putLong(out,0x710000+(1000+i)*3,descriptor);descriptor+=record.length;
+   const profile=0x734000+i*14;putWord(out,profile,(1000+i)*3);putWord(out,profile+2,0);out.set([36,128,0,255,255,255],profile+4);
+  }
+  // Streams. An entry is [bank, profile, x move, y move, draw x, draw y]; x moves and draw x count along the
+  // facing, draw offsets only shift the drawing. After the bridge (step 11) Royal holds the pin, releases, and both
+  // wrestlers recover (docs/perfect-plex-exit.md, planned from Royal's capture by tools/plan_perfect_plex_exit.py).
+  // The bridge is held for A.hold more entries. The first release entry moves each actor to where Royal puts him
+  // (moving during the hold would pan Raw's camera, which follows the pair, under a still picture). Mr. Perfect
+  // then gets up through Royal's six drawings: Raw's own get-up profiles where their pieces (Royal art in this
+  // slot) show Royal's drawing, and the exit's Royal frames otherwise; Raw's standing action follows. The receiver
+  // rolls off and lies on Perfect's far side with Raw's own profiles, in its own art.
+  const X=manifest.exit,A=X.attacker,R=X.receiver;
+  const stock=(address,first)=>{if(word(base,fileOffsetC8(address))!==first)throw Error('Unsupported Raw animation.');return [200,address];};
+  const attacker=[];for(let i=0;i<12;i++)attacker.push([115,0x734000+i*14,0,0,0]);
+  for(let i=0;i<A.hold;i++)attacker.push([115,0x734000+11*14,0,0,0]);
+  A.steps.forEach((step,n)=>attacker.push([...(step.profile!==undefined?stock(step.profile,step.first_part):[115,0x734000+(12+step.frame)*14]),n?0:A.forward,...step.draw]));
+  const victim=[];for(let i=0;i<12;i++)victim.push([115,0x735100+i*32,0,0,0]);
+  for(let i=0;i<R.hold;i++)victim.push([115,0x735100+11*32,0,0,0]);
+  for(const step of R.steps)for(let n=0;n<step.entries;n++)victim.push([...stock(step.profile,step.first_part),victim.length===12+R.hold?R.forward:0,...step.draw]);
+  for(const [entries,at]of [[attacker,0x730000],[victim,0x735000]]){
+   if(entries.length*7+1>256)throw Error('Perfect-Plex stream exceeds its space.');
+   entries.forEach(([bank,address,move,dx,dy],i)=>out.set([bank,address&255,address>>>8&255,move&255,0,dx&255,dy&255],at+i*7));out[at+entries.length*7]=255;
+  }
+  for(let i=0;i<12;i++){
+   const row=manifest.victim[i],profile=0x735100+i*32;let n=0;
+   for(;n<8;n++){
+    const at=row.profile+n*4,id=word(base,at);putWord(out,profile+n*4,id);if(id===65535)break;
+    const dx=(base[at+2]<<24>>24)+row.translate[0],dy=(base[at+3]<<24>>24)+row.translate[1];
+    if(dx< -128||dx>127||dy< -128||dy>127)throw Error('Opponent animation position overflow.');out[profile+n*4+2]=dx&255;out[profile+n*4+3]=dy&255;
+   }if(n===8)throw Error('Invalid opponent profile.');
+  }
+ out.set(Array.from(PLEX_MARKER,c=>c.charCodeAt(0)),0x70fe20);
  }
  function build(base,source,manifest){
   if(![0x300000,0x400000,0x600000,0x800000].includes(base.length))throw Error('Unsupported WWF Raw size.');
@@ -73,8 +211,14 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
   }
   const colors=[0,1,4,8,4,8,13,2,14,7,6,3,2,15,14,11],descriptors={primary:new Map(),secondary:new Map()},cache=new Map();
   const pixels=(data,ref,royal)=>{const key=(royal?'r':'w')+(ref?ref.join(':'):'blank');if(!cache.has(key))cache.set(key,tile(data,ref));return cache.get(key);};
+  const headCache=new Map();
   for(const f of manifest.frames){
-   const kind=f.kind,parts=[...f.parts].sort((a,b)=>b.size-a.size),record=[parts.length,parts.filter(p=>p.size===16).length];
+   const rebuilt=f.head&&manifest.heads?rebuiltPiece(base,source,f,manifest,headCache):null;
+   const kind=f.kind,parts=[...(rebuilt?rebuilt.parts:f.parts)].sort((a,b)=>b.size-a.size),record=[parts.length,parts.filter(p=>p.size===16).length];
+   let changes=null;
+   if(f.hair&&!rebuilt){const points=new Map();for(const p of [...f.parts].reverse())for(let y=0;y<p.size;y++)for(let x=0;x<p.size;x++){
+     const sx=p.hflip?p.size-1-x:x,sy=p.vflip?p.size-1-y:y,v=colors[pixels(base,p.refs[Math.floor(sy/8)*(p.size/8)+Math.floor(sx/8)],false)[sy%8*8+sx%8]];if(v)points.set((p.x+x)+','+(p.y+y),v);}
+    changes=hairChanges(points);}
    if(!parts.length){record[0]=1;record.push(0,0,105);const id=store(new Uint8Array(32),kind);record.push((0xc000|id)&255,(0xc000|id)>>>8);}
    for(const p of parts){
     if(p.x< -64||p.x>=64||p.y< -105||p.y>=23)throw Error('Imported sprite position is outside Raw’s format.');
@@ -82,7 +226,9 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
     for(let ty=0;ty<p.size/8;ty++)for(let tx=0;tx<p.size/8;tx++){
      const image=[];for(let y=0;y<8;y++)for(let x=0;x<8;x++){
       let sx=tx*8+x,sy=ty*8+y;if(p.hflip)sx=p.size-1-sx;if(p.vflip)sy=p.size-1-sy;
-      const ref=p.refs[Math.floor(sy/8)*(p.size/8)+Math.floor(sx/8)],value=pixels(f.royal?source:base,ref,f.royal)[sy%8*8+sx%8];image.push(f.royal?value:colors[value]);
+      if(p.pixels){image.push(p.pixels[Math.floor(sy/8)*(p.size/8)+Math.floor(sx/8)][sy%8*8+sx%8]);continue;}
+      const ref=p.refs[Math.floor(sy/8)*(p.size/8)+Math.floor(sx/8)],value=pixels(f.royal?source:base,ref,f.royal)[sy%8*8+sx%8];
+     let out=f.royal?value:colors[value];if(changes&&out){const c=changes.get((p.x+tx*8+x)+','+(p.y+ty*8+y));if(c!==undefined)out=c;}image.push(out);
      }const id=0xc000|store(planar(image),kind);record.push(id&255,id>>>8);
     }
    }
@@ -93,34 +239,7 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
     out.set(record,address);cursor[kind]=address+record.length;descriptors[kind].set(key,address);
    }putLong(out,tables[kind]+f.index*3,address);
   }
-  let descriptor=0x730100;
-  for(let i=0;i<manifest.finisher.length;i++){
-   const f=manifest.finisher[i],image=new Uint8Array(112*112);
-   for(const p of [...f.parts].reverse())for(let y=0;y<p.size;y++)for(let x=0;x<p.size;x++){
-    const sx=p.hflip?p.size-1-x:x,sy=p.vflip?p.size-1-y:y,value=pixels(source,p.refs[Math.floor(sy/8)*(p.size/8)+Math.floor(sx/8)],true)[sy%8*8+sx%8];
-    if(!value)continue;const px=56-(p.x+x),py=100+p.y+y;if(px<0||px>=112||py<0||py>=112)throw Error('Finisher image exceeds its canvas.');image[py*112+px]=value;
-   }
-   const record=[f.chunks.length,f.chunks.filter(c=>c[2]===16).length];
-   if(f.chunks.length+2>17)throw Error('Finisher exceeds the wrestler object limit.');
-   for(const [x,y,size]of f.chunks){record.push(0,x&127,(y+105)&127);
-    for(let ty=0;ty<size/8;ty++)for(let tx=0;tx<size/8;tx++){
-     const tilePixels=[];for(let yy=0;yy<8;yy++)for(let xx=0;xx<8;xx++){const px=x+56+tx*8+xx,py=y+100+ty*8+yy;tilePixels.push(px<0||py<0||px>=112||py>=112?0:image[py*112+px]);}
-     const id=0xc000|store(planar(tilePixels),'primary',false);record.push(id&255,id>>>8);
-    }
-   }
-   if(descriptor+record.length>0x734000)throw Error('Finisher descriptions exceed their space.');out.set(record,descriptor);putLong(out,0x710000+(1000+i)*3,descriptor);descriptor+=record.length;
-   const profile=0x734000+i*14;putWord(out,profile,(1000+i)*3);putWord(out,profile+2,0);out.set([36,128,0,255,255,255],profile+4);
-   out.set([115,profile&255,profile>>>8&255,0,0,0,0],0x730000+i*7);
-  }
-  for(let i=12;i<20;i++)out.set(out.slice(0x73004d,0x730054),0x730000+i*7);out[0x73008c]=255;
-  for(let i=0;i<20;i++){
-   const row=manifest.victim[Math.min(i,11)],profile=0x735100+i*32;let n=0;
-   for(;n<8;n++){
-    const at=row.profile+n*4,id=word(base,at);putWord(out,profile+n*4,id);if(id===65535)break;
-    const dx=(base[at+2]<<24>>24)+row.translate[0],dy=(base[at+3]<<24>>24)+row.translate[1];
-    if(dx< -128||dx>127||dy< -128||dy>127)throw Error('Opponent animation position overflow.');out[profile+n*4+2]=dx&255;out[profile+n*4+3]=dy&255;
-   }if(n===8)throw Error('Invalid opponent profile.');out.set([115,profile&255,profile>>>8&255,0,0,0,0],0x735000+i*7);
-  }out[0x73508c]=255;
+  writePlex(out,base,source,manifest,store,ref=>pixels(source,ref,true));
   // Copy profiles, palettes and signature tables instead of overwriting another worker.
   out.set(base.slice(0x2efaf5,0x2efd11),0x708000);out.set(base.slice(0x2efaf5+45,0x2efaf5+90),0x708000+12*45);
   const helper=bytes('a2 2d 00 22 5f ff ad 18 69 f5 fa aa f4 fa ae ab ab 60'),at=search(base,helper);
@@ -140,7 +259,113 @@ window.RAW_ROYAL_IMPORT_CORE=(()=>{
   });
   for(const [address,code,hook]of manifest.programs[native?'native':'stock']){out.set(code,address);out[hook]=92;putLong(out,hook+1,address);}
   out.set(Array.from('PERFECT-SLOT-PROTO1',c=>c.charCodeAt(0)),0x70fe00);
+  if(manifest.coverage.matched_royal_poses)out.set(Array.from(POSES_MARKER,c=>c.charCodeAt(0)),0x70fe60);
   return {bytes:out,report:{...manifest.coverage,slot:12,primary_tiles:counts.primary,secondary_tiles:counts.secondary,packet_end:packet}};
  }
- return {build,tile,planar,packed,royalBlock,royalPortrait,checksum,word,long,putWord,putLong,search};
+ // Older imports (v0.16) hold mirrored attacker drawings and the previous hooks. Rewrite the Perfect-Plex in
+ // place: new attacker tiles are appended to the slot's private space (the old ones become unused), and the
+ // hook programs and streams are replaced. Everything else in the ROM is kept.
+ function plexCurrent(data){return data.length===0x800000&&String.fromCharCode(...data.slice(0x70fe20,0x70fe20+PLEX_MARKER.length))===PLEX_MARKER;}
+ function updatePlex(data,source,manifest){
+  if(data.length!==0x800000||String.fromCharCode(...data.slice(0x70fe00,0x70fe13))!=='PERFECT-SLOT-PROTO1')throw Error('Add Mr. Perfect first.');
+  if(source.length!==0x200000)throw Error('Use the USA SNES Royal Rumble ROM.');
+  const out=data.slice(),cache=new Map();let count=0;
+  while(count<16384&&!(out[0x7d0000+count*3]===255&&out[0x7d0001+count*3]===255&&out[0x7d0002+count*3]===255))count++;
+  let packet=long(out,0x70fdf0);
+  const store=raw=>{
+   const encoded=packed(raw);if(count>=16384)throw Error('The added wrestler has no free tile entries.');
+   if((packet&65535)+encoded.length>65536)packet=(packet+65535)&~65535;
+   if(packet<0x750000||packet+encoded.length>0x7d0000)throw Error('The added wrestler has no more sprite space.');
+   out.set(encoded,packet);putLong(out,0x7d0000+count*3,packet);packet+=encoded.length;return count++;
+  };
+  const pixel=(d,ref)=>{const key=ref?ref.join(':'):'blank';if(!cache.has(key))cache.set(key,tile(d,ref));return cache.get(key);};
+  // The generic receiving stream reads stock profiles; those addresses are unchanged in an imported ROM.
+  writePlex(out,data,source,manifest,store,ref=>pixel(source,ref));putLong(out,0x70fdf0,packet);
+  // The slot worker chains to the gear dispatcher (JML $4BE100) only in the 'native' variant.
+  const variant=search(data,[92,0,225,75],0x70f000,0x70f100)>=0?'native':'stock';
+  if(String.fromCharCode(...data.slice(0x70fe40,0x70fe49)).startsWith('ROYAL-RX'))throw Error('Remove the receiving sprites before updating the Perfect-Plex.');
+  for(const [address,code,hook]of manifest.programs[variant]){out.fill(255,address,address+256);out.set(code,address);out[hook]=92;putLong(out,hook+1,address);}
+  checksum(out);return out;
+ }
+ // Older imports hold adapted Raw Bret art in pieces where Royal Perfect has the pose (manifest rows with
+ // 'replaces'). Rebuild the slot's pieces: a piece is replaced only while its pixels still hash to the art it
+ // supersedes (v0.16's adapted piece, that piece with the blond-hair recolour an earlier upgrade applied, or an
+ // earlier placement of the same Royal art, 'replaces_royal');
+ // a piece already holding the new art is left as it is; every other piece, including the user's edits and the
+ // Perfect-Plex frames, is decoded and stored again pixel for pixel. The slot's tile space is repacked.
+ function posesCurrent(data){return data.length===0x800000&&String.fromCharCode(...data.slice(0x70fe60,0x70fe60+POSES_MARKER.length))===POSES_MARKER;}
+ function pieceHash(points){
+  const list=[...points].map(([k,v])=>{const [x,y]=k.split(',').map(Number);return [x,y,v];}).sort((a,b)=>a[1]-b[1]||a[0]-b[0]);
+  let h=0x811c9dc5;for(const [x,y,v]of list)for(const c of `${x},${y},${v};`){h^=c.charCodeAt(0);h=Math.imul(h,0x01000193)>>>0;}return h;
+ }
+ function upgradePoses(data,source,manifest){
+  if(data.length!==0x800000||String.fromCharCode(...data.slice(0x70fe00,0x70fe13))!=='PERFECT-SLOT-PROTO1')throw Error('Add Mr. Perfect first.');
+  if(String.fromCharCode(...data.slice(0x70fe40,0x70fe49)).startsWith('ROYAL-RX'))throw Error('Remove the receiving sprites before updating the poses.');
+  const P=window.RAW_PARTS,out=data.slice(),cache=new Map(),rows=new Map(manifest.frames.map(f=>[f.kind+':'+f.index,f]));
+  const royalPixels=ref=>{const key=ref?ref.join(':'):'blank';if(!cache.has(key))cache.set(key,tile(source,ref));return cache.get(key);};
+  // Packets of other identities' edits relocated into this space would be lost; refuse instead.
+  for(const r of Object.values(window.RAW_NWO_GEAR_PATTERNS||{}))for(const [a,b]of [[r.pointers,r.pointer_end],[r.secondary_pointers,r.secondary_pointer_end]]){
+   if(a===undefined||b===undefined)continue;for(let p=a;p+3<=b;p+=3){const v=long(data,p);if(v>=0x750000&&v<0x7d0000)throw Error('Another wrestler’s edited tile is stored in Mr. Perfect’s space; the poses were not updated.');}
+  }
+  const frames=[],report={replaced:0,rebuilt:0,recoloured:0,already_current:0,kept_edited:0,kept:0},headCache=new Map();
+  for(const [kind,indices]of [['primary',[...Array(998).keys(),...Array.from({length:plexCurrent(data)?plexFrames(manifest).length:12},(_,i)=>1000+i)]],['secondary',[...Array(722).keys()]]])for(const index of indices){
+   let current;try{current=P.resolveIndex(data,12,kind,index);}catch(e){throw Error(`Mr. Perfect's ${kind} piece ${index} cannot be read (${e.message}); the poses were not updated.`);}
+   const row=rows.get(kind+':'+index);let parts=current.parts;
+   if(row&&row.replaces!==undefined){
+    const points=P.raster(current.parts),h=pieceHash(points);
+    if(row.royal){
+     const target=row.parts.map(p=>({...p,pixels:p.refs.map(royalPixels)}));
+     if(h===row.replaces||h===row.replaces_hair||(row.replaces_royal||[]).includes(h)){parts=target;report.replaced++;}
+     else if(h===pieceHash(P.raster(target)))report.already_current++;
+     else report.kept_edited++;
+    }else if(row.head&&manifest.heads){
+     // Rebuilt from the Raw Bret tiles this ROM still holds; only while they are the art the row was planned on.
+     const rebuilt=rebuiltPiece(data,source,row,manifest,headCache);
+     if(pieceHash(rebuilt.adapted)!==row.replaces)report.kept_edited++;
+     else if(h===row.replaces||h===row.replaces_hair){parts=rebuilt.parts;report.rebuilt++;}
+     else if(h===pieceHash(rebuilt.image))report.already_current++;
+     else report.kept_edited++;
+    }else if(h===row.replaces){parts=recolourParts(current.parts,hairChanges(points));report.recoloured++;}
+    else if(h===row.replaces_hair)report.already_current++;
+    else report.kept_edited++;
+   }else report.kept++;
+   frames.push({kind,index,parts,descriptor:index>=1000?current.descriptor:null});
+  }
+  let count={primary:0,secondary:0};while(count.primary<16384&&!equal(data,0x7d0000+count.primary*3,[255,255,255]))count.primary++;
+  out.fill(255,0x7d0000,Math.min(0x7da000,0x7d0000+count.primary*3));out.fill(255,0x749800,0x750000);out.fill(255,0x750000,0x7d0000);
+  out.fill(255,0x720100,0x730000);out.fill(255,0x740100,0x749800);
+  const tiles={primary:new Map(),secondary:new Map()},pointers={primary:0x7d0000,secondary:0x749800};let packet=0x750000;
+  const store=(raw,kind)=>{
+   const key=String.fromCharCode(...raw);if(tiles[kind].has(key))return tiles[kind].get(key);
+   const index=count[kind]=tiles[kind].size,encoded=packed(raw);
+   if(pointers[kind]+index*3+3>(kind==='primary'?0x7da000:0x750000))throw Error('Mr. Perfect’s poses exceed the tile pointer space; the poses were not updated.');
+   if((packet&65535)+encoded.length>65536)packet=(packet+65535)&~65535;
+   if(packet+encoded.length>0x7d0000)throw Error('Mr. Perfect’s poses exceed the sprite space; the poses were not updated.');
+   out.set(encoded,packet);putLong(out,pointers[kind]+index*3,packet);packet+=encoded.length;tiles[kind].set(key,index);return index;
+  };
+  const cursor={primary:0x720100,secondary:0x740100},descriptors={primary:new Map(),secondary:new Map()};
+  for(const f of frames){
+   const parts=[...f.parts].sort((a,b)=>b.size-a.size),record=[parts.length,parts.filter(p=>p.size===16).length];
+   if(!parts.length){record[0]=1;record.push(0,0,105);const id=0xc000|store(new Uint8Array(32),f.kind);record.push(id&255,id>>>8);}
+   for(const p of parts){
+    if(p.x< -64||p.x>=64||p.y< -105||p.y>=23)throw Error('A sprite position is outside Raw’s format.');
+    record.push(0,p.x&127,(p.y+105)&127);
+    for(let ty=0;ty<p.size/8;ty++)for(let tx=0;tx<p.size/8;tx++){
+     const image=[];for(let y=0;y<8;y++)for(let x=0;x<8;x++){let sx=tx*8+x,sy=ty*8+y;if(p.hflip)sx=p.size-1-sx;if(p.vflip)sy=p.size-1-sy;image.push(p.pixels[Math.floor(sy/8)*(p.size/8)+Math.floor(sx/8)][sy%8*8+sx%8]);}
+     const id=0xc000|store(planar(image),f.kind);record.push(id&255,id>>>8);
+    }
+   }
+   let address;
+   if(f.descriptor!==null){address=f.descriptor;out.set(record,address);}
+   else{const key=String.fromCharCode(...record);address=descriptors[f.kind].get(key);
+    if(address===undefined){address=cursor[f.kind];const end=f.kind==='primary'?0x730000:0x749800;
+     if((address&65535)+record.length>65536)address=(address+65535)&~65535;
+     if(address+record.length>end)throw Error('Mr. Perfect’s pose descriptions exceed their space; the poses were not updated.');
+     out.set(record,address);cursor[f.kind]=address+record.length;descriptors[f.kind].set(key,address);}}
+   putLong(out,(f.kind==='primary'?0x710000:0x711000)+f.index*3,address);
+  }
+  putLong(out,0x70fdf0,packet);out.set(Array.from(POSES_MARKER,c=>c.charCodeAt(0)),0x70fe60);checksum(out);
+  return {bytes:out,report:{...report,primary_tiles:tiles.primary.size,secondary_tiles:tiles.secondary.size,packet_end:packet}};
+ }
+ return {plexFrames,build,updatePlex,plexCurrent,posesCurrent,upgradePoses,pieceHash,hairChanges,headRebuild,rebuiltPiece,royalPoints,tile,planar,packed,royalBlock,royalPortrait,checksum,word,long,putWord,putLong,search};
 })();

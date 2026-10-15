@@ -1,0 +1,5097 @@
+{
+ "method": "Choose each own-art receiver's Perfect-Plex drawings from the wrestler's own Raw poses, following Royal's move.",
+ "slots": {
+  "0": {
+   "donor": 7,
+   "steps": [
+    [
+     {
+      "profile": 13126424,
+      "hflip": false,
+      "vflip": false,
+      "dx": -8,
+      "dy": -3,
+      "score": 0.765
+     },
+     {
+      "profile": 13129438,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -1,
+      "score": 0.753
+     },
+     {
+      "profile": 13131576,
+      "hflip": false,
+      "vflip": false,
+      "dx": -11,
+      "dy": 3,
+      "score": 0.74
+     },
+     {
+      "profile": 13125434,
+      "hflip": false,
+      "vflip": false,
+      "dx": -11,
+      "dy": 3,
+      "score": 0.735
+     },
+     {
+      "profile": 13130944,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": 3,
+      "score": 0.731
+     }
+    ],
+    [
+     {
+      "profile": 13125350,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -4,
+      "score": 0.712
+     },
+     {
+      "profile": 13131492,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -4,
+      "score": 0.709
+     },
+     {
+      "profile": 13130902,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -5,
+      "score": 0.699
+     },
+     {
+      "profile": 13127546,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -3,
+      "score": 0.695
+     },
+     {
+      "profile": 13125716,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -1,
+      "score": 0.67
+     }
+    ],
+    [
+     {
+      "profile": 13130916,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -5,
+      "score": 0.725
+     },
+     {
+      "profile": 13125364,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -5,
+      "score": 0.722
+     },
+     {
+      "profile": 13131506,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -5,
+      "score": 0.719
+     },
+     {
+      "profile": 13130958,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -3,
+      "score": 0.705
+     },
+     {
+      "profile": 13125406,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -3,
+      "score": 0.704
+     }
+    ],
+    [
+     {
+      "profile": 13132998,
+      "hflip": true,
+      "vflip": true,
+      "dx": -14,
+      "dy": -75,
+      "score": 0.7
+     },
+     {
+      "profile": 13127468,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -5,
+      "score": 0.654
+     },
+     {
+      "profile": 13132328,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -2,
+      "score": 0.633
+     },
+     {
+      "profile": 13126254,
+      "hflip": false,
+      "vflip": false,
+      "dx": -17,
+      "dy": -8,
+      "score": 0.632
+     },
+     {
+      "profile": 13129438,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -3,
+      "score": 0.62
+     }
+    ],
+    [
+     {
+      "profile": 13126254,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -4,
+      "score": 0.783
+     },
+     {
+      "profile": 13127756,
+      "hflip": true,
+      "vflip": true,
+      "dx": -15,
+      "dy": -68,
+      "score": 0.655
+     },
+     {
+      "profile": 13129438,
+      "hflip": false,
+      "vflip": false,
+      "dx": -11,
+      "dy": -2,
+      "score": 0.641
+     },
+     {
+      "profile": 13132998,
+      "hflip": true,
+      "vflip": true,
+      "dx": -13,
+      "dy": -73,
+      "score": 0.634
+     },
+     {
+      "profile": 13127468,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -3,
+      "score": 0.633
+     }
+    ],
+    [
+     {
+      "profile": 13129438,
+      "hflip": false,
+      "vflip": false,
+      "dx": -6,
+      "dy": -2,
+      "score": 0.729
+     },
+     {
+      "profile": 13129466,
+      "hflip": false,
+      "vflip": false,
+      "dx": -6,
+      "dy": -1,
+      "score": 0.677
+     },
+     {
+      "profile": 13132058,
+      "hflip": false,
+      "vflip": false,
+      "dx": -8,
+      "dy": -1,
+      "score": 0.667
+     },
+     {
+      "profile": 13128724,
+      "hflip": true,
+      "vflip": false,
+      "dx": -5,
+      "dy": -6,
+      "score": 0.654
+     },
+     {
+      "profile": 13127454,
+      "hflip": false,
+      "vflip": false,
+      "dx": -7,
+      "dy": -3,
+      "score": 0.644
+     }
+    ],
+    [
+     {
+      "profile": 13126730,
+      "hflip": false,
+      "vflip": false,
+      "dx": -2,
+      "dy": -7,
+      "score": 0.669
+     },
+     {
+      "profile": 13129466,
+      "hflip": false,
+      "vflip": false,
+      "dx": -5,
+      "dy": -9,
+      "score": 0.668
+     },
+     {
+      "profile": 13125378,
+      "hflip": false,
+      "vflip": false,
+      "dx": -4,
+      "dy": -4,
+      "score": 0.66
+     },
+     {
+      "profile": 13131520,
+      "hflip": false,
+      "vflip": false,
+      "dx": -4,
+      "dy": -4,
+      "score": 0.66
+     },
+     {
+      "profile": 13127336,
+      "hflip": false,
+      "vflip": false,
+      "dx": -3,
+      "dy": -8,
+      "score": 0.653
+     }
+    ],
+    [
+     {
+      "profile": 13129438,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -4,
+      "score": 0.623
+     },
+     {
+      "profile": 13125672,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": 3,
+      "score": 0.623
+     },
+     {
+      "profile": 13127336,
+      "hflip": false,
+      "vflip": false,
+      "dx": -8,
+      "dy": -12,
+      "score": 0.614
+     },
+     {
+      "profile": 13126424,
+      "hflip": false,
+      "vflip": false,
+      "dx": -8,
+      "dy": -5,
+      "score": 0.612
+     },
+     {
+      "profile": 13127350,
+      "hflip": false,
+      "vflip": false,
+      "dx": -9,
+      "dy": -6,
+      "score": 0.598
+     }
+    ],
+    [
+     {
+      "profile": 13132048,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -6,
+      "score": 0.665
+     },
+     {
+      "profile": 13125686,
+      "hflip": false,
+      "vflip": false,
+      "dx": -19,
+      "dy": -1,
+      "score": 0.635
+     },
+     {
+      "profile": 13127336,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -7,
+      "score": 0.63
+     },
+     {
+      "profile": 13129438,
+      "hflip": false,
+      "vflip": false,
+      "dx": -16,
+      "dy": -3,
+      "score": 0.614
+     },
+     {
+      "profile": 13132428,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -1,
+      "score": 0.607
+     }
+    ],
+    [
+     {
+      "profile": 13130282,
+      "hflip": true,
+      "vflip": true,
+      "dx": -23,
+      "dy": -65,
+      "score": 0.634
+     },
+     {
+      "profile": 13130268,
+      "hflip": true,
+      "vflip": true,
+      "dx": -21,
+      "dy": -73,
+      "score": 0.615
+     },
+     {
+      "profile": 13132736,
+      "hflip": true,
+      "vflip": true,
+      "dx": -22,
+      "dy": -75,
+      "score": 0.593
+     },
+     {
+      "profile": 13125632,
+      "hflip": true,
+      "vflip": false,
+      "dx": -21,
+      "dy": -47,
+      "score": 0.576
+     },
+     {
+      "profile": 13126952,
+      "hflip": false,
+      "vflip": true,
+      "dx": -22,
+      "dy": -81,
+      "score": 0.56
+     }
+    ],
+    [
+     {
+      "profile": 13127974,
+      "hflip": true,
+      "vflip": true,
+      "dx": 7,
+      "dy": -85,
+      "score": 0.771
+     },
+     {
+      "profile": 13127784,
+      "hflip": true,
+      "vflip": true,
+      "dx": 11,
+      "dy": -82,
+      "score": 0.583
+     },
+     {
+      "profile": 13132284,
+      "hflip": false,
+      "vflip": true,
+      "dx": 11,
+      "dy": -84,
+      "score": 0.538
+     },
+     {
+      "profile": 13128552,
+      "hflip": true,
+      "vflip": true,
+      "dx": 7,
+      "dy": -100,
+      "score": 0.532
+     },
+     {
+      "profile": 13132200,
+      "hflip": true,
+      "vflip": true,
+      "dx": 7,
+      "dy": -86,
+      "score": 0.525
+     }
+    ],
+    [
+     {
+      "profile": 13127880,
+      "hflip": false,
+      "vflip": true,
+      "dx": 24,
+      "dy": -31,
+      "score": 0.566
+     },
+     {
+      "profile": 13132832,
+      "hflip": false,
+      "vflip": true,
+      "dx": 31,
+      "dy": -52,
+      "score": 0.509
+     },
+     {
+      "profile": 13130048,
+      "hflip": true,
+      "vflip": false,
+      "dx": 31,
+      "dy": 4,
+      "score": 0.499
+     },
+     {
+      "profile": 13125656,
+      "hflip": false,
+      "vflip": true,
+      "dx": 13,
+      "dy": -22,
+      "score": 0.498
+     },
+     {
+      "profile": 13125656,
+      "hflip": true,
+      "vflip": false,
+      "dx": 42,
+      "dy": -1,
+      "score": 0.496
+     }
+    ]
+   ]
+  },
+  "4": {
+   "donor": 5,
+   "steps": [
+    [
+     {
+      "profile": 13129438,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -2,
+      "score": 0.675
+     },
+     {
+      "profile": 13126424,
+      "hflip": false,
+      "vflip": false,
+      "dx": -9,
+      "dy": -2,
+      "score": 0.625
+     },
+     {
+      "profile": 13131042,
+      "hflip": false,
+      "vflip": false,
+      "dx": -8,
+      "dy": 0,
+      "score": 0.62
+     },
+     {
+      "profile": 13128606,
+      "hflip": false,
+      "vflip": false,
+      "dx": -11,
+      "dy": 2,
+      "score": 0.617
+     },
+     {
+      "profile": 13129452,
+      "hflip": false,
+      "vflip": false,
+      "dx": -9,
+      "dy": 8,
+      "score": 0.61
+     }
+    ],
+    [
+     {
+      "profile": 13128200,
+      "hflip": false,
+      "vflip": false,
+      "dx": -19,
+      "dy": -3,
+      "score": 0.594
+     },
+     {
+      "profile": 13127546,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -3,
+      "score": 0.587
+     },
+     {
+      "profile": 13127684,
+      "hflip": false,
+      "vflip": false,
+      "dx": -19,
+      "dy": -1,
+      "score": 0.567
+     },
+     {
+      "profile": 13125350,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -5,
+      "score": 0.566
+     },
+     {
+      "profile": 13131492,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -5,
+      "score": 0.566
+     }
+    ],
+    [
+     {
+      "profile": 13129438,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -4,
+      "score": 0.639
+     },
+     {
+      "profile": 13126972,
+      "hflip": true,
+      "vflip": true,
+      "dx": -15,
+      "dy": -85,
+      "score": 0.629
+     },
+     {
+      "profile": 13127684,
+      "hflip": true,
+      "vflip": true,
+      "dx": -17,
+      "dy": -79,
+      "score": 0.599
+     },
+     {
+      "profile": 13128432,
+      "hflip": true,
+      "vflip": true,
+      "dx": -18,
+      "dy": -102,
+      "score": 0.598
+     },
+     {
+      "profile": 13131548,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -3,
+      "score": 0.592
+     }
+    ],
+    [
+     {
+      "profile": 13132998,
+      "hflip": true,
+      "vflip": true,
+      "dx": -14,
+      "dy": -75,
+      "score": 0.59
+     },
+     {
+      "profile": 13128362,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -4,
+      "score": 0.554
+     },
+     {
+      "profile": 13132328,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -3,
+      "score": 0.548
+     },
+     {
+      "profile": 13125364,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -3,
+      "score": 0.541
+     },
+     {
+      "profile": 13129438,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -3,
+      "score": 0.541
+     }
+    ],
+    [
+     {
+      "profile": 13126254,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -4,
+      "score": 0.686
+     },
+     {
+      "profile": 13128362,
+      "hflip": false,
+      "vflip": false,
+      "dx": -10,
+      "dy": -1,
+      "score": 0.583
+     },
+     {
+      "profile": 13127468,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -4,
+      "score": 0.579
+     },
+     {
+      "profile": 13129438,
+      "hflip": false,
+      "vflip": false,
+      "dx": -11,
+      "dy": -2,
+      "score": 0.577
+     },
+     {
+      "profile": 13132998,
+      "hflip": true,
+      "vflip": true,
+      "dx": -12,
+      "dy": -71,
+      "score": 0.561
+     }
+    ],
+    [
+     {
+      "profile": 13129438,
+      "hflip": false,
+      "vflip": false,
+      "dx": -6,
+      "dy": -3,
+      "score": 0.649
+     },
+     {
+      "profile": 13129466,
+      "hflip": false,
+      "vflip": false,
+      "dx": -6,
+      "dy": -2,
+      "score": 0.569
+     },
+     {
+      "profile": 13127440,
+      "hflip": false,
+      "vflip": false,
+      "dx": -8,
+      "dy": 0,
+      "score": 0.566
+     },
+     {
+      "profile": 13126982,
+      "hflip": false,
+      "vflip": false,
+      "dx": -10,
+      "dy": -8,
+      "score": 0.565
+     },
+     {
+      "profile": 13127336,
+      "hflip": false,
+      "vflip": false,
+      "dx": -3,
+      "dy": -6,
+      "score": 0.541
+     }
+    ],
+    [
+     {
+      "profile": 13126726,
+      "hflip": false,
+      "vflip": false,
+      "dx": -2,
+      "dy": -7,
+      "score": 0.651
+     },
+     {
+      "profile": 13126730,
+      "hflip": false,
+      "vflip": false,
+      "dx": -2,
+      "dy": -7,
+      "score": 0.611
+     },
+     {
+      "profile": 13125686,
+      "hflip": false,
+      "vflip": false,
+      "dx": -8,
+      "dy": -5,
+      "score": 0.599
+     },
+     {
+      "profile": 13132200,
+      "hflip": false,
+      "vflip": false,
+      "dx": -4,
+      "dy": -4,
+      "score": 0.589
+     },
+     {
+      "profile": 13125378,
+      "hflip": false,
+      "vflip": false,
+      "dx": -4,
+      "dy": -5,
+      "score": 0.586
+     }
+    ],
+    [
+     {
+      "profile": 13132832,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -18,
+      "score": 0.588
+     },
+     {
+      "profile": 13131520,
+      "hflip": false,
+      "vflip": false,
+      "dx": -10,
+      "dy": 1,
+      "score": 0.546
+     },
+     {
+      "profile": 13131436,
+      "hflip": false,
+      "vflip": false,
+      "dx": -10,
+      "dy": -4,
+      "score": 0.544
+     },
+     {
+      "profile": 13125378,
+      "hflip": false,
+      "vflip": false,
+      "dx": -10,
+      "dy": -4,
+      "score": 0.543
+     },
+     {
+      "profile": 13125294,
+      "hflip": false,
+      "vflip": false,
+      "dx": -10,
+      "dy": -4,
+      "score": 0.543
+     }
+    ],
+    [
+     {
+      "profile": 13125686,
+      "hflip": false,
+      "vflip": false,
+      "dx": -19,
+      "dy": -2,
+      "score": 0.602
+     },
+     {
+      "profile": 13129438,
+      "hflip": false,
+      "vflip": false,
+      "dx": -16,
+      "dy": -4,
+      "score": 0.538
+     },
+     {
+      "profile": 13127336,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -7,
+      "score": 0.537
+     },
+     {
+      "profile": 13125672,
+      "hflip": false,
+      "vflip": false,
+      "dx": -17,
+      "dy": 0,
+      "score": 0.535
+     },
+     {
+      "profile": 13129424,
+      "hflip": false,
+      "vflip": false,
+      "dx": -16,
+      "dy": -7,
+      "score": 0.534
+     }
+    ],
+    [
+     {
+      "profile": 13125652,
+      "hflip": true,
+      "vflip": true,
+      "dx": -20,
+      "dy": -65,
+      "score": 0.59
+     },
+     {
+      "profile": 13125632,
+      "hflip": true,
+      "vflip": true,
+      "dx": -19,
+      "dy": -64,
+      "score": 0.586
+     },
+     {
+      "profile": 13125632,
+      "hflip": true,
+      "vflip": false,
+      "dx": -20,
+      "dy": -47,
+      "score": 0.556
+     },
+     {
+      "profile": 13132736,
+      "hflip": true,
+      "vflip": true,
+      "dx": -22,
+      "dy": -75,
+      "score": 0.536
+     },
+     {
+      "profile": 13130282,
+      "hflip": true,
+      "vflip": true,
+      "dx": -22,
+      "dy": -65,
+      "score": 0.529
+     }
+    ],
+    [
+     {
+      "profile": 13127974,
+      "hflip": true,
+      "vflip": true,
+      "dx": 7,
+      "dy": -85,
+      "score": 0.646
+     },
+     {
+      "profile": 13128552,
+      "hflip": true,
+      "vflip": true,
+      "dx": 7,
+      "dy": -101,
+      "score": 0.494
+     },
+     {
+      "profile": 13125672,
+      "hflip": true,
+      "vflip": true,
+      "dx": 11,
+      "dy": -91,
+      "score": 0.484
+     },
+     {
+      "profile": 13132200,
+      "hflip": true,
+      "vflip": true,
+      "dx": 7,
+      "dy": -85,
+      "score": 0.477
+     },
+     {
+      "profile": 13127064,
+      "hflip": true,
+      "vflip": true,
+      "dx": 8,
+      "dy": -83,
+      "score": 0.463
+     }
+    ],
+    [
+     {
+      "profile": 13128966,
+      "hflip": false,
+      "vflip": true,
+      "dx": 29,
+      "dy": -34,
+      "score": 0.55
+     },
+     {
+      "profile": 13126482,
+      "hflip": false,
+      "vflip": true,
+      "dx": 33,
+      "dy": -42,
+      "score": 0.531
+     },
+     {
+      "profile": 13126512,
+      "hflip": false,
+      "vflip": true,
+      "dx": 33,
+      "dy": -42,
+      "score": 0.531
+     },
+     {
+      "profile": 13128376,
+      "hflip": false,
+      "vflip": true,
+      "dx": 36,
+      "dy": -53,
+      "score": 0.505
+     },
+     {
+      "profile": 13128936,
+      "hflip": false,
+      "vflip": true,
+      "dx": 30,
+      "dy": -33,
+      "score": 0.504
+     }
+    ]
+   ]
+  },
+  "7": {
+   "donor": 6,
+   "steps": [
+    [
+     {
+      "profile": 13128648,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": 0,
+      "score": 0.521
+     },
+     {
+      "profile": 13129538,
+      "hflip": false,
+      "vflip": false,
+      "dx": -9,
+      "dy": -2,
+      "score": 0.503
+     },
+     {
+      "profile": 13125576,
+      "hflip": true,
+      "vflip": true,
+      "dx": -15,
+      "dy": -77,
+      "score": 0.48
+     },
+     {
+      "profile": 13129452,
+      "hflip": true,
+      "vflip": true,
+      "dx": -23,
+      "dy": -81,
+      "score": 0.475
+     },
+     {
+      "profile": 13129452,
+      "hflip": false,
+      "vflip": false,
+      "dx": -10,
+      "dy": 7,
+      "score": 0.465
+     }
+    ],
+    [
+     {
+      "profile": 13127546,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -3,
+      "score": 0.504
+     },
+     {
+      "profile": 13127350,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -6,
+      "score": 0.461
+     },
+     {
+      "profile": 13128200,
+      "hflip": false,
+      "vflip": false,
+      "dx": -19,
+      "dy": -3,
+      "score": 0.446
+     },
+     {
+      "profile": 13128648,
+      "hflip": false,
+      "vflip": false,
+      "dx": -17,
+      "dy": -4,
+      "score": 0.438
+     },
+     {
+      "profile": 13130594,
+      "hflip": false,
+      "vflip": false,
+      "dx": -11,
+      "dy": -6,
+      "score": 0.437
+     }
+    ],
+    [
+     {
+      "profile": 13127364,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -4,
+      "score": 0.496
+     },
+     {
+      "profile": 13128634,
+      "hflip": false,
+      "vflip": false,
+      "dx": -19,
+      "dy": -2,
+      "score": 0.49
+     },
+     {
+      "profile": 13128648,
+      "hflip": false,
+      "vflip": false,
+      "dx": -17,
+      "dy": -4,
+      "score": 0.482
+     },
+     {
+      "profile": 13128634,
+      "hflip": true,
+      "vflip": true,
+      "dx": -17,
+      "dy": -80,
+      "score": 0.478
+     },
+     {
+      "profile": 13127240,
+      "hflip": false,
+      "vflip": false,
+      "dx": -16,
+      "dy": -7,
+      "score": 0.469
+     }
+    ],
+    [
+     {
+      "profile": 13127240,
+      "hflip": false,
+      "vflip": false,
+      "dx": -16,
+      "dy": -3,
+      "score": 0.461
+     },
+     {
+      "profile": 13129538,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -7,
+      "score": 0.429
+     },
+     {
+      "profile": 13128838,
+      "hflip": true,
+      "vflip": true,
+      "dx": -16,
+      "dy": -68,
+      "score": 0.423
+     },
+     {
+      "profile": 13128648,
+      "hflip": false,
+      "vflip": false,
+      "dx": -17,
+      "dy": -3,
+      "score": 0.421
+     },
+     {
+      "profile": 13132058,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -13,
+      "score": 0.421
+     }
+    ],
+    [
+     {
+      "profile": 13126254,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -4,
+      "score": 0.535
+     },
+     {
+      "profile": 13129538,
+      "hflip": false,
+      "vflip": false,
+      "dx": -9,
+      "dy": -3,
+      "score": 0.473
+     },
+     {
+      "profile": 13127770,
+      "hflip": true,
+      "vflip": true,
+      "dx": -16,
+      "dy": -73,
+      "score": 0.441
+     },
+     {
+      "profile": 13127240,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -1,
+      "score": 0.438
+     },
+     {
+      "profile": 13126296,
+      "hflip": false,
+      "vflip": false,
+      "dx": -17,
+      "dy": -5,
+      "score": 0.435
+     }
+    ],
+    [
+     {
+      "profile": 13132058,
+      "hflip": false,
+      "vflip": false,
+      "dx": -8,
+      "dy": -1,
+      "score": 0.481
+     },
+     {
+      "profile": 13131482,
+      "hflip": false,
+      "vflip": true,
+      "dx": -7,
+      "dy": -57,
+      "score": 0.466
+     },
+     {
+      "profile": 13125158,
+      "hflip": false,
+      "vflip": true,
+      "dx": -9,
+      "dy": -57,
+      "score": 0.46
+     },
+     {
+      "profile": 13129456,
+      "hflip": false,
+      "vflip": true,
+      "dx": -3,
+      "dy": -57,
+      "score": 0.46
+     },
+     {
+      "profile": 13129538,
+      "hflip": false,
+      "vflip": false,
+      "dx": -3,
+      "dy": -2,
+      "score": 0.459
+     }
+    ],
+    [
+     {
+      "profile": 13127350,
+      "hflip": false,
+      "vflip": false,
+      "dx": -5,
+      "dy": -7,
+      "score": 0.525
+     },
+     {
+      "profile": 13125576,
+      "hflip": true,
+      "vflip": true,
+      "dx": -8,
+      "dy": -81,
+      "score": 0.489
+     },
+     {
+      "profile": 13126730,
+      "hflip": false,
+      "vflip": false,
+      "dx": -2,
+      "dy": -7,
+      "score": 0.471
+     },
+     {
+      "profile": 13127336,
+      "hflip": false,
+      "vflip": false,
+      "dx": -3,
+      "dy": -8,
+      "score": 0.456
+     },
+     {
+      "profile": 13128902,
+      "hflip": false,
+      "vflip": false,
+      "dx": -7,
+      "dy": -6,
+      "score": 0.452
+     }
+    ],
+    [
+     {
+      "profile": 13132832,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -19,
+      "score": 0.493
+     },
+     {
+      "profile": 13125576,
+      "hflip": true,
+      "vflip": true,
+      "dx": -15,
+      "dy": -79,
+      "score": 0.476
+     },
+     {
+      "profile": 13125940,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -14,
+      "score": 0.476
+     },
+     {
+      "profile": 13125968,
+      "hflip": true,
+      "vflip": false,
+      "dx": -13,
+      "dy": -14,
+      "score": 0.476
+     },
+     {
+      "profile": 13132048,
+      "hflip": false,
+      "vflip": false,
+      "dx": -9,
+      "dy": -11,
+      "score": 0.469
+     }
+    ],
+    [
+     {
+      "profile": 13132048,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -6,
+      "score": 0.539
+     },
+     {
+      "profile": 13125576,
+      "hflip": true,
+      "vflip": true,
+      "dx": -20,
+      "dy": -76,
+      "score": 0.496
+     },
+     {
+      "profile": 13129538,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -3,
+      "score": 0.481
+     },
+     {
+      "profile": 13129752,
+      "hflip": false,
+      "vflip": false,
+      "dx": -29,
+      "dy": -17,
+      "score": 0.466
+     },
+     {
+      "profile": 13127520,
+      "hflip": false,
+      "vflip": true,
+      "dx": -16,
+      "dy": -63,
+      "score": 0.465
+     }
+    ],
+    [
+     {
+      "profile": 13125632,
+      "hflip": true,
+      "vflip": true,
+      "dx": -20,
+      "dy": -65,
+      "score": 0.487
+     },
+     {
+      "profile": 13125656,
+      "hflip": true,
+      "vflip": false,
+      "dx": 3,
+      "dy": -45,
+      "score": 0.485
+     },
+     {
+      "profile": 13125656,
+      "hflip": true,
+      "vflip": true,
+      "dx": 2,
+      "dy": -66,
+      "score": 0.474
+     },
+     {
+      "profile": 13126952,
+      "hflip": false,
+      "vflip": true,
+      "dx": -21,
+      "dy": -81,
+      "score": 0.473
+     },
+     {
+      "profile": 13125632,
+      "hflip": true,
+      "vflip": false,
+      "dx": -20,
+      "dy": -46,
+      "score": 0.471
+     }
+    ],
+    [
+     {
+      "profile": 13127974,
+      "hflip": true,
+      "vflip": true,
+      "dx": 7,
+      "dy": -85,
+      "score": 0.612
+     },
+     {
+      "profile": 13127078,
+      "hflip": true,
+      "vflip": true,
+      "dx": 9,
+      "dy": -82,
+      "score": 0.415
+     },
+     {
+      "profile": 13127064,
+      "hflip": true,
+      "vflip": true,
+      "dx": 7,
+      "dy": -82,
+      "score": 0.413
+     },
+     {
+      "profile": 13125954,
+      "hflip": false,
+      "vflip": true,
+      "dx": 9,
+      "dy": -74,
+      "score": 0.403
+     },
+     {
+      "profile": 13127254,
+      "hflip": false,
+      "vflip": true,
+      "dx": 9,
+      "dy": -68,
+      "score": 0.385
+     }
+    ],
+    [
+     {
+      "profile": 13125590,
+      "hflip": true,
+      "vflip": true,
+      "dx": 31,
+      "dy": -29,
+      "score": 0.457
+     },
+     {
+      "profile": 13132640,
+      "hflip": false,
+      "vflip": true,
+      "dx": 31,
+      "dy": -29,
+      "score": 0.457
+     },
+     {
+      "profile": 13127880,
+      "hflip": false,
+      "vflip": true,
+      "dx": 24,
+      "dy": -31,
+      "score": 0.436
+     },
+     {
+      "profile": 13125656,
+      "hflip": false,
+      "vflip": true,
+      "dx": 12,
+      "dy": -22,
+      "score": 0.432
+     },
+     {
+      "profile": 13129732,
+      "hflip": true,
+      "vflip": false,
+      "dx": 16,
+      "dy": 14,
+      "score": 0.424
+     }
+    ]
+   ],
+   "gear": {
+    "donor": 10,
+    "steps": [
+     [
+      {
+       "profile": 13129438,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": -1,
+       "score": 0.666
+      },
+      {
+       "profile": 13128648,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": 0,
+       "score": 0.635
+      },
+      {
+       "profile": 13128606,
+       "hflip": false,
+       "vflip": false,
+       "dx": -10,
+       "dy": 1,
+       "score": 0.632
+      },
+      {
+       "profile": 13126424,
+       "hflip": false,
+       "vflip": false,
+       "dx": -10,
+       "dy": -2,
+       "score": 0.604
+      },
+      {
+       "profile": 13129466,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": -6,
+       "score": 0.593
+      }
+     ],
+     [
+      {
+       "profile": 13127546,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": -3,
+       "score": 0.647
+      },
+      {
+       "profile": 13130902,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -5,
+       "score": 0.616
+      },
+      {
+       "profile": 13125350,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -5,
+       "score": 0.607
+      },
+      {
+       "profile": 13131492,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -5,
+       "score": 0.607
+      },
+      {
+       "profile": 13128200,
+       "hflip": false,
+       "vflip": false,
+       "dx": -19,
+       "dy": -3,
+       "score": 0.6
+      }
+     ],
+     [
+      {
+       "profile": 13129438,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": -4,
+       "score": 0.677
+      },
+      {
+       "profile": 13127364,
+       "hflip": false,
+       "vflip": false,
+       "dx": -13,
+       "dy": -4,
+       "score": 0.628
+      },
+      {
+       "profile": 13128634,
+       "hflip": false,
+       "vflip": false,
+       "dx": -19,
+       "dy": -2,
+       "score": 0.596
+      },
+      {
+       "profile": 13128648,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -5,
+       "score": 0.587
+      },
+      {
+       "profile": 13127756,
+       "hflip": true,
+       "vflip": true,
+       "dx": -17,
+       "dy": -69,
+       "score": 0.574
+      }
+     ],
+     [
+      {
+       "profile": 13132998,
+       "hflip": true,
+       "vflip": true,
+       "dx": -14,
+       "dy": -75,
+       "score": 0.559
+      },
+      {
+       "profile": 13129438,
+       "hflip": false,
+       "vflip": false,
+       "dx": -13,
+       "dy": -3,
+       "score": 0.557
+      },
+      {
+       "profile": 13126296,
+       "hflip": false,
+       "vflip": false,
+       "dx": -18,
+       "dy": -5,
+       "score": 0.536
+      },
+      {
+       "profile": 13127468,
+       "hflip": false,
+       "vflip": false,
+       "dx": -16,
+       "dy": -5,
+       "score": 0.524
+      },
+      {
+       "profile": 13127240,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -5,
+       "score": 0.523
+      }
+     ],
+     [
+      {
+       "profile": 13126254,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -4,
+       "score": 0.705
+      },
+      {
+       "profile": 13129438,
+       "hflip": false,
+       "vflip": false,
+       "dx": -10,
+       "dy": -2,
+       "score": 0.591
+      },
+      {
+       "profile": 13127756,
+       "hflip": true,
+       "vflip": true,
+       "dx": -14,
+       "dy": -66,
+       "score": 0.582
+      },
+      {
+       "profile": 13127468,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -4,
+       "score": 0.565
+      },
+      {
+       "profile": 13126296,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -4,
+       "score": 0.559
+      }
+     ],
+     [
+      {
+       "profile": 13129438,
+       "hflip": false,
+       "vflip": false,
+       "dx": -6,
+       "dy": -2,
+       "score": 0.676
+      },
+      {
+       "profile": 13132058,
+       "hflip": false,
+       "vflip": false,
+       "dx": -8,
+       "dy": -1,
+       "score": 0.62
+      },
+      {
+       "profile": 13125158,
+       "hflip": false,
+       "vflip": true,
+       "dx": -9,
+       "dy": -57,
+       "score": 0.596
+      },
+      {
+       "profile": 13129456,
+       "hflip": false,
+       "vflip": true,
+       "dx": -3,
+       "dy": -57,
+       "score": 0.596
+      },
+      {
+       "profile": 13129424,
+       "hflip": false,
+       "vflip": false,
+       "dx": -5,
+       "dy": -4,
+       "score": 0.579
+      }
+     ],
+     [
+      {
+       "profile": 13126730,
+       "hflip": false,
+       "vflip": false,
+       "dx": -2,
+       "dy": -7,
+       "score": 0.676
+      },
+      {
+       "profile": 13127350,
+       "hflip": false,
+       "vflip": false,
+       "dx": -4,
+       "dy": -7,
+       "score": 0.613
+      },
+      {
+       "profile": 13126726,
+       "hflip": false,
+       "vflip": false,
+       "dx": -2,
+       "dy": -7,
+       "score": 0.6
+      },
+      {
+       "profile": 13125800,
+       "hflip": false,
+       "vflip": false,
+       "dx": -10,
+       "dy": -6,
+       "score": 0.593
+      },
+      {
+       "profile": 13131680,
+       "hflip": false,
+       "vflip": false,
+       "dx": -8,
+       "dy": -5,
+       "score": 0.57
+      }
+     ],
+     [
+      {
+       "profile": 13127350,
+       "hflip": false,
+       "vflip": false,
+       "dx": -9,
+       "dy": -6,
+       "score": 0.566
+      },
+      {
+       "profile": 13132832,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -18,
+       "score": 0.558
+      },
+      {
+       "profile": 13125284,
+       "hflip": true,
+       "vflip": false,
+       "dx": -19,
+       "dy": -18,
+       "score": 0.55
+      },
+      {
+       "profile": 13131426,
+       "hflip": true,
+       "vflip": false,
+       "dx": -20,
+       "dy": -18,
+       "score": 0.55
+      },
+      {
+       "profile": 13132048,
+       "hflip": false,
+       "vflip": false,
+       "dx": -9,
+       "dy": -8,
+       "score": 0.546
+      }
+     ],
+     [
+      {
+       "profile": 13132048,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -7,
+       "score": 0.695
+      },
+      {
+       "profile": 13129916,
+       "hflip": false,
+       "vflip": true,
+       "dx": -15,
+       "dy": -68,
+       "score": 0.561
+      },
+      {
+       "profile": 13132620,
+       "hflip": false,
+       "vflip": true,
+       "dx": -15,
+       "dy": -68,
+       "score": 0.561
+      },
+      {
+       "profile": 13129424,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -5,
+       "score": 0.555
+      },
+      {
+       "profile": 13125800,
+       "hflip": false,
+       "vflip": false,
+       "dx": -21,
+       "dy": -3,
+       "score": 0.55
+      }
+     ],
+     [
+      {
+       "profile": 13125632,
+       "hflip": true,
+       "vflip": true,
+       "dx": -19,
+       "dy": -64,
+       "score": 0.565
+      },
+      {
+       "profile": 13130282,
+       "hflip": true,
+       "vflip": true,
+       "dx": -23,
+       "dy": -65,
+       "score": 0.561
+      },
+      {
+       "profile": 13125632,
+       "hflip": true,
+       "vflip": false,
+       "dx": -20,
+       "dy": -46,
+       "score": 0.557
+      },
+      {
+       "profile": 13125662,
+       "hflip": true,
+       "vflip": true,
+       "dx": -21,
+       "dy": -65,
+       "score": 0.541
+      },
+      {
+       "profile": 13126952,
+       "hflip": false,
+       "vflip": true,
+       "dx": -21,
+       "dy": -81,
+       "score": 0.522
+      }
+     ],
+     [
+      {
+       "profile": 13127974,
+       "hflip": true,
+       "vflip": true,
+       "dx": 7,
+       "dy": -85,
+       "score": 0.782
+      },
+      {
+       "profile": 13132214,
+       "hflip": false,
+       "vflip": true,
+       "dx": 9,
+       "dy": -82,
+       "score": 0.532
+      },
+      {
+       "profile": 13127064,
+       "hflip": true,
+       "vflip": true,
+       "dx": 8,
+       "dy": -80,
+       "score": 0.507
+      },
+      {
+       "profile": 13127078,
+       "hflip": true,
+       "vflip": true,
+       "dx": 8,
+       "dy": -84,
+       "score": 0.501
+      },
+      {
+       "profile": 13127784,
+       "hflip": true,
+       "vflip": true,
+       "dx": 12,
+       "dy": -80,
+       "score": 0.499
+      }
+     ],
+     [
+      {
+       "profile": 13127880,
+       "hflip": false,
+       "vflip": true,
+       "dx": 24,
+       "dy": -31,
+       "score": 0.524
+      },
+      {
+       "profile": 13132010,
+       "hflip": true,
+       "vflip": true,
+       "dx": 45,
+       "dy": -25,
+       "score": 0.504
+      },
+      {
+       "profile": 13130048,
+       "hflip": true,
+       "vflip": false,
+       "dx": 32,
+       "dy": 5,
+       "score": 0.501
+      },
+      {
+       "profile": 13127254,
+       "hflip": true,
+       "vflip": true,
+       "dx": 34,
+       "dy": -48,
+       "score": 0.493
+      },
+      {
+       "profile": 13126384,
+       "hflip": true,
+       "vflip": false,
+       "dx": 32,
+       "dy": 2,
+       "score": 0.49
+      }
+     ]
+    ]
+   }
+  },
+  "9": {
+   "donor": 7,
+   "steps": [
+    [
+     {
+      "profile": 13129438,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -2,
+      "score": 0.705
+     },
+     {
+      "profile": 13125392,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": 2,
+      "score": 0.685
+     },
+     {
+      "profile": 13131534,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": 2,
+      "score": 0.684
+     },
+     {
+      "profile": 13126424,
+      "hflip": false,
+      "vflip": false,
+      "dx": -9,
+      "dy": -2,
+      "score": 0.678
+     },
+     {
+      "profile": 13131042,
+      "hflip": false,
+      "vflip": false,
+      "dx": -8,
+      "dy": 0,
+      "score": 0.67
+     }
+    ],
+    [
+     {
+      "profile": 13127546,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -3,
+      "score": 0.71
+     },
+     {
+      "profile": 13128200,
+      "hflip": false,
+      "vflip": false,
+      "dx": -19,
+      "dy": -3,
+      "score": 0.708
+     },
+     {
+      "profile": 13130902,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -5,
+      "score": 0.636
+     },
+     {
+      "profile": 13125350,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -5,
+      "score": 0.636
+     },
+     {
+      "profile": 13131492,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -5,
+      "score": 0.636
+     }
+    ],
+    [
+     {
+      "profile": 13126972,
+      "hflip": true,
+      "vflip": true,
+      "dx": -14,
+      "dy": -83,
+      "score": 0.689
+     },
+     {
+      "profile": 13129438,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -4,
+      "score": 0.678
+     },
+     {
+      "profile": 13127426,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -5,
+      "score": 0.665
+     },
+     {
+      "profile": 13127812,
+      "hflip": false,
+      "vflip": false,
+      "dx": -9,
+      "dy": -5,
+      "score": 0.624
+     },
+     {
+      "profile": 13130958,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -3,
+      "score": 0.612
+     }
+    ],
+    [
+     {
+      "profile": 13128362,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -3,
+      "score": 0.668
+     },
+     {
+      "profile": 13132998,
+      "hflip": true,
+      "vflip": true,
+      "dx": -14,
+      "dy": -75,
+      "score": 0.648
+     },
+     {
+      "profile": 13127468,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -6,
+      "score": 0.622
+     },
+     {
+      "profile": 13132328,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -4,
+      "score": 0.604
+     },
+     {
+      "profile": 13126254,
+      "hflip": false,
+      "vflip": false,
+      "dx": -17,
+      "dy": -8,
+      "score": 0.59
+     }
+    ],
+    [
+     {
+      "profile": 13126254,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -4,
+      "score": 0.791
+     },
+     {
+      "profile": 13127468,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -4,
+      "score": 0.667
+     },
+     {
+      "profile": 13128362,
+      "hflip": false,
+      "vflip": false,
+      "dx": -10,
+      "dy": 1,
+      "score": 0.66
+     },
+     {
+      "profile": 13128390,
+      "hflip": false,
+      "vflip": false,
+      "dx": -6,
+      "dy": -8,
+      "score": 0.625
+     },
+     {
+      "profile": 13132998,
+      "hflip": true,
+      "vflip": true,
+      "dx": -12,
+      "dy": -73,
+      "score": 0.61
+     }
+    ],
+    [
+     {
+      "profile": 13129438,
+      "hflip": false,
+      "vflip": false,
+      "dx": -6,
+      "dy": -2,
+      "score": 0.719
+     },
+     {
+      "profile": 13129466,
+      "hflip": false,
+      "vflip": false,
+      "dx": -6,
+      "dy": -1,
+      "score": 0.628
+     },
+     {
+      "profile": 13127454,
+      "hflip": false,
+      "vflip": false,
+      "dx": -7,
+      "dy": -5,
+      "score": 0.61
+     },
+     {
+      "profile": 13127440,
+      "hflip": false,
+      "vflip": false,
+      "dx": -8,
+      "dy": 1,
+      "score": 0.599
+     },
+     {
+      "profile": 13127670,
+      "hflip": false,
+      "vflip": false,
+      "dx": -8,
+      "dy": -5,
+      "score": 0.598
+     }
+    ],
+    [
+     {
+      "profile": 13127440,
+      "hflip": false,
+      "vflip": false,
+      "dx": -7,
+      "dy": -8,
+      "score": 0.632
+     },
+     {
+      "profile": 13126726,
+      "hflip": false,
+      "vflip": false,
+      "dx": -2,
+      "dy": -7,
+      "score": 0.624
+     },
+     {
+      "profile": 13126664,
+      "hflip": false,
+      "vflip": false,
+      "dx": -3,
+      "dy": -5,
+      "score": 0.621
+     },
+     {
+      "profile": 13127296,
+      "hflip": false,
+      "vflip": false,
+      "dx": -3,
+      "dy": -5,
+      "score": 0.621
+     },
+     {
+      "profile": 13127336,
+      "hflip": false,
+      "vflip": false,
+      "dx": -3,
+      "dy": -9,
+      "score": 0.612
+     }
+    ],
+    [
+     {
+      "profile": 13132832,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -18,
+      "score": 0.625
+     },
+     {
+      "profile": 13125284,
+      "hflip": true,
+      "vflip": false,
+      "dx": -19,
+      "dy": -17,
+      "score": 0.621
+     },
+     {
+      "profile": 13131426,
+      "hflip": true,
+      "vflip": false,
+      "dx": -20,
+      "dy": -17,
+      "score": 0.621
+     },
+     {
+      "profile": 13129438,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -6,
+      "score": 0.579
+     },
+     {
+      "profile": 13125368,
+      "hflip": true,
+      "vflip": false,
+      "dx": -22,
+      "dy": -19,
+      "score": 0.555
+     }
+    ],
+    [
+     {
+      "profile": 13132048,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -6,
+      "score": 0.624
+     },
+     {
+      "profile": 13128696,
+      "hflip": true,
+      "vflip": false,
+      "dx": -15,
+      "dy": -9,
+      "score": 0.61
+     },
+     {
+      "profile": 13127454,
+      "hflip": false,
+      "vflip": false,
+      "dx": -17,
+      "dy": -7,
+      "score": 0.575
+     },
+     {
+      "profile": 13129916,
+      "hflip": false,
+      "vflip": true,
+      "dx": -15,
+      "dy": -67,
+      "score": 0.571
+     },
+     {
+      "profile": 13132620,
+      "hflip": false,
+      "vflip": true,
+      "dx": -15,
+      "dy": -67,
+      "score": 0.571
+     }
+    ],
+    [
+     {
+      "profile": 13125652,
+      "hflip": true,
+      "vflip": true,
+      "dx": -16,
+      "dy": -66,
+      "score": 0.593
+     },
+     {
+      "profile": 13130364,
+      "hflip": true,
+      "vflip": true,
+      "dx": -20,
+      "dy": -68,
+      "score": 0.588
+     },
+     {
+      "profile": 13132736,
+      "hflip": true,
+      "vflip": true,
+      "dx": -22,
+      "dy": -75,
+      "score": 0.573
+     },
+     {
+      "profile": 13125662,
+      "hflip": true,
+      "vflip": true,
+      "dx": -21,
+      "dy": -64,
+      "score": 0.569
+     },
+     {
+      "profile": 13125642,
+      "hflip": true,
+      "vflip": true,
+      "dx": -23,
+      "dy": -64,
+      "score": 0.549
+     }
+    ],
+    [
+     {
+      "profile": 13127974,
+      "hflip": true,
+      "vflip": true,
+      "dx": 7,
+      "dy": -85,
+      "score": 0.703
+     },
+     {
+      "profile": 13132214,
+      "hflip": false,
+      "vflip": true,
+      "dx": 10,
+      "dy": -83,
+      "score": 0.537
+     },
+     {
+      "profile": 13127064,
+      "hflip": true,
+      "vflip": true,
+      "dx": 7,
+      "dy": -83,
+      "score": 0.511
+     },
+     {
+      "profile": 13128552,
+      "hflip": true,
+      "vflip": true,
+      "dx": 7,
+      "dy": -101,
+      "score": 0.498
+     },
+     {
+      "profile": 13127784,
+      "hflip": true,
+      "vflip": true,
+      "dx": 12,
+      "dy": -83,
+      "score": 0.491
+     }
+    ],
+    [
+     {
+      "profile": 13127880,
+      "hflip": false,
+      "vflip": true,
+      "dx": 24,
+      "dy": -31,
+      "score": 0.532
+     },
+     {
+      "profile": 13129732,
+      "hflip": false,
+      "vflip": false,
+      "dx": 42,
+      "dy": 13,
+      "score": 0.499
+     },
+     {
+      "profile": 13127880,
+      "hflip": true,
+      "vflip": true,
+      "dx": 40,
+      "dy": -31,
+      "score": 0.494
+     },
+     {
+      "profile": 13127880,
+      "hflip": true,
+      "vflip": false,
+      "dx": 44,
+      "dy": -1,
+      "score": 0.493
+     },
+     {
+      "profile": 13126668,
+      "hflip": false,
+      "vflip": true,
+      "dx": 41,
+      "dy": -50,
+      "score": 0.477
+     }
+    ]
+   ],
+   "gear": {
+    "donor": 7,
+    "steps": [
+     [
+      {
+       "profile": 13129438,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": -2,
+       "score": 0.711
+      },
+      {
+       "profile": 13125392,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": 2,
+       "score": 0.698
+      },
+      {
+       "profile": 13131534,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": 2,
+       "score": 0.697
+      },
+      {
+       "profile": 13127440,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -1,
+       "score": 0.693
+      },
+      {
+       "profile": 13126424,
+       "hflip": false,
+       "vflip": false,
+       "dx": -9,
+       "dy": -2,
+       "score": 0.69
+      }
+     ],
+     [
+      {
+       "profile": 13127546,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": -3,
+       "score": 0.72
+      },
+      {
+       "profile": 13128200,
+       "hflip": false,
+       "vflip": false,
+       "dx": -19,
+       "dy": -3,
+       "score": 0.715
+      },
+      {
+       "profile": 13130902,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -5,
+       "score": 0.659
+      },
+      {
+       "profile": 13125350,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -5,
+       "score": 0.658
+      },
+      {
+       "profile": 13131492,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -5,
+       "score": 0.658
+      }
+     ],
+     [
+      {
+       "profile": 13126972,
+       "hflip": true,
+       "vflip": true,
+       "dx": -14,
+       "dy": -83,
+       "score": 0.689
+      },
+      {
+       "profile": 13129438,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": -4,
+       "score": 0.687
+      },
+      {
+       "profile": 13127426,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -5,
+       "score": 0.672
+      },
+      {
+       "profile": 13127812,
+       "hflip": false,
+       "vflip": false,
+       "dx": -9,
+       "dy": -5,
+       "score": 0.639
+      },
+      {
+       "profile": 13130958,
+       "hflip": false,
+       "vflip": false,
+       "dx": -13,
+       "dy": -3,
+       "score": 0.632
+      }
+     ],
+     [
+      {
+       "profile": 13132998,
+       "hflip": true,
+       "vflip": true,
+       "dx": -14,
+       "dy": -75,
+       "score": 0.662
+      },
+      {
+       "profile": 13128362,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": -3,
+       "score": 0.652
+      },
+      {
+       "profile": 13127468,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -6,
+       "score": 0.64
+      },
+      {
+       "profile": 13132328,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -4,
+       "score": 0.614
+      },
+      {
+       "profile": 13126254,
+       "hflip": false,
+       "vflip": false,
+       "dx": -17,
+       "dy": -8,
+       "score": 0.6
+      }
+     ],
+     [
+      {
+       "profile": 13126254,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -4,
+       "score": 0.813
+      },
+      {
+       "profile": 13127468,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -4,
+       "score": 0.687
+      },
+      {
+       "profile": 13128362,
+       "hflip": false,
+       "vflip": false,
+       "dx": -10,
+       "dy": 1,
+       "score": 0.656
+      },
+      {
+       "profile": 13128390,
+       "hflip": false,
+       "vflip": false,
+       "dx": -6,
+       "dy": -8,
+       "score": 0.645
+      },
+      {
+       "profile": 13132998,
+       "hflip": true,
+       "vflip": true,
+       "dx": -12,
+       "dy": -73,
+       "score": 0.619
+      }
+     ],
+     [
+      {
+       "profile": 13129438,
+       "hflip": false,
+       "vflip": false,
+       "dx": -6,
+       "dy": -2,
+       "score": 0.721
+      },
+      {
+       "profile": 13129466,
+       "hflip": false,
+       "vflip": false,
+       "dx": -6,
+       "dy": -1,
+       "score": 0.653
+      },
+      {
+       "profile": 13127454,
+       "hflip": false,
+       "vflip": false,
+       "dx": -7,
+       "dy": -5,
+       "score": 0.629
+      },
+      {
+       "profile": 13132058,
+       "hflip": false,
+       "vflip": false,
+       "dx": -8,
+       "dy": 0,
+       "score": 0.617
+      },
+      {
+       "profile": 13127440,
+       "hflip": false,
+       "vflip": false,
+       "dx": -8,
+       "dy": 0,
+       "score": 0.615
+      }
+     ],
+     [
+      {
+       "profile": 13126726,
+       "hflip": false,
+       "vflip": false,
+       "dx": -2,
+       "dy": -7,
+       "score": 0.655
+      },
+      {
+       "profile": 13127336,
+       "hflip": false,
+       "vflip": false,
+       "dx": -3,
+       "dy": -9,
+       "score": 0.643
+      },
+      {
+       "profile": 13126730,
+       "hflip": false,
+       "vflip": false,
+       "dx": -2,
+       "dy": -7,
+       "score": 0.638
+      },
+      {
+       "profile": 13126664,
+       "hflip": false,
+       "vflip": false,
+       "dx": -3,
+       "dy": -5,
+       "score": 0.632
+      },
+      {
+       "profile": 13127296,
+       "hflip": false,
+       "vflip": false,
+       "dx": -3,
+       "dy": -5,
+       "score": 0.632
+      }
+     ],
+     [
+      {
+       "profile": 13132832,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -18,
+       "score": 0.62
+      },
+      {
+       "profile": 13125284,
+       "hflip": true,
+       "vflip": false,
+       "dx": -19,
+       "dy": -17,
+       "score": 0.61
+      },
+      {
+       "profile": 13131426,
+       "hflip": true,
+       "vflip": false,
+       "dx": -20,
+       "dy": -17,
+       "score": 0.61
+      },
+      {
+       "profile": 13127336,
+       "hflip": false,
+       "vflip": false,
+       "dx": -8,
+       "dy": -12,
+       "score": 0.586
+      },
+      {
+       "profile": 13129438,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": -6,
+       "score": 0.578
+      }
+     ],
+     [
+      {
+       "profile": 13132048,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -6,
+       "score": 0.649
+      },
+      {
+       "profile": 13128696,
+       "hflip": true,
+       "vflip": false,
+       "dx": -15,
+       "dy": -9,
+       "score": 0.622
+      },
+      {
+       "profile": 13127336,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -8,
+       "score": 0.608
+      },
+      {
+       "profile": 13127454,
+       "hflip": false,
+       "vflip": false,
+       "dx": -17,
+       "dy": -7,
+       "score": 0.592
+      },
+      {
+       "profile": 13129916,
+       "hflip": false,
+       "vflip": true,
+       "dx": -15,
+       "dy": -67,
+       "score": 0.579
+      }
+     ],
+     [
+      {
+       "profile": 13130364,
+       "hflip": true,
+       "vflip": true,
+       "dx": -20,
+       "dy": -68,
+       "score": 0.602
+      },
+      {
+       "profile": 13125652,
+       "hflip": true,
+       "vflip": true,
+       "dx": -18,
+       "dy": -66,
+       "score": 0.594
+      },
+      {
+       "profile": 13125662,
+       "hflip": true,
+       "vflip": true,
+       "dx": -20,
+       "dy": -65,
+       "score": 0.59
+      },
+      {
+       "profile": 13132736,
+       "hflip": true,
+       "vflip": true,
+       "dx": -22,
+       "dy": -75,
+       "score": 0.586
+      },
+      {
+       "profile": 13125632,
+       "hflip": true,
+       "vflip": true,
+       "dx": -16,
+       "dy": -64,
+       "score": 0.578
+      }
+     ],
+     [
+      {
+       "profile": 13127974,
+       "hflip": true,
+       "vflip": true,
+       "dx": 7,
+       "dy": -85,
+       "score": 0.729
+      },
+      {
+       "profile": 13132214,
+       "hflip": false,
+       "vflip": true,
+       "dx": 10,
+       "dy": -83,
+       "score": 0.533
+      },
+      {
+       "profile": 13127064,
+       "hflip": true,
+       "vflip": true,
+       "dx": 7,
+       "dy": -84,
+       "score": 0.514
+      },
+      {
+       "profile": 13128552,
+       "hflip": true,
+       "vflip": true,
+       "dx": 7,
+       "dy": -101,
+       "score": 0.514
+      },
+      {
+       "profile": 13127784,
+       "hflip": true,
+       "vflip": true,
+       "dx": 12,
+       "dy": -82,
+       "score": 0.504
+      }
+     ],
+     [
+      {
+       "profile": 13127880,
+       "hflip": false,
+       "vflip": true,
+       "dx": 24,
+       "dy": -31,
+       "score": 0.559
+      },
+      {
+       "profile": 13127880,
+       "hflip": true,
+       "vflip": true,
+       "dx": 40,
+       "dy": -31,
+       "score": 0.521
+      },
+      {
+       "profile": 13127880,
+       "hflip": true,
+       "vflip": false,
+       "dx": 43,
+       "dy": -1,
+       "score": 0.506
+      },
+      {
+       "profile": 13129732,
+       "hflip": false,
+       "vflip": false,
+       "dx": 42,
+       "dy": 13,
+       "score": 0.501
+      },
+      {
+       "profile": 13126574,
+       "hflip": false,
+       "vflip": false,
+       "dx": 35,
+       "dy": 15,
+       "score": 0.496
+      }
+     ]
+    ]
+   }
+  },
+  "10": {
+   "donor": 2,
+   "steps": [
+    [
+     {
+      "profile": 13126424,
+      "hflip": false,
+      "vflip": false,
+      "dx": -9,
+      "dy": -1,
+      "score": 0.707
+     },
+     {
+      "profile": 13131042,
+      "hflip": false,
+      "vflip": false,
+      "dx": -8,
+      "dy": 0,
+      "score": 0.707
+     },
+     {
+      "profile": 13130944,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": 3,
+      "score": 0.692
+     },
+     {
+      "profile": 13125392,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": 2,
+      "score": 0.681
+     },
+     {
+      "profile": 13131534,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": 2,
+      "score": 0.681
+     }
+    ],
+    [
+     {
+      "profile": 13127546,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -3,
+      "score": 0.698
+     },
+     {
+      "profile": 13125350,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -5,
+      "score": 0.689
+     },
+     {
+      "profile": 13131492,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -5,
+      "score": 0.689
+     },
+     {
+      "profile": 13130902,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -5,
+      "score": 0.688
+     },
+     {
+      "profile": 13128200,
+      "hflip": false,
+      "vflip": false,
+      "dx": -19,
+      "dy": -3,
+      "score": 0.673
+     }
+    ],
+    [
+     {
+      "profile": 13131548,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -3,
+      "score": 0.655
+     },
+     {
+      "profile": 13126424,
+      "hflip": false,
+      "vflip": false,
+      "dx": -10,
+      "dy": -6,
+      "score": 0.652
+     },
+     {
+      "profile": 13125406,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -3,
+      "score": 0.649
+     },
+     {
+      "profile": 13130958,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -3,
+      "score": 0.645
+     },
+     {
+      "profile": 13132352,
+      "hflip": true,
+      "vflip": false,
+      "dx": -18,
+      "dy": -6,
+      "score": 0.641
+     }
+    ],
+    [
+     {
+      "profile": 13128362,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -4,
+      "score": 0.619
+     },
+     {
+      "profile": 13126424,
+      "hflip": false,
+      "vflip": false,
+      "dx": -11,
+      "dy": -4,
+      "score": 0.599
+     },
+     {
+      "profile": 13127468,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -6,
+      "score": 0.59
+     },
+     {
+      "profile": 13132998,
+      "hflip": true,
+      "vflip": true,
+      "dx": -14,
+      "dy": -75,
+      "score": 0.589
+     },
+     {
+      "profile": 13131506,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -2,
+      "score": 0.582
+     }
+    ],
+    [
+     {
+      "profile": 13126254,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -4,
+      "score": 0.72
+     },
+     {
+      "profile": 13128738,
+      "hflip": true,
+      "vflip": false,
+      "dx": -13,
+      "dy": -4,
+      "score": 0.635
+     },
+     {
+      "profile": 13128710,
+      "hflip": true,
+      "vflip": false,
+      "dx": -13,
+      "dy": -4,
+      "score": 0.63
+     },
+     {
+      "profile": 13126424,
+      "hflip": false,
+      "vflip": false,
+      "dx": -8,
+      "dy": -2,
+      "score": 0.63
+     },
+     {
+      "profile": 13127468,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -4,
+      "score": 0.621
+     }
+    ],
+    [
+     {
+      "profile": 13129438,
+      "hflip": false,
+      "vflip": false,
+      "dx": -6,
+      "dy": -3,
+      "score": 0.636
+     },
+     {
+      "profile": 13127520,
+      "hflip": false,
+      "vflip": false,
+      "dx": -4,
+      "dy": -4,
+      "score": 0.622
+     },
+     {
+      "profile": 13132814,
+      "hflip": true,
+      "vflip": true,
+      "dx": -6,
+      "dy": -66,
+      "score": 0.612
+     },
+     {
+      "profile": 13132674,
+      "hflip": false,
+      "vflip": false,
+      "dx": -2,
+      "dy": -7,
+      "score": 0.611
+     },
+     {
+      "profile": 13126424,
+      "hflip": false,
+      "vflip": false,
+      "dx": -2,
+      "dy": 0,
+      "score": 0.609
+     }
+    ],
+    [
+     {
+      "profile": 13126730,
+      "hflip": false,
+      "vflip": false,
+      "dx": -2,
+      "dy": -7,
+      "score": 0.702
+     },
+     {
+      "profile": 13127336,
+      "hflip": false,
+      "vflip": false,
+      "dx": -3,
+      "dy": -8,
+      "score": 0.691
+     },
+     {
+      "profile": 13126726,
+      "hflip": false,
+      "vflip": false,
+      "dx": -2,
+      "dy": -7,
+      "score": 0.675
+     },
+     {
+      "profile": 13125266,
+      "hflip": false,
+      "vflip": false,
+      "dx": -3,
+      "dy": -2,
+      "score": 0.637
+     },
+     {
+      "profile": 13131450,
+      "hflip": false,
+      "vflip": false,
+      "dx": -6,
+      "dy": -5,
+      "score": 0.637
+     }
+    ],
+    [
+     {
+      "profile": 13132832,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -18,
+      "score": 0.634
+     },
+     {
+      "profile": 13125284,
+      "hflip": true,
+      "vflip": false,
+      "dx": -19,
+      "dy": -18,
+      "score": 0.612
+     },
+     {
+      "profile": 13131426,
+      "hflip": true,
+      "vflip": false,
+      "dx": -20,
+      "dy": -18,
+      "score": 0.612
+     },
+     {
+      "profile": 13132814,
+      "hflip": true,
+      "vflip": false,
+      "dx": -12,
+      "dy": -6,
+      "score": 0.597
+     },
+     {
+      "profile": 13127336,
+      "hflip": false,
+      "vflip": false,
+      "dx": -8,
+      "dy": -11,
+      "score": 0.582
+     }
+    ],
+    [
+     {
+      "profile": 13132048,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -6,
+      "score": 0.665
+     },
+     {
+      "profile": 13125686,
+      "hflip": false,
+      "vflip": false,
+      "dx": -18,
+      "dy": -4,
+      "score": 0.639
+     },
+     {
+      "profile": 13127336,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -7,
+      "score": 0.609
+     },
+     {
+      "profile": 13126938,
+      "hflip": false,
+      "vflip": false,
+      "dx": -17,
+      "dy": -9,
+      "score": 0.607
+     },
+     {
+      "profile": 13128696,
+      "hflip": true,
+      "vflip": false,
+      "dx": -15,
+      "dy": -9,
+      "score": 0.601
+     }
+    ],
+    [
+     {
+      "profile": 13125652,
+      "hflip": true,
+      "vflip": true,
+      "dx": -20,
+      "dy": -65,
+      "score": 0.623
+     },
+     {
+      "profile": 13125662,
+      "hflip": true,
+      "vflip": true,
+      "dx": -20,
+      "dy": -65,
+      "score": 0.62
+     },
+     {
+      "profile": 13130282,
+      "hflip": true,
+      "vflip": true,
+      "dx": -22,
+      "dy": -65,
+      "score": 0.596
+     },
+     {
+      "profile": 13125632,
+      "hflip": true,
+      "vflip": true,
+      "dx": -19,
+      "dy": -64,
+      "score": 0.595
+     },
+     {
+      "profile": 13130364,
+      "hflip": true,
+      "vflip": true,
+      "dx": -20,
+      "dy": -67,
+      "score": 0.593
+     }
+    ],
+    [
+     {
+      "profile": 13127974,
+      "hflip": true,
+      "vflip": true,
+      "dx": 7,
+      "dy": -85,
+      "score": 0.793
+     },
+     {
+      "profile": 13127784,
+      "hflip": true,
+      "vflip": true,
+      "dx": 12,
+      "dy": -79,
+      "score": 0.563
+     },
+     {
+      "profile": 13132214,
+      "hflip": false,
+      "vflip": true,
+      "dx": 9,
+      "dy": -83,
+      "score": 0.548
+     },
+     {
+      "profile": 13127064,
+      "hflip": true,
+      "vflip": true,
+      "dx": 7,
+      "dy": -84,
+      "score": 0.538
+     },
+     {
+      "profile": 13132200,
+      "hflip": true,
+      "vflip": true,
+      "dx": 7,
+      "dy": -86,
+      "score": 0.532
+     }
+    ],
+    [
+     {
+      "profile": 13127880,
+      "hflip": false,
+      "vflip": true,
+      "dx": 24,
+      "dy": -31,
+      "score": 0.565
+     },
+     {
+      "profile": 13130048,
+      "hflip": true,
+      "vflip": false,
+      "dx": 31,
+      "dy": 4,
+      "score": 0.56
+     },
+     {
+      "profile": 13125604,
+      "hflip": false,
+      "vflip": false,
+      "dx": 35,
+      "dy": 2,
+      "score": 0.557
+     },
+     {
+      "profile": 13130168,
+      "hflip": true,
+      "vflip": false,
+      "dx": 35,
+      "dy": 2,
+      "score": 0.557
+     },
+     {
+      "profile": 13132010,
+      "hflip": true,
+      "vflip": true,
+      "dx": 45,
+      "dy": -25,
+      "score": 0.538
+     }
+    ]
+   ],
+   "gear": {
+    "donor": 2,
+    "steps": [
+     [
+      {
+       "profile": 13130944,
+       "hflip": false,
+       "vflip": false,
+       "dx": -13,
+       "dy": 3,
+       "score": 0.678
+      },
+      {
+       "profile": 13126424,
+       "hflip": false,
+       "vflip": false,
+       "dx": -9,
+       "dy": 0,
+       "score": 0.667
+      },
+      {
+       "profile": 13130958,
+       "hflip": false,
+       "vflip": false,
+       "dx": -11,
+       "dy": 4,
+       "score": 0.659
+      },
+      {
+       "profile": 13125392,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": 3,
+       "score": 0.65
+      },
+      {
+       "profile": 13131534,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": 3,
+       "score": 0.649
+      }
+     ],
+     [
+      {
+       "profile": 13127546,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": -3,
+       "score": 0.699
+      },
+      {
+       "profile": 13130902,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -5,
+       "score": 0.682
+      },
+      {
+       "profile": 13125350,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -5,
+       "score": 0.676
+      },
+      {
+       "profile": 13131492,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -5,
+       "score": 0.676
+      },
+      {
+       "profile": 13128200,
+       "hflip": false,
+       "vflip": false,
+       "dx": -19,
+       "dy": -3,
+       "score": 0.674
+      }
+     ],
+     [
+      {
+       "profile": 13131548,
+       "hflip": false,
+       "vflip": false,
+       "dx": -13,
+       "dy": -3,
+       "score": 0.655
+      },
+      {
+       "profile": 13126424,
+       "hflip": false,
+       "vflip": false,
+       "dx": -10,
+       "dy": -6,
+       "score": 0.652
+      },
+      {
+       "profile": 13125406,
+       "hflip": false,
+       "vflip": false,
+       "dx": -13,
+       "dy": -3,
+       "score": 0.648
+      },
+      {
+       "profile": 13130958,
+       "hflip": false,
+       "vflip": false,
+       "dx": -13,
+       "dy": -3,
+       "score": 0.647
+      },
+      {
+       "profile": 13132352,
+       "hflip": true,
+       "vflip": false,
+       "dx": -18,
+       "dy": -6,
+       "score": 0.633
+      }
+     ],
+     [
+      {
+       "profile": 13128362,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": -4,
+       "score": 0.605
+      },
+      {
+       "profile": 13127468,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -6,
+       "score": 0.594
+      },
+      {
+       "profile": 13132998,
+       "hflip": true,
+       "vflip": true,
+       "dx": -14,
+       "dy": -75,
+       "score": 0.592
+      },
+      {
+       "profile": 13126424,
+       "hflip": false,
+       "vflip": false,
+       "dx": -10,
+       "dy": -4,
+       "score": 0.588
+      },
+      {
+       "profile": 13132328,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -4,
+       "score": 0.582
+      }
+     ],
+     [
+      {
+       "profile": 13126254,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -4,
+       "score": 0.724
+      },
+      {
+       "profile": 13128738,
+       "hflip": true,
+       "vflip": false,
+       "dx": -13,
+       "dy": -4,
+       "score": 0.63
+      },
+      {
+       "profile": 13128710,
+       "hflip": true,
+       "vflip": false,
+       "dx": -13,
+       "dy": -4,
+       "score": 0.626
+      },
+      {
+       "profile": 13128362,
+       "hflip": false,
+       "vflip": false,
+       "dx": -10,
+       "dy": 0,
+       "score": 0.624
+      },
+      {
+       "profile": 13127468,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -4,
+       "score": 0.622
+      }
+     ],
+     [
+      {
+       "profile": 13129438,
+       "hflip": false,
+       "vflip": false,
+       "dx": -6,
+       "dy": -3,
+       "score": 0.629
+      },
+      {
+       "profile": 13127520,
+       "hflip": false,
+       "vflip": false,
+       "dx": -4,
+       "dy": -4,
+       "score": 0.622
+      },
+      {
+       "profile": 13132814,
+       "hflip": true,
+       "vflip": true,
+       "dx": -6,
+       "dy": -66,
+       "score": 0.612
+      },
+      {
+       "profile": 13132058,
+       "hflip": false,
+       "vflip": false,
+       "dx": -8,
+       "dy": 0,
+       "score": 0.609
+      },
+      {
+       "profile": 13129466,
+       "hflip": false,
+       "vflip": false,
+       "dx": -6,
+       "dy": -1,
+       "score": 0.609
+      }
+     ],
+     [
+      {
+       "profile": 13126730,
+       "hflip": false,
+       "vflip": false,
+       "dx": -2,
+       "dy": -7,
+       "score": 0.702
+      },
+      {
+       "profile": 13127336,
+       "hflip": false,
+       "vflip": false,
+       "dx": -3,
+       "dy": -8,
+       "score": 0.69
+      },
+      {
+       "profile": 13126726,
+       "hflip": false,
+       "vflip": false,
+       "dx": -2,
+       "dy": -7,
+       "score": 0.68
+      },
+      {
+       "profile": 13127350,
+       "hflip": false,
+       "vflip": false,
+       "dx": -5,
+       "dy": -6,
+       "score": 0.639
+      },
+      {
+       "profile": 13125266,
+       "hflip": false,
+       "vflip": false,
+       "dx": -3,
+       "dy": -2,
+       "score": 0.635
+      }
+     ],
+     [
+      {
+       "profile": 13132832,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -18,
+       "score": 0.634
+      },
+      {
+       "profile": 13125284,
+       "hflip": true,
+       "vflip": false,
+       "dx": -19,
+       "dy": -18,
+       "score": 0.612
+      },
+      {
+       "profile": 13131426,
+       "hflip": true,
+       "vflip": false,
+       "dx": -20,
+       "dy": -18,
+       "score": 0.612
+      },
+      {
+       "profile": 13125940,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -6,
+       "score": 0.592
+      },
+      {
+       "profile": 13125968,
+       "hflip": true,
+       "vflip": false,
+       "dx": -13,
+       "dy": -6,
+       "score": 0.592
+      }
+     ],
+     [
+      {
+       "profile": 13132048,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -6,
+       "score": 0.667
+      },
+      {
+       "profile": 13127336,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -7,
+       "score": 0.621
+      },
+      {
+       "profile": 13125686,
+       "hflip": false,
+       "vflip": false,
+       "dx": -19,
+       "dy": -2,
+       "score": 0.615
+      },
+      {
+       "profile": 13128696,
+       "hflip": true,
+       "vflip": false,
+       "dx": -15,
+       "dy": -9,
+       "score": 0.601
+      },
+      {
+       "profile": 13128214,
+       "hflip": false,
+       "vflip": false,
+       "dx": -10,
+       "dy": -4,
+       "score": 0.593
+      }
+     ],
+     [
+      {
+       "profile": 13125652,
+       "hflip": true,
+       "vflip": true,
+       "dx": -20,
+       "dy": -65,
+       "score": 0.625
+      },
+      {
+       "profile": 13125662,
+       "hflip": true,
+       "vflip": true,
+       "dx": -20,
+       "dy": -65,
+       "score": 0.616
+      },
+      {
+       "profile": 13130282,
+       "hflip": true,
+       "vflip": true,
+       "dx": -22,
+       "dy": -65,
+       "score": 0.597
+      },
+      {
+       "profile": 13125632,
+       "hflip": true,
+       "vflip": true,
+       "dx": -19,
+       "dy": -64,
+       "score": 0.595
+      },
+      {
+       "profile": 13130364,
+       "hflip": true,
+       "vflip": true,
+       "dx": -20,
+       "dy": -67,
+       "score": 0.593
+      }
+     ],
+     [
+      {
+       "profile": 13127974,
+       "hflip": true,
+       "vflip": true,
+       "dx": 7,
+       "dy": -85,
+       "score": 0.793
+      },
+      {
+       "profile": 13127784,
+       "hflip": true,
+       "vflip": true,
+       "dx": 12,
+       "dy": -80,
+       "score": 0.558
+      },
+      {
+       "profile": 13132214,
+       "hflip": false,
+       "vflip": true,
+       "dx": 9,
+       "dy": -83,
+       "score": 0.547
+      },
+      {
+       "profile": 13127064,
+       "hflip": true,
+       "vflip": true,
+       "dx": 8,
+       "dy": -83,
+       "score": 0.535
+      },
+      {
+       "profile": 13132200,
+       "hflip": true,
+       "vflip": true,
+       "dx": 7,
+       "dy": -86,
+       "score": 0.524
+      }
+     ],
+     [
+      {
+       "profile": 13127880,
+       "hflip": false,
+       "vflip": true,
+       "dx": 24,
+       "dy": -31,
+       "score": 0.565
+      },
+      {
+       "profile": 13130048,
+       "hflip": true,
+       "vflip": false,
+       "dx": 31,
+       "dy": 4,
+       "score": 0.56
+      },
+      {
+       "profile": 13130168,
+       "hflip": true,
+       "vflip": false,
+       "dx": 35,
+       "dy": 2,
+       "score": 0.55
+      },
+      {
+       "profile": 13125604,
+       "hflip": false,
+       "vflip": false,
+       "dx": 35,
+       "dy": 2,
+       "score": 0.547
+      },
+      {
+       "profile": 13132010,
+       "hflip": true,
+       "vflip": true,
+       "dx": 45,
+       "dy": -25,
+       "score": 0.538
+      }
+     ]
+    ]
+   }
+  },
+  "11": {
+   "donor": 3,
+   "steps": [
+    [
+     {
+      "profile": 13129438,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -2,
+      "score": 0.67
+     },
+     {
+      "profile": 13129466,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -6,
+      "score": 0.647
+     },
+     {
+      "profile": 13131042,
+      "hflip": false,
+      "vflip": false,
+      "dx": -8,
+      "dy": 0,
+      "score": 0.646
+     },
+     {
+      "profile": 13125800,
+      "hflip": false,
+      "vflip": false,
+      "dx": -18,
+      "dy": -3,
+      "score": 0.641
+     },
+     {
+      "profile": 13125392,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": 2,
+      "score": 0.638
+     }
+    ],
+    [
+     {
+      "profile": 13127546,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -3,
+      "score": 0.685
+     },
+     {
+      "profile": 13128200,
+      "hflip": false,
+      "vflip": false,
+      "dx": -19,
+      "dy": -3,
+      "score": 0.669
+     },
+     {
+      "profile": 13125350,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -5,
+      "score": 0.657
+     },
+     {
+      "profile": 13131492,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -5,
+      "score": 0.657
+     },
+     {
+      "profile": 13130902,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -5,
+      "score": 0.649
+     }
+    ],
+    [
+     {
+      "profile": 13130958,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -5,
+      "score": 0.608
+     },
+     {
+      "profile": 13131548,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -5,
+      "score": 0.606
+     },
+     {
+      "profile": 13125406,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -5,
+      "score": 0.606
+     },
+     {
+      "profile": 13131576,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -4,
+      "score": 0.599
+     },
+     {
+      "profile": 13125434,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -4,
+      "score": 0.599
+     }
+    ],
+    [
+     {
+      "profile": 13128362,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -4,
+      "score": 0.576
+     },
+     {
+      "profile": 13132998,
+      "hflip": true,
+      "vflip": true,
+      "dx": -14,
+      "dy": -75,
+      "score": 0.571
+     },
+     {
+      "profile": 13126424,
+      "hflip": false,
+      "vflip": false,
+      "dx": -10,
+      "dy": -4,
+      "score": 0.559
+     },
+     {
+      "profile": 13132328,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -4,
+      "score": 0.548
+     },
+     {
+      "profile": 13125364,
+      "hflip": false,
+      "vflip": false,
+      "dx": -13,
+      "dy": -2,
+      "score": 0.544
+     }
+    ],
+    [
+     {
+      "profile": 13126254,
+      "hflip": false,
+      "vflip": false,
+      "dx": -15,
+      "dy": -4,
+      "score": 0.671
+     },
+     {
+      "profile": 13127468,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -4,
+      "score": 0.602
+     },
+     {
+      "profile": 13128362,
+      "hflip": false,
+      "vflip": false,
+      "dx": -10,
+      "dy": -1,
+      "score": 0.597
+     },
+     {
+      "profile": 13128390,
+      "hflip": false,
+      "vflip": false,
+      "dx": -7,
+      "dy": -8,
+      "score": 0.589
+     },
+     {
+      "profile": 13129466,
+      "hflip": false,
+      "vflip": false,
+      "dx": -12,
+      "dy": -3,
+      "score": 0.567
+     }
+    ],
+    [
+     {
+      "profile": 13129438,
+      "hflip": false,
+      "vflip": false,
+      "dx": -6,
+      "dy": -3,
+      "score": 0.697
+     },
+     {
+      "profile": 13127454,
+      "hflip": false,
+      "vflip": false,
+      "dx": -7,
+      "dy": -5,
+      "score": 0.62
+     },
+     {
+      "profile": 13132058,
+      "hflip": false,
+      "vflip": false,
+      "dx": -8,
+      "dy": -1,
+      "score": 0.619
+     },
+     {
+      "profile": 13129466,
+      "hflip": false,
+      "vflip": false,
+      "dx": -6,
+      "dy": -1,
+      "score": 0.595
+     },
+     {
+      "profile": 13127520,
+      "hflip": false,
+      "vflip": false,
+      "dx": -4,
+      "dy": -4,
+      "score": 0.592
+     }
+    ],
+    [
+     {
+      "profile": 13126726,
+      "hflip": false,
+      "vflip": false,
+      "dx": -2,
+      "dy": -7,
+      "score": 0.688
+     },
+     {
+      "profile": 13126730,
+      "hflip": false,
+      "vflip": false,
+      "dx": -2,
+      "dy": -7,
+      "score": 0.669
+     },
+     {
+      "profile": 13127350,
+      "hflip": false,
+      "vflip": false,
+      "dx": -4,
+      "dy": -8,
+      "score": 0.628
+     },
+     {
+      "profile": 13131450,
+      "hflip": false,
+      "vflip": false,
+      "dx": -6,
+      "dy": -5,
+      "score": 0.627
+     },
+     {
+      "profile": 13125308,
+      "hflip": false,
+      "vflip": false,
+      "dx": -6,
+      "dy": -5,
+      "score": 0.627
+     }
+    ],
+    [
+     {
+      "profile": 13132832,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -17,
+      "score": 0.565
+     },
+     {
+      "profile": 13132814,
+      "hflip": true,
+      "vflip": false,
+      "dx": -13,
+      "dy": -6,
+      "score": 0.556
+     },
+     {
+      "profile": 13125294,
+      "hflip": false,
+      "vflip": false,
+      "dx": -10,
+      "dy": -5,
+      "score": 0.549
+     },
+     {
+      "profile": 13131436,
+      "hflip": false,
+      "vflip": false,
+      "dx": -10,
+      "dy": -5,
+      "score": 0.549
+     },
+     {
+      "profile": 13125284,
+      "hflip": true,
+      "vflip": false,
+      "dx": -19,
+      "dy": -16,
+      "score": 0.549
+     }
+    ],
+    [
+     {
+      "profile": 13132048,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -6,
+      "score": 0.637
+     },
+     {
+      "profile": 13125686,
+      "hflip": false,
+      "vflip": false,
+      "dx": -18,
+      "dy": -4,
+      "score": 0.603
+     },
+     {
+      "profile": 13127336,
+      "hflip": false,
+      "vflip": false,
+      "dx": -14,
+      "dy": -8,
+      "score": 0.59
+     },
+     {
+      "profile": 13128696,
+      "hflip": true,
+      "vflip": false,
+      "dx": -15,
+      "dy": -9,
+      "score": 0.568
+     },
+     {
+      "profile": 13127454,
+      "hflip": false,
+      "vflip": false,
+      "dx": -17,
+      "dy": -7,
+      "score": 0.565
+     }
+    ],
+    [
+     {
+      "profile": 13125652,
+      "hflip": true,
+      "vflip": true,
+      "dx": -20,
+      "dy": -66,
+      "score": 0.616
+     },
+     {
+      "profile": 13130364,
+      "hflip": true,
+      "vflip": true,
+      "dx": -20,
+      "dy": -67,
+      "score": 0.557
+     },
+     {
+      "profile": 13125632,
+      "hflip": true,
+      "vflip": true,
+      "dx": -19,
+      "dy": -64,
+      "score": 0.556
+     },
+     {
+      "profile": 13125652,
+      "hflip": true,
+      "vflip": false,
+      "dx": -19,
+      "dy": -44,
+      "score": 0.552
+     },
+     {
+      "profile": 13125662,
+      "hflip": true,
+      "vflip": true,
+      "dx": -20,
+      "dy": -65,
+      "score": 0.549
+     }
+    ],
+    [
+     {
+      "profile": 13127974,
+      "hflip": true,
+      "vflip": true,
+      "dx": 7,
+      "dy": -85,
+      "score": 0.746
+     },
+     {
+      "profile": 13128552,
+      "hflip": true,
+      "vflip": true,
+      "dx": 7,
+      "dy": -101,
+      "score": 0.547
+     },
+     {
+      "profile": 13127784,
+      "hflip": true,
+      "vflip": true,
+      "dx": 12,
+      "dy": -80,
+      "score": 0.516
+     },
+     {
+      "profile": 13127064,
+      "hflip": true,
+      "vflip": true,
+      "dx": 7,
+      "dy": -84,
+      "score": 0.5
+     },
+     {
+      "profile": 13127078,
+      "hflip": true,
+      "vflip": true,
+      "dx": 9,
+      "dy": -84,
+      "score": 0.495
+     }
+    ],
+    [
+     {
+      "profile": 13127880,
+      "hflip": false,
+      "vflip": true,
+      "dx": 24,
+      "dy": -31,
+      "score": 0.52
+     },
+     {
+      "profile": 13130048,
+      "hflip": true,
+      "vflip": false,
+      "dx": 32,
+      "dy": 5,
+      "score": 0.488
+     },
+     {
+      "profile": 13125604,
+      "hflip": false,
+      "vflip": false,
+      "dx": 35,
+      "dy": 2,
+      "score": 0.485
+     },
+     {
+      "profile": 13130168,
+      "hflip": true,
+      "vflip": false,
+      "dx": 35,
+      "dy": 2,
+      "score": 0.485
+     },
+     {
+      "profile": 13125656,
+      "hflip": true,
+      "vflip": false,
+      "dx": 41,
+      "dy": -2,
+      "score": 0.482
+     }
+    ]
+   ]
+  },
+  "5": {
+   "gear": {
+    "donor": 8,
+    "steps": [
+     [
+      {
+       "profile": 13129438,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": -1,
+       "score": 0.685
+      },
+      {
+       "profile": 13126424,
+       "hflip": false,
+       "vflip": false,
+       "dx": -9,
+       "dy": -3,
+       "score": 0.678
+      },
+      {
+       "profile": 13125392,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": 1,
+       "score": 0.656
+      },
+      {
+       "profile": 13131534,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": 1,
+       "score": 0.655
+      },
+      {
+       "profile": 13131042,
+       "hflip": false,
+       "vflip": false,
+       "dx": -8,
+       "dy": 0,
+       "score": 0.653
+      }
+     ],
+     [
+      {
+       "profile": 13127546,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": -3,
+       "score": 0.708
+      },
+      {
+       "profile": 13128200,
+       "hflip": false,
+       "vflip": false,
+       "dx": -19,
+       "dy": -3,
+       "score": 0.699
+      },
+      {
+       "profile": 13125350,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -5,
+       "score": 0.633
+      },
+      {
+       "profile": 13131492,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -5,
+       "score": 0.633
+      },
+      {
+       "profile": 13130902,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -5,
+       "score": 0.621
+      }
+     ],
+     [
+      {
+       "profile": 13129438,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": -4,
+       "score": 0.725
+      },
+      {
+       "profile": 13131548,
+       "hflip": false,
+       "vflip": false,
+       "dx": -13,
+       "dy": -5,
+       "score": 0.625
+      },
+      {
+       "profile": 13125406,
+       "hflip": false,
+       "vflip": false,
+       "dx": -13,
+       "dy": -5,
+       "score": 0.624
+      },
+      {
+       "profile": 13127364,
+       "hflip": false,
+       "vflip": false,
+       "dx": -13,
+       "dy": -5,
+       "score": 0.621
+      },
+      {
+       "profile": 13130958,
+       "hflip": false,
+       "vflip": false,
+       "dx": -13,
+       "dy": -5,
+       "score": 0.619
+      }
+     ],
+     [
+      {
+       "profile": 13127468,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -6,
+       "score": 0.631
+      },
+      {
+       "profile": 13132328,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -3,
+       "score": 0.615
+      },
+      {
+       "profile": 13127240,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -2,
+       "score": 0.609
+      },
+      {
+       "profile": 13128362,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": -3,
+       "score": 0.606
+      },
+      {
+       "profile": 13132998,
+       "hflip": true,
+       "vflip": true,
+       "dx": -14,
+       "dy": -77,
+       "score": 0.585
+      }
+     ],
+     [
+      {
+       "profile": 13126254,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -4,
+       "score": 0.772
+      },
+      {
+       "profile": 13127468,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -4,
+       "score": 0.653
+      },
+      {
+       "profile": 13128710,
+       "hflip": true,
+       "vflip": false,
+       "dx": -13,
+       "dy": -4,
+       "score": 0.637
+      },
+      {
+       "profile": 13128738,
+       "hflip": true,
+       "vflip": false,
+       "dx": -13,
+       "dy": -4,
+       "score": 0.635
+      },
+      {
+       "profile": 13128390,
+       "hflip": false,
+       "vflip": false,
+       "dx": -6,
+       "dy": -7,
+       "score": 0.615
+      }
+     ],
+     [
+      {
+       "profile": 13129438,
+       "hflip": false,
+       "vflip": false,
+       "dx": -5,
+       "dy": -2,
+       "score": 0.695
+      },
+      {
+       "profile": 13132058,
+       "hflip": false,
+       "vflip": false,
+       "dx": -8,
+       "dy": -1,
+       "score": 0.598
+      },
+      {
+       "profile": 13127454,
+       "hflip": false,
+       "vflip": false,
+       "dx": -7,
+       "dy": -5,
+       "score": 0.593
+      },
+      {
+       "profile": 13126938,
+       "hflip": false,
+       "vflip": false,
+       "dx": -5,
+       "dy": -8,
+       "score": 0.581
+      },
+      {
+       "profile": 13129466,
+       "hflip": false,
+       "vflip": false,
+       "dx": -5,
+       "dy": -5,
+       "score": 0.56
+      }
+     ],
+     [
+      {
+       "profile": 13126726,
+       "hflip": false,
+       "vflip": false,
+       "dx": -2,
+       "dy": -7,
+       "score": 0.684
+      },
+      {
+       "profile": 13126730,
+       "hflip": false,
+       "vflip": false,
+       "dx": -2,
+       "dy": -7,
+       "score": 0.666
+      },
+      {
+       "profile": 13125378,
+       "hflip": false,
+       "vflip": false,
+       "dx": -4,
+       "dy": -5,
+       "score": 0.58
+      },
+      {
+       "profile": 13131520,
+       "hflip": false,
+       "vflip": false,
+       "dx": -4,
+       "dy": -5,
+       "score": 0.58
+      },
+      {
+       "profile": 13127350,
+       "hflip": false,
+       "vflip": false,
+       "dx": -5,
+       "dy": -5,
+       "score": 0.572
+      }
+     ],
+     [
+      {
+       "profile": 13127350,
+       "hflip": false,
+       "vflip": false,
+       "dx": -9,
+       "dy": -5,
+       "score": 0.553
+      },
+      {
+       "profile": 13125968,
+       "hflip": true,
+       "vflip": false,
+       "dx": -13,
+       "dy": -5,
+       "score": 0.547
+      },
+      {
+       "profile": 13125940,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -5,
+       "score": 0.546
+      },
+      {
+       "profile": 13128362,
+       "hflip": false,
+       "vflip": false,
+       "dx": -13,
+       "dy": -2,
+       "score": 0.538
+      },
+      {
+       "profile": 13129438,
+       "hflip": false,
+       "vflip": false,
+       "dx": -12,
+       "dy": -4,
+       "score": 0.528
+      }
+     ],
+     [
+      {
+       "profile": 13132048,
+       "hflip": false,
+       "vflip": false,
+       "dx": -14,
+       "dy": -6,
+       "score": 0.601
+      },
+      {
+       "profile": 13127336,
+       "hflip": false,
+       "vflip": false,
+       "dx": -15,
+       "dy": -6,
+       "score": 0.573
+      },
+      {
+       "profile": 13125686,
+       "hflip": false,
+       "vflip": false,
+       "dx": -19,
+       "dy": -2,
+       "score": 0.559
+      },
+      {
+       "profile": 13129480,
+       "hflip": false,
+       "vflip": false,
+       "dx": -22,
+       "dy": -3,
+       "score": 0.557
+      },
+      {
+       "profile": 13129902,
+       "hflip": false,
+       "vflip": true,
+       "dx": -20,
+       "dy": -76,
+       "score": 0.553
+      }
+     ],
+     [
+      {
+       "profile": 13132736,
+       "hflip": true,
+       "vflip": true,
+       "dx": -22,
+       "dy": -75,
+       "score": 0.529
+      },
+      {
+       "profile": 13130282,
+       "hflip": true,
+       "vflip": true,
+       "dx": -23,
+       "dy": -65,
+       "score": 0.525
+      },
+      {
+       "profile": 13125652,
+       "hflip": true,
+       "vflip": true,
+       "dx": -23,
+       "dy": -67,
+       "score": 0.5
+      },
+      {
+       "profile": 13125662,
+       "hflip": true,
+       "vflip": true,
+       "dx": -23,
+       "dy": -66,
+       "score": 0.5
+      },
+      {
+       "profile": 13130364,
+       "hflip": true,
+       "vflip": true,
+       "dx": -21,
+       "dy": -68,
+       "score": 0.487
+      }
+     ],
+     [
+      {
+       "profile": 13127974,
+       "hflip": true,
+       "vflip": true,
+       "dx": 7,
+       "dy": -85,
+       "score": 0.72
+      },
+      {
+       "profile": 13127078,
+       "hflip": true,
+       "vflip": true,
+       "dx": 8,
+       "dy": -84,
+       "score": 0.466
+      },
+      {
+       "profile": 13132200,
+       "hflip": true,
+       "vflip": true,
+       "dx": 7,
+       "dy": -86,
+       "score": 0.456
+      },
+      {
+       "profile": 13127784,
+       "hflip": true,
+       "vflip": true,
+       "dx": 12,
+       "dy": -80,
+       "score": 0.451
+      },
+      {
+       "profile": 13127064,
+       "hflip": true,
+       "vflip": true,
+       "dx": 7,
+       "dy": -84,
+       "score": 0.45
+      }
+     ],
+     [
+      {
+       "profile": 13132500,
+       "hflip": true,
+       "vflip": false,
+       "dx": 31,
+       "dy": -3,
+       "score": 0.453
+      },
+      {
+       "profile": 13125656,
+       "hflip": true,
+       "vflip": false,
+       "dx": 41,
+       "dy": -3,
+       "score": 0.44
+      },
+      {
+       "profile": 13127880,
+       "hflip": false,
+       "vflip": true,
+       "dx": 24,
+       "dy": -32,
+       "score": 0.435
+      },
+      {
+       "profile": 13126086,
+       "hflip": true,
+       "vflip": false,
+       "dx": 35,
+       "dy": 19,
+       "score": 0.433
+      },
+      {
+       "profile": 13125604,
+       "hflip": false,
+       "vflip": false,
+       "dx": 35,
+       "dy": 2,
+       "score": 0.428
+      }
+     ]
+    ]
+   }
+  }
+ }
+}

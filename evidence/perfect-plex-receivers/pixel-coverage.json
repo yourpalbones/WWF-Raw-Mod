@@ -1,0 +1,1454 @@
+{
+ "generated_by": "tools/check_perfect_receiver_pixels.py",
+ "royal_rom_sha256": "51c53e36ed0b959b0695fc6ef036fa7302d1c995eca35c28261d6f3cb77df0ca",
+ "scope": "Builder canvas only (paint +73/+105, sample +64). Says nothing about runtime upload, palette mapping, VRAM, OAM order or on-screen placement.",
+ "drawings": 144,
+ "decoded_source_tiles": 1730,
+ "drawings_with_uncovered_pixels": 0,
+ "total_uncovered_pixels": 0,
+ "drawings_outside_canvas": 0,
+ "drawings_bbox_mismatch": 0,
+ "total_empty_chunk_tiles": 145,
+ "rows": [
+  {
+   "selector": 0,
+   "source_frame": 56,
+   "opaque_pixels": 1061,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1920,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 0,
+   "source_frame": 64,
+   "opaque_pixels": 1283,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2688,
+   "empty_chunk_tiles": 4
+  },
+  {
+   "selector": 0,
+   "source_frame": 72,
+   "opaque_pixels": 1224,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2688,
+   "empty_chunk_tiles": 4
+  },
+  {
+   "selector": 0,
+   "source_frame": 80,
+   "opaque_pixels": 820,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 0,
+   "source_frame": 88,
+   "opaque_pixels": 870,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 0,
+   "source_frame": 96,
+   "opaque_pixels": 705,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 0,
+   "source_frame": 104,
+   "opaque_pixels": 875,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1984,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 0,
+   "source_frame": 112,
+   "opaque_pixels": 735,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 0,
+   "source_frame": 120,
+   "opaque_pixels": 778,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2048,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 0,
+   "source_frame": 128,
+   "opaque_pixels": 962,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2304,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 0,
+   "source_frame": 136,
+   "opaque_pixels": 826,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2112,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 0,
+   "source_frame": 144,
+   "opaque_pixels": 770,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1472,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 1,
+   "source_frame": 56,
+   "opaque_pixels": 1053,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2112,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 1,
+   "source_frame": 64,
+   "opaque_pixels": 1280,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2496,
+   "empty_chunk_tiles": 1
+  },
+  {
+   "selector": 1,
+   "source_frame": 72,
+   "opaque_pixels": 1211,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2688,
+   "empty_chunk_tiles": 4
+  },
+  {
+   "selector": 1,
+   "source_frame": 80,
+   "opaque_pixels": 820,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 1,
+   "source_frame": 88,
+   "opaque_pixels": 871,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 1,
+   "source_frame": 96,
+   "opaque_pixels": 710,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 1,
+   "source_frame": 104,
+   "opaque_pixels": 886,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1984,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 1,
+   "source_frame": 112,
+   "opaque_pixels": 735,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 1,
+   "source_frame": 120,
+   "opaque_pixels": 778,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2048,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 1,
+   "source_frame": 128,
+   "opaque_pixels": 962,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2304,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 1,
+   "source_frame": 136,
+   "opaque_pixels": 826,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2112,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 1,
+   "source_frame": 144,
+   "opaque_pixels": 770,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1472,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 2,
+   "source_frame": 56,
+   "opaque_pixels": 1081,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1920,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 2,
+   "source_frame": 64,
+   "opaque_pixels": 1301,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2688,
+   "empty_chunk_tiles": 4
+  },
+  {
+   "selector": 2,
+   "source_frame": 72,
+   "opaque_pixels": 1216,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2688,
+   "empty_chunk_tiles": 4
+  },
+  {
+   "selector": 2,
+   "source_frame": 80,
+   "opaque_pixels": 824,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 2,
+   "source_frame": 88,
+   "opaque_pixels": 873,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 2,
+   "source_frame": 96,
+   "opaque_pixels": 723,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 2,
+   "source_frame": 104,
+   "opaque_pixels": 897,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1984,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 2,
+   "source_frame": 112,
+   "opaque_pixels": 735,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 2,
+   "source_frame": 120,
+   "opaque_pixels": 778,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2048,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 2,
+   "source_frame": 128,
+   "opaque_pixels": 962,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2304,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 2,
+   "source_frame": 136,
+   "opaque_pixels": 826,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2112,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 2,
+   "source_frame": 144,
+   "opaque_pixels": 770,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1472,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 3,
+   "source_frame": 56,
+   "opaque_pixels": 1052,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1920,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 3,
+   "source_frame": 64,
+   "opaque_pixels": 1271,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2496,
+   "empty_chunk_tiles": 1
+  },
+  {
+   "selector": 3,
+   "source_frame": 72,
+   "opaque_pixels": 1210,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2688,
+   "empty_chunk_tiles": 4
+  },
+  {
+   "selector": 3,
+   "source_frame": 80,
+   "opaque_pixels": 820,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 3,
+   "source_frame": 88,
+   "opaque_pixels": 870,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 3,
+   "source_frame": 96,
+   "opaque_pixels": 710,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 3,
+   "source_frame": 104,
+   "opaque_pixels": 875,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1984,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 3,
+   "source_frame": 112,
+   "opaque_pixels": 735,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 3,
+   "source_frame": 120,
+   "opaque_pixels": 778,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2048,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 3,
+   "source_frame": 128,
+   "opaque_pixels": 962,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2304,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 3,
+   "source_frame": 136,
+   "opaque_pixels": 826,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2112,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 3,
+   "source_frame": 144,
+   "opaque_pixels": 770,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1472,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 4,
+   "source_frame": 56,
+   "opaque_pixels": 1119,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1920,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 4,
+   "source_frame": 64,
+   "opaque_pixels": 1359,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2496,
+   "empty_chunk_tiles": 1
+  },
+  {
+   "selector": 4,
+   "source_frame": 72,
+   "opaque_pixels": 1261,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 3072,
+   "empty_chunk_tiles": 8
+  },
+  {
+   "selector": 4,
+   "source_frame": 80,
+   "opaque_pixels": 882,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 4,
+   "source_frame": 88,
+   "opaque_pixels": 917,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1920,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 4,
+   "source_frame": 96,
+   "opaque_pixels": 778,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1536,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 4,
+   "source_frame": 104,
+   "opaque_pixels": 944,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2048,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 4,
+   "source_frame": 112,
+   "opaque_pixels": 781,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 4,
+   "source_frame": 120,
+   "opaque_pixels": 818,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2048,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 4,
+   "source_frame": 128,
+   "opaque_pixels": 1017,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2304,
+   "empty_chunk_tiles": 1
+  },
+  {
+   "selector": 4,
+   "source_frame": 136,
+   "opaque_pixels": 858,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2240,
+   "empty_chunk_tiles": 1
+  },
+  {
+   "selector": 4,
+   "source_frame": 144,
+   "opaque_pixels": 804,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1536,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 5,
+   "source_frame": 56,
+   "opaque_pixels": 1048,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1920,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 5,
+   "source_frame": 64,
+   "opaque_pixels": 1275,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2496,
+   "empty_chunk_tiles": 1
+  },
+  {
+   "selector": 5,
+   "source_frame": 72,
+   "opaque_pixels": 1208,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2688,
+   "empty_chunk_tiles": 4
+  },
+  {
+   "selector": 5,
+   "source_frame": 80,
+   "opaque_pixels": 820,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 5,
+   "source_frame": 88,
+   "opaque_pixels": 871,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 5,
+   "source_frame": 96,
+   "opaque_pixels": 710,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 5,
+   "source_frame": 104,
+   "opaque_pixels": 886,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1984,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 5,
+   "source_frame": 112,
+   "opaque_pixels": 735,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 5,
+   "source_frame": 120,
+   "opaque_pixels": 778,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2048,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 5,
+   "source_frame": 128,
+   "opaque_pixels": 962,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2304,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 5,
+   "source_frame": 136,
+   "opaque_pixels": 826,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2112,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 5,
+   "source_frame": 144,
+   "opaque_pixels": 770,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1472,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 6,
+   "source_frame": 56,
+   "opaque_pixels": 1047,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1920,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 6,
+   "source_frame": 64,
+   "opaque_pixels": 1275,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2496,
+   "empty_chunk_tiles": 1
+  },
+  {
+   "selector": 6,
+   "source_frame": 72,
+   "opaque_pixels": 1215,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2688,
+   "empty_chunk_tiles": 4
+  },
+  {
+   "selector": 6,
+   "source_frame": 80,
+   "opaque_pixels": 820,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 6,
+   "source_frame": 88,
+   "opaque_pixels": 871,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 6,
+   "source_frame": 96,
+   "opaque_pixels": 710,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 6,
+   "source_frame": 104,
+   "opaque_pixels": 886,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1984,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 6,
+   "source_frame": 112,
+   "opaque_pixels": 735,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 6,
+   "source_frame": 120,
+   "opaque_pixels": 778,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2048,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 6,
+   "source_frame": 128,
+   "opaque_pixels": 962,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2304,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 6,
+   "source_frame": 136,
+   "opaque_pixels": 826,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2112,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 6,
+   "source_frame": 144,
+   "opaque_pixels": 770,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1472,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 7,
+   "source_frame": 56,
+   "opaque_pixels": 1056,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1920,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 7,
+   "source_frame": 64,
+   "opaque_pixels": 1287,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2688,
+   "empty_chunk_tiles": 4
+  },
+  {
+   "selector": 7,
+   "source_frame": 72,
+   "opaque_pixels": 1209,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2688,
+   "empty_chunk_tiles": 4
+  },
+  {
+   "selector": 7,
+   "source_frame": 80,
+   "opaque_pixels": 820,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 7,
+   "source_frame": 88,
+   "opaque_pixels": 871,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 7,
+   "source_frame": 96,
+   "opaque_pixels": 705,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 7,
+   "source_frame": 104,
+   "opaque_pixels": 886,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1984,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 7,
+   "source_frame": 112,
+   "opaque_pixels": 749,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1728,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 7,
+   "source_frame": 120,
+   "opaque_pixels": 784,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2048,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 7,
+   "source_frame": 128,
+   "opaque_pixels": 971,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2496,
+   "empty_chunk_tiles": 4
+  },
+  {
+   "selector": 7,
+   "source_frame": 136,
+   "opaque_pixels": 829,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2112,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 7,
+   "source_frame": 144,
+   "opaque_pixels": 780,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1472,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 8,
+   "source_frame": 56,
+   "opaque_pixels": 1059,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1920,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 8,
+   "source_frame": 64,
+   "opaque_pixels": 1285,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2688,
+   "empty_chunk_tiles": 4
+  },
+  {
+   "selector": 8,
+   "source_frame": 72,
+   "opaque_pixels": 1204,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2688,
+   "empty_chunk_tiles": 4
+  },
+  {
+   "selector": 8,
+   "source_frame": 80,
+   "opaque_pixels": 820,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 8,
+   "source_frame": 88,
+   "opaque_pixels": 871,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 8,
+   "source_frame": 96,
+   "opaque_pixels": 710,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 8,
+   "source_frame": 104,
+   "opaque_pixels": 886,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1984,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 8,
+   "source_frame": 112,
+   "opaque_pixels": 735,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 8,
+   "source_frame": 120,
+   "opaque_pixels": 778,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2048,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 8,
+   "source_frame": 128,
+   "opaque_pixels": 962,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2304,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 8,
+   "source_frame": 136,
+   "opaque_pixels": 826,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2112,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 8,
+   "source_frame": 144,
+   "opaque_pixels": 770,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1472,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 9,
+   "source_frame": 56,
+   "opaque_pixels": 1123,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2112,
+   "empty_chunk_tiles": 1
+  },
+  {
+   "selector": 9,
+   "source_frame": 64,
+   "opaque_pixels": 1349,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2688,
+   "empty_chunk_tiles": 5
+  },
+  {
+   "selector": 9,
+   "source_frame": 72,
+   "opaque_pixels": 1261,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2880,
+   "empty_chunk_tiles": 5
+  },
+  {
+   "selector": 9,
+   "source_frame": 80,
+   "opaque_pixels": 884,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 9,
+   "source_frame": 88,
+   "opaque_pixels": 917,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1856,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 9,
+   "source_frame": 96,
+   "opaque_pixels": 726,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1728,
+   "empty_chunk_tiles": 1
+  },
+  {
+   "selector": 9,
+   "source_frame": 104,
+   "opaque_pixels": 933,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1984,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 9,
+   "source_frame": 112,
+   "opaque_pixels": 754,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 9,
+   "source_frame": 120,
+   "opaque_pixels": 807,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2048,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 9,
+   "source_frame": 128,
+   "opaque_pixels": 977,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2496,
+   "empty_chunk_tiles": 4
+  },
+  {
+   "selector": 9,
+   "source_frame": 136,
+   "opaque_pixels": 854,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2112,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 9,
+   "source_frame": 144,
+   "opaque_pixels": 772,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1472,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 10,
+   "source_frame": 56,
+   "opaque_pixels": 1074,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2112,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 10,
+   "source_frame": 64,
+   "opaque_pixels": 1300,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2688,
+   "empty_chunk_tiles": 4
+  },
+  {
+   "selector": 10,
+   "source_frame": 72,
+   "opaque_pixels": 1205,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2688,
+   "empty_chunk_tiles": 4
+  },
+  {
+   "selector": 10,
+   "source_frame": 80,
+   "opaque_pixels": 820,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 10,
+   "source_frame": 88,
+   "opaque_pixels": 871,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 10,
+   "source_frame": 96,
+   "opaque_pixels": 710,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 10,
+   "source_frame": 104,
+   "opaque_pixels": 886,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1984,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 10,
+   "source_frame": 112,
+   "opaque_pixels": 735,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 10,
+   "source_frame": 120,
+   "opaque_pixels": 778,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2048,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 10,
+   "source_frame": 128,
+   "opaque_pixels": 962,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2304,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 10,
+   "source_frame": 136,
+   "opaque_pixels": 826,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2112,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 10,
+   "source_frame": 144,
+   "opaque_pixels": 770,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1472,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 11,
+   "source_frame": 56,
+   "opaque_pixels": 1065,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1920,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 11,
+   "source_frame": 64,
+   "opaque_pixels": 1291,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2688,
+   "empty_chunk_tiles": 4
+  },
+  {
+   "selector": 11,
+   "source_frame": 72,
+   "opaque_pixels": 1205,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2688,
+   "empty_chunk_tiles": 4
+  },
+  {
+   "selector": 11,
+   "source_frame": 80,
+   "opaque_pixels": 820,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 11,
+   "source_frame": 88,
+   "opaque_pixels": 871,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1792,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 11,
+   "source_frame": 96,
+   "opaque_pixels": 710,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 11,
+   "source_frame": 104,
+   "opaque_pixels": 886,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1984,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 11,
+   "source_frame": 112,
+   "opaque_pixels": 735,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1664,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 11,
+   "source_frame": 120,
+   "opaque_pixels": 778,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2048,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 11,
+   "source_frame": 128,
+   "opaque_pixels": 962,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2304,
+   "empty_chunk_tiles": 2
+  },
+  {
+   "selector": 11,
+   "source_frame": 136,
+   "opaque_pixels": 826,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 2112,
+   "empty_chunk_tiles": 0
+  },
+  {
+   "selector": 11,
+   "source_frame": 144,
+   "opaque_pixels": 770,
+   "uncovered_pixels": 0,
+   "outside_144_canvas": 0,
+   "bbox_matches_recipe": true,
+   "chunk_pixels": 1472,
+   "empty_chunk_tiles": 0
+  }
+ ]
+}

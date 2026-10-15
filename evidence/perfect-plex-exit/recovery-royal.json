@@ -1,0 +1,45 @@
+{
+ "game": "royal",
+ "events": {
+  "composed_by": "tools/recovery_bot.py",
+  "game": "royal",
+  "base": 10230,
+  "rule": "once Perfect stands, P2 mashes B until the receiver starts to rise; once he stands and 30 frames pass, P1 walks up and P2 walks down for 24 frames",
+  "both_down": 10336,
+  "perfect_stands": 10420,
+  "receiver_stands": 10608,
+  "walk_end": 10671,
+  "end": 10731
+ },
+ "walk": {
+  "frames": [
+   10647,
+   10671
+  ],
+  "y_before": [
+   256,
+   254
+  ],
+  "y_after": [
+   242,
+   268
+  ]
+ },
+ "positions_after_move": {
+  "x": [
+   199,
+   234
+  ],
+  "y": [
+   256,
+   254
+  ]
+ },
+ "checks": {
+  "perfect_walks_up": true,
+  "receiver_walks_down": true,
+  "perfect_stands_before_receiver": true
+ },
+ "pass": true,
+ "build": "Royal Rumble USA (verified source ROM)"
+}
