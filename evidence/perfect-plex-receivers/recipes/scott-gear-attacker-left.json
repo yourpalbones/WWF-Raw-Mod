@@ -1422,7 +1422,7 @@
   ]
  ],
  "build": "gear reference mod v5 (Scott, Syxx, Nash, Sting gear; then Mr. Perfect with Royal pose pieces, Royal heads and the Perfect-Plex exit; receivers rebuilt from Royal)",
- "expected_build": "a3316c5a8295e67e9e5108bbcbb1c296e1ed355383248b5c44a2e1607f2f36c3",
+ "expected_build": "381f9b89e68e8eea06890c9678ca8d9a9d01e1e42e4e8f71d5e8f75060a2bc51",
  "expected": {
   "frames_measured": 180,
   "frames_fully_matched": 135,
