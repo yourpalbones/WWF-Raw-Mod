@@ -1,0 +1,17 @@
+{
+  "characters": 16,
+  "poses": 53,
+  "bio": {
+    "name": "HOLLYWOOD HOGAN",
+    "from": "VENICE BEACH",
+    "weight": "275",
+    "height": "6'8\"",
+    "special": "LEG DROP"
+  },
+  "page_errors": [],
+  "portrait_export_reopened": true,
+  "monitor_export_reopened": true,
+  "name_export_reopened": true,
+  "hud_export_reopened": true,
+  "output_sha256": "428b58ac7feeb20d444ba64f7c4c09dd40ce93324d5111f4e7ed41fbda8031df"
+}

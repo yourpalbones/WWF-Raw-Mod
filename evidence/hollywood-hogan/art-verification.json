@@ -1,0 +1,439 @@
+{
+  "input_sha256": "ed9fe38492241bbd851d5faf81045d09014781cf277d117bd2a087d25a7b0bef",
+  "output_sha256": "7a6d0ee5ac11c25f9b5f50326115adc5db062a23b994fd7d6edb77b586f08012",
+  "slot": 13,
+  "display_slot": 14,
+  "mapped_poses": 53,
+  "private_tiles": 1607,
+  "packet_end": "0x55c41c",
+  "components": 103,
+  "converted_clothing_components": [
+    17,
+    19,
+    21,
+    23,
+    25,
+    27,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    71,
+    74,
+    76,
+    80,
+    105,
+    107,
+    123,
+    125,
+    127,
+    179,
+    182,
+    184,
+    193,
+    195,
+    198,
+    208,
+    267,
+    275,
+    277,
+    279,
+    281,
+    283,
+    285,
+    326,
+    342,
+    344,
+    346,
+    348,
+    350,
+    431,
+    455,
+    756,
+    757,
+    758,
+    759,
+    760
+  ],
+  "palette_colors_including_transparent": 16,
+  "gameplay_code_changed": false,
+  "silhouettes_and_descriptors_geometry_preserved": true,
+  "compiled_pose_roundtrips": 53,
+  "complete_animation_coverage": false,
+  "limitation": "Existing unmapped native actions still use the original standing fallback; this conversion does not add animation mappings.",
+  "poses": [
+    {
+      "root": "4596",
+      "source_pose": 0,
+      "body_objects": 12,
+      "silhouette_preserved": true,
+      "changed_pixels": 547
+    },
+    {
+      "root": "45B2",
+      "source_pose": 1,
+      "body_objects": 10,
+      "silhouette_preserved": true,
+      "changed_pixels": 337
+    },
+    {
+      "root": "45C0",
+      "source_pose": 2,
+      "body_objects": 13,
+      "silhouette_preserved": true,
+      "changed_pixels": 471
+    },
+    {
+      "root": "45CE",
+      "source_pose": 3,
+      "body_objects": 12,
+      "silhouette_preserved": true,
+      "changed_pixels": 435
+    },
+    {
+      "root": "45DC",
+      "source_pose": 4,
+      "body_objects": 11,
+      "silhouette_preserved": true,
+      "changed_pixels": 458
+    },
+    {
+      "root": "45EA",
+      "source_pose": 5,
+      "body_objects": 12,
+      "silhouette_preserved": true,
+      "changed_pixels": 521
+    },
+    {
+      "root": "45F8",
+      "source_pose": 6,
+      "body_objects": 12,
+      "silhouette_preserved": true,
+      "changed_pixels": 491
+    },
+    {
+      "root": "48D2",
+      "source_pose": 66,
+      "body_objects": 10,
+      "silhouette_preserved": true,
+      "changed_pixels": 469
+    },
+    {
+      "root": "48E0",
+      "source_pose": 67,
+      "body_objects": 15,
+      "silhouette_preserved": true,
+      "changed_pixels": 608
+    },
+    {
+      "root": "48EE",
+      "source_pose": 68,
+      "body_objects": 11,
+      "silhouette_preserved": true,
+      "changed_pixels": 592
+    },
+    {
+      "root": "49E2",
+      "source_pose": 99,
+      "body_objects": 11,
+      "silhouette_preserved": true,
+      "changed_pixels": 582
+    },
+    {
+      "root": "49F0",
+      "source_pose": 100,
+      "body_objects": 12,
+      "silhouette_preserved": true,
+      "changed_pixels": 620
+    },
+    {
+      "root": "49FE",
+      "source_pose": 101,
+      "body_objects": 14,
+      "silhouette_preserved": true,
+      "changed_pixels": 594
+    },
+    {
+      "root": "4A0C",
+      "source_pose": 102,
+      "body_objects": 11,
+      "silhouette_preserved": true,
+      "changed_pixels": 492
+    },
+    {
+      "root": "4A36",
+      "source_pose": 106,
+      "body_objects": 11,
+      "silhouette_preserved": true,
+      "changed_pixels": 545
+    },
+    {
+      "root": "4A44",
+      "source_pose": 107,
+      "body_objects": 10,
+      "silhouette_preserved": true,
+      "changed_pixels": 542
+    },
+    {
+      "root": "4A52",
+      "source_pose": 108,
+      "body_objects": 13,
+      "silhouette_preserved": true,
+      "changed_pixels": 586
+    },
+    {
+      "root": "4A60",
+      "source_pose": 109,
+      "body_objects": 13,
+      "silhouette_preserved": true,
+      "changed_pixels": 584
+    },
+    {
+      "root": "4606",
+      "source_pose": 7,
+      "body_objects": 12,
+      "silhouette_preserved": true,
+      "changed_pixels": 435
+    },
+    {
+      "root": "4614",
+      "source_pose": 8,
+      "body_objects": 10,
+      "silhouette_preserved": true,
+      "changed_pixels": 441
+    },
+    {
+      "root": "4622",
+      "source_pose": 9,
+      "body_objects": 11,
+      "silhouette_preserved": true,
+      "changed_pixels": 479
+    },
+    {
+      "root": "4630",
+      "source_pose": 10,
+      "body_objects": 9,
+      "silhouette_preserved": true,
+      "changed_pixels": 441
+    },
+    {
+      "root": "463E",
+      "source_pose": 11,
+      "body_objects": 11,
+      "silhouette_preserved": true,
+      "changed_pixels": 438
+    },
+    {
+      "root": "4C08",
+      "source_pose": 157,
+      "body_objects": 13,
+      "silhouette_preserved": true,
+      "changed_pixels": 680
+    },
+    {
+      "root": "4C38",
+      "source_pose": 157,
+      "body_objects": 13,
+      "silhouette_preserved": true,
+      "changed_pixels": 680
+    },
+    {
+      "root": "4C70",
+      "source_pose": 157,
+      "body_objects": 13,
+      "silhouette_preserved": true,
+      "changed_pixels": 680
+    },
+    {
+      "root": "4C84",
+      "source_pose": 158,
+      "body_objects": 11,
+      "silhouette_preserved": true,
+      "changed_pixels": 521
+    },
+    {
+      "root": "4C98",
+      "source_pose": 159,
+      "body_objects": 12,
+      "silhouette_preserved": true,
+      "changed_pixels": 453
+    },
+    {
+      "root": "4CAC",
+      "source_pose": 160,
+      "body_objects": 12,
+      "silhouette_preserved": true,
+      "changed_pixels": 528
+    },
+    {
+      "root": "4CC0",
+      "source_pose": 161,
+      "body_objects": 12,
+      "silhouette_preserved": true,
+      "changed_pixels": 514
+    },
+    {
+      "root": "4CD4",
+      "source_pose": 162,
+      "body_objects": 13,
+      "silhouette_preserved": true,
+      "changed_pixels": 559
+    },
+    {
+      "root": "4CE2",
+      "source_pose": 163,
+      "body_objects": 13,
+      "silhouette_preserved": true,
+      "changed_pixels": 559
+    },
+    {
+      "root": "4CF2",
+      "source_pose": 164,
+      "body_objects": 10,
+      "silhouette_preserved": true,
+      "changed_pixels": 386
+    },
+    {
+      "root": "4CFC",
+      "source_pose": 164,
+      "body_objects": 10,
+      "silhouette_preserved": true,
+      "changed_pixels": 386
+    },
+    {
+      "root": "55EE",
+      "source_pose": 189,
+      "body_objects": 8,
+      "silhouette_preserved": true,
+      "changed_pixels": 426
+    },
+    {
+      "root": "55FC",
+      "source_pose": 190,
+      "body_objects": 6,
+      "silhouette_preserved": true,
+      "changed_pixels": 377
+    },
+    {
+      "root": "5610",
+      "source_pose": 191,
+      "body_objects": 8,
+      "silhouette_preserved": true,
+      "changed_pixels": 407
+    },
+    {
+      "root": "5624",
+      "source_pose": 192,
+      "body_objects": 8,
+      "silhouette_preserved": true,
+      "changed_pixels": 319
+    },
+    {
+      "root": "5638",
+      "source_pose": 193,
+      "body_objects": 9,
+      "silhouette_preserved": true,
+      "changed_pixels": 297
+    },
+    {
+      "root": "564C",
+      "source_pose": 194,
+      "body_objects": 8,
+      "silhouette_preserved": true,
+      "changed_pixels": 378
+    },
+    {
+      "root": "565C",
+      "source_pose": 195,
+      "body_objects": 10,
+      "silhouette_preserved": true,
+      "changed_pixels": 476
+    },
+    {
+      "root": "47BE",
+      "source_pose": 38,
+      "body_objects": 10,
+      "silhouette_preserved": true,
+      "changed_pixels": 593
+    },
+    {
+      "root": "47D6",
+      "source_pose": 40,
+      "body_objects": 8,
+      "silhouette_preserved": true,
+      "changed_pixels": 390
+    },
+    {
+      "root": "47E4",
+      "source_pose": 41,
+      "body_objects": 10,
+      "silhouette_preserved": true,
+      "changed_pixels": 370
+    },
+    {
+      "root": "47F2",
+      "source_pose": 43,
+      "body_objects": 9,
+      "silhouette_preserved": true,
+      "changed_pixels": 474
+    },
+    {
+      "root": "F000",
+      "source_pose": 115,
+      "body_objects": 9,
+      "silhouette_preserved": true,
+      "changed_pixels": 381
+    },
+    {
+      "root": "F002",
+      "source_pose": 57,
+      "body_objects": 13,
+      "silhouette_preserved": true,
+      "changed_pixels": 663
+    },
+    {
+      "root": "F004",
+      "source_pose": 58,
+      "body_objects": 13,
+      "silhouette_preserved": true,
+      "changed_pixels": 661
+    },
+    {
+      "root": "F006",
+      "source_pose": 475,
+      "body_objects": 11,
+      "silhouette_preserved": true,
+      "changed_pixels": 593
+    },
+    {
+      "root": "F008",
+      "source_pose": 476,
+      "body_objects": 10,
+      "silhouette_preserved": true,
+      "changed_pixels": 494
+    },
+    {
+      "root": "F00A",
+      "source_pose": 477,
+      "body_objects": 10,
+      "silhouette_preserved": true,
+      "changed_pixels": 407
+    },
+    {
+      "root": "F00C",
+      "source_pose": 478,
+      "body_objects": 12,
+      "silhouette_preserved": true,
+      "changed_pixels": 509
+    },
+    {
+      "root": "F00E",
+      "source_pose": 479,
+      "body_objects": 10,
+      "silhouette_preserved": true,
+      "changed_pixels": 509
+    }
+  ]
+}

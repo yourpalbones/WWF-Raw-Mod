@@ -1,0 +1,205 @@
+{
+  "all_other_wrestlers_unchanged": 15,
+  "all_other_editor_sprite_palette_and_presentation_hashes_equal": true,
+  "gameplay_code_and_move_tables_unchanged": true,
+  "bio_values_unchanged_except_hogan_name": true,
+  "writes_within_inspected_allocations": true,
+  "changed_bytes": 57023,
+  "page_errors": [],
+  "before": {
+    "0": {
+      "name": "LUNA VACHON",
+      "sprite": "e666bd4c4788344befa3429016849fa3f3e738f5f787f007cb36be7db0d41951",
+      "presentation": "041592381d1c54db1b69eae7aaef3d958fbc52256bf9a02ffb09c8140fc207bb",
+      "poses": 18
+    },
+    "1": {
+      "name": "BRET HART",
+      "sprite": "0233fb3cb48725ca15a42278ace30d0e573cef596e2ba1bb8729963b3cf90e34",
+      "presentation": "70d3c8a8476d644687cd5658c30f722471ed01f02951f94a5a12e7ce01ff8d60",
+      "poses": 27
+    },
+    "2": {
+      "name": "THE UNDERTAKER",
+      "sprite": "f0b77edc0b227abe8eb43cf265dfb70809b213c50e2543f267e025eeaf7dfb99",
+      "presentation": "a5726ef3507a06db53a09931bd56dc5dce45b72d741cef88d3092d088c94060d",
+      "poses": 22
+    },
+    "3": {
+      "name": "YOKOZUNA",
+      "sprite": "4d8cb9bc6a0ba8fb2a09b75c7f66f6c4e20b8f50d5a84e56696c1a9d75fa2e9c",
+      "presentation": "cff81f763be8ffed2aaf5587586fe71c36f0128273599a1dbcb07e980c85bd9f",
+      "poses": 19
+    },
+    "4": {
+      "name": "BAM BAM BIGELOW",
+      "sprite": "be842f45fed002babd33dd59972a0f2a538b9ff44f299787369f8fb802b66582",
+      "presentation": "5905b110686eadd7cd1df8763ec330eafd960450f6c8f9f11b998004b4618943",
+      "poses": 16
+    },
+    "5": {
+      "name": "SCOTT HALL",
+      "sprite": "ca75cd37cd7d14c1e3aefa2685ffc315da35e36323962171b741b0e89ba0f2dd",
+      "presentation": "7cbca905f747550d1312df2d6f7e19ed8311c5596858693d556181aa5f20a355",
+      "poses": 1862
+    },
+    "6": {
+      "name": "LEX LUGER",
+      "sprite": "f4b2800683a3d747d0958e9b951faded23b4ddd2b953aa714606f0178db263e6",
+      "presentation": "38f41422740a1f04bcdf949a2fee743eca58e24000457623de5904c7c036ff2b",
+      "poses": 23
+    },
+    "7": {
+      "name": "STING",
+      "sprite": "826781393825d31971112be75539c92fcd3cc2f0c9b3b87feb8bc92c9fc11131",
+      "presentation": "66f170f8f823e0960de09b92bf02c4d37f2182bf1df8c38dbb9396af993959f8",
+      "poses": 1833
+    },
+    "8": {
+      "name": "SHAWN MICHAELS",
+      "sprite": "b05277d6c9c6229f3a55a1db4c6cfca79d25b2d24796a87afc78b0110e33bad5",
+      "presentation": "912de00cce3d8565aae59681d7ac1288866d1db6f218c0a6a832eae413c6f7bc",
+      "poses": 22
+    },
+    "9": {
+      "name": "SYXX",
+      "sprite": "579450f7c7c4cddc6ccf3168318dad470260cc39e115451890801c99745e0f8b",
+      "presentation": "8984957ac1c31d27f9794e4b2cf3e55b6c0c5c01ea71cef15a2024e12d9219e8",
+      "poses": 1877
+    },
+    "10": {
+      "name": "KEVIN NASH",
+      "sprite": "38eb8d888e114483edb07037ad4b3fe280125c24d070999794eff1ffe96cc6d5",
+      "presentation": "d4681a200e6773c01081d5f0e6059442d546869cc9168360804c7a6735d12c38",
+      "poses": 1841
+    },
+    "11": {
+      "name": "OWEN HART",
+      "sprite": "8bf80b78ddb22386ea637541d1143ecd10a0614f7c55880cfa41525b5c320a13",
+      "presentation": "bced4b55ca8d1a36ce11a060c52b209c9f26a5ffc2d29bddce3ec017fc45c5aa",
+      "poses": 20
+    },
+    "12": {
+      "name": "MR PERFECT",
+      "sprite": "4e61f88ac8087705b908b425be370115bc8b8b33979916cec079df203b30fc2b",
+      "presentation": "5f3f0413819278b2080f08cfec4587c1331802115044a5bd57fa803085eb2828",
+      "poses": 1746
+    },
+    "13": {
+      "name": "HULK HOGAN",
+      "sprite": "af20355a43963be99e999912a889a599cba16fd391c6c1deba4702b836fe40d5",
+      "presentation": "cbf59846f29282a45a5ecdc6174ee603681daf359289a34ec25b49019e9886d6",
+      "poses": 53
+    },
+    "14": {
+      "name": "BIG BOSS MAN",
+      "sprite": "aa247a113243a49540dfb06e4c2304629330902f87be287ff9f698f2ec9d2d06",
+      "presentation": "42a6a52793cb9d9717717e766d221bda6bc51dc2dda13dfa4d58e5bd319ea6e3",
+      "poses": 33
+    },
+    "15": {
+      "name": "RIC FLAIR",
+      "sprite": "50d2f541a8003b6d25394bfbf46756ace8eada09bb0226c78c72087c65f084ef",
+      "presentation": "cbbfbc345d74c4549fae1244453d94068c3ed95d5916a46833f520ce978c5f31",
+      "poses": 35
+    }
+  },
+  "after": {
+    "0": {
+      "name": "LUNA VACHON",
+      "sprite": "e666bd4c4788344befa3429016849fa3f3e738f5f787f007cb36be7db0d41951",
+      "presentation": "041592381d1c54db1b69eae7aaef3d958fbc52256bf9a02ffb09c8140fc207bb",
+      "poses": 18
+    },
+    "1": {
+      "name": "BRET HART",
+      "sprite": "0233fb3cb48725ca15a42278ace30d0e573cef596e2ba1bb8729963b3cf90e34",
+      "presentation": "70d3c8a8476d644687cd5658c30f722471ed01f02951f94a5a12e7ce01ff8d60",
+      "poses": 27
+    },
+    "2": {
+      "name": "THE UNDERTAKER",
+      "sprite": "f0b77edc0b227abe8eb43cf265dfb70809b213c50e2543f267e025eeaf7dfb99",
+      "presentation": "a5726ef3507a06db53a09931bd56dc5dce45b72d741cef88d3092d088c94060d",
+      "poses": 22
+    },
+    "3": {
+      "name": "YOKOZUNA",
+      "sprite": "4d8cb9bc6a0ba8fb2a09b75c7f66f6c4e20b8f50d5a84e56696c1a9d75fa2e9c",
+      "presentation": "cff81f763be8ffed2aaf5587586fe71c36f0128273599a1dbcb07e980c85bd9f",
+      "poses": 19
+    },
+    "4": {
+      "name": "BAM BAM BIGELOW",
+      "sprite": "be842f45fed002babd33dd59972a0f2a538b9ff44f299787369f8fb802b66582",
+      "presentation": "5905b110686eadd7cd1df8763ec330eafd960450f6c8f9f11b998004b4618943",
+      "poses": 16
+    },
+    "5": {
+      "name": "SCOTT HALL",
+      "sprite": "ca75cd37cd7d14c1e3aefa2685ffc315da35e36323962171b741b0e89ba0f2dd",
+      "presentation": "7cbca905f747550d1312df2d6f7e19ed8311c5596858693d556181aa5f20a355",
+      "poses": 1862
+    },
+    "6": {
+      "name": "LEX LUGER",
+      "sprite": "f4b2800683a3d747d0958e9b951faded23b4ddd2b953aa714606f0178db263e6",
+      "presentation": "38f41422740a1f04bcdf949a2fee743eca58e24000457623de5904c7c036ff2b",
+      "poses": 23
+    },
+    "7": {
+      "name": "STING",
+      "sprite": "826781393825d31971112be75539c92fcd3cc2f0c9b3b87feb8bc92c9fc11131",
+      "presentation": "66f170f8f823e0960de09b92bf02c4d37f2182bf1df8c38dbb9396af993959f8",
+      "poses": 1833
+    },
+    "8": {
+      "name": "SHAWN MICHAELS",
+      "sprite": "b05277d6c9c6229f3a55a1db4c6cfca79d25b2d24796a87afc78b0110e33bad5",
+      "presentation": "912de00cce3d8565aae59681d7ac1288866d1db6f218c0a6a832eae413c6f7bc",
+      "poses": 22
+    },
+    "9": {
+      "name": "SYXX",
+      "sprite": "579450f7c7c4cddc6ccf3168318dad470260cc39e115451890801c99745e0f8b",
+      "presentation": "8984957ac1c31d27f9794e4b2cf3e55b6c0c5c01ea71cef15a2024e12d9219e8",
+      "poses": 1877
+    },
+    "10": {
+      "name": "KEVIN NASH",
+      "sprite": "38eb8d888e114483edb07037ad4b3fe280125c24d070999794eff1ffe96cc6d5",
+      "presentation": "d4681a200e6773c01081d5f0e6059442d546869cc9168360804c7a6735d12c38",
+      "poses": 1841
+    },
+    "11": {
+      "name": "OWEN HART",
+      "sprite": "8bf80b78ddb22386ea637541d1143ecd10a0614f7c55880cfa41525b5c320a13",
+      "presentation": "bced4b55ca8d1a36ce11a060c52b209c9f26a5ffc2d29bddce3ec017fc45c5aa",
+      "poses": 20
+    },
+    "12": {
+      "name": "MR PERFECT",
+      "sprite": "4e61f88ac8087705b908b425be370115bc8b8b33979916cec079df203b30fc2b",
+      "presentation": "5f3f0413819278b2080f08cfec4587c1331802115044a5bd57fa803085eb2828",
+      "poses": 1746
+    },
+    "13": {
+      "name": "HOLLYWOOD HOGAN",
+      "sprite": "0abeb6117706ccc9464b8195ae84a1a4414aedced2432732365bf3874e2fccc4",
+      "presentation": "ef1dbf06a8bf42ea891b07859083b19c2a6d521837d8e816fecfdcef53aeef6a",
+      "poses": 53
+    },
+    "14": {
+      "name": "BIG BOSS MAN",
+      "sprite": "aa247a113243a49540dfb06e4c2304629330902f87be287ff9f698f2ec9d2d06",
+      "presentation": "42a6a52793cb9d9717717e766d221bda6bc51dc2dda13dfa4d58e5bd319ea6e3",
+      "poses": 33
+    },
+    "15": {
+      "name": "RIC FLAIR",
+      "sprite": "50d2f541a8003b6d25394bfbf46756ace8eada09bb0226c78c72087c65f084ef",
+      "presentation": "cbbfbc345d74c4549fae1244453d94068c3ed95d5916a46833f520ce978c5f31",
+      "poses": 35
+    }
+  }
+}

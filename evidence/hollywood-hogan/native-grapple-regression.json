@@ -1,0 +1,6 @@
+{
+  "snapshots": 70,
+  "player_state_0500_to_0dff_identical_every_snapshot": true,
+  "all_other_visible_OBJ_records_and_colors_identical_every_snapshot": true,
+  "note": "Same-input native replay; not proof of all match modes or unobserved moves."
+}
