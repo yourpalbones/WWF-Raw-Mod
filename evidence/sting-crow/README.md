@@ -23,7 +23,7 @@ gear reference mod with the current Sting and with this one; nearest-neighbour e
 
 | | Current Sting | New Crow Sting |
 |---|---|---|
-| Hair | A flat black shape around the head | The Undertaker donor's own long hair, darkened; Raw's dithering and strands stay |
+| Hair | A flat black shape around the head | Black, with a dark grey sheen on the Undertaker donor's own long hair, so Raw's strands stay. Skin or beard left inside the head above the jaw becomes hair, so his face never shows beside the paint |
 | Face | Grey mask, heavy black eye and jaw shapes | White paint with a grey shadow side, inside the donor's own face; thin Crow marks: brow points, eyes, cheek streaks, black lips, chin lines |
 | Scorpion | White checker grid | Three greys: pincers, carapace, segmented spine, ribs and tail |
 | Skin, gloves, boots | Orange skin; black gloves and boots | Tan skin; black gloves and boots with the shirt's own highlight; no trouser stripe |
@@ -35,9 +35,10 @@ Unchanged: the Undertaker donor anatomy, Doink's moves with the Scorpion Deathlo
 ## How it is made
 
 - `tools/sting_crow_art.py` authors every one of the donor's 1,720 pieces:
-  - a palette remap: shirt, trousers, gloves and boots black; hair darkened; skin tan;
+  - a palette remap: shirt, trousers, gloves, boots and hair black; skin tan;
   - the front and walking‑profile faces drawn explicitly (`FACE_GRIDS`), the profile and tilted views too;
   - other registered heads get the same makeup placed from their eye, mouth and jaw landmarks;
+  - inside every registered head, skin or beard above the jaw that the paint does not cover becomes hair;
   - the few heads without landmarks keep the earlier paint, in this palette;
   - the scorpion on front‑facing shirts; the Deathlock's shared torsos filled with the shirt.
   - Pixels are only written where the donor already has one, so every silhouette stays Raw's.

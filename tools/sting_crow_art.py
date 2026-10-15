@@ -2,8 +2,8 @@
 
 This is a second, independent take on the Sting gear (the current one is tools/sting_rebuild_art.py, kept as is). It
 keeps more of Raw's own drawing:
-- Hair stays the donor's hand-drawn long hair, darkened through the palette (its dithering and highlights remain),
-  instead of a flat black silhouette.
+- Hair is black, on the donor's hand-drawn long hair (its strands keep a dark grey sheen) instead of a flat black
+  silhouette. Skin or beard left inside a head above the jaw becomes hair, so the donor's face never shows.
 - The face is repainted inside the donor's own face: white paint with a grey shadow side, and the Crow marks as thin
   lines (brow points, eyes, cheek streaks, lips and chin lines). The donor's beard is painted over.
 - Gloves and boots are black, with the shirt's own highlight; trousers lose their stripe; skin is a natural tan.
@@ -38,7 +38,7 @@ def bgr(r, g, b):
 
 # Slot palette (index: BGR555). Donor roles kept: 1 outline, 2/3/6 shirt and trousers, 7/11/12/15 skin, 9/10 hair.
 PALETTE = {1: bgr(0, 0, 0), 2: bgr(10, 10, 14), 3: bgr(30, 30, 36), 4: bgr(104, 104, 112), 5: bgr(232, 232, 224),
-           6: bgr(58, 58, 68), 7: bgr(184, 120, 80), 8: bgr(224, 224, 228), 9: bgr(20, 14, 12), 10: bgr(48, 32, 24),
+           6: bgr(58, 58, 68), 7: bgr(184, 120, 80), 8: bgr(224, 224, 228), 9: bgr(8, 8, 12), 10: bgr(40, 40, 50),
            11: bgr(216, 160, 116), 12: bgr(136, 80, 52), 13: bgr(168, 168, 176), 14: bgr(160, 160, 168),
            15: bgr(240, 192, 148)}
 # Donor colours folded into the outfit, freeing 4, 5, 8, 13 and 14: the trouser stripe (4, 5) and the purple gloves
@@ -140,14 +140,18 @@ def author(frame):
         template = atlas()['templates'][name]
         sx, sy, dx, dy = entry['transform']
         world = lambda x, y: (sx * x + dx, sy * y + dy)
+        painted = set()
         if name in FACE_GRIDS:
             (ox, oy), rows = FACE_GRIDS[name]
             for j, row in enumerate(rows):
                 for i, c in enumerate(row):
                     if c != '_':
                         put(world(ox + i, oy + j), CODES[c])
+                        painted.add(world(ox + i, oy + j))
         elif template.get('landmarks'):
-            makeup(points, put, template, world)
+            painted = makeup(points, put, template, world)
+        if template.get('landmarks'):
+            hair_over_skin(points, put, template, entry['transform'], painted)
         else:
             # Earlier authored paint, in this palette (its near-black hair 14 is hair here); no pixel is added.
             for x, y, value in template.get('paint', []):
@@ -209,6 +213,7 @@ def makeup(points, put, template, world):
             face.add((x, y))
     for q in face:
         put(q, PAINT_SHADOW if points[q] == 12 else WHITE)
+    painted = set(face)
     step = (round(down[0]), round(down[1]))
     for x, y in eyes:
         for k in (-1, 0, 1):
@@ -221,3 +226,20 @@ def makeup(points, put, template, world):
     centre = (round(mx) + step[0], round(my) + step[1])
     if centre in points:
         put(centre, BLACK)
+    return painted | set(eyes) | set(mouth) | {centre}
+
+
+def hair_over_skin(points, put, template, transform, painted):
+    """Skin or beard left inside the head above the jaw would show the donor's face beside the paint: it becomes
+    hair. The neck (below the jaw) keeps its skin."""
+    sx, sy, dx, dy = transform
+    lm = template['landmarks']
+    jaw = [lm['jaw']] if lm.get('jaw') and isinstance(lm['jaw'][0], int) else lm.get('jaw', [])
+    if not jaw:
+        return
+    limit = max(y for _, y in jaw)
+    l, t, r, b = template['box']
+    for (x, y), v in points.items():
+        tx, ty = (x - dx) * sx, (y - dy) * sy
+        if l <= tx <= r and t <= ty <= limit and (x, y) not in painted and v in SKIN | HAIR:
+            put((x, y), 9 if v in {12, 9} else 10)
