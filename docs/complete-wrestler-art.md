@@ -284,6 +284,56 @@ review; not marked done.**
 - **Side by side:** [`royal-vs-raw-undertaker.gif`](../evidence/perfect-plex-exit/royal-vs-raw-undertaker.gif)
   runs until both wrestlers have walked under control.
 
+## Mr. Perfect's stomach: closing the seams between his pieces (this round)
+
+**Review feedback.** "Mr. Perfect is missing his stomach in a standing pose."
+
+![Native screen, before (v5) and after (v6)](../evidence/perfect-stomach/standing-before-after.png)
+
+**Cause.**
+- Raw draws a wrestler from an upper and a lower piece. Bret's Raw pieces overlap at the waist; Royal
+  Perfect's frames meet edge to edge.
+- The semantic pass (below) gave Raw-only Bret drawings the Royal frame of a matched neighbour, at the
+  neighbour's placement. Raw draws some of those pieces a few pixels away from where it draws the neighbour.
+- In Raw's standing pose (profile `C84596`), the torso piece `p2` sits 3 px higher and 3 px further right,
+  relative to the legs, than in the neighbouring standing frame `C845A4`. There both pieces are exact Royal
+  matches.
+- Bret's own `p2` is a taller redraw that covers the difference. Perfect's `p2` holds the same Royal torso as
+  `p1`, so a 3 px see-through band opened across his stomach. The background showed through it in every match.
+- A scan of every pose that uses a semantic piece (109 profiles) found the same kind of seam in many of them:
+  - standing and the idle back view;
+  - walking, guard and fists up;
+  - arms raised and upside down.
+
+**Fix** (`tools/close_perfect_seams.py`). The new placements are review overrides (source `seam`) in
+[`data/perfect-pose-review.json`](../data/perfect-pose-review.json). The report is
+[`data/perfect-seam-report.json`](../data/perfect-seam-report.json).
+- A hole is a pixel that is solid in Bret's composite and see-through in Perfect's, with Perfect's body within
+  5 rows directly above and below it.
+- **Pinned:** `p2`'s Royal frames (16 over 17) also appear together in profiles made only of exact matches.
+  `p2` takes the shift (−3, +3) that reproduces that exact relation. The standing pose is now Royal's own
+  standing composite (`C845A4`'s body), on Raw's legs.
+- **Others:** each other semantic piece moves by at most 4 px. Over all the poses that use it, the move
+  minimises holes while keeping the pose on Raw's body (its pixel difference from Bret's composite).
+- **Result:**
+  - 74 of the 137 semantic pieces move.
+  - Holes fall from 2,228 to 1,438 across the 109 poses; one pose gains a single pixel.
+  - Every changed pose was checked by eye (before, after and Bret, side by side).
+  - What remains is shape difference, not seams: gaps between the boots, hanging hair, and Bret's neck towel
+    in hunched poses, which Perfect's Royal body doesn't have.
+- **Unchanged:** exact matches, Royal heads and adapted pieces. The pixels are still read from the user's
+  Royal ROM; the repository holds only frame numbers and offsets.
+
+**Older imports.**
+- The poses marker is now `POSES-ROYAL6`.
+- Each moved row carries `replaces_royal`, the hash of the art it held before. **Update Perfect-Plex**
+  replaces a piece that still holds that art and keeps one the user edited.
+- Updating the v5 stock import gives the same 1,734 pieces as a fresh v6 import. Exactly the 74 moved pieces
+  differ from v5, and all 74 change through `replaces_royal` (`node tools/check_perfect_pieces.js`).
+
+**In game.** Replaying the gear-build recovery recipes (Sting, Syxx) on the v6 gear build stays in sync, and
+Perfect's standing and walking drawings come out solid (screens above).
+
 ## Mr. Perfect's ordinary poses (batch 2, revised after review)
 
 Mr. Perfect's slot reuses Raw Bret's 1,720 frame pieces. In v0.16, 289 of them used Royal Perfect art and
