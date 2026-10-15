@@ -36,6 +36,9 @@ GEAR = {
         'pointers': (0x5FA000, 0x5FA000)},
     7: {'signature': (0x6FF000, b'STING-NATIVE-GEAR4'), 'tables': (0x6FC000, 0x6FD000), 'banks': (0x60, 0x61),
         'pointers': (0x6E0000, 0x6F0000)},
+    # tools/build_shawn_dx.py: file 0x308000-0x32FFFF, HiROM banks $F0-$F2 (descriptors in $F1)
+    8: {'signature': (0x308000, b'SHAWN-DX-GEAR1'), 'tables': (0x309000, 0x30A000), 'banks': (0xF1, 0xF1),
+        'pointers': (0x30B000, 0x30B000)},
 }
 PERFECT_PRIMARY = 1014   # 998 pieces, 2 unused, Perfect-Plex frames 1000-1011, exit frames 1012-1013
 PERFECT = {'signature': (0x70FE00, b'PERFECT-SLOT'), 'tables': (0x710000, 0x711000)}
@@ -181,7 +184,8 @@ def resolve_index(rom, slot, kind, index):
     """Frame index in the slot's primary or secondary directory -> objects with pixels and sources."""
     address = descriptor_address(rom, slot, kind, index)
     parts, offset, length = parse_descriptor(rom, kind, address)
-    bank = offset >> 16 if len(rom) > 0x400000 and offset >= 0x400000 else None
+    bank = address >> 16 if (len(rom) > 0x400000 and offset >= 0x400000
+                             or any(address >> 16 in gear['banks'] for gear in GEAR.values())) else None
     for part in parts:
         part['pixels'], part['sources'] = [], []
         for tile_id, _ in part['tiles']:

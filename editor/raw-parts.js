@@ -6,7 +6,8 @@ window.RAW_PARTS=(()=>{
  const GEAR={5:{sig:[0x4bf000,'SCOTT-HALL-GEAR3'],tables:[0x4bc000,0x4bd000],banks:[0x42,0x43],pointers:[0x4b0000,0x4b0000]},
   10:{sig:[0x416000,'NASH-NATIVE-GEAR2'],tables:[0x410000,0x411000],banks:[0x4c,0x4d],pointers:[0x5f0000,0x5f0000]},
   9:{sig:[0x417000,'SYXX-NATIVE-GEAR3'],tables:[0x413000,0x414000],banks:[0x56,0x57],pointers:[0x5fa000,0x5fa000]},
-  7:{sig:[0x6ff000,'STING-NATIVE-GEAR4'],tables:[0x6fc000,0x6fd000],banks:[0x60,0x61],pointers:[0x6e0000,0x6f0000]}};
+  7:{sig:[0x6ff000,'STING-NATIVE-GEAR4'],tables:[0x6fc000,0x6fd000],banks:[0x60,0x61],pointers:[0x6e0000,0x6f0000]},
+  8:{sig:[0x308000,'SHAWN-DX-GEAR1'],tables:[0x309000,0x30a000],banks:[0xf1,0xf1],pointers:[0x30b000,0x30b000]}};/* tools/build_shawn_dx.py: HiROM $F0-$F2 */
  const long=(d,a)=>d[a]|d[a+1]<<8|d[a+2]<<16,text=(d,a,n)=>String.fromCharCode(...d.slice(a,a+n));
  function fileOffset(address,size){const bank=address>>16;if(size>0x400000&&bank>=0x40&&bank<=0x7d)return address;if(size>0x400000&&bank<0x40&&address&0x8000)return address+0x400000;return address&0x3fffff;}
  function activeGear(rom,slot){const g=GEAR[slot];return g&&rom.length>=0x600000&&text(rom,g.sig[0],g.sig[1].length)===g.sig[1]?g:null;}
@@ -48,7 +49,7 @@ window.RAW_PARTS=(()=>{
  }
  function resolveIndex(rom,slot,kind,index){
   const address=descriptorAddress(rom,slot,kind,index);
-  const d=parseDescriptor(rom,kind,address),bank=rom.length>0x400000&&d.offset>=0x400000?d.offset>>16:-1;
+  const d=parseDescriptor(rom,kind,address),bank=rom.length>0x400000&&d.offset>=0x400000||Object.values(GEAR).some(g=>g.banks.includes(address>>16))?address>>16:-1;
   for(const p of d.parts){p.pixels=[];p.sources=[];for(const t of p.tiles){const s=tileSource(rom,kind,t.id,bank);p.sources.push(s);p.pixels.push(planarPixels(s.compressed?decodePacket(rom,s.offset):rom.slice(s.offset,s.offset+32)));}}
   return {kind,index,descriptor:d.offset,length:d.length,parts:d.parts};
  }

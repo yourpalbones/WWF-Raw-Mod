@@ -68,7 +68,7 @@ function validateLoadedMod(data){
  if(![0x300000,0x400000,0x600000,0x800000].includes(data.length))throw Error('Choose a WWF Raw USA ROM or a WrestleEdit edited ROM.');
  const word=p=>data[p]|data[p+1]<<8;let sum=0;for(let i=0;i<data.length;i++)sum=(sum+data[i]*(((data.length===0x300000&&i>=0x200000)||(data.length===0x600000&&i>=0x400000))?2:1))&65535;
  if((word(0xffdc)^word(0xffde))!==65535||sum!==word(0xffde))throw Error('This ROM has an invalid checksum. Please choose a complete exported ROM.');
- if(data.length>=0x600000&&(!hasAnyNativeGear(data)&&!(typeof hasImportedWorker==='function'&&hasImportedWorker(data))||data[0xffd5]!==0x25||data[0x40ffd5]!==0x25||word(0x40ffde)!==sum||(word(0x40ffdc)^word(0x40ffde))!==65535))throw Error('Choose a supported WrestleEdit expanded ROM.');
+ if(data.length>=0x600000&&(!hasAnyNativeGear(data)&&!(typeof hasImportedWorker==='function'&&hasImportedWorker(data))&&!(typeof hasShawnDx==='function'&&hasShawnDx(data))||data[0xffd5]!==0x25||data[0x40ffd5]!==0x25||word(0x40ffde)!==sum||(word(0x40ffdc)^word(0x40ffde))!==65535))throw Error('Choose a supported WrestleEdit expanded ROM.');
  if(String.fromCharCode(...data.slice(0xffc0,0xffd5)).trim()!=='WWF RAW')throw Error('Choose a WWF Raw USA ROM.');
  const hud=hudSource(data);if(![H.source,H.destination,...(typeof hasImportedWorker==='function'&&hasImportedWorker(data)?[0x738000]:[])].includes(hud)||hud>=data.length)throw Error('Unsupported match name graphics location.');
  for(const [id,meta]of Object.entries(S.characters)){

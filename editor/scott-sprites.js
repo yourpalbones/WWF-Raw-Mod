@@ -5,6 +5,11 @@ function hasScottGear(data){return data.length>=0x600000&&String.fromCharCode(..
 function hasNativeGear(data,id){const r=window.RAW_NWO_GEAR_PATTERNS[id];return !!r&&data.length>=0x600000&&String.fromCharCode(...data.slice(r.signature_offset,r.signature_offset+r.signature.length))===r.signature;}
 function nativeGearRevision(data,id){const r=window.RAW_NWO_GEAR_PATTERNS[id];if(!r||data.length<0x600000)return 0;for(const entry of[{offset:r.signature_offset,signature:r.signature},...(r.legacy_signatures||[])]){const prefix=entry.signature.slice(0,-1),text=String.fromCharCode(...data.slice(entry.offset,entry.offset+prefix.length+1));if(text.startsWith(prefix)&&/^[1-9]$/.test(text.slice(-1)))return Number(text.slice(-1));}return 0;}
 function hasAnyNativeGear(data){return Object.keys(window.RAW_NWO_GEAR_PATTERNS).some(id=>nativeGearRevision(data,id)>0);}
+ // Shawn's DX gear (tools/build_shawn_dx.py) keeps one branch at the start of each shared dispatcher; applying another
+ // reference gear writes the dispatchers again, so the branch goes back in (same bytes as build_shawn_dx.dispatchers()).
+ const SHAWN_DX_BRANCH={[0x4be000]:[6,[0xc9,0xf1,0x00,0xd0,0x04,0x5c,0x00,0x83,0xf0]],[0x4be100]:[8,[0xc9,0x10,0x00,0xd0,0x0d,0xaf,0x00,0x80,0xf0,0xc9,0x53,0x48,0xd0,0x04,0x5c,0x00,0x81,0xf0]],[0x4be200]:[8,[0xc9,0x10,0x00,0xd0,0x0d,0xaf,0x00,0x80,0xf0,0xc9,0x53,0x48,0xd0,0x04,0x5c,0x00,0x82,0xf0]]};
+ function hasShawnDx(data){return data.length>=0x600000&&String.fromCharCode(...data.slice(0x308000,0x30800e))==='SHAWN-DX-GEAR1';}
+ function withShawnDx(data,p){const at=hasShawnDx(data)&&SHAWN_DX_BRANCH[p.offset];return at?[...p.code.slice(0,at[0]),...at[1],...p.code.slice(at[0])]:p.code;}
 
 function activateScottSources(data){
  C.sources=structuredClone(baseRosterSources);C.characters=structuredClone(baseGearCharacters);
@@ -27,7 +32,7 @@ async function applyScottReferenceGear(base,selector=M.id){
  const recipe=window.RAW_NWO_GEAR_PATTERNS[selector];
  if(!recipe)throw Error("Choose Scott, Nash, Syxx or Sting first.");
  if(hasNativeGear(base,selector))throw Error('This reference gear is already applied. Use the sprite tools to edit it.');
- if(![0x300000,0x400000,0x600000,0x800000].includes(base.length)||base.length>=0x600000&&!hasAnyNativeGear(base))throw Error('Load a supported original or edited WWF Raw ROM first.');
+ if(![0x300000,0x400000,0x600000,0x800000].includes(base.length)||base.length>=0x600000&&!hasAnyNativeGear(base)&&!hasShawnDx(base))throw Error('Load a supported original or edited WWF Raw ROM first.');
  for(const p of recipe.programs.filter(p=>p.hook!==undefined))if(p.expected.some((value,i)=>base[p.hook+i]!==value)&&![0x4be000,0x4be100,0x4be200].some(address=>base[p.hook]===0x5c&&(base[p.hook+1]|base[p.hook+2]<<8|base[p.hook+3]<<16)===address))throw Error('This ROM already changes the sprite engine. The reference gear cannot safely be applied.');
  const fingerprint=[],rows=[];
  for(const f of recipe.frames){const tiles=[];for(const t of f.tiles){const old=decode(base,{offset:t.source,compressed:t.compressed,length:t.length});fingerprint.push(...encode(old,false));const pixels=old.slice();for(const [i,value]of t.edits){if(!pixels[i]&&!recipe.allow_outline_changes)throw Error('The wrestler’s artwork has changed. The reference gear does not match this ROM.');pixels[i]=value;}tiles.push({relative:t.relative,pixels});}fingerprint.push(...base.slice(f.offset,f.offset+f.length));rows.push({frame:f,tiles});}
@@ -39,7 +44,7 @@ async function applyScottReferenceGear(base,selector=M.id){
   const table=f.kind==='primary'?recipe.primary_table:recipe.secondary_table;result.set([address&255,address>>8&255,address>>16],table+f.index*3);
  }
  for(const [i,color]of Object.entries(recipe.palette))result.set([color&255,color>>8],recipe.palette_offset+Number(i)*2);
- for(const p of recipe.programs){if(p.offset+256>result.length)continue;result.fill(255,p.offset,p.offset+256);result.set(p.code,p.offset);if(p.hook!==undefined)result.set([0x5c,p.offset&255,p.offset>>8&255,p.offset>>16],p.hook);}
+ for(const p of recipe.programs){if(p.offset+256>result.length)continue;result.fill(255,p.offset,p.offset+256);result.set(withShawnDx(base,p),p.offset);if(p.hook!==undefined)result.set([0x5c,p.offset&255,p.offset>>8&255,p.offset>>16],p.hook);}
  for(const record of recipe.extra_records||[])result.set(record.code,record.offset);
  result.set(Array.from(recipe.signature,c=>c.charCodeAt(0)),recipe.signature_offset);result[0xffd5]=0x25;result[0xffd7]=13;result.set(result.slice(0,0x10000),0x400000);for(const p of[0xffdc,0x40ffdc])result.set([255,255,0,0],p);let sum=0;for(let i=0;i<result.length;i++)sum=(sum+result[i]*(result.length===0x600000&&i>=0x400000?2:1))&65535;for(const p of[0xffdc,0x40ffdc])result.set([(sum^65535)&255,(sum^65535)>>8,sum&255,sum>>8],p);return result;
 }
