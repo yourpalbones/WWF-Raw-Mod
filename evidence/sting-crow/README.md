@@ -24,7 +24,7 @@ gear reference mod with the current Sting and with this one; nearest-neighbour e
 | | Current Sting | New Crow Sting |
 |---|---|---|
 | Hair | A flat black shape around the head | Black, with a dark grey sheen on the Undertaker donor's own long hair, so Raw's strands stay. Skin or beard left inside the head above the jaw becomes hair, so his face never shows beside the paint |
-| Face | Grey mask, heavy black eye and jaw shapes | White paint with a grey shadow side, inside the donor's own face; thin Crow marks: brow points, eyes, cheek streaks, black lips, chin lines |
+| Face | Grey mask, heavy black eye and jaw shapes | White paint with a grey shadow side, inside the donor's own face, down to his chin (no beard or wattle under it in profile); thin Crow marks as in the close-up photo: forehead lines, eyes with points down onto the cheeks, black lips |
 | Scorpion | White checker grid | Three greys: pincers, carapace, segmented spine, ribs and tail |
 | Skin, gloves, boots | Orange skin; black gloves and boots | Tan skin; black gloves and boots with the shirt's own highlight; no trouser stripe |
 | Shadow | Pink tint: its recolour moved the shadow's colour index | The game's grey shadow (shadow pieces keep their index) |
