@@ -5,10 +5,13 @@ from scott_frame_catalog import catalog
 from build_bret_gear import planar
 from sting_rebuild_art import author
 
-def build(base,wram):
+def build(base,wram,art=None,frames=None,palette=None):
+    """art: the authoring function (default sting_rebuild_art.author); frames: the Undertaker donor catalog
+    (default read with WRAM); palette: {index: BGR555} (default data/sting-palette.json)."""
     from build_nwo_gear import CONFIGS,programs,checksum
     c=CONFIGS[7]
-    frames=catalog(base,wram,2)
+    art=art or author
+    frames=frames if frames is not None else catalog(base,wram,2)
     out=bytearray(base)+bytearray(b'\xff'*(0x800000-len(base)))
     for start,end in [(c['frames_start'],c['frames_end']),(c['packets_start'],c['packets_end']),
                       (c['pointers'],c['pointer_end']),(c['secondary_pointers'],c['secondary_pointer_end'])]:
@@ -20,7 +23,7 @@ def build(base,wram):
     tile_maps={'primary':{},'secondary':{}};descriptor_maps={'primary':{},'secondary':{}}
     packet_cursor=c['packets_start'];rows=[];metadata=[];fingerprint=hashlib.sha256()
     for f in frames:
-        changes=author(f);descriptor=bytearray(base[f['offset']:f['offset']+f['length']]);fields=[]
+        changes=art(f);descriptor=bytearray(base[f['offset']:f['offset']+f['length']]);fields=[]
         kind=f['kind'];tiles=tile_maps[kind];ptr=pointer_tables[kind]
         for part in f['parts']:
             for ref in part['refs']:
@@ -45,7 +48,7 @@ def build(base,wram):
             descriptors[key]=cursor;out[cursor:cursor+len(key)]=key;cursors[kind]+=len(key)
         address=descriptors[key];table=c['primary_table']if kind=='primary'else c['secondary_table']
         out[table+f['index']*3:table+f['index']*3+3]=address.to_bytes(3,'little')
-    palette={int(k):v for k,v in json.loads((Path(__file__).resolve().parents[1]/'data/sting-palette.json').read_text()).items()}
+    palette=palette or {int(k):v for k,v in json.loads((Path(__file__).resolve().parents[1]/'data/sting-palette.json').read_text()).items()}
     offset=0x2cc5ba
     for i,v in palette.items():out[offset+i*2:offset+i*2+2]=v.to_bytes(2,'little')
     out[c['signature_offset']:c['signature_offset']+len(c['signature'])]=c['signature'].encode()

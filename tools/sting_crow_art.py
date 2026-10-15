@@ -37,7 +37,7 @@ def bgr(r, g, b):
 
 
 # Slot palette (index: BGR555). Donor roles kept: 1 outline, 2/3/6 shirt and trousers, 7/11/12/15 skin, 9/10 hair.
-PALETTE = {1: bgr(0, 0, 0), 2: bgr(10, 10, 14), 3: bgr(30, 30, 36), 4: bgr(104, 104, 112), 5: bgr(240, 240, 232),
+PALETTE = {1: bgr(0, 0, 0), 2: bgr(10, 10, 14), 3: bgr(30, 30, 36), 4: bgr(104, 104, 112), 5: bgr(232, 232, 224),
            6: bgr(58, 58, 68), 7: bgr(184, 120, 80), 8: bgr(224, 224, 228), 9: bgr(20, 14, 12), 10: bgr(48, 32, 24),
            11: bgr(216, 160, 116), 12: bgr(136, 80, 52), 13: bgr(168, 168, 176), 14: bgr(160, 160, 168),
            15: bgr(240, 192, 148)}
@@ -52,11 +52,11 @@ FACE_GRIDS = {
                           'WKWWWKG',
                           'WKKWKKG',
                           'WKWGWKG',
-                          'GWWGWWG',
-                          'GWWWWWG',
+                          'GWWGWGG',
+                          'GWWWWGG',
                           '_WKKKG_',
                           '_GKWKG_',
-                          '_GWWWG_',
+                          '_GGWGG_',
                           '__GGG__']),
     'profile-walking': ((4, -38), ['_WW___',
                                    'WWWWW_',
