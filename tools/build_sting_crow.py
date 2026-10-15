@@ -20,7 +20,8 @@ from pathlib import Path
 
 import build_sting_replacement
 import sting_crow_art
-from raw_parts import TABLES, descriptor_address, parse_descriptor, tile_source, packet_length, decode_packet, planar_pixels
+from build_nwo_gear import checksum
+from raw_parts import palette_offset, TABLES, descriptor_address, parse_descriptor, tile_source, packet_length, decode_packet, planar_pixels
 
 DONOR = 2
 
@@ -50,6 +51,13 @@ def donor_catalog(rom, slot=DONOR):
 def build(rom):
     out, recipe, report = build_sting_replacement.build(rom, None, art=sting_crow_art.author, frames=donor_catalog(rom),
                                                         palette=sting_crow_art.PALETTE)
+    live = palette_offset(out, 7)
+    if live != 0x2cc5ba:                     # after Add Mr. Perfect the game reads the palette table's copy
+        out = bytearray(out)
+        for i, v in sting_crow_art.PALETTE.items():
+            out[live + i * 2:live + i * 2 + 2] = v.to_bytes(2, 'little')
+        checksum(out)
+        out = bytes(out)
     return out, recipe, report
 
 

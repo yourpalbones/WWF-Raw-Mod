@@ -238,9 +238,15 @@ if __name__ == '__main__':
         image.resize((image.width * 4, image.height * 4), Image.NEAREST).save(args.png)
 
 
+def palette_offset(rom, slot):
+    """File offset of the slot's 16 in-ring colours in the live palette table ($2C:F212 holds its address; Add Mr.
+    Perfect moves the table to $70:E800)."""
+    return file_offset((rom[0x2CF218] << 16) | rom[0x2CF212] | rom[0x2CF213] << 8, len(rom)) + 64 + slot * 32
+
+
 def palette(rom, slot):
-    """The slot's 16 in-ring colours (BGR555) from the live palette table ($2C:F212 holds its address)."""
-    base = file_offset((rom[0x2CF218] << 16) | rom[0x2CF212] | rom[0x2CF213] << 8, len(rom)) + 64 + slot * 32
+    """The slot's 16 in-ring colours (BGR555) from the live palette table."""
+    base = palette_offset(rom, slot)
     return [rom[base + i * 2] | rom[base + i * 2 + 1] << 8 for i in range(16)]
 
 
