@@ -1379,7 +1379,7 @@
      "luna-attacker-right"
     ],
     "builds": [
-     "281bcd361265a48d"
+     "dedd76cd066c93aa"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -1437,7 +1437,7 @@
     "scenarios": [
      "bret-attacker-left"
     ],
-    "build_sha256": "281bcd361265a48d0074ebc277c6312523df54bd1e3694b5a93545a3e9ca22be",
+    "build_sha256": "dedd76cd066c93aa671f8a6a46b66ec3e36fda2d5a46cf81f97d8368b1fe8725",
     "registration_error_px": [
      0
     ],
@@ -1585,7 +1585,7 @@
      "undertaker-attacker-left",
      "undertaker-attacker-right"
     ],
-    "build_sha256": "281bcd361265a48d0074ebc277c6312523df54bd1e3694b5a93545a3e9ca22be",
+    "build_sha256": "dedd76cd066c93aa671f8a6a46b66ec3e36fda2d5a46cf81f97d8368b1fe8725",
     "registration_error_px": [
      0
     ],
@@ -1710,7 +1710,7 @@
     "scenarios": [
      "yokozuna-attacker-right"
     ],
-    "build_sha256": "281bcd361265a48d0074ebc277c6312523df54bd1e3694b5a93545a3e9ca22be",
+    "build_sha256": "dedd76cd066c93aa671f8a6a46b66ec3e36fda2d5a46cf81f97d8368b1fe8725",
     "registration_error_px": [
      0
     ],
@@ -1839,7 +1839,7 @@
      "bambam-attacker-left"
     ],
     "builds": [
-     "281bcd361265a48d"
+     "dedd76cd066c93aa"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -1904,7 +1904,7 @@
      "scott-gear-attacker-left"
     ],
     "builds": [
-     "a3316c5a8295e67e"
+     "381f9b89e68e8eea"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -1937,7 +1937,7 @@
     "scenarios": [
      "razor-attacker-right"
     ],
-    "build_sha256": "281bcd361265a48d0074ebc277c6312523df54bd1e3694b5a93545a3e9ca22be",
+    "build_sha256": "dedd76cd066c93aa671f8a6a46b66ec3e36fda2d5a46cf81f97d8368b1fe8725",
     "registration_error_px": [
      0
     ],
@@ -2058,7 +2058,7 @@
     "scenarios": [
      "lex-attacker-right"
     ],
-    "build_sha256": "281bcd361265a48d0074ebc277c6312523df54bd1e3694b5a93545a3e9ca22be",
+    "build_sha256": "dedd76cd066c93aa671f8a6a46b66ec3e36fda2d5a46cf81f97d8368b1fe8725",
     "registration_error_px": [
      0
     ],
@@ -2189,8 +2189,8 @@
      "sting-gear-attacker-left"
     ],
     "builds": [
-     "281bcd361265a48d",
-     "a3316c5a8295e67e"
+     "381f9b89e68e8eea",
+     "dedd76cd066c93aa"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -2251,7 +2251,7 @@
     "scenarios": [
      "shawn-attacker-left"
     ],
-    "build_sha256": "281bcd361265a48d0074ebc277c6312523df54bd1e3694b5a93545a3e9ca22be",
+    "build_sha256": "dedd76cd066c93aa671f8a6a46b66ec3e36fda2d5a46cf81f97d8368b1fe8725",
     "registration_error_px": [
      0
     ],
@@ -2381,8 +2381,8 @@
      "syxx-gear-attacker-left"
     ],
     "builds": [
-     "281bcd361265a48d",
-     "a3316c5a8295e67e"
+     "381f9b89e68e8eea",
+     "dedd76cd066c93aa"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -2451,8 +2451,8 @@
      "nash-gear-attacker-right"
     ],
     "builds": [
-     "281bcd361265a48d",
-     "a3316c5a8295e67e"
+     "381f9b89e68e8eea",
+     "dedd76cd066c93aa"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
@@ -2520,7 +2520,7 @@
      "owen-attacker-left"
     ],
     "builds": [
-     "281bcd361265a48d"
+     "dedd76cd066c93aa"
     ],
     "preview_equals_native": "every step, 100% of actor pixels"
    },
